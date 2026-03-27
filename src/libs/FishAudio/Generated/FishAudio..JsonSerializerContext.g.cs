@@ -14,90 +14,175 @@ namespace FishAudio
         Converters = new global::System.Type[]
         {
             typeof(global::FishAudio.JsonConverters.TTSRequestFormatJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.TTSRequestFormatNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.TTSRequestLatencyJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.TTSRequestLatencyNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.ModelEntityTypeJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.ModelEntityTypeNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.ModelEntityTrainModeJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.ModelEntityTrainModeNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.ModelEntityStateJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.ModelEntityStateNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.ModelEntityVisibilityJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.ModelEntityVisibilityNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibilityJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibilityNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestTypeJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestTypeNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestTrainModeJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestTrainModeNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibility2JsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibility2NullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestType2JsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestType2NullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestTrainMode2JsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelRequestTrainMode2NullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility2JsonConverter),
+
             typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility2NullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility4JsonConverter),
+
             typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility4NullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility6JsonConverter),
+
             typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility6NullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility8JsonConverter),
+
             typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility8NullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateTtsModelJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateTtsModelNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelSortByJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelSortByNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateTtsResponseItemInJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateTtsResponseItemInNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateAsrResponseItemInJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateAsrResponseItemInNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetWalletPackageResponseItemInJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetWalletPackageResponseItemInNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetWalletApiCreditResponseItemInJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetWalletApiCreditResponseItemInNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseItemInJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseItemInNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelResponseTypeJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelResponseTypeNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelResponseTrainModeJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelResponseTrainModeNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelResponseStateJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelResponseStateNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelResponseVisibilityJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelResponseVisibilityNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelResponseItemInJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.CreateModelResponseItemInNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseTypeJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseTypeNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseTrainModeJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseTrainModeNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseStateJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseStateNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseVisibilityJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseVisibilityNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseItemIn2JsonConverter),
+
             typeof(global::FishAudio.JsonConverters.GetModelResponseItemIn2NullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.PatchModelResponseItemInJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.PatchModelResponseItemInNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.DeleteModelResponseItemInJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.DeleteModelResponseItemInNullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
+
             typeof(global::FishAudio.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.JsonSerializerContextTypes))]
