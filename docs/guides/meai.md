@@ -1,9 +1,41 @@
 # Microsoft.Extensions.AI Integration
 
-FishAudio provides `AIFunction` tools compatible with
-[Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI),
-allowing any `IChatClient` to perform text-to-speech synthesis, list voice models,
-and retrieve voice model details via Fish Audio.
+FishAudio implements
+[Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI)
+interfaces for speech-to-text transcription, plus `AIFunction` tools for
+text-to-speech synthesis, voice model listing, and voice model details.
+
+## ISpeechToTextClient
+
+FishAudio implements `ISpeechToTextClient` for speech-to-text transcription
+using the `/v1/asr` endpoint.
+
+```csharp
+using FishAudio;
+using Microsoft.Extensions.AI;
+
+ISpeechToTextClient client = new FishAudioClient(apiKey);
+
+// Transcribe audio from a file
+await using var audioStream = File.OpenRead("audio.wav");
+var response = await client.GetTextAsync(audioStream);
+
+Console.WriteLine(response.Text);
+Console.WriteLine($"Duration: {response.EndTime}");
+```
+
+### Options
+
+- **SpeechLanguage**: Set the transcription language (e.g., `"en"`, `"zh"`)
+- **RawRepresentationFactory**: Pass a pre-configured `CreateAsrRequest` for full control
+
+```csharp
+var options = new SpeechToTextOptions
+{
+    SpeechLanguage = "en",
+};
+var response = await client.GetTextAsync(audioStream, options);
+```
 
 ## Available Tools
 
