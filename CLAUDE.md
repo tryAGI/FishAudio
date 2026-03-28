@@ -23,7 +23,7 @@ var client = new FishAudioClient(apiKey); // FISHAUDIO_API_KEY env var
 ## Key Files
 
 - `src/libs/FishAudio/openapi.json` -- OpenAPI spec (downloaded from Fish Audio docs)
-- `src/libs/FishAudio/generate.sh` -- Downloads spec, adds top-level security array, runs autosdk
+- `src/libs/FishAudio/generate.sh` -- Downloads spec, runs autosdk with `--security-scheme Http:Header:Bearer`
 - `src/libs/FishAudio/Generated/` -- **Never edit** -- auto-generated code
 - `src/libs/FishAudio/Extensions/FishAudioClient.SpeechToTextClient.cs` -- MEAI `ISpeechToTextClient` implementation (file transcription with timestamps)
 - `src/libs/FishAudio/Extensions/FishAudioClient.AsTool.cs` -- MEAI `AIFunction` tools (TextToSpeech, ListModels, GetModel)
@@ -33,7 +33,7 @@ var client = new FishAudioClient(apiKey); // FISHAUDIO_API_KEY env var
 ## Spec Notes
 
 - Fish Audio spec already uses `http/bearer` securitySchemes natively
-- `generate.sh` only adds the top-level `security` array for AutoSDK to generate Bearer constructors
+- `--security-scheme Http:Header:Bearer` ensures AutoSDK generates Bearer constructors (no jq spec patching needed)
 - Uses `--exclude-deprecated-operations` flag
 
 ## Sub-client Pattern

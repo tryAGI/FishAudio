@@ -7,14 +7,12 @@ rm -rf Generated
 
 curl -o openapi.json https://docs.fish.audio/api-reference/openapi.json
 
-# The Fish Audio spec already uses http/bearer securitySchemes.
-# Add top-level security array for AutoSDK to generate Bearer constructors.
-jq '.security = [{"BearerAuth": []}]' openapi.json > openapi_fixed.json
-mv openapi_fixed.json openapi.json
-
+# Auth: --security-scheme ensures AutoSDK generates Bearer constructors.
+# The Fish Audio spec already uses http/bearer securitySchemes but lacks top-level security array.
 autosdk generate openapi.json \
   --namespace FishAudio \
   --clientClassName FishAudioClient \
   --targetFramework net10.0 \
   --output Generated \
-  --exclude-deprecated-operations
+  --exclude-deprecated-operations \
+  --security-scheme Http:Header:Bearer
