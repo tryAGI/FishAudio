@@ -5,7 +5,7 @@ dotnet tool install --global autosdk.cli --prerelease
 
 rm -rf Generated
 
-curl --fail --silent --show-error -o openapi.json https://docs.fish.audio/api-reference/openapi.json
+curl --fail --silent --show-error -L -o openapi.json https://docs.fish.audio/api-reference/openapi.json
 
 # Auth: --security-scheme ensures AutoSDK generates Bearer constructors.
 # The Fish Audio spec already uses http/bearer securitySchemes but lacks top-level security array.
