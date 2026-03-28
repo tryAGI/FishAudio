@@ -128,13 +128,13 @@ namespace FishAudio
                     if (ReadResponseAsString)
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.IList<global::FishAudio.DeleteModelResponseItem>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::FishAudio.DeleteModelResponseItem>;
+                        __value_422 = (global::System.Collections.Generic.IList<global::FishAudio.DeleteModelResponseItem>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.IList<global::FishAudio.DeleteModelResponseItem>), JsonSerializerContext);
                     }
                     else
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_422 = global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.IList<global::FishAudio.DeleteModelResponseItem>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::FishAudio.DeleteModelResponseItem>;
+                        __value_422 = (global::System.Collections.Generic.IList<global::FishAudio.DeleteModelResponseItem>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.IList<global::FishAudio.DeleteModelResponseItem>), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)

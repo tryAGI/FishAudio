@@ -135,13 +135,13 @@ namespace FishAudio
                     if (ReadResponseAsString)
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                        __value_422 = global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.IList<global::FishAudio.GetWalletPackageResponseItem>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::FishAudio.GetWalletPackageResponseItem>;
+                        __value_422 = (global::System.Collections.Generic.IList<global::FishAudio.GetWalletPackageResponseItem>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.IList<global::FishAudio.GetWalletPackageResponseItem>), JsonSerializerContext);
                     }
                     else
                     {
                         __content_422 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        __value_422 = global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.IList<global::FishAudio.GetWalletPackageResponseItem>), JsonSerializerContext) as global::System.Collections.Generic.IList<global::FishAudio.GetWalletPackageResponseItem>;
+                        __value_422 = (global::System.Collections.Generic.IList<global::FishAudio.GetWalletPackageResponseItem>?)global::System.Text.Json.JsonSerializer.Deserialize(__content_422, typeof(global::System.Collections.Generic.IList<global::FishAudio.GetWalletPackageResponseItem>), JsonSerializerContext);
                     }
                 }
                 catch (global::System.Exception __ex)
