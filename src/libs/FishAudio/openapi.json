@@ -2805,10 +2805,5 @@
         "type": "object"
       }
     }
-  },
-  "security": [
-    {
-      "BearerAuth": []
-    }
-  ]
+  }
 }
