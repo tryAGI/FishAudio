@@ -173,27 +173,28 @@ namespace FishAudio
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="coverImage"></param>
-        /// <param name="trainMode">
-        /// Default Value: full
-        /// </param>
         /// <param name="state"></param>
         /// <param name="tags"></param>
-        /// <param name="samples">
-        /// Default Value: []
-        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
-        /// <param name="languages">
-        /// Default Value: []
-        /// </param>
         /// <param name="visibility"></param>
-        /// <param name="lockVisibility">
-        /// Default Value: false
-        /// </param>
         /// <param name="likeCount"></param>
         /// <param name="markCount"></param>
         /// <param name="sharedCount"></param>
         /// <param name="taskCount"></param>
+        /// <param name="author"></param>
+        /// <param name="trainMode">
+        /// Default Value: full
+        /// </param>
+        /// <param name="samples">
+        /// Default Value: []
+        /// </param>
+        /// <param name="languages">
+        /// Default Value: []
+        /// </param>
+        /// <param name="lockVisibility">
+        /// Default Value: false
+        /// </param>
         /// <param name="unliked">
         /// Default Value: false
         /// </param>
@@ -203,7 +204,6 @@ namespace FishAudio
         /// <param name="marked">
         /// Default Value: false
         /// </param>
-        /// <param name="author"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -236,23 +236,23 @@ namespace FishAudio
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.CoverImage = coverImage ?? throw new global::System.ArgumentNullException(nameof(coverImage));
+            this.TrainMode = trainMode;
             this.State = state;
             this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
+            this.Samples = samples;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
+            this.Languages = languages;
             this.Visibility = visibility;
+            this.LockVisibility = lockVisibility;
             this.LikeCount = likeCount;
             this.MarkCount = markCount;
             this.SharedCount = sharedCount;
             this.TaskCount = taskCount;
-            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
-            this.TrainMode = trainMode;
-            this.Samples = samples;
-            this.Languages = languages;
-            this.LockVisibility = lockVisibility;
             this.Unliked = unliked;
             this.Liked = liked;
             this.Marked = marked;
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
         }
 
         /// <summary>
