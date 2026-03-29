@@ -97,15 +97,18 @@ namespace FishAudio
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateModelRequest2" /> class.
         /// </summary>
+        /// <param name="title">
+        /// Model title or name
+        /// </param>
+        /// <param name="voices">
+        /// Upload voices files that will be used to tune the model
+        /// </param>
         /// <param name="visibility">
         /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
         /// Default Value: public
         /// </param>
         /// <param name="type">
         /// Model type, tts is for text to speech
-        /// </param>
-        /// <param name="title">
-        /// Model title or name
         /// </param>
         /// <param name="description">
         /// Model description<br/>
@@ -121,9 +124,6 @@ namespace FishAudio
         /// </param>
         /// <param name="trainMode">
         /// Model train mode, for TTS model, fast means model instantly available after creation
-        /// </param>
-        /// <param name="voices">
-        /// Upload voices files that will be used to tune the model
         /// </param>
         /// <param name="texts">
         /// Texts corresponding to the voices, if unspecified, ASR will be performed on the voices<br/>
@@ -152,14 +152,14 @@ namespace FishAudio
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags,
             bool? enhanceAudioQuality)
         {
-            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Voices = voices;
             this.Visibility = visibility;
             this.Type = type;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Description = description;
             this.CoverImage = coverImage;
             this.CoverImagename = coverImagename;
             this.TrainMode = trainMode;
+            this.Voices = voices;
             this.Texts = texts;
             this.Tags = tags;
             this.EnhanceAudioQuality = enhanceAudioQuality;
