@@ -1,9 +1,9 @@
 # Microsoft.Extensions.AI Integration
 
-FishAudio implements
-[Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI)
-interfaces for speech-to-text transcription, plus `AIFunction` tools for
-text-to-speech synthesis, voice model listing, and voice model details.
+!!! tip "Cross-SDK comparison"
+    See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
+
+The FishAudio SDK implements `ISpeechToTextClient` and provides `AIFunction` tool wrappers, all compatible with [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai).
 
 ## ISpeechToTextClient
 
