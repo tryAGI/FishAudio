@@ -37,6 +37,58 @@ var options = new SpeechToTextOptions
 var response = await client.GetTextAsync(audioStream, options);
 ```
 
+### Advanced Configuration with RawRepresentationFactory
+
+Use `RawRepresentationFactory` to access Fish Audio-specific ASR features like timestamp control and language selection:
+
+```csharp
+ISpeechToTextClient client = new FishAudioClient(apiKey);
+
+await using var audioStream = File.OpenRead("audio.wav");
+var response = await client.GetTextAsync(audioStream, new SpeechToTextOptions
+{
+    RawRepresentationFactory = _ => new CreateAsrRequest
+    {
+        Audio = [],  // Will be filled from the audio stream automatically
+        Audioname = "meeting.wav",
+        Language = "en",
+        IgnoreTimestamps = false,  // Enable segment-level timestamps
+    },
+});
+
+Console.WriteLine(response.Text);
+```
+
+### Accessing the Raw Response
+
+The full Fish Audio ASR response is available via `RawRepresentation` for segment-level timestamps and duration:
+
+```csharp
+ISpeechToTextClient client = new FishAudioClient(apiKey);
+
+await using var audioStream = File.OpenRead("audio.wav");
+var response = await client.GetTextAsync(audioStream);
+
+// Access the provider-specific response
+var raw = (CreateAsrResponse)response.RawRepresentation!;
+Console.WriteLine($"Duration: {raw.Duration}s");
+
+// Access segment-level timestamps
+if (raw.Segments is { Count: > 0 })
+{
+    foreach (var segment in raw.Segments)
+    {
+        Console.WriteLine($"  [{segment.Start:F2}s - {segment.End:F2}s] {segment.Text}");
+    }
+}
+```
+
+### Streaming Behavior
+
+`GetStreamingTextAsync` delegates to the non-streaming `GetTextAsync` method internally. The Fish Audio ASR API processes audio synchronously, and then the full result is converted to `SpeechToTextResponseUpdate` events using `ToSpeechToTextResponseUpdates()`.
+
+This means you will not receive incremental transcription updates as audio is processed. The entire transcript is returned at once after processing completes. For most use cases, calling `GetTextAsync` directly is equivalent and simpler.
+
 ## Available Tools
 
 | Method | Tool Name | Description |
