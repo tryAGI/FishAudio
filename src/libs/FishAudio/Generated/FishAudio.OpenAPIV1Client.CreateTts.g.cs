@@ -418,6 +418,7 @@ namespace FishAudio
             double? earlyStopThreshold = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::FishAudio.TTSRequest
             {
                 Text = text,
