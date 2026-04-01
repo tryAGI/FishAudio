@@ -278,6 +278,7 @@ namespace FishAudio
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::FishAudio.PatchModelRequest
             {
                 Title = title,

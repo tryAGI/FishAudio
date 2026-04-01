@@ -338,6 +338,7 @@ namespace FishAudio
             bool? ignoreTimestamps = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::FishAudio.CreateAsrRequest
             {
                 Audio = audio,

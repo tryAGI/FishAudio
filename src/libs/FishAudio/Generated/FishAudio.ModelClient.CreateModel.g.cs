@@ -377,6 +377,7 @@ namespace FishAudio
             bool? enhanceAudioQuality = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::FishAudio.CreateModelRequest
             {
                 Visibility = visibility,
