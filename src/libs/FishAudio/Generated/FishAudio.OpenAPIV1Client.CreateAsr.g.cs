@@ -5,6 +5,25 @@ namespace FishAudio
 {
     public partial class OpenAPIV1Client
     {
+
+
+        private static readonly global::FishAudio.EndPointSecurityRequirement s_CreateAsrSecurityRequirement0 =
+            new global::FishAudio.EndPointSecurityRequirement
+            {
+                Authorizations = new global::FishAudio.EndPointAuthorizationRequirement[]
+                {                    new global::FishAudio.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::FishAudio.EndPointSecurityRequirement[] s_CreateAsrSecurityRequirements =
+            new global::FishAudio.EndPointSecurityRequirement[]
+            {                s_CreateAsrSecurityRequirement0,
+            };
         partial void PrepareCreateAsrArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::FishAudio.CreateAsrRequest request);
@@ -40,9 +59,15 @@ namespace FishAudio
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::FishAudio.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateAsrSecurityRequirements,
+                operationName: "CreateAsrAsync");
+
             var __pathBuilder = new global::FishAudio.PathBuilder(
                 path: "/v1/asr",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -52,7 +77,7 @@ namespace FishAudio
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

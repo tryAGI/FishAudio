@@ -12,7 +12,7 @@ namespace FishAudio
         /// <summary>
         /// Fish Audio API
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.fish.audio";
+        public const string DefaultBaseUrl = "https://api.fish.audio/";
 
         private bool _disposeHttpClient = true;
 

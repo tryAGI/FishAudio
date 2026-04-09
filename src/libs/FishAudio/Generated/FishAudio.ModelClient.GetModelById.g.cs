@@ -5,6 +5,25 @@ namespace FishAudio
 {
     public partial class ModelClient
     {
+
+
+        private static readonly global::FishAudio.EndPointSecurityRequirement s_GetModelByIdSecurityRequirement0 =
+            new global::FishAudio.EndPointSecurityRequirement
+            {
+                Authorizations = new global::FishAudio.EndPointAuthorizationRequirement[]
+                {                    new global::FishAudio.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::FishAudio.EndPointSecurityRequirement[] s_GetModelByIdSecurityRequirements =
+            new global::FishAudio.EndPointSecurityRequirement[]
+            {                s_GetModelByIdSecurityRequirement0,
+            };
         partial void PrepareGetModelByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -37,9 +56,15 @@ namespace FishAudio
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::FishAudio.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetModelByIdSecurityRequirements,
+                operationName: "GetModelByIdAsync");
+
             var __pathBuilder = new global::FishAudio.PathBuilder(
                 path: $"/model/{id}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -49,7 +74,7 @@ namespace FishAudio
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

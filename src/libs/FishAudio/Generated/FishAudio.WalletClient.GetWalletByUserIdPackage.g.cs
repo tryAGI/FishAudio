@@ -5,6 +5,25 @@ namespace FishAudio
 {
     public partial class WalletClient
     {
+
+
+        private static readonly global::FishAudio.EndPointSecurityRequirement s_GetWalletByUserIdPackageSecurityRequirement0 =
+            new global::FishAudio.EndPointSecurityRequirement
+            {
+                Authorizations = new global::FishAudio.EndPointAuthorizationRequirement[]
+                {                    new global::FishAudio.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::FishAudio.EndPointSecurityRequirement[] s_GetWalletByUserIdPackageSecurityRequirements =
+            new global::FishAudio.EndPointSecurityRequirement[]
+            {                s_GetWalletByUserIdPackageSecurityRequirement0,
+            };
         partial void PrepareGetWalletByUserIdPackageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? userId);
@@ -39,9 +58,15 @@ namespace FishAudio
                 httpClient: HttpClient,
                 userId: ref userId);
 
+
+            var __authorizations = global::FishAudio.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetWalletByUserIdPackageSecurityRequirements,
+                operationName: "GetWalletByUserIdPackageAsync");
+
             var __pathBuilder = new global::FishAudio.PathBuilder(
                 path: $"/wallet/{userId}/package",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -51,7 +76,7 @@ namespace FishAudio
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
