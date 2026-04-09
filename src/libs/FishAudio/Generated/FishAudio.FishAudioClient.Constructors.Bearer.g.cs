@@ -6,6 +6,7 @@ namespace FishAudio
     public sealed partial class FishAudioClient
     {
         /// <inheritdoc cref="FishAudioClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::FishAudio.EndPointAuthorization}?, bool)"/>
+
         public FishAudioClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

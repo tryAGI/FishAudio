@@ -5,6 +5,25 @@ namespace FishAudio
 {
     public partial class ModelClient
     {
+
+
+        private static readonly global::FishAudio.EndPointSecurityRequirement s_GetModelSecurityRequirement0 =
+            new global::FishAudio.EndPointSecurityRequirement
+            {
+                Authorizations = new global::FishAudio.EndPointAuthorizationRequirement[]
+                {                    new global::FishAudio.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::FishAudio.EndPointSecurityRequirement[] s_GetModelSecurityRequirements =
+            new global::FishAudio.EndPointSecurityRequirement[]
+            {                s_GetModelSecurityRequirement0,
+            };
         partial void PrepareGetModelArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? pageSize,
@@ -95,6 +114,12 @@ namespace FishAudio
                 titleLanguage: ref titleLanguage,
                 sortBy: ref sortBy);
 
+
+            var __authorizations = global::FishAudio.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetModelSecurityRequirements,
+                operationName: "GetModelAsync");
+
             var __pathBuilder = new global::FishAudio.PathBuilder(
                 path: "/model",
                 baseUri: HttpClient.BaseAddress); 
@@ -108,7 +133,7 @@ namespace FishAudio
                 .AddOptionalParameter("language", language?.ToString())
                 .AddOptionalParameter("title_language", titleLanguage?.ToString())
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -118,7 +143,7 @@ namespace FishAudio
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

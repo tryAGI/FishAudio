@@ -5,6 +5,25 @@ namespace FishAudio
 {
     public partial class WalletClient
     {
+
+
+        private static readonly global::FishAudio.EndPointSecurityRequirement s_GetWalletByUserIdApiCreditSecurityRequirement0 =
+            new global::FishAudio.EndPointSecurityRequirement
+            {
+                Authorizations = new global::FishAudio.EndPointAuthorizationRequirement[]
+                {                    new global::FishAudio.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::FishAudio.EndPointSecurityRequirement[] s_GetWalletByUserIdApiCreditSecurityRequirements =
+            new global::FishAudio.EndPointSecurityRequirement[]
+            {                s_GetWalletByUserIdApiCreditSecurityRequirement0,
+            };
         partial void PrepareGetWalletByUserIdApiCreditArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? checkFreeCredit,
@@ -46,12 +65,18 @@ namespace FishAudio
                 checkFreeCredit: ref checkFreeCredit,
                 userId: ref userId);
 
+
+            var __authorizations = global::FishAudio.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetWalletByUserIdApiCreditSecurityRequirements,
+                operationName: "GetWalletByUserIdApiCreditAsync");
+
             var __pathBuilder = new global::FishAudio.PathBuilder(
                 path: $"/wallet/{userId}/api-credit",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("check_free_credit", checkFreeCredit?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -61,7 +86,7 @@ namespace FishAudio
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
