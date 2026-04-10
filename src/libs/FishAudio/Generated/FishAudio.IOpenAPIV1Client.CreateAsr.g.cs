@@ -8,11 +8,13 @@ namespace FishAudio
         /// Speech to Text
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::FishAudio.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::FishAudio.CreateAsrResponse> CreateAsrAsync(
 
             global::FishAudio.CreateAsrRequest request,
+            global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Speech to Text
@@ -31,6 +33,7 @@ namespace FishAudio
         /// Whether to return precise timestamps in the text, this will increase the latency in audio shorter than 30 seconds<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::FishAudio.CreateAsrResponse> CreateAsrAsync(
@@ -38,6 +41,7 @@ namespace FishAudio
             string audioname,
             string? language = default,
             bool? ignoreTimestamps = default,
+            global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

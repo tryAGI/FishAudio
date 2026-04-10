@@ -8,11 +8,13 @@ namespace FishAudio
         /// Create Model
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::FishAudio.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::FishAudio.CreateModelResponse> CreateModelAsync(
 
             global::FishAudio.CreateModelRequest request,
+            global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Model
@@ -56,6 +58,7 @@ namespace FishAudio
         /// Enhance audio quality<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::FishAudio.CreateModelResponse> CreateModelAsync(
@@ -70,6 +73,7 @@ namespace FishAudio
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags = default,
             bool? enhanceAudioQuality = default,
+            global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
