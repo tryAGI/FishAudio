@@ -25,6 +25,7 @@ namespace FishAudio
             Authorizations.Add(new global::FishAudio.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HttpBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,
