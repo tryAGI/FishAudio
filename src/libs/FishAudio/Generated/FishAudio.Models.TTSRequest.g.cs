@@ -148,7 +148,7 @@ namespace FishAudio
 
         /// <summary>
         /// Early stopping threshold for batch processing.<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("early_stop_threshold")]
         public double? EarlyStopThreshold { get; set; }
@@ -230,7 +230,7 @@ namespace FishAudio
         /// </param>
         /// <param name="earlyStopThreshold">
         /// Early stopping threshold for batch processing.<br/>
-        /// Default Value: 1
+        /// Default Value: 1F
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

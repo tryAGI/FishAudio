@@ -4,6 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
+    /// Core Fish Audio REST endpoints for text-to-speech and speech-to-text.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
