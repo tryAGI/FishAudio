@@ -593,7 +593,7 @@ namespace FishAudio
         /// </param>
         /// <param name="earlyStopThreshold">
         /// Early stopping threshold for batch processing.<br/>
-        /// Default Value: 1F
+        /// Default Value: 1
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
