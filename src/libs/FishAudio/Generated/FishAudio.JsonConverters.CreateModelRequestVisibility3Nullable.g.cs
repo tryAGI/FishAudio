@@ -3,10 +3,10 @@
 namespace FishAudio.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class CreateModelRequestTrainModeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::FishAudio.CreateModelRequestTrainMode?>
+    public sealed class CreateModelRequestVisibility3NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::FishAudio.CreateModelRequestVisibility3?>
     {
         /// <inheritdoc />
-        public override global::FishAudio.CreateModelRequestTrainMode? Read(
+        public override global::FishAudio.CreateModelRequestVisibility3? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace FishAudio.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::FishAudio.CreateModelRequestTrainModeExtensions.ToEnum(stringValue);
+                        return global::FishAudio.CreateModelRequestVisibility3Extensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace FishAudio.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::FishAudio.CreateModelRequestTrainMode)numValue;
+                    return (global::FishAudio.CreateModelRequestVisibility3)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::FishAudio.CreateModelRequestTrainMode?);
+                    return default(global::FishAudio.CreateModelRequestVisibility3?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace FishAudio.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::FishAudio.CreateModelRequestTrainMode? value,
+            global::FishAudio.CreateModelRequestVisibility3? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace FishAudio.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::FishAudio.CreateModelRequestTrainModeExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::FishAudio.CreateModelRequestVisibility3Extensions.ToValueString(value.Value));
             }
         }
     }

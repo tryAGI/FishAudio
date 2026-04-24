@@ -42,7 +42,7 @@ namespace FishAudio
             ref string content);
 
         /// <summary>
-        /// Create Model
+        /// Create Model for Users via API
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -116,75 +116,11 @@ namespace FishAudio
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (request.Visibility != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Visibility?.ToValueString()}"),
-                                    name: "\"visibility\"");
-                            } 
-                            if (request.Type != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Type.ToValueString()}"),
-                                    name: "\"type\"");
-                            }
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Title}"),
-                                name: "\"title\"");
-                            if (request.Description != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Description}"),
-                                    name: "\"description\"");
-                            } 
-                            if (request.CoverImage != default)
-                            {
-
-                                var __contentCoverImage = new global::System.Net.Http.ByteArrayContent(request.CoverImage ?? global::System.Array.Empty<byte>());
-                                __httpRequestContent.Add(
-                                    content: __contentCoverImage,
-                                    name: "\"cover_image\"",
-                                    fileName: request.CoverImagename != null ? $"\"{request.CoverImagename}\"" : string.Empty);
-                                if (__contentCoverImage.Headers.ContentDisposition != null)
-                                {
-                                    __contentCoverImage.Headers.ContentDisposition.FileNameStar = null;
-                                }
-                            } 
-                            if (request.TrainMode != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.TrainMode.ToValueString()}"),
-                                    name: "\"train_mode\"");
-                            }
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.Voices.ToString() ?? string.Empty),
-                                name: "\"voices\"");
-                            if (request.Texts != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.Texts?.ToString() ?? string.Empty),
-                                    name: "\"texts\"");
-                            } 
-                            if (request.Tags != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.Tags?.ToString() ?? string.Empty),
-                                    name: "\"tags\"");
-                            } 
-                            if (request.EnhanceAudioQuality != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.EnhanceAudioQuality}"),
-                                    name: "\"enhance_audio_quality\"");
-                            }
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
                             __httpRequest.Content = __httpRequestContent;
                 global::FishAudio.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -527,7 +463,7 @@ namespace FishAudio
             }
         }
         /// <summary>
-        /// Create Model
+        /// Create Model for Users via API
         /// </summary>
         /// <param name="visibility">
         /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
@@ -566,6 +502,10 @@ namespace FishAudio
         /// </param>
         /// <param name="enhanceAudioQuality">
         /// Enhance audio quality<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="generateSample">
+        /// Generate default text<br/>
         /// Default Value: false
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -575,14 +515,15 @@ namespace FishAudio
             string title,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<byte[]>, byte[]> voices,
             global::FishAudio.CreateModelRequestVisibility? visibility = default,
-            global::FishAudio.CreateModelRequestType type = default,
+            string type = "tts",
             string? description = default,
             byte[]? coverImage = default,
             string? coverImagename = default,
-            global::FishAudio.CreateModelRequestTrainMode trainMode = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags = default,
+            string trainMode = "fast",
+            global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? texts = default,
+            global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? tags = default,
             bool? enhanceAudioQuality = default,
+            bool? generateSample = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -599,6 +540,7 @@ namespace FishAudio
                 Texts = texts,
                 Tags = tags,
                 EnhanceAudioQuality = enhanceAudioQuality,
+                GenerateSample = generateSample,
             };
 
             return await CreateModelAsync(

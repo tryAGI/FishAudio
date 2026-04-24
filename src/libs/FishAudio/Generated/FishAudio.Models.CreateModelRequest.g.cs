@@ -19,9 +19,9 @@ namespace FishAudio
         /// <summary>
         /// Model type, tts is for text to speech
         /// </summary>
+        /// <default>"tts"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.CreateModelRequestTypeJsonConverter))]
-        public global::FishAudio.CreateModelRequestType Type { get; set; }
+        public string Type { get; set; } = "tts";
 
         /// <summary>
         /// Model title or name
@@ -54,9 +54,9 @@ namespace FishAudio
         /// <summary>
         /// Model train mode, for TTS model, fast means model instantly available after creation
         /// </summary>
+        /// <default>"fast"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("train_mode")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.CreateModelRequestTrainModeJsonConverter))]
-        public global::FishAudio.CreateModelRequestTrainMode TrainMode { get; set; }
+        public string TrainMode { get; set; } = "fast";
 
         /// <summary>
         /// Upload voices files that will be used to tune the model
@@ -71,22 +71,29 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>))]
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Texts { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
+        public global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Texts { get; set; }
 
         /// <summary>
         /// Model tags
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>))]
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Tags { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
+        public global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
 
         /// <summary>
         /// Enhance audio quality<br/>
-        /// Default Value: false
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enhance_audio_quality")]
         public bool? EnhanceAudioQuality { get; set; }
+
+        /// <summary>
+        /// Generate default text<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("generate_sample")]
+        public bool? GenerateSample { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -107,9 +114,6 @@ namespace FishAudio
         /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
         /// Default Value: public
         /// </param>
-        /// <param name="type">
-        /// Model type, tts is for text to speech
-        /// </param>
         /// <param name="description">
         /// Model description<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -122,9 +126,6 @@ namespace FishAudio
         /// Model cover image, this is required if the model is public<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="trainMode">
-        /// Model train mode, for TTS model, fast means model instantly available after creation
-        /// </param>
         /// <param name="texts">
         /// Texts corresponding to the voices, if unspecified, ASR will be performed on the voices<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -134,7 +135,17 @@ namespace FishAudio
         /// </param>
         /// <param name="enhanceAudioQuality">
         /// Enhance audio quality<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="generateSample">
+        /// Generate default text<br/>
         /// Default Value: false
+        /// </param>
+        /// <param name="type">
+        /// Model type, tts is for text to speech
+        /// </param>
+        /// <param name="trainMode">
+        /// Model train mode, for TTS model, fast means model instantly available after creation
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -143,14 +154,15 @@ namespace FishAudio
             string title,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<byte[]>, byte[]> voices,
             global::FishAudio.CreateModelRequestVisibility? visibility,
-            global::FishAudio.CreateModelRequestType type,
             string? description,
             byte[]? coverImage,
             string? coverImagename,
-            global::FishAudio.CreateModelRequestTrainMode trainMode,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags,
-            bool? enhanceAudioQuality)
+            global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? texts,
+            global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? tags,
+            bool? enhanceAudioQuality,
+            bool? generateSample,
+            string type = "tts",
+            string trainMode = "fast")
         {
             this.Visibility = visibility;
             this.Type = type;
@@ -163,6 +175,7 @@ namespace FishAudio
             this.Texts = texts;
             this.Tags = tags;
             this.EnhanceAudioQuality = enhanceAudioQuality;
+            this.GenerateSample = generateSample;
         }
 
         /// <summary>

@@ -5,7 +5,7 @@ namespace FishAudio
     public partial interface IModelClient
     {
         /// <summary>
-        /// Create Model
+        /// Create Model for Users via API
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -17,7 +17,7 @@ namespace FishAudio
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Model
+        /// Create Model for Users via API
         /// </summary>
         /// <param name="visibility">
         /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
@@ -56,6 +56,10 @@ namespace FishAudio
         /// </param>
         /// <param name="enhanceAudioQuality">
         /// Enhance audio quality<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="generateSample">
+        /// Generate default text<br/>
         /// Default Value: false
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -65,14 +69,15 @@ namespace FishAudio
             string title,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<byte[]>, byte[]> voices,
             global::FishAudio.CreateModelRequestVisibility? visibility = default,
-            global::FishAudio.CreateModelRequestType type = default,
+            string type = "tts",
             string? description = default,
             byte[]? coverImage = default,
             string? coverImagename = default,
-            global::FishAudio.CreateModelRequestTrainMode trainMode = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags = default,
+            string trainMode = "fast",
+            global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? texts = default,
+            global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? tags = default,
             bool? enhanceAudioQuality = default,
+            bool? generateSample = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

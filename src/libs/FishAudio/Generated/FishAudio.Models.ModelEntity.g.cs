@@ -107,6 +107,24 @@ namespace FishAudio
         public bool? LockVisibility { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dmca_taken_down")]
+        public bool? DmcaTakenDown { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_text")]
+        public string? DefaultText { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
+        public global::FishAudio.ModelQualityEntity? Quality { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("like_count")]
@@ -195,6 +213,13 @@ namespace FishAudio
         /// <param name="lockVisibility">
         /// Default Value: false
         /// </param>
+        /// <param name="dmcaTakenDown">
+        /// Default Value: false
+        /// </param>
+        /// <param name="defaultText"></param>
+        /// <param name="quality">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="unliked">
         /// Default Value: false
         /// </param>
@@ -227,6 +252,9 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.SampleEntity>? samples,
             global::System.Collections.Generic.IList<string>? languages,
             bool? lockVisibility,
+            bool? dmcaTakenDown,
+            string? defaultText,
+            global::FishAudio.ModelQualityEntity? quality,
             bool? unliked,
             bool? liked,
             bool? marked)
@@ -245,6 +273,9 @@ namespace FishAudio
             this.Languages = languages;
             this.Visibility = visibility;
             this.LockVisibility = lockVisibility;
+            this.DmcaTakenDown = dmcaTakenDown;
+            this.DefaultText = defaultText;
+            this.Quality = quality;
             this.LikeCount = likeCount;
             this.MarkCount = markCount;
             this.SharedCount = sharedCount;
