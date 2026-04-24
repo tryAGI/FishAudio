@@ -116,30 +116,11 @@ namespace FishAudio
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            var __contentAudio = new global::System.Net.Http.ByteArrayContent(request.Audio ?? global::System.Array.Empty<byte>());
-                            __httpRequestContent.Add(
-                                content: __contentAudio,
-                                name: "\"audio\"",
-                                fileName: request.Audioname != null ? $"\"{request.Audioname}\"" : string.Empty);
-                            if (__contentAudio.Headers.ContentDisposition != null)
-                            {
-                                __contentAudio.Headers.ContentDisposition.FileNameStar = null;
-                            }
-                            if (request.Language != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Language}"),
-                                    name: "\"language\"");
-                            } 
-                            if (request.IgnoreTimestamps != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.IgnoreTimestamps}"),
-                                    name: "\"ignore_timestamps\"");
-                            }
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
                             __httpRequest.Content = __httpRequestContent;
                 global::FishAudio.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

@@ -3,10 +3,10 @@
 namespace FishAudio.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class CreateModelRequestType2JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::FishAudio.CreateModelRequestType2>
+    public sealed class CreateModelRequestVisibility4JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::FishAudio.CreateModelRequestVisibility4>
     {
         /// <inheritdoc />
-        public override global::FishAudio.CreateModelRequestType2 Read(
+        public override global::FishAudio.CreateModelRequestVisibility4 Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace FishAudio.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::FishAudio.CreateModelRequestType2Extensions.ToEnum(stringValue) ?? default;
+                        return global::FishAudio.CreateModelRequestVisibility4Extensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace FishAudio.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::FishAudio.CreateModelRequestType2)numValue;
+                    return (global::FishAudio.CreateModelRequestVisibility4)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::FishAudio.CreateModelRequestType2);
+                    return default(global::FishAudio.CreateModelRequestVisibility4);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,12 @@ namespace FishAudio.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::FishAudio.CreateModelRequestType2 value,
+            global::FishAudio.CreateModelRequestVisibility4 value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::FishAudio.CreateModelRequestType2Extensions.ToValueString(value));
+            writer.WriteStringValue(global::FishAudio.CreateModelRequestVisibility4Extensions.ToValueString(value));
         }
     }
 }

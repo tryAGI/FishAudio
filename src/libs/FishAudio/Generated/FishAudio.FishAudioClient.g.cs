@@ -4,7 +4,6 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Canonical REST API schema for Fish Audio text-to-speech, speech-to-text, wallet, and voice model operations.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -41,7 +40,7 @@ namespace FishAudio
 
 
         /// <summary>
-        /// Endpoints for listing, creating, updating, and deleting voice models.
+        /// 
         /// </summary>
         public ModelClient Model => new ModelClient(HttpClient, authorizations: Authorizations, options: Options)
         {
@@ -50,7 +49,7 @@ namespace FishAudio
         };
 
         /// <summary>
-        /// Core Fish Audio REST endpoints for text-to-speech and speech-to-text.
+        /// 
         /// </summary>
         public OpenAPIV1Client OpenAPIV1 => new OpenAPIV1Client(HttpClient, authorizations: Authorizations, options: Options)
         {
@@ -59,7 +58,7 @@ namespace FishAudio
         };
 
         /// <summary>
-        /// Endpoints for API credit and package information.
+        /// 
         /// </summary>
         public WalletClient Wallet => new WalletClient(HttpClient, authorizations: Authorizations, options: Options)
         {

@@ -28,11 +28,13 @@ namespace FishAudio
         partial void PrepareGetWalletByUserIdApiCreditArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? checkFreeCredit,
+            ref string? teamId,
             ref string? userId);
         partial void PrepareGetWalletByUserIdApiCreditRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? checkFreeCredit,
+            string? teamId,
             string? userId);
         partial void ProcessGetWalletByUserIdApiCreditResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -49,6 +51,9 @@ namespace FishAudio
         /// <param name="checkFreeCredit">
         /// Default Value: false
         /// </param>
+        /// <param name="teamId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="userId">
         /// Default Value: self
         /// </param>
@@ -58,6 +63,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.GetWalletApiCreditResponse> GetWalletByUserIdApiCreditAsync(
             string? userId,
             bool? checkFreeCredit = default,
+            string? teamId = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -66,6 +72,7 @@ namespace FishAudio
             PrepareGetWalletByUserIdApiCreditArguments(
                 httpClient: HttpClient,
                 checkFreeCredit: ref checkFreeCredit,
+                teamId: ref teamId,
                 userId: ref userId);
 
 
@@ -94,7 +101,8 @@ namespace FishAudio
                                 path: $"/wallet/{userId}/api-credit",
                                 baseUri: HttpClient.BaseAddress); 
                             __pathBuilder
-                                .AddOptionalParameter("check_free_credit", checkFreeCredit?.ToString().ToLowerInvariant()) 
+                                .AddOptionalParameter("check_free_credit", checkFreeCredit?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("team_id", teamId) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::FishAudio.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -137,6 +145,7 @@ namespace FishAudio
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     checkFreeCredit: checkFreeCredit,
+                    teamId: teamId,
                     userId: userId);
 
                 return __httpRequest;
