@@ -167,7 +167,7 @@ namespace FishAudio
                 PrepareCreateTtsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    model: model,
+                    model: model!,
                     request: request);
 
                 return __httpRequest;
