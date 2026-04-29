@@ -34,15 +34,13 @@ namespace FishAudio
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cover_image")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CoverImage { get; set; }
+        public string? CoverImage { get; set; }
 
         /// <summary>
         /// Default Value: full
@@ -189,8 +187,6 @@ namespace FishAudio
         /// <param name="id"></param>
         /// <param name="type"></param>
         /// <param name="title"></param>
-        /// <param name="description"></param>
-        /// <param name="coverImage"></param>
         /// <param name="state"></param>
         /// <param name="tags"></param>
         /// <param name="createdAt"></param>
@@ -201,6 +197,8 @@ namespace FishAudio
         /// <param name="sharedCount"></param>
         /// <param name="taskCount"></param>
         /// <param name="author"></param>
+        /// <param name="description"></param>
+        /// <param name="coverImage"></param>
         /// <param name="trainMode">
         /// Default Value: full
         /// </param>
@@ -236,8 +234,6 @@ namespace FishAudio
             string id,
             global::FishAudio.GetModelResponseType type,
             string title,
-            string description,
-            string coverImage,
             global::FishAudio.GetModelResponseState state,
             global::System.Collections.Generic.IList<string> tags,
             global::System.DateTime createdAt,
@@ -248,6 +244,8 @@ namespace FishAudio
             int sharedCount,
             int taskCount,
             global::FishAudio.AuthorEntity author,
+            string? description,
+            string? coverImage,
             global::FishAudio.GetModelResponseTrainMode? trainMode,
             global::System.Collections.Generic.IList<global::FishAudio.SampleEntity>? samples,
             global::System.Collections.Generic.IList<string>? languages,
@@ -262,8 +260,8 @@ namespace FishAudio
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.CoverImage = coverImage ?? throw new global::System.ArgumentNullException(nameof(coverImage));
+            this.Description = description;
+            this.CoverImage = coverImage;
             this.TrainMode = trainMode;
             this.State = state;
             this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
