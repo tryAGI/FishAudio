@@ -42,7 +42,7 @@ namespace FishAudio
         /// <summary>
         /// 
         /// </summary>
-        public ModelClient Model => new ModelClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ModelClient Model => new ModelClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -51,7 +51,7 @@ namespace FishAudio
         /// <summary>
         /// 
         /// </summary>
-        public OpenAPIV1Client OpenAPIV1 => new OpenAPIV1Client(HttpClient, authorizations: Authorizations, options: Options)
+        public OpenAPIV1Client OpenAPIV1 => new OpenAPIV1Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -60,7 +60,7 @@ namespace FishAudio
         /// <summary>
         /// 
         /// </summary>
-        public WalletClient Wallet => new WalletClient(HttpClient, authorizations: Authorizations, options: Options)
+        public WalletClient Wallet => new WalletClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -99,10 +99,10 @@ namespace FishAudio
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public FishAudioClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::FishAudio.EndPointAuthorization>? authorizations = null,
-            global::FishAudio.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::FishAudio.EndPointAuthorization>? authorizations,
+            global::FishAudio.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
