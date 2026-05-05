@@ -19,6 +19,18 @@ namespace FishAudio
         /// <summary>
         /// Create Model for Users via API
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::FishAudio.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.CreateModelResponse>> CreateModelAsResponseAsync(
+
+            global::FishAudio.CreateModelRequest request,
+            global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Model for Users via API
+        /// </summary>
         /// <param name="visibility">
         /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
         /// Default Value: public

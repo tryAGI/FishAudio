@@ -67,6 +67,38 @@ namespace FishAudio
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetWalletByUserIdApiCreditAsResponseAsync(
+                userId: userId,
+                checkFreeCredit: checkFreeCredit,
+                teamId: teamId,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get API Credit
+        /// </summary>
+        /// <param name="checkFreeCredit">
+        /// Default Value: false
+        /// </param>
+        /// <param name="teamId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="userId">
+        /// Default Value: self
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::FishAudio.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetWalletApiCreditResponse>> GetWalletByUserIdApiCreditAsResponseAsync(
+            string? userId,
+            bool? checkFreeCredit = default,
+            string? teamId = default,
+            global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetWalletByUserIdApiCreditArguments(
@@ -97,12 +129,13 @@ namespace FishAudio
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::FishAudio.PathBuilder(
                                 path: $"/wallet/{userId}/api-credit",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("check_free_credit", checkFreeCredit?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("team_id", teamId) 
+                                .AddOptionalParameter("team_id", teamId)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::FishAudio.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -176,6 +209,8 @@ namespace FishAudio
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -186,6 +221,11 @@ namespace FishAudio
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::FishAudio.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::FishAudio.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -203,6 +243,8 @@ namespace FishAudio
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -212,8 +254,7 @@ namespace FishAudio
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::FishAudio.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -222,6 +263,11 @@ namespace FishAudio
                         __attempt < __maxAttempts &&
                         global::FishAudio.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::FishAudio.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::FishAudio.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::FishAudio.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -238,14 +284,15 @@ namespace FishAudio
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::FishAudio.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -285,6 +332,8 @@ namespace FishAudio
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -305,6 +354,8 @@ namespace FishAudio
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // No permission -- see authorization schemes
@@ -405,9 +456,13 @@ namespace FishAudio
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::FishAudio.GetWalletApiCreditResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::FishAudio.GetWalletApiCreditResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetWalletApiCreditResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::FishAudio.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -435,9 +490,13 @@ namespace FishAudio
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::FishAudio.GetWalletApiCreditResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::FishAudio.GetWalletApiCreditResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetWalletApiCreditResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::FishAudio.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
