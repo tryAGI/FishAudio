@@ -90,5 +90,6 @@ namespace FishAudio
         public ModelAudioQualityEntity()
         {
         }
+
     }
 }

@@ -290,5 +290,6 @@ namespace FishAudio
         public ModelEntity()
         {
         }
+
     }
 }

@@ -62,5 +62,6 @@ namespace FishAudio
         public CreateAsrResponse()
         {
         }
+
     }
 }
