@@ -101,5 +101,6 @@ namespace FishAudio
         public GetWalletApiCreditResponse()
         {
         }
+
     }
 }

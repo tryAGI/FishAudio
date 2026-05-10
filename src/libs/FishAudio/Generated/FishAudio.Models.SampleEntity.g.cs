@@ -70,5 +70,6 @@ namespace FishAudio
         public SampleEntity()
         {
         }
+
     }
 }

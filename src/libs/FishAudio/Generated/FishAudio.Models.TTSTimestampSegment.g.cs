@@ -66,5 +66,6 @@ namespace FishAudio
         public TTSTimestampSegment()
         {
         }
+
     }
 }

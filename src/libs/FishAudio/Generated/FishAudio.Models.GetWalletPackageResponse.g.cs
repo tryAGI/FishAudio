@@ -210,5 +210,6 @@ namespace FishAudio
         public GetWalletPackageResponse()
         {
         }
+
     }
 }

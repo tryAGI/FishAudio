@@ -60,5 +60,6 @@ namespace FishAudio
         public ASRSegment()
         {
         }
+
     }
 }
