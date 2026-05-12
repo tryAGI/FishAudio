@@ -28,12 +28,12 @@ namespace FishAudio
         partial void PrepareCreateTtsStreamWithTimestampArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::FishAudio.CreateTtsStreamWithTimestampModel model,
-            global::FishAudio.TTSRequest request);
+            global::FishAudio.TTSStreamWithTimestampRequest request);
         partial void PrepareCreateTtsStreamWithTimestampRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::FishAudio.CreateTtsStreamWithTimestampModel model,
-            global::FishAudio.TTSRequest request);
+            global::FishAudio.TTSStreamWithTimestampRequest request);
         partial void ProcessCreateTtsStreamWithTimestampResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -68,7 +68,7 @@ namespace FishAudio
         /// </remarks>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::FishAudio.CreateTtsStreamWithTimestampResponse> CreateTtsStreamWithTimestampAsync(
 
-            global::FishAudio.TTSRequest request,
+            global::FishAudio.TTSStreamWithTimestampRequest request,
             global::FishAudio.CreateTtsStreamWithTimestampModel model = global::FishAudio.CreateTtsStreamWithTimestampModel.S2Pro,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
@@ -496,11 +496,11 @@ namespace FishAudio
             global::FishAudio.ProsodyControl? prosody = default,
             int? chunkLength = default,
             bool? normalize = default,
-            global::FishAudio.TTSRequestFormat? format = default,
+            global::FishAudio.TTSStreamWithTimestampRequestFormat? format = default,
             int? sampleRate = default,
             int? mp3Bitrate = default,
             int? opusBitrate = default,
-            global::FishAudio.TTSRequestLatency? latency = default,
+            global::FishAudio.TTSStreamWithTimestampRequestLatency? latency = default,
             int? maxNewTokens = default,
             double? repetitionPenalty = default,
             int? minChunkLength = default,
@@ -509,7 +509,7 @@ namespace FishAudio
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::FishAudio.TTSRequest
+            var __request = new global::FishAudio.TTSStreamWithTimestampRequest
             {
                 Text = text,
                 Temperature = temperature,
