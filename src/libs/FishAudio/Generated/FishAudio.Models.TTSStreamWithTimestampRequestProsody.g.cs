@@ -4,9 +4,10 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Latest cumulative timestamp snapshot for `chunk_seq`. When present, replace the previous alignment for the same `chunk_seq`; do not append segments. Null means no alignment snapshot has been produced yet or alignment is unavailable.
+    /// Speed and volume adjustments for the output.<br/>
+    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
     /// </summary>
-    public sealed partial class CreateTtsStreamWithTimestampResponseAlignment
+    public sealed partial class TTSStreamWithTimestampRequestProsody
     {
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace FishAudio
         /// </remarks>
         global::System.Collections.Generic.IAsyncEnumerable<global::FishAudio.CreateTtsStreamWithTimestampResponse> CreateTtsStreamWithTimestampAsync(
 
-            global::FishAudio.TTSRequest request,
+            global::FishAudio.TTSStreamWithTimestampRequest request,
             global::FishAudio.CreateTtsStreamWithTimestampModel model = global::FishAudio.CreateTtsStreamWithTimestampModel.S2Pro,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -127,11 +127,11 @@ namespace FishAudio
             global::FishAudio.ProsodyControl? prosody = default,
             int? chunkLength = default,
             bool? normalize = default,
-            global::FishAudio.TTSRequestFormat? format = default,
+            global::FishAudio.TTSStreamWithTimestampRequestFormat? format = default,
             int? sampleRate = default,
             int? mp3Bitrate = default,
             int? opusBitrate = default,
-            global::FishAudio.TTSRequestLatency? latency = default,
+            global::FishAudio.TTSStreamWithTimestampRequestLatency? latency = default,
             int? maxNewTokens = default,
             double? repetitionPenalty = default,
             int? minChunkLength = default,
