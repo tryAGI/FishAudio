@@ -61,5 +61,6 @@ namespace FishAudio
         public GetModelResponse()
         {
         }
+
     }
 }

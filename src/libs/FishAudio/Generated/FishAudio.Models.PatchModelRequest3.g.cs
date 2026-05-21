@@ -95,5 +95,6 @@ namespace FishAudio
         public PatchModelRequest3()
         {
         }
+
     }
 }

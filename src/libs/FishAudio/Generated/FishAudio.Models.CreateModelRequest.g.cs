@@ -184,5 +184,6 @@ namespace FishAudio
         public CreateModelRequest()
         {
         }
+
     }
 }
