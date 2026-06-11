@@ -205,9 +205,10 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
                             __prosodySpecified || __prosodyBase is not null
                                 ? new global::FishAudio.ProsodyControl
                                 {
-                                Speed = prosodySpeed,
+	                                Speed = prosodySpeed,
                                 Volume = prosodyVolume,
                                 NormalizeLoudness = prosodyNormalizeLoudness,
+
                                 }
                                 : __prosodyBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
