@@ -42,6 +42,13 @@ using FishAudio;
 using var client = new FishAudioClient(apiKey);
 ```
 
+### CLI
+
+```bash
+dotnet tool install --global FishAudio.CLI --prerelease
+fish-audio api --help
+```
+
 ## MEAI Tools
 ```csharp
 using FishAudio;
