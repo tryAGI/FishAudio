@@ -119,6 +119,12 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        public string? Source { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
         public global::FishAudio.ModelQualityEntity? Quality { get; set; }
 
@@ -215,6 +221,9 @@ namespace FishAudio
         /// Default Value: false
         /// </param>
         /// <param name="defaultText"></param>
+        /// <param name="source">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="quality">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -252,6 +261,7 @@ namespace FishAudio
             bool? lockVisibility,
             bool? dmcaTakenDown,
             string? defaultText,
+            string? source,
             global::FishAudio.ModelQualityEntity? quality,
             bool? unliked,
             bool? liked,
@@ -273,6 +283,7 @@ namespace FishAudio
             this.LockVisibility = lockVisibility;
             this.DmcaTakenDown = dmcaTakenDown;
             this.DefaultText = defaultText;
+            this.Source = source;
             this.Quality = quality;
             this.LikeCount = likeCount;
             this.MarkCount = markCount;
