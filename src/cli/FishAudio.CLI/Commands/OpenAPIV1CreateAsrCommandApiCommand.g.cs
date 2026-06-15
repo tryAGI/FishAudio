@@ -101,8 +101,8 @@ internal static partial class OpenAPIV1CreateAsrCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var audio = parseResult.GetRequiredValue(Audio);
                         var audioname = parseResult.GetRequiredValue(Audioname);
-                        var language = CliRuntime.WasSpecified(parseResult, Language) ? parseResult.GetValue(Language) : __requestBase is not null ? __requestBase.Language : default;
-                        var ignoreTimestamps = CliRuntime.WasSpecified(parseResult, IgnoreTimestamps) ? parseResult.GetValue(IgnoreTimestamps) : __requestBase is not null ? __requestBase.IgnoreTimestamps : default;
+                        var language = CliRuntime.WasSpecified(parseResult, Language) ? parseResult.GetValue(Language) : (__requestBase is { } __LanguageBaseValue ? __LanguageBaseValue.Language : default);
+                        var ignoreTimestamps = CliRuntime.WasSpecified(parseResult, IgnoreTimestamps) ? parseResult.GetValue(IgnoreTimestamps) : (__requestBase is { } __IgnoreTimestampsBaseValue ? __IgnoreTimestampsBaseValue.IgnoreTimestamps : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

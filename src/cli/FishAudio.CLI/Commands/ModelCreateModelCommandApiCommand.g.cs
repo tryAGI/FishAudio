@@ -155,18 +155,18 @@ internal static partial class ModelCreateModelCommandApiCommand
                             RequestFile,
                             global::FishAudio.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var visibility = CliRuntime.WasSpecified(parseResult, Visibility) ? parseResult.GetValue(Visibility) : __requestBase is not null ? __requestBase.Visibility : default;
+                        var visibility = CliRuntime.WasSpecified(parseResult, Visibility) ? parseResult.GetValue(Visibility) : (__requestBase is { } __VisibilityBaseValue ? __VisibilityBaseValue.Visibility : default);
                         var type = parseResult.GetRequiredValue(Type);
                         var title = parseResult.GetRequiredValue(Title);
-                        var description = CliRuntime.WasSpecified(parseResult, DescriptionOption) ? parseResult.GetValue(DescriptionOption) : __requestBase is not null ? __requestBase.Description : default;
-                        var coverImage = CliRuntime.WasSpecified(parseResult, CoverImage) ? parseResult.GetValue(CoverImage) : __requestBase is not null ? __requestBase.CoverImage : default;
-                        var coverImagename = CliRuntime.WasSpecified(parseResult, CoverImagename) ? parseResult.GetValue(CoverImagename) : __requestBase is not null ? __requestBase.CoverImagename : default;
+                        var description = CliRuntime.WasSpecified(parseResult, DescriptionOption) ? parseResult.GetValue(DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
+                        var coverImage = CliRuntime.WasSpecified(parseResult, CoverImage) ? parseResult.GetValue(CoverImage) : (__requestBase is { } __CoverImageBaseValue ? __CoverImageBaseValue.CoverImage : default);
+                        var coverImagename = CliRuntime.WasSpecified(parseResult, CoverImagename) ? parseResult.GetValue(CoverImagename) : (__requestBase is { } __CoverImagenameBaseValue ? __CoverImagenameBaseValue.CoverImagename : default);
                         var trainMode = parseResult.GetRequiredValue(TrainMode);
                         var voices = parseResult.GetRequiredValue(Voices);
-                        var texts = CliRuntime.WasSpecified(parseResult, Texts) ? parseResult.GetValue(Texts) : __requestBase is not null ? __requestBase.Texts : default;
-                        var tags = CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : __requestBase is not null ? __requestBase.Tags : default;
-                        var enhanceAudioQuality = CliRuntime.WasSpecified(parseResult, EnhanceAudioQuality) ? parseResult.GetValue(EnhanceAudioQuality) : __requestBase is not null ? __requestBase.EnhanceAudioQuality : default;
-                        var generateSample = CliRuntime.WasSpecified(parseResult, GenerateSample) ? parseResult.GetValue(GenerateSample) : __requestBase is not null ? __requestBase.GenerateSample : default;
+                        var texts = CliRuntime.WasSpecified(parseResult, Texts) ? parseResult.GetValue(Texts) : (__requestBase is { } __TextsBaseValue ? __TextsBaseValue.Texts : default);
+                        var tags = CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : (__requestBase is { } __TagsBaseValue ? __TagsBaseValue.Tags : default);
+                        var enhanceAudioQuality = CliRuntime.WasSpecified(parseResult, EnhanceAudioQuality) ? parseResult.GetValue(EnhanceAudioQuality) : (__requestBase is { } __EnhanceAudioQualityBaseValue ? __EnhanceAudioQualityBaseValue.EnhanceAudioQuality : default);
+                        var generateSample = CliRuntime.WasSpecified(parseResult, GenerateSample) ? parseResult.GetValue(GenerateSample) : (__requestBase is { } __GenerateSampleBaseValue ? __GenerateSampleBaseValue.GenerateSample : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
