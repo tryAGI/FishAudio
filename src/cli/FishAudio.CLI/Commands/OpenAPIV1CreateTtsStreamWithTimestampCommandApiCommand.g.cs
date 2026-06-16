@@ -197,12 +197,12 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
                         var conditionOnPreviousChunks = CliRuntime.WasSpecified(parseResult, ConditionOnPreviousChunks) ? parseResult.GetValue(ConditionOnPreviousChunks) : (__requestBase is { } __ConditionOnPreviousChunksBaseValue ? __ConditionOnPreviousChunksBaseValue.ConditionOnPreviousChunks : default);
                         var earlyStopThreshold = CliRuntime.WasSpecified(parseResult, EarlyStopThreshold) ? parseResult.GetValue(EarlyStopThreshold) : (__requestBase is { } __EarlyStopThresholdBaseValue ? __EarlyStopThresholdBaseValue.EarlyStopThreshold : default);
 
-                        var __prosodyBase = __requestBase is { } __ProsodyBaseValue ? __ProsodyBaseValue.Prosody : default;                        var prosodySpeed = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Speed) ? parseResult.GetValue(ProsodyOptions.Speed) : (__prosodyBase is { } __ProsodyspeedBaseValue ? __ProsodyspeedBaseValue.Speed : default);
-                        var prosodyVolume = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Volume) ? parseResult.GetValue(ProsodyOptions.Volume) : (__prosodyBase is { } __ProsodyvolumeBaseValue ? __ProsodyvolumeBaseValue.Volume : default);
-                        var prosodyNormalizeLoudness = CliRuntime.WasSpecified(parseResult, ProsodyOptions.NormalizeLoudness) ? parseResult.GetValue(ProsodyOptions.NormalizeLoudness) : (__prosodyBase is { } __ProsodynormalizeLoudnessBaseValue ? __ProsodynormalizeLoudnessBaseValue.NormalizeLoudness : default);
-                        var __prosodySpecified = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Speed) || CliRuntime.WasSpecified(parseResult, ProsodyOptions.Volume) || CliRuntime.WasSpecified(parseResult, ProsodyOptions.NormalizeLoudness);
+                        var __ProsodyBase = __requestBase is { } __ProsodyBaseValue ? __ProsodyBaseValue.Prosody : default;                        var prosodySpeed = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Speed) ? parseResult.GetValue(ProsodyOptions.Speed) : (__ProsodyBase is { } __ProsodyspeedBaseValue ? __ProsodyspeedBaseValue.Speed : default);
+                        var prosodyVolume = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Volume) ? parseResult.GetValue(ProsodyOptions.Volume) : (__ProsodyBase is { } __ProsodyvolumeBaseValue ? __ProsodyvolumeBaseValue.Volume : default);
+                        var prosodyNormalizeLoudness = CliRuntime.WasSpecified(parseResult, ProsodyOptions.NormalizeLoudness) ? parseResult.GetValue(ProsodyOptions.NormalizeLoudness) : (__ProsodyBase is { } __ProsodynormalizeLoudnessBaseValue ? __ProsodynormalizeLoudnessBaseValue.NormalizeLoudness : default);
+                        var __ProsodySpecified = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Speed) || CliRuntime.WasSpecified(parseResult, ProsodyOptions.Volume) || CliRuntime.WasSpecified(parseResult, ProsodyOptions.NormalizeLoudness);
                         var prosody =
-                            __prosodySpecified || __prosodyBase is not null
+                            __ProsodySpecified || __ProsodyBase is not null
                                 ? new global::FishAudio.ProsodyControl
                                 {
 	                                Speed = prosodySpeed,
@@ -210,7 +210,7 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
                                 NormalizeLoudness = prosodyNormalizeLoudness,
 
                                 }
-                                : __prosodyBase;
+                                : __ProsodyBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
