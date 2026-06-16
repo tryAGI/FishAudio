@@ -12,6 +12,7 @@ internal static class OpenAPIV1ApiGroupCommand
                          command.Subcommands.Add(OpenAPIV1CreateAsrCommandApiCommand.Create());
                          command.Subcommands.Add(OpenAPIV1CreateTtsCommandApiCommand.Create());
                          command.Subcommands.Add(OpenAPIV1CreateTtsStreamWithTimestampCommandApiCommand.Create());
+                         command.Subcommands.Add(OpenAPIV1CreateVoiceDesignCommandApiCommand.Create());
         return command;
     }
 }
