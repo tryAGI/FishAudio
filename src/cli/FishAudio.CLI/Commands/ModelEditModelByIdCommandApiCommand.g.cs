@@ -101,12 +101,12 @@ internal static partial class ModelEditModelByIdCommandApiCommand
                             global::FishAudio.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var id = parseResult.GetRequiredValue(Id);
-                        var title = CliRuntime.WasSpecified(parseResult, Title) ? parseResult.GetValue(Title) : __requestBase is not null ? __requestBase.Title : default;
-                        var description = CliRuntime.WasSpecified(parseResult, DescriptionOption) ? parseResult.GetValue(DescriptionOption) : __requestBase is not null ? __requestBase.Description : default;
-                        var coverImage = CliRuntime.WasSpecified(parseResult, CoverImage) ? parseResult.GetValue(CoverImage) : __requestBase is not null ? __requestBase.CoverImage : default;
-                        var coverImagename = CliRuntime.WasSpecified(parseResult, CoverImagename) ? parseResult.GetValue(CoverImagename) : __requestBase is not null ? __requestBase.CoverImagename : default;
-                        var visibility = CliRuntime.WasSpecified(parseResult, Visibility) ? parseResult.GetValue(Visibility) : __requestBase is not null ? __requestBase.Visibility : default;
-                        var tags = CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : __requestBase is not null ? __requestBase.Tags : default;
+                        var title = CliRuntime.WasSpecified(parseResult, Title) ? parseResult.GetValue(Title) : (__requestBase is { } __TitleBaseValue ? __TitleBaseValue.Title : default);
+                        var description = CliRuntime.WasSpecified(parseResult, DescriptionOption) ? parseResult.GetValue(DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
+                        var coverImage = CliRuntime.WasSpecified(parseResult, CoverImage) ? parseResult.GetValue(CoverImage) : (__requestBase is { } __CoverImageBaseValue ? __CoverImageBaseValue.CoverImage : default);
+                        var coverImagename = CliRuntime.WasSpecified(parseResult, CoverImagename) ? parseResult.GetValue(CoverImagename) : (__requestBase is { } __CoverImagenameBaseValue ? __CoverImagenameBaseValue.CoverImagename : default);
+                        var visibility = CliRuntime.WasSpecified(parseResult, Visibility) ? parseResult.GetValue(Visibility) : (__requestBase is { } __VisibilityBaseValue ? __VisibilityBaseValue.Visibility : default);
+                        var tags = CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : (__requestBase is { } __TagsBaseValue ? __TagsBaseValue.Tags : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

@@ -180,29 +180,29 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
                             cancellationToken).ConfigureAwait(false);
                         var model = parseResult.GetRequiredValue(Model);
                         var text = parseResult.GetRequiredValue(Text);
-                        var temperature = CliRuntime.WasSpecified(parseResult, Temperature) ? parseResult.GetValue(Temperature) : __requestBase is not null ? __requestBase.Temperature : default;
-                        var topP = CliRuntime.WasSpecified(parseResult, TopP) ? parseResult.GetValue(TopP) : __requestBase is not null ? __requestBase.TopP : default;
-                        var references = CliRuntime.WasSpecified(parseResult, References) ? parseResult.GetValue(References) : __requestBase is not null ? __requestBase.References : default;
-                        var referenceId = CliRuntime.WasSpecified(parseResult, ReferenceId) ? parseResult.GetValue(ReferenceId) : __requestBase is not null ? __requestBase.ReferenceId : default;
-                        var chunkLength = CliRuntime.WasSpecified(parseResult, ChunkLength) ? parseResult.GetValue(ChunkLength) : __requestBase is not null ? __requestBase.ChunkLength : default;
-                        var normalize = CliRuntime.WasSpecified(parseResult, Normalize) ? parseResult.GetValue(Normalize) : __requestBase is not null ? __requestBase.Normalize : default;
-                        var format = CliRuntime.WasSpecified(parseResult, Format) ? parseResult.GetValue(Format) : __requestBase is not null ? __requestBase.Format : default;
-                        var sampleRate = CliRuntime.WasSpecified(parseResult, SampleRate) ? parseResult.GetValue(SampleRate) : __requestBase is not null ? __requestBase.SampleRate : default;
-                        var mp3Bitrate = CliRuntime.WasSpecified(parseResult, Mp3Bitrate) ? parseResult.GetValue(Mp3Bitrate) : __requestBase is not null ? __requestBase.Mp3Bitrate : default;
-                        var opusBitrate = CliRuntime.WasSpecified(parseResult, OpusBitrate) ? parseResult.GetValue(OpusBitrate) : __requestBase is not null ? __requestBase.OpusBitrate : default;
-                        var latency = CliRuntime.WasSpecified(parseResult, Latency) ? parseResult.GetValue(Latency) : __requestBase is not null ? __requestBase.Latency : default;
-                        var maxNewTokens = CliRuntime.WasSpecified(parseResult, MaxNewTokens) ? parseResult.GetValue(MaxNewTokens) : __requestBase is not null ? __requestBase.MaxNewTokens : default;
-                        var repetitionPenalty = CliRuntime.WasSpecified(parseResult, RepetitionPenalty) ? parseResult.GetValue(RepetitionPenalty) : __requestBase is not null ? __requestBase.RepetitionPenalty : default;
-                        var minChunkLength = CliRuntime.WasSpecified(parseResult, MinChunkLength) ? parseResult.GetValue(MinChunkLength) : __requestBase is not null ? __requestBase.MinChunkLength : default;
-                        var conditionOnPreviousChunks = CliRuntime.WasSpecified(parseResult, ConditionOnPreviousChunks) ? parseResult.GetValue(ConditionOnPreviousChunks) : __requestBase is not null ? __requestBase.ConditionOnPreviousChunks : default;
-                        var earlyStopThreshold = CliRuntime.WasSpecified(parseResult, EarlyStopThreshold) ? parseResult.GetValue(EarlyStopThreshold) : __requestBase is not null ? __requestBase.EarlyStopThreshold : default;
+                        var temperature = CliRuntime.WasSpecified(parseResult, Temperature) ? parseResult.GetValue(Temperature) : (__requestBase is { } __TemperatureBaseValue ? __TemperatureBaseValue.Temperature : default);
+                        var topP = CliRuntime.WasSpecified(parseResult, TopP) ? parseResult.GetValue(TopP) : (__requestBase is { } __TopPBaseValue ? __TopPBaseValue.TopP : default);
+                        var references = CliRuntime.WasSpecified(parseResult, References) ? parseResult.GetValue(References) : (__requestBase is { } __ReferencesBaseValue ? __ReferencesBaseValue.References : default);
+                        var referenceId = CliRuntime.WasSpecified(parseResult, ReferenceId) ? parseResult.GetValue(ReferenceId) : (__requestBase is { } __ReferenceIdBaseValue ? __ReferenceIdBaseValue.ReferenceId : default);
+                        var chunkLength = CliRuntime.WasSpecified(parseResult, ChunkLength) ? parseResult.GetValue(ChunkLength) : (__requestBase is { } __ChunkLengthBaseValue ? __ChunkLengthBaseValue.ChunkLength : default);
+                        var normalize = CliRuntime.WasSpecified(parseResult, Normalize) ? parseResult.GetValue(Normalize) : (__requestBase is { } __NormalizeBaseValue ? __NormalizeBaseValue.Normalize : default);
+                        var format = CliRuntime.WasSpecified(parseResult, Format) ? parseResult.GetValue(Format) : (__requestBase is { } __FormatBaseValue ? __FormatBaseValue.Format : default);
+                        var sampleRate = CliRuntime.WasSpecified(parseResult, SampleRate) ? parseResult.GetValue(SampleRate) : (__requestBase is { } __SampleRateBaseValue ? __SampleRateBaseValue.SampleRate : default);
+                        var mp3Bitrate = CliRuntime.WasSpecified(parseResult, Mp3Bitrate) ? parseResult.GetValue(Mp3Bitrate) : (__requestBase is { } __Mp3BitrateBaseValue ? __Mp3BitrateBaseValue.Mp3Bitrate : default);
+                        var opusBitrate = CliRuntime.WasSpecified(parseResult, OpusBitrate) ? parseResult.GetValue(OpusBitrate) : (__requestBase is { } __OpusBitrateBaseValue ? __OpusBitrateBaseValue.OpusBitrate : default);
+                        var latency = CliRuntime.WasSpecified(parseResult, Latency) ? parseResult.GetValue(Latency) : (__requestBase is { } __LatencyBaseValue ? __LatencyBaseValue.Latency : default);
+                        var maxNewTokens = CliRuntime.WasSpecified(parseResult, MaxNewTokens) ? parseResult.GetValue(MaxNewTokens) : (__requestBase is { } __MaxNewTokensBaseValue ? __MaxNewTokensBaseValue.MaxNewTokens : default);
+                        var repetitionPenalty = CliRuntime.WasSpecified(parseResult, RepetitionPenalty) ? parseResult.GetValue(RepetitionPenalty) : (__requestBase is { } __RepetitionPenaltyBaseValue ? __RepetitionPenaltyBaseValue.RepetitionPenalty : default);
+                        var minChunkLength = CliRuntime.WasSpecified(parseResult, MinChunkLength) ? parseResult.GetValue(MinChunkLength) : (__requestBase is { } __MinChunkLengthBaseValue ? __MinChunkLengthBaseValue.MinChunkLength : default);
+                        var conditionOnPreviousChunks = CliRuntime.WasSpecified(parseResult, ConditionOnPreviousChunks) ? parseResult.GetValue(ConditionOnPreviousChunks) : (__requestBase is { } __ConditionOnPreviousChunksBaseValue ? __ConditionOnPreviousChunksBaseValue.ConditionOnPreviousChunks : default);
+                        var earlyStopThreshold = CliRuntime.WasSpecified(parseResult, EarlyStopThreshold) ? parseResult.GetValue(EarlyStopThreshold) : (__requestBase is { } __EarlyStopThresholdBaseValue ? __EarlyStopThresholdBaseValue.EarlyStopThreshold : default);
 
-                        var __prosodyBase = __requestBase?.Prosody;                        var prosodySpeed = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Speed) ? parseResult.GetValue(ProsodyOptions.Speed) : __prosodyBase is not null ? __prosodyBase.Speed : default;
-                        var prosodyVolume = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Volume) ? parseResult.GetValue(ProsodyOptions.Volume) : __prosodyBase is not null ? __prosodyBase.Volume : default;
-                        var prosodyNormalizeLoudness = CliRuntime.WasSpecified(parseResult, ProsodyOptions.NormalizeLoudness) ? parseResult.GetValue(ProsodyOptions.NormalizeLoudness) : __prosodyBase is not null ? __prosodyBase.NormalizeLoudness : default;
-                        var __prosodySpecified = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Speed) || CliRuntime.WasSpecified(parseResult, ProsodyOptions.Volume) || CliRuntime.WasSpecified(parseResult, ProsodyOptions.NormalizeLoudness);
+                        var __ProsodyBase = __requestBase is { } __ProsodyBaseValue ? __ProsodyBaseValue.Prosody : default;                        var prosodySpeed = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Speed) ? parseResult.GetValue(ProsodyOptions.Speed) : (__ProsodyBase is { } __ProsodyspeedBaseValue ? __ProsodyspeedBaseValue.Speed : default);
+                        var prosodyVolume = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Volume) ? parseResult.GetValue(ProsodyOptions.Volume) : (__ProsodyBase is { } __ProsodyvolumeBaseValue ? __ProsodyvolumeBaseValue.Volume : default);
+                        var prosodyNormalizeLoudness = CliRuntime.WasSpecified(parseResult, ProsodyOptions.NormalizeLoudness) ? parseResult.GetValue(ProsodyOptions.NormalizeLoudness) : (__ProsodyBase is { } __ProsodynormalizeLoudnessBaseValue ? __ProsodynormalizeLoudnessBaseValue.NormalizeLoudness : default);
+                        var __ProsodySpecified = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Speed) || CliRuntime.WasSpecified(parseResult, ProsodyOptions.Volume) || CliRuntime.WasSpecified(parseResult, ProsodyOptions.NormalizeLoudness);
                         var prosody =
-                            __prosodySpecified || __prosodyBase is not null
+                            __ProsodySpecified || __ProsodyBase is not null
                                 ? new global::FishAudio.ProsodyControl
                                 {
 	                                Speed = prosodySpeed,
@@ -210,7 +210,7 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
                                 NormalizeLoudness = prosodyNormalizeLoudness,
 
                                 }
-                                : __prosodyBase;
+                                : __ProsodyBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
