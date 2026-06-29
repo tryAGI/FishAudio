@@ -3,7 +3,84 @@
 !!! tip "Cross-SDK comparison"
     See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
 
-The FishAudio SDK implements `ISpeechToTextClient` and provides `AIFunction` tool wrappers, all compatible with [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai).
+The FishAudio SDK implements `ITextToSpeechClient` and `ISpeechToTextClient`, and provides `AIFunction` tool wrappers, all compatible with [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai).
+
+## ITextToSpeechClient
+
+FishAudio implements `ITextToSpeechClient` for text-to-speech synthesis using
+the `/v1/tts` and `/v1/tts/stream-with-timestamps` endpoints. The default model
+is `s2.1-pro-free`; pass `TextToSpeechOptions.ModelId` to select `s2.1-pro`,
+`s2-pro`, `s1`, or another model string supported by Fish Audio.
+
+```csharp
+using FishAudio;
+using Microsoft.Extensions.AI;
+
+ITextToSpeechClient client = new FishAudioClient(apiKey);
+
+var response = await client.GetAudioAsync(
+    "Hello from Fish Audio.",
+    new TextToSpeechOptions
+    {
+        VoiceId = "your-voice-model-id",
+        ModelId = "s2.1-pro-free",
+        AudioFormat = "mp3",
+    });
+
+var audio = response.Contents.OfType<DataContent>().Single();
+await File.WriteAllBytesAsync("fish-audio.mp3", audio.Data.ToArray());
+```
+
+### Text-to-Speech Options
+
+- **ModelId**: Sets the Fish Audio `model` header. Defaults to `s2.1-pro-free`.
+- **VoiceId**: Maps to Fish Audio `reference_id` for a single voice model.
+- **AudioFormat**: Supports `mp3`, `wav`, `pcm`, and `opus`.
+- **Speed** and **Volume**: Map to Fish Audio `prosody.speed` and `prosody.volume`.
+- **RawRepresentationFactory**: Pass a pre-configured `TTSRequest` or `TTSStreamWithTimestampRequest` for full control.
+
+Use `AdditionalProperties` with `FishAudioTextToSpeechPropertyNames` for
+provider-specific controls such as `Latency`, `SampleRate`, `Temperature`,
+`ChunkLength`, and `NormalizeLoudness`.
+
+```csharp
+var response = await client.GetAudioAsync(
+    "Use low latency synthesis.",
+    new TextToSpeechOptions
+    {
+        VoiceId = "your-voice-model-id",
+        ModelId = "s2.1-pro-free",
+        AudioFormat = "wav",
+        Speed = 1.1f,
+        AdditionalProperties = new()
+        {
+            [FishAudioTextToSpeechPropertyNames.Latency] = "low",
+            [FishAudioTextToSpeechPropertyNames.SampleRate] = 24000,
+        },
+    });
+```
+
+### Streaming Text-to-Speech
+
+`GetStreamingAudioAsync` uses Fish Audio's timestamp streaming endpoint and emits
+MEAI `TextToSpeechResponseUpdate` events. Audio chunks arrive as `DataContent`,
+and the provider event is available in `RawRepresentation`.
+
+```csharp
+await foreach (var update in client.GetStreamingAudioAsync(
+    "Stream this sentence.",
+    new TextToSpeechOptions
+    {
+        VoiceId = "your-voice-model-id",
+        ModelId = "s2.1-pro-free",
+    }))
+{
+    foreach (var chunk in update.Contents.OfType<DataContent>())
+    {
+        await output.WriteAsync(chunk.Data);
+    }
+}
+```
 
 ## ISpeechToTextClient
 
