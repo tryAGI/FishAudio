@@ -42,7 +42,7 @@ namespace FishAudio
         /// Text to Speech Stream with Timestamps
         /// </summary>
         /// <param name="model">
-        /// Default Value: s2-pro
+        /// Default Value: s2.1-pro-free
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -53,7 +53,7 @@ namespace FishAudio
         ///   --url https://api.fish.audio/v1/tts/stream/with-timestamp \<br/>
         ///   --header 'Authorization: Bearer &lt;token&gt;' \<br/>
         ///   --header 'Content-Type: application/json' \<br/>
-        ///   --header 'model: s2-pro' \<br/>
+        ///   --header 'model: s2.1-pro-free' \<br/>
         ///   --data '{<br/>
         ///     "text": "[happy] I can’t believe it’s been this long. It feels like forever since we last really talked. I’ve missed hearing your voice, your stories, even the little things you used to say. How have you been? I’ve thought about calling you so many times, but I never knew where to start. Seeing you again now makes me realize just how much I’ve missed you. We have so much to catch up on, and I don’t even know which part of my life to tell you about first.",<br/>
         ///     "format": "opus",<br/>
@@ -69,7 +69,7 @@ namespace FishAudio
         public async global::System.Collections.Generic.IAsyncEnumerable<global::FishAudio.CreateTtsStreamWithTimestampResponse> CreateTtsStreamWithTimestampAsync(
 
             global::FishAudio.TTSStreamWithTimestampRequest request,
-            global::FishAudio.CreateTtsStreamWithTimestampModel model = global::FishAudio.CreateTtsStreamWithTimestampModel.S2Pro,
+            global::FishAudio.CreateTtsStreamWithTimestampModel model = global::FishAudio.CreateTtsStreamWithTimestampModel.S21ProFree,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -408,7 +408,7 @@ namespace FishAudio
         /// Text to Speech Stream with Timestamps
         /// </summary>
         /// <param name="model">
-        /// Default Value: s2-pro
+        /// Default Value: s2.1-pro-free
         /// </param>
         /// <param name="text">
         /// Text to convert to speech.
@@ -485,7 +485,7 @@ namespace FishAudio
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::FishAudio.CreateTtsStreamWithTimestampResponse> CreateTtsStreamWithTimestampAsync(
             string text,
-            global::FishAudio.CreateTtsStreamWithTimestampModel model = global::FishAudio.CreateTtsStreamWithTimestampModel.S2Pro,
+            global::FishAudio.CreateTtsStreamWithTimestampModel model = global::FishAudio.CreateTtsStreamWithTimestampModel.S21ProFree,
             double? temperature = default,
             double? topP = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>? references = default,
