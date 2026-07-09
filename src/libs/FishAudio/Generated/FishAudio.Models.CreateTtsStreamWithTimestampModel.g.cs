@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Default Value: s2-pro
+    /// Default Value: s2.1-pro-free
     /// </summary>
     public enum CreateTtsStreamWithTimestampModel
     {
@@ -16,6 +16,14 @@ namespace FishAudio
         /// 
         /// </summary>
         S2Pro,
+        /// <summary>
+        /// 
+        /// </summary>
+        S21Pro,
+        /// <summary>
+        /// 
+        /// </summary>
+        S21ProFree,
     }
 
     /// <summary>
@@ -32,6 +40,8 @@ namespace FishAudio
             {
                 CreateTtsStreamWithTimestampModel.S1 => "s1",
                 CreateTtsStreamWithTimestampModel.S2Pro => "s2-pro",
+                CreateTtsStreamWithTimestampModel.S21Pro => "s2.1-pro",
+                CreateTtsStreamWithTimestampModel.S21ProFree => "s2.1-pro-free",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +54,8 @@ namespace FishAudio
             {
                 "s1" => CreateTtsStreamWithTimestampModel.S1,
                 "s2-pro" => CreateTtsStreamWithTimestampModel.S2Pro,
+                "s2.1-pro" => CreateTtsStreamWithTimestampModel.S21Pro,
+                "s2.1-pro-free" => CreateTtsStreamWithTimestampModel.S21ProFree,
                 _ => null,
             };
         }

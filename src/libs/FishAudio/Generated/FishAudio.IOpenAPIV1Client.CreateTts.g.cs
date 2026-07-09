@@ -8,7 +8,7 @@ namespace FishAudio
         /// Text to Speech
         /// </summary>
         /// <param name="model">
-        /// Default Value: s2-pro
+        /// Default Value: s2.1-pro-free
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +19,7 @@ namespace FishAudio
         ///   --url https://api.fish.audio/v1/tts \<br/>
         ///   --header 'Authorization: Bearer &lt;token&gt;' \<br/>
         ///   --header 'Content-Type: application/json' \<br/>
-        ///   --header 'model: s2-pro' \<br/>
+        ///   --header 'model: s2.1-pro-free' \<br/>
         ///   --data '{<br/>
         ///     "text": "Hello! Welcome to Fish Audio.",<br/>
         ///     "reference_id": "model-id",<br/>
@@ -46,14 +46,14 @@ namespace FishAudio
         global::System.Threading.Tasks.Task CreateTtsAsync(
 
             global::FishAudio.TTSRequest request,
-            global::FishAudio.CreateTtsModel model = global::FishAudio.CreateTtsModel.S2Pro,
+            global::FishAudio.CreateTtsModel model = global::FishAudio.CreateTtsModel.S21ProFree,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Text to Speech
         /// </summary>
         /// <param name="model">
-        /// Default Value: s2-pro
+        /// Default Value: s2.1-pro-free
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -64,7 +64,7 @@ namespace FishAudio
         ///   --url https://api.fish.audio/v1/tts \<br/>
         ///   --header 'Authorization: Bearer &lt;token&gt;' \<br/>
         ///   --header 'Content-Type: application/json' \<br/>
-        ///   --header 'model: s2-pro' \<br/>
+        ///   --header 'model: s2.1-pro-free' \<br/>
         ///   --data '{<br/>
         ///     "text": "Hello! Welcome to Fish Audio.",<br/>
         ///     "reference_id": "model-id",<br/>
@@ -91,14 +91,14 @@ namespace FishAudio
         global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse> CreateTtsAsResponseAsync(
 
             global::FishAudio.TTSRequest request,
-            global::FishAudio.CreateTtsModel model = global::FishAudio.CreateTtsModel.S2Pro,
+            global::FishAudio.CreateTtsModel model = global::FishAudio.CreateTtsModel.S21ProFree,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Text to Speech
         /// </summary>
         /// <param name="model">
-        /// Default Value: s2-pro
+        /// Default Value: s2.1-pro-free
         /// </param>
         /// <param name="text">
         /// Text to convert to speech.
@@ -175,7 +175,7 @@ namespace FishAudio
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task CreateTtsAsync(
             string text,
-            global::FishAudio.CreateTtsModel model = global::FishAudio.CreateTtsModel.S2Pro,
+            global::FishAudio.CreateTtsModel model = global::FishAudio.CreateTtsModel.S21ProFree,
             double? temperature = default,
             double? topP = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>? references = default,

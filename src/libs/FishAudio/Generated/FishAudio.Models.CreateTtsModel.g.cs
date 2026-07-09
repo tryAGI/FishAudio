@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Default Value: s2-pro
+    /// Default Value: s2.1-pro-free
     /// </summary>
     public enum CreateTtsModel
     {
@@ -16,6 +16,14 @@ namespace FishAudio
         /// 
         /// </summary>
         S2Pro,
+        /// <summary>
+        /// 
+        /// </summary>
+        S21Pro,
+        /// <summary>
+        /// 
+        /// </summary>
+        S21ProFree,
     }
 
     /// <summary>
@@ -32,6 +40,8 @@ namespace FishAudio
             {
                 CreateTtsModel.S1 => "s1",
                 CreateTtsModel.S2Pro => "s2-pro",
+                CreateTtsModel.S21Pro => "s2.1-pro",
+                CreateTtsModel.S21ProFree => "s2.1-pro-free",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +54,8 @@ namespace FishAudio
             {
                 "s1" => CreateTtsModel.S1,
                 "s2-pro" => CreateTtsModel.S2Pro,
+                "s2.1-pro" => CreateTtsModel.S21Pro,
+                "s2.1-pro-free" => CreateTtsModel.S21ProFree,
                 _ => null,
             };
         }

@@ -307,6 +307,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseState), TypeInfoPropertyName = "GetModelResponseState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseVisibility), TypeInfoPropertyName = "GetModelResponseVisibility2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponse4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.GetModelResponseItem2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseItem2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseItemIn2), TypeInfoPropertyName = "GetModelResponseItemIn22")]

@@ -10,8 +10,8 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
     private static Option<global::FishAudio.CreateTtsStreamWithTimestampModel> Model { get; } = new(
         name: @"--model")
     {
-        Description = @"Specify which TTS model to use. We recommend `s2-pro`.",
-        DefaultValueFactory = _ => global::FishAudio.CreateTtsStreamWithTimestampModel.S2Pro,
+        Description = @"Specify which TTS model to use. Use `s2.1-pro-free` for the free developer tier.",
+        DefaultValueFactory = _ => global::FishAudio.CreateTtsStreamWithTimestampModel.S21ProFree,
     };
 
     private static Option<string> Text { get; } = new(
