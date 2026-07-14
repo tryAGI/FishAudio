@@ -154,6 +154,13 @@ namespace FishAudio
         public double? EarlyStopThreshold { get; set; }
 
         /// <summary>
+        /// Optional request-scoped TTS feature flags forwarded verbatim to the inference backend. Use ["quality-guard"] to enable the quality guard for this synthesis request. Feature availability is determined by the inference backend.<br/>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("features")]
+        public global::System.Collections.Generic.IList<string>? Features { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -232,6 +239,10 @@ namespace FishAudio
         /// Early stopping threshold for batch processing.<br/>
         /// Default Value: 1
         /// </param>
+        /// <param name="features">
+        /// Optional request-scoped TTS feature flags forwarded verbatim to the inference backend. Use ["quality-guard"] to enable the quality guard for this synthesis request. Feature availability is determined by the inference backend.<br/>
+        /// Default Value: []
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -253,7 +264,8 @@ namespace FishAudio
             double? repetitionPenalty,
             int? minChunkLength,
             bool? conditionOnPreviousChunks,
-            double? earlyStopThreshold)
+            double? earlyStopThreshold,
+            global::System.Collections.Generic.IList<string>? features)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Temperature = temperature;
@@ -273,6 +285,7 @@ namespace FishAudio
             this.MinChunkLength = minChunkLength;
             this.ConditionOnPreviousChunks = conditionOnPreviousChunks;
             this.EarlyStopThreshold = earlyStopThreshold;
+            this.Features = features;
         }
 
         /// <summary>
