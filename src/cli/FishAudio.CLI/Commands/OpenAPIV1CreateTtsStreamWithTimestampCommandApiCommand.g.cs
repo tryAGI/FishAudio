@@ -112,6 +112,12 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
     {
         Description = @"Early stopping threshold for batch processing.",
     };
+
+    private static Option<global::System.Collections.Generic.IList<string>?> Features { get; } = new(
+        name: @"--features")
+    {
+        Description = @"Optional request-scoped TTS feature flags forwarded verbatim to the inference backend. Use [""quality-guard""] to enable the quality guard for this synthesis request. Feature availability is determined by the inference backend.",
+    };
     private static readonly ProsodyControlOptionSet ProsodyOptions = ProsodyControlOptionSet.Create(@"prosody");
       private static Option<string?> Input { get; } = new(@"--input")
       {
@@ -150,7 +156,8 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
                         command.Options.Add(RepetitionPenalty);
                         command.Options.Add(MinChunkLength);
                         command.Options.Add(ConditionOnPreviousChunks);
-                        command.Options.Add(EarlyStopThreshold);                        command.Options.Add(ProsodyOptions.Speed);
+                        command.Options.Add(EarlyStopThreshold);
+                        command.Options.Add(Features);                        command.Options.Add(ProsodyOptions.Speed);
                         command.Options.Add(ProsodyOptions.Volume);
                         command.Options.Add(ProsodyOptions.NormalizeLoudness);
           command.Options.Add(Input);
@@ -196,6 +203,7 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
                         var minChunkLength = CliRuntime.WasSpecified(parseResult, MinChunkLength) ? parseResult.GetValue(MinChunkLength) : (__requestBase is { } __MinChunkLengthBaseValue ? __MinChunkLengthBaseValue.MinChunkLength : default);
                         var conditionOnPreviousChunks = CliRuntime.WasSpecified(parseResult, ConditionOnPreviousChunks) ? parseResult.GetValue(ConditionOnPreviousChunks) : (__requestBase is { } __ConditionOnPreviousChunksBaseValue ? __ConditionOnPreviousChunksBaseValue.ConditionOnPreviousChunks : default);
                         var earlyStopThreshold = CliRuntime.WasSpecified(parseResult, EarlyStopThreshold) ? parseResult.GetValue(EarlyStopThreshold) : (__requestBase is { } __EarlyStopThresholdBaseValue ? __EarlyStopThresholdBaseValue.EarlyStopThreshold : default);
+                        var features = CliRuntime.WasSpecified(parseResult, Features) ? parseResult.GetValue(Features) : (__requestBase is { } __FeaturesBaseValue ? __FeaturesBaseValue.Features : default);
 
                         var __ProsodyBase = __requestBase is { } __ProsodyBaseValue ? __ProsodyBaseValue.Prosody : default;                        var prosodySpeed = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Speed) ? parseResult.GetValue(ProsodyOptions.Speed) : (__ProsodyBase is { } __ProsodyspeedBaseValue ? __ProsodyspeedBaseValue.Speed : default);
                         var prosodyVolume = CliRuntime.WasSpecified(parseResult, ProsodyOptions.Volume) ? parseResult.GetValue(ProsodyOptions.Volume) : (__ProsodyBase is { } __ProsodyvolumeBaseValue ? __ProsodyvolumeBaseValue.Volume : default);
@@ -233,6 +241,7 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
                                     minChunkLength: minChunkLength,
                                     conditionOnPreviousChunks: conditionOnPreviousChunks,
                                     earlyStopThreshold: earlyStopThreshold,
+                                    features: features,
                                     prosody: prosody,
                                     cancellationToken: cancellationToken);
 

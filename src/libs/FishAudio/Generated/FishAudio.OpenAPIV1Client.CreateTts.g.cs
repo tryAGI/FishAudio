@@ -669,6 +669,10 @@ namespace FishAudio
         /// Early stopping threshold for batch processing.<br/>
         /// Default Value: 1
         /// </param>
+        /// <param name="features">
+        /// Optional request-scoped TTS feature flags forwarded verbatim to the inference backend. Use ["quality-guard"] to enable the quality guard for this synthesis request. Feature availability is determined by the inference backend.<br/>
+        /// Default Value: []
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -692,6 +696,7 @@ namespace FishAudio
             int? minChunkLength = default,
             bool? conditionOnPreviousChunks = default,
             double? earlyStopThreshold = default,
+            global::System.Collections.Generic.IList<string>? features = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -715,6 +720,7 @@ namespace FishAudio
                 MinChunkLength = minChunkLength,
                 ConditionOnPreviousChunks = conditionOnPreviousChunks,
                 EarlyStopThreshold = earlyStopThreshold,
+                Features = features,
             };
 
             await CreateTtsAsync(
