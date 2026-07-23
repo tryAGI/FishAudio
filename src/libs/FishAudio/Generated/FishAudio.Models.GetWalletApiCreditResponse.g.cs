@@ -32,6 +32,13 @@ namespace FishAudio
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cumulative_top_up")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CumulativeTopUp { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
@@ -68,6 +75,7 @@ namespace FishAudio
         /// <param name="id"></param>
         /// <param name="userId"></param>
         /// <param name="credit"></param>
+        /// <param name="cumulativeTopUp"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="hasPhoneSha256"></param>
@@ -81,6 +89,7 @@ namespace FishAudio
             string id,
             string userId,
             string credit,
+            string cumulativeTopUp,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             bool hasPhoneSha256,
@@ -89,6 +98,7 @@ namespace FishAudio
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
             this.Credit = credit ?? throw new global::System.ArgumentNullException(nameof(credit));
+            this.CumulativeTopUp = cumulativeTopUp ?? throw new global::System.ArgumentNullException(nameof(cumulativeTopUp));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.HasPhoneSha256 = hasPhoneSha256;
