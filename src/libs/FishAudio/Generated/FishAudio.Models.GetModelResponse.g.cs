@@ -9,6 +9,30 @@ namespace FishAudio
     public sealed partial class GetModelResponse
     {
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_offset")]
+        public int? MaxOffset { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("accessible_upper_bound")]
+        public int? AccessibleUpperBound { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("window_limited")]
+        public bool? WindowLimited { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("total_is_exact")]
+        public bool? TotalIsExact { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
@@ -39,6 +63,18 @@ namespace FishAudio
         /// </summary>
         /// <param name="total"></param>
         /// <param name="items"></param>
+        /// <param name="maxOffset">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="accessibleUpperBound">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="windowLimited">
+        /// Default Value: false
+        /// </param>
+        /// <param name="totalIsExact">
+        /// Default Value: true
+        /// </param>
         /// <param name="hasMore">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -48,8 +84,16 @@ namespace FishAudio
         public GetModelResponse(
             int total,
             global::System.Collections.Generic.IList<global::FishAudio.ModelEntity> items,
+            int? maxOffset,
+            int? accessibleUpperBound,
+            bool? windowLimited,
+            bool? totalIsExact,
             bool? hasMore)
         {
+            this.MaxOffset = maxOffset;
+            this.AccessibleUpperBound = accessibleUpperBound;
+            this.WindowLimited = windowLimited;
+            this.TotalIsExact = totalIsExact;
             this.Total = total;
             this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
             this.HasMore = hasMore;

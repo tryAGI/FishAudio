@@ -29,6 +29,10 @@ namespace FishAudio
 
             typeof(global::FishAudio.JsonConverters.ModelEntityVisibilityNullableJsonConverter),
 
+            typeof(global::FishAudio.JsonConverters.ModelEntityPvcReleaseState2JsonConverter),
+
+            typeof(global::FishAudio.JsonConverters.ModelEntityPvcReleaseState2NullableJsonConverter),
+
             typeof(global::FishAudio.JsonConverters.TTSRequestFormatJsonConverter),
 
             typeof(global::FishAudio.JsonConverters.TTSRequestFormatNullableJsonConverter),
@@ -89,18 +93,6 @@ namespace FishAudio
 
             typeof(global::FishAudio.JsonConverters.CreateTtsStreamWithTimestampModelNullableJsonConverter),
 
-            typeof(global::FishAudio.JsonConverters.GetWalletPackageResponseItemInJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetWalletPackageResponseItemInNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetWalletApiCreditResponseItemInJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetWalletApiCreditResponseItemInNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponseItemInJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponseItemInNullableJsonConverter),
-
             typeof(global::FishAudio.JsonConverters.CreateModelResponseTypeJsonConverter),
 
             typeof(global::FishAudio.JsonConverters.CreateModelResponseTypeNullableJsonConverter),
@@ -117,9 +109,9 @@ namespace FishAudio
 
             typeof(global::FishAudio.JsonConverters.CreateModelResponseVisibilityNullableJsonConverter),
 
-            typeof(global::FishAudio.JsonConverters.CreateModelResponseItemInJsonConverter),
+            typeof(global::FishAudio.JsonConverters.CreateModelResponsePvcReleaseState2JsonConverter),
 
-            typeof(global::FishAudio.JsonConverters.CreateModelResponseItemInNullableJsonConverter),
+            typeof(global::FishAudio.JsonConverters.CreateModelResponsePvcReleaseState2NullableJsonConverter),
 
             typeof(global::FishAudio.JsonConverters.GetModelResponseTypeJsonConverter),
 
@@ -137,33 +129,9 @@ namespace FishAudio
 
             typeof(global::FishAudio.JsonConverters.GetModelResponseVisibilityNullableJsonConverter),
 
-            typeof(global::FishAudio.JsonConverters.GetModelResponseItemIn2JsonConverter),
+            typeof(global::FishAudio.JsonConverters.GetModelResponsePvcReleaseState2JsonConverter),
 
-            typeof(global::FishAudio.JsonConverters.GetModelResponseItemIn2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchModelResponseItemInJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchModelResponseItemInNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.DeleteModelResponseItemInJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.DeleteModelResponseItemInNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateTtsResponseItemInJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateTtsResponseItemInNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateTtsStreamWithTimestampResponseItemInJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateTtsStreamWithTimestampResponseItemInNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAsrResponseItemInJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAsrResponseItemInNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateVoiceDesignResponseItemInJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateVoiceDesignResponseItemInNullableJsonConverter),
+            typeof(global::FishAudio.JsonConverters.GetModelResponsePvcReleaseState2NullableJsonConverter),
 
             typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>),
 
@@ -230,8 +198,9 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ModelEntityVisibility), TypeInfoPropertyName = "ModelEntityVisibility2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ModelQualityEntity))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ModelEntityPvcReleaseState2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ModelQualityEntity))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.ModelAudioQualityEntity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ProsodyControl))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ReferenceAudio))]
@@ -279,71 +248,40 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampModel), TypeInfoPropertyName = "CreateTtsStreamWithTimestampModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetWalletPackageResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetWalletPackageResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.GetWalletPackageResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetWalletPackageResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetWalletPackageResponseItemIn), TypeInfoPropertyName = "GetWalletPackageResponseItemIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetWalletApiCreditResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetWalletApiCreditResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.GetWalletApiCreditResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetWalletApiCreditResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetWalletApiCreditResponseItemIn), TypeInfoPropertyName = "GetWalletApiCreditResponseItemIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.ModelEntity>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.GetModelResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseItemIn), TypeInfoPropertyName = "GetModelResponseItemIn2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseType), TypeInfoPropertyName = "CreateModelResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseTrainMode), TypeInfoPropertyName = "CreateModelResponseTrainMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseState), TypeInfoPropertyName = "CreateModelResponseState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseVisibility), TypeInfoPropertyName = "CreateModelResponseVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponsePvcReleaseState2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.CreateModelResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseItemIn), TypeInfoPropertyName = "CreateModelResponseItemIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseType), TypeInfoPropertyName = "GetModelResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseTrainMode), TypeInfoPropertyName = "GetModelResponseTrainMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseState), TypeInfoPropertyName = "GetModelResponseState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseVisibility), TypeInfoPropertyName = "GetModelResponseVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponsePvcReleaseState2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponse4))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.GetModelResponseItem2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseItem2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseItemIn2), TypeInfoPropertyName = "GetModelResponseItemIn22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.PatchModelResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelResponseItemIn), TypeInfoPropertyName = "PatchModelResponseItemIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteModelResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.DeleteModelResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteModelResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteModelResponseItemIn), TypeInfoPropertyName = "DeleteModelResponseItemIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.CreateTtsResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsResponseItemIn), TypeInfoPropertyName = "CreateTtsResponseItemIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.CreateTtsStreamWithTimestampResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampResponseItemIn), TypeInfoPropertyName = "CreateTtsStreamWithTimestampResponseItemIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.ASRSegment>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.CreateAsrResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrResponseItemIn), TypeInfoPropertyName = "CreateAsrResponseItemIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateVoiceDesignResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.VoiceDesignCandidate>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateVoiceDesignResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateVoiceDesignResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.CreateVoiceDesignResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateVoiceDesignResponseItem))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateVoiceDesignResponseItemIn), TypeInfoPropertyName = "CreateVoiceDesignResponseItemIn2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.SampleEntity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.ModelAudioQualityEntity>))]
@@ -356,20 +294,9 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<byte[]>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<global::System.Collections.Generic.List<string>, string, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<global::System.Collections.Generic.List<string>, string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.GetWalletPackageResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.GetWalletApiCreditResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.ModelEntity>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.GetModelResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.CreateModelResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.GetModelResponseItem2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.PatchModelResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.DeleteModelResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.CreateTtsResponseItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.CreateTtsStreamWithTimestampResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.ASRSegment>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.CreateAsrResponseItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.VoiceDesignCandidate>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.CreateVoiceDesignResponseItem>))]
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }

@@ -125,6 +125,36 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pvc_release_state")]
+        public global::FishAudio.ModelEntityPvcReleaseState2? PvcReleaseState { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pvc_notice_period_months")]
+        public int? PvcNoticePeriodMonths { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pvc_released_at")]
+        public global::System.DateTime? PvcReleasedAt { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pvc_retire_requested_at")]
+        public global::System.DateTime? PvcRetireRequestedAt { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pvc_retire_effective_at")]
+        public global::System.DateTime? PvcRetireEffectiveAt { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
         public global::FishAudio.ModelQualityEntity? Quality { get; set; }
 
@@ -224,6 +254,21 @@ namespace FishAudio
         /// <param name="source">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="pvcReleaseState">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="pvcNoticePeriodMonths">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="pvcReleasedAt">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="pvcRetireRequestedAt">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="pvcRetireEffectiveAt">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="quality">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -262,6 +307,11 @@ namespace FishAudio
             bool? dmcaTakenDown,
             string? defaultText,
             string? source,
+            global::FishAudio.ModelEntityPvcReleaseState2? pvcReleaseState,
+            int? pvcNoticePeriodMonths,
+            global::System.DateTime? pvcReleasedAt,
+            global::System.DateTime? pvcRetireRequestedAt,
+            global::System.DateTime? pvcRetireEffectiveAt,
             global::FishAudio.ModelQualityEntity? quality,
             bool? unliked,
             bool? liked,
@@ -284,6 +334,11 @@ namespace FishAudio
             this.DmcaTakenDown = dmcaTakenDown;
             this.DefaultText = defaultText;
             this.Source = source;
+            this.PvcReleaseState = pvcReleaseState;
+            this.PvcNoticePeriodMonths = pvcNoticePeriodMonths;
+            this.PvcReleasedAt = pvcReleasedAt;
+            this.PvcRetireRequestedAt = pvcRetireRequestedAt;
+            this.PvcRetireEffectiveAt = pvcRetireEffectiveAt;
             this.Quality = quality;
             this.LikeCount = likeCount;
             this.MarkCount = markCount;
