@@ -33,12 +33,12 @@ internal static partial class ModelGetModelCommandApiCommand
 
     private static Option<bool?> Self { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--self",
-        description: @"If True, only models created by the user will be returned");
+        description: @"If True, return models owned by the active workspace");
 
     private static Option<string?> AuthorId { get; } = new(
         name: @"--author-id")
     {
-        Description = @"Author ID to filter models, this will be ignored if self is True",
+        Description = @"Author ID to filter public models; ignored if self is True",
     };
 
     private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>?> Language { get; } = new(
