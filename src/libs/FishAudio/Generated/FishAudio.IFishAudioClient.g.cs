@@ -47,12 +47,37 @@ namespace FishAudio
         /// <summary>
         /// 
         /// </summary>
+        public AgentSessionsClient AgentSessions { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AgentToolsClient AgentTools { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AgentsClient Agents { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public KnowledgeSourcesClient KnowledgeSources { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ModelClient Model { get; }
 
         /// <summary>
         /// 
         /// </summary>
         public OpenAPIV1Client OpenAPIV1 { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PhoneNumbersClient PhoneNumbers { get; }
 
         /// <summary>
         /// 
