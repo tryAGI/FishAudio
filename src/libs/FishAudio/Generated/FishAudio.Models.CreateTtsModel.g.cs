@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Default Value: s2.1-pro-free
+    /// Default Value: s2.1-pro
     /// </summary>
     public enum CreateTtsModel
     {

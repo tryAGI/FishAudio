@@ -7,11 +7,10 @@ namespace FishAudio.CLI.Commands;
 
 internal static partial class OpenAPIV1CreateTtsCommandApiCommand
 {
-    private static Option<global::FishAudio.CreateTtsModel> Model { get; } = new(
+    private static Option<global::FishAudio.CreateTtsModel?> Model { get; } = new(
         name: @"--model")
     {
-        Description = @"Specify which TTS model to use. Use `s2.1-pro-free` for the free developer tier.",
-        DefaultValueFactory = _ => global::FishAudio.CreateTtsModel.S21ProFree,
+        Description = @"Specify which TTS model to use. Use `s2.1-pro-free` for the free developer tier. If omitted or set to an unrecognized value, the request falls back to `s2.1-pro`.",
     };
 
     private static Option<string> Text { get; } = new(
@@ -185,7 +184,7 @@ internal static partial class OpenAPIV1CreateTtsCommandApiCommand
                             RequestFile,
                             global::FishAudio.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var model = parseResult.GetRequiredValue(Model);
+                        var model = parseResult.GetValue(Model);
                         var text = parseResult.GetRequiredValue(Text);
                         var temperature = CliRuntime.WasSpecified(parseResult, Temperature) ? parseResult.GetValue(Temperature) : (__requestBase is { } __TemperatureBaseValue ? __TemperatureBaseValue.Temperature : default);
                         var topP = CliRuntime.WasSpecified(parseResult, TopP) ? parseResult.GetValue(TopP) : (__requestBase is { } __TopPBaseValue ? __TopPBaseValue.TopP : default);

@@ -27,12 +27,12 @@ namespace FishAudio
             };
         partial void PrepareCreateTtsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::FishAudio.CreateTtsModel model,
+            ref global::FishAudio.CreateTtsModel? model,
             global::FishAudio.TTSRequest request);
         partial void PrepareCreateTtsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::FishAudio.CreateTtsModel model,
+            global::FishAudio.CreateTtsModel? model,
             global::FishAudio.TTSRequest request);
         partial void ProcessCreateTtsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -42,7 +42,7 @@ namespace FishAudio
         /// Text to Speech
         /// </summary>
         /// <param name="model">
-        /// Default Value: s2.1-pro-free
+        /// Default Value: s2.1-pro
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -80,7 +80,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task CreateTtsAsync(
 
             global::FishAudio.TTSRequest request,
-            global::FishAudio.CreateTtsModel model = global::FishAudio.CreateTtsModel.S21ProFree,
+            global::FishAudio.CreateTtsModel? model = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -96,7 +96,7 @@ namespace FishAudio
         /// Text to Speech
         /// </summary>
         /// <param name="model">
-        /// Default Value: s2.1-pro-free
+        /// Default Value: s2.1-pro
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -134,7 +134,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse> CreateTtsAsResponseAsync(
 
             global::FishAudio.TTSRequest request,
-            global::FishAudio.CreateTtsModel model = global::FishAudio.CreateTtsModel.S21ProFree,
+            global::FishAudio.CreateTtsModel? model = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -203,7 +203,10 @@ namespace FishAudio
                 } 
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("model", model.ToValueString());
+            if (model != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("model", model?.ToValueString() ?? string.Empty);
+            }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -222,7 +225,7 @@ namespace FishAudio
                 PrepareCreateTtsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    model: model!,
+                    model: model,
                     request: request);
 
                 return __httpRequest;
@@ -560,7 +563,7 @@ namespace FishAudio
         /// Text to Speech
         /// </summary>
         /// <param name="model">
-        /// Default Value: s2.1-pro-free
+        /// Default Value: s2.1-pro
         /// </param>
         /// <param name="text">
         /// Text to convert to speech.
@@ -641,7 +644,7 @@ namespace FishAudio
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task CreateTtsAsync(
             string text,
-            global::FishAudio.CreateTtsModel model = global::FishAudio.CreateTtsModel.S21ProFree,
+            global::FishAudio.CreateTtsModel? model = default,
             double? temperature = default,
             double? topP = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>? references = default,

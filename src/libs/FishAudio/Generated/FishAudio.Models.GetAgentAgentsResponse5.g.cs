@@ -1,0 +1,55 @@
+
+#nullable enable
+
+namespace FishAudio
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class GetAgentAgentsResponse5
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Status { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Message { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetAgentAgentsResponse5" /> class.
+        /// </summary>
+        /// <param name="status"></param>
+        /// <param name="message"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public GetAgentAgentsResponse5(
+            int status,
+            string message)
+        {
+            this.Status = status;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetAgentAgentsResponse5" /> class.
+        /// </summary>
+        public GetAgentAgentsResponse5()
+        {
+        }
+
+    }
+}

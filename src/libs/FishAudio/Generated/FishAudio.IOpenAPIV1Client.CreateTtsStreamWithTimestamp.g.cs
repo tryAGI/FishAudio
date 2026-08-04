@@ -8,7 +8,7 @@ namespace FishAudio
         /// Text to Speech Stream with Timestamps
         /// </summary>
         /// <param name="model">
-        /// Default Value: s2.1-pro-free
+        /// Default Value: s2.1-pro
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -35,14 +35,14 @@ namespace FishAudio
         global::System.Collections.Generic.IAsyncEnumerable<global::FishAudio.CreateTtsStreamWithTimestampResponse> CreateTtsStreamWithTimestampAsync(
 
             global::FishAudio.TTSStreamWithTimestampRequest request,
-            global::FishAudio.CreateTtsStreamWithTimestampModel model = global::FishAudio.CreateTtsStreamWithTimestampModel.S21ProFree,
+            global::FishAudio.CreateTtsStreamWithTimestampModel? model = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Text to Speech Stream with Timestamps
         /// </summary>
         /// <param name="model">
-        /// Default Value: s2.1-pro-free
+        /// Default Value: s2.1-pro
         /// </param>
         /// <param name="text">
         /// Text to convert to speech.
@@ -123,7 +123,7 @@ namespace FishAudio
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::FishAudio.CreateTtsStreamWithTimestampResponse> CreateTtsStreamWithTimestampAsync(
             string text,
-            global::FishAudio.CreateTtsStreamWithTimestampModel model = global::FishAudio.CreateTtsStreamWithTimestampModel.S21ProFree,
+            global::FishAudio.CreateTtsStreamWithTimestampModel? model = default,
             double? temperature = default,
             double? topP = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>? references = default,
