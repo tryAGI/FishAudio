@@ -23,7 +23,7 @@ internal sealed record ProsodyControlOptionSet(
                 {
                     Description = @"Volume adjustment in decibels (dB). 0 = no change, positive values = louder, negative values = quieter.",
                 },
-                NormalizeLoudness: CliRuntime.CreateNullableBoolOption(name: $"--{normalizedPrefix}normalize-loudness", description: @"Normalize output loudness for more consistent perceived volume. **S2-Pro only.**")
+                NormalizeLoudness: CliRuntime.CreateNullableBoolOption(name: $"--{normalizedPrefix}normalize-loudness", description: @"Normalize output loudness for more consistent perceived volume. Applies to the S2 family (`s2-pro`, `s2.1-pro`, `s2.1-pro-free`); on `s1` it is accepted but has no effect.")
         );
     }
 }

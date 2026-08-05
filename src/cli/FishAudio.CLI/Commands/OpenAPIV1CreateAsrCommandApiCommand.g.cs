@@ -10,21 +10,21 @@ internal static partial class OpenAPIV1CreateAsrCommandApiCommand
     private static Option<byte[]> Audio { get; } = new(
         name: @"--audio")
     {
-        Description = @"Audio to be converted to text",
+        Description = @"Audio file to be converted to text",
         Required = true,
     };
 
     private static Option<string> Audioname { get; } = new(
         name: @"--audioname")
     {
-        Description = @"Audio to be converted to text",
+        Description = @"Audio file to be converted to text",
         Required = true,
     };
 
     private static Option<string?> Language { get; } = new(
         name: @"--language")
     {
-        Description = @"Language to be used for the speech",
+        Description = @"Optional hint. The language is auto-detected regardless; the detected language is returned as `language_code`.",
     };
 
     private static Option<bool?> IgnoreTimestamps { get; } = CliRuntime.CreateNullableBoolOption(

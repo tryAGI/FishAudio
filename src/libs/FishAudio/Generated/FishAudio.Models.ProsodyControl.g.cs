@@ -23,7 +23,7 @@ namespace FishAudio
         public double? Volume { get; set; }
 
         /// <summary>
-        /// Normalize output loudness for more consistent perceived volume. **S2-Pro only.**<br/>
+        /// Normalize output loudness for more consistent perceived volume. Applies to the S2 family (`s2-pro`, `s2.1-pro`, `s2.1-pro-free`); on `s1` it is accepted but has no effect.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("normalize_loudness")]
@@ -47,7 +47,7 @@ namespace FishAudio
         /// Default Value: 0
         /// </param>
         /// <param name="normalizeLoudness">
-        /// Normalize output loudness for more consistent perceived volume. **S2-Pro only.**<br/>
+        /// Normalize output loudness for more consistent perceived volume. Applies to the S2 family (`s2-pro`, `s2.1-pro`, `s2.1-pro-free`); on `s1` it is accepted but has no effect.<br/>
         /// Default Value: true
         /// </param>
 #if NET7_0_OR_GREATER

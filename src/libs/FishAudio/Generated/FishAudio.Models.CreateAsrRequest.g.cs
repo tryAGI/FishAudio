@@ -9,21 +9,21 @@ namespace FishAudio
     public sealed partial class CreateAsrRequest
     {
         /// <summary>
-        /// Audio to be converted to text
+        /// Audio file to be converted to text
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] Audio { get; set; }
 
         /// <summary>
-        /// Audio to be converted to text
+        /// Audio file to be converted to text
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audioname")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Audioname { get; set; }
 
         /// <summary>
-        /// Language to be used for the speech<br/>
+        /// Optional hint. The language is auto-detected regardless; the detected language is returned as `language_code`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
@@ -46,13 +46,13 @@ namespace FishAudio
         /// Initializes a new instance of the <see cref="CreateAsrRequest" /> class.
         /// </summary>
         /// <param name="audio">
-        /// Audio to be converted to text
+        /// Audio file to be converted to text
         /// </param>
         /// <param name="audioname">
-        /// Audio to be converted to text
+        /// Audio file to be converted to text
         /// </param>
         /// <param name="language">
-        /// Language to be used for the speech<br/>
+        /// Optional hint. The language is auto-detected regardless; the detected language is returned as `language_code`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="ignoreTimestamps">

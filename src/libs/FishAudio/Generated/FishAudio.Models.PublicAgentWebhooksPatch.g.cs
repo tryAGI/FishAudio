@@ -9,10 +9,11 @@ namespace FishAudio
     public sealed partial class PublicAgentWebhooksPatch
     {
         /// <summary>
+        /// Up to 5 endpoints, each receiving every post-call event. Replaces the configured list wholesale; a single object is still accepted and is stored as a one-element list, and null (or an empty list) clears every endpoint. URLs must be unique.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("post_call")]
-        public global::FishAudio.PublicPostCallWebhookPayload? PostCall { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicPostCallWebhookPayload>? PostCall { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,13 +25,14 @@ namespace FishAudio
         /// Initializes a new instance of the <see cref="PublicAgentWebhooksPatch" /> class.
         /// </summary>
         /// <param name="postCall">
+        /// Up to 5 endpoints, each receiving every post-call event. Replaces the configured list wholesale; a single object is still accepted and is stored as a one-element list, and null (or an empty list) clears every endpoint. URLs must be unique.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PublicAgentWebhooksPatch(
-            global::FishAudio.PublicPostCallWebhookPayload? postCall)
+            global::System.Collections.Generic.IList<global::FishAudio.PublicPostCallWebhookPayload>? postCall)
         {
             this.PostCall = postCall;
         }

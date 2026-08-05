@@ -280,1331 +280,1339 @@ namespace FishAudio
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicPostCallWebhookPayload? Type63 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicPostCallWebhookPayload>? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentUpdatePayload? Type64 { get; set; }
+        public global::FishAudio.PublicPostCallWebhookPayload? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentUpdatePayloadStatus2? Type65 { get; set; }
+        public global::FishAudio.PublicAgentUpdatePayload? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item>? Type66 { get; set; }
+        public global::FishAudio.PublicAgentUpdatePayloadStatus2? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item? Type67 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item>? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentAnalysisConfig? Type68 { get; set; }
+        public global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentAnalysisSummaryConfig? Type69 { get; set; }
+        public global::FishAudio.AgentAnalysisConfig? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.AgentAnalysisDataField>? Type70 { get; set; }
+        public global::FishAudio.AgentAnalysisSummaryConfig? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentAnalysisDataField? Type71 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentAnalysisDataField>? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.AgentAnalysisCriterion>? Type72 { get; set; }
+        public global::FishAudio.AgentAnalysisDataField? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentAnalysisCriterion? Type73 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentAnalysisCriterion>? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentAnalysisDataFieldType? Type74 { get; set; }
+        public global::FishAudio.AgentAnalysisCriterion? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentAnalysisSummaryConfigLanguage? Type75 { get; set; }
+        public global::FishAudio.AgentAnalysisDataFieldType? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentConversationConfig? Type76 { get; set; }
+        public global::FishAudio.AgentAnalysisSummaryConfigLanguage? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentConversationConfigEagerness? Type77 { get; set; }
+        public global::FishAudio.AgentConversationConfig? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentConversationConfigInterruptionSensitivity? Type78 { get; set; }
+        public global::FishAudio.AgentConversationConfigEagerness? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.AgentTransferDestination>? Type79 { get; set; }
+        public global::FishAudio.AgentConversationConfigInterruptionSensitivity? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentTransferDestination? Type80 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentTransferDestination>? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentPromptConfig? Type81 { get; set; }
+        public global::FishAudio.AgentTransferDestination? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentPromptConfigFirstMessageMode? Type82 { get; set; }
+        public global::FishAudio.AgentPromptConfig? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentSystemToolsConfig? Type83 { get; set; }
+        public global::FishAudio.AgentPromptConfigFirstMessageMode? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentTransferDestinationMode? Type84 { get; set; }
+        public global::FishAudio.AgentSystemToolsConfig? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentTransferDestinationWarmConnect? Type85 { get; set; }
+        public global::FishAudio.AgentTransferDestinationMode? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentVoiceConfig? Type86 { get; set; }
+        public global::FishAudio.AgentTransferDestinationWarmConnect? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentVoiceConfigSpeakingLanguage? Type87 { get; set; }
+        public global::FishAudio.AgentVoiceConfig? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentKnowledgeBaseConfig? Type88 { get; set; }
+        public global::FishAudio.AgentVoiceConfigSpeakingLanguage? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentToolsConfig? Type89 { get; set; }
+        public global::FishAudio.PublicAgentKnowledgeBaseConfig? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentWebhooksConfig? Type90 { get; set; }
+        public global::FishAudio.PublicAgentToolsConfig? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicPostCallWebhook? Type91 { get; set; }
+        public global::FishAudio.PublicAgentWebhooksConfig? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentVersionSummary? Type92 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicPostCallWebhook>? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentConfigEntity? Type93 { get; set; }
+        public global::FishAudio.PublicPostCallWebhook? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicKnowledgeSourceSummary? Type94 { get; set; }
+        public global::FishAudio.PublicAgentVersionSummary? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public long? Type95 { get; set; }
+        public global::FishAudio.PublicAgentConfigEntity? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicDependentAgent? Type96 { get; set; }
+        public global::FishAudio.PublicKnowledgeSourceSummary? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentToolSummary? Type97 { get; set; }
+        public long? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentToolSummaryToolType? Type98 { get; set; }
+        public global::FishAudio.PublicDependentAgent? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentToolSummaryMethod? Type99 { get; set; }
+        public global::FishAudio.PublicAgentToolSummary? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentWebhookArgumentPayload? Type100 { get; set; }
+        public global::FishAudio.PublicAgentToolSummaryToolType? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentWebhookHeaderPayload? Type101 { get; set; }
+        public global::FishAudio.PublicAgentToolSummaryMethod? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentWebhookHeaderPayloadKind? Type102 { get; set; }
+        public global::FishAudio.AgentWebhookArgumentPayload? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AgentWebhookMockResponsePayload? Type103 { get; set; }
+        public global::FishAudio.AgentWebhookHeaderPayload? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentToolCreatePayload? Type104 { get; set; }
+        public global::FishAudio.AgentWebhookHeaderPayloadKind? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentToolCreatePayloadToolType? Type105 { get; set; }
+        public global::FishAudio.AgentWebhookMockResponsePayload? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookArgumentPayload>? Type106 { get; set; }
+        public global::FishAudio.PublicAgentToolCreatePayload? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentToolCreatePayloadMethod? Type107 { get; set; }
+        public global::FishAudio.PublicAgentToolCreatePayloadToolType? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookHeaderPayload>? Type108 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookArgumentPayload>? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentToolCreatePayloadErrorHandling? Type109 { get; set; }
+        public global::FishAudio.PublicAgentToolCreatePayloadMethod? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>? Type110 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookHeaderPayload>? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicToolHeader? Type111 { get; set; }
+        public global::FishAudio.PublicAgentToolCreatePayloadErrorHandling? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicToolHeaderKind? Type112 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentToolUpdatePayload? Type113 { get; set; }
+        public global::FishAudio.PublicToolHeader? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentToolUpdatePayloadMethod2? Type114 { get; set; }
+        public global::FishAudio.PublicToolHeaderKind? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling2? Type115 { get; set; }
+        public global::FishAudio.PublicAgentToolUpdatePayload? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicPhoneNumberEntity? Type116 { get; set; }
+        public global::FishAudio.PublicAgentToolUpdatePayloadMethod2? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicPhoneNumberEntityProvider? Type117 { get; set; }
+        public global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling2? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicPhoneNumberEntityStatus? Type118 { get; set; }
+        public global::FishAudio.PublicPhoneNumberEntity? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicPhoneNumberPurchasePayload? Type119 { get; set; }
+        public global::FishAudio.PublicPhoneNumberEntityProvider? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PublicPhoneNumberUpdatePayload? Type120 { get; set; }
+        public global::FishAudio.PublicPhoneNumberEntityStatus? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ASRSegment? Type121 { get; set; }
+        public global::FishAudio.PublicPhoneNumberPurchasePayload? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ProsodyControl? Type122 { get; set; }
+        public global::FishAudio.PublicPhoneNumberUpdatePayload? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ReferenceAudio? Type123 { get; set; }
+        public global::FishAudio.ASRSegment? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type124 { get; set; }
+        public global::FishAudio.ProsodyControl? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.TTSRequest? Type125 { get; set; }
+        public global::FishAudio.ReferenceAudio? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>? Type126 { get; set; }
+        public byte[]? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>? Type127 { get; set; }
+        public global::FishAudio.TTSRequest? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>? Type128 { get; set; }
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Type129 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.TTSRequestFormat? Type130 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.TTSRequestLatency? Type131 { get; set; }
+        public global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.TTSStreamWithTimestampRequest? Type132 { get; set; }
+        public global::FishAudio.TTSRequestFormat? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.TTSStreamWithTimestampRequestFormat? Type133 { get; set; }
+        public global::FishAudio.TTSRequestLatency? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.TTSStreamWithTimestampRequestLatency? Type134 { get; set; }
+        public global::FishAudio.TTSStreamWithTimestampRequest? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.TTSTimestampAlignment? Type135 { get; set; }
+        public global::FishAudio.TTSStreamWithTimestampRequestFormat? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.TTSTimestampSegment>? Type136 { get; set; }
+        public global::FishAudio.TTSStreamWithTimestampRequestLatency? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.TTSTimestampSegment? Type137 { get; set; }
+        public global::FishAudio.TTSTimestampAlignment? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.VoiceDesignRequest? Type138 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.TTSTimestampSegment>? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.VoiceDesignCandidate? Type139 { get; set; }
+        public global::FishAudio.TTSTimestampSegment? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AuthorEntity? Type140 { get; set; }
+        public global::FishAudio.VoiceDesignRequest? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ModelAudioQualityEntity? Type141 { get; set; }
+        public global::FishAudio.VoiceDesignCandidate? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, double>? Type142 { get; set; }
+        public global::FishAudio.AuthorEntity? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ModelEntity? Type143 { get; set; }
+        public global::FishAudio.ModelAudioQualityEntity? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ModelEntityType? Type144 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ModelEntityTrainMode? Type145 { get; set; }
+        public global::FishAudio.ModelEntity? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ModelEntityState? Type146 { get; set; }
+        public global::FishAudio.ModelEntityType? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.SampleEntity>? Type147 { get; set; }
+        public global::FishAudio.ModelEntityTrainMode? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.SampleEntity? Type148 { get; set; }
+        public global::FishAudio.ModelEntityState? Type148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ModelEntityVisibility? Type149 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.SampleEntity>? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ModelEntityPvcReleaseState2? Type150 { get; set; }
+        public global::FishAudio.SampleEntity? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ModelQualityEntity? Type151 { get; set; }
+        public global::FishAudio.ModelEntityVisibility? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.ModelAudioQualityEntity>? Type152 { get; set; }
+        public global::FishAudio.ModelEntityPvcReleaseState2? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsPublishRequest? Type153 { get; set; }
+        public global::FishAudio.ModelQualityEntity? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentKnowledgeSourcesRequest? Type154 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.ModelAudioQualityEntity>? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentKnowledgeSourcesRequest? Type155 { get; set; }
+        public global::FishAudio.CreateAgentAgentsPublishRequest? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAsrRequest? Type156 { get; set; }
+        public global::FishAudio.CreateAgentKnowledgeSourcesRequest? Type156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAsrRequest2? Type157 { get; set; }
+        public global::FishAudio.PatchAgentKnowledgeSourcesRequest? Type157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelRequest? Type158 { get; set; }
+        public global::FishAudio.CreateAsrRequest? Type158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelRequestVisibility? Type159 { get; set; }
+        public global::FishAudio.CreateAsrRequest2? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<byte[]>, byte[]>? Type160 { get; set; }
+        public global::FishAudio.CreateModelRequest? Type160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<byte[]>? Type161 { get; set; }
+        public global::FishAudio.CreateModelRequestVisibility? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Type162 { get; set; }
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<byte[]>, byte[]>? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelRequest2? Type163 { get; set; }
+        public global::System.Collections.Generic.IList<byte[]>? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelRequestVisibility2? Type164 { get; set; }
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelRequest3? Type165 { get; set; }
+        public global::FishAudio.CreateModelRequest2? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelRequestVisibility3? Type166 { get; set; }
+        public global::FishAudio.CreateModelRequestVisibility2? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelRequest4? Type167 { get; set; }
+        public global::FishAudio.CreateModelRequest3? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelRequestVisibility4? Type168 { get; set; }
+        public global::FishAudio.CreateModelRequestVisibility3? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchModelRequest? Type169 { get; set; }
+        public global::FishAudio.CreateModelRequest4? Type169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchModelRequestVisibility2? Type170 { get; set; }
+        public global::FishAudio.CreateModelRequestVisibility4? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? Type171 { get; set; }
+        public global::FishAudio.PatchModelRequest? Type171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchModelRequest2? Type172 { get; set; }
+        public global::FishAudio.PatchModelRequestVisibility2? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchModelRequestVisibility4? Type173 { get; set; }
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchModelRequest3? Type174 { get; set; }
+        public global::FishAudio.PatchModelRequest2? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchModelRequestVisibility6? Type175 { get; set; }
+        public global::FishAudio.PatchModelRequestVisibility4? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchModelRequest4? Type176 { get; set; }
+        public global::FishAudio.PatchModelRequest3? Type176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchModelRequestVisibility8? Type177 { get; set; }
+        public global::FishAudio.PatchModelRequestVisibility6? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsPublicationState? Type178 { get; set; }
+        public global::FishAudio.PatchModelRequest4? Type178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAvailablePhoneNumbersNumberType? Type179 { get; set; }
+        public global::FishAudio.PatchModelRequestVisibility8? Type179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateTtsModel? Type180 { get; set; }
+        public global::FishAudio.GetAgentAgentsPublicationState? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateTtsStreamWithTimestampModel? Type181 { get; set; }
+        public global::FishAudio.GetAgentAvailablePhoneNumbersNumberType? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetModelSortBy? Type182 { get; set; }
+        public global::FishAudio.CreateTtsModel? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetWalletPackageResponse? Type183 { get; set; }
+        public global::FishAudio.CreateTtsStreamWithTimestampModel? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetWalletPackageResponse2? Type184 { get; set; }
+        public global::FishAudio.GetModelSortBy? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetWalletApiCreditResponse? Type185 { get; set; }
+        public global::FishAudio.GetWalletPackageResponse? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetWalletApiCreditResponse2? Type186 { get; set; }
+        public global::FishAudio.GetWalletPackageResponse2? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponse? Type187 { get; set; }
+        public global::FishAudio.GetWalletApiCreditResponse? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionSummary>? Type188 { get; set; }
+        public global::FishAudio.GetWalletApiCreditResponse2? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponse2? Type189 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponse? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponse3? Type190 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionSummary>? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsResponse? Type191 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponse2? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsResponse2? Type192 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponse3? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsResponse3? Type193 { get; set; }
+        public global::FishAudio.CreateAgentSessionsResponse? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsResponse4? Type194 { get; set; }
+        public global::FishAudio.CreateAgentSessionsResponse2? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsResponse5? Type195 { get; set; }
+        public global::FishAudio.CreateAgentSessionsResponse3? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsResponse6? Type196 { get; set; }
+        public global::FishAudio.CreateAgentSessionsResponse4? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsResponse7? Type197 { get; set; }
+        public global::FishAudio.CreateAgentSessionsResponse5? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsResponse8? Type198 { get; set; }
+        public global::FishAudio.CreateAgentSessionsResponse6? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsResponse9? Type199 { get; set; }
+        public global::FishAudio.CreateAgentSessionsResponse7? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsResponse10? Type200 { get; set; }
+        public global::FishAudio.CreateAgentSessionsResponse8? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponse4? Type201 { get; set; }
+        public global::FishAudio.CreateAgentSessionsResponse9? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponseStatus? Type202 { get; set; }
+        public global::FishAudio.CreateAgentSessionsResponse10? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponseSource? Type203 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponse4? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.ItemsItem>? Type204 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponseStatus? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.ItemsItem? Type205 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponseSource? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponseItemDiscriminator? Type206 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.ItemsItem>? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType? Type207 { get; set; }
+        public global::FishAudio.ItemsItem? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponse5? Type208 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponseItemDiscriminator? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponse6? Type209 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponse7? Type210 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponse5? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsRecordingResponse? Type211 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponse6? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsRecordingResponseStatus? Type212 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponse7? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionRecordingTrackEntity>? Type213 { get; set; }
+        public global::FishAudio.GetAgentSessionsRecordingResponse? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsRecordingResponse2? Type214 { get; set; }
+        public global::FishAudio.GetAgentSessionsRecordingResponseStatus? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsRecordingResponse3? Type215 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionRecordingTrackEntity>? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentSessionsRecordingResponse4? Type216 { get; set; }
+        public global::FishAudio.GetAgentSessionsRecordingResponse2? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsEndResponse? Type217 { get; set; }
+        public global::FishAudio.GetAgentSessionsRecordingResponse3? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsEndResponse2? Type218 { get; set; }
+        public global::FishAudio.GetAgentSessionsRecordingResponse4? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentSessionsEndResponse3? Type219 { get; set; }
+        public global::FishAudio.CreateAgentSessionsEndResponse? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsResponse? Type220 { get; set; }
+        public global::FishAudio.CreateAgentSessionsEndResponse2? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.PublicAgentEntity>? Type221 { get; set; }
+        public global::FishAudio.CreateAgentSessionsEndResponse3? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsResponse2? Type222 { get; set; }
+        public global::FishAudio.GetAgentAgentsResponse? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsResponse3? Type223 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicAgentEntity>? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsResponse? Type224 { get; set; }
+        public global::FishAudio.GetAgentAgentsResponse2? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsResponseStatus? Type225 { get; set; }
+        public global::FishAudio.GetAgentAgentsResponse3? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsResponsePublicationState? Type226 { get; set; }
+        public global::FishAudio.CreateAgentAgentsResponse? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem>? Type227 { get; set; }
+        public global::FishAudio.CreateAgentAgentsResponseStatus? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem? Type228 { get; set; }
+        public global::FishAudio.CreateAgentAgentsResponsePublicationState? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsResponse2? Type229 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem>? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsResponse3? Type230 { get; set; }
+        public global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsResponse4? Type231 { get; set; }
+        public global::FishAudio.CreateAgentAgentsResponse2? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsResponse5? Type232 { get; set; }
+        public global::FishAudio.CreateAgentAgentsResponse3? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsResponse4? Type233 { get; set; }
+        public global::FishAudio.CreateAgentAgentsResponse4? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsResponseStatus? Type234 { get; set; }
+        public global::FishAudio.CreateAgentAgentsResponse5? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsResponsePublicationState? Type235 { get; set; }
+        public global::FishAudio.GetAgentAgentsResponse4? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.GetAgentAgentsResponseOverridesAllowedItem>? Type236 { get; set; }
+        public global::FishAudio.GetAgentAgentsResponseStatus? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsResponseOverridesAllowedItem? Type237 { get; set; }
+        public global::FishAudio.GetAgentAgentsResponsePublicationState? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsResponse5? Type238 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.GetAgentAgentsResponseOverridesAllowedItem>? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsResponse6? Type239 { get; set; }
+        public global::FishAudio.GetAgentAgentsResponseOverridesAllowedItem? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentAgentsResponse? Type240 { get; set; }
+        public global::FishAudio.GetAgentAgentsResponse5? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentAgentsResponseStatus? Type241 { get; set; }
+        public global::FishAudio.GetAgentAgentsResponse6? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentAgentsResponsePublicationState? Type242 { get; set; }
+        public global::FishAudio.PatchAgentAgentsResponse? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.PatchAgentAgentsResponseOverridesAllowedItem>? Type243 { get; set; }
+        public global::FishAudio.PatchAgentAgentsResponseStatus? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentAgentsResponseOverridesAllowedItem? Type244 { get; set; }
+        public global::FishAudio.PatchAgentAgentsResponsePublicationState? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentAgentsResponse2? Type245 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PatchAgentAgentsResponseOverridesAllowedItem>? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentAgentsResponse3? Type246 { get; set; }
+        public global::FishAudio.PatchAgentAgentsResponseOverridesAllowedItem? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentAgentsResponse4? Type247 { get; set; }
+        public global::FishAudio.PatchAgentAgentsResponse2? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.DeleteAgentAgentsResponse? Type248 { get; set; }
+        public global::FishAudio.PatchAgentAgentsResponse3? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.DeleteAgentAgentsResponse2? Type249 { get; set; }
+        public global::FishAudio.PatchAgentAgentsResponse4? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsWidgetResponse? Type250 { get; set; }
+        public global::FishAudio.DeleteAgentAgentsResponse? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsWidgetResponse2? Type251 { get; set; }
+        public global::FishAudio.DeleteAgentAgentsResponse2? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsWidgetResponse3? Type252 { get; set; }
+        public global::FishAudio.GetAgentAgentsWidgetResponse? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsConfigResponse? Type253 { get; set; }
+        public global::FishAudio.GetAgentAgentsWidgetResponse2? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsConfigResponse2? Type254 { get; set; }
+        public global::FishAudio.GetAgentAgentsWidgetResponse3? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsConfigResponse3? Type255 { get; set; }
+        public global::FishAudio.GetAgentAgentsConfigResponse? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentAgentsConfigResponse? Type256 { get; set; }
+        public global::FishAudio.GetAgentAgentsConfigResponse2? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentAgentsConfigResponse2? Type257 { get; set; }
+        public global::FishAudio.GetAgentAgentsConfigResponse3? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentAgentsConfigResponse3? Type258 { get; set; }
+        public global::FishAudio.PatchAgentAgentsConfigResponse? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentAgentsConfigResponse4? Type259 { get; set; }
+        public global::FishAudio.PatchAgentAgentsConfigResponse2? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsPublishResponse? Type260 { get; set; }
+        public global::FishAudio.PatchAgentAgentsConfigResponse3? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsPublishResponse2? Type261 { get; set; }
+        public global::FishAudio.PatchAgentAgentsConfigResponse4? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsPublishResponse3? Type262 { get; set; }
+        public global::FishAudio.CreateAgentAgentsPublishResponse? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentAgentsPublishResponse4? Type263 { get; set; }
+        public global::FishAudio.CreateAgentAgentsPublishResponse2? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsVersionsResponse? Type264 { get; set; }
+        public global::FishAudio.CreateAgentAgentsPublishResponse3? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.PublicAgentVersionSummary>? Type265 { get; set; }
+        public global::FishAudio.CreateAgentAgentsPublishResponse4? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsVersionsResponse2? Type266 { get; set; }
+        public global::FishAudio.GetAgentAgentsVersionsResponse? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsVersionsResponse3? Type267 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicAgentVersionSummary>? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsVersionsResponse4? Type268 { get; set; }
+        public global::FishAudio.GetAgentAgentsVersionsResponse2? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsVersionsResponse5? Type269 { get; set; }
+        public global::FishAudio.GetAgentAgentsVersionsResponse3? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsVersionsResponse6? Type270 { get; set; }
+        public global::FishAudio.GetAgentAgentsVersionsResponse4? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAgentsVersionsResponse7? Type271 { get; set; }
+        public global::FishAudio.GetAgentAgentsVersionsResponse5? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAvailablePhoneNumbersResponse? Type272 { get; set; }
+        public global::FishAudio.GetAgentAgentsVersionsResponse6? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type273 { get; set; }
+        public global::FishAudio.GetAgentAgentsVersionsResponse7? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAvailablePhoneNumbersResponse2? Type274 { get; set; }
+        public global::FishAudio.GetAgentAvailablePhoneNumbersResponse? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAvailablePhoneNumbersResponse3? Type275 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentAvailablePhoneNumbersResponse4? Type276 { get; set; }
+        public global::FishAudio.GetAgentAvailablePhoneNumbersResponse2? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentKnowledgeSourcesResponse? Type277 { get; set; }
+        public global::FishAudio.GetAgentAvailablePhoneNumbersResponse3? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.PublicKnowledgeSourceSummary>? Type278 { get; set; }
+        public global::FishAudio.GetAgentAvailablePhoneNumbersResponse4? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentKnowledgeSourcesResponse2? Type279 { get; set; }
+        public global::FishAudio.GetAgentKnowledgeSourcesResponse? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentKnowledgeSourcesResponse3? Type280 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicKnowledgeSourceSummary>? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentKnowledgeSourcesResponse? Type281 { get; set; }
+        public global::FishAudio.GetAgentKnowledgeSourcesResponse2? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentKnowledgeSourcesResponse2? Type282 { get; set; }
+        public global::FishAudio.GetAgentKnowledgeSourcesResponse3? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentKnowledgeSourcesResponse3? Type283 { get; set; }
+        public global::FishAudio.CreateAgentKnowledgeSourcesResponse? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentKnowledgeSourcesResponse4? Type284 { get; set; }
+        public global::FishAudio.CreateAgentKnowledgeSourcesResponse2? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentKnowledgeSourcesResponse5? Type285 { get; set; }
+        public global::FishAudio.CreateAgentKnowledgeSourcesResponse3? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentKnowledgeSourcesResponse6? Type286 { get; set; }
+        public global::FishAudio.CreateAgentKnowledgeSourcesResponse4? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentKnowledgeSourcesResponse4? Type287 { get; set; }
+        public global::FishAudio.CreateAgentKnowledgeSourcesResponse5? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentKnowledgeSourcesResponse5? Type288 { get; set; }
+        public global::FishAudio.CreateAgentKnowledgeSourcesResponse6? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentKnowledgeSourcesResponse6? Type289 { get; set; }
+        public global::FishAudio.GetAgentKnowledgeSourcesResponse4? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentKnowledgeSourcesResponse? Type290 { get; set; }
+        public global::FishAudio.GetAgentKnowledgeSourcesResponse5? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentKnowledgeSourcesResponse2? Type291 { get; set; }
+        public global::FishAudio.GetAgentKnowledgeSourcesResponse6? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentKnowledgeSourcesResponse3? Type292 { get; set; }
+        public global::FishAudio.PatchAgentKnowledgeSourcesResponse? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentKnowledgeSourcesResponse4? Type293 { get; set; }
+        public global::FishAudio.PatchAgentKnowledgeSourcesResponse2? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentKnowledgeSourcesResponse5? Type294 { get; set; }
+        public global::FishAudio.PatchAgentKnowledgeSourcesResponse3? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.DeleteAgentKnowledgeSourcesResponse? Type295 { get; set; }
+        public global::FishAudio.PatchAgentKnowledgeSourcesResponse4? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.DeleteAgentKnowledgeSourcesResponse2? Type296 { get; set; }
+        public global::FishAudio.PatchAgentKnowledgeSourcesResponse5? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.DeleteAgentKnowledgeSourcesResponse3? Type297 { get; set; }
+        public global::FishAudio.DeleteAgentKnowledgeSourcesResponse? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentKnowledgeSourcesAgentsResponse? Type298 { get; set; }
+        public global::FishAudio.DeleteAgentKnowledgeSourcesResponse2? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.PublicDependentAgent>? Type299 { get; set; }
+        public global::FishAudio.DeleteAgentKnowledgeSourcesResponse3? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentKnowledgeSourcesAgentsResponse2? Type300 { get; set; }
+        public global::FishAudio.GetAgentKnowledgeSourcesAgentsResponse? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentKnowledgeSourcesAgentsResponse3? Type301 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicDependentAgent>? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsResponse? Type302 { get; set; }
+        public global::FishAudio.GetAgentKnowledgeSourcesAgentsResponse2? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.PublicAgentToolSummary>? Type303 { get; set; }
+        public global::FishAudio.GetAgentKnowledgeSourcesAgentsResponse3? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsResponse2? Type304 { get; set; }
+        public global::FishAudio.GetAgentToolsResponse? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsResponse3? Type305 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicAgentToolSummary>? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsResponse4? Type306 { get; set; }
+        public global::FishAudio.GetAgentToolsResponse2? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentToolsResponse? Type307 { get; set; }
+        public global::FishAudio.GetAgentToolsResponse3? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentToolsResponseToolType? Type308 { get; set; }
+        public global::FishAudio.GetAgentToolsResponse4? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentToolsResponseMethod? Type309 { get; set; }
+        public global::FishAudio.CreateAgentToolsResponse? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.PublicToolHeader>? Type310 { get; set; }
+        public global::FishAudio.CreateAgentToolsResponseToolType? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentToolsResponseErrorHandling? Type311 { get; set; }
+        public global::FishAudio.CreateAgentToolsResponseMethod? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentToolsResponse2? Type312 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicToolHeader>? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentToolsResponse3? Type313 { get; set; }
+        public global::FishAudio.CreateAgentToolsResponseErrorHandling? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsResponse5? Type314 { get; set; }
+        public global::FishAudio.CreateAgentToolsResponse2? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsResponseToolType? Type315 { get; set; }
+        public global::FishAudio.CreateAgentToolsResponse3? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsResponseMethod? Type316 { get; set; }
+        public global::FishAudio.GetAgentToolsResponse5? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsResponseErrorHandling? Type317 { get; set; }
+        public global::FishAudio.GetAgentToolsResponseToolType? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsResponse6? Type318 { get; set; }
+        public global::FishAudio.GetAgentToolsResponseMethod? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsResponse7? Type319 { get; set; }
+        public global::FishAudio.GetAgentToolsResponseErrorHandling? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentToolsResponse? Type320 { get; set; }
+        public global::FishAudio.GetAgentToolsResponse6? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentToolsResponseToolType? Type321 { get; set; }
+        public global::FishAudio.GetAgentToolsResponse7? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentToolsResponseMethod? Type322 { get; set; }
+        public global::FishAudio.PatchAgentToolsResponse? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentToolsResponseErrorHandling? Type323 { get; set; }
+        public global::FishAudio.PatchAgentToolsResponseToolType? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentToolsResponse2? Type324 { get; set; }
+        public global::FishAudio.PatchAgentToolsResponseMethod? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentToolsResponse3? Type325 { get; set; }
+        public global::FishAudio.PatchAgentToolsResponseErrorHandling? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentToolsResponse4? Type326 { get; set; }
+        public global::FishAudio.PatchAgentToolsResponse2? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentToolsResponse5? Type327 { get; set; }
+        public global::FishAudio.PatchAgentToolsResponse3? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.DeleteAgentToolsResponse? Type328 { get; set; }
+        public global::FishAudio.PatchAgentToolsResponse4? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.DeleteAgentToolsResponse2? Type329 { get; set; }
+        public global::FishAudio.PatchAgentToolsResponse5? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.DeleteAgentToolsResponse3? Type330 { get; set; }
+        public global::FishAudio.DeleteAgentToolsResponse? Type330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsAgentsResponse? Type331 { get; set; }
+        public global::FishAudio.DeleteAgentToolsResponse2? Type331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsAgentsResponse2? Type332 { get; set; }
+        public global::FishAudio.DeleteAgentToolsResponse3? Type332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentToolsAgentsResponse3? Type333 { get; set; }
+        public global::FishAudio.GetAgentToolsAgentsResponse? Type333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentPhoneNumbersResponse? Type334 { get; set; }
+        public global::FishAudio.GetAgentToolsAgentsResponse2? Type334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.PublicPhoneNumberEntity>? Type335 { get; set; }
+        public global::FishAudio.GetAgentToolsAgentsResponse3? Type335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentPhoneNumbersResponse2? Type336 { get; set; }
+        public global::FishAudio.GetAgentPhoneNumbersResponse? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentPhoneNumbersResponse3? Type337 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicPhoneNumberEntity>? Type337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentPhoneNumbersResponse4? Type338 { get; set; }
+        public global::FishAudio.GetAgentPhoneNumbersResponse2? Type338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentPhoneNumbersResponse? Type339 { get; set; }
+        public global::FishAudio.GetAgentPhoneNumbersResponse3? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentPhoneNumbersResponseProvider? Type340 { get; set; }
+        public global::FishAudio.GetAgentPhoneNumbersResponse4? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentPhoneNumbersResponseStatus? Type341 { get; set; }
+        public global::FishAudio.CreateAgentPhoneNumbersResponse? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentPhoneNumbersResponse2? Type342 { get; set; }
+        public global::FishAudio.CreateAgentPhoneNumbersResponseProvider? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentPhoneNumbersResponse3? Type343 { get; set; }
+        public global::FishAudio.CreateAgentPhoneNumbersResponseStatus? Type343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentPhoneNumbersResponse4? Type344 { get; set; }
+        public global::FishAudio.CreateAgentPhoneNumbersResponse2? Type344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentPhoneNumbersResponse5? Type345 { get; set; }
+        public global::FishAudio.CreateAgentPhoneNumbersResponse3? Type345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentPhoneNumbersResponse6? Type346 { get; set; }
+        public global::FishAudio.CreateAgentPhoneNumbersResponse4? Type346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentPhoneNumbersResponse7? Type347 { get; set; }
+        public global::FishAudio.CreateAgentPhoneNumbersResponse5? Type347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentPhoneNumbersResponse8? Type348 { get; set; }
+        public global::FishAudio.CreateAgentPhoneNumbersResponse6? Type348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAgentPhoneNumbersResponse9? Type349 { get; set; }
+        public global::FishAudio.CreateAgentPhoneNumbersResponse7? Type349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentPhoneNumbersResponse5? Type350 { get; set; }
+        public global::FishAudio.CreateAgentPhoneNumbersResponse8? Type350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentPhoneNumbersResponseProvider? Type351 { get; set; }
+        public global::FishAudio.CreateAgentPhoneNumbersResponse9? Type351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentPhoneNumbersResponseStatus? Type352 { get; set; }
+        public global::FishAudio.GetAgentPhoneNumbersResponse5? Type352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentPhoneNumbersResponse6? Type353 { get; set; }
+        public global::FishAudio.GetAgentPhoneNumbersResponseProvider? Type353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetAgentPhoneNumbersResponse7? Type354 { get; set; }
+        public global::FishAudio.GetAgentPhoneNumbersResponseStatus? Type354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentPhoneNumbersResponse? Type355 { get; set; }
+        public global::FishAudio.GetAgentPhoneNumbersResponse6? Type355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentPhoneNumbersResponseProvider? Type356 { get; set; }
+        public global::FishAudio.GetAgentPhoneNumbersResponse7? Type356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentPhoneNumbersResponseStatus? Type357 { get; set; }
+        public global::FishAudio.PatchAgentPhoneNumbersResponse? Type357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentPhoneNumbersResponse2? Type358 { get; set; }
+        public global::FishAudio.PatchAgentPhoneNumbersResponseProvider? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentPhoneNumbersResponse3? Type359 { get; set; }
+        public global::FishAudio.PatchAgentPhoneNumbersResponseStatus? Type359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchAgentPhoneNumbersResponse4? Type360 { get; set; }
+        public global::FishAudio.PatchAgentPhoneNumbersResponse2? Type360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.DeleteAgentPhoneNumbersResponse? Type361 { get; set; }
+        public global::FishAudio.PatchAgentPhoneNumbersResponse3? Type361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.DeleteAgentPhoneNumbersResponse2? Type362 { get; set; }
+        public global::FishAudio.PatchAgentPhoneNumbersResponse4? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAsrResponse? Type363 { get; set; }
+        public global::FishAudio.DeleteAgentPhoneNumbersResponse? Type363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.ASRSegment>? Type364 { get; set; }
+        public global::FishAudio.DeleteAgentPhoneNumbersResponse2? Type364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAsrResponse2? Type365 { get; set; }
+        public global::FishAudio.CreateAsrResponse? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateAsrResponse3? Type366 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.ASRSegment>? Type366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateTtsResponse? Type367 { get; set; }
+        public global::FishAudio.CreateAsrResponse2? Type367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateTtsResponse2? Type368 { get; set; }
+        public global::FishAudio.CreateAsrResponse3? Type368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateTtsStreamWithTimestampResponse? Type369 { get; set; }
+        public global::FishAudio.CreateTtsResponse? Type369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateTtsStreamWithTimestampResponse2? Type370 { get; set; }
+        public global::FishAudio.CreateTtsResponse2? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateTtsStreamWithTimestampResponse3? Type371 { get; set; }
+        public global::FishAudio.CreateTtsStreamWithTimestampResponse? Type371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateVoiceDesignResponse? Type372 { get; set; }
+        public global::FishAudio.CreateTtsStreamWithTimestampResponse2? Type372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.VoiceDesignCandidate>? Type373 { get; set; }
+        public global::FishAudio.CreateTtsStreamWithTimestampResponse3? Type373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateVoiceDesignResponse2? Type374 { get; set; }
+        public global::FishAudio.CreateVoiceDesignResponse? Type374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateVoiceDesignResponse3? Type375 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.VoiceDesignCandidate>? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetModelResponse? Type376 { get; set; }
+        public global::FishAudio.CreateVoiceDesignResponse2? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::FishAudio.ModelEntity>? Type377 { get; set; }
+        public global::FishAudio.CreateVoiceDesignResponse3? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelResponse? Type378 { get; set; }
+        public global::FishAudio.GetModelResponse? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelResponseType? Type379 { get; set; }
+        public global::System.Collections.Generic.IList<global::FishAudio.ModelEntity>? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelResponseTrainMode? Type380 { get; set; }
+        public global::FishAudio.CreateModelResponse? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelResponseState? Type381 { get; set; }
+        public global::FishAudio.CreateModelResponseType? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelResponseVisibility? Type382 { get; set; }
+        public global::FishAudio.CreateModelResponseTrainMode? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelResponsePvcReleaseState2? Type383 { get; set; }
+        public global::FishAudio.CreateModelResponseState? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.CreateModelResponse2? Type384 { get; set; }
+        public global::FishAudio.CreateModelResponseVisibility? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetModelResponse2? Type385 { get; set; }
+        public global::FishAudio.CreateModelResponsePvcReleaseState2? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetModelResponseType? Type386 { get; set; }
+        public global::FishAudio.CreateModelResponse2? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetModelResponseTrainMode? Type387 { get; set; }
+        public global::FishAudio.GetModelResponse2? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetModelResponseState? Type388 { get; set; }
+        public global::FishAudio.GetModelResponseType? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetModelResponseVisibility? Type389 { get; set; }
+        public global::FishAudio.GetModelResponseTrainMode? Type389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetModelResponsePvcReleaseState2? Type390 { get; set; }
+        public global::FishAudio.GetModelResponseState? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetModelResponse3? Type391 { get; set; }
+        public global::FishAudio.GetModelResponseVisibility? Type391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.GetModelResponse4? Type392 { get; set; }
+        public global::FishAudio.GetModelResponsePvcReleaseState2? Type392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.PatchModelResponse? Type393 { get; set; }
+        public global::FishAudio.GetModelResponse3? Type393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.DeleteModelResponse? Type394 { get; set; }
+        public global::FishAudio.GetModelResponse4? Type394 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::FishAudio.PatchModelResponse? Type395 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::FishAudio.DeleteModelResponse? Type396 { get; set; }
 
         /// <summary>
         /// 
@@ -1637,142 +1645,150 @@ namespace FishAudio
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item>? ListType7 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.PublicPostCallWebhookPayload>? ListType7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.AgentAnalysisDataField>? ListType8 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item>? ListType8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.AgentAnalysisCriterion>? ListType9 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.AgentAnalysisDataField>? ListType9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.AgentTransferDestination>? ListType10 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.AgentAnalysisCriterion>? ListType10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.AgentWebhookArgumentPayload>? ListType11 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.AgentTransferDestination>? ListType11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.AgentWebhookHeaderPayload>? ListType12 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.PublicPostCallWebhook>? ListType12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.AgentWebhookMockResponsePayload>? ListType13 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.AgentWebhookArgumentPayload>? ListType13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.List<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::FishAudio.ReferenceAudio>>, object>? ListType14 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.AgentWebhookHeaderPayload>? ListType14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.ReferenceAudio>? ListType15 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.AgentWebhookMockResponsePayload>? ListType15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::FishAudio.ReferenceAudio>>? ListType16 { get; set; }
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.List<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::FishAudio.ReferenceAudio>>, object>? ListType16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AnyOf<string, global::System.Collections.Generic.List<string>, object>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.ReferenceAudio>? ListType17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.TTSTimestampSegment>? ListType18 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::FishAudio.ReferenceAudio>>? ListType18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.SampleEntity>? ListType19 { get; set; }
+        public global::FishAudio.AnyOf<string, global::System.Collections.Generic.List<string>, object>? ListType19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.ModelAudioQualityEntity>? ListType20 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.TTSTimestampSegment>? ListType20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.List<byte[]>, byte[]>? ListType21 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.SampleEntity>? ListType21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<byte[]>? ListType22 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.ModelAudioQualityEntity>? ListType22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.List<string>, string, object>? ListType23 { get; set; }
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.List<byte[]>, byte[]>? ListType23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.List<string>, string>? ListType24 { get; set; }
+        public global::System.Collections.Generic.List<byte[]>? ListType24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.AgentSessionSummary>? ListType25 { get; set; }
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.List<string>, string, object>? ListType25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.ItemsItem>? ListType26 { get; set; }
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.List<string>, string>? ListType26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.AgentSessionRecordingTrackEntity>? ListType27 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.AgentSessionSummary>? ListType27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.PublicAgentEntity>? ListType28 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.ItemsItem>? ListType28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem>? ListType29 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.AgentSessionRecordingTrackEntity>? ListType29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.GetAgentAgentsResponseOverridesAllowedItem>? ListType30 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.PublicAgentEntity>? ListType30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.PatchAgentAgentsResponseOverridesAllowedItem>? ListType31 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem>? ListType31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.PublicAgentVersionSummary>? ListType32 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.GetAgentAgentsResponseOverridesAllowedItem>? ListType32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<object>? ListType33 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.PatchAgentAgentsResponseOverridesAllowedItem>? ListType33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.PublicKnowledgeSourceSummary>? ListType34 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.PublicAgentVersionSummary>? ListType34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.PublicDependentAgent>? ListType35 { get; set; }
+        public global::System.Collections.Generic.List<object>? ListType35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.PublicAgentToolSummary>? ListType36 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.PublicKnowledgeSourceSummary>? ListType36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.PublicToolHeader>? ListType37 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.PublicDependentAgent>? ListType37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.PublicPhoneNumberEntity>? ListType38 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.PublicAgentToolSummary>? ListType38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.ASRSegment>? ListType39 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.PublicToolHeader>? ListType39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.VoiceDesignCandidate>? ListType40 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.PublicPhoneNumberEntity>? ListType40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::FishAudio.ModelEntity>? ListType41 { get; set; }
+        public global::System.Collections.Generic.List<global::FishAudio.ASRSegment>? ListType41 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::FishAudio.VoiceDesignCandidate>? ListType42 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::FishAudio.ModelEntity>? ListType43 { get; set; }
     }
 }
