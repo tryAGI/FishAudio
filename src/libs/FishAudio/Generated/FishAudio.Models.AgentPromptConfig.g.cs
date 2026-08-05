@@ -28,7 +28,7 @@ namespace FishAudio
         public string? FirstMessage { get; set; }
 
         /// <summary>
-        /// Default Value: Greet the caller warmly, mention you can help with orders and callbacks.
+        /// Default Value: Greet the caller and ask what you can help with.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_message_prompt")]
         public string? FirstMessagePrompt { get; set; }
@@ -50,7 +50,7 @@ namespace FishAudio
         /// Default Value: Hi! Thanks for calling — how can I help you today?
         /// </param>
         /// <param name="firstMessagePrompt">
-        /// Default Value: Greet the caller warmly, mention you can help with orders and callbacks.
+        /// Default Value: Greet the caller and ask what you can help with.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

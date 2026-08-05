@@ -2,7 +2,7 @@
 
 namespace FishAudio
 {
-    public sealed partial class PublicAgentWebhooksConfigPostCall
+    public sealed partial class CreateAsrResponseLanguage
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace FishAudio
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::FishAudio.PublicAgentWebhooksConfigPostCall? FromJson(
+        public static global::FishAudio.CreateAsrResponseLanguage? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::FishAudio.PublicAgentWebhooksConfigPostCall),
-                jsonSerializerContext) as global::FishAudio.PublicAgentWebhooksConfigPostCall;
+                typeof(global::FishAudio.CreateAsrResponseLanguage),
+                jsonSerializerContext) as global::FishAudio.CreateAsrResponseLanguage;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::FishAudio.PublicAgentWebhooksConfigPostCall? FromJson(
+        public static global::FishAudio.CreateAsrResponseLanguage? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace FishAudio
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::FishAudio.PublicAgentWebhooksConfigPostCall? FromJson(
+        public static global::FishAudio.CreateAsrResponseLanguage? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace FishAudio
                     global::FishAudio.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::FishAudio.PublicAgentWebhooksConfigPostCall>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::FishAudio.CreateAsrResponseLanguage>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace FishAudio
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::FishAudio.PublicAgentWebhooksConfigPostCall?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::FishAudio.CreateAsrResponseLanguage?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::FishAudio.PublicAgentWebhooksConfigPostCall),
-                jsonSerializerContext).ConfigureAwait(false)) as global::FishAudio.PublicAgentWebhooksConfigPostCall;
+                typeof(global::FishAudio.CreateAsrResponseLanguage),
+                jsonSerializerContext).ConfigureAwait(false)) as global::FishAudio.CreateAsrResponseLanguage;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::FishAudio.PublicAgentWebhooksConfigPostCall?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::FishAudio.CreateAsrResponseLanguage?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace FishAudio
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::FishAudio.PublicAgentWebhooksConfigPostCall?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::FishAudio.CreateAsrResponseLanguage?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace FishAudio
                     global::FishAudio.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::FishAudio.PublicAgentWebhooksConfigPostCall?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::FishAudio.CreateAsrResponseLanguage?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

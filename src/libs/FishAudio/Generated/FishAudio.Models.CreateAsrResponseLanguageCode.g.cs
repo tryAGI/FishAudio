@@ -4,10 +4,10 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Up to 5 endpoints, each receiving every post-call event. Replaces the configured list wholesale; a single object is still accepted and is stored as a one-element list, and null (or an empty list) clears every endpoint. URLs must be unique.<br/>
+    /// Detected language as an ISO 639-1 code (e.g. `en`, `ja`). Omitted if no language is detected.<br/>
     /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
     /// </summary>
-    public sealed partial class PublicAgentWebhooksPatchPostCall
+    public sealed partial class CreateAsrResponseLanguageCode
     {
 
         /// <summary>

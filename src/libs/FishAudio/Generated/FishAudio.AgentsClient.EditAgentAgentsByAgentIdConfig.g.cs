@@ -69,10 +69,12 @@ namespace FishAudio
         ///       "system_prompt": "You are the receptionist for Fish Dental."<br/>
         ///     },<br/>
         ///     "webhooks": {<br/>
-        ///       "post_call": {<br/>
-        ///         "url": "https://example.com/hooks/fish",<br/>
-        ///         "secret": "&lt;signing-secret&gt;"<br/>
-        ///       }<br/>
+        ///       "post_call": [<br/>
+        ///         {<br/>
+        ///           "url": "https://example.com/hooks/fish",<br/>
+        ///           "secret": "&lt;signing-secret&gt;"<br/>
+        ///         }<br/>
+        ///       ]<br/>
         ///     }<br/>
         ///   }'
         /// </remarks>
@@ -119,10 +121,12 @@ namespace FishAudio
         ///       "system_prompt": "You are the receptionist for Fish Dental."<br/>
         ///     },<br/>
         ///     "webhooks": {<br/>
-        ///       "post_call": {<br/>
-        ///         "url": "https://example.com/hooks/fish",<br/>
-        ///         "secret": "&lt;signing-secret&gt;"<br/>
-        ///       }<br/>
+        ///       "post_call": [<br/>
+        ///         {<br/>
+        ///           "url": "https://example.com/hooks/fish",<br/>
+        ///           "secret": "&lt;signing-secret&gt;"<br/>
+        ///         }<br/>
+        ///       ]<br/>
         ///     }<br/>
         ///   }'
         /// </remarks>
