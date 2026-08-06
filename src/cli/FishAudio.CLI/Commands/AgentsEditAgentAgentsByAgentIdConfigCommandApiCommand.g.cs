@@ -97,7 +97,7 @@ internal static partial class AgentsEditAgentAgentsByAgentIdConfigCommandApiComm
 Patch the draft configuration section by section; omitted sections keep
 their value. Changes only affect live sessions after the next publish.
 `prompt.system_prompt` is limited to 4000 characters (422 beyond).
-`voice.voice_profile_id` accepts any public voice model id.
+`voice.voice_id` accepts any public voice model id.
 `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;
 anything else is 422. `tool_ids` and
 `knowledge_source_ids` replace their attachment lists wholesale and every

@@ -24,12 +24,6 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        public global::FishAudio.AgentSessionCreatePayloadLanguage2? Language { get; set; }
-
-        /// <summary>
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
         public string? Timezone { get; set; }
 
@@ -94,9 +88,6 @@ namespace FishAudio
         /// <param name="name">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="language">
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </param>
         /// <param name="timezone">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -130,7 +121,6 @@ namespace FishAudio
         public AgentSessionCreatePayload(
             string agentId,
             string? name,
-            global::FishAudio.AgentSessionCreatePayloadLanguage2? language,
             string? timezone,
             string? clientTimezone,
             bool? worldContext,
@@ -143,7 +133,6 @@ namespace FishAudio
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.Name = name;
-            this.Language = language;
             this.Timezone = timezone;
             this.ClientTimezone = clientTimezone;
             this.WorldContext = worldContext;

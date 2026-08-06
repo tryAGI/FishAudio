@@ -52,7 +52,7 @@ namespace FishAudio
         /// agent's allowed origins.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`; anything else is 422. Omit it to use the agent's configured<br/>
-        /// behavior (including automatic language detection when enabled).
+        /// speaking language.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -96,7 +96,7 @@ namespace FishAudio
         /// agent's allowed origins.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`; anything else is 422. Omit it to use the agent's configured<br/>
-        /// behavior (including automatic language detection when enabled).
+        /// speaking language.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -826,16 +826,13 @@ namespace FishAudio
         /// agent's allowed origins.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`; anything else is 422. Omit it to use the agent's configured<br/>
-        /// behavior (including automatic language detection when enabled).
+        /// speaking language.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="agentId"></param>
         /// <param name="name">
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </param>
-        /// <param name="language">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="timezone">
@@ -872,7 +869,6 @@ namespace FishAudio
             string agentId,
             string? origin = default,
             string? name = default,
-            global::FishAudio.AgentSessionCreatePayloadLanguage2? language = default,
             string? timezone = default,
             string? clientTimezone = default,
             bool? worldContext = default,
@@ -889,7 +885,6 @@ namespace FishAudio
             {
                 AgentId = agentId,
                 Name = name,
-                Language = language,
                 Timezone = timezone,
                 ClientTimezone = clientTimezone,
                 WorldContext = worldContext,

@@ -11,8 +11,8 @@ namespace FishAudio
         /// <summary>
         /// Default Value: 4501d82f5de3467ebf4d7ef095a2deee
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("voice_profile_id")]
-        public string? VoiceProfileId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("voice_id")]
+        public string? VoiceId { get; set; }
 
         /// <summary>
         /// Default Value: en
@@ -30,7 +30,7 @@ namespace FishAudio
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentVoiceConfig" /> class.
         /// </summary>
-        /// <param name="voiceProfileId">
+        /// <param name="voiceId">
         /// Default Value: 4501d82f5de3467ebf4d7ef095a2deee
         /// </param>
         /// <param name="speakingLanguage">
@@ -40,10 +40,10 @@ namespace FishAudio
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentVoiceConfig(
-            string? voiceProfileId,
+            string? voiceId,
             global::FishAudio.AgentVoiceConfigSpeakingLanguage? speakingLanguage)
         {
-            this.VoiceProfileId = voiceProfileId;
+            this.VoiceId = voiceId;
             this.SpeakingLanguage = speakingLanguage;
         }
 
