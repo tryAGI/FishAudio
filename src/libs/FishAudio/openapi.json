@@ -10391,7 +10391,7 @@
       },
       "AgentSessionOverridesPayload": {
         "additionalProperties": false,
-        "description": "Wire twin of @fishaudio/agent-protocol `SessionOverrides` (session.ts).\n\nEvery field must be allow-listed in Agent.overrides_allowed; unauthorized\nfields fail session creation loudly rather than being silently dropped.\nKeyless (public) sessions are additionally capped to PUBLIC_OVERRIDE_FIELDS\n(service.py) regardless of the allowlist.",
+        "description": "Wire twin of @fishaudio/agent-protocol `SessionOverrides` (session.ts).\n\nEvery field must be allow-listed in Agent.overrides_allowed; unauthorized\nfields fail session creation loudly rather than being silently dropped.",
         "properties": {
           "first_message": {
             "anyOf": [
