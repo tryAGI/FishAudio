@@ -64,7 +64,7 @@ namespace FishAudio
         ///         "system_prompt": "You are the receptionist for Fish Dental."<br/>
         ///       },<br/>
         ///       "voice": {<br/>
-        ///         "voice_profile_id": "&lt;voice-model-id&gt;",<br/>
+        ///         "voice_id": "&lt;voice-model-id&gt;",<br/>
         ///         "speaking_language": "en"<br/>
         ///       }<br/>
         ///     }<br/>
@@ -108,7 +108,7 @@ namespace FishAudio
         ///         "system_prompt": "You are the receptionist for Fish Dental."<br/>
         ///       },<br/>
         ///       "voice": {<br/>
-        ///         "voice_profile_id": "&lt;voice-model-id&gt;",<br/>
+        ///         "voice_id": "&lt;voice-model-id&gt;",<br/>
         ///         "speaking_language": "en"<br/>
         ///       }<br/>
         ///     }<br/>

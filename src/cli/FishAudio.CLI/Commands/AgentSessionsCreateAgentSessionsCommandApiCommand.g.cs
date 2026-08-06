@@ -26,12 +26,6 @@ internal static partial class AgentSessionsCreateAgentSessionsCommandApiCommand
         Description = @"",
     };
 
-    private static Option<global::FishAudio.AgentSessionCreatePayloadLanguage2?> Language { get; } = new(
-        name: @"--language")
-    {
-        Description = @"",
-    };
-
     private static Option<string?> Timezone { get; } = new(
         name: @"--timezone")
     {
@@ -127,11 +121,10 @@ agent's allowed origins.
 
 `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,
 `fr`, `de`; anything else is 422. Omit it to use the agent's configured
-behavior (including automatic language detection when enabled).");
+speaking language.");
                         command.Options.Add(Origin);
                         command.Options.Add(AgentId);
                         command.Options.Add(NameOption);
-                        command.Options.Add(Language);
                         command.Options.Add(Timezone);
                         command.Options.Add(ClientTimezone);
                         command.Options.Add(WorldContext);
@@ -169,7 +162,6 @@ behavior (including automatic language detection when enabled).");
                         var origin = parseResult.GetValue(Origin);
                         var agentId = parseResult.GetRequiredValue(AgentId);
                         var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : (__requestBase is { } __NameBaseValue ? __NameBaseValue.Name : default);
-                        var language = CliRuntime.WasSpecified(parseResult, Language) ? parseResult.GetValue(Language) : (__requestBase is { } __LanguageBaseValue ? __LanguageBaseValue.Language : default);
                         var timezone = CliRuntime.WasSpecified(parseResult, Timezone) ? parseResult.GetValue(Timezone) : (__requestBase is { } __TimezoneBaseValue ? __TimezoneBaseValue.Timezone : default);
                         var clientTimezone = CliRuntime.WasSpecified(parseResult, ClientTimezone) ? parseResult.GetValue(ClientTimezone) : (__requestBase is { } __ClientTimezoneBaseValue ? __ClientTimezoneBaseValue.ClientTimezone : default);
                         var worldContext = CliRuntime.WasSpecified(parseResult, WorldContext) ? parseResult.GetValue(WorldContext) : (__requestBase is { } __WorldContextBaseValue ? __WorldContextBaseValue.WorldContext : default);
@@ -186,7 +178,6 @@ behavior (including automatic language detection when enabled).");
                                     origin: origin,
                                     agentId: agentId,
                                     name: name,
-                                    language: language,
                                     timezone: timezone,
                                     clientTimezone: clientTimezone,
                                     worldContext: worldContext,

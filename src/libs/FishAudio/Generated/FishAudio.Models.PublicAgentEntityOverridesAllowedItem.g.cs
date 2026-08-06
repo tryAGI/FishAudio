@@ -23,7 +23,7 @@ namespace FishAudio
         /// <summary>
         /// 
         /// </summary>
-        VoiceProfileId,
+        VoiceId,
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ namespace FishAudio
                 PublicAgentEntityOverridesAllowedItem.FirstMessage => "first_message",
                 PublicAgentEntityOverridesAllowedItem.Language => "language",
                 PublicAgentEntityOverridesAllowedItem.SystemPrompt => "system_prompt",
-                PublicAgentEntityOverridesAllowedItem.VoiceProfileId => "voice_profile_id",
+                PublicAgentEntityOverridesAllowedItem.VoiceId => "voice_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,7 +55,7 @@ namespace FishAudio
                 "first_message" => PublicAgentEntityOverridesAllowedItem.FirstMessage,
                 "language" => PublicAgentEntityOverridesAllowedItem.Language,
                 "system_prompt" => PublicAgentEntityOverridesAllowedItem.SystemPrompt,
-                "voice_profile_id" => PublicAgentEntityOverridesAllowedItem.VoiceProfileId,
+                "voice_id" => PublicAgentEntityOverridesAllowedItem.VoiceId,
                 _ => null,
             };
         }

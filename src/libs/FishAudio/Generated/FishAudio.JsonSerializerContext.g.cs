@@ -21,10 +21,6 @@ namespace FishAudio
 
             typeof(global::FishAudio.JsonConverters.AgentSessionSummarySourceNullableJsonConverter),
 
-            typeof(global::FishAudio.JsonConverters.AgentSessionCreatePayloadLanguage2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionCreatePayloadLanguage2NullableJsonConverter),
-
             typeof(global::FishAudio.JsonConverters.AgentSessionOverridesPayloadLanguage2JsonConverter),
 
             typeof(global::FishAudio.JsonConverters.AgentSessionOverridesPayloadLanguage2NullableJsonConverter),
@@ -488,7 +484,6 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.JsonValue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionCreatePayload))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionCreatePayloadLanguage2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionOverridesPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<string, int?, double?, bool?>), TypeInfoPropertyName = "AnyOfStringInt32DoubleBoolean2")]

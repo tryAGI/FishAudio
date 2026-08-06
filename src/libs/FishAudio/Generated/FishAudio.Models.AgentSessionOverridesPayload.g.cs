@@ -6,7 +6,9 @@ namespace FishAudio
     /// <summary>
     /// Wire twin of @fishaudio/agent-protocol `SessionOverrides` (session.ts).<br/>
     /// Every field must be allow-listed in Agent.overrides_allowed; unauthorized<br/>
-    /// fields fail session creation loudly rather than being silently dropped.
+    /// fields fail session creation loudly rather than being silently dropped.<br/>
+    /// Keyless (public) sessions are additionally capped to PUBLIC_OVERRIDE_FIELDS<br/>
+    /// (service.py) regardless of the allowlist.
     /// </summary>
     public sealed partial class AgentSessionOverridesPayload
     {
@@ -19,14 +21,20 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("first_message_prompt")]
+        public string? FirstMessagePrompt { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_prompt")]
         public string? SystemPrompt { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("voice_profile_id")]
-        public string? VoiceProfileId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("voice_id")]
+        public string? VoiceId { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -46,10 +54,13 @@ namespace FishAudio
         /// <param name="firstMessage">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="firstMessagePrompt">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="systemPrompt">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="voiceProfileId">
+        /// <param name="voiceId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="language">
@@ -60,13 +71,15 @@ namespace FishAudio
 #endif
         public AgentSessionOverridesPayload(
             string? firstMessage,
+            string? firstMessagePrompt,
             string? systemPrompt,
-            string? voiceProfileId,
+            string? voiceId,
             global::FishAudio.AgentSessionOverridesPayloadLanguage2? language)
         {
             this.FirstMessage = firstMessage;
+            this.FirstMessagePrompt = firstMessagePrompt;
             this.SystemPrompt = systemPrompt;
-            this.VoiceProfileId = voiceProfileId;
+            this.VoiceId = voiceId;
             this.Language = language;
         }
 
