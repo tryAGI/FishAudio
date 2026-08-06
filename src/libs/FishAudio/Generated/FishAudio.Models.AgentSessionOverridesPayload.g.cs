@@ -6,9 +6,7 @@ namespace FishAudio
     /// <summary>
     /// Wire twin of @fishaudio/agent-protocol `SessionOverrides` (session.ts).<br/>
     /// Every field must be allow-listed in Agent.overrides_allowed; unauthorized<br/>
-    /// fields fail session creation loudly rather than being silently dropped.<br/>
-    /// Keyless (public) sessions are additionally capped to PUBLIC_OVERRIDE_FIELDS<br/>
-    /// (service.py) regardless of the allowlist.
+    /// fields fail session creation loudly rather than being silently dropped.
     /// </summary>
     public sealed partial class AgentSessionOverridesPayload
     {
