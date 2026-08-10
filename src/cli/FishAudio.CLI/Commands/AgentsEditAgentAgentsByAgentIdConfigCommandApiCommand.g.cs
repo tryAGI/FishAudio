@@ -96,7 +96,8 @@ internal static partial class AgentsEditAgentAgentsByAgentIdConfigCommandApiComm
         var command = new Command(@"edit-agent-agents-by-agent-id-config", @"Update Draft Config
 Patch the draft configuration section by section; omitted sections keep
 their value. Changes only affect live sessions after the next publish.
-`prompt.system_prompt` is limited to 4000 characters (422 beyond).
+`prompt.system_prompt` is limited to 4000 tokens (422 beyond); keeping it
+under 2000 tokens is recommended for latency and cost.
 `voice.voice_id` accepts any public voice model id.
 `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;
 anything else is 422. `tool_ids` and

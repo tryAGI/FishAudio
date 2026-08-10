@@ -23,6 +23,7 @@ namespace FishAudio
         public string? FirstMessagePrompt { get; set; }
 
         /// <summary>
+        /// Limited to 4000 tokens (o200k_base), same budget as the configured prompt it replaces.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_prompt")]
@@ -56,6 +57,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="systemPrompt">
+        /// Limited to 4000 tokens (o200k_base), same budget as the configured prompt it replaces.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="voiceId">
