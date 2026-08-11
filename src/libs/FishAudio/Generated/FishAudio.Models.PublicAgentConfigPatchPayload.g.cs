@@ -51,6 +51,12 @@ namespace FishAudio
         public global::FishAudio.PublicAgentAnalysisPatch? Analysis { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("guardrails")]
+        public global::FishAudio.PublicAgentGuardrailsPatch? Guardrails { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -80,6 +86,9 @@ namespace FishAudio
         /// <param name="analysis">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="guardrails">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -90,7 +99,8 @@ namespace FishAudio
             global::FishAudio.PublicAgentToolsPatch? tools,
             global::FishAudio.PublicAgentWebhooksPatch? webhooks,
             global::FishAudio.PublicAgentKnowledgeBasePatch? knowledgeBase,
-            global::FishAudio.PublicAgentAnalysisPatch? analysis)
+            global::FishAudio.PublicAgentAnalysisPatch? analysis,
+            global::FishAudio.PublicAgentGuardrailsPatch? guardrails)
         {
             this.Prompt = prompt;
             this.Voice = voice;
@@ -99,6 +109,7 @@ namespace FishAudio
             this.Webhooks = webhooks;
             this.KnowledgeBase = knowledgeBase;
             this.Analysis = analysis;
+            this.Guardrails = guardrails;
         }
 
         /// <summary>

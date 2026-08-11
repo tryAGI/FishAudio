@@ -54,6 +54,12 @@ internal static partial class AgentsEditAgentAgentsByAgentIdConfigCommandApiComm
     {
         Description = @"",
     };
+
+    private static Option<global::FishAudio.PublicAgentGuardrailsPatch?> Guardrails { get; } = new(
+        name: @"--guardrails")
+    {
+        Description = @"",
+    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -111,6 +117,7 @@ id must resolve, else 422.");
                         command.Options.Add(Webhooks);
                         command.Options.Add(KnowledgeBase);
                         command.Options.Add(Analysis);
+                        command.Options.Add(Guardrails);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -144,6 +151,7 @@ id must resolve, else 422.");
                         var webhooks = CliRuntime.WasSpecified(parseResult, Webhooks) ? parseResult.GetValue(Webhooks) : (__requestBase is { } __WebhooksBaseValue ? __WebhooksBaseValue.Webhooks : default);
                         var knowledgeBase = CliRuntime.WasSpecified(parseResult, KnowledgeBase) ? parseResult.GetValue(KnowledgeBase) : (__requestBase is { } __KnowledgeBaseBaseValue ? __KnowledgeBaseBaseValue.KnowledgeBase : default);
                         var analysis = CliRuntime.WasSpecified(parseResult, Analysis) ? parseResult.GetValue(Analysis) : (__requestBase is { } __AnalysisBaseValue ? __AnalysisBaseValue.Analysis : default);
+                        var guardrails = CliRuntime.WasSpecified(parseResult, Guardrails) ? parseResult.GetValue(Guardrails) : (__requestBase is { } __GuardrailsBaseValue ? __GuardrailsBaseValue.Guardrails : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -156,6 +164,7 @@ id must resolve, else 422.");
                                     webhooks: webhooks,
                                     knowledgeBase: knowledgeBase,
                                     analysis: analysis,
+                                    guardrails: guardrails,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 
