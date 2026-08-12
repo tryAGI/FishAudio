@@ -13,7 +13,7 @@ namespace FishAudio
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::FishAudio.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::FishAudio.GetAgentToolsResponse5> GetAgentToolsByToolIdAsync(
+        global::System.Threading.Tasks.Task<global::FishAudio.GetAgentToolsResponse6> GetAgentToolsByToolIdAsync(
             string toolId,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -26,7 +26,7 @@ namespace FishAudio
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::FishAudio.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetAgentToolsResponse5>> GetAgentToolsByToolIdAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetAgentToolsResponse6>> GetAgentToolsByToolIdAsResponseAsync(
             string toolId,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

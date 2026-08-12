@@ -436,6 +436,43 @@ namespace FishAudio
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // The server cannot process the request due to a high load
+                            if ((int)__response.StatusCode == 503)
+                            {
+                                string? __content_503 = null;
+                                global::System.Exception? __exception_503 = null;
+                                global::FishAudio.DeleteAgentToolsResponse4? __value_503 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_503 = global::FishAudio.DeleteAgentToolsResponse4.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_503 = global::FishAudio.DeleteAgentToolsResponse4.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_503 = __ex;
+                                }
+
+
+                                throw global::FishAudio.ApiException<global::FishAudio.DeleteAgentToolsResponse4>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_503,
+                                    responseBody: __content_503,
+                                    responseObject: __value_503,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
