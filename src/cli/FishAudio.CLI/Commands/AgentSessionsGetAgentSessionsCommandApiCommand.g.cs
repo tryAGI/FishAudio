@@ -19,6 +19,12 @@ internal static partial class AgentSessionsGetAgentSessionsCommandApiCommand
         Description = @"Comma-separated status filter (pending/active/completed/failed/unknown). Default: every status except pending.",
     };
 
+    private static Option<string?> Direction { get; } = new(
+        name: @"--direction")
+    {
+        Description = @"Filter by call direction (inbound/outbound). Sessions predating the field count as inbound.",
+    };
+
     private static Option<string?> CallerNumber { get; } = new(
         name: @"--caller-number")
     {
@@ -88,6 +94,7 @@ number, or creation time. Paginate with `cursor` (recommended; follow
 with a `total` count — the two are mutually exclusive.");
                         command.Options.Add(AgentId);
                         command.Options.Add(Status);
+                        command.Options.Add(Direction);
                         command.Options.Add(CallerNumber);
                         command.Options.Add(CreatedAfter);
                         command.Options.Add(CreatedBefore);
@@ -102,6 +109,7 @@ with a `total` count — the two are mutually exclusive.");
             {
                         var agentId = parseResult.GetValue(AgentId);
                         var status = parseResult.GetValue(Status);
+                        var direction = parseResult.GetValue(Direction);
                         var callerNumber = parseResult.GetValue(CallerNumber);
                         var createdAfter = parseResult.GetValue(CreatedAfter);
                         var createdBefore = parseResult.GetValue(CreatedBefore);
@@ -115,6 +123,7 @@ with a `total` count — the two are mutually exclusive.");
                                 var response = await client.AgentSessions.GetAgentSessionsAsync(
                                     agentId: agentId,
                                     status: status,
+                                    direction: direction,
                                     callerNumber: callerNumber,
                                     createdAfter: createdAfter,
                                     createdBefore: createdBefore,

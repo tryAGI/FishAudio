@@ -57,6 +57,12 @@ namespace FishAudio
         public global::System.Collections.Generic.IList<global::FishAudio.AgentTransferDestinationPatch>? TransferDestinations { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("outbound")]
+        public global::FishAudio.AgentOutboundPatch? Outbound { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -89,6 +95,9 @@ namespace FishAudio
         /// <param name="transferDestinations">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="outbound">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,7 +109,8 @@ namespace FishAudio
             bool? reengageEnabled,
             bool? recordAudio,
             string? timezone,
-            global::System.Collections.Generic.IList<global::FishAudio.AgentTransferDestinationPatch>? transferDestinations)
+            global::System.Collections.Generic.IList<global::FishAudio.AgentTransferDestinationPatch>? transferDestinations,
+            global::FishAudio.AgentOutboundPatch? outbound)
         {
             this.MaxDurationSeconds = maxDurationSeconds;
             this.Eagerness = eagerness;
@@ -110,6 +120,7 @@ namespace FishAudio
             this.RecordAudio = recordAudio;
             this.Timezone = timezone;
             this.TransferDestinations = transferDestinations;
+            this.Outbound = outbound;
         }
 
         /// <summary>

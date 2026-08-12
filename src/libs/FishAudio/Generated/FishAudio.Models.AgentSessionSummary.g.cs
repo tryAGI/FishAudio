@@ -53,6 +53,25 @@ namespace FishAudio
         public required global::FishAudio.AgentSessionSummarySource Source { get; set; }
 
         /// <summary>
+        /// Default Value: inbound
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("direction")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentSessionSummaryDirectionJsonConverter))]
+        public global::FishAudio.AgentSessionSummaryDirection? Direction { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dial_status")]
+        public global::FishAudio.AgentSessionSummaryDialStatus2? DialStatus { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("answered_by")]
+        public global::FishAudio.AgentSessionSummaryAnsweredBy2? AnsweredBy { get; set; }
+
+        /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller_number")]
@@ -119,6 +138,15 @@ namespace FishAudio
         /// <param name="name">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="direction">
+        /// Default Value: inbound
+        /// </param>
+        /// <param name="dialStatus">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="answeredBy">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="callerNumber">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -149,6 +177,9 @@ namespace FishAudio
             global::FishAudio.AgentSessionSummarySource source,
             string createdAt,
             string? name,
+            global::FishAudio.AgentSessionSummaryDirection? direction,
+            global::FishAudio.AgentSessionSummaryDialStatus2? dialStatus,
+            global::FishAudio.AgentSessionSummaryAnsweredBy2? answeredBy,
             string? callerNumber,
             string? dialedNumber,
             string? timezone,
@@ -163,6 +194,9 @@ namespace FishAudio
             this.Name = name;
             this.Status = status;
             this.Source = source;
+            this.Direction = direction;
+            this.DialStatus = dialStatus;
+            this.AnsweredBy = answeredBy;
             this.CallerNumber = callerNumber;
             this.DialedNumber = dialedNumber;
             this.Timezone = timezone;
