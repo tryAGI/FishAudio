@@ -41,6 +41,18 @@ namespace FishAudio
         public bool? ReengageEnabled { get; set; }
 
         /// <summary>
+        /// Default Value: 60
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hangup_after_seconds")]
+        public int? HangupAfterSeconds { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hangup_farewell_enabled")]
+        public bool? HangupFarewellEnabled { get; set; }
+
+        /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("record_audio")]
@@ -88,6 +100,12 @@ namespace FishAudio
         /// <param name="reengageEnabled">
         /// Default Value: false
         /// </param>
+        /// <param name="hangupAfterSeconds">
+        /// Default Value: 60
+        /// </param>
+        /// <param name="hangupFarewellEnabled">
+        /// Default Value: false
+        /// </param>
         /// <param name="recordAudio">
         /// Default Value: true
         /// </param>
@@ -107,6 +125,8 @@ namespace FishAudio
             bool? interruptible,
             global::FishAudio.AgentConversationConfigInterruptionSensitivity? interruptionSensitivity,
             bool? reengageEnabled,
+            int? hangupAfterSeconds,
+            bool? hangupFarewellEnabled,
             bool? recordAudio,
             string? timezone,
             global::System.Collections.Generic.IList<global::FishAudio.AgentTransferDestination>? transferDestinations,
@@ -117,6 +137,8 @@ namespace FishAudio
             this.Interruptible = interruptible;
             this.InterruptionSensitivity = interruptionSensitivity;
             this.ReengageEnabled = reengageEnabled;
+            this.HangupAfterSeconds = hangupAfterSeconds;
+            this.HangupFarewellEnabled = hangupFarewellEnabled;
             this.RecordAudio = recordAudio;
             this.Timezone = timezone;
             this.TransferDestinations = transferDestinations;

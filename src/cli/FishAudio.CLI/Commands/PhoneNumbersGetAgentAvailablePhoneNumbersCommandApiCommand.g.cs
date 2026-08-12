@@ -10,7 +10,7 @@ internal static partial class PhoneNumbersGetAgentAvailablePhoneNumbersCommandAp
     private static Option<string?> CountryCode { get; } = new(
         name: @"--country-code")
     {
-        Description = @"ISO 3166-1 alpha-2 country code.",
+        Description = @"ISO 3166-1 alpha-2 country code; `US` or `CA`.",
     };
 
     private static Option<string?> AreaCode { get; } = new(
@@ -22,7 +22,7 @@ internal static partial class PhoneNumbersGetAgentAvailablePhoneNumbersCommandAp
     private static Option<global::FishAudio.GetAgentAvailablePhoneNumbersNumberType?> NumberType { get; } = new(
         name: @"--number-type")
     {
-        Description = @"The managed inventory is US local numbers only; `toll_free` currently returns 400.",
+        Description = @"The managed inventory is US/CA local numbers only; `toll_free` currently returns 400.",
     };
 
     private static Option<string?> Provider { get; } = new(
