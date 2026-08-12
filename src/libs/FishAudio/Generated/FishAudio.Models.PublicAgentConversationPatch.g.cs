@@ -41,6 +41,18 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hangup_after_seconds")]
+        public int? HangupAfterSeconds { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hangup_farewell_enabled")]
+        public bool? HangupFarewellEnabled { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("record_audio")]
         public bool? RecordAudio { get; set; }
 
@@ -86,6 +98,12 @@ namespace FishAudio
         /// <param name="reengageEnabled">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="hangupAfterSeconds">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="hangupFarewellEnabled">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="recordAudio">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -107,6 +125,8 @@ namespace FishAudio
             bool? interruptible,
             global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity2? interruptionSensitivity,
             bool? reengageEnabled,
+            int? hangupAfterSeconds,
+            bool? hangupFarewellEnabled,
             bool? recordAudio,
             string? timezone,
             global::System.Collections.Generic.IList<global::FishAudio.AgentTransferDestinationPatch>? transferDestinations,
@@ -117,6 +137,8 @@ namespace FishAudio
             this.Interruptible = interruptible;
             this.InterruptionSensitivity = interruptionSensitivity;
             this.ReengageEnabled = reengageEnabled;
+            this.HangupAfterSeconds = hangupAfterSeconds;
+            this.HangupFarewellEnabled = hangupFarewellEnabled;
             this.RecordAudio = recordAudio;
             this.Timezone = timezone;
             this.TransferDestinations = transferDestinations;
