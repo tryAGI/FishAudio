@@ -17,6 +17,9 @@ namespace FishAudio
         /// <param name="status">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="direction">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="callerNumber">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -44,6 +47,7 @@ namespace FishAudio
         global::System.Threading.Tasks.Task<global::FishAudio.GetAgentSessionsResponse> GetAgentSessionsAsync(
             string? agentId = default,
             string? status = default,
+            string? direction = default,
             string? callerNumber = default,
             string? createdAfter = default,
             string? createdBefore = default,
@@ -64,6 +68,9 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="status">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="direction">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="callerNumber">
@@ -93,6 +100,7 @@ namespace FishAudio
         global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetAgentSessionsResponse>> GetAgentSessionsAsResponseAsync(
             string? agentId = default,
             string? status = default,
+            string? direction = default,
             string? callerNumber = default,
             string? createdAfter = default,
             string? createdBefore = default,

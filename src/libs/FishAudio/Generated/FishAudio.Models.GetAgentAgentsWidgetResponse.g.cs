@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Display config for the embeddable `&lt;fish-agent&gt;` widget (D-CI-17).<br/>
+    /// Display config for the embeddable `&lt;fish-agent&gt;` widget.<br/>
     /// Served without authentication for public agents; HTML attributes on the<br/>
     /// embed tag override every field. Grows alongside the Builder widget tab<br/>
     /// (greeting, policy switches, styles) — additions only, never renames.

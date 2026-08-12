@@ -29,6 +29,7 @@ namespace FishAudio
             global::System.Net.Http.HttpClient httpClient,
             ref string? agentId,
             ref string? status,
+            ref string? direction,
             ref string? callerNumber,
             ref string? createdAfter,
             ref string? createdBefore,
@@ -41,6 +42,7 @@ namespace FishAudio
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? agentId,
             string? status,
+            string? direction,
             string? callerNumber,
             string? createdAfter,
             string? createdBefore,
@@ -70,6 +72,9 @@ namespace FishAudio
         /// <param name="status">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="direction">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="callerNumber">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -97,6 +102,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.GetAgentSessionsResponse> GetAgentSessionsAsync(
             string? agentId = default,
             string? status = default,
+            string? direction = default,
             string? callerNumber = default,
             string? createdAfter = default,
             string? createdBefore = default,
@@ -110,6 +116,7 @@ namespace FishAudio
             var __response = await GetAgentSessionsAsResponseAsync(
                 agentId: agentId,
                 status: status,
+                direction: direction,
                 callerNumber: callerNumber,
                 createdAfter: createdAfter,
                 createdBefore: createdBefore,
@@ -134,6 +141,9 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="status">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="direction">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="callerNumber">
@@ -163,6 +173,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetAgentSessionsResponse>> GetAgentSessionsAsResponseAsync(
             string? agentId = default,
             string? status = default,
+            string? direction = default,
             string? callerNumber = default,
             string? createdAfter = default,
             string? createdBefore = default,
@@ -179,6 +190,7 @@ namespace FishAudio
                 httpClient: HttpClient,
                 agentId: ref agentId,
                 status: ref status,
+                direction: ref direction,
                 callerNumber: ref callerNumber,
                 createdAfter: ref createdAfter,
                 createdBefore: ref createdBefore,
@@ -216,6 +228,7 @@ namespace FishAudio
                             __pathBuilder
                                 .AddOptionalParameter("agent_id", agentId)
                                 .AddOptionalParameter("status", status)
+                                .AddOptionalParameter("direction", direction)
                                 .AddOptionalParameter("caller_number", callerNumber)
                                 .AddOptionalParameter("created_after", createdAfter)
                                 .AddOptionalParameter("created_before", createdBefore)
@@ -266,6 +279,7 @@ namespace FishAudio
                     httpRequestMessage: __httpRequest,
                     agentId: agentId,
                     status: status,
+                    direction: direction,
                     callerNumber: callerNumber,
                     createdAfter: createdAfter,
                     createdBefore: createdBefore,
