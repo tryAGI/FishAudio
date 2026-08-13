@@ -132,6 +132,13 @@ namespace FishAudio
         public bool? ExpectsResponse { get; set; }
 
         /// <summary>
+        /// Default Value: blocking
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("execution_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.CreateAgentToolsResponseExecutionModeJsonConverter))]
+        public global::FishAudio.CreateAgentToolsResponseExecutionMode? ExecutionMode { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -163,6 +170,9 @@ namespace FishAudio
         /// <param name="expectsResponse">
         /// Default Value: true
         /// </param>
+        /// <param name="executionMode">
+        /// Default Value: blocking
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -184,7 +194,8 @@ namespace FishAudio
             string? bodyTemplate,
             global::System.Collections.Generic.IList<global::FishAudio.PublicToolHeader>? headers,
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>? mockResponses,
-            bool? expectsResponse)
+            bool? expectsResponse,
+            global::FishAudio.CreateAgentToolsResponseExecutionMode? executionMode)
         {
             this.ToolId = toolId ?? throw new global::System.ArgumentNullException(nameof(toolId));
             this.WorkspaceId = workspaceId ?? throw new global::System.ArgumentNullException(nameof(workspaceId));
@@ -204,6 +215,7 @@ namespace FishAudio
             this.ErrorHandling = errorHandling;
             this.MockResponses = mockResponses;
             this.ExpectsResponse = expectsResponse;
+            this.ExecutionMode = executionMode;
         }
 
         /// <summary>

@@ -82,6 +82,12 @@ internal static partial class AgentToolsCreateAgentToolsCommandApiCommand
     private static Option<bool?> ExpectsResponse { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--expects-response",
         description: @"");
+
+    private static Option<global::FishAudio.PublicAgentToolCreatePayloadExecutionMode?> ExecutionMode { get; } = new(
+        name: @"--execution-mode")
+    {
+        Description = @"",
+    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -140,6 +146,7 @@ authorization_basic) are write-only and read back as `has_secret`.");
                         command.Options.Add(ErrorHandling);
                         command.Options.Add(MockResponses);
                         command.Options.Add(ExpectsResponse);
+                        command.Options.Add(ExecutionMode);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -178,6 +185,7 @@ authorization_basic) are write-only and read back as `has_secret`.");
                         var errorHandling = CliRuntime.WasSpecified(parseResult, ErrorHandling) ? parseResult.GetValue(ErrorHandling) : (__requestBase is { } __ErrorHandlingBaseValue ? __ErrorHandlingBaseValue.ErrorHandling : default);
                         var mockResponses = CliRuntime.WasSpecified(parseResult, MockResponses) ? parseResult.GetValue(MockResponses) : (__requestBase is { } __MockResponsesBaseValue ? __MockResponsesBaseValue.MockResponses : default);
                         var expectsResponse = CliRuntime.WasSpecified(parseResult, ExpectsResponse) ? parseResult.GetValue(ExpectsResponse) : (__requestBase is { } __ExpectsResponseBaseValue ? __ExpectsResponseBaseValue.ExpectsResponse : default);
+                        var executionMode = CliRuntime.WasSpecified(parseResult, ExecutionMode) ? parseResult.GetValue(ExecutionMode) : (__requestBase is { } __ExecutionModeBaseValue ? __ExecutionModeBaseValue.ExecutionMode : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -195,6 +203,7 @@ authorization_basic) are write-only and read back as `has_secret`.");
                                     errorHandling: errorHandling,
                                     mockResponses: mockResponses,
                                     expectsResponse: expectsResponse,
+                                    executionMode: executionMode,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 
