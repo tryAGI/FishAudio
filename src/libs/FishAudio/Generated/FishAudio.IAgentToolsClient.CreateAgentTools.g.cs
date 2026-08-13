@@ -109,6 +109,9 @@ namespace FishAudio
         /// <param name="expectsResponse">
         /// Default Value: true
         /// </param>
+        /// <param name="executionMode">
+        /// Default Value: blocking
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -126,6 +129,7 @@ namespace FishAudio
             global::FishAudio.PublicAgentToolCreatePayloadErrorHandling? errorHandling = default,
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>? mockResponses = default,
             bool? expectsResponse = default,
+            global::FishAudio.PublicAgentToolCreatePayloadExecutionMode? executionMode = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
