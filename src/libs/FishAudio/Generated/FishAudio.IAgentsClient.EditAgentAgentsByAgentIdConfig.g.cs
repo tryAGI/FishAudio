@@ -12,7 +12,9 @@ namespace FishAudio
         /// under 2000 tokens is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;<br/>
-        /// anything else is 422. `tool_ids` and<br/>
+        /// anything else is 422. `voice.expressive` opts into richer expressive<br/>
+        /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
+        /// standard delivery. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422.
         /// </summary>
@@ -54,7 +56,9 @@ namespace FishAudio
         /// under 2000 tokens is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;<br/>
-        /// anything else is 422. `tool_ids` and<br/>
+        /// anything else is 422. `voice.expressive` opts into richer expressive<br/>
+        /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
+        /// standard delivery. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422.
         /// </summary>
@@ -96,7 +100,9 @@ namespace FishAudio
         /// under 2000 tokens is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;<br/>
-        /// anything else is 422. `tool_ids` and<br/>
+        /// anything else is 422. `voice.expressive` opts into richer expressive<br/>
+        /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
+        /// standard delivery. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422.
         /// </summary>

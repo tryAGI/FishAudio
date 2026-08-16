@@ -22,6 +22,12 @@ namespace FishAudio
         public global::FishAudio.AgentVoiceConfigSpeakingLanguage? SpeakingLanguage { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expressive")]
+        public bool? Expressive { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,15 +42,20 @@ namespace FishAudio
         /// <param name="speakingLanguage">
         /// Default Value: en
         /// </param>
+        /// <param name="expressive">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentVoiceConfig(
             string? voiceId,
-            global::FishAudio.AgentVoiceConfigSpeakingLanguage? speakingLanguage)
+            global::FishAudio.AgentVoiceConfigSpeakingLanguage? speakingLanguage,
+            bool? expressive)
         {
             this.VoiceId = voiceId;
             this.SpeakingLanguage = speakingLanguage;
+            this.Expressive = expressive;
         }
 
         /// <summary>
