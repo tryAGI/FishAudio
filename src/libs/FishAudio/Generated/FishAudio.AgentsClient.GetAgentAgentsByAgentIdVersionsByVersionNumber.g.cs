@@ -45,7 +45,7 @@ namespace FishAudio
 
         /// <summary>
         /// Get Agent Version<br/>
-        /// One published version with its full frozen configuration snapshot —<br/>
+        /// One published version with its full frozen configuration snapshot,<br/>
         /// including the current live version. Secrets inside the snapshot are<br/>
         /// redacted the same way as the draft config.
         /// </summary>
@@ -71,7 +71,7 @@ namespace FishAudio
         }
         /// <summary>
         /// Get Agent Version<br/>
-        /// One published version with its full frozen configuration snapshot —<br/>
+        /// One published version with its full frozen configuration snapshot,<br/>
         /// including the current live version. Secrets inside the snapshot are<br/>
         /// redacted the same way as the draft config.
         /// </summary>

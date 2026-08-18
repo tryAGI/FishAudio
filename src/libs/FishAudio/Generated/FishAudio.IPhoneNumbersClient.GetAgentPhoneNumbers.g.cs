@@ -10,7 +10,7 @@ namespace FishAudio
         /// for good and never appear. Look an id up by E.164 with `phone_number`, or<br/>
         /// filter with `agent_id` to see one agent's numbers. Paginate with `cursor`<br/>
         /// (follow `next_cursor` while `has_more` is true) or with `page` for offset<br/>
-        /// pagination with a `total` count — the two are mutually exclusive.
+        /// pagination with a `total` count; the two are mutually exclusive.
         /// </summary>
         /// <param name="phoneNumber">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -48,7 +48,7 @@ namespace FishAudio
         /// for good and never appear. Look an id up by E.164 with `phone_number`, or<br/>
         /// filter with `agent_id` to see one agent's numbers. Paginate with `cursor`<br/>
         /// (follow `next_cursor` while `has_more` is true) or with `page` for offset<br/>
-        /// pagination with a `total` count — the two are mutually exclusive.
+        /// pagination with a `total` count; the two are mutually exclusive.
         /// </summary>
         /// <param name="phoneNumber">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

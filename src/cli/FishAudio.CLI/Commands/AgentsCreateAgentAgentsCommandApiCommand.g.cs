@@ -64,9 +64,8 @@ internal static partial class AgentsCreateAgentAgentsCommandApiCommand
     public static Command Create()
     {
         var command = new Command(@"create-agent-agents", @"Create Agent
-Create an agent, optionally with its full initial configuration inline —
-one call provisions a ready-to-publish agent. The agent starts as a draft:
-publish it before creating sessions with it.");
+Create an agent, optionally with its full initial configuration inline.
+The agent starts as a draft: publish it before creating sessions with it.");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(DescriptionOption);
                         command.Options.Add(Config);

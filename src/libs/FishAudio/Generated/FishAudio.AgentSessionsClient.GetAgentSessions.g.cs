@@ -64,7 +64,7 @@ namespace FishAudio
         /// List your team's sessions, newest first. Filter by agent, status, caller<br/>
         /// number, or creation time. Paginate with `cursor` (recommended; follow<br/>
         /// `next_cursor` while `has_more` is true) or with `page` for offset pagination<br/>
-        /// with a `total` count — the two are mutually exclusive.
+        /// with a `total` count; the two are mutually exclusive.
         /// </summary>
         /// <param name="agentId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -135,7 +135,7 @@ namespace FishAudio
         /// List your team's sessions, newest first. Filter by agent, status, caller<br/>
         /// number, or creation time. Paginate with `cursor` (recommended; follow<br/>
         /// `next_cursor` while `has_more` is true) or with `page` for offset pagination<br/>
-        /// with a `total` count — the two are mutually exclusive.
+        /// with a `total` count; the two are mutually exclusive.
         /// </summary>
         /// <param name="agentId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

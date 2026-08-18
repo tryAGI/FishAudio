@@ -6,8 +6,8 @@ namespace FishAudio
     {
         /// <summary>
         /// Delete Knowledge Source<br/>
-        /// Delete a knowledge source. Returns 409 while any agent still references it<br/>
-        /// — in its draft or in its currently published version (sessions resolve<br/>
+        /// Delete a knowledge source. Returns 409 while any agent still references it,<br/>
+        /// in its draft or in its currently published version (sessions resolve<br/>
         /// sources at call time, so deleting a published reference would change a<br/>
         /// running agent). Check `GET /v1/agent/knowledge-sources/{source_id}/agents`,<br/>
         /// detach via the agent config, and republish if needed before deleting.
@@ -22,8 +22,8 @@ namespace FishAudio
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete Knowledge Source<br/>
-        /// Delete a knowledge source. Returns 409 while any agent still references it<br/>
-        /// — in its draft or in its currently published version (sessions resolve<br/>
+        /// Delete a knowledge source. Returns 409 while any agent still references it,<br/>
+        /// in its draft or in its currently published version (sessions resolve<br/>
         /// sources at call time, so deleting a published reference would change a<br/>
         /// running agent). Check `GET /v1/agent/knowledge-sources/{source_id}/agents`,<br/>
         /// detach via the agent config, and republish if needed before deleting.

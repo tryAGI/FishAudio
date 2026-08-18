@@ -60,7 +60,7 @@ internal static partial class KnowledgeSourcesGetAgentKnowledgeSourcesCommandApi
         var command = new Command(@"get-agent-knowledge-sources", @"List Knowledge Sources
 List your team's knowledge sources, newest first. Paginate with `cursor`
 (follow `next_cursor` while `has_more` is true) or with `page` for offset
-pagination with a `total` count — the two are mutually exclusive.");
+pagination with a `total` count; the two are mutually exclusive.");
                         command.Options.Add(Search);
                         command.Options.Add(Cursor);
                         command.Options.Add(Page);

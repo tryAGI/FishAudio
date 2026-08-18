@@ -6,7 +6,7 @@ namespace FishAudio
     {
         /// <summary>
         /// Update Phone Number<br/>
-        /// Change the label and/or repoint the number at another agent — the<br/>
+        /// Change the label and/or repoint the number at another agent: the<br/>
         /// deployment-pipeline move (rebind from the staging agent to the production<br/>
         /// one). Send `agent_id: null` to unbind; unbound numbers ring busy. The<br/>
         /// agent must live in the number's workspace. Rebinding is a routing-table<br/>
@@ -26,7 +26,7 @@ namespace FishAudio
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Phone Number<br/>
-        /// Change the label and/or repoint the number at another agent — the<br/>
+        /// Change the label and/or repoint the number at another agent: the<br/>
         /// deployment-pipeline move (rebind from the staging agent to the production<br/>
         /// one). Send `agent_id: null` to unbind; unbound numbers ring busy. The<br/>
         /// agent must live in the number's workspace. Rebinding is a routing-table<br/>
@@ -46,7 +46,7 @@ namespace FishAudio
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Phone Number<br/>
-        /// Change the label and/or repoint the number at another agent — the<br/>
+        /// Change the label and/or repoint the number at another agent: the<br/>
         /// deployment-pipeline move (rebind from the staging agent to the production<br/>
         /// one). Send `agent_id: null` to unbind; unbound numbers ring busy. The<br/>
         /// agent must live in the number's workspace. Rebinding is a routing-table<br/>

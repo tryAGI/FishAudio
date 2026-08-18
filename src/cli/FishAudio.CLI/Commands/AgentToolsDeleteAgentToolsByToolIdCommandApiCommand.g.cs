@@ -17,7 +17,7 @@ internal static partial class AgentToolsDeleteAgentToolsByToolIdCommandApiComman
     {
         var command = new Command(@"delete-agent-tools-by-tool-id", @"Delete Tool
 Delete a tool. Returns 409 while any agent's draft configuration still
-references it — check `GET /v1/agent/tools/{tool_id}/agents` and detach it
+references it. Check `GET /v1/agent/tools/{tool_id}/agents` and detach it
 via the agent config first, so a delete can never silently change agent
 behavior.");
                         command.Arguments.Add(ToolId);
