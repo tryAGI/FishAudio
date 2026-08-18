@@ -7,7 +7,7 @@ namespace FishAudio
     /// Request body for text-to-speech synthesis. Supports single-speaker synthesis on all compatible TTS models. Multi-speaker dialogue synthesis is only available with the S2 family (`s2-pro`, `s2.1-pro`, `s2.1-pro-free`), not `s1`.<br/>
     /// ## Single Speaker<br/>
     /// Provide either `reference_id` (string) pointing to a voice model, or `references` (array of ReferenceAudio) for zero-shot cloning.<br/>
-    /// ## Multiple Speakers (Dialogue, S2 family only)<br/>
+    /// ## Multiple Speakers (Dialogue — S2 family only)<br/>
     /// For multi-speaker synthesis, provide:<br/>
     /// - `reference_id`: array of voice model IDs, e.g., ["speaker-0-id", "speaker-1-id"]<br/>
     /// - `text`: use speaker tags `&lt;|speaker:0|&gt;`, `&lt;|speaker:1|&gt;`, etc. to indicate speaker changes, e.g., "&lt;|speaker:0|&gt;Hello!&lt;|speaker:1|&gt;Hi there!"<br/>

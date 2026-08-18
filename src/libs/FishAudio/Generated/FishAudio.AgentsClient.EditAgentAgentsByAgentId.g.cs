@@ -47,7 +47,7 @@ namespace FishAudio
         /// Update Agent<br/>
         /// Update agent-level fields (name, description, status, public access and<br/>
         /// session-override policy). Omitted fields keep their value. Conversation<br/>
-        /// behavior (voice, prompt, recording and the rest) is draft configuration:<br/>
+        /// behavior — voice, prompt, recording and the rest — is draft configuration:<br/>
         /// use `PATCH /v1/agent/agents/{agent_id}/config`.
         /// </summary>
         /// <param name="agentId"></param>
@@ -76,7 +76,7 @@ namespace FishAudio
         /// Update Agent<br/>
         /// Update agent-level fields (name, description, status, public access and<br/>
         /// session-override policy). Omitted fields keep their value. Conversation<br/>
-        /// behavior (voice, prompt, recording and the rest) is draft configuration:<br/>
+        /// behavior — voice, prompt, recording and the rest — is draft configuration:<br/>
         /// use `PATCH /v1/agent/agents/{agent_id}/config`.
         /// </summary>
         /// <param name="agentId"></param>
@@ -600,7 +600,7 @@ namespace FishAudio
         /// Update Agent<br/>
         /// Update agent-level fields (name, description, status, public access and<br/>
         /// session-override policy). Omitted fields keep their value. Conversation<br/>
-        /// behavior (voice, prompt, recording and the rest) is draft configuration:<br/>
+        /// behavior — voice, prompt, recording and the rest — is draft configuration:<br/>
         /// use `PATCH /v1/agent/agents/{agent_id}/config`.
         /// </summary>
         /// <param name="agentId"></param>

@@ -70,7 +70,7 @@ internal static partial class AgentsGetAgentAgentsCommandApiCommand
         var command = new Command(@"get-agent-agents", @"List Agents
 List your team's agents, newest first. Paginate with `cursor` (follow
 `next_cursor` while `has_more` is true) or with `page` for offset
-pagination with a `total` count; the two are mutually exclusive.");
+pagination with a `total` count — the two are mutually exclusive.");
                         command.Options.Add(Search);
                         command.Options.Add(IncludeArchived);
                         command.Options.Add(PublicationState);

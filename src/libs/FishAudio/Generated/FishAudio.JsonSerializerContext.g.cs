@@ -13,521 +13,10 @@ namespace FishAudio
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::FishAudio.JsonConverters.AgentSessionSummaryStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionSummaryStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionSummarySourceJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionSummarySourceNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionSummaryDirectionJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionSummaryDirectionNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionSummaryDialStatus2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionSummaryDialStatus2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionSummaryAnsweredBy2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionSummaryAnsweredBy2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionOverridesPayloadLanguage2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionOverridesPayloadLanguage2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionAnalysisCriterionResultResultJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionAnalysisCriterionResultResultNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionAnalysisDataValueTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionAnalysisDataValueTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionAnalysisResultStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionAnalysisResultStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionMessageItemRoleJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionMessageItemRoleNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionToolResultItemStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionToolResultItemStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionRecordingTrackEntityRoleJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionRecordingTrackEntityRoleNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionRecordingTrackEntityStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentSessionRecordingTrackEntityStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentEntityStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentEntityStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentEntityPublicationStateJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentEntityPublicationStateNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentEntityOverridesAllowedItemJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentEntityOverridesAllowedItemNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentOutboundVoicemailPatchActionJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentOutboundVoicemailPatchActionNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentTransferDestinationPatchModeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentTransferDestinationPatchModeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentTransferDestinationPatchWarmConnectJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentTransferDestinationPatchWarmConnectNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentAnalysisDataFieldTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentAnalysisDataFieldTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentAnalysisSummaryPatchLanguageJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentAnalysisSummaryPatchLanguageNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentConversationPatchEagerness2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentConversationPatchEagerness2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentConversationPatchInterruptionSensitivity2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentConversationPatchInterruptionSensitivity2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentPromptPatchFirstMessageMode2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentPromptPatchFirstMessageMode2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentVoicePatchSpeakingLanguage2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentVoicePatchSpeakingLanguage2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentUpdatePayloadStatus2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentUpdatePayloadStatus2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentUpdatePayloadOverridesAllowedVariant1ItemJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentUpdatePayloadOverridesAllowedVariant1ItemNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentAnalysisDataFieldTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentAnalysisDataFieldTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentAnalysisSummaryConfigLanguageJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentAnalysisSummaryConfigLanguageNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentConversationConfigEagernessJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentConversationConfigEagernessNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentConversationConfigInterruptionSensitivityJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentConversationConfigInterruptionSensitivityNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentOutboundVoicemailConfigActionJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentOutboundVoicemailConfigActionNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentPromptConfigFirstMessageModeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentPromptConfigFirstMessageModeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentTransferDestinationModeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentTransferDestinationModeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentTransferDestinationWarmConnectJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentTransferDestinationWarmConnectNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentVoiceConfigSpeakingLanguageJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentVoiceConfigSpeakingLanguageNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolSummaryToolTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolSummaryToolTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolSummaryMethodJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolSummaryMethodNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentWebhookHeaderPayloadKindJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AgentWebhookHeaderPayloadKindNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadToolTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadToolTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadMethodJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadMethodNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadErrorHandlingJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadErrorHandlingNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadExecutionModeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadExecutionModeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicToolHeaderKindJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicToolHeaderKindNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadMethod2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadMethod2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadErrorHandling2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadErrorHandling2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadExecutionMode2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadExecutionMode2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicPhoneNumberEntityProviderJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicPhoneNumberEntityProviderNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicPhoneNumberEntityStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PublicPhoneNumberEntityStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.TTSRequestFormatJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.TTSRequestFormatNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.TTSRequestLatencyJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.TTSRequestLatencyNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.TTSStreamWithTimestampRequestFormatJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.TTSStreamWithTimestampRequestFormatNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.TTSStreamWithTimestampRequestLatencyJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.TTSStreamWithTimestampRequestLatencyNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.ModelEntityTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.ModelEntityTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.ModelEntityTrainModeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.ModelEntityTrainModeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.ModelEntityStateJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.ModelEntityStateNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.ModelEntityVisibilityJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.ModelEntityVisibilityNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.ModelEntityPvcReleaseState2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.ModelEntityPvcReleaseState2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibilityJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibilityNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibility2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibility2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibility3JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibility3NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibility4JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibility4NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility4JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility4NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility6JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility6NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility8JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchModelRequestVisibility8NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentAgentsPublicationStateJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentAgentsPublicationStateNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentAvailablePhoneNumbersNumberTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentAvailablePhoneNumbersNumberTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateTtsModelJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateTtsModelNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateTtsStreamWithTimestampModelJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateTtsStreamWithTimestampModelNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelSortByJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelSortByNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseSourceJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseSourceNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseDirectionJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseDirectionNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseDialStatus2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseDialStatus2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseAnsweredBy2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseAnsweredBy2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseItemDiscriminatorTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsResponseItemDiscriminatorTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsRecordingResponseStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentSessionsRecordingResponseStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentAgentsResponseStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentAgentsResponseStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentAgentsResponsePublicationStateJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentAgentsResponsePublicationStateNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentAgentsResponseOverridesAllowedItemJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentAgentsResponseOverridesAllowedItemNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentAgentsResponseStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentAgentsResponseStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentAgentsResponsePublicationStateJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentAgentsResponsePublicationStateNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentAgentsResponseOverridesAllowedItemJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentAgentsResponseOverridesAllowedItemNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentAgentsResponseStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentAgentsResponseStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentAgentsResponsePublicationStateJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentAgentsResponsePublicationStateNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentAgentsResponseOverridesAllowedItemJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentAgentsResponseOverridesAllowedItemNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentToolsResponseToolTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentToolsResponseToolTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentToolsResponseMethodJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentToolsResponseMethodNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentToolsResponseErrorHandlingJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentToolsResponseErrorHandlingNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentToolsResponseExecutionModeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentToolsResponseExecutionModeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentToolsResponseToolTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentToolsResponseToolTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentToolsResponseMethodJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentToolsResponseMethodNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentToolsResponseErrorHandlingJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentToolsResponseErrorHandlingNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentToolsResponseExecutionModeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentToolsResponseExecutionModeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentToolsResponseToolTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentToolsResponseToolTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentToolsResponseMethodJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentToolsResponseMethodNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentToolsResponseErrorHandlingJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentToolsResponseErrorHandlingNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentToolsResponseExecutionModeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentToolsResponseExecutionModeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentPhoneNumbersResponseProviderJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentPhoneNumbersResponseProviderNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentPhoneNumbersResponseStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateAgentPhoneNumbersResponseStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentPhoneNumbersResponseProviderJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentPhoneNumbersResponseProviderNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentPhoneNumbersResponseStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetAgentPhoneNumbersResponseStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentPhoneNumbersResponseProviderJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentPhoneNumbersResponseProviderNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentPhoneNumbersResponseStatusJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.PatchAgentPhoneNumbersResponseStatusNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelResponseTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelResponseTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelResponseTrainModeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelResponseTrainModeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelResponseStateJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelResponseStateNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelResponseVisibilityJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelResponseVisibilityNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelResponsePvcReleaseState2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.CreateModelResponsePvcReleaseState2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponseTypeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponseTypeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponseTrainModeJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponseTrainModeNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponseStateJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponseStateNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponseVisibilityJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponseVisibilityNullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponsePvcReleaseState2JsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.GetModelResponsePvcReleaseState2NullableJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.ItemsItemJsonConverter),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<string, int?, double?, bool?>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<bool?, double?, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>),
-
-            typeof(global::FishAudio.JsonConverters.UnixTimestampJsonConverter),
         })]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
@@ -590,13 +79,17 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentWebhooksPatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentKnowledgeBasePatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentGuardrailsPatch))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentLLMPatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentConversationPatchEagerness2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentTransferDestinationPatch>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentCreatePayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentLLMCustomConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentLLMPatchTier2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentPromptPatchFirstMessageMode2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicSystemToolsPatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentVoicePatchSpeakingLanguage2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicConversationInitWebhookPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.PublicPostCallWebhookPayload>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicPostCallWebhookPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentUpdatePayload))]
@@ -618,6 +111,9 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTransferDestination))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentOutboundConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentGuardrailsConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMConfigRedacted))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMConfigRedactedTier), TypeInfoPropertyName = "AgentLLMConfigRedactedTier2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMCustomConfigRedacted))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentOutboundVoicemailConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentOutboundVoicemailConfigAction), TypeInfoPropertyName = "AgentOutboundVoicemailConfigAction2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentPromptConfig))]
@@ -630,6 +126,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentKnowledgeBaseConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolsConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentWebhooksConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicConversationInitWebhook))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.PublicPostCallWebhook>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicPostCallWebhook))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentVersionSummary))]
@@ -663,6 +160,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicPhoneNumberEntityStatus), TypeInfoPropertyName = "PublicPhoneNumberEntityStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicPhoneNumberPurchasePayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicPhoneNumberUpdatePayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PhoneCallCreatePayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ASRSegment))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ProsodyControl))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ReferenceAudio))]
@@ -822,6 +320,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentAgentsPublishResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentAgentsPublishResponse4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentAgentsPublishResponse5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentAgentsPublishResponse6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAgentsVersionsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.PublicAgentVersionSummary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAgentsVersionsResponse2))]
@@ -942,6 +441,16 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentPhoneNumbersResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentPhoneNumbersResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentPhoneNumbersResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse6))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse7))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse8))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse9))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse10))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.ASRSegment>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrResponse2))]
@@ -981,6 +490,125 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteModelResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteModelResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummaryStatus?), TypeInfoPropertyName = "NullableAgentSessionSummaryStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummarySource?), TypeInfoPropertyName = "NullableAgentSessionSummarySource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummaryDirection?), TypeInfoPropertyName = "NullableAgentSessionSummaryDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<string, int?, double?, bool?>?), TypeInfoPropertyName = "NullableAnyOfStringInt32DoubleBoolean2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAnalysisCriterionResultResult?), TypeInfoPropertyName = "NullableAgentSessionAnalysisCriterionResultResult2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAnalysisDataValueType?), TypeInfoPropertyName = "NullableAgentSessionAnalysisDataValueType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<bool?, double?, string, object>?), TypeInfoPropertyName = "NullableAnyOfBooleanDoubleStringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAnalysisResultStatus?), TypeInfoPropertyName = "NullableAgentSessionAnalysisResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionMessageItemRole?), TypeInfoPropertyName = "NullableAgentSessionMessageItemRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionToolResultItemStatus?), TypeInfoPropertyName = "NullableAgentSessionToolResultItemStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionRecordingTrackEntityRole?), TypeInfoPropertyName = "NullableAgentSessionRecordingTrackEntityRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionRecordingTrackEntityStatus?), TypeInfoPropertyName = "NullableAgentSessionRecordingTrackEntityStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentEntityStatus?), TypeInfoPropertyName = "NullablePublicAgentEntityStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentEntityPublicationState?), TypeInfoPropertyName = "NullablePublicAgentEntityPublicationState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentEntityOverridesAllowedItem?), TypeInfoPropertyName = "NullablePublicAgentEntityOverridesAllowedItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentOutboundVoicemailPatchAction?), TypeInfoPropertyName = "NullableAgentOutboundVoicemailPatchAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTransferDestinationPatchMode?), TypeInfoPropertyName = "NullableAgentTransferDestinationPatchMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTransferDestinationPatchWarmConnect?), TypeInfoPropertyName = "NullableAgentTransferDestinationPatchWarmConnect2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentAnalysisDataFieldType?), TypeInfoPropertyName = "NullablePublicAgentAnalysisDataFieldType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentAnalysisSummaryPatchLanguage?), TypeInfoPropertyName = "NullablePublicAgentAnalysisSummaryPatchLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item?), TypeInfoPropertyName = "NullablePublicAgentUpdatePayloadOverridesAllowedVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentAnalysisDataFieldType?), TypeInfoPropertyName = "NullableAgentAnalysisDataFieldType2")]
+    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentAnalysisSummaryConfigLanguage?), TypeInfoPropertyName = "NullableAgentAnalysisSummaryConfigLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentConversationConfigEagerness?), TypeInfoPropertyName = "NullableAgentConversationConfigEagerness2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentConversationConfigInterruptionSensitivity?), TypeInfoPropertyName = "NullableAgentConversationConfigInterruptionSensitivity2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMConfigRedactedTier?), TypeInfoPropertyName = "NullableAgentLLMConfigRedactedTier2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentOutboundVoicemailConfigAction?), TypeInfoPropertyName = "NullableAgentOutboundVoicemailConfigAction2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentPromptConfigFirstMessageMode?), TypeInfoPropertyName = "NullableAgentPromptConfigFirstMessageMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTransferDestinationMode?), TypeInfoPropertyName = "NullableAgentTransferDestinationMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTransferDestinationWarmConnect?), TypeInfoPropertyName = "NullableAgentTransferDestinationWarmConnect2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentVoiceConfigSpeakingLanguage?), TypeInfoPropertyName = "NullableAgentVoiceConfigSpeakingLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolSummaryToolType?), TypeInfoPropertyName = "NullablePublicAgentToolSummaryToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolSummaryMethod?), TypeInfoPropertyName = "NullablePublicAgentToolSummaryMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentWebhookHeaderPayloadKind?), TypeInfoPropertyName = "NullableAgentWebhookHeaderPayloadKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadToolType?), TypeInfoPropertyName = "NullablePublicAgentToolCreatePayloadToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadMethod?), TypeInfoPropertyName = "NullablePublicAgentToolCreatePayloadMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadErrorHandling?), TypeInfoPropertyName = "NullablePublicAgentToolCreatePayloadErrorHandling2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadExecutionMode?), TypeInfoPropertyName = "NullablePublicAgentToolCreatePayloadExecutionMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicToolHeaderKind?), TypeInfoPropertyName = "NullablePublicToolHeaderKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicPhoneNumberEntityProvider?), TypeInfoPropertyName = "NullablePublicPhoneNumberEntityProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicPhoneNumberEntityStatus?), TypeInfoPropertyName = "NullablePublicPhoneNumberEntityStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>?), TypeInfoPropertyName = "NullableAnyOfIListReferenceAudioIListIListReferenceAudioObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>?), TypeInfoPropertyName = "NullableAnyOfStringIListStringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSRequestFormat?), TypeInfoPropertyName = "NullableTTSRequestFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSRequestLatency?), TypeInfoPropertyName = "NullableTTSRequestLatency2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSStreamWithTimestampRequestFormat?), TypeInfoPropertyName = "NullableTTSStreamWithTimestampRequestFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSStreamWithTimestampRequestLatency?), TypeInfoPropertyName = "NullableTTSStreamWithTimestampRequestLatency2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ModelEntityType?), TypeInfoPropertyName = "NullableModelEntityType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ModelEntityTrainMode?), TypeInfoPropertyName = "NullableModelEntityTrainMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ModelEntityState?), TypeInfoPropertyName = "NullableModelEntityState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ModelEntityVisibility?), TypeInfoPropertyName = "NullableModelEntityVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelRequestVisibility?), TypeInfoPropertyName = "NullableCreateModelRequestVisibility2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<global::System.Collections.Generic.IList<byte[]>, byte[]>?), TypeInfoPropertyName = "NullableAnyOfIListByteArrayByteArray2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>?), TypeInfoPropertyName = "NullableAnyOfIListStringStringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelRequestVisibility2?), TypeInfoPropertyName = "NullableCreateModelRequestVisibility22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelRequestVisibility3?), TypeInfoPropertyName = "NullableCreateModelRequestVisibility32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelRequestVisibility4?), TypeInfoPropertyName = "NullableCreateModelRequestVisibility42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>?), TypeInfoPropertyName = "NullableAnyOfIListStringString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAgentsPublicationState?), TypeInfoPropertyName = "NullableGetAgentAgentsPublicationState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType?), TypeInfoPropertyName = "NullableGetAgentAvailablePhoneNumbersNumberType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsModel?), TypeInfoPropertyName = "NullableCreateTtsModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampModel?), TypeInfoPropertyName = "NullableCreateTtsStreamWithTimestampModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelSortBy?), TypeInfoPropertyName = "NullableGetModelSortBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsResponseStatus?), TypeInfoPropertyName = "NullableGetAgentSessionsResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsResponseSource?), TypeInfoPropertyName = "NullableGetAgentSessionsResponseSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsResponseDirection?), TypeInfoPropertyName = "NullableGetAgentSessionsResponseDirection2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ItemsItem?), TypeInfoPropertyName = "NullableItemsItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType?), TypeInfoPropertyName = "NullableGetAgentSessionsResponseItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsRecordingResponseStatus?), TypeInfoPropertyName = "NullableGetAgentSessionsRecordingResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentAgentsResponseStatus?), TypeInfoPropertyName = "NullableCreateAgentAgentsResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentAgentsResponsePublicationState?), TypeInfoPropertyName = "NullableCreateAgentAgentsResponsePublicationState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem?), TypeInfoPropertyName = "NullableCreateAgentAgentsResponseOverridesAllowedItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAgentsResponseStatus?), TypeInfoPropertyName = "NullableGetAgentAgentsResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAgentsResponsePublicationState?), TypeInfoPropertyName = "NullableGetAgentAgentsResponsePublicationState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAgentsResponseOverridesAllowedItem?), TypeInfoPropertyName = "NullableGetAgentAgentsResponseOverridesAllowedItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentAgentsResponseStatus?), TypeInfoPropertyName = "NullablePatchAgentAgentsResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentAgentsResponsePublicationState?), TypeInfoPropertyName = "NullablePatchAgentAgentsResponsePublicationState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentAgentsResponseOverridesAllowedItem?), TypeInfoPropertyName = "NullablePatchAgentAgentsResponseOverridesAllowedItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseToolType?), TypeInfoPropertyName = "NullableCreateAgentToolsResponseToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseMethod?), TypeInfoPropertyName = "NullableCreateAgentToolsResponseMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseErrorHandling?), TypeInfoPropertyName = "NullableCreateAgentToolsResponseErrorHandling2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseExecutionMode?), TypeInfoPropertyName = "NullableCreateAgentToolsResponseExecutionMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseToolType?), TypeInfoPropertyName = "NullableGetAgentToolsResponseToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseMethod?), TypeInfoPropertyName = "NullableGetAgentToolsResponseMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseErrorHandling?), TypeInfoPropertyName = "NullableGetAgentToolsResponseErrorHandling2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseExecutionMode?), TypeInfoPropertyName = "NullableGetAgentToolsResponseExecutionMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseToolType?), TypeInfoPropertyName = "NullablePatchAgentToolsResponseToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseMethod?), TypeInfoPropertyName = "NullablePatchAgentToolsResponseMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseErrorHandling?), TypeInfoPropertyName = "NullablePatchAgentToolsResponseErrorHandling2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseExecutionMode?), TypeInfoPropertyName = "NullablePatchAgentToolsResponseExecutionMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneNumbersResponseProvider?), TypeInfoPropertyName = "NullableCreateAgentPhoneNumbersResponseProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneNumbersResponseStatus?), TypeInfoPropertyName = "NullableCreateAgentPhoneNumbersResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentPhoneNumbersResponseProvider?), TypeInfoPropertyName = "NullableGetAgentPhoneNumbersResponseProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentPhoneNumbersResponseStatus?), TypeInfoPropertyName = "NullableGetAgentPhoneNumbersResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentPhoneNumbersResponseProvider?), TypeInfoPropertyName = "NullablePatchAgentPhoneNumbersResponseProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus?), TypeInfoPropertyName = "NullablePatchAgentPhoneNumbersResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseType?), TypeInfoPropertyName = "NullableCreateModelResponseType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseTrainMode?), TypeInfoPropertyName = "NullableCreateModelResponseTrainMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseState?), TypeInfoPropertyName = "NullableCreateModelResponseState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseVisibility?), TypeInfoPropertyName = "NullableCreateModelResponseVisibility2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseType?), TypeInfoPropertyName = "NullableGetModelResponseType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseTrainMode?), TypeInfoPropertyName = "NullableGetModelResponseTrainMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseState?), TypeInfoPropertyName = "NullableGetModelResponseState2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponseVisibility?), TypeInfoPropertyName = "NullableGetModelResponseVisibility2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentSessionAnalysisDataValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentSessionAnalysisCriterionResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
@@ -1025,7 +653,1775 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.ASRSegment>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.VoiceDesignCandidate>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.ModelEntity>))]
+    internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+    /// <summary>
+    /// 
+    /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
+
+        private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SourceGenerationContext Default { get; } = new(DefaultOptions);
+
+        private SourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options)
+            : base(options)
+        {
+        }
+
+        /// <inheritdoc />
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultOptions;
+
+        /// <inheritdoc />
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
+        {
+            return Resolver.GetTypeInfo(type, Options);
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            options.Converters.Add(new global::FishAudio.JsonConverters.ItemsItemJsonConverter());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<string, int?, double?, bool?>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<bool?, double?, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<string, int?, double?, bool?>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>());
+            options.Converters.Add(new global::FishAudio.JsonConverters.UnixTimestampJsonConverter());
+
+            options.Converters.Add(new LazyEnumJsonConverterFactory());
+
+            return options;
+        }
+
+
+        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
+        {
+            public override bool CanConvert(global::System.Type typeToConvert)
+            {
+                return
+                    typeToConvert == typeof(global::FishAudio.AgentSessionSummaryStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionSummaryStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionSummarySource)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionSummarySource?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionSummaryDirection)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionSummaryDirection?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionSummaryDialStatus2)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionSummaryDialStatus2?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionSummaryAnsweredBy2)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionSummaryAnsweredBy2?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage2)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage2?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisCriterionResultResult)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisCriterionResultResult?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisDataValueType)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisDataValueType?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisResultStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisResultStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionMessageItemRole)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionMessageItemRole?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionToolResultItemStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionToolResultItemStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionRecordingTrackEntityRole)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionRecordingTrackEntityRole?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionRecordingTrackEntityStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionRecordingTrackEntityStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentEntityStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentEntityStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentEntityPublicationState)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentEntityPublicationState?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentEntityOverridesAllowedItem)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentEntityOverridesAllowedItem?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentOutboundVoicemailPatchAction)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentOutboundVoicemailPatchAction?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentTransferDestinationPatchMode)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentTransferDestinationPatchMode?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentTransferDestinationPatchWarmConnect)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentTransferDestinationPatchWarmConnect?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentAnalysisDataFieldType)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentAnalysisDataFieldType?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentAnalysisSummaryPatchLanguage)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentAnalysisSummaryPatchLanguage?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentConversationPatchEagerness2)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentConversationPatchEagerness2?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity2)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity2?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentLLMPatchTier2)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentLLMPatchTier2?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentPromptPatchFirstMessageMode2)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentPromptPatchFirstMessageMode2?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentVoicePatchSpeakingLanguage2)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentVoicePatchSpeakingLanguage2?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentUpdatePayloadStatus2)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentUpdatePayloadStatus2?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentAnalysisDataFieldType)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentAnalysisDataFieldType?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentAnalysisSummaryConfigLanguage)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentAnalysisSummaryConfigLanguage?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentConversationConfigEagerness)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentConversationConfigEagerness?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentConversationConfigInterruptionSensitivity)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentConversationConfigInterruptionSensitivity?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentLLMConfigRedactedTier)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentLLMConfigRedactedTier?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentOutboundVoicemailConfigAction)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentOutboundVoicemailConfigAction?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentPromptConfigFirstMessageMode)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentPromptConfigFirstMessageMode?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentTransferDestinationMode)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentTransferDestinationMode?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentTransferDestinationWarmConnect)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentTransferDestinationWarmConnect?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentVoiceConfigSpeakingLanguage)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentVoiceConfigSpeakingLanguage?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolSummaryToolType)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolSummaryToolType?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolSummaryMethod)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolSummaryMethod?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentWebhookHeaderPayloadKind)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentWebhookHeaderPayloadKind?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadToolType)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadToolType?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadMethod)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadMethod?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadErrorHandling)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadErrorHandling?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadExecutionMode)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadExecutionMode?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicToolHeaderKind)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicToolHeaderKind?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadMethod2)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadMethod2?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling2)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling2?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode2)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode2?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicPhoneNumberEntityProvider)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicPhoneNumberEntityProvider?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicPhoneNumberEntityStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicPhoneNumberEntityStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.TTSRequestFormat)
+
+                    || typeToConvert == typeof(global::FishAudio.TTSRequestFormat?)
+
+                    || typeToConvert == typeof(global::FishAudio.TTSRequestLatency)
+
+                    || typeToConvert == typeof(global::FishAudio.TTSRequestLatency?)
+
+                    || typeToConvert == typeof(global::FishAudio.TTSStreamWithTimestampRequestFormat)
+
+                    || typeToConvert == typeof(global::FishAudio.TTSStreamWithTimestampRequestFormat?)
+
+                    || typeToConvert == typeof(global::FishAudio.TTSStreamWithTimestampRequestLatency)
+
+                    || typeToConvert == typeof(global::FishAudio.TTSStreamWithTimestampRequestLatency?)
+
+                    || typeToConvert == typeof(global::FishAudio.ModelEntityType)
+
+                    || typeToConvert == typeof(global::FishAudio.ModelEntityType?)
+
+                    || typeToConvert == typeof(global::FishAudio.ModelEntityTrainMode)
+
+                    || typeToConvert == typeof(global::FishAudio.ModelEntityTrainMode?)
+
+                    || typeToConvert == typeof(global::FishAudio.ModelEntityState)
+
+                    || typeToConvert == typeof(global::FishAudio.ModelEntityState?)
+
+                    || typeToConvert == typeof(global::FishAudio.ModelEntityVisibility)
+
+                    || typeToConvert == typeof(global::FishAudio.ModelEntityVisibility?)
+
+                    || typeToConvert == typeof(global::FishAudio.ModelEntityPvcReleaseState2)
+
+                    || typeToConvert == typeof(global::FishAudio.ModelEntityPvcReleaseState2?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility2)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility2?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility3)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility3?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility4)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility4?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility2)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility2?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility4)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility4?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility6)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility6?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility8)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility8?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentAgentsPublicationState)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentAgentsPublicationState?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateTtsModel)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateTtsModel?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateTtsStreamWithTimestampModel)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateTtsStreamWithTimestampModel?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelSortBy)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelSortBy?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseSource)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseSource?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseDirection)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseDirection?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseDialStatus2)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseDialStatus2?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseAnsweredBy2)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseAnsweredBy2?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsRecordingResponseStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentSessionsRecordingResponseStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponseStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponseStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponsePublicationState)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponsePublicationState?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponseStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponseStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponsePublicationState)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponsePublicationState?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponseOverridesAllowedItem)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponseOverridesAllowedItem?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponseStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponseStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponsePublicationState)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponsePublicationState?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponseOverridesAllowedItem)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponseOverridesAllowedItem?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseToolType)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseToolType?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseMethod)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseMethod?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseErrorHandling)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseErrorHandling?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseExecutionMode)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseExecutionMode?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseToolType)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseToolType?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseMethod)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseMethod?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseErrorHandling)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseErrorHandling?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseExecutionMode)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseExecutionMode?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseToolType)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseToolType?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseMethod)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseMethod?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseErrorHandling)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseErrorHandling?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseExecutionMode)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseExecutionMode?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentPhoneNumbersResponseProvider)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentPhoneNumbersResponseProvider?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentPhoneNumbersResponseStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentPhoneNumbersResponseStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentPhoneNumbersResponseProvider)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentPhoneNumbersResponseProvider?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentPhoneNumbersResponseStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentPhoneNumbersResponseStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseProvider)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseProvider?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelResponseType)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelResponseType?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelResponseTrainMode)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelResponseTrainMode?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelResponseState)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelResponseState?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelResponseVisibility)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelResponseVisibility?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelResponsePvcReleaseState2)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateModelResponsePvcReleaseState2?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelResponseType)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelResponseType?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelResponseTrainMode)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelResponseTrainMode?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelResponseState)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelResponseState?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelResponseVisibility)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelResponseVisibility?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelResponsePvcReleaseState2)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelResponsePvcReleaseState2?);
+            }
+
+            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
+                global::System.Type typeToConvert,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionSummaryStatus))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionSummaryStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionSummaryStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionSummaryStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionSummarySource))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionSummarySourceJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionSummarySource?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionSummarySourceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionSummaryDirection))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionSummaryDirectionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionSummaryDirection?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionSummaryDirectionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionSummaryDialStatus2))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionSummaryDialStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionSummaryDialStatus2?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionSummaryDialStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionSummaryAnsweredBy2))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionSummaryAnsweredBy2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionSummaryAnsweredBy2?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionSummaryAnsweredBy2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage2))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionOverridesPayloadLanguage2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage2?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionOverridesPayloadLanguage2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisCriterionResultResult))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionAnalysisCriterionResultResultJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisCriterionResultResult?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionAnalysisCriterionResultResultNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisDataValueType))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionAnalysisDataValueTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisDataValueType?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionAnalysisDataValueTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisResultStatus))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionAnalysisResultStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisResultStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionAnalysisResultStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionMessageItemRole))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionMessageItemRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionMessageItemRole?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionMessageItemRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionToolResultItemStatus))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionToolResultItemStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionToolResultItemStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionToolResultItemStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionRecordingTrackEntityRole))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionRecordingTrackEntityRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionRecordingTrackEntityRole?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionRecordingTrackEntityRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionRecordingTrackEntityStatus))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionRecordingTrackEntityStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionRecordingTrackEntityStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionRecordingTrackEntityStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentEntityStatus))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentEntityStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentEntityStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentEntityStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentEntityPublicationState))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentEntityPublicationStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentEntityPublicationState?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentEntityPublicationStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentEntityOverridesAllowedItem))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentEntityOverridesAllowedItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentEntityOverridesAllowedItem?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentEntityOverridesAllowedItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentOutboundVoicemailPatchAction))
+                {
+                    return new global::FishAudio.JsonConverters.AgentOutboundVoicemailPatchActionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentOutboundVoicemailPatchAction?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentOutboundVoicemailPatchActionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentTransferDestinationPatchMode))
+                {
+                    return new global::FishAudio.JsonConverters.AgentTransferDestinationPatchModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentTransferDestinationPatchMode?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentTransferDestinationPatchModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentTransferDestinationPatchWarmConnect))
+                {
+                    return new global::FishAudio.JsonConverters.AgentTransferDestinationPatchWarmConnectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentTransferDestinationPatchWarmConnect?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentTransferDestinationPatchWarmConnectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentAnalysisDataFieldType))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentAnalysisDataFieldTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentAnalysisDataFieldType?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentAnalysisDataFieldTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentAnalysisSummaryPatchLanguage))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentAnalysisSummaryPatchLanguageJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentAnalysisSummaryPatchLanguage?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentAnalysisSummaryPatchLanguageNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentConversationPatchEagerness2))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentConversationPatchEagerness2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentConversationPatchEagerness2?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentConversationPatchEagerness2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity2))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentConversationPatchInterruptionSensitivity2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity2?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentConversationPatchInterruptionSensitivity2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentLLMPatchTier2))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentLLMPatchTier2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentLLMPatchTier2?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentLLMPatchTier2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentPromptPatchFirstMessageMode2))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentPromptPatchFirstMessageMode2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentPromptPatchFirstMessageMode2?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentPromptPatchFirstMessageMode2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentVoicePatchSpeakingLanguage2))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentVoicePatchSpeakingLanguage2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentVoicePatchSpeakingLanguage2?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentVoicePatchSpeakingLanguage2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentUpdatePayloadStatus2))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentUpdatePayloadStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentUpdatePayloadStatus2?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentUpdatePayloadStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentUpdatePayloadOverridesAllowedVariant1ItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentUpdatePayloadOverridesAllowedVariant1ItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentAnalysisDataFieldType))
+                {
+                    return new global::FishAudio.JsonConverters.AgentAnalysisDataFieldTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentAnalysisDataFieldType?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentAnalysisDataFieldTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentAnalysisSummaryConfigLanguage))
+                {
+                    return new global::FishAudio.JsonConverters.AgentAnalysisSummaryConfigLanguageJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentAnalysisSummaryConfigLanguage?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentAnalysisSummaryConfigLanguageNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentConversationConfigEagerness))
+                {
+                    return new global::FishAudio.JsonConverters.AgentConversationConfigEagernessJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentConversationConfigEagerness?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentConversationConfigEagernessNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentConversationConfigInterruptionSensitivity))
+                {
+                    return new global::FishAudio.JsonConverters.AgentConversationConfigInterruptionSensitivityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentConversationConfigInterruptionSensitivity?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentConversationConfigInterruptionSensitivityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentLLMConfigRedactedTier))
+                {
+                    return new global::FishAudio.JsonConverters.AgentLLMConfigRedactedTierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentLLMConfigRedactedTier?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentLLMConfigRedactedTierNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentOutboundVoicemailConfigAction))
+                {
+                    return new global::FishAudio.JsonConverters.AgentOutboundVoicemailConfigActionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentOutboundVoicemailConfigAction?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentOutboundVoicemailConfigActionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentPromptConfigFirstMessageMode))
+                {
+                    return new global::FishAudio.JsonConverters.AgentPromptConfigFirstMessageModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentPromptConfigFirstMessageMode?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentPromptConfigFirstMessageModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentTransferDestinationMode))
+                {
+                    return new global::FishAudio.JsonConverters.AgentTransferDestinationModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentTransferDestinationMode?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentTransferDestinationModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentTransferDestinationWarmConnect))
+                {
+                    return new global::FishAudio.JsonConverters.AgentTransferDestinationWarmConnectJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentTransferDestinationWarmConnect?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentTransferDestinationWarmConnectNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentVoiceConfigSpeakingLanguage))
+                {
+                    return new global::FishAudio.JsonConverters.AgentVoiceConfigSpeakingLanguageJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentVoiceConfigSpeakingLanguage?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentVoiceConfigSpeakingLanguageNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolSummaryToolType))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolSummaryToolTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolSummaryToolType?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolSummaryToolTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolSummaryMethod))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolSummaryMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolSummaryMethod?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolSummaryMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentWebhookHeaderPayloadKind))
+                {
+                    return new global::FishAudio.JsonConverters.AgentWebhookHeaderPayloadKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentWebhookHeaderPayloadKind?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentWebhookHeaderPayloadKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadToolType))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadToolTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadToolType?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadToolTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadMethod))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadMethod?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadErrorHandling))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadErrorHandlingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadErrorHandling?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadErrorHandlingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadExecutionMode))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadExecutionModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadExecutionMode?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadExecutionModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicToolHeaderKind))
+                {
+                    return new global::FishAudio.JsonConverters.PublicToolHeaderKindJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicToolHeaderKind?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicToolHeaderKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadMethod2))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadMethod2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadMethod2?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadMethod2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling2))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadErrorHandling2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling2?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadErrorHandling2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode2))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadExecutionMode2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode2?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadExecutionMode2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicPhoneNumberEntityProvider))
+                {
+                    return new global::FishAudio.JsonConverters.PublicPhoneNumberEntityProviderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicPhoneNumberEntityProvider?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicPhoneNumberEntityProviderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicPhoneNumberEntityStatus))
+                {
+                    return new global::FishAudio.JsonConverters.PublicPhoneNumberEntityStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicPhoneNumberEntityStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicPhoneNumberEntityStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.TTSRequestFormat))
+                {
+                    return new global::FishAudio.JsonConverters.TTSRequestFormatJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.TTSRequestFormat?))
+                {
+                    return new global::FishAudio.JsonConverters.TTSRequestFormatNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.TTSRequestLatency))
+                {
+                    return new global::FishAudio.JsonConverters.TTSRequestLatencyJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.TTSRequestLatency?))
+                {
+                    return new global::FishAudio.JsonConverters.TTSRequestLatencyNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.TTSStreamWithTimestampRequestFormat))
+                {
+                    return new global::FishAudio.JsonConverters.TTSStreamWithTimestampRequestFormatJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.TTSStreamWithTimestampRequestFormat?))
+                {
+                    return new global::FishAudio.JsonConverters.TTSStreamWithTimestampRequestFormatNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.TTSStreamWithTimestampRequestLatency))
+                {
+                    return new global::FishAudio.JsonConverters.TTSStreamWithTimestampRequestLatencyJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.TTSStreamWithTimestampRequestLatency?))
+                {
+                    return new global::FishAudio.JsonConverters.TTSStreamWithTimestampRequestLatencyNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.ModelEntityType))
+                {
+                    return new global::FishAudio.JsonConverters.ModelEntityTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.ModelEntityType?))
+                {
+                    return new global::FishAudio.JsonConverters.ModelEntityTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.ModelEntityTrainMode))
+                {
+                    return new global::FishAudio.JsonConverters.ModelEntityTrainModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.ModelEntityTrainMode?))
+                {
+                    return new global::FishAudio.JsonConverters.ModelEntityTrainModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.ModelEntityState))
+                {
+                    return new global::FishAudio.JsonConverters.ModelEntityStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.ModelEntityState?))
+                {
+                    return new global::FishAudio.JsonConverters.ModelEntityStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.ModelEntityVisibility))
+                {
+                    return new global::FishAudio.JsonConverters.ModelEntityVisibilityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.ModelEntityVisibility?))
+                {
+                    return new global::FishAudio.JsonConverters.ModelEntityVisibilityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.ModelEntityPvcReleaseState2))
+                {
+                    return new global::FishAudio.JsonConverters.ModelEntityPvcReleaseState2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.ModelEntityPvcReleaseState2?))
+                {
+                    return new global::FishAudio.JsonConverters.ModelEntityPvcReleaseState2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelRequestVisibilityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelRequestVisibilityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility2))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelRequestVisibility2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility2?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelRequestVisibility2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility3))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelRequestVisibility3JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility3?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelRequestVisibility3NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility4))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelRequestVisibility4JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelRequestVisibility4?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelRequestVisibility4NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility2))
+                {
+                    return new global::FishAudio.JsonConverters.PatchModelRequestVisibility2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility2?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchModelRequestVisibility2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility4))
+                {
+                    return new global::FishAudio.JsonConverters.PatchModelRequestVisibility4JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility4?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchModelRequestVisibility4NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility6))
+                {
+                    return new global::FishAudio.JsonConverters.PatchModelRequestVisibility6JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility6?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchModelRequestVisibility6NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility8))
+                {
+                    return new global::FishAudio.JsonConverters.PatchModelRequestVisibility8JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility8?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchModelRequestVisibility8NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentAgentsPublicationState))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentAgentsPublicationStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentAgentsPublicationState?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentAgentsPublicationStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentAvailablePhoneNumbersNumberTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentAvailablePhoneNumbersNumberTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateTtsModel))
+                {
+                    return new global::FishAudio.JsonConverters.CreateTtsModelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateTtsModel?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateTtsModelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateTtsStreamWithTimestampModel))
+                {
+                    return new global::FishAudio.JsonConverters.CreateTtsStreamWithTimestampModelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateTtsStreamWithTimestampModel?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateTtsStreamWithTimestampModelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelSortBy))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelSortByJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelSortBy?))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelSortByNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseStatus))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseSource))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseSourceJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseSource?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseSourceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseDirection))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseDirectionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseDirection?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseDirectionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseDialStatus2))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseDialStatus2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseDialStatus2?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseDialStatus2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseAnsweredBy2))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseAnsweredBy2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseAnsweredBy2?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseAnsweredBy2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsResponseItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsRecordingResponseStatus))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsRecordingResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentSessionsRecordingResponseStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentSessionsRecordingResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponseStatus))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentAgentsResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponseStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentAgentsResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponsePublicationState))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentAgentsResponsePublicationStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponsePublicationState?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentAgentsResponsePublicationStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentAgentsResponseOverridesAllowedItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentAgentsResponseOverridesAllowedItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponseStatus))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentAgentsResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponseStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentAgentsResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponsePublicationState))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentAgentsResponsePublicationStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponsePublicationState?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentAgentsResponsePublicationStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponseOverridesAllowedItem))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentAgentsResponseOverridesAllowedItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentAgentsResponseOverridesAllowedItem?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentAgentsResponseOverridesAllowedItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponseStatus))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentAgentsResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponseStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentAgentsResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponsePublicationState))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentAgentsResponsePublicationStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponsePublicationState?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentAgentsResponsePublicationStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponseOverridesAllowedItem))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentAgentsResponseOverridesAllowedItemJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentAgentsResponseOverridesAllowedItem?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentAgentsResponseOverridesAllowedItemNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseToolType))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentToolsResponseToolTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseToolType?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentToolsResponseToolTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseMethod))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentToolsResponseMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseMethod?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentToolsResponseMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseErrorHandling))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentToolsResponseErrorHandlingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseErrorHandling?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentToolsResponseErrorHandlingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseExecutionMode))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentToolsResponseExecutionModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseExecutionMode?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentToolsResponseExecutionModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseToolType))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentToolsResponseToolTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseToolType?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentToolsResponseToolTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseMethod))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentToolsResponseMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseMethod?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentToolsResponseMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseErrorHandling))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentToolsResponseErrorHandlingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseErrorHandling?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentToolsResponseErrorHandlingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseExecutionMode))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentToolsResponseExecutionModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseExecutionMode?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentToolsResponseExecutionModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseToolType))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentToolsResponseToolTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseToolType?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentToolsResponseToolTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseMethod))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentToolsResponseMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseMethod?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentToolsResponseMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseErrorHandling))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentToolsResponseErrorHandlingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseErrorHandling?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentToolsResponseErrorHandlingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseExecutionMode))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentToolsResponseExecutionModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseExecutionMode?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentToolsResponseExecutionModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentPhoneNumbersResponseProvider))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentPhoneNumbersResponseProviderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentPhoneNumbersResponseProvider?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentPhoneNumbersResponseProviderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentPhoneNumbersResponseStatus))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentPhoneNumbersResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentPhoneNumbersResponseStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentPhoneNumbersResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentPhoneNumbersResponseProvider))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentPhoneNumbersResponseProviderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentPhoneNumbersResponseProvider?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentPhoneNumbersResponseProviderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentPhoneNumbersResponseStatus))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentPhoneNumbersResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentPhoneNumbersResponseStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentPhoneNumbersResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseProvider))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentPhoneNumbersResponseProviderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseProvider?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentPhoneNumbersResponseProviderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentPhoneNumbersResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentPhoneNumbersResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelResponseType))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelResponseTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelResponseType?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelResponseTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelResponseTrainMode))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelResponseTrainModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelResponseTrainMode?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelResponseTrainModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelResponseState))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelResponseStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelResponseState?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelResponseStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelResponseVisibility))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelResponseVisibilityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelResponseVisibility?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelResponseVisibilityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelResponsePvcReleaseState2))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelResponsePvcReleaseState2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateModelResponsePvcReleaseState2?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateModelResponsePvcReleaseState2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelResponseType))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelResponseTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelResponseType?))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelResponseTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelResponseTrainMode))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelResponseTrainModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelResponseTrainMode?))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelResponseTrainModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelResponseState))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelResponseStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelResponseState?))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelResponseStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelResponseVisibility))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelResponseVisibilityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelResponseVisibility?))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelResponseVisibilityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelResponsePvcReleaseState2))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelResponsePvcReleaseState2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelResponsePvcReleaseState2?))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelResponsePvcReleaseState2NullableJsonConverter();
+                }
+                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
+            }
+        }
+
+        private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            private readonly object _gate = new();
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[2];
+
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                for (var index = 0; index < _resolvers.Length; index++)
+                {
+                    var typeInfo = GetResolver(index).GetTypeInfo(type, options);
+                    if (typeInfo is not null)
+                    {
+                        return typeInfo;
+                    }
+                }
+
+                return null;
+            }
+
+            private global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver GetResolver(int index)
+            {
+                var resolver = global::System.Threading.Volatile.Read(ref _resolvers[index]);
+                if (resolver is not null)
+                {
+                    return resolver;
+                }
+
+                lock (_gate)
+                {
+                    return _resolvers[index] ??= CreateResolver(index);
+                }
+            }
+
+            private static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver CreateResolver(int index)
+            {
+                return index switch
+                {
+                    0 => new SourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
+
+                    1 => new SourceGenerationContextChunk1(new global::System.Text.Json.JsonSerializerOptions()),
+                    _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
+                };
+            }
+        }
     }
 }

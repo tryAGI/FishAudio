@@ -7,7 +7,7 @@ namespace FishAudio
         /// <summary>
         /// Release Phone Number<br/>
         /// Release a number back to the provider's inventory and stop its daily<br/>
-        /// billing. This is irreversible: anyone (including other platforms) can<br/>
+        /// billing. This is irreversible: anyone — including other platforms — can<br/>
         /// buy the number afterwards, so callers who saved it may reach a stranger.<br/>
         /// The number disappears from this API immediately.
         /// </summary>
@@ -22,7 +22,7 @@ namespace FishAudio
         /// <summary>
         /// Release Phone Number<br/>
         /// Release a number back to the provider's inventory and stop its daily<br/>
-        /// billing. This is irreversible: anyone (including other platforms) can<br/>
+        /// billing. This is irreversible: anyone — including other platforms — can<br/>
         /// buy the number afterwards, so callers who saved it may reach a stranger.<br/>
         /// The number disappears from this API immediately.
         /// </summary>

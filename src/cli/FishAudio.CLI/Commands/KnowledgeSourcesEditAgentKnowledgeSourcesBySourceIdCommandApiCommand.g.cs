@@ -80,7 +80,8 @@ Rename the source and/or replace its content by uploading a new file in
 `source` (multipart). Replacing content increments `revision_number` while
 the id stays stable, and every attached agent's draft picks it up
 immediately; published versions pin the revision they were published with,
-so republish each affected agent to put the new content live.");
+so republish each affected agent to put the new content live — that
+two-step (sync content, republish) is the nightly content-sync recipe.");
                         command.Arguments.Add(SourceId);
                         command.Options.Add(Source);
                         command.Options.Add(Sourcename);

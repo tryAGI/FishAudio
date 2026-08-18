@@ -16,6 +16,7 @@ internal static class ApiCommand
                          command.Subcommands.Add(KnowledgeSourcesApiGroupCommand.Create());
                          command.Subcommands.Add(ModelApiGroupCommand.Create());
                          command.Subcommands.Add(OpenAPIV1ApiGroupCommand.Create());
+                         command.Subcommands.Add(PhoneCallsApiGroupCommand.Create());
                          command.Subcommands.Add(PhoneNumbersApiGroupCommand.Create());
                          command.Subcommands.Add(WalletApiGroupCommand.Create());
         return command;

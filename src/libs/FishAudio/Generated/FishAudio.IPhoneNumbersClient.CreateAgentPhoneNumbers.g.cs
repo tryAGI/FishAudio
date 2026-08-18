@@ -11,7 +11,7 @@ namespace FishAudio
         /// monthly price charged in daily slices: the first day is charged before<br/>
         /// anything is bought (402 costs you nothing), and the daily run advances it<br/>
         /// from there. 409 means the number is already on the platform; 502 means the<br/>
-        /// provider refused the purchase; the number stays visible with status<br/>
+        /// provider refused the purchase — the number stays visible with status<br/>
         /// `error` and is safe to release.
         /// </summary>
         /// <param name="request"></param>
@@ -30,7 +30,7 @@ namespace FishAudio
         /// monthly price charged in daily slices: the first day is charged before<br/>
         /// anything is bought (402 costs you nothing), and the daily run advances it<br/>
         /// from there. 409 means the number is already on the platform; 502 means the<br/>
-        /// provider refused the purchase; the number stays visible with status<br/>
+        /// provider refused the purchase — the number stays visible with status<br/>
         /// `error` and is safe to release.
         /// </summary>
         /// <param name="request"></param>
@@ -49,7 +49,7 @@ namespace FishAudio
         /// monthly price charged in daily slices: the first day is charged before<br/>
         /// anything is bought (402 costs you nothing), and the daily run advances it<br/>
         /// from there. 409 means the number is already on the platform; 502 means the<br/>
-        /// provider refused the purchase; the number stays visible with status<br/>
+        /// provider refused the purchase — the number stays visible with status<br/>
         /// `error` and is safe to release.
         /// </summary>
         /// <param name="provider">

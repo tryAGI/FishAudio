@@ -36,7 +36,7 @@ internal static partial class AgentToolsGetAgentToolsByToolIdAgentsCommandApiCom
     public static Command Create()
     {
         var command = new Command(@"get-agent-tools-by-tool-id-agents", @"List Agents Using Tool
-Every agent whose draft configuration references this tool: the
+Every agent whose draft configuration references this tool — the
 pre-flight check before a delete. Published versions keep executing their
 frozen tool snapshot, so only draft references block deletion.");
                         command.Arguments.Add(ToolId);

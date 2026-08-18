@@ -46,9 +46,10 @@ namespace FishAudio
         /// <summary>
         /// Publish Agent<br/>
         /// Freeze the current draft into an immutable version (version_number<br/>
-        /// auto-increments) and make it the live configuration for new sessions. The<br/>
-        /// body is optional; the title and description label the version for audit<br/>
-        /// and rollback.
+        /// auto-increments) and make it the live configuration for new sessions. If<br/>
+        /// the draft already matches the live version, return that version unchanged.<br/>
+        /// The body is optional; the title and description label a newly created<br/>
+        /// version for audit and rollback.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="request"></param>
@@ -84,9 +85,10 @@ namespace FishAudio
         /// <summary>
         /// Publish Agent<br/>
         /// Freeze the current draft into an immutable version (version_number<br/>
-        /// auto-increments) and make it the live configuration for new sessions. The<br/>
-        /// body is optional; the title and description label the version for audit<br/>
-        /// and rollback.
+        /// auto-increments) and make it the live configuration for new sessions. If<br/>
+        /// the draft already matches the live version, return that version unchanged.<br/>
+        /// The body is optional; the title and description label a newly created<br/>
+        /// version for audit and rollback.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="request"></param>
@@ -444,24 +446,61 @@ namespace FishAudio
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Request conflict
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::FishAudio.CreateAgentAgentsPublishResponse4? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::FishAudio.CreateAgentAgentsPublishResponse4.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::FishAudio.CreateAgentAgentsPublishResponse4.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::FishAudio.ApiException<global::FishAudio.CreateAgentAgentsPublishResponse4>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // 
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::FishAudio.CreateAgentAgentsPublishResponse4? __value_422 = null;
+                                global::FishAudio.CreateAgentAgentsPublishResponse5? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::FishAudio.CreateAgentAgentsPublishResponse4.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::FishAudio.CreateAgentAgentsPublishResponse5.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::FishAudio.CreateAgentAgentsPublishResponse4.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::FishAudio.CreateAgentAgentsPublishResponse5.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -470,7 +509,7 @@ namespace FishAudio
                                 }
 
 
-                                throw global::FishAudio.ApiException<global::FishAudio.CreateAgentAgentsPublishResponse4>.Create(
+                                throw global::FishAudio.ApiException<global::FishAudio.CreateAgentAgentsPublishResponse5>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -486,19 +525,19 @@ namespace FishAudio
                             {
                                 string? __content_503 = null;
                                 global::System.Exception? __exception_503 = null;
-                                global::FishAudio.CreateAgentAgentsPublishResponse5? __value_503 = null;
+                                global::FishAudio.CreateAgentAgentsPublishResponse6? __value_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::FishAudio.CreateAgentAgentsPublishResponse5.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::FishAudio.CreateAgentAgentsPublishResponse6.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::FishAudio.CreateAgentAgentsPublishResponse5.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::FishAudio.CreateAgentAgentsPublishResponse6.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -507,7 +546,7 @@ namespace FishAudio
                                 }
 
 
-                                throw global::FishAudio.ApiException<global::FishAudio.CreateAgentAgentsPublishResponse5>.Create(
+                                throw global::FishAudio.ApiException<global::FishAudio.CreateAgentAgentsPublishResponse6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
@@ -617,9 +656,10 @@ namespace FishAudio
         /// <summary>
         /// Publish Agent<br/>
         /// Freeze the current draft into an immutable version (version_number<br/>
-        /// auto-increments) and make it the live configuration for new sessions. The<br/>
-        /// body is optional; the title and description label the version for audit<br/>
-        /// and rollback.
+        /// auto-increments) and make it the live configuration for new sessions. If<br/>
+        /// the draft already matches the live version, return that version unchanged.<br/>
+        /// The body is optional; the title and description label a newly created<br/>
+        /// version for audit and rollback.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="versionTitle">

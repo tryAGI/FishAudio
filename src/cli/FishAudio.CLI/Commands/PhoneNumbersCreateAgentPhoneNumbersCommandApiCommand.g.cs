@@ -77,7 +77,7 @@ workspace, and any `agent_id` you bind must live there too. Billing is the
 monthly price charged in daily slices: the first day is charged before
 anything is bought (402 costs you nothing), and the daily run advances it
 from there. 409 means the number is already on the platform; 502 means the
-provider refused the purchase; the number stays visible with status
+provider refused the purchase — the number stays visible with status
 `error` and is safe to release.");
                         command.Options.Add(Provider);
                         command.Options.Add(PhoneNumber);

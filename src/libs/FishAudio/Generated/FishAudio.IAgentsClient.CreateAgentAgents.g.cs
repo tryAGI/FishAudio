@@ -6,8 +6,9 @@ namespace FishAudio
     {
         /// <summary>
         /// Create Agent<br/>
-        /// Create an agent, optionally with its full initial configuration inline.<br/>
-        /// The agent starts as a draft: publish it before creating sessions with it.
+        /// Create an agent, optionally with its full initial configuration inline —<br/>
+        /// one call provisions a ready-to-publish agent. The agent starts as a draft:<br/>
+        /// publish it before creating sessions with it.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -39,8 +40,9 @@ namespace FishAudio
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Agent<br/>
-        /// Create an agent, optionally with its full initial configuration inline.<br/>
-        /// The agent starts as a draft: publish it before creating sessions with it.
+        /// Create an agent, optionally with its full initial configuration inline —<br/>
+        /// one call provisions a ready-to-publish agent. The agent starts as a draft:<br/>
+        /// publish it before creating sessions with it.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -72,8 +74,9 @@ namespace FishAudio
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Agent<br/>
-        /// Create an agent, optionally with its full initial configuration inline.<br/>
-        /// The agent starts as a draft: publish it before creating sessions with it.
+        /// Create an agent, optionally with its full initial configuration inline —<br/>
+        /// one call provisions a ready-to-publish agent. The agent starts as a draft:<br/>
+        /// publish it before creating sessions with it.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="description"></param>
