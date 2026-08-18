@@ -37,7 +37,7 @@ internal static partial class AgentToolsGetAgentToolsByToolIdCommandApiCommand
     {
         var command = new Command(@"get-agent-tools-by-tool-id", @"Get Tool
 Fetch one tool's full definition. Credential header values are never
-returned; each credential header reports `has_secret` instead.");
+returned — each credential header reports `has_secret` instead.");
                         command.Arguments.Add(ToolId);
 
 

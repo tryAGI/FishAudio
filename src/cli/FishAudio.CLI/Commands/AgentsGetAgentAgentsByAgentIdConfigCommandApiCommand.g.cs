@@ -36,7 +36,7 @@ internal static partial class AgentsGetAgentAgentsByAgentIdConfigCommandApiComma
     public static Command Create()
     {
         var command = new Command(@"get-agent-agents-by-agent-id-config", @"Get Draft Config
-Read the agent's current draft configuration, the state the next publish
+Read the agent's current draft configuration — the state the next publish
 will freeze. Sessions run the latest published version, not the draft; use
 the versions endpoints to see what is live. Webhook signing secrets are
 write-only and reported as `has_secret`.");

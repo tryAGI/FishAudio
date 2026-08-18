@@ -67,7 +67,7 @@ internal static partial class AgentToolsGetAgentToolsCommandApiCommand
 List your team's tools, newest first. Filter with `agent_id` to see one
 agent's attached tools. Paginate with `cursor` (follow `next_cursor` while
 `has_more` is true) or with `page` for offset pagination with a `total`
-count; the two are mutually exclusive.");
+count — the two are mutually exclusive.");
                         command.Options.Add(Search);
                         command.Options.Add(AgentId);
                         command.Options.Add(Cursor);

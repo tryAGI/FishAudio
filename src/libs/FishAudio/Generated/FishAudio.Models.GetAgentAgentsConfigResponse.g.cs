@@ -81,6 +81,13 @@ namespace FishAudio
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::FishAudio.AgentLLMConfigRedacted Llm { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime UpdatedAt { get; set; }
@@ -106,6 +113,7 @@ namespace FishAudio
         /// <param name="knowledgeBase"></param>
         /// <param name="analysis"></param>
         /// <param name="guardrails"></param>
+        /// <param name="llm"></param>
         /// <param name="updatedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -121,6 +129,7 @@ namespace FishAudio
             global::FishAudio.PublicAgentKnowledgeBaseConfig knowledgeBase,
             global::FishAudio.AgentAnalysisConfig analysis,
             global::FishAudio.AgentGuardrailsConfig guardrails,
+            global::FishAudio.AgentLLMConfigRedacted llm,
             global::System.DateTime updatedAt)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
@@ -133,6 +142,7 @@ namespace FishAudio
             this.KnowledgeBase = knowledgeBase ?? throw new global::System.ArgumentNullException(nameof(knowledgeBase));
             this.Analysis = analysis ?? throw new global::System.ArgumentNullException(nameof(analysis));
             this.Guardrails = guardrails ?? throw new global::System.ArgumentNullException(nameof(guardrails));
+            this.Llm = llm ?? throw new global::System.ArgumentNullException(nameof(llm));
             this.UpdatedAt = updatedAt;
         }
 

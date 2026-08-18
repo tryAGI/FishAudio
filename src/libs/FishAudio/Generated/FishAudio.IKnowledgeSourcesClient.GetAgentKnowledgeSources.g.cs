@@ -8,7 +8,7 @@ namespace FishAudio
         /// List Knowledge Sources<br/>
         /// List your team's knowledge sources, newest first. Paginate with `cursor`<br/>
         /// (follow `next_cursor` while `has_more` is true) or with `page` for offset<br/>
-        /// pagination with a `total` count; the two are mutually exclusive.
+        /// pagination with a `total` count — the two are mutually exclusive.
         /// </summary>
         /// <param name="search">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -40,7 +40,7 @@ namespace FishAudio
         /// List Knowledge Sources<br/>
         /// List your team's knowledge sources, newest first. Paginate with `cursor`<br/>
         /// (follow `next_cursor` while `has_more` is true) or with `page` for offset<br/>
-        /// pagination with a `total` count; the two are mutually exclusive.
+        /// pagination with a `total` count — the two are mutually exclusive.
         /// </summary>
         /// <param name="search">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

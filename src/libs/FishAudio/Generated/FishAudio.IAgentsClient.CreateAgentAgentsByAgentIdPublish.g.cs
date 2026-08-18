@@ -7,9 +7,10 @@ namespace FishAudio
         /// <summary>
         /// Publish Agent<br/>
         /// Freeze the current draft into an immutable version (version_number<br/>
-        /// auto-increments) and make it the live configuration for new sessions. The<br/>
-        /// body is optional; the title and description label the version for audit<br/>
-        /// and rollback.
+        /// auto-increments) and make it the live configuration for new sessions. If<br/>
+        /// the draft already matches the live version, return that version unchanged.<br/>
+        /// The body is optional; the title and description label a newly created<br/>
+        /// version for audit and rollback.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="request"></param>
@@ -34,9 +35,10 @@ namespace FishAudio
         /// <summary>
         /// Publish Agent<br/>
         /// Freeze the current draft into an immutable version (version_number<br/>
-        /// auto-increments) and make it the live configuration for new sessions. The<br/>
-        /// body is optional; the title and description label the version for audit<br/>
-        /// and rollback.
+        /// auto-increments) and make it the live configuration for new sessions. If<br/>
+        /// the draft already matches the live version, return that version unchanged.<br/>
+        /// The body is optional; the title and description label a newly created<br/>
+        /// version for audit and rollback.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="request"></param>
@@ -61,9 +63,10 @@ namespace FishAudio
         /// <summary>
         /// Publish Agent<br/>
         /// Freeze the current draft into an immutable version (version_number<br/>
-        /// auto-increments) and make it the live configuration for new sessions. The<br/>
-        /// body is optional; the title and description label the version for audit<br/>
-        /// and rollback.
+        /// auto-increments) and make it the live configuration for new sessions. If<br/>
+        /// the draft already matches the live version, return that version unchanged.<br/>
+        /// The body is optional; the title and description label a newly created<br/>
+        /// version for audit and rollback.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="versionTitle">

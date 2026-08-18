@@ -42,12 +42,6 @@ internal static partial class AgentSessionsCreateAgentSessionsCommandApiCommand
         name: @"--world-context",
         description: @"");
 
-    private static Option<global::FishAudio.AgentSessionOverridesPayload?> Overrides { get; } = new(
-        name: @"--overrides")
-    {
-        Description = @"",
-    };
-
     private static Option<object?> DynamicVariables { get; } = new(
         name: @"--dynamic-variables")
     {
@@ -73,6 +67,7 @@ internal static partial class AgentSessionsCreateAgentSessionsCommandApiCommand
     private static Option<bool?> RecordAudio { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--record-audio",
         description: @"");
+    private static readonly AgentSessionOverridesPayloadOptionSet OverridesOptions = AgentSessionOverridesPayloadOptionSet.Create(@"overrides");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -128,12 +123,14 @@ speaking language.");
                         command.Options.Add(Timezone);
                         command.Options.Add(ClientTimezone);
                         command.Options.Add(WorldContext);
-                        command.Options.Add(Overrides);
                         command.Options.Add(DynamicVariables);
                         command.Options.Add(EndUserId);
                         command.Options.Add(Metadata);
                         command.Options.Add(ToolEvents);
-                        command.Options.Add(RecordAudio);
+                        command.Options.Add(RecordAudio);                        command.Options.Add(OverridesOptions.FirstMessage);
+                        command.Options.Add(OverridesOptions.FirstMessagePrompt);
+                        command.Options.Add(OverridesOptions.SystemPrompt);
+                        command.Options.Add(OverridesOptions.VoiceId);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -165,12 +162,28 @@ speaking language.");
                         var timezone = CliRuntime.WasSpecified(parseResult, Timezone) ? parseResult.GetValue(Timezone) : (__requestBase is { } __TimezoneBaseValue ? __TimezoneBaseValue.Timezone : default);
                         var clientTimezone = CliRuntime.WasSpecified(parseResult, ClientTimezone) ? parseResult.GetValue(ClientTimezone) : (__requestBase is { } __ClientTimezoneBaseValue ? __ClientTimezoneBaseValue.ClientTimezone : default);
                         var worldContext = CliRuntime.WasSpecified(parseResult, WorldContext) ? parseResult.GetValue(WorldContext) : (__requestBase is { } __WorldContextBaseValue ? __WorldContextBaseValue.WorldContext : default);
-                        var overrides = CliRuntime.WasSpecified(parseResult, Overrides) ? parseResult.GetValue(Overrides) : (__requestBase is { } __OverridesBaseValue ? __OverridesBaseValue.Overrides : default);
                         var dynamicVariables = CliRuntime.WasSpecified(parseResult, DynamicVariables) ? parseResult.GetValue(DynamicVariables) : (__requestBase is { } __DynamicVariablesBaseValue ? __DynamicVariablesBaseValue.DynamicVariables : default);
                         var endUserId = CliRuntime.WasSpecified(parseResult, EndUserId) ? parseResult.GetValue(EndUserId) : (__requestBase is { } __EndUserIdBaseValue ? __EndUserIdBaseValue.EndUserId : default);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
                         var toolEvents = CliRuntime.WasSpecified(parseResult, ToolEvents) ? parseResult.GetValue(ToolEvents) : (__requestBase is { } __ToolEventsBaseValue ? __ToolEventsBaseValue.ToolEvents : default);
                         var recordAudio = CliRuntime.WasSpecified(parseResult, RecordAudio) ? parseResult.GetValue(RecordAudio) : (__requestBase is { } __RecordAudioBaseValue ? __RecordAudioBaseValue.RecordAudio : default);
+
+                        var __OverridesBase = __requestBase is { } __OverridesBaseValue ? __OverridesBaseValue.Overrides : default;                        var overridesFirstMessage = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessage) ? parseResult.GetValue(OverridesOptions.FirstMessage) : (__OverridesBase is { } __OverridesfirstMessageBaseValue ? __OverridesfirstMessageBaseValue.FirstMessage : default);
+                        var overridesFirstMessagePrompt = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessagePrompt) ? parseResult.GetValue(OverridesOptions.FirstMessagePrompt) : (__OverridesBase is { } __OverridesfirstMessagePromptBaseValue ? __OverridesfirstMessagePromptBaseValue.FirstMessagePrompt : default);
+                        var overridesSystemPrompt = CliRuntime.WasSpecified(parseResult, OverridesOptions.SystemPrompt) ? parseResult.GetValue(OverridesOptions.SystemPrompt) : (__OverridesBase is { } __OverridessystemPromptBaseValue ? __OverridessystemPromptBaseValue.SystemPrompt : default);
+                        var overridesVoiceId = CliRuntime.WasSpecified(parseResult, OverridesOptions.VoiceId) ? parseResult.GetValue(OverridesOptions.VoiceId) : (__OverridesBase is { } __OverridesvoiceIdBaseValue ? __OverridesvoiceIdBaseValue.VoiceId : default);
+                        var __OverridesSpecified = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessage) || CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessagePrompt) || CliRuntime.WasSpecified(parseResult, OverridesOptions.SystemPrompt) || CliRuntime.WasSpecified(parseResult, OverridesOptions.VoiceId);
+                        var overrides =
+                            __OverridesSpecified || __OverridesBase is not null
+                                ? new global::FishAudio.AgentSessionOverridesPayload
+                                {
+	                                FirstMessage = overridesFirstMessage,
+                                FirstMessagePrompt = overridesFirstMessagePrompt,
+                                SystemPrompt = overridesSystemPrompt,
+                                VoiceId = overridesVoiceId,
+
+                                }
+                                : __OverridesBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -181,12 +194,12 @@ speaking language.");
                                     timezone: timezone,
                                     clientTimezone: clientTimezone,
                                     worldContext: worldContext,
-                                    overrides: overrides,
                                     dynamicVariables: dynamicVariables,
                                     endUserId: endUserId,
                                     metadata: metadata,
                                     toolEvents: toolEvents,
                                     recordAudio: recordAudio,
+                                    overrides: overrides,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

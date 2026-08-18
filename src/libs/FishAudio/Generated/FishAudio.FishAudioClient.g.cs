@@ -34,6 +34,10 @@ namespace FishAudio
         /// <inheritdoc/>
         public global::FishAudio.AutoSDKClientOptions Options { get; }
 
+
+        /// <inheritdoc/>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; } = () => global::System.Guid.NewGuid().ToString("D");
+
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::FishAudio.SourceGenerationContext.Default);
 
         /// <summary>
@@ -52,6 +56,7 @@ namespace FishAudio
         public AgentSessionsClient AgentSessions => new AgentSessionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -61,6 +66,7 @@ namespace FishAudio
         public AgentToolsClient AgentTools => new AgentToolsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -70,6 +76,7 @@ namespace FishAudio
         public AgentsClient Agents => new AgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -79,6 +86,7 @@ namespace FishAudio
         public KnowledgeSourcesClient KnowledgeSources => new KnowledgeSourcesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -88,6 +96,7 @@ namespace FishAudio
         public ModelClient Model => new ModelClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -97,6 +106,17 @@ namespace FishAudio
         public OpenAPIV1Client OpenAPIV1 => new OpenAPIV1Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PhoneCallsClient PhoneCalls => new PhoneCallsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -106,6 +126,7 @@ namespace FishAudio
         public PhoneNumbersClient PhoneNumbers => new PhoneNumbersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -115,6 +136,7 @@ namespace FishAudio
         public WalletClient Wallet => new WalletClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 

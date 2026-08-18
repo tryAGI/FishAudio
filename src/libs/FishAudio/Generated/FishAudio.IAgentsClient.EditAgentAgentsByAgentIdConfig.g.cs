@@ -16,7 +16,9 @@ namespace FishAudio
         /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
         /// standard delivery. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
-        /// id must resolve, else 422.
+        /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
+        /// OpenAI-compatible endpoint; mutually exclusive with `llm.tier`, cleared<br/>
+        /// with an explicit null.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="request"></param>
@@ -60,7 +62,9 @@ namespace FishAudio
         /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
         /// standard delivery. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
-        /// id must resolve, else 422.
+        /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
+        /// OpenAI-compatible endpoint; mutually exclusive with `llm.tier`, cleared<br/>
+        /// with an explicit null.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="request"></param>
@@ -104,7 +108,9 @@ namespace FishAudio
         /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
         /// standard delivery. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
-        /// id must resolve, else 422.
+        /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
+        /// OpenAI-compatible endpoint; mutually exclusive with `llm.tier`, cleared<br/>
+        /// with an explicit null.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="prompt">
@@ -131,6 +137,9 @@ namespace FishAudio
         /// <param name="guardrails">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="llm">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -144,6 +153,7 @@ namespace FishAudio
             global::FishAudio.PublicAgentKnowledgeBasePatch? knowledgeBase = default,
             global::FishAudio.PublicAgentAnalysisPatch? analysis = default,
             global::FishAudio.PublicAgentGuardrailsPatch? guardrails = default,
+            global::FishAudio.PublicAgentLLMPatch? llm = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

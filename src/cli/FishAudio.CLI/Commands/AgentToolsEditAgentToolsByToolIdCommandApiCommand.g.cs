@@ -128,9 +128,9 @@ internal static partial class AgentToolsEditAgentToolsByToolIdCommandApiCommand
     public static Command Create()
     {
         var command = new Command(@"edit-agent-tools-by-tool-id", @"Update Tool
-Patch tool fields; omitted fields keep their value (null is rejected;
+Patch tool fields; omitted fields keep their value (null is rejected —
 send an empty string to clear a text field). `headers` replaces the header
-list wholesale. Include credential values again whenever you send it,
+list wholesale — include credential values again whenever you send it,
 since reads never return them. Attached agents' drafts pick up the change
 immediately; published versions stay frozen until re-published.");
                         command.Arguments.Add(ToolId);

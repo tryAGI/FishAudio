@@ -65,9 +65,10 @@ internal static partial class AgentsCreateAgentAgentsByAgentIdPublishCommandApiC
     {
         var command = new Command(@"create-agent-agents-by-agent-id-publish", @"Publish Agent
 Freeze the current draft into an immutable version (version_number
-auto-increments) and make it the live configuration for new sessions. The
-body is optional; the title and description label the version for audit
-and rollback.");
+auto-increments) and make it the live configuration for new sessions. If
+the draft already matches the live version, return that version unchanged.
+The body is optional; the title and description label a newly created
+version for audit and rollback.");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(VersionTitle);
                         command.Options.Add(VersionDescription);

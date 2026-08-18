@@ -10,7 +10,8 @@ namespace FishAudio
         /// `source` (multipart). Replacing content increments `revision_number` while<br/>
         /// the id stays stable, and every attached agent's draft picks it up<br/>
         /// immediately; published versions pin the revision they were published with,<br/>
-        /// so republish each affected agent to put the new content live.
+        /// so republish each affected agent to put the new content live — that<br/>
+        /// two-step (sync content, republish) is the nightly content-sync recipe.
         /// </summary>
         /// <param name="sourceId"></param>
         /// <param name="request"></param>
@@ -29,7 +30,8 @@ namespace FishAudio
         /// `source` (multipart). Replacing content increments `revision_number` while<br/>
         /// the id stays stable, and every attached agent's draft picks it up<br/>
         /// immediately; published versions pin the revision they were published with,<br/>
-        /// so republish each affected agent to put the new content live.
+        /// so republish each affected agent to put the new content live — that<br/>
+        /// two-step (sync content, republish) is the nightly content-sync recipe.
         /// </summary>
         /// <param name="sourceId"></param>
         /// <param name="request"></param>
@@ -48,7 +50,8 @@ namespace FishAudio
         /// `source` (multipart). Replacing content increments `revision_number` while<br/>
         /// the id stays stable, and every attached agent's draft picks it up<br/>
         /// immediately; published versions pin the revision they were published with,<br/>
-        /// so republish each affected agent to put the new content live.
+        /// so republish each affected agent to put the new content live — that<br/>
+        /// two-step (sync content, republish) is the nightly content-sync recipe.
         /// </summary>
         /// <param name="sourceId"></param>
         /// <param name="source">

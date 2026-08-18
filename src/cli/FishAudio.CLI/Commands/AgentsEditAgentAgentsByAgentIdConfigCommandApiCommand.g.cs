@@ -60,6 +60,12 @@ internal static partial class AgentsEditAgentAgentsByAgentIdConfigCommandApiComm
     {
         Description = @"",
     };
+
+    private static Option<global::FishAudio.PublicAgentLLMPatch?> Llm { get; } = new(
+        name: @"--llm")
+    {
+        Description = @"",
+    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -110,7 +116,9 @@ anything else is 422. `voice.expressive` opts into richer expressive
 delivery (emotion steering, laughter and sounds, pauses); off keeps the
 standard delivery. `tool_ids` and
 `knowledge_source_ids` replace their attachment lists wholesale and every
-id must resolve, else 422.");
+id must resolve, else 422. `llm.custom` points the agent at your own
+OpenAI-compatible endpoint; mutually exclusive with `llm.tier`, cleared
+with an explicit null.");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(Prompt);
                         command.Options.Add(Voice);
@@ -120,6 +128,7 @@ id must resolve, else 422.");
                         command.Options.Add(KnowledgeBase);
                         command.Options.Add(Analysis);
                         command.Options.Add(Guardrails);
+                        command.Options.Add(Llm);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -154,6 +163,7 @@ id must resolve, else 422.");
                         var knowledgeBase = CliRuntime.WasSpecified(parseResult, KnowledgeBase) ? parseResult.GetValue(KnowledgeBase) : (__requestBase is { } __KnowledgeBaseBaseValue ? __KnowledgeBaseBaseValue.KnowledgeBase : default);
                         var analysis = CliRuntime.WasSpecified(parseResult, Analysis) ? parseResult.GetValue(Analysis) : (__requestBase is { } __AnalysisBaseValue ? __AnalysisBaseValue.Analysis : default);
                         var guardrails = CliRuntime.WasSpecified(parseResult, Guardrails) ? parseResult.GetValue(Guardrails) : (__requestBase is { } __GuardrailsBaseValue ? __GuardrailsBaseValue.Guardrails : default);
+                        var llm = CliRuntime.WasSpecified(parseResult, Llm) ? parseResult.GetValue(Llm) : (__requestBase is { } __LlmBaseValue ? __LlmBaseValue.Llm : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -167,6 +177,7 @@ id must resolve, else 422.");
                                     knowledgeBase: knowledgeBase,
                                     analysis: analysis,
                                     guardrails: guardrails,
+                                    llm: llm,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

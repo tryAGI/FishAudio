@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// One list row: lifecycle facts only; the conversation timeline lives on<br/>
+    /// One list row: lifecycle facts only — the conversation timeline lives on<br/>
     /// the detail endpoint (Retell-style thin list).
     /// </summary>
     public sealed partial class AgentSessionSummary

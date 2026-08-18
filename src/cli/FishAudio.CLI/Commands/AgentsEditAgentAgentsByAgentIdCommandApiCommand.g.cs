@@ -88,7 +88,7 @@ internal static partial class AgentsEditAgentAgentsByAgentIdCommandApiCommand
         var command = new Command(@"edit-agent-agents-by-agent-id", @"Update Agent
 Update agent-level fields (name, description, status, public access and
 session-override policy). Omitted fields keep their value. Conversation
-behavior (voice, prompt, recording and the rest) is draft configuration:
+behavior — voice, prompt, recording and the rest — is draft configuration:
 use `PATCH /v1/agent/agents/{agent_id}/config`.");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(NameOption);

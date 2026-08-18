@@ -64,7 +64,7 @@ internal static partial class PhoneNumbersEditAgentPhoneNumbersByPhoneNumberIdCo
     public static Command Create()
     {
         var command = new Command(@"edit-agent-phone-numbers-by-phone-number-id", @"Update Phone Number
-Change the label and/or repoint the number at another agent: the
+Change the label and/or repoint the number at another agent — the
 deployment-pipeline move (rebind from the staging agent to the production
 one). Send `agent_id: null` to unbind; unbound numbers ring busy. The
 agent must live in the number's workspace. Rebinding is a routing-table
