@@ -6,7 +6,7 @@ namespace FishAudio
     {
         /// <summary>
         /// List Agents Using Tool<br/>
-        /// Every agent whose draft configuration references this tool — the<br/>
+        /// Every agent whose draft configuration references this tool: the<br/>
         /// pre-flight check before a delete. Published versions keep executing their<br/>
         /// frozen tool snapshot, so only draft references block deletion.
         /// </summary>
@@ -20,7 +20,7 @@ namespace FishAudio
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List Agents Using Tool<br/>
-        /// Every agent whose draft configuration references this tool — the<br/>
+        /// Every agent whose draft configuration references this tool: the<br/>
         /// pre-flight check before a delete. Published versions keep executing their<br/>
         /// frozen tool snapshot, so only draft references block deletion.
         /// </summary>

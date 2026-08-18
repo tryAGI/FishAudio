@@ -45,9 +45,9 @@ namespace FishAudio
 
         /// <summary>
         /// Update Tool<br/>
-        /// Patch tool fields; omitted fields keep their value (null is rejected —<br/>
+        /// Patch tool fields; omitted fields keep their value (null is rejected;<br/>
         /// send an empty string to clear a text field). `headers` replaces the header<br/>
-        /// list wholesale — include credential values again whenever you send it,<br/>
+        /// list wholesale. Include credential values again whenever you send it,<br/>
         /// since reads never return them. Attached agents' drafts pick up the change<br/>
         /// immediately; published versions stay frozen until re-published.
         /// </summary>
@@ -75,9 +75,9 @@ namespace FishAudio
         }
         /// <summary>
         /// Update Tool<br/>
-        /// Patch tool fields; omitted fields keep their value (null is rejected —<br/>
+        /// Patch tool fields; omitted fields keep their value (null is rejected;<br/>
         /// send an empty string to clear a text field). `headers` replaces the header<br/>
-        /// list wholesale — include credential values again whenever you send it,<br/>
+        /// list wholesale. Include credential values again whenever you send it,<br/>
         /// since reads never return them. Attached agents' drafts pick up the change<br/>
         /// immediately; published versions stay frozen until re-published.
         /// </summary>
@@ -637,9 +637,9 @@ namespace FishAudio
         }
         /// <summary>
         /// Update Tool<br/>
-        /// Patch tool fields; omitted fields keep their value (null is rejected —<br/>
+        /// Patch tool fields; omitted fields keep their value (null is rejected;<br/>
         /// send an empty string to clear a text field). `headers` replaces the header<br/>
-        /// list wholesale — include credential values again whenever you send it,<br/>
+        /// list wholesale. Include credential values again whenever you send it,<br/>
         /// since reads never return them. Attached agents' drafts pick up the change<br/>
         /// immediately; published versions stay frozen until re-published.
         /// </summary>

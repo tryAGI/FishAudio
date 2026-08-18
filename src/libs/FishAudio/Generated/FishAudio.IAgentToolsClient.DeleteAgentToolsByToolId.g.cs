@@ -7,7 +7,7 @@ namespace FishAudio
         /// <summary>
         /// Delete Tool<br/>
         /// Delete a tool. Returns 409 while any agent's draft configuration still<br/>
-        /// references it — check `GET /v1/agent/tools/{tool_id}/agents` and detach it<br/>
+        /// references it. Check `GET /v1/agent/tools/{tool_id}/agents` and detach it<br/>
         /// via the agent config first, so a delete can never silently change agent<br/>
         /// behavior.
         /// </summary>
@@ -22,7 +22,7 @@ namespace FishAudio
         /// <summary>
         /// Delete Tool<br/>
         /// Delete a tool. Returns 409 while any agent's draft configuration still<br/>
-        /// references it — check `GET /v1/agent/tools/{tool_id}/agents` and detach it<br/>
+        /// references it. Check `GET /v1/agent/tools/{tool_id}/agents` and detach it<br/>
         /// via the agent config first, so a delete can never silently change agent<br/>
         /// behavior.
         /// </summary>

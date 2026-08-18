@@ -37,7 +37,7 @@ internal static partial class KnowledgeSourcesGetAgentKnowledgeSourcesBySourceId
     {
         var command = new Command(@"get-agent-knowledge-sources-by-source-id-agents", @"List Agents Using Knowledge Source
 Every agent that references this source in its draft or currently
-published configuration — the pre-flight check before a delete.");
+published configuration: the pre-flight check before a delete.");
                         command.Arguments.Add(SourceId);
 
 

@@ -42,7 +42,7 @@ internal static partial class AgentsGetAgentAgentsByAgentIdVersionsByVersionNumb
     public static Command Create()
     {
         var command = new Command(@"get-agent-agents-by-agent-id-versions-by-version-number", @"Get Agent Version
-One published version with its full frozen configuration snapshot —
+One published version with its full frozen configuration snapshot,
 including the current live version. Secrets inside the snapshot are
 redacted the same way as the draft config.");
                         command.Arguments.Add(AgentId);

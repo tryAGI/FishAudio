@@ -91,7 +91,7 @@ internal static partial class AgentSessionsGetAgentSessionsCommandApiCommand
 List your team's sessions, newest first. Filter by agent, status, caller
 number, or creation time. Paginate with `cursor` (recommended; follow
 `next_cursor` while `has_more` is true) or with `page` for offset pagination
-with a `total` count — the two are mutually exclusive.");
+with a `total` count; the two are mutually exclusive.");
                         command.Options.Add(AgentId);
                         command.Options.Add(Status);
                         command.Options.Add(Direction);

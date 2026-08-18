@@ -9,7 +9,7 @@ namespace FishAudio
         /// List your team's tools, newest first. Filter with `agent_id` to see one<br/>
         /// agent's attached tools. Paginate with `cursor` (follow `next_cursor` while<br/>
         /// `has_more` is true) or with `page` for offset pagination with a `total`<br/>
-        /// count — the two are mutually exclusive.
+        /// count; the two are mutually exclusive.
         /// </summary>
         /// <param name="search">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -46,7 +46,7 @@ namespace FishAudio
         /// List your team's tools, newest first. Filter with `agent_id` to see one<br/>
         /// agent's attached tools. Paginate with `cursor` (follow `next_cursor` while<br/>
         /// `has_more` is true) or with `page` for offset pagination with a `total`<br/>
-        /// count — the two are mutually exclusive.
+        /// count; the two are mutually exclusive.
         /// </summary>
         /// <param name="search">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

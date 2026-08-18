@@ -44,7 +44,7 @@ namespace FishAudio
         /// <summary>
         /// Get Tool<br/>
         /// Fetch one tool's full definition. Credential header values are never<br/>
-        /// returned — each credential header reports `has_secret` instead.
+        /// returned; each credential header reports `has_secret` instead.
         /// </summary>
         /// <param name="toolId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -66,7 +66,7 @@ namespace FishAudio
         /// <summary>
         /// Get Tool<br/>
         /// Fetch one tool's full definition. Credential header values are never<br/>
-        /// returned — each credential header reports `has_secret` instead.
+        /// returned; each credential header reports `has_secret` instead.
         /// </summary>
         /// <param name="toolId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

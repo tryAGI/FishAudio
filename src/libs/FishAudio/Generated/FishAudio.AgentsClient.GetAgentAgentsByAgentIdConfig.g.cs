@@ -43,7 +43,7 @@ namespace FishAudio
 
         /// <summary>
         /// Get Draft Config<br/>
-        /// Read the agent's current draft configuration — the state the next publish<br/>
+        /// Read the agent's current draft configuration, the state the next publish<br/>
         /// will freeze. Sessions run the latest published version, not the draft; use<br/>
         /// the versions endpoints to see what is live. Webhook signing secrets are<br/>
         /// write-only and reported as `has_secret`.
@@ -67,7 +67,7 @@ namespace FishAudio
         }
         /// <summary>
         /// Get Draft Config<br/>
-        /// Read the agent's current draft configuration — the state the next publish<br/>
+        /// Read the agent's current draft configuration, the state the next publish<br/>
         /// will freeze. Sessions run the latest published version, not the draft; use<br/>
         /// the versions endpoints to see what is live. Webhook signing secrets are<br/>
         /// write-only and reported as `has_secret`.
