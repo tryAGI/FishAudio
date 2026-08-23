@@ -15,6 +15,10 @@ namespace FishAudio
         /// <summary>
         /// 
         /// </summary>
+        Sip,
+        /// <summary>
+        /// 
+        /// </summary>
         Twilio,
     }
 
@@ -31,6 +35,7 @@ namespace FishAudio
             return value switch
             {
                 GetAgentPhoneNumbersResponseProvider.Livekit => "livekit",
+                GetAgentPhoneNumbersResponseProvider.Sip => "sip",
                 GetAgentPhoneNumbersResponseProvider.Twilio => "twilio",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace FishAudio
             return value switch
             {
                 "livekit" => GetAgentPhoneNumbersResponseProvider.Livekit,
+                "sip" => GetAgentPhoneNumbersResponseProvider.Sip,
                 "twilio" => GetAgentPhoneNumbersResponseProvider.Twilio,
                 _ => null,
             };

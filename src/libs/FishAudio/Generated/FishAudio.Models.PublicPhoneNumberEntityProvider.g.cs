@@ -15,6 +15,10 @@ namespace FishAudio
         /// <summary>
         /// 
         /// </summary>
+        Sip,
+        /// <summary>
+        /// 
+        /// </summary>
         Twilio,
     }
 
@@ -31,6 +35,7 @@ namespace FishAudio
             return value switch
             {
                 PublicPhoneNumberEntityProvider.Livekit => "livekit",
+                PublicPhoneNumberEntityProvider.Sip => "sip",
                 PublicPhoneNumberEntityProvider.Twilio => "twilio",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace FishAudio
             return value switch
             {
                 "livekit" => PublicPhoneNumberEntityProvider.Livekit,
+                "sip" => PublicPhoneNumberEntityProvider.Sip,
                 "twilio" => PublicPhoneNumberEntityProvider.Twilio,
                 _ => null,
             };

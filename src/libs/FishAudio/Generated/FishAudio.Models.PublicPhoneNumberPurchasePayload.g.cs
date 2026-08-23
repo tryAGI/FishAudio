@@ -9,7 +9,7 @@ namespace FishAudio
     public sealed partial class PublicPhoneNumberPurchasePayload
     {
         /// <summary>
-        /// Inventory to buy from. Only the managed `twilio` inventory is purchasable (supports call transfer). The field discriminates so importing your own numbers can share this endpoint later.
+        /// `twilio` buys from the managed inventory (supports call transfer); `sip` imports a number you already own at your carrier; see the `sip` request variant.
         /// </summary>
         /// <default>"twilio"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
@@ -53,7 +53,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="provider">
-        /// Inventory to buy from. Only the managed `twilio` inventory is purchasable (supports call transfer). The field discriminates so importing your own numbers can share this endpoint later.
+        /// `twilio` buys from the managed inventory (supports call transfer); `sip` imports a number you already own at your carrier; see the `sip` request variant.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

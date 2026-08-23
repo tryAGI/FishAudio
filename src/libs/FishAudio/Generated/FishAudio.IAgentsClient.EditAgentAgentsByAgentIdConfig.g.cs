@@ -14,10 +14,13 @@ namespace FishAudio
         /// `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;<br/>
         /// anything else is 422. `voice.expressive` opts into richer expressive<br/>
         /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
-        /// standard delivery. `tool_ids` and<br/>
+        /// standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
+        /// up to 50 plain terms (brand names, product terms, personal names), each at<br/>
+        /// most 100 characters with no commas or semicolons; `[]` clears it and 20-50<br/>
+        /// focused terms work best. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
-        /// OpenAI-compatible endpoint; mutually exclusive with `llm.tier`, cleared<br/>
+        /// OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared<br/>
         /// with an explicit null.
         /// </summary>
         /// <param name="agentId"></param>
@@ -60,10 +63,13 @@ namespace FishAudio
         /// `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;<br/>
         /// anything else is 422. `voice.expressive` opts into richer expressive<br/>
         /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
-        /// standard delivery. `tool_ids` and<br/>
+        /// standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
+        /// up to 50 plain terms (brand names, product terms, personal names), each at<br/>
+        /// most 100 characters with no commas or semicolons; `[]` clears it and 20-50<br/>
+        /// focused terms work best. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
-        /// OpenAI-compatible endpoint; mutually exclusive with `llm.tier`, cleared<br/>
+        /// OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared<br/>
         /// with an explicit null.
         /// </summary>
         /// <param name="agentId"></param>
@@ -106,10 +112,13 @@ namespace FishAudio
         /// `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;<br/>
         /// anything else is 422. `voice.expressive` opts into richer expressive<br/>
         /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
-        /// standard delivery. `tool_ids` and<br/>
+        /// standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
+        /// up to 50 plain terms (brand names, product terms, personal names), each at<br/>
+        /// most 100 characters with no commas or semicolons; `[]` clears it and 20-50<br/>
+        /// focused terms work best. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
-        /// OpenAI-compatible endpoint; mutually exclusive with `llm.tier`, cleared<br/>
+        /// OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared<br/>
         /// with an explicit null.
         /// </summary>
         /// <param name="agentId"></param>

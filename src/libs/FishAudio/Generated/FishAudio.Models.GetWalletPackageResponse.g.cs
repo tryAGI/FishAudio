@@ -112,6 +112,12 @@ namespace FishAudio
         public string? SubscriptionCurrency { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("subscription_status")]
+        public string? SubscriptionStatus { get; set; }
+
+        /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra_balance")]
@@ -166,6 +172,9 @@ namespace FishAudio
         /// <param name="subscriptionCurrency">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="subscriptionStatus">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="extraBalance">
         /// Default Value: 0
         /// </param>
@@ -192,6 +201,7 @@ namespace FishAudio
             object? scheduledChange,
             global::System.DateTime? lastSyncedAt,
             string? subscriptionCurrency,
+            string? subscriptionStatus,
             int? extraBalance,
             bool? hasUsedTrial)
         {
@@ -211,6 +221,7 @@ namespace FishAudio
             this.ScheduledChange = scheduledChange;
             this.LastSyncedAt = lastSyncedAt;
             this.SubscriptionCurrency = subscriptionCurrency;
+            this.SubscriptionStatus = subscriptionStatus;
             this.ExtraBalance = extraBalance;
             this.HasUsedTrial = hasUsedTrial;
         }

@@ -28,6 +28,12 @@ namespace FishAudio
         public bool? Expressive { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keyterms")]
+        public global::System.Collections.Generic.IList<string>? Keyterms { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -45,17 +51,20 @@ namespace FishAudio
         /// <param name="expressive">
         /// Default Value: false
         /// </param>
+        /// <param name="keyterms"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentVoiceConfig(
             string? voiceId,
             global::FishAudio.AgentVoiceConfigSpeakingLanguage? speakingLanguage,
-            bool? expressive)
+            bool? expressive,
+            global::System.Collections.Generic.IList<string>? keyterms)
         {
             this.VoiceId = voiceId;
             this.SpeakingLanguage = speakingLanguage;
             this.Expressive = expressive;
+            this.Keyterms = keyterms;
         }
 
         /// <summary>

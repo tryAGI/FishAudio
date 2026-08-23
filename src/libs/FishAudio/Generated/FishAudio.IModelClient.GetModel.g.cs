@@ -31,6 +31,9 @@ namespace FishAudio
         /// <param name="titleLanguage">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="licensed">
+        /// Default Value: false
+        /// </param>
         /// <param name="sortBy">
         /// Default Value: score
         /// </param>
@@ -46,6 +49,7 @@ namespace FishAudio
             string? authorId = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage = default,
+            bool? licensed = default,
             global::FishAudio.GetModelSortBy? sortBy = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -76,6 +80,9 @@ namespace FishAudio
         /// <param name="titleLanguage">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="licensed">
+        /// Default Value: false
+        /// </param>
         /// <param name="sortBy">
         /// Default Value: score
         /// </param>
@@ -91,6 +98,7 @@ namespace FishAudio
             string? authorId = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage = default,
+            bool? licensed = default,
             global::FishAudio.GetModelSortBy? sortBy = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

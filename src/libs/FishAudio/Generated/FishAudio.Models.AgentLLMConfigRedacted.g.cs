@@ -9,11 +9,11 @@ namespace FishAudio
     public sealed partial class AgentLLMConfigRedacted
     {
         /// <summary>
-        /// Default Value: medium
+        /// Default Value: google/gemini-3.5-flash-lite
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentLLMConfigRedactedTierJsonConverter))]
-        public global::FishAudio.AgentLLMConfigRedactedTier? Tier { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentLLMConfigRedactedModelJsonConverter))]
+        public global::FishAudio.AgentLLMConfigRedactedModel? Model { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -30,8 +30,8 @@ namespace FishAudio
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentLLMConfigRedacted" /> class.
         /// </summary>
-        /// <param name="tier">
-        /// Default Value: medium
+        /// <param name="model">
+        /// Default Value: google/gemini-3.5-flash-lite
         /// </param>
         /// <param name="custom">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -40,10 +40,10 @@ namespace FishAudio
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentLLMConfigRedacted(
-            global::FishAudio.AgentLLMConfigRedactedTier? tier,
+            global::FishAudio.AgentLLMConfigRedactedModel? model,
             global::FishAudio.AgentLLMCustomConfigRedacted? custom)
         {
-            this.Tier = tier;
+            this.Model = model;
             this.Custom = custom;
         }
 

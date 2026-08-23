@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Your own OpenAI-compatible endpoint; mutually exclusive with `tier`, explicit null reverts to the tier.<br/>
+    /// Your own OpenAI-compatible endpoint; mutually exclusive with `model`, explicit null reverts to the platform model.<br/>
     /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
     /// </summary>
     public sealed partial class PublicAgentLLMPatchCustom
