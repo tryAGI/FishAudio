@@ -3,10 +3,10 @@
 namespace FishAudio.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class PublicAgentLLMPatchTier2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::FishAudio.PublicAgentLLMPatchTier2?>
+    public sealed class AgentLLMConfigRedactedModelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::FishAudio.AgentLLMConfigRedactedModel>
     {
         /// <inheritdoc />
-        public override global::FishAudio.PublicAgentLLMPatchTier2? Read(
+        public override global::FishAudio.AgentLLMConfigRedactedModel Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace FishAudio.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::FishAudio.PublicAgentLLMPatchTier2Extensions.ToEnum(stringValue);
+                        return global::FishAudio.AgentLLMConfigRedactedModelExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace FishAudio.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::FishAudio.PublicAgentLLMPatchTier2)numValue;
+                    return (global::FishAudio.AgentLLMConfigRedactedModel)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::FishAudio.PublicAgentLLMPatchTier2?);
+                    return default(global::FishAudio.AgentLLMConfigRedactedModel);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,19 +42,12 @@ namespace FishAudio.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::FishAudio.PublicAgentLLMPatchTier2? value,
+            global::FishAudio.AgentLLMConfigRedactedModel value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::FishAudio.PublicAgentLLMPatchTier2Extensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::FishAudio.AgentLLMConfigRedactedModelExtensions.ToValueString(value));
         }
     }
 }

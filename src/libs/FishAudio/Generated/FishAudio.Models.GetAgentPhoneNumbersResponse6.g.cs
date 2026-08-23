@@ -64,6 +64,47 @@ namespace FishAudio
         public string? StatusDetail { get; set; }
 
         /// <summary>
+        /// Whether the number can place calls (outbound and warm-transfer consult legs): managed `twilio` always, imported `sip` only when a termination was configured.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("supports_outbound")]
+        public bool? SupportsOutbound { get; set; }
+
+        /// <summary>
+        /// Imported `sip` numbers: the customer trunk's termination host.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("termination_uri")]
+        public string? TerminationUri { get; set; }
+
+        /// <summary>
+        /// Imported `sip` numbers: the inbound digest username. Passwords are never echoed.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inbound_auth_username")]
+        public string? InboundAuthUsername { get; set; }
+
+        /// <summary>
+        /// Imported `sip` numbers: allowed source IPs/CIDRs.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inbound_allowed_addresses")]
+        public global::System.Collections.Generic.IList<string>? InboundAllowedAddresses { get; set; }
+
+        /// <summary>
+        /// Imported `sip` numbers: termination transport.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("termination_transport")]
+        public string? TerminationTransport { get; set; }
+
+        /// <summary>
+        /// Imported `sip` numbers: the termination digest username. Passwords are never echoed.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("termination_auth_username")]
+        public string? TerminationAuthUsername { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
@@ -102,6 +143,29 @@ namespace FishAudio
         /// <param name="statusDetail">
         /// What failed when status is `error`; empty otherwise.
         /// </param>
+        /// <param name="supportsOutbound">
+        /// Whether the number can place calls (outbound and warm-transfer consult legs): managed `twilio` always, imported `sip` only when a termination was configured.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="terminationUri">
+        /// Imported `sip` numbers: the customer trunk's termination host.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="inboundAuthUsername">
+        /// Imported `sip` numbers: the inbound digest username. Passwords are never echoed.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="inboundAllowedAddresses">
+        /// Imported `sip` numbers: allowed source IPs/CIDRs.
+        /// </param>
+        /// <param name="terminationTransport">
+        /// Imported `sip` numbers: termination transport.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="terminationAuthUsername">
+        /// Imported `sip` numbers: the termination digest username. Passwords are never echoed.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -115,7 +179,13 @@ namespace FishAudio
             global::System.DateTime updatedAt,
             string? label,
             string? agentId,
-            string? statusDetail)
+            string? statusDetail,
+            bool? supportsOutbound,
+            string? terminationUri,
+            string? inboundAuthUsername,
+            global::System.Collections.Generic.IList<string>? inboundAllowedAddresses,
+            string? terminationTransport,
+            string? terminationAuthUsername)
         {
             this.PhoneNumberId = phoneNumberId ?? throw new global::System.ArgumentNullException(nameof(phoneNumberId));
             this.WorkspaceId = workspaceId ?? throw new global::System.ArgumentNullException(nameof(workspaceId));
@@ -125,6 +195,12 @@ namespace FishAudio
             this.AgentId = agentId;
             this.Status = status;
             this.StatusDetail = statusDetail;
+            this.SupportsOutbound = supportsOutbound;
+            this.TerminationUri = terminationUri;
+            this.InboundAuthUsername = inboundAuthUsername;
+            this.InboundAllowedAddresses = inboundAllowedAddresses;
+            this.TerminationTransport = terminationTransport;
+            this.TerminationAuthUsername = terminationAuthUsername;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }

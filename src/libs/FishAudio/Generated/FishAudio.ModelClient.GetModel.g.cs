@@ -35,6 +35,7 @@ namespace FishAudio
             ref string? authorId,
             ref global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language,
             ref global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage,
+            ref bool? licensed,
             ref global::FishAudio.GetModelSortBy? sortBy);
         partial void PrepareGetModelRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -47,6 +48,7 @@ namespace FishAudio
             string? authorId,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage,
+            bool? licensed,
             global::FishAudio.GetModelSortBy? sortBy);
         partial void ProcessGetModelResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -84,6 +86,9 @@ namespace FishAudio
         /// <param name="titleLanguage">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="licensed">
+        /// Default Value: false
+        /// </param>
         /// <param name="sortBy">
         /// Default Value: score
         /// </param>
@@ -99,6 +104,7 @@ namespace FishAudio
             string? authorId = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage = default,
+            bool? licensed = default,
             global::FishAudio.GetModelSortBy? sortBy = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -112,6 +118,7 @@ namespace FishAudio
                 authorId: authorId,
                 language: language,
                 titleLanguage: titleLanguage,
+                licensed: licensed,
                 sortBy: sortBy,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
@@ -146,6 +153,9 @@ namespace FishAudio
         /// <param name="titleLanguage">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="licensed">
+        /// Default Value: false
+        /// </param>
         /// <param name="sortBy">
         /// Default Value: score
         /// </param>
@@ -161,6 +171,7 @@ namespace FishAudio
             string? authorId = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage = default,
+            bool? licensed = default,
             global::FishAudio.GetModelSortBy? sortBy = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -177,6 +188,7 @@ namespace FishAudio
                 authorId: ref authorId,
                 language: ref language,
                 titleLanguage: ref titleLanguage,
+                licensed: ref licensed,
                 sortBy: ref sortBy);
 
 
@@ -214,6 +226,7 @@ namespace FishAudio
                                 .AddOptionalParameter("author_id", authorId)
                                 .AddOptionalParameter("language", language?.ToString())
                                 .AddOptionalParameter("title_language", titleLanguage?.ToString())
+                                .AddOptionalParameter("licensed", licensed?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
@@ -264,6 +277,7 @@ namespace FishAudio
                     authorId: authorId,
                     language: language,
                     titleLanguage: titleLanguage,
+                    licensed: licensed,
                     sortBy: sortBy);
 
                 return __httpRequest;

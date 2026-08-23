@@ -53,6 +53,10 @@ internal static partial class ModelGetModelCommandApiCommand
         Description = @"Title language to filter models",
     };
 
+    private static Option<bool?> Licensed { get; } = CliRuntime.CreateNullableBoolOption(
+        name: @"--licensed",
+        description: @"If True, only voices licensed by Fish Audio (rights secured from the voice owner) are returned; ignored if self is True");
+
     private static Option<global::FishAudio.GetModelSortBy?> SortBy { get; } = new(
         name: @"--sort-by")
     {
@@ -90,6 +94,7 @@ internal static partial class ModelGetModelCommandApiCommand
                         command.Options.Add(AuthorId);
                         command.Options.Add(Language);
                         command.Options.Add(TitleLanguage);
+                        command.Options.Add(Licensed);
                         command.Options.Add(SortBy);
 
 
@@ -104,6 +109,7 @@ internal static partial class ModelGetModelCommandApiCommand
                         var authorId = parseResult.GetValue(AuthorId);
                         var language = parseResult.GetValue(Language);
                         var titleLanguage = parseResult.GetValue(TitleLanguage);
+                        var licensed = parseResult.GetValue(Licensed);
                         var sortBy = parseResult.GetValue(SortBy);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
@@ -117,6 +123,7 @@ internal static partial class ModelGetModelCommandApiCommand
                                     authorId: authorId,
                                     language: language,
                                     titleLanguage: titleLanguage,
+                                    licensed: licensed,
                                     sortBy: sortBy,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 

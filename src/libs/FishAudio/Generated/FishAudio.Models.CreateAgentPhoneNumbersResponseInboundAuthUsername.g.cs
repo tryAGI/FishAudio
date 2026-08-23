@@ -4,9 +4,10 @@
 namespace FishAudio
 {
     /// <summary>
+    /// Imported `sip` numbers: the inbound digest username. Passwords are never echoed.<br/>
     /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
     /// </summary>
-    public sealed partial class PublicAgentLLMPatchTier
+    public sealed partial class CreateAgentPhoneNumbersResponseInboundAuthUsername
     {
 
         /// <summary>

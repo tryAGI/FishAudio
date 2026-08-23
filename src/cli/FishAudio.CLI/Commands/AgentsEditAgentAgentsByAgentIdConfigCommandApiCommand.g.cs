@@ -114,10 +114,13 @@ under 2000 tokens is recommended for latency and cost.
 `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;
 anything else is 422. `voice.expressive` opts into richer expressive
 delivery (emotion steering, laughter and sounds, pauses); off keeps the
-standard delivery. `tool_ids` and
+standard delivery. `voice.keyterms` is a speech-recognition vocabulary of
+up to 50 plain terms (brand names, product terms, personal names), each at
+most 100 characters with no commas or semicolons; `[]` clears it and 20-50
+focused terms work best. `tool_ids` and
 `knowledge_source_ids` replace their attachment lists wholesale and every
 id must resolve, else 422. `llm.custom` points the agent at your own
-OpenAI-compatible endpoint; mutually exclusive with `llm.tier`, cleared
+OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared
 with an explicit null.");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(Prompt);

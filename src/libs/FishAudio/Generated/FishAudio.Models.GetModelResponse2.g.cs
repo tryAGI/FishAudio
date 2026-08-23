@@ -123,6 +123,12 @@ namespace FishAudio
         public string? Source { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("licensed")]
+        public bool? Licensed { get; set; }
+
+        /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pvc_release_state")]
@@ -254,6 +260,9 @@ namespace FishAudio
         /// <param name="source">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="licensed">
+        /// Default Value: false
+        /// </param>
         /// <param name="pvcReleaseState">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -307,6 +316,7 @@ namespace FishAudio
             bool? dmcaTakenDown,
             string? defaultText,
             string? source,
+            bool? licensed,
             global::FishAudio.GetModelResponsePvcReleaseState2? pvcReleaseState,
             int? pvcNoticePeriodMonths,
             global::System.DateTime? pvcReleasedAt,
@@ -334,6 +344,7 @@ namespace FishAudio
             this.DmcaTakenDown = dmcaTakenDown;
             this.DefaultText = defaultText;
             this.Source = source;
+            this.Licensed = licensed;
             this.PvcReleaseState = pvcReleaseState;
             this.PvcNoticePeriodMonths = pvcNoticePeriodMonths;
             this.PvcReleasedAt = pvcReleasedAt;

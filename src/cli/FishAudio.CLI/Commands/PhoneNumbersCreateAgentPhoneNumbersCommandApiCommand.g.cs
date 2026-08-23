@@ -7,31 +7,7 @@ namespace FishAudio.CLI.Commands;
 
 internal static partial class PhoneNumbersCreateAgentPhoneNumbersCommandApiCommand
 {
-    private static Option<string> Provider { get; } = new(
-        name: @"--provider")
-    {
-        Description = @"Inventory to buy from. Only the managed `twilio` inventory is purchasable (supports call transfer). The field discriminates so importing your own numbers can share this endpoint later.",
-        DefaultValueFactory = _ => "twilio",
-    };
 
-    private static Option<string> PhoneNumber { get; } = new(
-        name: @"--phone-number")
-    {
-        Description = @"E.164 number from `GET /v1/agent/available-phone-numbers`, e.g. +14155550123.",
-        Required = true,
-    };
-
-    private static Option<string?> Label { get; } = new(
-        name: @"--label")
-    {
-        Description = @"",
-    };
-
-    private static Option<string?> AgentId { get; } = new(
-        name: @"--agent-id")
-    {
-        Description = @"Bind an agent to answer inbound calls right away.",
-    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -71,18 +47,20 @@ internal static partial class PhoneNumbersCreateAgentPhoneNumbersCommandApiComma
 
     public static Command Create()
     {
-        var command = new Command(@"create-agent-phone-numbers", @"Purchase Phone Number
-Buy a number from the inventory. The number lands in your default
-workspace, and any `agent_id` you bind must live there too. Billing is the
-monthly price charged in daily slices: the first day is charged before
-anything is bought (402 costs you nothing), and the daily run advances it
-from there. 409 means the number is already on the platform; 502 means the
-provider refused the purchase — the number stays visible with status
+        var command = new Command(@"create-agent-phone-numbers", @"Purchase or Import Phone Number
+`provider` discriminates two variants. `twilio` buys a number from the
+managed inventory: it lands in your default workspace, any `agent_id` you
+bind must live there too, and billing is the monthly price charged in
+daily slices; the first day is charged before anything is bought (402
+costs you nothing) and the daily run advances it from there. `sip`
+imports a number you already own at your carrier: point your trunk's
+origination at our SIP host, provide inbound authentication (digest
+and/or source CIDRs) and optionally a termination host so the number can
+place calls; nothing is rented and there is no monthly fee. Either way,
+409 means the number is already on the platform; 502 means the provider
+or trunk provisioning refused, and the number stays visible with status
 `error` and is safe to release.");
-                        command.Options.Add(Provider);
-                        command.Options.Add(PhoneNumber);
-                        command.Options.Add(Label);
-                        command.Options.Add(AgentId);
+
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -92,43 +70,46 @@ provider refused the purchase — the number stays visible with status
               var hasRequestJson = result.GetResult(RequestJson) is not null;
               var hasRequestFile = result.GetResult(RequestFile) is not null;
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
-              if (specifiedCount > 1)
+              if (specifiedCount != 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify exactly one of --input, --request-json, or --request-file.");
               }
           });
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::FishAudio.PublicPhoneNumberPurchasePayload>(
+
+                        var request = await CliRuntime.ReadRequestAsync<global::FishAudio.AnyOf<global::FishAudio.PublicPhoneNumberPurchasePayload, global::FishAudio.PublicSipNumberImportPayload>>(
                             parseResult,
                             Input,
                             RequestJson,
                             RequestFile,
                             global::FishAudio.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var provider = parseResult.GetRequiredValue(Provider);
-                        var phoneNumber = parseResult.GetRequiredValue(PhoneNumber);
-                        var label = CliRuntime.WasSpecified(parseResult, Label) ? parseResult.GetValue(Label) : (__requestBase is { } __LabelBaseValue ? __LabelBaseValue.Label : default);
-                        var agentId = CliRuntime.WasSpecified(parseResult, AgentId) ? parseResult.GetValue(AgentId) : (__requestBase is { } __AgentIdBaseValue ? __AgentIdBaseValue.AgentId : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = await client.PhoneNumbers.CreateAgentPhoneNumbersAsync(
-                                    provider: provider,
-                                    phoneNumber: phoneNumber,
-                                    label: label,
-                                    agentId: agentId,
+
+                                    request: request,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 
+                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
+                                        parseResult,
+                                        response,
+                                        global::FishAudio.SourceGenerationContext.Default,
+                                        @"InboundAllowedAddresses",
+                                        cancellationToken).ConfigureAwait(false))
+                                {
                                 await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::FishAudio.SourceGenerationContext.Default,
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }
