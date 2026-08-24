@@ -16,7 +16,7 @@ public static class FishAudioToolExtensions
     /// </summary>
     /// <param name="client">The Fish Audio client to use.</param>
     /// <param name="referenceId">Optional default voice model ID to use for synthesis.</param>
-    /// <param name="model">The TTS model to use (default: s2-pro).</param>
+    /// <param name="model">The TTS model to use (default: s2.1-pro-free).</param>
     /// <returns>An AIFunction that can be passed to ChatOptions.Tools.</returns>
     public static AIFunction AsTextToSpeechTool(
         this FishAudioClient client,

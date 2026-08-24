@@ -11,7 +11,7 @@ namespace FishAudio;
 
 public sealed partial class FishAudioClient : ITextToSpeechClient
 {
-    private const string DefaultTextToSpeechModel = "s2.1-pro-free";
+    private const string DefaultTextToSpeechModel = FishAudioModels.S21ProFree;
     private TextToSpeechClientMetadata? _textToSpeechMetadata;
 
     object? ITextToSpeechClient.GetService(Type serviceType, object? serviceKey)
