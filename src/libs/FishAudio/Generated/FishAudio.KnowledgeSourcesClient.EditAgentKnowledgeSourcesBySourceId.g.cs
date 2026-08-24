@@ -161,10 +161,6 @@ namespace FishAudio
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(sourceId ?? string.Empty),
-                                name: "\"source_id\"");
-
                             if (request.Source != default)
                             {
 
