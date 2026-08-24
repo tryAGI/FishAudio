@@ -27,11 +27,11 @@ namespace FishAudio
             };
         partial void PrepareCreateModelArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::FishAudio.CreateModelRequest request);
+            global::FishAudio.CreateModelRequest3 request);
         partial void PrepareCreateModelRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::FishAudio.CreateModelRequest request);
+            global::FishAudio.CreateModelRequest3 request);
         partial void ProcessCreateModelResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,7 +50,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::FishAudio.CreateModelResponse> CreateModelAsync(
 
-            global::FishAudio.CreateModelRequest request,
+            global::FishAudio.CreateModelRequest3 request,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -72,7 +72,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.CreateModelResponse>> CreateModelAsResponseAsync(
 
-            global::FishAudio.CreateModelRequest request,
+            global::FishAudio.CreateModelRequest3 request,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -102,7 +102,7 @@ namespace FishAudio
             var __maxAttempts = global::FishAudio.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
@@ -139,12 +139,257 @@ namespace FishAudio
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            if (request.Visibility != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Visibility).HasValue ? (request.Visibility).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"visibility\"");
+
+                            }
+                            if (request.Type != "tts")
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Type ?? string.Empty),
+                                    name: "\"type\"");
+
+                            }
+                            __httpRequestContent.Add(
+                                content: new global::System.Net.Http.StringContent(request.Title ?? string.Empty),
+                                name: "\"title\"");
+
+                            if (request.Description != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Description ?? string.Empty),
+                                    name: "\"description\"");
+
+                            }
+                            if (request.CoverImage != default)
+                            {
+
+                                var __contentCoverImage = new global::System.Net.Http.ByteArrayContent(request.CoverImage ?? global::System.Array.Empty<byte>());
+                                __contentCoverImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.CoverImagename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.CoverImagename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentCoverImage,
+                                    name: "\"cover_image\"",
+                                    fileName: request.CoverImagename != null ? $"\"{request.CoverImagename}\"" : string.Empty);
+                                if (__contentCoverImage.Headers.ContentDisposition != null)
+                                {
+                                    __contentCoverImage.Headers.ContentDisposition.FileNameStar = null;
+                                }
+
+                            }
+                            if (request.TrainMode != "fast")
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.TrainMode ?? string.Empty),
+                                    name: "\"train_mode\"");
+
+                            }            if (request.Voices.TryPickValue1(out var __valueVoices1))
+                            {
+
+                                for (var __iVoices1 = 0; __iVoices1 < (__valueVoices1!).Count; __iVoices1++)
+                                {
+
+                                    var __fileNameVoices1Item = $"file{__iVoices1}.bin";
+                                    var __contentVoices1Item = new global::System.Net.Http.ByteArrayContent((__valueVoices1!)[__iVoices1] ?? global::System.Array.Empty<byte>());
+                                    __contentVoices1Item.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                        __fileNameVoices1Item is null
+                                            ? "application/octet-stream"
+                                            : (global::System.IO.Path.GetExtension(__fileNameVoices1Item) ?? string.Empty).ToLowerInvariant() switch
+                                            {
+                                                ".aac" => "audio/aac",
+                                                ".flac" => "audio/flac",
+                                                ".gif" => "image/gif",
+                                                ".jpeg" => "image/jpeg",
+                                                ".jpg" => "image/jpeg",
+                                                ".json" => "application/json",
+                                                ".m4a" => "audio/mp4",
+                                                ".mp3" => "audio/mpeg",
+                                                ".mp4" => "video/mp4",
+                                                ".mpeg" => "audio/mpeg",
+                                                ".mpga" => "audio/mpeg",
+                                                ".oga" => "audio/ogg",
+                                                ".ogg" => "audio/ogg",
+                                                ".opus" => "audio/ogg",
+                                                ".pdf" => "application/pdf",
+                                                ".png" => "image/png",
+                                                ".txt" => "text/plain",
+                                                ".wav" => "audio/wav",
+                                                ".weba" => "audio/webm",
+                                                ".webm" => "video/webm",
+                                                ".webp" => "image/webp",
+                                                _ => "application/octet-stream",
+                                            });
+                                    __httpRequestContent.Add(
+                                        content: __contentVoices1Item,
+                                        name: "\"voices\"",
+                                        fileName: $"\"{__fileNameVoices1Item}\"");
+                                    if (__contentVoices1Item.Headers.ContentDisposition != null)
+                                    {
+                                        __contentVoices1Item.Headers.ContentDisposition.FileNameStar = null;
+                                    }
+                                }
+                            }
+                            else if (request.Voices.TryPickValue2(out var __valueVoices2))
+                            {
+
+                                var __fileNameVoices2 = "file.bin";
+                                var __contentVoices2 = new global::System.Net.Http.ByteArrayContent(__valueVoices2 ?? global::System.Array.Empty<byte>());
+                                __contentVoices2.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    __fileNameVoices2 is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(__fileNameVoices2) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentVoices2,
+                                    name: "\"voices\"",
+                                    fileName: $"\"{__fileNameVoices2}\"");
+                                if (__contentVoices2.Headers.ContentDisposition != null)
+                                {
+                                    __contentVoices2.Headers.ContentDisposition.FileNameStar = null;
+                                }
+                            }
+
+                            if (request.Texts != default)
+                            {
+                                if ((request.Texts).GetValueOrDefault().TryPickValue1(out var __valueTexts1))
+                                {
+
+                                    for (var __iTexts1 = 0; __iTexts1 < (__valueTexts1!).Count; __iTexts1++)
+                                    {
+
+                                        var __contentTexts1Item = new global::System.Net.Http.StringContent((__valueTexts1!)[__iTexts1] ?? string.Empty);
+                                        __httpRequestContent.Add(
+                                            content: __contentTexts1Item,
+                                            name: "\"texts\"");
+                                    }
+                                }
+                                else if ((request.Texts).GetValueOrDefault().TryPickValue2(out var __valueTexts2))
+                                {
+
+                                    var __contentTexts2 = new global::System.Net.Http.StringContent(__valueTexts2 ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTexts2,
+                                        name: "\"texts\"");
+                                }
+                                else if ((request.Texts).GetValueOrDefault().TryPickValue3(out var __valueTexts3))
+                                {
+
+                                    var __contentTexts3 = new global::System.Net.Http.StringContent((__valueTexts3!).ToString() ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTexts3,
+                                        name: "\"texts\"");
+                                }
+                            }
+
+                            if (request.Tags != default)
+                            {
+                                if ((request.Tags).GetValueOrDefault().TryPickValue1(out var __valueTags1))
+                                {
+
+                                    for (var __iTags1 = 0; __iTags1 < (__valueTags1!).Count; __iTags1++)
+                                    {
+
+                                        var __contentTags1Item = new global::System.Net.Http.StringContent((__valueTags1!)[__iTags1] ?? string.Empty);
+                                        __httpRequestContent.Add(
+                                            content: __contentTags1Item,
+                                            name: "\"tags\"");
+                                    }
+                                }
+                                else if ((request.Tags).GetValueOrDefault().TryPickValue2(out var __valueTags2))
+                                {
+
+                                    var __contentTags2 = new global::System.Net.Http.StringContent(__valueTags2 ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTags2,
+                                        name: "\"tags\"");
+                                }
+                                else if ((request.Tags).GetValueOrDefault().TryPickValue3(out var __valueTags3))
+                                {
+
+                                    var __contentTags3 = new global::System.Net.Http.StringContent((__valueTags3!).ToString() ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTags3,
+                                        name: "\"tags\"");
+                                }
+                            }
+
+                            if (request.EnhanceAudioQuality != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EnhanceAudioQuality, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"enhance_audio_quality\"");
+
+                            }
+                            if (request.GenerateSample != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.GenerateSample, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"generate_sample\"");
+
+                            }
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::FishAudio.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -557,7 +802,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.CreateModelResponse> CreateModelAsync(
             string title,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<byte[]>, byte[]> voices,
-            global::FishAudio.CreateModelRequestVisibility? visibility = default,
+            global::FishAudio.CreateModelRequestVisibility3? visibility = default,
             string type = "tts",
             string? description = default,
             byte[]? coverImage = default,
@@ -570,7 +815,7 @@ namespace FishAudio
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::FishAudio.CreateModelRequest
+            var __request = new global::FishAudio.CreateModelRequest3
             {
                 Visibility = visibility,
                 Type = type,

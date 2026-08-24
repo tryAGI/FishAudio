@@ -37,7 +37,7 @@ internal static partial class ModelEditModelByIdCommandApiCommand
         Description = @"",
     };
 
-    private static Option<global::FishAudio.PatchModelRequestVisibility2?> Visibility { get; } = new(
+    private static Option<global::FishAudio.PatchModelRequestVisibility6?> Visibility { get; } = new(
         name: @"--visibility")
     {
         Description = @"",
@@ -93,7 +93,7 @@ internal static partial class ModelEditModelByIdCommandApiCommand
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::FishAudio.PatchModelRequest>(
+                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::FishAudio.PatchModelRequest3>(
                             parseResult,
                             Input,
                             RequestJson,

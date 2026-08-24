@@ -7,7 +7,7 @@ namespace FishAudio.CLI.Commands;
 
 internal static partial class ModelCreateModelCommandApiCommand
 {
-    private static Option<global::FishAudio.CreateModelRequestVisibility?> Visibility { get; } = new(
+    private static Option<global::FishAudio.CreateModelRequestVisibility3?> Visibility { get; } = new(
         name: @"--visibility")
     {
         Description = @"Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator",
@@ -148,7 +148,7 @@ internal static partial class ModelCreateModelCommandApiCommand
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::FishAudio.CreateModelRequest>(
+                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::FishAudio.CreateModelRequest3>(
                             parseResult,
                             Input,
                             RequestJson,
