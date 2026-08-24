@@ -439,7 +439,7 @@ public sealed partial class OpenAPIV1Client
     partial void PrepareCreateTtsStreamWithTimestampRequest(
         HttpClient httpClient,
         HttpRequestMessage httpRequestMessage,
-        CreateTtsStreamWithTimestampModel model,
+        CreateTtsStreamWithTimestampModel? model,
         TTSStreamWithTimestampRequest request)
     {
         _ = ReadResponseAsString;
