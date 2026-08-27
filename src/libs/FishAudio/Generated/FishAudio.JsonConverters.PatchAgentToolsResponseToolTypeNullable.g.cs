@@ -20,7 +20,7 @@ namespace FishAudio.JsonConverters
                     {
                         return global::FishAudio.PatchAgentToolsResponseToolTypeExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

@@ -9,14 +9,14 @@ namespace FishAudio
     public sealed partial class AgentLLMCustomConfigRedacted
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("base_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BaseUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]

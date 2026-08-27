@@ -9,11 +9,11 @@ namespace FishAudio
     public enum PublicAgentToolCreatePayloadToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Client,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webhook,
     }

@@ -4,19 +4,19 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetModelResponse2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.GetModelResponseTypeJsonConverter))]
@@ -24,20 +24,20 @@ namespace FishAudio
         public required global::FishAudio.GetModelResponseType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Title { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cover_image")]
         public string? CoverImage { get; set; }
@@ -50,7 +50,7 @@ namespace FishAudio
         public global::FishAudio.GetModelResponseTrainMode? TrainMode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.GetModelResponseStateJsonConverter))]
@@ -58,7 +58,7 @@ namespace FishAudio
         public required global::FishAudio.GetModelResponseState State { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -71,14 +71,14 @@ namespace FishAudio
         public global::System.Collections.Generic.IList<global::FishAudio.SampleEntity>? Samples { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -91,7 +91,7 @@ namespace FishAudio
         public global::System.Collections.Generic.IList<string>? Languages { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.GetModelResponseVisibilityJsonConverter))]
@@ -111,7 +111,13 @@ namespace FishAudio
         public bool? DmcaTakenDown { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("takedown_category")]
+        public global::FishAudio.GetModelResponseTakedownCategory2? TakedownCategory { get; set; }
+
+        /// <summary>
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_text")]
         public string? DefaultText { get; set; }
@@ -165,28 +171,28 @@ namespace FishAudio
         public global::FishAudio.ModelQualityEntity? Quality { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("like_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int LikeCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mark_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int MarkCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shared_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int SharedCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("task_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -211,7 +217,7 @@ namespace FishAudio
         public bool? Marked { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -255,6 +261,9 @@ namespace FishAudio
         /// </param>
         /// <param name="dmcaTakenDown">
         /// Default Value: false
+        /// </param>
+        /// <param name="takedownCategory">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="defaultText"></param>
         /// <param name="source">
@@ -314,6 +323,7 @@ namespace FishAudio
             global::System.Collections.Generic.IList<string>? languages,
             bool? lockVisibility,
             bool? dmcaTakenDown,
+            global::FishAudio.GetModelResponseTakedownCategory2? takedownCategory,
             string? defaultText,
             string? source,
             bool? licensed,
@@ -342,6 +352,7 @@ namespace FishAudio
             this.Visibility = visibility;
             this.LockVisibility = lockVisibility;
             this.DmcaTakenDown = dmcaTakenDown;
+            this.TakedownCategory = takedownCategory;
             this.DefaultText = defaultText;
             this.Source = source;
             this.Licensed = licensed;

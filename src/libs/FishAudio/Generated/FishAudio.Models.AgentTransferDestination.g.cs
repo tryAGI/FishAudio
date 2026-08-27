@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AgentTransferDestination
     {
@@ -15,13 +15,13 @@ namespace FishAudio
         public string? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
         public string? Label { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phone_number")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,15 +9,15 @@ namespace FishAudio
     public enum GetAgentToolsResponseExecutionMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Background,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Blocking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FireAndForget,
     }

@@ -4,16 +4,16 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PublicAgentUpdatePayloadStatus2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Active,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Archived,
     }

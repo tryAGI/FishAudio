@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PublicAgentToolsConfig
     {
@@ -15,13 +15,13 @@ namespace FishAudio
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_ids")]
         public global::System.Collections.Generic.IList<string>? ToolIds { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system_tools")]
         public global::FishAudio.AgentSystemToolsConfig? SystemTools { get; set; }

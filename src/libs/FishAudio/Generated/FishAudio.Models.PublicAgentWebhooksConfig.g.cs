@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PublicAgentWebhooksConfig
     {
@@ -15,7 +15,7 @@ namespace FishAudio
         public global::FishAudio.PublicConversationInitWebhook? ConversationInit { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("post_call")]
         public global::System.Collections.Generic.IList<global::FishAudio.PublicPostCallWebhook>? PostCall { get; set; }

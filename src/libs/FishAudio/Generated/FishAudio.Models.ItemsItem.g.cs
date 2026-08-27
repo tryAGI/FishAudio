@@ -5,12 +5,12 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ItemsItem : global::System.IEquatable<ItemsItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace FishAudio
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
@@ -32,7 +32,7 @@ namespace FishAudio
         public bool IsMessage => Message != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessage(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::FishAudio.AgentSessionMessageItem PickMessage() => IsMessage
             ? Message!
@@ -62,7 +62,7 @@ namespace FishAudio
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCall))]
@@ -70,7 +70,7 @@ namespace FishAudio
         public bool IsToolCall => ToolCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolCall(
 #if NET6_0_OR_GREATER
@@ -83,7 +83,7 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::FishAudio.AgentSessionToolCallItem PickToolCall() => IsToolCall
             ? ToolCall!
@@ -100,7 +100,7 @@ namespace FishAudio
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
@@ -108,7 +108,7 @@ namespace FishAudio
         public bool IsToolResult => ToolResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolResult(
 #if NET6_0_OR_GREATER
@@ -121,23 +121,23 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::FishAudio.AgentSessionToolResultItem PickToolResult() => IsToolResult
             ? ToolResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem(global::FishAudio.AgentSessionMessageItem value) => new ItemsItem((global::FishAudio.AgentSessionMessageItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::FishAudio.AgentSessionMessageItem?(ItemsItem @this) => @this.Message;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(global::FishAudio.AgentSessionMessageItem? value)
         {
@@ -145,22 +145,22 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem FromMessage(global::FishAudio.AgentSessionMessageItem? value) => new ItemsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem(global::FishAudio.AgentSessionToolCallItem value) => new ItemsItem((global::FishAudio.AgentSessionToolCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::FishAudio.AgentSessionToolCallItem?(ItemsItem @this) => @this.ToolCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(global::FishAudio.AgentSessionToolCallItem? value)
         {
@@ -168,22 +168,22 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem FromToolCall(global::FishAudio.AgentSessionToolCallItem? value) => new ItemsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ItemsItem(global::FishAudio.AgentSessionToolResultItem value) => new ItemsItem((global::FishAudio.AgentSessionToolResultItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::FishAudio.AgentSessionToolResultItem?(ItemsItem @this) => @this.ToolResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(global::FishAudio.AgentSessionToolResultItem? value)
         {
@@ -191,12 +191,12 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ItemsItem FromToolResult(global::FishAudio.AgentSessionToolResultItem? value) => new ItemsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ItemsItem(
             global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType? type,
@@ -213,25 +213,25 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ToolResult as object ??
             ToolCall as object ??
-            Message as object 
+            Message as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Message?.ToString() ??
             ToolCall?.ToString() ??
-            ToolResult?.ToString() 
+            ToolResult?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -239,7 +239,7 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::FishAudio.AgentSessionMessageItem, TResult>? message = null,
@@ -269,7 +269,7 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::FishAudio.AgentSessionMessageItem>? message = null,
@@ -299,7 +299,7 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::FishAudio.AgentSessionMessageItem>? message = null,
@@ -327,7 +327,7 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -350,19 +350,19 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ItemsItem other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::FishAudio.AgentSessionMessageItem?>.Default.Equals(Message, other.Message) &&
                 global::System.Collections.Generic.EqualityComparer<global::FishAudio.AgentSessionToolCallItem?>.Default.Equals(ToolCall, other.ToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::FishAudio.AgentSessionToolResultItem?>.Default.Equals(ToolResult, other.ToolResult) 
+                global::System.Collections.Generic.EqualityComparer<global::FishAudio.AgentSessionToolResultItem?>.Default.Equals(ToolResult, other.ToolResult)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ItemsItem obj1, ItemsItem obj2)
         {
@@ -370,7 +370,7 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ItemsItem obj1, ItemsItem obj2)
         {
@@ -378,7 +378,7 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,14 +9,14 @@ namespace FishAudio
     public sealed partial class PublicAgentToolCreatePayload
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
@@ -29,7 +29,7 @@ namespace FishAudio
         public global::FishAudio.PublicAgentToolCreatePayloadToolType? ToolType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         public global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookArgumentPayload>? Arguments { get; set; }
@@ -42,7 +42,7 @@ namespace FishAudio
         public global::FishAudio.PublicAgentToolCreatePayloadMethod? Method { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
@@ -54,13 +54,13 @@ namespace FishAudio
         public string? ContentType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body_template")]
         public string? BodyTemplate { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
         public global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookHeaderPayload>? Headers { get; set; }
@@ -79,7 +79,7 @@ namespace FishAudio
         public global::FishAudio.PublicAgentToolCreatePayloadErrorHandling? ErrorHandling { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mock_responses")]
         public global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>? MockResponses { get; set; }

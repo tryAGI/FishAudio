@@ -4,16 +4,16 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateModelResponsePvcReleaseState2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Released,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Retiring,
     }

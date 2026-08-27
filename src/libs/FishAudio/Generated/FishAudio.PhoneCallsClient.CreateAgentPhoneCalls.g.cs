@@ -193,7 +193,7 @@ namespace FishAudio
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
 
             var __idempotencyKey = global::System.String.IsNullOrWhiteSpace(idempotencyKey)
@@ -583,7 +583,7 @@ namespace FishAudio
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // 
+                            //
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;

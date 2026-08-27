@@ -9,11 +9,11 @@ namespace FishAudio
     public enum CreateModelResponseTrainMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Full,
     }

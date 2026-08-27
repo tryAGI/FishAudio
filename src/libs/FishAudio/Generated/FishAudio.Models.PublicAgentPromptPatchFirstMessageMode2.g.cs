@@ -4,20 +4,20 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PublicAgentPromptPatchFirstMessageMode2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fixed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Off,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prompt,
     }

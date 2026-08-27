@@ -4,24 +4,24 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PublicAgentUpdatePayloadOverridesAllowedVariant1Item
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FirstMessage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Language,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SystemPrompt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VoiceId,
     }

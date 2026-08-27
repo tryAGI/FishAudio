@@ -9,11 +9,11 @@ namespace FishAudio
     public enum AgentTransferDestinationPatchWarmConnect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Confirm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Direct,
     }

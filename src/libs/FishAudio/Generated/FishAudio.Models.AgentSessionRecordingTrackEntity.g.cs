@@ -4,12 +4,12 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AgentSessionRecordingTrackEntity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentSessionRecordingTrackEntityRoleJsonConverter))]
@@ -17,7 +17,7 @@ namespace FishAudio
         public required global::FishAudio.AgentSessionRecordingTrackEntityRole Role { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentSessionRecordingTrackEntityStatusJsonConverter))]

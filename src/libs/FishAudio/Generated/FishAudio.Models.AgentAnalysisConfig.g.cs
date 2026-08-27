@@ -4,24 +4,24 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AgentAnalysisConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         public global::FishAudio.AgentAnalysisSummaryConfig? Summary { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_fields")]
         public global::System.Collections.Generic.IList<global::FishAudio.AgentAnalysisDataField>? DataFields { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("criteria")]
         public global::System.Collections.Generic.IList<global::FishAudio.AgentAnalysisCriterion>? Criteria { get; set; }

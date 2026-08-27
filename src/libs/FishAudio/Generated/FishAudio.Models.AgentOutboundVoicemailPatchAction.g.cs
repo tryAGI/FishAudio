@@ -9,15 +9,15 @@ namespace FishAudio
     public enum AgentOutboundVoicemailPatchAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hangup,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LeaveMessage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LeavePromptMessage,
     }

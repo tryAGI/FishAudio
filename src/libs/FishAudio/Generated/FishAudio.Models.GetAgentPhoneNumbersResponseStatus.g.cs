@@ -4,24 +4,24 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetAgentPhoneNumbersResponseStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Active,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Provisioning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Released,
     }

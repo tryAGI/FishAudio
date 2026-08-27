@@ -9,11 +9,11 @@ namespace FishAudio
     public enum PublicAgentToolCreatePayloadErrorHandling
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Passthrough,
     }

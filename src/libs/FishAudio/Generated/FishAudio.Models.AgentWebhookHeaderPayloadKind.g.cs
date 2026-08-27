@@ -9,15 +9,15 @@ namespace FishAudio
     public enum AgentWebhookHeaderPayloadKind
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorizationBasic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorizationBearer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
     }

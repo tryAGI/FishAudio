@@ -9,15 +9,15 @@ namespace FishAudio
     public enum GetModelSortBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Score,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TaskCount,
     }

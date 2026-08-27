@@ -9,15 +9,15 @@ namespace FishAudio
     public enum AgentConversationConfigInterruptionSensitivity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Balanced,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
     }

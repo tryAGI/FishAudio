@@ -9,11 +9,11 @@ namespace FishAudio
     public enum PatchAgentAgentsResponsePublicationState
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Draft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Live,
     }

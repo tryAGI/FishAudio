@@ -4,12 +4,12 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetAgentAgentsVersionsResponse6
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,14 +28,14 @@ namespace FishAudio
         public string? VersionDescription { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config_hash")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ConfigHash { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("published_at")]
         [global::System.Text.Json.Serialization.JsonRequired]

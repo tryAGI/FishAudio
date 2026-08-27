@@ -4,20 +4,20 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PublicAgentConversationPatchEagerness2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Balanced,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eager,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Relaxed,
     }

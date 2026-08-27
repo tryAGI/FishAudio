@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetAgentToolsAgentsResponse
     {
@@ -16,7 +16,7 @@ namespace FishAudio
         public required global::System.Collections.Generic.IList<global::FishAudio.PublicDependentAgent> Agents { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]

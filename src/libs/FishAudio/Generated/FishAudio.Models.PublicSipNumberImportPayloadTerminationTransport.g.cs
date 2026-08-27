@@ -9,19 +9,19 @@ namespace FishAudio
     public enum PublicSipNumberImportPayloadTerminationTransport
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tcp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tls,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Udp,
     }
