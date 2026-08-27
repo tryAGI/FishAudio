@@ -12,7 +12,7 @@ namespace FishAudio
     public sealed partial class PhoneCallCreatePayload
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

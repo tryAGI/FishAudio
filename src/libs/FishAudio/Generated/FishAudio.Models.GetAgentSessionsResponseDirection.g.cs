@@ -9,11 +9,11 @@ namespace FishAudio
     public enum GetAgentSessionsResponseDirection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inbound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Outbound,
     }

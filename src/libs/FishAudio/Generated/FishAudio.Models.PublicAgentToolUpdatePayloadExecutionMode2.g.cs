@@ -4,20 +4,20 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PublicAgentToolUpdatePayloadExecutionMode2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Background,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Blocking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FireAndForget,
     }

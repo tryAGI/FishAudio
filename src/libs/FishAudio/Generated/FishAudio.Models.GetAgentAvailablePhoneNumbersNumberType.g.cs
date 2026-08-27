@@ -9,11 +9,11 @@ namespace FishAudio
     public enum GetAgentAvailablePhoneNumbersNumberType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Local,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TollFree,
     }

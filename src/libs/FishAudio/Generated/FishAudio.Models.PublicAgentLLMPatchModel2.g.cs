@@ -4,32 +4,32 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PublicAgentLLMPatchModel2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicClaudeHaiku45,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnthropicClaudeSonnet46,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GoogleGemini35FlashLite,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GoogleGemini36Flash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt4o,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenaiGpt56Luna,
     }

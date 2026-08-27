@@ -9,15 +9,15 @@ namespace FishAudio
     public enum GetAgentAgentsPublicationState
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Draft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Live,
     }

@@ -9,11 +9,11 @@ namespace FishAudio
     public enum ModelEntityTrainMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Full,
     }

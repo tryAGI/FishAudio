@@ -10,7 +10,7 @@ namespace FishAudio
     public sealed partial class AgentSessionAnalysisResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentSessionAnalysisResultStatusJsonConverter))]
@@ -24,13 +24,13 @@ namespace FishAudio
         public string? Summary { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionAnalysisDataValue>? Data { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("criteria_results")]
         public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionAnalysisCriterionResult>? CriteriaResults { get; set; }

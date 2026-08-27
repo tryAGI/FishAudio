@@ -4,13 +4,13 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateModelRequest
     {
         /// <summary>
         /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
-        /// Default Value: public
+        /// Default Value: private
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.CreateModelRequestVisibilityJsonConverter))]
@@ -112,7 +112,7 @@ namespace FishAudio
         /// </param>
         /// <param name="visibility">
         /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
-        /// Default Value: public
+        /// Default Value: private
         /// </param>
         /// <param name="description">
         /// Model description<br/>

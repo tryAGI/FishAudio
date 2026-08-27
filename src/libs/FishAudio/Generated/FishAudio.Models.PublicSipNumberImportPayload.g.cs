@@ -15,25 +15,25 @@ namespace FishAudio
     public sealed partial class PublicSipNumberImportPayload
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inbound_auth_username")]
         public string? InboundAuthUsername { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inbound_auth_password")]
         public string? InboundAuthPassword { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inbound_allowed_addresses")]
         public global::System.Collections.Generic.IList<string>? InboundAllowedAddresses { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("termination_uri")]
         public string? TerminationUri { get; set; }
@@ -46,26 +46,26 @@ namespace FishAudio
         public global::FishAudio.PublicSipNumberImportPayloadTerminationTransport? TerminationTransport { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("termination_auth_username")]
         public string? TerminationAuthUsername { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("termination_auth_password")]
         public string? TerminationAuthPassword { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phone_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PhoneNumber { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
         public string? Label { get; set; }
@@ -77,7 +77,7 @@ namespace FishAudio
         public string? AgentId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"sip"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]

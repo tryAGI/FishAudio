@@ -41,7 +41,7 @@ namespace FishAudio
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::FishAudio.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -51,7 +51,7 @@ namespace FishAudio
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentSessionsClient AgentSessions => new AgentSessionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -61,7 +61,7 @@ namespace FishAudio
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentToolsClient AgentTools => new AgentToolsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -71,7 +71,7 @@ namespace FishAudio
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentsClient Agents => new AgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -81,7 +81,7 @@ namespace FishAudio
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public KnowledgeSourcesClient KnowledgeSources => new KnowledgeSourcesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -91,7 +91,7 @@ namespace FishAudio
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelClient Model => new ModelClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -101,7 +101,7 @@ namespace FishAudio
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OpenAPIV1Client OpenAPIV1 => new OpenAPIV1Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -111,7 +111,7 @@ namespace FishAudio
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PhoneCallsClient PhoneCalls => new PhoneCallsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -121,7 +121,7 @@ namespace FishAudio
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PhoneNumbersClient PhoneNumbers => new PhoneNumbersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -131,7 +131,7 @@ namespace FishAudio
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WalletClient Wallet => new WalletClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

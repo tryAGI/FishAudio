@@ -18,7 +18,7 @@ namespace FishAudio
         public global::FishAudio.AgentOutboundVoicemailConfigAction? Action { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         public string? Message { get; set; }

@@ -9,15 +9,15 @@ namespace FishAudio
     public enum AgentConversationConfigEagerness
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Balanced,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eager,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Relaxed,
     }

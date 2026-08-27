@@ -33,7 +33,7 @@ namespace FishAudio
         /// </summary>
         /// <param name="visibility">
         /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
-        /// Default Value: public
+        /// Default Value: private
         /// </param>
         /// <param name="type">
         /// Model type, tts is for text to speech

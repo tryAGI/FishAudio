@@ -137,7 +137,7 @@ namespace FishAudio
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
@@ -755,7 +755,7 @@ namespace FishAudio
         /// </summary>
         /// <param name="visibility">
         /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
-        /// Default Value: public
+        /// Default Value: private
         /// </param>
         /// <param name="type">
         /// Model type, tts is for text to speech

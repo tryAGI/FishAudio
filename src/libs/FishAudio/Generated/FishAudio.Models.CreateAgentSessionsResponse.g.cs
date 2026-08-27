@@ -9,42 +9,42 @@ namespace FishAudio
     public sealed partial class CreateAgentSessionsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SessionId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ExpiresAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_duration_seconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int MaxDurationSeconds { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"livekit"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("transport")]
         public string Transport { get; set; } = "livekit";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("livekit_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string LivekitUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         [global::System.Text.Json.Serialization.JsonRequired]

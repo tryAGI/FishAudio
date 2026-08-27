@@ -4,20 +4,20 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateAgentPhoneNumbersResponseProvider
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Livekit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sip,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Twilio,
     }

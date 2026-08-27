@@ -9,11 +9,11 @@ namespace FishAudio
     public enum AgentSessionSummaryDirection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inbound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Outbound,
     }

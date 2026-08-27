@@ -12,7 +12,7 @@ namespace FishAudio
     public sealed partial class GetAgentAgentsWidgetResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_name")]
         [global::System.Text.Json.Serialization.JsonRequired]

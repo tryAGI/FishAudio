@@ -9,19 +9,19 @@ namespace FishAudio
     public enum CreateTtsStreamWithTimestampModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         S1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         S2Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         S21Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         S21ProFree,
     }

@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PublicAgentKnowledgeBaseConfig
     {
@@ -15,7 +15,7 @@ namespace FishAudio
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("knowledge_source_ids")]
         public global::System.Collections.Generic.IList<string>? KnowledgeSourceIds { get; set; }

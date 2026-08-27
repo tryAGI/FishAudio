@@ -4,24 +4,24 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AgentSessionSummaryDialStatus2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Answered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Busy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoAnswer,
     }

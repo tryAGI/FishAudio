@@ -4,20 +4,20 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PublicToolHeaderKind
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorizationBasic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AuthorizationBearer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
     }

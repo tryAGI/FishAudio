@@ -5,20 +5,20 @@ namespace FishAudio
 {
     /// <summary>
     /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
-    /// Default Value: public
+    /// Default Value: private
     /// </summary>
     public enum CreateModelRequestVisibility
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Private,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Public,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unlist,
     }

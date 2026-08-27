@@ -4,16 +4,16 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PublicAgentToolUpdatePayloadErrorHandling2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Passthrough,
     }

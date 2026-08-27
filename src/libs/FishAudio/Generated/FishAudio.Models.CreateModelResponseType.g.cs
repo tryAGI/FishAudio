@@ -4,16 +4,16 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateModelResponseType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Svc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tts,
     }

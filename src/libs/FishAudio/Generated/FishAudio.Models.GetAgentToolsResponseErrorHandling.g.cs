@@ -4,16 +4,16 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetAgentToolsResponseErrorHandling
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Passthrough,
     }

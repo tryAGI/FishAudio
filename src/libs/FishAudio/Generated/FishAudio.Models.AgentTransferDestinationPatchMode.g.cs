@@ -9,11 +9,11 @@ namespace FishAudio
     public enum AgentTransferDestinationPatchMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cold,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Warm,
     }

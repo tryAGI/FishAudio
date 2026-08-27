@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AgentVoiceConfig
     {
@@ -28,10 +28,16 @@ namespace FishAudio
         public bool? Expressive { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keyterms")]
         public global::System.Collections.Generic.IList<string>? Keyterms { get; set; }
+
+        /// <summary>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
+        public double? Speed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,6 +58,9 @@ namespace FishAudio
         /// Default Value: false
         /// </param>
         /// <param name="keyterms"></param>
+        /// <param name="speed">
+        /// Default Value: 1
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -59,12 +68,14 @@ namespace FishAudio
             string? voiceId,
             global::FishAudio.AgentVoiceConfigSpeakingLanguage? speakingLanguage,
             bool? expressive,
-            global::System.Collections.Generic.IList<string>? keyterms)
+            global::System.Collections.Generic.IList<string>? keyterms,
+            double? speed)
         {
             this.VoiceId = voiceId;
             this.SpeakingLanguage = speakingLanguage;
             this.Expressive = expressive;
             this.Keyterms = keyterms;
+            this.Speed = speed;
         }
 
         /// <summary>
