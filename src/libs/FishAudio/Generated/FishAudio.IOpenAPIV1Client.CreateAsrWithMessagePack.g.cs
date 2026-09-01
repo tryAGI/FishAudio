@@ -1,0 +1,59 @@
+#nullable enable
+
+namespace FishAudio
+{
+    public partial interface IOpenAPIV1Client
+    {
+        /// <summary>
+        /// Speech to Text
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::FishAudio.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::FishAudio.CreateAsrResponse> CreateAsrWithMessagePackAsync(
+
+            global::FishAudio.CreateAsrRequest2 request,
+            global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Speech to Text
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::FishAudio.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.CreateAsrResponse>> CreateAsrWithMessagePackAsResponseAsync(
+
+            global::FishAudio.CreateAsrRequest2 request,
+            global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Speech to Text
+        /// </summary>
+        /// <param name="audio">
+        /// Audio file to be converted to text
+        /// </param>
+        /// <param name="audioname">
+        /// Audio file to be converted to text
+        /// </param>
+        /// <param name="language">
+        /// Optional hint. The language is auto-detected regardless; the detected language is returned as `language_code`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="ignoreTimestamps">
+        /// Whether to return precise timestamps in the text, this will increase the latency in audio shorter than 30 seconds<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::FishAudio.CreateAsrResponse> CreateAsrWithMessagePackAsync(
+            byte[] audio,
+            string audioname,
+            string? language = default,
+            bool? ignoreTimestamps = default,
+            global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

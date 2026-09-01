@@ -10,8 +10,10 @@ internal static class ModelApiGroupCommand
     {
         var command = new Command(@"model", @"Model endpoint commands.");
                          command.Subcommands.Add(ModelCreateModelCommandApiCommand.Create());
+                         command.Subcommands.Add(ModelCreateModelWithMessagePackCommandApiCommand.Create());
                          command.Subcommands.Add(ModelDeleteModelByIdCommandApiCommand.Create());
                          command.Subcommands.Add(ModelEditModelByIdCommandApiCommand.Create());
+                         command.Subcommands.Add(ModelEditModelByIdWithMessagePackCommandApiCommand.Create());
                          command.Subcommands.Add(ModelGetModelCommandApiCommand.Create());
                          command.Subcommands.Add(ModelGetModelByIdCommandApiCommand.Create());
         return command;
