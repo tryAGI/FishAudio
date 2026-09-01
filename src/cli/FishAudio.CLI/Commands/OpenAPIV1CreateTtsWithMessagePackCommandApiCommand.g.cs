@@ -5,7 +5,7 @@ using System.CommandLine;
 
 namespace FishAudio.CLI.Commands;
 
-internal static partial class OpenAPIV1CreateTtsCommandApiCommand
+internal static partial class OpenAPIV1CreateTtsWithMessagePackCommandApiCommand
 {
     private static Option<global::FishAudio.CreateTtsModel?> Model { get; } = new(
         name: @"--model")
@@ -46,7 +46,7 @@ internal static partial class OpenAPIV1CreateTtsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-tts", @"Text to Speech");
+        var command = new Command(@"create-tts-with-message-pack", @"Text to Speech");
                         command.Options.Add(Model);
                         command.Options.Add(References);
                         command.Options.Add(ReferenceId);                        command.Options.Add(TTSRequestOptionSetOptions.Text);
@@ -128,7 +128,7 @@ internal static partial class OpenAPIV1CreateTtsCommandApiCommand
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                await client.OpenAPIV1.CreateTtsAsync(
+                                await client.OpenAPIV1.CreateTtsWithMessagePackAsync(
                                     model: model,
                                     references: references,
                                     referenceId: referenceId,

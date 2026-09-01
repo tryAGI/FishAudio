@@ -5,7 +5,7 @@ using System.CommandLine;
 
 namespace FishAudio.CLI.Commands;
 
-internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCommand
+internal static partial class OpenAPIV1CreateTtsStreamWithTimestampWithMessagePackCommandApiCommand
 {
     private static Option<global::FishAudio.CreateTtsStreamWithTimestampModel?> Model { get; } = new(
         name: @"--model")
@@ -46,7 +46,7 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
 
     public static Command Create()
     {
-        var command = new Command(@"create-tts-stream-with-timestamp", @"Text to Speech Stream with Timestamps");
+        var command = new Command(@"create-tts-stream-with-timestamp-with-message-pack", @"Text to Speech Stream with Timestamps");
                         command.Options.Add(Model);
                         command.Options.Add(References);
                         command.Options.Add(ReferenceId);                        command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.Text);
@@ -128,7 +128,7 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                var response = client.OpenAPIV1.CreateTtsStreamWithTimestampAsync(
+                                var response = client.OpenAPIV1.CreateTtsStreamWithTimestampWithMessagePackAsync(
                                     model: model,
                                     references: references,
                                     referenceId: referenceId,
