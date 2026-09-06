@@ -4,16 +4,78 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    ///
     /// </summary>
-    public sealed partial class AgentSessionOverridesPayloadLanguage
+    public enum AgentSessionOverridesPayloadLanguage
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        De,
+        /// <summary>
+        ///
+        /// </summary>
+        En,
+        /// <summary>
+        ///
+        /// </summary>
+        Es,
+        /// <summary>
+        ///
+        /// </summary>
+        Fr,
+        /// <summary>
+        ///
+        /// </summary>
+        Ja,
+        /// <summary>
+        ///
+        /// </summary>
+        Ko,
+        /// <summary>
+        ///
+        /// </summary>
+        Zh,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class AgentSessionOverridesPayloadLanguageExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this AgentSessionOverridesPayloadLanguage value)
+        {
+            return value switch
+            {
+                AgentSessionOverridesPayloadLanguage.De => "de",
+                AgentSessionOverridesPayloadLanguage.En => "en",
+                AgentSessionOverridesPayloadLanguage.Es => "es",
+                AgentSessionOverridesPayloadLanguage.Fr => "fr",
+                AgentSessionOverridesPayloadLanguage.Ja => "ja",
+                AgentSessionOverridesPayloadLanguage.Ko => "ko",
+                AgentSessionOverridesPayloadLanguage.Zh => "zh",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static AgentSessionOverridesPayloadLanguage? ToEnum(string value)
+        {
+            return value switch
+            {
+                "de" => AgentSessionOverridesPayloadLanguage.De,
+                "en" => AgentSessionOverridesPayloadLanguage.En,
+                "es" => AgentSessionOverridesPayloadLanguage.Es,
+                "fr" => AgentSessionOverridesPayloadLanguage.Fr,
+                "ja" => AgentSessionOverridesPayloadLanguage.Ja,
+                "ko" => AgentSessionOverridesPayloadLanguage.Ko,
+                "zh" => AgentSessionOverridesPayloadLanguage.Zh,
+                _ => null,
+            };
+        }
     }
 }

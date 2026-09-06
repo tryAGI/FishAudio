@@ -4,16 +4,54 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    ///
     /// </summary>
-    public sealed partial class GetAgentSessionsResponseAnsweredBy
+    public enum GetAgentSessionsResponseAnsweredBy
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Human,
+        /// <summary>
+        ///
+        /// </summary>
+        Unknown,
+        /// <summary>
+        ///
+        /// </summary>
+        Voicemail,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class GetAgentSessionsResponseAnsweredByExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this GetAgentSessionsResponseAnsweredBy value)
+        {
+            return value switch
+            {
+                GetAgentSessionsResponseAnsweredBy.Human => "human",
+                GetAgentSessionsResponseAnsweredBy.Unknown => "unknown",
+                GetAgentSessionsResponseAnsweredBy.Voicemail => "voicemail",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static GetAgentSessionsResponseAnsweredBy? ToEnum(string value)
+        {
+            return value switch
+            {
+                "human" => GetAgentSessionsResponseAnsweredBy.Human,
+                "unknown" => GetAgentSessionsResponseAnsweredBy.Unknown,
+                "voicemail" => GetAgentSessionsResponseAnsweredBy.Voicemail,
+                _ => null,
+            };
+        }
     }
 }

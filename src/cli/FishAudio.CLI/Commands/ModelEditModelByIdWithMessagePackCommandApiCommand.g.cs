@@ -37,7 +37,7 @@ internal static partial class ModelEditModelByIdWithMessagePackCommandApiCommand
         Description = @"",
     };
 
-    private static Option<global::FishAudio.PatchModelRequestVisibility8?> Visibility { get; } = new(
+    private static Option<global::FishAudio.PatchModelRequestVisibility4?> Visibility { get; } = new(
         name: @"--visibility")
     {
         Description = @"",

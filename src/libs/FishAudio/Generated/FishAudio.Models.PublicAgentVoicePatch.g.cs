@@ -18,7 +18,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speaking_language")]
-        public global::FishAudio.PublicAgentVoicePatchSpeakingLanguage2? SpeakingLanguage { get; set; }
+        public global::FishAudio.PublicAgentVoicePatchSpeakingLanguage? SpeakingLanguage { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -67,7 +67,7 @@ namespace FishAudio
 #endif
         public PublicAgentVoicePatch(
             string? voiceId,
-            global::FishAudio.PublicAgentVoicePatchSpeakingLanguage2? speakingLanguage,
+            global::FishAudio.PublicAgentVoicePatchSpeakingLanguage? speakingLanguage,
             bool? expressive,
             global::System.Collections.Generic.IList<string>? keyterms,
             double? speed)

@@ -31,7 +31,7 @@ internal static partial class AgentToolsEditAgentToolsByToolIdCommandApiCommand
         Description = @"",
     };
 
-    private static Option<global::FishAudio.PublicAgentToolUpdatePayloadMethod2?> Method { get; } = new(
+    private static Option<global::FishAudio.PublicAgentToolUpdatePayloadMethod?> Method { get; } = new(
         name: @"--method")
     {
         Description = @"",
@@ -67,7 +67,7 @@ internal static partial class AgentToolsEditAgentToolsByToolIdCommandApiCommand
         Description = @"",
     };
 
-    private static Option<global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling2?> ErrorHandling { get; } = new(
+    private static Option<global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling?> ErrorHandling { get; } = new(
         name: @"--error-handling")
     {
         Description = @"",
@@ -83,7 +83,7 @@ internal static partial class AgentToolsEditAgentToolsByToolIdCommandApiCommand
         name: @"--expects-response",
         description: @"");
 
-    private static Option<global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode2?> ExecutionMode { get; } = new(
+    private static Option<global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode?> ExecutionMode { get; } = new(
         name: @"--execution-mode")
     {
         Description = @"",

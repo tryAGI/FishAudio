@@ -4,16 +4,48 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    ///
     /// </summary>
-    public sealed partial class ModelEntityPvcReleaseState
+    public enum ModelEntityPvcReleaseState
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Released,
+        /// <summary>
+        ///
+        /// </summary>
+        Retiring,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ModelEntityPvcReleaseStateExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ModelEntityPvcReleaseState value)
+        {
+            return value switch
+            {
+                ModelEntityPvcReleaseState.Released => "released",
+                ModelEntityPvcReleaseState.Retiring => "retiring",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ModelEntityPvcReleaseState? ToEnum(string value)
+        {
+            return value switch
+            {
+                "released" => ModelEntityPvcReleaseState.Released,
+                "retiring" => ModelEntityPvcReleaseState.Retiring,
+                _ => null,
+            };
+        }
     }
 }

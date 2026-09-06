@@ -114,7 +114,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("takedown_category")]
-        public global::FishAudio.ModelEntityTakedownCategory2? TakedownCategory { get; set; }
+        public global::FishAudio.ModelEntityTakedownCategory? TakedownCategory { get; set; }
 
         /// <summary>
         ///
@@ -138,7 +138,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pvc_release_state")]
-        public global::FishAudio.ModelEntityPvcReleaseState2? PvcReleaseState { get; set; }
+        public global::FishAudio.ModelEntityPvcReleaseState? PvcReleaseState { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -323,11 +323,11 @@ namespace FishAudio
             global::System.Collections.Generic.IList<string>? languages,
             bool? lockVisibility,
             bool? dmcaTakenDown,
-            global::FishAudio.ModelEntityTakedownCategory2? takedownCategory,
+            global::FishAudio.ModelEntityTakedownCategory? takedownCategory,
             string? defaultText,
             string? source,
             bool? licensed,
-            global::FishAudio.ModelEntityPvcReleaseState2? pvcReleaseState,
+            global::FishAudio.ModelEntityPvcReleaseState? pvcReleaseState,
             int? pvcNoticePeriodMonths,
             global::System.DateTime? pvcReleasedAt,
             global::System.DateTime? pvcRetireRequestedAt,

@@ -39,7 +39,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        public global::FishAudio.AgentSessionOverridesPayloadLanguage2? Language { get; set; }
+        public global::FishAudio.AgentSessionOverridesPayloadLanguage? Language { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,7 +74,7 @@ namespace FishAudio
             string? firstMessagePrompt,
             string? systemPrompt,
             string? voiceId,
-            global::FishAudio.AgentSessionOverridesPayloadLanguage2? language)
+            global::FishAudio.AgentSessionOverridesPayloadLanguage? language)
         {
             this.FirstMessage = firstMessage;
             this.FirstMessagePrompt = firstMessagePrompt;

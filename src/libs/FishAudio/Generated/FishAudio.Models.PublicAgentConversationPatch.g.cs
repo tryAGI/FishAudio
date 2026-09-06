@@ -18,7 +18,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eagerness")]
-        public global::FishAudio.PublicAgentConversationPatchEagerness2? Eagerness { get; set; }
+        public global::FishAudio.PublicAgentConversationPatchEagerness? Eagerness { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -30,7 +30,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interruption_sensitivity")]
-        public global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity2? InterruptionSensitivity { get; set; }
+        public global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity? InterruptionSensitivity { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -121,9 +121,9 @@ namespace FishAudio
 #endif
         public PublicAgentConversationPatch(
             int? maxDurationSeconds,
-            global::FishAudio.PublicAgentConversationPatchEagerness2? eagerness,
+            global::FishAudio.PublicAgentConversationPatchEagerness? eagerness,
             bool? interruptible,
-            global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity2? interruptionSensitivity,
+            global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity? interruptionSensitivity,
             bool? reengageEnabled,
             int? hangupAfterSeconds,
             bool? hangupFarewellEnabled,

@@ -12,7 +12,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public global::FishAudio.PublicAgentLLMPatchModel2? Model { get; set; }
+        public global::FishAudio.PublicAgentLLMPatchModel? Model { get; set; }
 
         /// <summary>
         /// Your own OpenAI-compatible endpoint; mutually exclusive with `model`, explicit null reverts to the platform model.<br/>
@@ -41,7 +41,7 @@ namespace FishAudio
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PublicAgentLLMPatch(
-            global::FishAudio.PublicAgentLLMPatchModel2? model,
+            global::FishAudio.PublicAgentLLMPatchModel? model,
             global::FishAudio.PublicAgentLLMCustomConfig? custom)
         {
             this.Model = model;

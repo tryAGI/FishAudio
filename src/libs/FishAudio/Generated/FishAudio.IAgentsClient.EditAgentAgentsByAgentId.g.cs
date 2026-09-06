@@ -75,7 +75,7 @@ namespace FishAudio
             string agentId,
             string? name = default,
             string? description = default,
-            global::FishAudio.PublicAgentUpdatePayloadStatus2? status = default,
+            global::FishAudio.PublicAgentUpdatePayloadStatus? status = default,
             bool? publicEnabled = default,
             global::System.Collections.Generic.IList<string>? allowedOrigins = default,
             global::System.Collections.Generic.IList<global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item>? overridesAllowed = default,

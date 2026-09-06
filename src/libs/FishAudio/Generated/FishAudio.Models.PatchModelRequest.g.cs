@@ -36,7 +36,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
-        public global::FishAudio.PatchModelRequestVisibility2? Visibility { get; set; }
+        public global::FishAudio.PatchModelRequestVisibility? Visibility { get; set; }
 
         /// <summary>
         ///
@@ -78,7 +78,7 @@ namespace FishAudio
             string? description,
             byte[]? coverImage,
             string? coverImagename,
-            global::FishAudio.PatchModelRequestVisibility2? visibility,
+            global::FishAudio.PatchModelRequestVisibility? visibility,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags)
         {
             this.Title = title;

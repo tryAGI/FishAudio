@@ -19,7 +19,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_message_mode")]
-        public global::FishAudio.PublicAgentPromptPatchFirstMessageMode2? FirstMessageMode { get; set; }
+        public global::FishAudio.PublicAgentPromptPatchFirstMessageMode? FirstMessageMode { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -60,7 +60,7 @@ namespace FishAudio
 #endif
         public PublicAgentPromptPatch(
             string? systemPrompt,
-            global::FishAudio.PublicAgentPromptPatchFirstMessageMode2? firstMessageMode,
+            global::FishAudio.PublicAgentPromptPatchFirstMessageMode? firstMessageMode,
             string? firstMessage,
             string? firstMessagePrompt)
         {

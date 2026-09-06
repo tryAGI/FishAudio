@@ -63,13 +63,13 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dial_status")]
-        public global::FishAudio.AgentSessionSummaryDialStatus2? DialStatus { get; set; }
+        public global::FishAudio.AgentSessionSummaryDialStatus? DialStatus { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("answered_by")]
-        public global::FishAudio.AgentSessionSummaryAnsweredBy2? AnsweredBy { get; set; }
+        public global::FishAudio.AgentSessionSummaryAnsweredBy? AnsweredBy { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -178,8 +178,8 @@ namespace FishAudio
             string createdAt,
             string? name,
             global::FishAudio.AgentSessionSummaryDirection? direction,
-            global::FishAudio.AgentSessionSummaryDialStatus2? dialStatus,
-            global::FishAudio.AgentSessionSummaryAnsweredBy2? answeredBy,
+            global::FishAudio.AgentSessionSummaryDialStatus? dialStatus,
+            global::FishAudio.AgentSessionSummaryAnsweredBy? answeredBy,
             string? callerNumber,
             string? dialedNumber,
             string? timezone,
