@@ -61,7 +61,7 @@ namespace FishAudio
             string? description = default,
             byte[]? coverImage = default,
             string? coverImagename = default,
-            global::FishAudio.PatchModelRequestVisibility8? visibility = default,
+            global::FishAudio.PatchModelRequestVisibility4? visibility = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -25,7 +25,7 @@ internal static partial class AgentsEditAgentAgentsByAgentIdCommandApiCommand
         Description = @"",
     };
 
-    private static Option<global::FishAudio.PublicAgentUpdatePayloadStatus2?> Status { get; } = new(
+    private static Option<global::FishAudio.PublicAgentUpdatePayloadStatus?> Status { get; } = new(
         name: @"--status")
     {
         Description = @"",

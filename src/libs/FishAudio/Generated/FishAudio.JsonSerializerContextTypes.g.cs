@@ -57,11 +57,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.AgentSessionSummaryDialStatus2? Type6 { get; set; }
+        public global::FishAudio.AgentSessionSummaryDialStatus? Type6 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.AgentSessionSummaryAnsweredBy2? Type7 { get; set; }
+        public global::FishAudio.AgentSessionSummaryAnsweredBy? Type7 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -93,7 +93,7 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.AgentSessionOverridesPayloadLanguage2? Type15 { get; set; }
+        public global::FishAudio.AgentSessionOverridesPayloadLanguage? Type15 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -285,11 +285,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PublicAgentConversationPatchEagerness2? Type63 { get; set; }
+        public global::FishAudio.PublicAgentConversationPatchEagerness? Type63 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity2? Type64 { get; set; }
+        public global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity? Type64 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -305,11 +305,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PublicAgentLLMPatchModel2? Type68 { get; set; }
+        public global::FishAudio.PublicAgentLLMPatchModel? Type68 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PublicAgentPromptPatchFirstMessageMode2? Type69 { get; set; }
+        public global::FishAudio.PublicAgentPromptPatchFirstMessageMode? Type69 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -317,7 +317,7 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PublicAgentVoicePatchSpeakingLanguage2? Type71 { get; set; }
+        public global::FishAudio.PublicAgentVoicePatchSpeakingLanguage? Type71 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -337,7 +337,7 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PublicAgentUpdatePayloadStatus2? Type76 { get; set; }
+        public global::FishAudio.PublicAgentUpdatePayloadStatus? Type76 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -573,15 +573,15 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PublicAgentToolUpdatePayloadMethod2? Type135 { get; set; }
+        public global::FishAudio.PublicAgentToolUpdatePayloadMethod? Type135 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling2? Type136 { get; set; }
+        public global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling? Type136 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode2? Type137 { get; set; }
+        public global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode? Type137 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -733,11 +733,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.ModelEntityTakedownCategory2? Type175 { get; set; }
+        public global::FishAudio.ModelEntityTakedownCategory? Type175 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.ModelEntityPvcReleaseState2? Type176 { get; set; }
+        public global::FishAudio.ModelEntityPvcReleaseState? Type176 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -821,7 +821,7 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PatchModelRequestVisibility2? Type197 { get; set; }
+        public global::FishAudio.PatchModelRequestVisibility? Type197 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -833,7 +833,7 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PatchModelRequestVisibility4? Type200 { get; set; }
+        public global::FishAudio.PatchModelRequestVisibility2? Type200 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -841,7 +841,7 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PatchModelRequestVisibility6? Type202 { get; set; }
+        public global::FishAudio.PatchModelRequestVisibility3? Type202 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -849,7 +849,7 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.PatchModelRequestVisibility8? Type204 { get; set; }
+        public global::FishAudio.PatchModelRequestVisibility4? Type204 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -973,11 +973,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponseDialStatus2? Type235 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponseDialStatus? Type235 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.GetAgentSessionsResponseAnsweredBy2? Type236 { get; set; }
+        public global::FishAudio.GetAgentSessionsResponseAnsweredBy? Type236 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1881,11 +1881,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.CreateModelResponseTakedownCategory2? Type462 { get; set; }
+        public global::FishAudio.CreateModelResponseTakedownCategory? Type462 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.CreateModelResponsePvcReleaseState2? Type463 { get; set; }
+        public global::FishAudio.CreateModelResponsePvcReleaseState? Type463 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1917,11 +1917,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.GetModelResponseTakedownCategory2? Type471 { get; set; }
+        public global::FishAudio.GetModelResponseTakedownCategory? Type471 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.GetModelResponsePvcReleaseState2? Type472 { get; set; }
+        public global::FishAudio.GetModelResponsePvcReleaseState? Type472 { get; set; }
         /// <summary>
         ///
         /// </summary>

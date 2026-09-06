@@ -4,16 +4,48 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    ///
     /// </summary>
-    public sealed partial class PublicAgentToolUpdatePayloadErrorHandling
+    public enum PublicAgentToolUpdatePayloadErrorHandling
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Hide,
+        /// <summary>
+        ///
+        /// </summary>
+        Passthrough,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PublicAgentToolUpdatePayloadErrorHandlingExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PublicAgentToolUpdatePayloadErrorHandling value)
+        {
+            return value switch
+            {
+                PublicAgentToolUpdatePayloadErrorHandling.Hide => "hide",
+                PublicAgentToolUpdatePayloadErrorHandling.Passthrough => "passthrough",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PublicAgentToolUpdatePayloadErrorHandling? ToEnum(string value)
+        {
+            return value switch
+            {
+                "hide" => PublicAgentToolUpdatePayloadErrorHandling.Hide,
+                "passthrough" => PublicAgentToolUpdatePayloadErrorHandling.Passthrough,
+                _ => null,
+            };
+        }
     }
 }

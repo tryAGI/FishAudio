@@ -4,16 +4,72 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    ///
     /// </summary>
-    public sealed partial class PublicAgentLLMPatchModel
+    public enum PublicAgentLLMPatchModel
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        AnthropicClaudeHaiku45,
+        /// <summary>
+        ///
+        /// </summary>
+        AnthropicClaudeSonnet46,
+        /// <summary>
+        ///
+        /// </summary>
+        GoogleGemini35FlashLite,
+        /// <summary>
+        ///
+        /// </summary>
+        GoogleGemini36Flash,
+        /// <summary>
+        ///
+        /// </summary>
+        OpenaiGpt4o,
+        /// <summary>
+        ///
+        /// </summary>
+        OpenaiGpt56Luna,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PublicAgentLLMPatchModelExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PublicAgentLLMPatchModel value)
+        {
+            return value switch
+            {
+                PublicAgentLLMPatchModel.AnthropicClaudeHaiku45 => "anthropic/claude-haiku-4.5",
+                PublicAgentLLMPatchModel.AnthropicClaudeSonnet46 => "anthropic/claude-sonnet-4.6",
+                PublicAgentLLMPatchModel.GoogleGemini35FlashLite => "google/gemini-3.5-flash-lite",
+                PublicAgentLLMPatchModel.GoogleGemini36Flash => "google/gemini-3.6-flash",
+                PublicAgentLLMPatchModel.OpenaiGpt4o => "openai/gpt-4o",
+                PublicAgentLLMPatchModel.OpenaiGpt56Luna => "openai/gpt-5.6-luna",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PublicAgentLLMPatchModel? ToEnum(string value)
+        {
+            return value switch
+            {
+                "anthropic/claude-haiku-4.5" => PublicAgentLLMPatchModel.AnthropicClaudeHaiku45,
+                "anthropic/claude-sonnet-4.6" => PublicAgentLLMPatchModel.AnthropicClaudeSonnet46,
+                "google/gemini-3.5-flash-lite" => PublicAgentLLMPatchModel.GoogleGemini35FlashLite,
+                "google/gemini-3.6-flash" => PublicAgentLLMPatchModel.GoogleGemini36Flash,
+                "openai/gpt-4o" => PublicAgentLLMPatchModel.OpenaiGpt4o,
+                "openai/gpt-5.6-luna" => PublicAgentLLMPatchModel.OpenaiGpt56Luna,
+                _ => null,
+            };
+        }
     }
 }

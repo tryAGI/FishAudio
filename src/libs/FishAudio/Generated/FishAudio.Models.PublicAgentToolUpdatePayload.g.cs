@@ -30,7 +30,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
-        public global::FishAudio.PublicAgentToolUpdatePayloadMethod2? Method { get; set; }
+        public global::FishAudio.PublicAgentToolUpdatePayloadMethod? Method { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -66,7 +66,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_handling")]
-        public global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling2? ErrorHandling { get; set; }
+        public global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling? ErrorHandling { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -84,7 +84,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("execution_mode")]
-        public global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode2? ExecutionMode { get; set; }
+        public global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode? ExecutionMode { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -141,16 +141,16 @@ namespace FishAudio
             string? name,
             string? description,
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookArgumentPayload>? arguments,
-            global::FishAudio.PublicAgentToolUpdatePayloadMethod2? method,
+            global::FishAudio.PublicAgentToolUpdatePayloadMethod? method,
             string? url,
             string? contentType,
             string? bodyTemplate,
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookHeaderPayload>? headers,
             int? timeoutSeconds,
-            global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling2? errorHandling,
+            global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling? errorHandling,
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>? mockResponses,
             bool? expectsResponse,
-            global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode2? executionMode)
+            global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode? executionMode)
         {
             this.Name = name;
             this.Description = description;

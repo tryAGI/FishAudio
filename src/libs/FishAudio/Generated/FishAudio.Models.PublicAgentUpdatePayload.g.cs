@@ -24,7 +24,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::FishAudio.PublicAgentUpdatePayloadStatus2? Status { get; set; }
+        public global::FishAudio.PublicAgentUpdatePayloadStatus? Status { get; set; }
 
         /// <summary>
         /// Allow keyless session creation from the browser SDK, gated by allowed_origins.<br/>
@@ -81,7 +81,7 @@ namespace FishAudio
         public PublicAgentUpdatePayload(
             string? name,
             string? description,
-            global::FishAudio.PublicAgentUpdatePayloadStatus2? status,
+            global::FishAudio.PublicAgentUpdatePayloadStatus? status,
             bool? publicEnabled,
             global::System.Collections.Generic.IList<string>? allowedOrigins,
             global::System.Collections.Generic.IList<global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item>? overridesAllowed)
