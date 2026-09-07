@@ -4,9 +4,10 @@
 namespace FishAudio
 {
     /// <summary>
-    /// 1:1 mirror of core WorkflowOutboundVoicemail: message is verbatim text<br/>
-    /// for leave_message, an LLM prompt for leave_prompt_message; supports<br/>
-    /// {{dynamic_variables}}, rendered at session build.
+    /// Deprecated (2026-09-07): answering-machine detection was removed from the<br/>
+    /// call runtime, so voicemail actions never fire. The node is still accepted<br/>
+    /// and stored so existing configs and API callers keep working; the worker<br/>
+    /// no longer receives it.
     /// </summary>
     public sealed partial class AgentOutboundVoicemailConfig
     {

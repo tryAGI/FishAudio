@@ -64,6 +64,12 @@ namespace FishAudio
         public object? Metadata { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_extra_body")]
+        public object? LlmExtraBody { get; set; }
+
+        /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_events")]
@@ -109,6 +115,9 @@ namespace FishAudio
         /// <param name="metadata">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="llmExtraBody">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="toolEvents">
         /// Default Value: true
         /// </param>
@@ -128,6 +137,7 @@ namespace FishAudio
             object? dynamicVariables,
             string? endUserId,
             object? metadata,
+            object? llmExtraBody,
             bool? toolEvents,
             bool? recordAudio)
         {
@@ -140,6 +150,7 @@ namespace FishAudio
             this.DynamicVariables = dynamicVariables;
             this.EndUserId = endUserId;
             this.Metadata = metadata;
+            this.LlmExtraBody = llmExtraBody;
             this.ToolEvents = toolEvents;
             this.RecordAudio = recordAudio;
         }

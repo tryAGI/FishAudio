@@ -10,7 +10,7 @@ internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
     private static Option<global::FishAudio.CreateModelRequestVisibility4?> Visibility { get; } = new(
         name: @"--visibility")
     {
-        Description = @"Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator",
+        Description = @"Model visibility. Public requests are downgraded to private; use the web publish flow to publish publicly. Unlist allows anyone with the link to access, while private is visible only to the creator.",
     };
 
     private static Option<string> Type { get; } = new(
@@ -63,6 +63,12 @@ internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
         name: @"--texts")
     {
         Description = @"Texts corresponding to the voices, if unspecified, ASR will be performed on the voices",
+    };
+
+    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>?> VoiceDesignSignatures { get; } = new(
+        name: @"--voice-design-signatures")
+    {
+        Description = @"Signatures from /v1/voice-design candidates, one per voice in the same order. When every uploaded voice verifies, the model is stamped source=voice_design; an invalid signature rejects the request.",
     };
 
     private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>?> Tags { get; } = new(
@@ -127,6 +133,7 @@ internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
                         command.Options.Add(TrainMode);
                         command.Options.Add(Voices);
                         command.Options.Add(Texts);
+                        command.Options.Add(VoiceDesignSignatures);
                         command.Options.Add(Tags);
                         command.Options.Add(EnhanceAudioQuality);
                         command.Options.Add(GenerateSample);
@@ -164,6 +171,7 @@ internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
                         var trainMode = parseResult.GetRequiredValue(TrainMode);
                         var voices = parseResult.GetRequiredValue(Voices);
                         var texts = CliRuntime.WasSpecified(parseResult, Texts) ? parseResult.GetValue(Texts) : (__requestBase is { } __TextsBaseValue ? __TextsBaseValue.Texts : default);
+                        var voiceDesignSignatures = CliRuntime.WasSpecified(parseResult, VoiceDesignSignatures) ? parseResult.GetValue(VoiceDesignSignatures) : (__requestBase is { } __VoiceDesignSignaturesBaseValue ? __VoiceDesignSignaturesBaseValue.VoiceDesignSignatures : default);
                         var tags = CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : (__requestBase is { } __TagsBaseValue ? __TagsBaseValue.Tags : default);
                         var enhanceAudioQuality = CliRuntime.WasSpecified(parseResult, EnhanceAudioQuality) ? parseResult.GetValue(EnhanceAudioQuality) : (__requestBase is { } __EnhanceAudioQualityBaseValue ? __EnhanceAudioQualityBaseValue.EnhanceAudioQuality : default);
                         var generateSample = CliRuntime.WasSpecified(parseResult, GenerateSample) ? parseResult.GetValue(GenerateSample) : (__requestBase is { } __GenerateSampleBaseValue ? __GenerateSampleBaseValue.GenerateSample : default);
@@ -180,6 +188,7 @@ internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
                                     trainMode: trainMode,
                                     voices: voices,
                                     texts: texts,
+                                    voiceDesignSignatures: voiceDesignSignatures,
                                     tags: tags,
                                     enhanceAudioQuality: enhanceAudioQuality,
                                     generateSample: generateSample,

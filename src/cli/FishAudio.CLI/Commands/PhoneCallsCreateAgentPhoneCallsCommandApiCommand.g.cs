@@ -45,6 +45,12 @@ internal static partial class PhoneCallsCreateAgentPhoneCallsCommandApiCommand
     {
         Description = @"",
     };
+
+    private static Option<object?> LlmExtraBody { get; } = new(
+        name: @"--llm-extra-body")
+    {
+        Description = @"",
+    };
     private static readonly AgentSessionOverridesPayloadOptionSet OverridesOptions = AgentSessionOverridesPayloadOptionSet.Create(@"overrides");
       private static Option<string?> Input { get; } = new(@"--input")
       {
@@ -102,7 +108,8 @@ Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,
                         command.Options.Add(PhoneNumberId);
                         command.Options.Add(ToNumber);
                         command.Options.Add(DynamicVariables);
-                        command.Options.Add(Metadata);                        command.Options.Add(OverridesOptions.FirstMessage);
+                        command.Options.Add(Metadata);
+                        command.Options.Add(LlmExtraBody);                        command.Options.Add(OverridesOptions.FirstMessage);
                         command.Options.Add(OverridesOptions.FirstMessagePrompt);
                         command.Options.Add(OverridesOptions.SystemPrompt);
                         command.Options.Add(OverridesOptions.VoiceId);
@@ -137,6 +144,7 @@ Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,
                         var toNumber = parseResult.GetRequiredValue(ToNumber);
                         var dynamicVariables = CliRuntime.WasSpecified(parseResult, DynamicVariables) ? parseResult.GetValue(DynamicVariables) : (__requestBase is { } __DynamicVariablesBaseValue ? __DynamicVariablesBaseValue.DynamicVariables : default);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
+                        var llmExtraBody = CliRuntime.WasSpecified(parseResult, LlmExtraBody) ? parseResult.GetValue(LlmExtraBody) : (__requestBase is { } __LlmExtraBodyBaseValue ? __LlmExtraBodyBaseValue.LlmExtraBody : default);
 
                         var __OverridesBase = __requestBase is { } __OverridesBaseValue ? __OverridesBaseValue.Overrides : default;                        var overridesFirstMessage = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessage) ? parseResult.GetValue(OverridesOptions.FirstMessage) : (__OverridesBase is { } __OverridesfirstMessageBaseValue ? __OverridesfirstMessageBaseValue.FirstMessage : default);
                         var overridesFirstMessagePrompt = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessagePrompt) ? parseResult.GetValue(OverridesOptions.FirstMessagePrompt) : (__OverridesBase is { } __OverridesfirstMessagePromptBaseValue ? __OverridesfirstMessagePromptBaseValue.FirstMessagePrompt : default);
@@ -164,6 +172,7 @@ Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,
                                     toNumber: toNumber,
                                     dynamicVariables: dynamicVariables,
                                     metadata: metadata,
+                                    llmExtraBody: llmExtraBody,
                                     overrides: overrides,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 

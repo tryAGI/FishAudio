@@ -60,6 +60,12 @@ internal static partial class AgentSessionsCreateAgentSessionsCommandApiCommand
         Description = @"",
     };
 
+    private static Option<object?> LlmExtraBody { get; } = new(
+        name: @"--llm-extra-body")
+    {
+        Description = @"",
+    };
+
     private static Option<bool?> ToolEvents { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--tool-events",
         description: @"");
@@ -126,6 +132,7 @@ speaking language.");
                         command.Options.Add(DynamicVariables);
                         command.Options.Add(EndUserId);
                         command.Options.Add(Metadata);
+                        command.Options.Add(LlmExtraBody);
                         command.Options.Add(ToolEvents);
                         command.Options.Add(RecordAudio);                        command.Options.Add(OverridesOptions.FirstMessage);
                         command.Options.Add(OverridesOptions.FirstMessagePrompt);
@@ -165,6 +172,7 @@ speaking language.");
                         var dynamicVariables = CliRuntime.WasSpecified(parseResult, DynamicVariables) ? parseResult.GetValue(DynamicVariables) : (__requestBase is { } __DynamicVariablesBaseValue ? __DynamicVariablesBaseValue.DynamicVariables : default);
                         var endUserId = CliRuntime.WasSpecified(parseResult, EndUserId) ? parseResult.GetValue(EndUserId) : (__requestBase is { } __EndUserIdBaseValue ? __EndUserIdBaseValue.EndUserId : default);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
+                        var llmExtraBody = CliRuntime.WasSpecified(parseResult, LlmExtraBody) ? parseResult.GetValue(LlmExtraBody) : (__requestBase is { } __LlmExtraBodyBaseValue ? __LlmExtraBodyBaseValue.LlmExtraBody : default);
                         var toolEvents = CliRuntime.WasSpecified(parseResult, ToolEvents) ? parseResult.GetValue(ToolEvents) : (__requestBase is { } __ToolEventsBaseValue ? __ToolEventsBaseValue.ToolEvents : default);
                         var recordAudio = CliRuntime.WasSpecified(parseResult, RecordAudio) ? parseResult.GetValue(RecordAudio) : (__requestBase is { } __RecordAudioBaseValue ? __RecordAudioBaseValue.RecordAudio : default);
 
@@ -197,6 +205,7 @@ speaking language.");
                                     dynamicVariables: dynamicVariables,
                                     endUserId: endUserId,
                                     metadata: metadata,
+                                    llmExtraBody: llmExtraBody,
                                     toolEvents: toolEvents,
                                     recordAudio: recordAudio,
                                     overrides: overrides,
