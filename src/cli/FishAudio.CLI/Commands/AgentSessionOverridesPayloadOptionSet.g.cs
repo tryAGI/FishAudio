@@ -26,7 +26,7 @@ internal sealed record AgentSessionOverridesPayloadOptionSet(
                 },
                 SystemPrompt: new Option<string?>($"--{normalizedPrefix}system-prompt")
                 {
-                    Description = @"Limited to 4000 tokens (o200k_base), same budget as the configured prompt it replaces.",
+                    Description = @"Limited to 32000 tokens (o200k_base), same budget as the configured prompt it replaces.",
                 },
                 VoiceId: new Option<string?>($"--{normalizedPrefix}voice-id")
                 {

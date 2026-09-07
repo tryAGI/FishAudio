@@ -47,7 +47,7 @@ namespace FishAudio
         /// Update Draft Config<br/>
         /// Patch the draft configuration section by section; omitted sections keep<br/>
         /// their value. Changes only affect live sessions after the next publish.<br/>
-        /// `prompt.system_prompt` is limited to 4000 tokens (422 beyond); keeping it<br/>
+        /// `prompt.system_prompt` is limited to 32000 tokens (422 beyond); keeping it<br/>
         /// under 2000 tokens is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;<br/>
@@ -107,7 +107,7 @@ namespace FishAudio
         /// Update Draft Config<br/>
         /// Patch the draft configuration section by section; omitted sections keep<br/>
         /// their value. Changes only affect live sessions after the next publish.<br/>
-        /// `prompt.system_prompt` is limited to 4000 tokens (422 beyond); keeping it<br/>
+        /// `prompt.system_prompt` is limited to 32000 tokens (422 beyond); keeping it<br/>
         /// under 2000 tokens is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;<br/>
@@ -662,7 +662,7 @@ namespace FishAudio
         /// Update Draft Config<br/>
         /// Patch the draft configuration section by section; omitted sections keep<br/>
         /// their value. Changes only affect live sessions after the next publish.<br/>
-        /// `prompt.system_prompt` is limited to 4000 tokens (422 beyond); keeping it<br/>
+        /// `prompt.system_prompt` is limited to 32000 tokens (422 beyond); keeping it<br/>
         /// under 2000 tokens is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;<br/>

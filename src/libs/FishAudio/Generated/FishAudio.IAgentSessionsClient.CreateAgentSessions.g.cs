@@ -109,6 +109,9 @@ namespace FishAudio
         /// <param name="metadata">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="llmExtraBody">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="toolEvents">
         /// Default Value: true
         /// </param>
@@ -129,6 +132,7 @@ namespace FishAudio
             object? dynamicVariables = default,
             string? endUserId = default,
             object? metadata = default,
+            object? llmExtraBody = default,
             bool? toolEvents = default,
             bool? recordAudio = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,

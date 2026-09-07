@@ -9,7 +9,7 @@ namespace FishAudio
     public sealed partial class CreateModelRequest
     {
         /// <summary>
-        /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
+        /// Model visibility. Public requests are downgraded to private; use the web publish flow to publish publicly. Unlist allows anyone with the link to access, while private is visible only to the creator.<br/>
         /// Default Value: private
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
@@ -75,6 +75,14 @@ namespace FishAudio
         public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Texts { get; set; }
 
         /// <summary>
+        /// Signatures from /v1/voice-design candidates, one per voice in the same order. When every uploaded voice verifies, the model is stamped source=voice_design; an invalid signature rejects the request.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("voice_design_signatures")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>))]
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? VoiceDesignSignatures { get; set; }
+
+        /// <summary>
         /// Model tags
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
@@ -111,7 +119,7 @@ namespace FishAudio
         /// Upload voices files that will be used to tune the model
         /// </param>
         /// <param name="visibility">
-        /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
+        /// Model visibility. Public requests are downgraded to private; use the web publish flow to publish publicly. Unlist allows anyone with the link to access, while private is visible only to the creator.<br/>
         /// Default Value: private
         /// </param>
         /// <param name="description">
@@ -128,6 +136,10 @@ namespace FishAudio
         /// </param>
         /// <param name="texts">
         /// Texts corresponding to the voices, if unspecified, ASR will be performed on the voices<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="voiceDesignSignatures">
+        /// Signatures from /v1/voice-design candidates, one per voice in the same order. When every uploaded voice verifies, the model is stamped source=voice_design; an invalid signature rejects the request.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="tags">
@@ -158,6 +170,7 @@ namespace FishAudio
             byte[]? coverImage,
             string? coverImagename,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? voiceDesignSignatures,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags,
             bool? enhanceAudioQuality,
             bool? generateSample,
@@ -173,6 +186,7 @@ namespace FishAudio
             this.TrainMode = trainMode;
             this.Voices = voices;
             this.Texts = texts;
+            this.VoiceDesignSignatures = voiceDesignSignatures;
             this.Tags = tags;
             this.EnhanceAudioQuality = enhanceAudioQuality;
             this.GenerateSample = generateSample;

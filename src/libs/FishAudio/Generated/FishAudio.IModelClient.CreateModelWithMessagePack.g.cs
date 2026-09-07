@@ -32,7 +32,7 @@ namespace FishAudio
         /// Create Model for Users via API
         /// </summary>
         /// <param name="visibility">
-        /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
+        /// Model visibility. Public requests are downgraded to private; use the web publish flow to publish publicly. Unlist allows anyone with the link to access, while private is visible only to the creator.<br/>
         /// Default Value: private
         /// </param>
         /// <param name="type">
@@ -63,6 +63,10 @@ namespace FishAudio
         /// Texts corresponding to the voices, if unspecified, ASR will be performed on the voices<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="voiceDesignSignatures">
+        /// Signatures from /v1/voice-design candidates, one per voice in the same order. When every uploaded voice verifies, the model is stamped source=voice_design; an invalid signature rejects the request.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="tags">
         /// Model tags
         /// </param>
@@ -87,6 +91,7 @@ namespace FishAudio
             string? coverImagename = default,
             string trainMode = "fast",
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? voiceDesignSignatures = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags = default,
             bool? enhanceAudioQuality = default,
             bool? generateSample = default,

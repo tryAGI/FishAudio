@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Model visibility, public will be shown in the discovery page, unlist allows anyone with the link to access, private only be visible to the creator<br/>
+    /// Model visibility. Public requests are downgraded to private; use the web publish flow to publish publicly. Unlist allows anyone with the link to access, while private is visible only to the creator.<br/>
     /// Default Value: private
     /// </summary>
     public enum CreateModelRequestVisibility2

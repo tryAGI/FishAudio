@@ -51,6 +51,12 @@ namespace FishAudio
         public object? Metadata { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_extra_body")]
+        public object? LlmExtraBody { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -75,6 +81,9 @@ namespace FishAudio
         /// <param name="metadata">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="llmExtraBody">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,7 +93,8 @@ namespace FishAudio
             string toNumber,
             object? dynamicVariables,
             global::FishAudio.AgentSessionOverridesPayload? overrides,
-            object? metadata)
+            object? metadata,
+            object? llmExtraBody)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.PhoneNumberId = phoneNumberId ?? throw new global::System.ArgumentNullException(nameof(phoneNumberId));
@@ -92,6 +102,7 @@ namespace FishAudio
             this.DynamicVariables = dynamicVariables;
             this.Overrides = overrides;
             this.Metadata = metadata;
+            this.LlmExtraBody = llmExtraBody;
         }
 
         /// <summary>

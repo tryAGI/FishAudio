@@ -27,6 +27,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        GoogleGemma426bA4bIt,
+        /// <summary>
+        ///
+        /// </summary>
         OpenaiGpt4o,
         /// <summary>
         ///
@@ -50,6 +54,7 @@ namespace FishAudio
                 PublicAgentLLMPatchModel.AnthropicClaudeSonnet46 => "anthropic/claude-sonnet-4.6",
                 PublicAgentLLMPatchModel.GoogleGemini35FlashLite => "google/gemini-3.5-flash-lite",
                 PublicAgentLLMPatchModel.GoogleGemini36Flash => "google/gemini-3.6-flash",
+                PublicAgentLLMPatchModel.GoogleGemma426bA4bIt => "google/gemma-4-26b-a4b-it",
                 PublicAgentLLMPatchModel.OpenaiGpt4o => "openai/gpt-4o",
                 PublicAgentLLMPatchModel.OpenaiGpt56Luna => "openai/gpt-5.6-luna",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -66,6 +71,7 @@ namespace FishAudio
                 "anthropic/claude-sonnet-4.6" => PublicAgentLLMPatchModel.AnthropicClaudeSonnet46,
                 "google/gemini-3.5-flash-lite" => PublicAgentLLMPatchModel.GoogleGemini35FlashLite,
                 "google/gemini-3.6-flash" => PublicAgentLLMPatchModel.GoogleGemini36Flash,
+                "google/gemma-4-26b-a4b-it" => PublicAgentLLMPatchModel.GoogleGemma426bA4bIt,
                 "openai/gpt-4o" => PublicAgentLLMPatchModel.OpenaiGpt4o,
                 "openai/gpt-5.6-luna" => PublicAgentLLMPatchModel.OpenaiGpt56Luna,
                 _ => null,
