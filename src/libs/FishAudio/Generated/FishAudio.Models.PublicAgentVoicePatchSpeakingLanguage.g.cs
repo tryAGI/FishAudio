@@ -27,11 +27,23 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        It,
+        /// <summary>
+        ///
+        /// </summary>
         Ja,
         /// <summary>
         ///
         /// </summary>
         Ko,
+        /// <summary>
+        ///
+        /// </summary>
+        Nl,
+        /// <summary>
+        ///
+        /// </summary>
+        Pt,
         /// <summary>
         ///
         /// </summary>
@@ -54,8 +66,11 @@ namespace FishAudio
                 PublicAgentVoicePatchSpeakingLanguage.En => "en",
                 PublicAgentVoicePatchSpeakingLanguage.Es => "es",
                 PublicAgentVoicePatchSpeakingLanguage.Fr => "fr",
+                PublicAgentVoicePatchSpeakingLanguage.It => "it",
                 PublicAgentVoicePatchSpeakingLanguage.Ja => "ja",
                 PublicAgentVoicePatchSpeakingLanguage.Ko => "ko",
+                PublicAgentVoicePatchSpeakingLanguage.Nl => "nl",
+                PublicAgentVoicePatchSpeakingLanguage.Pt => "pt",
                 PublicAgentVoicePatchSpeakingLanguage.Zh => "zh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -71,8 +86,11 @@ namespace FishAudio
                 "en" => PublicAgentVoicePatchSpeakingLanguage.En,
                 "es" => PublicAgentVoicePatchSpeakingLanguage.Es,
                 "fr" => PublicAgentVoicePatchSpeakingLanguage.Fr,
+                "it" => PublicAgentVoicePatchSpeakingLanguage.It,
                 "ja" => PublicAgentVoicePatchSpeakingLanguage.Ja,
                 "ko" => PublicAgentVoicePatchSpeakingLanguage.Ko,
+                "nl" => PublicAgentVoicePatchSpeakingLanguage.Nl,
+                "pt" => PublicAgentVoicePatchSpeakingLanguage.Pt,
                 "zh" => PublicAgentVoicePatchSpeakingLanguage.Zh,
                 _ => null,
             };

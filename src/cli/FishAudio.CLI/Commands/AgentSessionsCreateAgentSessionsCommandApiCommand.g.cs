@@ -121,7 +121,7 @@ published as public are reachable, and the request `Origin` must match the
 agent's allowed origins.
 
 `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,
-`fr`, `de`; anything else is 422. Omit it to use the agent's configured
+`fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured
 speaking language.");
                         command.Options.Add(Origin);
                         command.Options.Add(AgentId);

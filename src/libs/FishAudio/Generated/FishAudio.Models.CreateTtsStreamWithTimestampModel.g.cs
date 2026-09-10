@@ -11,6 +11,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        Drama3Preview,
+        /// <summary>
+        ///
+        /// </summary>
         S1,
         /// <summary>
         ///
@@ -38,6 +42,7 @@ namespace FishAudio
         {
             return value switch
             {
+                CreateTtsStreamWithTimestampModel.Drama3Preview => "drama-3-preview",
                 CreateTtsStreamWithTimestampModel.S1 => "s1",
                 CreateTtsStreamWithTimestampModel.S2Pro => "s2-pro",
                 CreateTtsStreamWithTimestampModel.S21Pro => "s2.1-pro",
@@ -52,6 +57,7 @@ namespace FishAudio
         {
             return value switch
             {
+                "drama-3-preview" => CreateTtsStreamWithTimestampModel.Drama3Preview,
                 "s1" => CreateTtsStreamWithTimestampModel.S1,
                 "s2-pro" => CreateTtsStreamWithTimestampModel.S2Pro,
                 "s2.1-pro" => CreateTtsStreamWithTimestampModel.S21Pro,

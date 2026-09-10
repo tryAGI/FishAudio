@@ -28,6 +28,12 @@ namespace FishAudio
         public required string PhoneNumber { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
         /// Default Value: cold
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
@@ -55,6 +61,7 @@ namespace FishAudio
         /// Default Value: phone
         /// </param>
         /// <param name="label"></param>
+        /// <param name="description"></param>
         /// <param name="mode">
         /// Default Value: cold
         /// </param>
@@ -68,12 +75,14 @@ namespace FishAudio
             string phoneNumber,
             string? type,
             string? label,
+            string? description,
             global::FishAudio.AgentTransferDestinationPatchMode? mode,
             global::FishAudio.AgentTransferDestinationPatchWarmConnect? warmConnect)
         {
             this.Type = type;
             this.Label = label;
             this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
+            this.Description = description;
             this.Mode = mode;
             this.WarmConnect = warmConnect;
         }

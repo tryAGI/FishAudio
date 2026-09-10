@@ -27,11 +27,23 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        It,
+        /// <summary>
+        ///
+        /// </summary>
         Ja,
         /// <summary>
         ///
         /// </summary>
         Ko,
+        /// <summary>
+        ///
+        /// </summary>
+        Nl,
+        /// <summary>
+        ///
+        /// </summary>
+        Pt,
         /// <summary>
         ///
         /// </summary>
@@ -54,8 +66,11 @@ namespace FishAudio
                 AgentVoiceConfigSpeakingLanguage.En => "en",
                 AgentVoiceConfigSpeakingLanguage.Es => "es",
                 AgentVoiceConfigSpeakingLanguage.Fr => "fr",
+                AgentVoiceConfigSpeakingLanguage.It => "it",
                 AgentVoiceConfigSpeakingLanguage.Ja => "ja",
                 AgentVoiceConfigSpeakingLanguage.Ko => "ko",
+                AgentVoiceConfigSpeakingLanguage.Nl => "nl",
+                AgentVoiceConfigSpeakingLanguage.Pt => "pt",
                 AgentVoiceConfigSpeakingLanguage.Zh => "zh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -71,8 +86,11 @@ namespace FishAudio
                 "en" => AgentVoiceConfigSpeakingLanguage.En,
                 "es" => AgentVoiceConfigSpeakingLanguage.Es,
                 "fr" => AgentVoiceConfigSpeakingLanguage.Fr,
+                "it" => AgentVoiceConfigSpeakingLanguage.It,
                 "ja" => AgentVoiceConfigSpeakingLanguage.Ja,
                 "ko" => AgentVoiceConfigSpeakingLanguage.Ko,
+                "nl" => AgentVoiceConfigSpeakingLanguage.Nl,
+                "pt" => AgentVoiceConfigSpeakingLanguage.Pt,
                 "zh" => AgentVoiceConfigSpeakingLanguage.Zh,
                 _ => null,
             };

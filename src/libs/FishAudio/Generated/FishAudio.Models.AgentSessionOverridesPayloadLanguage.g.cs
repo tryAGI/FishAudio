@@ -27,11 +27,23 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        It,
+        /// <summary>
+        ///
+        /// </summary>
         Ja,
         /// <summary>
         ///
         /// </summary>
         Ko,
+        /// <summary>
+        ///
+        /// </summary>
+        Nl,
+        /// <summary>
+        ///
+        /// </summary>
+        Pt,
         /// <summary>
         ///
         /// </summary>
@@ -54,8 +66,11 @@ namespace FishAudio
                 AgentSessionOverridesPayloadLanguage.En => "en",
                 AgentSessionOverridesPayloadLanguage.Es => "es",
                 AgentSessionOverridesPayloadLanguage.Fr => "fr",
+                AgentSessionOverridesPayloadLanguage.It => "it",
                 AgentSessionOverridesPayloadLanguage.Ja => "ja",
                 AgentSessionOverridesPayloadLanguage.Ko => "ko",
+                AgentSessionOverridesPayloadLanguage.Nl => "nl",
+                AgentSessionOverridesPayloadLanguage.Pt => "pt",
                 AgentSessionOverridesPayloadLanguage.Zh => "zh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -71,8 +86,11 @@ namespace FishAudio
                 "en" => AgentSessionOverridesPayloadLanguage.En,
                 "es" => AgentSessionOverridesPayloadLanguage.Es,
                 "fr" => AgentSessionOverridesPayloadLanguage.Fr,
+                "it" => AgentSessionOverridesPayloadLanguage.It,
                 "ja" => AgentSessionOverridesPayloadLanguage.Ja,
                 "ko" => AgentSessionOverridesPayloadLanguage.Ko,
+                "nl" => AgentSessionOverridesPayloadLanguage.Nl,
+                "pt" => AgentSessionOverridesPayloadLanguage.Pt,
                 "zh" => AgentSessionOverridesPayloadLanguage.Zh,
                 _ => null,
             };
