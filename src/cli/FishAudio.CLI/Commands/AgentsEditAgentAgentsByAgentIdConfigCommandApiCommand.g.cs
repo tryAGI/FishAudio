@@ -111,8 +111,8 @@ their value. Changes only affect live sessions after the next publish.
 `prompt.system_prompt` is limited to 32000 tokens (422 beyond); keeping it
 under 2000 tokens is recommended for latency and cost.
 `voice.voice_id` accepts any public voice model id.
-`voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`;
-anything else is 422. `voice.expressive` opts into richer expressive
+`voice.speaking_language` accepts `en`, `ja`, `zh`, `ko`, `es`, `fr`, `de`,
+`pt`, `it`, `nl`; anything else is 422. `voice.expressive` opts into richer expressive
 delivery (emotion steering, laughter and sounds, pauses); off keeps the
 standard delivery. `voice.keyterms` is a speech-recognition vocabulary of
 up to 50 plain terms (brand names, product terms, personal names), each at

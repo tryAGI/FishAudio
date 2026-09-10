@@ -12,7 +12,7 @@ namespace FishAudio
         /// published as public are reachable, and the request `Origin` must match the<br/>
         /// agent's allowed origins.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
-        /// `fr`, `de`; anything else is 422. Omit it to use the agent's configured<br/>
+        /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
         /// speaking language.
         /// </summary>
         /// <param name="origin">
@@ -45,7 +45,7 @@ namespace FishAudio
         /// published as public are reachable, and the request `Origin` must match the<br/>
         /// agent's allowed origins.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
-        /// `fr`, `de`; anything else is 422. Omit it to use the agent's configured<br/>
+        /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
         /// speaking language.
         /// </summary>
         /// <param name="origin">
@@ -78,7 +78,7 @@ namespace FishAudio
         /// published as public are reachable, and the request `Origin` must match the<br/>
         /// agent's allowed origins.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
-        /// `fr`, `de`; anything else is 422. Omit it to use the agent's configured<br/>
+        /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
         /// speaking language.
         /// </summary>
         /// <param name="origin">
