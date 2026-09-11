@@ -181,6 +181,14 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSTimestampAlignment))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.TTSTimestampSegment>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSTimestampSegment))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSLiveErrorEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSLiveFinishEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSLiveFinishEventReason), TypeInfoPropertyName = "TTSLiveFinishEventReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSLiveWithTimestampAudioEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSLiveFlushEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSLiveStartEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSLiveStopEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSLiveTextEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.VoiceDesignRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.VoiceDesignCandidate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AuthorEntity))]
@@ -227,6 +235,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType), TypeInfoPropertyName = "GetAgentAvailablePhoneNumbersNumberType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsModel), TypeInfoPropertyName = "CreateTtsModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampModel), TypeInfoPropertyName = "CreateTtsStreamWithTimestampModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampModel), TypeInfoPropertyName = "GetTtsLiveWithTimestampModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelSortBy), TypeInfoPropertyName = "GetModelSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetWalletPackageResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetWalletPackageResponse2))]
@@ -468,6 +477,12 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampResponse), TypeInfoPropertyName = "GetTtsLiveWithTimestampResponse2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampResponseDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampResponseDiscriminatorEvent), TypeInfoPropertyName = "GetTtsLiveWithTimestampResponseDiscriminatorEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampResponse4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateVoiceDesignResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.VoiceDesignCandidate>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateVoiceDesignResponse2))]
@@ -499,6 +514,18 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteModelResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummaryStatus?), TypeInfoPropertyName = "NullableAgentSessionSummaryStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummarySource?), TypeInfoPropertyName = "NullableAgentSessionSummarySource2")]
+    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+
+    /// <summary>
+    ///
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+        })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummaryDirection?), TypeInfoPropertyName = "NullableAgentSessionSummaryDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummaryDialStatus?), TypeInfoPropertyName = "NullableAgentSessionSummaryDialStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummaryAnsweredBy?), TypeInfoPropertyName = "NullableAgentSessionSummaryAnsweredBy2")]
@@ -514,18 +541,6 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionToolResultItemStatus?), TypeInfoPropertyName = "NullableAgentSessionToolResultItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionRecordingTrackEntityRole?), TypeInfoPropertyName = "NullableAgentSessionRecordingTrackEntityRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionRecordingTrackEntityStatus?), TypeInfoPropertyName = "NullableAgentSessionRecordingTrackEntityStatus2")]
-    internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
-    {
-    }
-
-    /// <summary>
-    ///
-    /// </summary>
-    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentEntityStatus?), TypeInfoPropertyName = "NullablePublicAgentEntityStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentEntityPublicationState?), TypeInfoPropertyName = "NullablePublicAgentEntityPublicationState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentEntityOverridesAllowedItem?), TypeInfoPropertyName = "NullablePublicAgentEntityOverridesAllowedItem2")]
@@ -572,6 +587,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSRequestLatency?), TypeInfoPropertyName = "NullableTTSRequestLatency2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSStreamWithTimestampRequestFormat?), TypeInfoPropertyName = "NullableTTSStreamWithTimestampRequestFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSStreamWithTimestampRequestLatency?), TypeInfoPropertyName = "NullableTTSStreamWithTimestampRequestLatency2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSLiveFinishEventReason?), TypeInfoPropertyName = "NullableTTSLiveFinishEventReason2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ModelEntityType?), TypeInfoPropertyName = "NullableModelEntityType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ModelEntityTrainMode?), TypeInfoPropertyName = "NullableModelEntityTrainMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ModelEntityState?), TypeInfoPropertyName = "NullableModelEntityState2")]
@@ -594,6 +610,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType?), TypeInfoPropertyName = "NullableGetAgentAvailablePhoneNumbersNumberType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsModel?), TypeInfoPropertyName = "NullableCreateTtsModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampModel?), TypeInfoPropertyName = "NullableCreateTtsStreamWithTimestampModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampModel?), TypeInfoPropertyName = "NullableGetTtsLiveWithTimestampModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelSortBy?), TypeInfoPropertyName = "NullableGetModelSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsResponseStatus?), TypeInfoPropertyName = "NullableGetAgentSessionsResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsResponseSource?), TypeInfoPropertyName = "NullableGetAgentSessionsResponseSource2")]
@@ -630,6 +647,8 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentPhoneNumbersResponseStatus?), TypeInfoPropertyName = "NullableGetAgentPhoneNumbersResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentPhoneNumbersResponseProvider?), TypeInfoPropertyName = "NullablePatchAgentPhoneNumbersResponseProvider2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus?), TypeInfoPropertyName = "NullablePatchAgentPhoneNumbersResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampResponse?), TypeInfoPropertyName = "NullableGetTtsLiveWithTimestampResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampResponseDiscriminatorEvent?), TypeInfoPropertyName = "NullableGetTtsLiveWithTimestampResponseDiscriminatorEvent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseType?), TypeInfoPropertyName = "NullableCreateModelResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseTrainMode?), TypeInfoPropertyName = "NullableCreateModelResponseTrainMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseState?), TypeInfoPropertyName = "NullableCreateModelResponseState2")]
@@ -720,6 +739,7 @@ namespace FishAudio
          static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
             options.Converters.Add(new global::FishAudio.JsonConverters.ItemsItemJsonConverter());
+            options.Converters.Add(new global::FishAudio.JsonConverters.GetTtsLiveWithTimestampResponseJsonConverter());
             options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<string, int?, double?, bool?>());
             options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<bool?, double?, string, object>());
             options.Converters.Add(new global::FishAudio.JsonConverters.AnyOfJsonConverter<string, int?, double?, bool?>());
@@ -997,6 +1017,10 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.TTSStreamWithTimestampRequestLatency?)
 
+                    || typeToConvert == typeof(global::FishAudio.TTSLiveFinishEventReason)
+
+                    || typeToConvert == typeof(global::FishAudio.TTSLiveFinishEventReason?)
+
                     || typeToConvert == typeof(global::FishAudio.ModelEntityType)
 
                     || typeToConvert == typeof(global::FishAudio.ModelEntityType?)
@@ -1068,6 +1092,10 @@ namespace FishAudio
                     || typeToConvert == typeof(global::FishAudio.CreateTtsStreamWithTimestampModel)
 
                     || typeToConvert == typeof(global::FishAudio.CreateTtsStreamWithTimestampModel?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetTtsLiveWithTimestampModel)
+
+                    || typeToConvert == typeof(global::FishAudio.GetTtsLiveWithTimestampModel?)
 
                     || typeToConvert == typeof(global::FishAudio.GetModelSortBy)
 
@@ -1208,6 +1236,10 @@ namespace FishAudio
                     || typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus)
 
                     || typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetTtsLiveWithTimestampResponseDiscriminatorEvent)
+
+                    || typeToConvert == typeof(global::FishAudio.GetTtsLiveWithTimestampResponseDiscriminatorEvent?)
 
                     || typeToConvert == typeof(global::FishAudio.CreateModelResponseType)
 
@@ -1822,6 +1854,16 @@ namespace FishAudio
                     return new global::FishAudio.JsonConverters.TTSStreamWithTimestampRequestLatencyNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::FishAudio.TTSLiveFinishEventReason))
+                {
+                    return new global::FishAudio.JsonConverters.TTSLiveFinishEventReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.TTSLiveFinishEventReason?))
+                {
+                    return new global::FishAudio.JsonConverters.TTSLiveFinishEventReasonNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::FishAudio.ModelEntityType))
                 {
                     return new global::FishAudio.JsonConverters.ModelEntityTypeJsonConverter();
@@ -2000,6 +2042,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.CreateTtsStreamWithTimestampModel?))
                 {
                     return new global::FishAudio.JsonConverters.CreateTtsStreamWithTimestampModelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetTtsLiveWithTimestampModel))
+                {
+                    return new global::FishAudio.JsonConverters.GetTtsLiveWithTimestampModelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetTtsLiveWithTimestampModel?))
+                {
+                    return new global::FishAudio.JsonConverters.GetTtsLiveWithTimestampModelNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.GetModelSortBy))
@@ -2350,6 +2402,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus?))
                 {
                     return new global::FishAudio.JsonConverters.PatchAgentPhoneNumbersResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetTtsLiveWithTimestampResponseDiscriminatorEvent))
+                {
+                    return new global::FishAudio.JsonConverters.GetTtsLiveWithTimestampResponseDiscriminatorEventJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetTtsLiveWithTimestampResponseDiscriminatorEvent?))
+                {
+                    return new global::FishAudio.JsonConverters.GetTtsLiveWithTimestampResponseDiscriminatorEventNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.CreateModelResponseType))

@@ -16,6 +16,7 @@ internal static class OpenAPIV1ApiGroupCommand
                          command.Subcommands.Add(OpenAPIV1CreateTtsStreamWithTimestampWithMessagePackCommandApiCommand.Create());
                          command.Subcommands.Add(OpenAPIV1CreateTtsWithMessagePackCommandApiCommand.Create());
                          command.Subcommands.Add(OpenAPIV1CreateVoiceDesignCommandApiCommand.Create());
+                         command.Subcommands.Add(OpenAPIV1GetTtsLiveWithTimestampCommandApiCommand.Create());
         return command;
     }
 }
