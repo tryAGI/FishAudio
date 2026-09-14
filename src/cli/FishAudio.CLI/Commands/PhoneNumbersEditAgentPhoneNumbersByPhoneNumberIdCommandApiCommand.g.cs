@@ -24,6 +24,14 @@ internal static partial class PhoneNumbersEditAgentPhoneNumbersByPhoneNumberIdCo
     {
         Description = @"Agent that answers this number's inbound calls. Explicit null unbinds; omit the field to keep the current binding.",
     };
+
+    private static Option<bool?> ColdTransferUseOriginalCaller { get; } = CliRuntime.CreateNullableBoolOption(
+        name: @"--cold-transfer-use-original-caller",
+        description: @"Managed `twilio` numbers only: show the original caller's number on cold transfers (true) or this number (false). Takes effect for new calls once `caller_id_sync_status` is `synced`.");
+
+    private static Option<bool?> RetryCallerIdSync { get; } = CliRuntime.CreateNullableBoolOption(
+        name: @"--retry-caller-id-sync",
+        description: @"Re-apply the current caller ID policy after a failed synchronization.");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -69,10 +77,18 @@ deployment-pipeline move (rebind from the staging agent to the production
 one). Send `agent_id: null` to unbind; unbound numbers ring busy. The
 agent must live in the number's workspace. Rebinding is a routing-table
 update resolved on the next inbound call; nothing about the number itself
-is reprovisioned.");
+is reprovisioned.
+
+Managed `twilio` numbers also accept `cold_transfer_use_original_caller`,
+which picks the number a cold-transfer target sees, and
+`retry_caller_id_sync` to re-apply it after a failed synchronization; read
+`caller_id_sync_status` on the response. Imported `sip` numbers return 409
+for either field because their carrier owns the setting.");
                         command.Arguments.Add(PhoneNumberId);
                         command.Options.Add(Label);
                         command.Options.Add(AgentId);
+                        command.Options.Add(ColdTransferUseOriginalCaller);
+                        command.Options.Add(RetryCallerIdSync);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -101,6 +117,8 @@ is reprovisioned.");
                         var phoneNumberId = parseResult.GetRequiredValue(PhoneNumberId);
                         var label = CliRuntime.WasSpecified(parseResult, Label) ? parseResult.GetValue(Label) : (__requestBase is { } __LabelBaseValue ? __LabelBaseValue.Label : default);
                         var agentId = CliRuntime.WasSpecified(parseResult, AgentId) ? parseResult.GetValue(AgentId) : (__requestBase is { } __AgentIdBaseValue ? __AgentIdBaseValue.AgentId : default);
+                        var coldTransferUseOriginalCaller = CliRuntime.WasSpecified(parseResult, ColdTransferUseOriginalCaller) ? parseResult.GetValue(ColdTransferUseOriginalCaller) : (__requestBase is { } __ColdTransferUseOriginalCallerBaseValue ? __ColdTransferUseOriginalCallerBaseValue.ColdTransferUseOriginalCaller : default);
+                        var retryCallerIdSync = CliRuntime.WasSpecified(parseResult, RetryCallerIdSync) ? parseResult.GetValue(RetryCallerIdSync) : (__requestBase is { } __RetryCallerIdSyncBaseValue ? __RetryCallerIdSyncBaseValue.RetryCallerIdSync : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -108,6 +126,8 @@ is reprovisioned.");
                                     phoneNumberId: phoneNumberId,
                                     label: label,
                                     agentId: agentId,
+                                    coldTransferUseOriginalCaller: coldTransferUseOriginalCaller,
+                                    retryCallerIdSync: retryCallerIdSync,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

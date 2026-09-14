@@ -16,7 +16,7 @@ internal static partial class AgentSessionsGetAgentSessionsCommandApiCommand
     private static Option<string?> Status { get; } = new(
         name: @"--status")
     {
-        Description = @"Comma-separated status filter (pending/active/completed/failed/unknown). Default: every status except pending.",
+        Description = @"Comma-separated status filter (pending/active/completed/failed/unknown). Default: every status.",
     };
 
     private static Option<string?> Direction { get; } = new(

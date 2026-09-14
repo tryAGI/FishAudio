@@ -12,7 +12,8 @@ namespace FishAudio
         /// Default Value: phone
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentTransferDestinationTypeJsonConverter))]
+        public global::FishAudio.AgentTransferDestinationType? Type { get; set; }
 
         /// <summary>
         ///
@@ -21,11 +22,16 @@ namespace FishAudio
         public string? Label { get; set; }
 
         /// <summary>
-        ///
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phone_number")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sip_uri")]
+        public string? SipUri { get; set; }
 
         /// <summary>
         ///
@@ -56,11 +62,16 @@ namespace FishAudio
         /// <summary>
         /// Initializes a new instance of the <see cref="AgentTransferDestination" /> class.
         /// </summary>
-        /// <param name="phoneNumber"></param>
         /// <param name="type">
         /// Default Value: phone
         /// </param>
         /// <param name="label"></param>
+        /// <param name="phoneNumber">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="sipUri">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="description"></param>
         /// <param name="mode">
         /// Default Value: cold
@@ -72,16 +83,18 @@ namespace FishAudio
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentTransferDestination(
-            string phoneNumber,
-            string? type,
+            global::FishAudio.AgentTransferDestinationType? type,
             string? label,
+            string? phoneNumber,
+            string? sipUri,
             string? description,
             global::FishAudio.AgentTransferDestinationMode? mode,
             global::FishAudio.AgentTransferDestinationWarmConnect? warmConnect)
         {
             this.Type = type;
             this.Label = label;
-            this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
+            this.PhoneNumber = phoneNumber;
+            this.SipUri = sipUri;
             this.Description = description;
             this.Mode = mode;
             this.WarmConnect = warmConnect;
