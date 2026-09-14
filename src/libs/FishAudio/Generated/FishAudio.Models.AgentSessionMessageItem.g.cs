@@ -9,6 +9,30 @@ namespace FishAudio
     public sealed partial class AgentSessionMessageItem
     {
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("runtime_message_id")]
+        public string? RuntimeMessageId { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message_generation_id")]
+        public string? MessageGenerationId { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_usage")]
+        public global::FishAudio.LLMMessageUsage? LlmUsage { get; set; }
+
+        /// <summary>
         /// Default Value: message
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -52,6 +76,18 @@ namespace FishAudio
         /// </summary>
         /// <param name="role"></param>
         /// <param name="content"></param>
+        /// <param name="id">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="runtimeMessageId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="messageGenerationId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="llmUsage">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="type">
         /// Default Value: message
         /// </param>
@@ -67,10 +103,18 @@ namespace FishAudio
         public AgentSessionMessageItem(
             global::FishAudio.AgentSessionMessageItemRole role,
             string content,
+            string? id,
+            string? runtimeMessageId,
+            string? messageGenerationId,
+            global::FishAudio.LLMMessageUsage? llmUsage,
             string? type,
             int? turnId,
             string? createdAt)
         {
+            this.Id = id;
+            this.RuntimeMessageId = runtimeMessageId;
+            this.MessageGenerationId = messageGenerationId;
+            this.LlmUsage = llmUsage;
             this.Type = type;
             this.Role = role;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));

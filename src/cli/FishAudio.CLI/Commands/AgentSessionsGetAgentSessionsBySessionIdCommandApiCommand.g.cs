@@ -53,20 +53,12 @@ timeline (transcript turns interleaved with tool calls, in order).");
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 
-                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
-                                        parseResult,
-                                        response,
-                                        global::FishAudio.SourceGenerationContext.Default,
-                                        @"Items",
-                                        cancellationToken).ConfigureAwait(false))
-                                {
                                 await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::FishAudio.SourceGenerationContext.Default,
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
-                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

@@ -5,7 +5,7 @@ namespace FishAudio
 {
     /// <summary>
     /// Deprecated (2026-09-07): kept for compatibility only. `amd_enabled` and<br/>
-    /// `voicemail` no longer change call behavior — outbound calls greet as soon as<br/>
+    /// `voicemail` no longer change call behavior; outbound calls greet as soon as<br/>
     /// the callee answers, and `answered_by` is always `unknown`.
     /// </summary>
     public sealed partial class AgentOutboundConfig

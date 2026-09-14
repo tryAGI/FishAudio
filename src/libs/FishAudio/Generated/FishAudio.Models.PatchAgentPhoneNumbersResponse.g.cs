@@ -50,6 +50,34 @@ namespace FishAudio
         public string? AgentId { get; set; }
 
         /// <summary>
+        /// Managed `twilio` numbers: whether a cold-transfer target sees the original caller's number (true) or this number (false). `null` for imported `sip` numbers, whose carrier owns the setting.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cold_transfer_use_original_caller")]
+        public bool? ColdTransferUseOriginalCaller { get; set; }
+
+        /// <summary>
+        /// The policy the carrier has confirmed; `null` while unknown or for imported `sip` numbers.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cold_transfer_use_original_caller_effective")]
+        public bool? ColdTransferUseOriginalCallerEffective { get; set; }
+
+        /// <summary>
+        /// `synced` once the carrier confirmed the policy, `pending` while it is being applied, `error` when the last attempt failed (send `retry_caller_id_sync`), `carrier_managed` for imported `sip` numbers.<br/>
+        /// Default Value: carrier_managed
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller_id_sync_status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.PatchAgentPhoneNumbersResponseCallerIdSyncStatusJsonConverter))]
+        public global::FishAudio.PatchAgentPhoneNumbersResponseCallerIdSyncStatus? CallerIdSyncStatus { get; set; }
+
+        /// <summary>
+        /// Why the last synchronization failed; empty otherwise.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller_id_sync_error")]
+        public string? CallerIdSyncError { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -140,6 +168,21 @@ namespace FishAudio
         /// <param name="agentId">
         /// Inbound calls route to this agent; unbound numbers ring busy.
         /// </param>
+        /// <param name="coldTransferUseOriginalCaller">
+        /// Managed `twilio` numbers: whether a cold-transfer target sees the original caller's number (true) or this number (false). `null` for imported `sip` numbers, whose carrier owns the setting.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="coldTransferUseOriginalCallerEffective">
+        /// The policy the carrier has confirmed; `null` while unknown or for imported `sip` numbers.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="callerIdSyncStatus">
+        /// `synced` once the carrier confirmed the policy, `pending` while it is being applied, `error` when the last attempt failed (send `retry_caller_id_sync`), `carrier_managed` for imported `sip` numbers.<br/>
+        /// Default Value: carrier_managed
+        /// </param>
+        /// <param name="callerIdSyncError">
+        /// Why the last synchronization failed; empty otherwise.
+        /// </param>
         /// <param name="statusDetail">
         /// What failed when status is `error`; empty otherwise.
         /// </param>
@@ -179,6 +222,10 @@ namespace FishAudio
             global::System.DateTime updatedAt,
             string? label,
             string? agentId,
+            bool? coldTransferUseOriginalCaller,
+            bool? coldTransferUseOriginalCallerEffective,
+            global::FishAudio.PatchAgentPhoneNumbersResponseCallerIdSyncStatus? callerIdSyncStatus,
+            string? callerIdSyncError,
             string? statusDetail,
             bool? supportsOutbound,
             string? terminationUri,
@@ -193,6 +240,10 @@ namespace FishAudio
             this.Provider = provider;
             this.Label = label;
             this.AgentId = agentId;
+            this.ColdTransferUseOriginalCaller = coldTransferUseOriginalCaller;
+            this.ColdTransferUseOriginalCallerEffective = coldTransferUseOriginalCallerEffective;
+            this.CallerIdSyncStatus = callerIdSyncStatus;
+            this.CallerIdSyncError = callerIdSyncError;
             this.Status = status;
             this.StatusDetail = statusDetail;
             this.SupportsOutbound = supportsOutbound;

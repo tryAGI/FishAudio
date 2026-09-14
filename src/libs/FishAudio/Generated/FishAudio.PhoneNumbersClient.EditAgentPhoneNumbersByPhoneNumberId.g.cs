@@ -50,7 +50,12 @@ namespace FishAudio
         /// one). Send `agent_id: null` to unbind; unbound numbers ring busy. The<br/>
         /// agent must live in the number's workspace. Rebinding is a routing-table<br/>
         /// update resolved on the next inbound call; nothing about the number itself<br/>
-        /// is reprovisioned.
+        /// is reprovisioned.<br/>
+        /// Managed `twilio` numbers also accept `cold_transfer_use_original_caller`,<br/>
+        /// which picks the number a cold-transfer target sees, and<br/>
+        /// `retry_caller_id_sync` to re-apply it after a failed synchronization; read<br/>
+        /// `caller_id_sync_status` on the response. Imported `sip` numbers return 409<br/>
+        /// for either field because their carrier owns the setting.
         /// </summary>
         /// <param name="phoneNumberId"></param>
         /// <param name="request"></param>
@@ -81,7 +86,12 @@ namespace FishAudio
         /// one). Send `agent_id: null` to unbind; unbound numbers ring busy. The<br/>
         /// agent must live in the number's workspace. Rebinding is a routing-table<br/>
         /// update resolved on the next inbound call; nothing about the number itself<br/>
-        /// is reprovisioned.
+        /// is reprovisioned.<br/>
+        /// Managed `twilio` numbers also accept `cold_transfer_use_original_caller`,<br/>
+        /// which picks the number a cold-transfer target sees, and<br/>
+        /// `retry_caller_id_sync` to re-apply it after a failed synchronization; read<br/>
+        /// `caller_id_sync_status` on the response. Imported `sip` numbers return 409<br/>
+        /// for either field because their carrier owns the setting.
         /// </summary>
         /// <param name="phoneNumberId"></param>
         /// <param name="request"></param>
@@ -430,24 +440,61 @@ namespace FishAudio
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Request conflict
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::FishAudio.PatchAgentPhoneNumbersResponse4? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::FishAudio.PatchAgentPhoneNumbersResponse4.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::FishAudio.PatchAgentPhoneNumbersResponse4.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::FishAudio.ApiException<global::FishAudio.PatchAgentPhoneNumbersResponse4>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             //
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::FishAudio.PatchAgentPhoneNumbersResponse4? __value_422 = null;
+                                global::FishAudio.PatchAgentPhoneNumbersResponse5? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::FishAudio.PatchAgentPhoneNumbersResponse4.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::FishAudio.PatchAgentPhoneNumbersResponse5.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::FishAudio.PatchAgentPhoneNumbersResponse4.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::FishAudio.PatchAgentPhoneNumbersResponse5.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -456,7 +503,7 @@ namespace FishAudio
                                 }
 
 
-                                throw global::FishAudio.ApiException<global::FishAudio.PatchAgentPhoneNumbersResponse4>.Create(
+                                throw global::FishAudio.ApiException<global::FishAudio.PatchAgentPhoneNumbersResponse5>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -472,19 +519,19 @@ namespace FishAudio
                             {
                                 string? __content_503 = null;
                                 global::System.Exception? __exception_503 = null;
-                                global::FishAudio.PatchAgentPhoneNumbersResponse5? __value_503 = null;
+                                global::FishAudio.PatchAgentPhoneNumbersResponse6? __value_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::FishAudio.PatchAgentPhoneNumbersResponse5.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::FishAudio.PatchAgentPhoneNumbersResponse6.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::FishAudio.PatchAgentPhoneNumbersResponse5.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::FishAudio.PatchAgentPhoneNumbersResponse6.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -493,7 +540,7 @@ namespace FishAudio
                                 }
 
 
-                                throw global::FishAudio.ApiException<global::FishAudio.PatchAgentPhoneNumbersResponse5>.Create(
+                                throw global::FishAudio.ApiException<global::FishAudio.PatchAgentPhoneNumbersResponse6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
@@ -607,7 +654,12 @@ namespace FishAudio
         /// one). Send `agent_id: null` to unbind; unbound numbers ring busy. The<br/>
         /// agent must live in the number's workspace. Rebinding is a routing-table<br/>
         /// update resolved on the next inbound call; nothing about the number itself<br/>
-        /// is reprovisioned.
+        /// is reprovisioned.<br/>
+        /// Managed `twilio` numbers also accept `cold_transfer_use_original_caller`,<br/>
+        /// which picks the number a cold-transfer target sees, and<br/>
+        /// `retry_caller_id_sync` to re-apply it after a failed synchronization; read<br/>
+        /// `caller_id_sync_status` on the response. Imported `sip` numbers return 409<br/>
+        /// for either field because their carrier owns the setting.
         /// </summary>
         /// <param name="phoneNumberId"></param>
         /// <param name="label">
@@ -617,6 +669,14 @@ namespace FishAudio
         /// Agent that answers this number's inbound calls. Explicit null unbinds; omit the field to keep the current binding.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="coldTransferUseOriginalCaller">
+        /// Managed `twilio` numbers only: show the original caller's number on cold transfers (true) or this number (false). Takes effect for new calls once `caller_id_sync_status` is `synced`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="retryCallerIdSync">
+        /// Re-apply the current caller ID policy after a failed synchronization.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -624,6 +684,8 @@ namespace FishAudio
             string phoneNumberId,
             string? label = default,
             string? agentId = default,
+            bool? coldTransferUseOriginalCaller = default,
+            bool? retryCallerIdSync = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -631,6 +693,8 @@ namespace FishAudio
             {
                 Label = label,
                 AgentId = agentId,
+                ColdTransferUseOriginalCaller = coldTransferUseOriginalCaller,
+                RetryCallerIdSync = retryCallerIdSync,
             };
 
             return await EditAgentPhoneNumbersByPhoneNumberIdAsync(
