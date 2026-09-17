@@ -22,7 +22,7 @@ namespace FishAudio
         public string? AgentId { get; set; }
 
         /// <summary>
-        /// Managed `twilio` numbers only: show the original caller's number on cold transfers (true) or this number (false). Takes effect for new calls once `caller_id_sync_status` is `synced`.<br/>
+        /// Managed `twilio` numbers only: show the original caller's number on transfers, cold and warm (true), or this number (false). Warm transfers follow it from the next call; cold transfers once `caller_id_sync_status` is `synced`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cold_transfer_use_original_caller")]
@@ -52,7 +52,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="coldTransferUseOriginalCaller">
-        /// Managed `twilio` numbers only: show the original caller's number on cold transfers (true) or this number (false). Takes effect for new calls once `caller_id_sync_status` is `synced`.<br/>
+        /// Managed `twilio` numbers only: show the original caller's number on transfers, cold and warm (true), or this number (false). Warm transfers follow it from the next call; cold transfers once `caller_id_sync_status` is `synced`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="retryCallerIdSync">

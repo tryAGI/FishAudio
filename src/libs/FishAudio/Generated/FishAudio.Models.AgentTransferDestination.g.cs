@@ -54,6 +54,12 @@ namespace FishAudio
         public global::FishAudio.AgentTransferDestinationWarmConnect? WarmConnect { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("warm_briefing_instructions")]
+        public string? WarmBriefingInstructions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -79,6 +85,7 @@ namespace FishAudio
         /// <param name="warmConnect">
         /// Default Value: confirm
         /// </param>
+        /// <param name="warmBriefingInstructions"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,7 +96,8 @@ namespace FishAudio
             string? sipUri,
             string? description,
             global::FishAudio.AgentTransferDestinationMode? mode,
-            global::FishAudio.AgentTransferDestinationWarmConnect? warmConnect)
+            global::FishAudio.AgentTransferDestinationWarmConnect? warmConnect,
+            string? warmBriefingInstructions)
         {
             this.Type = type;
             this.Label = label;
@@ -98,6 +106,7 @@ namespace FishAudio
             this.Description = description;
             this.Mode = mode;
             this.WarmConnect = warmConnect;
+            this.WarmBriefingInstructions = warmBriefingInstructions;
         }
 
         /// <summary>

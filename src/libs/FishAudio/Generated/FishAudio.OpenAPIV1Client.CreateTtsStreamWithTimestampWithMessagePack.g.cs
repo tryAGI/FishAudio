@@ -487,6 +487,10 @@ namespace FishAudio
         /// Optional request-scoped TTS feature flags forwarded verbatim to the inference backend. Use ["quality-guard"] to enable the quality guard for this synthesis request. Feature availability is determined by the inference backend.<br/>
         /// Default Value: []
         /// </param>
+        /// <param name="pronunciationDictionary">
+        /// Optional list of up to 3 pronunciation dictionaries to apply during synthesis. Provide either references to platform-managed dictionaries OR inline literal dictionaries (the two forms are mutually exclusive in a single request). The server resolves and merges the dictionaries, then forwards the full merged dictionary to the inference engine, which performs the substitution. Matching is plain substring matching, leftmost-longest, and case-insensitive unless an entry sets `case_sensitive`. Missing or unresolvable references are silently dropped — the request still succeeds. Use `application/json` or `application/msgpack` content-type; nested arrays are not representable in `multipart/form-data`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -511,6 +515,7 @@ namespace FishAudio
             bool? conditionOnPreviousChunks = default,
             double? earlyStopThreshold = default,
             global::System.Collections.Generic.IList<string>? features = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>, object>? pronunciationDictionary = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -535,6 +540,7 @@ namespace FishAudio
                 ConditionOnPreviousChunks = conditionOnPreviousChunks,
                 EarlyStopThreshold = earlyStopThreshold,
                 Features = features,
+                PronunciationDictionary = pronunciationDictionary,
             };
 
             var __enumerable = CreateTtsStreamWithTimestampWithMessagePackAsync(

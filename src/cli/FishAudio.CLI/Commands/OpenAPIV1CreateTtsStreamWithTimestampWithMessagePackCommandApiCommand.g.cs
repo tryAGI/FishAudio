@@ -24,6 +24,12 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampWithMessagePa
     {
         Description = @"Voice model ID(s) from Fish Audio library or your custom models. For single-speaker synthesis, provide a string. For multi-speaker synthesis (dialogue), provide an array of model IDs. **Multi-speaker is available with the S2 family (`s2-pro`, `s2.1-pro`, `s2.1-pro-free`) and `drama-3-preview`, not `s1`.** When using multiple speakers, use speaker tags in your text like `<|speaker:0|>` and `<|speaker:1|>` to indicate speaker changes. Example: `<|speaker:0|>Hello!<|speaker:1|>Hi there!<|speaker:0|>How are you?` with `reference_id: [""speaker-a-id"", ""speaker-b-id""]`.",
     };
+
+    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>, object>?> PronunciationDictionary { get; } = new(
+        name: @"--pronunciation-dictionary")
+    {
+        Description = @"Optional list of up to 3 pronunciation dictionaries to apply during synthesis. Provide either references to platform-managed dictionaries OR inline literal dictionaries (the two forms are mutually exclusive in a single request). The server resolves and merges the dictionaries, then forwards the full merged dictionary to the inference engine, which performs the substitution. Matching is plain substring matching, leftmost-longest, and case-insensitive unless an entry sets `case_sensitive`. Missing or unresolvable references are silently dropped — the request still succeeds. Use `application/json` or `application/msgpack` content-type; nested arrays are not representable in `multipart/form-data`.",
+    };
     private static readonly TTSStreamWithTimestampRequestOptionSet TTSStreamWithTimestampRequestOptionSetOptions = TTSStreamWithTimestampRequestOptionSet.Create();
 
     private static readonly ProsodyControlOptionSet ProsodyOptions = ProsodyControlOptionSet.Create(@"prosody");
@@ -49,7 +55,8 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampWithMessagePa
         var command = new Command(@"create-tts-stream-with-timestamp-with-message-pack", @"Text to Speech Stream with Timestamps");
                         command.Options.Add(Model);
                         command.Options.Add(References);
-                        command.Options.Add(ReferenceId);                        command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.Text);
+                        command.Options.Add(ReferenceId);
+                        command.Options.Add(PronunciationDictionary);                        command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.Text);
                         command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.Temperature);
                         command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.TopP);
                         command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.ChunkLength);
@@ -94,7 +101,8 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampWithMessagePa
                             cancellationToken).ConfigureAwait(false);
                         var model = parseResult.GetValue(Model);
                         var references = CliRuntime.WasSpecified(parseResult, References) ? parseResult.GetValue(References) : (__requestBase is { } __ReferencesBaseValue ? __ReferencesBaseValue.References : default);
-                        var referenceId = CliRuntime.WasSpecified(parseResult, ReferenceId) ? parseResult.GetValue(ReferenceId) : (__requestBase is { } __ReferenceIdBaseValue ? __ReferenceIdBaseValue.ReferenceId : default);                        var text = parseResult.GetRequiredValue(TTSStreamWithTimestampRequestOptionSetOptions.Text);
+                        var referenceId = CliRuntime.WasSpecified(parseResult, ReferenceId) ? parseResult.GetValue(ReferenceId) : (__requestBase is { } __ReferenceIdBaseValue ? __ReferenceIdBaseValue.ReferenceId : default);
+                        var pronunciationDictionary = CliRuntime.WasSpecified(parseResult, PronunciationDictionary) ? parseResult.GetValue(PronunciationDictionary) : (__requestBase is { } __PronunciationDictionaryBaseValue ? __PronunciationDictionaryBaseValue.PronunciationDictionary : default);                        var text = parseResult.GetRequiredValue(TTSStreamWithTimestampRequestOptionSetOptions.Text);
                         var temperature = CliRuntime.WasSpecified(parseResult, TTSStreamWithTimestampRequestOptionSetOptions.Temperature) ? parseResult.GetValue(TTSStreamWithTimestampRequestOptionSetOptions.Temperature) : (__requestBase is { } __TemperatureBaseValue ? __TemperatureBaseValue.Temperature : default);
                         var topP = CliRuntime.WasSpecified(parseResult, TTSStreamWithTimestampRequestOptionSetOptions.TopP) ? parseResult.GetValue(TTSStreamWithTimestampRequestOptionSetOptions.TopP) : (__requestBase is { } __TopPBaseValue ? __TopPBaseValue.TopP : default);
                         var chunkLength = CliRuntime.WasSpecified(parseResult, TTSStreamWithTimestampRequestOptionSetOptions.ChunkLength) ? parseResult.GetValue(TTSStreamWithTimestampRequestOptionSetOptions.ChunkLength) : (__requestBase is { } __ChunkLengthBaseValue ? __ChunkLengthBaseValue.ChunkLength : default);
@@ -132,6 +140,7 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampWithMessagePa
                                     model: model,
                                     references: references,
                                     referenceId: referenceId,
+                                    pronunciationDictionary: pronunciationDictionary,
                                     text: text,
                                     temperature: temperature,
                                     topP: topP,
