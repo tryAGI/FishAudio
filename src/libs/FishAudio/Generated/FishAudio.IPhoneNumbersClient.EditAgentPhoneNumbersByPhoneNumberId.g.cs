@@ -13,7 +13,7 @@ namespace FishAudio
         /// update resolved on the next inbound call; nothing about the number itself<br/>
         /// is reprovisioned.<br/>
         /// Managed `twilio` numbers also accept `cold_transfer_use_original_caller`,<br/>
-        /// which picks the number a cold-transfer target sees, and<br/>
+        /// which picks the number a transfer target sees (cold and warm alike), and<br/>
         /// `retry_caller_id_sync` to re-apply it after a failed synchronization; read<br/>
         /// `caller_id_sync_status` on the response. Imported `sip` numbers return 409<br/>
         /// for either field because their carrier owns the setting.
@@ -38,7 +38,7 @@ namespace FishAudio
         /// update resolved on the next inbound call; nothing about the number itself<br/>
         /// is reprovisioned.<br/>
         /// Managed `twilio` numbers also accept `cold_transfer_use_original_caller`,<br/>
-        /// which picks the number a cold-transfer target sees, and<br/>
+        /// which picks the number a transfer target sees (cold and warm alike), and<br/>
         /// `retry_caller_id_sync` to re-apply it after a failed synchronization; read<br/>
         /// `caller_id_sync_status` on the response. Imported `sip` numbers return 409<br/>
         /// for either field because their carrier owns the setting.
@@ -63,7 +63,7 @@ namespace FishAudio
         /// update resolved on the next inbound call; nothing about the number itself<br/>
         /// is reprovisioned.<br/>
         /// Managed `twilio` numbers also accept `cold_transfer_use_original_caller`,<br/>
-        /// which picks the number a cold-transfer target sees, and<br/>
+        /// which picks the number a transfer target sees (cold and warm alike), and<br/>
         /// `retry_caller_id_sync` to re-apply it after a failed synchronization; read<br/>
         /// `caller_id_sync_status` on the response. Imported `sip` numbers return 409<br/>
         /// for either field because their carrier owns the setting.
@@ -77,7 +77,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="coldTransferUseOriginalCaller">
-        /// Managed `twilio` numbers only: show the original caller's number on cold transfers (true) or this number (false). Takes effect for new calls once `caller_id_sync_status` is `synced`.<br/>
+        /// Managed `twilio` numbers only: show the original caller's number on transfers, cold and warm (true), or this number (false). Warm transfers follow it from the next call; cold transfers once `caller_id_sync_status` is `synced`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="retryCallerIdSync">

@@ -27,7 +27,7 @@ internal static partial class PhoneNumbersEditAgentPhoneNumbersByPhoneNumberIdCo
 
     private static Option<bool?> ColdTransferUseOriginalCaller { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--cold-transfer-use-original-caller",
-        description: @"Managed `twilio` numbers only: show the original caller's number on cold transfers (true) or this number (false). Takes effect for new calls once `caller_id_sync_status` is `synced`.");
+        description: @"Managed `twilio` numbers only: show the original caller's number on transfers, cold and warm (true), or this number (false). Warm transfers follow it from the next call; cold transfers once `caller_id_sync_status` is `synced`.");
 
     private static Option<bool?> RetryCallerIdSync { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--retry-caller-id-sync",
@@ -80,7 +80,7 @@ update resolved on the next inbound call; nothing about the number itself
 is reprovisioned.
 
 Managed `twilio` numbers also accept `cold_transfer_use_original_caller`,
-which picks the number a cold-transfer target sees, and
+which picks the number a transfer target sees (cold and warm alike), and
 `retry_caller_id_sync` to re-apply it after a failed synchronization; read
 `caller_id_sync_status` on the response. Imported `sip` numbers return 409
 for either field because their carrier owns the setting.");

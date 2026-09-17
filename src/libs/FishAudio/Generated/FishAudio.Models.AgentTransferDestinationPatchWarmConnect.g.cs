@@ -11,6 +11,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        Briefing,
+        /// <summary>
+        ///
+        /// </summary>
         Confirm,
         /// <summary>
         ///
@@ -30,6 +34,7 @@ namespace FishAudio
         {
             return value switch
             {
+                AgentTransferDestinationPatchWarmConnect.Briefing => "briefing",
                 AgentTransferDestinationPatchWarmConnect.Confirm => "confirm",
                 AgentTransferDestinationPatchWarmConnect.Direct => "direct",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace FishAudio
         {
             return value switch
             {
+                "briefing" => AgentTransferDestinationPatchWarmConnect.Briefing,
                 "confirm" => AgentTransferDestinationPatchWarmConnect.Confirm,
                 "direct" => AgentTransferDestinationPatchWarmConnect.Direct,
                 _ => null,

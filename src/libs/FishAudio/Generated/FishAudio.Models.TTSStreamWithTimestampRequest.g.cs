@@ -145,6 +145,14 @@ namespace FishAudio
         public global::System.Collections.Generic.IList<string>? Features { get; set; }
 
         /// <summary>
+        /// Optional list of up to 3 pronunciation dictionaries to apply during synthesis. Provide either references to platform-managed dictionaries OR inline literal dictionaries (the two forms are mutually exclusive in a single request). The server resolves and merges the dictionaries, then forwards the full merged dictionary to the inference engine, which performs the substitution. Matching is plain substring matching, leftmost-longest, and case-insensitive unless an entry sets `case_sensitive`. Missing or unresolvable references are silently dropped — the request still succeeds. Use `application/json` or `application/msgpack` content-type; nested arrays are not representable in `multipart/form-data`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pronunciation_dictionary")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>, object>))]
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>, object>? PronunciationDictionary { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -227,6 +235,10 @@ namespace FishAudio
         /// Optional request-scoped TTS feature flags forwarded verbatim to the inference backend. Use ["quality-guard"] to enable the quality guard for this synthesis request. Feature availability is determined by the inference backend.<br/>
         /// Default Value: []
         /// </param>
+        /// <param name="pronunciationDictionary">
+        /// Optional list of up to 3 pronunciation dictionaries to apply during synthesis. Provide either references to platform-managed dictionaries OR inline literal dictionaries (the two forms are mutually exclusive in a single request). The server resolves and merges the dictionaries, then forwards the full merged dictionary to the inference engine, which performs the substitution. Matching is plain substring matching, leftmost-longest, and case-insensitive unless an entry sets `case_sensitive`. Missing or unresolvable references are silently dropped — the request still succeeds. Use `application/json` or `application/msgpack` content-type; nested arrays are not representable in `multipart/form-data`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -249,7 +261,8 @@ namespace FishAudio
             int? minChunkLength,
             bool? conditionOnPreviousChunks,
             double? earlyStopThreshold,
-            global::System.Collections.Generic.IList<string>? features)
+            global::System.Collections.Generic.IList<string>? features,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>, object>? pronunciationDictionary)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Temperature = temperature;
@@ -270,6 +283,7 @@ namespace FishAudio
             this.ConditionOnPreviousChunks = conditionOnPreviousChunks;
             this.EarlyStopThreshold = earlyStopThreshold;
             this.Features = features;
+            this.PronunciationDictionary = pronunciationDictionary;
         }
 
         /// <summary>

@@ -50,14 +50,14 @@ namespace FishAudio
         public string? AgentId { get; set; }
 
         /// <summary>
-        /// Managed `twilio` numbers: whether a cold-transfer target sees the original caller's number (true) or this number (false). `null` for imported `sip` numbers, whose carrier owns the setting.<br/>
+        /// Managed `twilio` numbers: whether a transfer target, cold or warm, sees the original caller's number (true) or this number (false). `null` for imported `sip` numbers, whose carrier owns the setting.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cold_transfer_use_original_caller")]
         public bool? ColdTransferUseOriginalCaller { get; set; }
 
         /// <summary>
-        /// The policy the carrier has confirmed; `null` while unknown or for imported `sip` numbers.<br/>
+        /// The cold-transfer policy the carrier has confirmed; `null` while unknown or for imported `sip` numbers. Warm transfers follow `cold_transfer_use_original_caller` directly from the next call.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cold_transfer_use_original_caller_effective")]
@@ -169,11 +169,11 @@ namespace FishAudio
         /// Inbound calls route to this agent; unbound numbers ring busy.
         /// </param>
         /// <param name="coldTransferUseOriginalCaller">
-        /// Managed `twilio` numbers: whether a cold-transfer target sees the original caller's number (true) or this number (false). `null` for imported `sip` numbers, whose carrier owns the setting.<br/>
+        /// Managed `twilio` numbers: whether a transfer target, cold or warm, sees the original caller's number (true) or this number (false). `null` for imported `sip` numbers, whose carrier owns the setting.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="coldTransferUseOriginalCallerEffective">
-        /// The policy the carrier has confirmed; `null` while unknown or for imported `sip` numbers.<br/>
+        /// The cold-transfer policy the carrier has confirmed; `null` while unknown or for imported `sip` numbers. Warm transfers follow `cold_transfer_use_original_caller` directly from the next call.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="callerIdSyncStatus">
