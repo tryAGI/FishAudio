@@ -7,6 +7,12 @@ namespace FishAudio.CLI.Commands;
 
 internal static partial class OpenAPIV1CreateAsrCommandApiCommand
 {
+    private static Option<global::FishAudio.CreateAsrModel?> Model { get; } = new(
+        name: @"--model")
+    {
+        Description = @"Specify which speech-to-text model to use.",
+    };
+
     private static Option<byte[]> Audio { get; } = new(
         name: @"--audio")
     {
@@ -70,6 +76,7 @@ internal static partial class OpenAPIV1CreateAsrCommandApiCommand
     public static Command Create()
     {
         var command = new Command(@"create-asr", @"Speech to Text");
+                        command.Options.Add(Model);
                         command.Options.Add(Audio);
                         command.Options.Add(Audioname);
                         command.Options.Add(Language);
@@ -99,6 +106,7 @@ internal static partial class OpenAPIV1CreateAsrCommandApiCommand
                             RequestFile,
                             global::FishAudio.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var model = parseResult.GetValue(Model);
                         var audio = parseResult.GetRequiredValue(Audio);
                         var audioname = parseResult.GetRequiredValue(Audioname);
                         var language = CliRuntime.WasSpecified(parseResult, Language) ? parseResult.GetValue(Language) : (__requestBase is { } __LanguageBaseValue ? __LanguageBaseValue.Language : default);
@@ -107,6 +115,7 @@ internal static partial class OpenAPIV1CreateAsrCommandApiCommand
 
 
                                 var response = await client.OpenAPIV1.CreateAsrAsync(
+                                    model: model,
                                     audio: audio,
                                     audioname: audioname,
                                     language: language,

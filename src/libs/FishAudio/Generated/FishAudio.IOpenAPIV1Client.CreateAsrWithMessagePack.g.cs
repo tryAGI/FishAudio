@@ -7,6 +7,9 @@ namespace FishAudio
         /// <summary>
         /// Speech to Text
         /// </summary>
+        /// <param name="model">
+        /// Default Value: transcribe-1
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -14,11 +17,15 @@ namespace FishAudio
         global::System.Threading.Tasks.Task<global::FishAudio.CreateAsrResponse> CreateAsrWithMessagePackAsync(
 
             global::FishAudio.CreateAsrRequest2 request,
+            global::FishAudio.CreateAsrModel? model = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Speech to Text
         /// </summary>
+        /// <param name="model">
+        /// Default Value: transcribe-1
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -26,11 +33,15 @@ namespace FishAudio
         global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.CreateAsrResponse>> CreateAsrWithMessagePackAsResponseAsync(
 
             global::FishAudio.CreateAsrRequest2 request,
+            global::FishAudio.CreateAsrModel? model = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Speech to Text
         /// </summary>
+        /// <param name="model">
+        /// Default Value: transcribe-1
+        /// </param>
         /// <param name="audio">
         /// Audio file to be converted to text
         /// </param>
@@ -51,6 +62,7 @@ namespace FishAudio
         global::System.Threading.Tasks.Task<global::FishAudio.CreateAsrResponse> CreateAsrWithMessagePackAsync(
             byte[] audio,
             string audioname,
+            global::FishAudio.CreateAsrModel? model = default,
             string? language = default,
             bool? ignoreTimestamps = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
