@@ -27,10 +27,12 @@ namespace FishAudio
             };
         partial void PrepareCreateAsrArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref global::FishAudio.CreateAsrModel? model,
             global::FishAudio.CreateAsrRequest request);
         partial void PrepareCreateAsrRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::FishAudio.CreateAsrModel? model,
             global::FishAudio.CreateAsrRequest request);
         partial void ProcessCreateAsrResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -44,6 +46,9 @@ namespace FishAudio
         /// <summary>
         /// Speech to Text
         /// </summary>
+        /// <param name="model">
+        /// Default Value: transcribe-1
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -51,12 +56,14 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.CreateAsrResponse> CreateAsrAsync(
 
             global::FishAudio.CreateAsrRequest request,
+            global::FishAudio.CreateAsrModel? model = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateAsrAsResponseAsync(
 
                 request: request,
+                model: model,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -66,6 +73,9 @@ namespace FishAudio
         /// <summary>
         /// Speech to Text
         /// </summary>
+        /// <param name="model">
+        /// Default Value: transcribe-1
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -73,6 +83,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.CreateAsrResponse>> CreateAsrAsResponseAsync(
 
             global::FishAudio.CreateAsrRequest request,
+            global::FishAudio.CreateAsrModel? model = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -82,6 +93,7 @@ namespace FishAudio
                 client: HttpClient);
             PrepareCreateAsrArguments(
                 httpClient: HttpClient,
+                model: ref model,
                 request: request);
 
 
@@ -139,6 +151,12 @@ namespace FishAudio
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+
+            if (model != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("model", model?.ToValueString() ?? string.Empty);
+            }
+
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             var __contentAudio = new global::System.Net.Http.ByteArrayContent(request.Audio ?? global::System.Array.Empty<byte>());
@@ -209,6 +227,7 @@ namespace FishAudio
                 PrepareCreateAsrRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    model: model,
                     request: request);
 
                 return __httpRequest;
@@ -598,6 +617,9 @@ namespace FishAudio
         /// <summary>
         /// Speech to Text
         /// </summary>
+        /// <param name="model">
+        /// Default Value: transcribe-1
+        /// </param>
         /// <param name="audio">
         /// Audio file to be converted to text
         /// </param>
@@ -618,6 +640,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.CreateAsrResponse> CreateAsrAsync(
             byte[] audio,
             string audioname,
+            global::FishAudio.CreateAsrModel? model = default,
             string? language = default,
             bool? ignoreTimestamps = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
@@ -632,6 +655,7 @@ namespace FishAudio
             };
 
             return await CreateAsrAsync(
+                model: model,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -640,6 +664,9 @@ namespace FishAudio
         /// <summary>
         /// Speech to Text
         /// </summary>
+        /// <param name="model">
+        /// Default Value: transcribe-1
+        /// </param>
         /// <param name="audio">
         /// Audio file to be converted to text
         /// </param>
@@ -660,6 +687,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.CreateAsrResponse> CreateAsrAsync(
             global::System.IO.Stream audio,
             string audioname,
+            global::FishAudio.CreateAsrModel? model = default,
             string? language = default,
             bool? ignoreTimestamps = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
@@ -678,6 +706,7 @@ namespace FishAudio
                 client: HttpClient);
             PrepareCreateAsrArguments(
                 httpClient: HttpClient,
+                model: ref model,
                 request: request);
 
 
@@ -735,6 +764,12 @@ namespace FishAudio
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+
+            if (model != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("model", model?.ToValueString() ?? string.Empty);
+            }
+
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             var __contentAudio = new global::System.Net.Http.StreamContent(audio);
@@ -805,6 +840,7 @@ namespace FishAudio
                 PrepareCreateAsrRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    model: model,
                     request: request);
 
                 return __httpRequest;
@@ -1186,6 +1222,9 @@ namespace FishAudio
         /// <summary>
         /// Speech to Text
         /// </summary>
+        /// <param name="model">
+        /// Default Value: transcribe-1
+        /// </param>
         /// <param name="audio">
         /// Audio file to be converted to text
         /// </param>
@@ -1206,6 +1245,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.CreateAsrResponse>> CreateAsrAsResponseAsync(
             global::System.IO.Stream audio,
             string audioname,
+            global::FishAudio.CreateAsrModel? model = default,
             string? language = default,
             bool? ignoreTimestamps = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
@@ -1224,6 +1264,7 @@ namespace FishAudio
                 client: HttpClient);
             PrepareCreateAsrArguments(
                 httpClient: HttpClient,
+                model: ref model,
                 request: request);
 
 
@@ -1281,6 +1322,12 @@ namespace FishAudio
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
+
+            if (model != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("model", model?.ToValueString() ?? string.Empty);
+            }
+
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             var __contentAudio = new global::System.Net.Http.StreamContent(audio);
@@ -1351,6 +1398,7 @@ namespace FishAudio
                 PrepareCreateAsrRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    model: model,
                     request: request);
 
                 return __httpRequest;

@@ -249,6 +249,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelRequestVisibility4), TypeInfoPropertyName = "PatchModelRequestVisibility42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAgentsPublicationState), TypeInfoPropertyName = "GetAgentAgentsPublicationState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType), TypeInfoPropertyName = "GetAgentAvailablePhoneNumbersNumberType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrModel), TypeInfoPropertyName = "CreateAsrModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsModel), TypeInfoPropertyName = "CreateTtsModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampModel), TypeInfoPropertyName = "CreateTtsStreamWithTimestampModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampModel), TypeInfoPropertyName = "GetTtsLiveWithTimestampModel2")]
@@ -513,7 +514,6 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.ModelEntity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseType), TypeInfoPropertyName = "CreateModelResponseType2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -526,6 +526,7 @@ namespace FishAudio
         Converters = new global::System.Type[]
         {
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseType), TypeInfoPropertyName = "CreateModelResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseTrainMode), TypeInfoPropertyName = "CreateModelResponseTrainMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseState), TypeInfoPropertyName = "CreateModelResponseState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseVisibility), TypeInfoPropertyName = "CreateModelResponseVisibility2")]
@@ -637,6 +638,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelRequestVisibility4?), TypeInfoPropertyName = "NullablePatchModelRequestVisibility42")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAgentsPublicationState?), TypeInfoPropertyName = "NullableGetAgentAgentsPublicationState2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType?), TypeInfoPropertyName = "NullableGetAgentAvailablePhoneNumbersNumberType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrModel?), TypeInfoPropertyName = "NullableCreateAsrModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsModel?), TypeInfoPropertyName = "NullableCreateTtsModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampModel?), TypeInfoPropertyName = "NullableCreateTtsStreamWithTimestampModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampModel?), TypeInfoPropertyName = "NullableGetTtsLiveWithTimestampModel2")]
@@ -1148,6 +1150,10 @@ namespace FishAudio
                     || typeToConvert == typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType)
 
                     || typeToConvert == typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType?)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAsrModel)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAsrModel?)
 
                     || typeToConvert == typeof(global::FishAudio.CreateTtsModel)
 
@@ -2158,6 +2164,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType?))
                 {
                     return new global::FishAudio.JsonConverters.GetAgentAvailablePhoneNumbersNumberTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAsrModel))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAsrModelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAsrModel?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAsrModelNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.CreateTtsModel))

@@ -57,6 +57,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.VoiceDesignCandidate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrRequest2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrModel), TypeInfoPropertyName = "CreateAsrModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsModel), TypeInfoPropertyName = "CreateTtsModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampModel), TypeInfoPropertyName = "CreateTtsStreamWithTimestampModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampModel), TypeInfoPropertyName = "GetTtsLiveWithTimestampModel2")]
@@ -94,6 +95,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSStreamWithTimestampRequestFormat?), TypeInfoPropertyName = "NullableTTSStreamWithTimestampRequestFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSStreamWithTimestampRequestLatency?), TypeInfoPropertyName = "NullableTTSStreamWithTimestampRequestLatency2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSLiveFinishEventReason?), TypeInfoPropertyName = "NullableTTSLiveFinishEventReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrModel?), TypeInfoPropertyName = "NullableCreateAsrModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsModel?), TypeInfoPropertyName = "NullableCreateTtsModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampModel?), TypeInfoPropertyName = "NullableCreateTtsStreamWithTimestampModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetTtsLiveWithTimestampModel?), TypeInfoPropertyName = "NullableGetTtsLiveWithTimestampModel2")]
@@ -230,6 +232,10 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.TTSLiveFinishEventReason?)
 
+                    || typeToConvert == typeof(global::FishAudio.CreateAsrModel)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAsrModel?)
+
                     || typeToConvert == typeof(global::FishAudio.CreateTtsModel)
 
                     || typeToConvert == typeof(global::FishAudio.CreateTtsModel?)
@@ -299,6 +305,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.TTSLiveFinishEventReason?))
                 {
                     return new global::FishAudio.JsonConverters.TTSLiveFinishEventReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAsrModel))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAsrModelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAsrModel?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAsrModelNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.CreateTtsModel))
