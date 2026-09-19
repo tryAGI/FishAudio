@@ -19,6 +19,12 @@ internal static partial class AgentSessionsGetAgentSessionsCommandApiCommand
         Description = @"Comma-separated status filter (pending/active/completed/failed/unknown). Default: every status.",
     };
 
+    private static Option<string?> EndReason { get; } = new(
+        name: @"--end-reason")
+    {
+        Description = @"Comma-separated end reason filter (user_hangup/agent_hangup/escalated/conversation_timeout/heartbeat_timeout/agent_join_timeout/internal_error/llm_endpoint_failure/room_join_timeout/cancelled/dial_failed).",
+    };
+
     private static Option<string?> Direction { get; } = new(
         name: @"--direction")
     {
@@ -88,12 +94,13 @@ internal static partial class AgentSessionsGetAgentSessionsCommandApiCommand
     public static Command Create()
     {
         var command = new Command(@"get-agent-sessions", @"List Agent Sessions
-List your team's sessions, newest first. Filter by agent, status, caller
-number, or creation time. Paginate with `cursor` (recommended; follow
+List your team's sessions, newest first. Filter by agent, status, end
+reason, caller number, or creation time. Paginate with `cursor` (recommended; follow
 `next_cursor` while `has_more` is true) or with `page` for offset pagination
 with a `total` count — the two are mutually exclusive.");
                         command.Options.Add(AgentId);
                         command.Options.Add(Status);
+                        command.Options.Add(EndReason);
                         command.Options.Add(Direction);
                         command.Options.Add(CallerNumber);
                         command.Options.Add(CreatedAfter);
@@ -109,6 +116,7 @@ with a `total` count — the two are mutually exclusive.");
             {
                         var agentId = parseResult.GetValue(AgentId);
                         var status = parseResult.GetValue(Status);
+                        var endReason = parseResult.GetValue(EndReason);
                         var direction = parseResult.GetValue(Direction);
                         var callerNumber = parseResult.GetValue(CallerNumber);
                         var createdAfter = parseResult.GetValue(CreatedAfter);
@@ -123,6 +131,7 @@ with a `total` count — the two are mutually exclusive.");
                                 var response = await client.AgentSessions.GetAgentSessionsAsync(
                                     agentId: agentId,
                                     status: status,
+                                    endReason: endReason,
                                     direction: direction,
                                     callerNumber: callerNumber,
                                     createdAfter: createdAfter,

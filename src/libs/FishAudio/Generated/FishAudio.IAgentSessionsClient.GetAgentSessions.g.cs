@@ -6,8 +6,8 @@ namespace FishAudio
     {
         /// <summary>
         /// List Agent Sessions<br/>
-        /// List your team's sessions, newest first. Filter by agent, status, caller<br/>
-        /// number, or creation time. Paginate with `cursor` (recommended; follow<br/>
+        /// List your team's sessions, newest first. Filter by agent, status, end<br/>
+        /// reason, caller number, or creation time. Paginate with `cursor` (recommended; follow<br/>
         /// `next_cursor` while `has_more` is true) or with `page` for offset pagination<br/>
         /// with a `total` count — the two are mutually exclusive.
         /// </summary>
@@ -15,6 +15,9 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="status">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="endReason">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="direction">
@@ -47,6 +50,7 @@ namespace FishAudio
         global::System.Threading.Tasks.Task<global::FishAudio.GetAgentSessionsResponse> GetAgentSessionsAsync(
             string? agentId = default,
             string? status = default,
+            string? endReason = default,
             string? direction = default,
             string? callerNumber = default,
             string? createdAfter = default,
@@ -59,8 +63,8 @@ namespace FishAudio
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List Agent Sessions<br/>
-        /// List your team's sessions, newest first. Filter by agent, status, caller<br/>
-        /// number, or creation time. Paginate with `cursor` (recommended; follow<br/>
+        /// List your team's sessions, newest first. Filter by agent, status, end<br/>
+        /// reason, caller number, or creation time. Paginate with `cursor` (recommended; follow<br/>
         /// `next_cursor` while `has_more` is true) or with `page` for offset pagination<br/>
         /// with a `total` count — the two are mutually exclusive.
         /// </summary>
@@ -68,6 +72,9 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="status">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="endReason">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="direction">
@@ -100,6 +107,7 @@ namespace FishAudio
         global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetAgentSessionsResponse>> GetAgentSessionsAsResponseAsync(
             string? agentId = default,
             string? status = default,
+            string? endReason = default,
             string? direction = default,
             string? callerNumber = default,
             string? createdAfter = default,

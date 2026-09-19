@@ -29,6 +29,7 @@ namespace FishAudio
             global::System.Net.Http.HttpClient httpClient,
             ref string? agentId,
             ref string? status,
+            ref string? endReason,
             ref string? direction,
             ref string? callerNumber,
             ref string? createdAfter,
@@ -42,6 +43,7 @@ namespace FishAudio
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? agentId,
             string? status,
+            string? endReason,
             string? direction,
             string? callerNumber,
             string? createdAfter,
@@ -61,8 +63,8 @@ namespace FishAudio
 
         /// <summary>
         /// List Agent Sessions<br/>
-        /// List your team's sessions, newest first. Filter by agent, status, caller<br/>
-        /// number, or creation time. Paginate with `cursor` (recommended; follow<br/>
+        /// List your team's sessions, newest first. Filter by agent, status, end<br/>
+        /// reason, caller number, or creation time. Paginate with `cursor` (recommended; follow<br/>
         /// `next_cursor` while `has_more` is true) or with `page` for offset pagination<br/>
         /// with a `total` count — the two are mutually exclusive.
         /// </summary>
@@ -70,6 +72,9 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="status">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="endReason">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="direction">
@@ -102,6 +107,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.GetAgentSessionsResponse> GetAgentSessionsAsync(
             string? agentId = default,
             string? status = default,
+            string? endReason = default,
             string? direction = default,
             string? callerNumber = default,
             string? createdAfter = default,
@@ -116,6 +122,7 @@ namespace FishAudio
             var __response = await GetAgentSessionsAsResponseAsync(
                 agentId: agentId,
                 status: status,
+                endReason: endReason,
                 direction: direction,
                 callerNumber: callerNumber,
                 createdAfter: createdAfter,
@@ -132,8 +139,8 @@ namespace FishAudio
         }
         /// <summary>
         /// List Agent Sessions<br/>
-        /// List your team's sessions, newest first. Filter by agent, status, caller<br/>
-        /// number, or creation time. Paginate with `cursor` (recommended; follow<br/>
+        /// List your team's sessions, newest first. Filter by agent, status, end<br/>
+        /// reason, caller number, or creation time. Paginate with `cursor` (recommended; follow<br/>
         /// `next_cursor` while `has_more` is true) or with `page` for offset pagination<br/>
         /// with a `total` count — the two are mutually exclusive.
         /// </summary>
@@ -141,6 +148,9 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="status">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="endReason">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="direction">
@@ -173,6 +183,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetAgentSessionsResponse>> GetAgentSessionsAsResponseAsync(
             string? agentId = default,
             string? status = default,
+            string? endReason = default,
             string? direction = default,
             string? callerNumber = default,
             string? createdAfter = default,
@@ -190,6 +201,7 @@ namespace FishAudio
                 httpClient: HttpClient,
                 agentId: ref agentId,
                 status: ref status,
+                endReason: ref endReason,
                 direction: ref direction,
                 callerNumber: ref callerNumber,
                 createdAfter: ref createdAfter,
@@ -228,6 +240,7 @@ namespace FishAudio
                             __pathBuilder
                                 .AddOptionalParameter("agent_id", agentId)
                                 .AddOptionalParameter("status", status)
+                                .AddOptionalParameter("end_reason", endReason)
                                 .AddOptionalParameter("direction", direction)
                                 .AddOptionalParameter("caller_number", callerNumber)
                                 .AddOptionalParameter("created_after", createdAfter)
@@ -279,6 +292,7 @@ namespace FishAudio
                     httpRequestMessage: __httpRequest,
                     agentId: agentId,
                     status: status,
+                    endReason: endReason,
                     direction: direction,
                     callerNumber: callerNumber,
                     createdAfter: createdAfter,

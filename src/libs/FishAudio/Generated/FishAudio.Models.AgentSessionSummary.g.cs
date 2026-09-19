@@ -45,6 +45,12 @@ namespace FishAudio
         public required global::FishAudio.AgentSessionSummaryStatus Status { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_reason")]
+        public global::FishAudio.AgentSessionSummaryEndReason? EndReason { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
@@ -138,6 +144,9 @@ namespace FishAudio
         /// <param name="name">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="endReason">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="direction">
         /// Default Value: inbound
         /// </param>
@@ -177,6 +186,7 @@ namespace FishAudio
             global::FishAudio.AgentSessionSummarySource source,
             string createdAt,
             string? name,
+            global::FishAudio.AgentSessionSummaryEndReason? endReason,
             global::FishAudio.AgentSessionSummaryDirection? direction,
             global::FishAudio.AgentSessionSummaryDialStatus? dialStatus,
             global::FishAudio.AgentSessionSummaryAnsweredBy? answeredBy,
@@ -193,6 +203,7 @@ namespace FishAudio
             this.AgentName = agentName ?? throw new global::System.ArgumentNullException(nameof(agentName));
             this.Name = name;
             this.Status = status;
+            this.EndReason = endReason;
             this.Source = source;
             this.Direction = direction;
             this.DialStatus = dialStatus;
