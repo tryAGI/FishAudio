@@ -60,6 +60,12 @@ namespace FishAudio
         public string? WarmBriefingInstructions { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("on_failure")]
+        public global::FishAudio.AgentTransferOnFailurePatch? OnFailure { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -86,6 +92,7 @@ namespace FishAudio
         /// Default Value: confirm
         /// </param>
         /// <param name="warmBriefingInstructions"></param>
+        /// <param name="onFailure"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -97,7 +104,8 @@ namespace FishAudio
             string? description,
             global::FishAudio.AgentTransferDestinationPatchMode? mode,
             global::FishAudio.AgentTransferDestinationPatchWarmConnect? warmConnect,
-            string? warmBriefingInstructions)
+            string? warmBriefingInstructions,
+            global::FishAudio.AgentTransferOnFailurePatch? onFailure)
         {
             this.Type = type;
             this.Label = label;
@@ -107,6 +115,7 @@ namespace FishAudio
             this.Mode = mode;
             this.WarmConnect = warmConnect;
             this.WarmBriefingInstructions = warmBriefingInstructions;
+            this.OnFailure = onFailure;
         }
 
         /// <summary>

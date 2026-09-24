@@ -6,16 +6,17 @@ namespace FishAudio
     {
         /// <summary>
         /// Create Phone Call<br/>
-        /// Place an outbound call from one of your Twilio phone numbers to a US,<br/>
-        /// Canada or Japan destination. A domestic trunk 0 after +81 (e.g.<br/>
-        /// +81080...) is accepted and normalized to E.164 (+8180...). Returns<br/>
-        /// immediately with the session queued for<br/>
-        /// dialing; subscribe to the `phone_call.dial_finished` webhook or poll<br/>
-        /// `GET /v1/agent/sessions/{session_id}` for the dial outcome. Ringing is<br/>
-        /// never billed — metering starts when the callee answers.<br/>
+        /// Place an outbound call from one of your phone numbers. Platform numbers<br/>
+        /// dial US, Canada or Japan destinations, and a domestic trunk 0 after +81<br/>
+        /// (e.g. +81080...) is accepted and normalized to E.164 (+8180...).<br/>
+        /// Imported SIP numbers dial through their own termination and may attach<br/>
+        /// custom INVITE headers with `sip_headers`. Returns immediately with the<br/>
+        /// session queued for dialing. Subscribe to the `phone_call.dial_finished`<br/>
+        /// webhook or poll `GET /v1/agent/sessions/{session_id}` for the dial<br/>
+        /// outcome and the leg's `sip_call_id`. Ringing is never billed: metering<br/>
+        /// starts when the callee answers.<br/>
         /// Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,<br/>
-        /// `insufficient_credit`, `daily_limit_exceeded`,<br/>
-        /// `concurrency_limit_exceeded`).
+        /// `insufficient_credit`, `concurrency_limit_exceeded`).
         /// </summary>
         /// <param name="idempotencyKey">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -44,16 +45,17 @@ namespace FishAudio
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Phone Call<br/>
-        /// Place an outbound call from one of your Twilio phone numbers to a US,<br/>
-        /// Canada or Japan destination. A domestic trunk 0 after +81 (e.g.<br/>
-        /// +81080...) is accepted and normalized to E.164 (+8180...). Returns<br/>
-        /// immediately with the session queued for<br/>
-        /// dialing; subscribe to the `phone_call.dial_finished` webhook or poll<br/>
-        /// `GET /v1/agent/sessions/{session_id}` for the dial outcome. Ringing is<br/>
-        /// never billed — metering starts when the callee answers.<br/>
+        /// Place an outbound call from one of your phone numbers. Platform numbers<br/>
+        /// dial US, Canada or Japan destinations, and a domestic trunk 0 after +81<br/>
+        /// (e.g. +81080...) is accepted and normalized to E.164 (+8180...).<br/>
+        /// Imported SIP numbers dial through their own termination and may attach<br/>
+        /// custom INVITE headers with `sip_headers`. Returns immediately with the<br/>
+        /// session queued for dialing. Subscribe to the `phone_call.dial_finished`<br/>
+        /// webhook or poll `GET /v1/agent/sessions/{session_id}` for the dial<br/>
+        /// outcome and the leg's `sip_call_id`. Ringing is never billed: metering<br/>
+        /// starts when the callee answers.<br/>
         /// Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,<br/>
-        /// `insufficient_credit`, `daily_limit_exceeded`,<br/>
-        /// `concurrency_limit_exceeded`).
+        /// `insufficient_credit`, `concurrency_limit_exceeded`).
         /// </summary>
         /// <param name="idempotencyKey">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -82,16 +84,17 @@ namespace FishAudio
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create Phone Call<br/>
-        /// Place an outbound call from one of your Twilio phone numbers to a US,<br/>
-        /// Canada or Japan destination. A domestic trunk 0 after +81 (e.g.<br/>
-        /// +81080...) is accepted and normalized to E.164 (+8180...). Returns<br/>
-        /// immediately with the session queued for<br/>
-        /// dialing; subscribe to the `phone_call.dial_finished` webhook or poll<br/>
-        /// `GET /v1/agent/sessions/{session_id}` for the dial outcome. Ringing is<br/>
-        /// never billed — metering starts when the callee answers.<br/>
+        /// Place an outbound call from one of your phone numbers. Platform numbers<br/>
+        /// dial US, Canada or Japan destinations, and a domestic trunk 0 after +81<br/>
+        /// (e.g. +81080...) is accepted and normalized to E.164 (+8180...).<br/>
+        /// Imported SIP numbers dial through their own termination and may attach<br/>
+        /// custom INVITE headers with `sip_headers`. Returns immediately with the<br/>
+        /// session queued for dialing. Subscribe to the `phone_call.dial_finished`<br/>
+        /// webhook or poll `GET /v1/agent/sessions/{session_id}` for the dial<br/>
+        /// outcome and the leg's `sip_call_id`. Ringing is never billed: metering<br/>
+        /// starts when the callee answers.<br/>
         /// Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,<br/>
-        /// `insufficient_credit`, `daily_limit_exceeded`,<br/>
-        /// `concurrency_limit_exceeded`).
+        /// `insufficient_credit`, `concurrency_limit_exceeded`).
         /// </summary>
         /// <param name="idempotencyKey">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -115,6 +118,10 @@ namespace FishAudio
         /// <param name="llmExtraBody">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="sipHeaders">
+        /// Custom SIP headers for this call's INVITE, imported SIP numbers only. X- names or User-to-User, printable ASCII values, merged over the number's termination_headers.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -127,6 +134,7 @@ namespace FishAudio
             global::FishAudio.AgentSessionOverridesPayload? overrides = default,
             object? metadata = default,
             object? llmExtraBody = default,
+            global::System.Collections.Generic.Dictionary<string, string>? sipHeaders = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

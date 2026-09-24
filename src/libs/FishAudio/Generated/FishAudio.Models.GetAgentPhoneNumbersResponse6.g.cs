@@ -133,6 +133,12 @@ namespace FishAudio
         public string? TerminationAuthUsername { get; set; }
 
         /// <summary>
+        /// Imported `sip` numbers: custom SIP headers added to every outbound INVITE through the termination.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("termination_headers")]
+        public global::System.Collections.Generic.Dictionary<string, string>? TerminationHeaders { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
@@ -209,6 +215,9 @@ namespace FishAudio
         /// Imported `sip` numbers: the termination digest username. Passwords are never echoed.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="terminationHeaders">
+        /// Imported `sip` numbers: custom SIP headers added to every outbound INVITE through the termination.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -232,7 +241,8 @@ namespace FishAudio
             string? inboundAuthUsername,
             global::System.Collections.Generic.IList<string>? inboundAllowedAddresses,
             string? terminationTransport,
-            string? terminationAuthUsername)
+            string? terminationAuthUsername,
+            global::System.Collections.Generic.Dictionary<string, string>? terminationHeaders)
         {
             this.PhoneNumberId = phoneNumberId ?? throw new global::System.ArgumentNullException(nameof(phoneNumberId));
             this.WorkspaceId = workspaceId ?? throw new global::System.ArgumentNullException(nameof(workspaceId));
@@ -252,6 +262,7 @@ namespace FishAudio
             this.InboundAllowedAddresses = inboundAllowedAddresses;
             this.TerminationTransport = terminationTransport;
             this.TerminationAuthUsername = terminationAuthUsername;
+            this.TerminationHeaders = terminationHeaders;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }

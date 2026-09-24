@@ -9,7 +9,7 @@ namespace FishAudio
     public sealed partial class AgentVoiceConfig
     {
         /// <summary>
-        /// Default Value: 4501d82f5de3467ebf4d7ef095a2deee
+        /// Default Value: b347db033a6549378b48d00acb0d06cd
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_id")]
         public string? VoiceId { get; set; }
@@ -49,7 +49,7 @@ namespace FishAudio
         /// Initializes a new instance of the <see cref="AgentVoiceConfig" /> class.
         /// </summary>
         /// <param name="voiceId">
-        /// Default Value: 4501d82f5de3467ebf4d7ef095a2deee
+        /// Default Value: b347db033a6549378b48d00acb0d06cd
         /// </param>
         /// <param name="speakingLanguage">
         /// Default Value: en

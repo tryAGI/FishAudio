@@ -37,6 +37,12 @@ internal static partial class AgentSessionsGetAgentSessionsCommandApiCommand
         Description = @"Exact-match caller E.164 (phone sessions only).",
     };
 
+    private static Option<string?> SipCallId { get; } = new(
+        name: @"--sip-call-id")
+    {
+        Description = @"Exact-match SIP Call-ID of the call's INVITE, for looking up the session behind a carrier CDR entry (phone sessions only).",
+    };
+
     private static Option<string?> CreatedAfter { get; } = new(
         name: @"--created-after")
     {
@@ -95,7 +101,7 @@ internal static partial class AgentSessionsGetAgentSessionsCommandApiCommand
     {
         var command = new Command(@"get-agent-sessions", @"List Agent Sessions
 List your team's sessions, newest first. Filter by agent, status, end
-reason, caller number, or creation time. Paginate with `cursor` (recommended; follow
+reason, caller number, SIP Call-ID, or creation time. Paginate with `cursor` (recommended; follow
 `next_cursor` while `has_more` is true) or with `page` for offset pagination
 with a `total` count — the two are mutually exclusive.");
                         command.Options.Add(AgentId);
@@ -103,6 +109,7 @@ with a `total` count — the two are mutually exclusive.");
                         command.Options.Add(EndReason);
                         command.Options.Add(Direction);
                         command.Options.Add(CallerNumber);
+                        command.Options.Add(SipCallId);
                         command.Options.Add(CreatedAfter);
                         command.Options.Add(CreatedBefore);
                         command.Options.Add(Cursor);
@@ -119,6 +126,7 @@ with a `total` count — the two are mutually exclusive.");
                         var endReason = parseResult.GetValue(EndReason);
                         var direction = parseResult.GetValue(Direction);
                         var callerNumber = parseResult.GetValue(CallerNumber);
+                        var sipCallId = parseResult.GetValue(SipCallId);
                         var createdAfter = parseResult.GetValue(CreatedAfter);
                         var createdBefore = parseResult.GetValue(CreatedBefore);
                         var cursor = parseResult.GetValue(Cursor);
@@ -134,6 +142,7 @@ with a `total` count — the two are mutually exclusive.");
                                     endReason: endReason,
                                     direction: direction,
                                     callerNumber: callerNumber,
+                                    sipCallId: sipCallId,
                                     createdAfter: createdAfter,
                                     createdBefore: createdBefore,
                                     cursor: cursor,
