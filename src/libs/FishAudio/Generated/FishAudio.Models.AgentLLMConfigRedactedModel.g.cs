@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Default Value: google/gemini-3.5-flash-lite
+    /// Default Value: google/gemini-3.6-flash
     /// </summary>
     public enum AgentLLMConfigRedactedModel
     {

@@ -112,10 +112,9 @@ their value. Changes only affect live sessions after the next publish.
 under 2000 tokens is recommended for latency and cost.
 `voice.voice_id` accepts any public voice model id.
 `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes
-(the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` opts into richer expressive
-
-delivery (emotion steering, laughter and sounds, pauses); off keeps the
-standard delivery. `voice.keyterms` is a speech-recognition vocabulary of
+(the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer
+expressive delivery (emotion steering, laughter and sounds, pauses); off
+keeps the standard delivery. `voice.keyterms` is a speech-recognition vocabulary of
 up to 50 plain terms (brand names, product terms, personal names), each at
 most 100 characters with no commas or semicolons; `[]` clears it and 20-50
 focused terms work best. `tool_ids` and

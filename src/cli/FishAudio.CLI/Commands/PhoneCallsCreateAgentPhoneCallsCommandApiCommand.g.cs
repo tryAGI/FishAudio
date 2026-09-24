@@ -51,6 +51,12 @@ internal static partial class PhoneCallsCreateAgentPhoneCallsCommandApiCommand
     {
         Description = @"",
     };
+
+    private static Option<global::System.Collections.Generic.Dictionary<string, string>?> SipHeaders { get; } = new(
+        name: @"--sip-headers")
+    {
+        Description = @"Custom SIP headers for this call's INVITE, imported SIP numbers only. X- names or User-to-User, printable ASCII values, merged over the number's termination_headers.",
+    };
     private static readonly AgentSessionOverridesPayloadOptionSet OverridesOptions = AgentSessionOverridesPayloadOptionSet.Create(@"overrides");
       private static Option<string?> Input { get; } = new(@"--input")
       {
@@ -92,24 +98,26 @@ internal static partial class PhoneCallsCreateAgentPhoneCallsCommandApiCommand
     public static Command Create()
     {
         var command = new Command(@"create-agent-phone-calls", @"Create Phone Call
-Place an outbound call from one of your Twilio phone numbers to a US,
-Canada or Japan destination. A domestic trunk 0 after +81 (e.g.
-+81080...) is accepted and normalized to E.164 (+8180...). Returns
-immediately with the session queued for
-dialing; subscribe to the `phone_call.dial_finished` webhook or poll
-`GET /v1/agent/sessions/{session_id}` for the dial outcome. Ringing is
-never billed — metering starts when the callee answers.
+Place an outbound call from one of your phone numbers. Platform numbers
+dial US, Canada or Japan destinations, and a domestic trunk 0 after +81
+(e.g. +81080...) is accepted and normalized to E.164 (+8180...).
+Imported SIP numbers dial through their own termination and may attach
+custom INVITE headers with `sip_headers`. Returns immediately with the
+session queued for dialing. Subscribe to the `phone_call.dial_finished`
+webhook or poll `GET /v1/agent/sessions/{session_id}` for the dial
+outcome and the leg's `sip_call_id`. Ringing is never billed: metering
+starts when the callee answers.
 
 Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,
-`insufficient_credit`, `daily_limit_exceeded`,
-`concurrency_limit_exceeded`).");
+`insufficient_credit`, `concurrency_limit_exceeded`).");
                         command.Options.Add(IdempotencyKey);
                         command.Options.Add(AgentId);
                         command.Options.Add(PhoneNumberId);
                         command.Options.Add(ToNumber);
                         command.Options.Add(DynamicVariables);
                         command.Options.Add(Metadata);
-                        command.Options.Add(LlmExtraBody);                        command.Options.Add(OverridesOptions.FirstMessage);
+                        command.Options.Add(LlmExtraBody);
+                        command.Options.Add(SipHeaders);                        command.Options.Add(OverridesOptions.FirstMessage);
                         command.Options.Add(OverridesOptions.FirstMessagePrompt);
                         command.Options.Add(OverridesOptions.SystemPrompt);
                         command.Options.Add(OverridesOptions.VoiceId);
@@ -145,6 +153,7 @@ Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,
                         var dynamicVariables = CliRuntime.WasSpecified(parseResult, DynamicVariables) ? parseResult.GetValue(DynamicVariables) : (__requestBase is { } __DynamicVariablesBaseValue ? __DynamicVariablesBaseValue.DynamicVariables : default);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
                         var llmExtraBody = CliRuntime.WasSpecified(parseResult, LlmExtraBody) ? parseResult.GetValue(LlmExtraBody) : (__requestBase is { } __LlmExtraBodyBaseValue ? __LlmExtraBodyBaseValue.LlmExtraBody : default);
+                        var sipHeaders = CliRuntime.WasSpecified(parseResult, SipHeaders) ? parseResult.GetValue(SipHeaders) : (__requestBase is { } __SipHeadersBaseValue ? __SipHeadersBaseValue.SipHeaders : default);
 
                         var __OverridesBase = __requestBase is { } __OverridesBaseValue ? __OverridesBaseValue.Overrides : default;                        var overridesFirstMessage = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessage) ? parseResult.GetValue(OverridesOptions.FirstMessage) : (__OverridesBase is { } __OverridesfirstMessageBaseValue ? __OverridesfirstMessageBaseValue.FirstMessage : default);
                         var overridesFirstMessagePrompt = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessagePrompt) ? parseResult.GetValue(OverridesOptions.FirstMessagePrompt) : (__OverridesBase is { } __OverridesfirstMessagePromptBaseValue ? __OverridesfirstMessagePromptBaseValue.FirstMessagePrompt : default);
@@ -173,6 +182,7 @@ Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,
                                     dynamicVariables: dynamicVariables,
                                     metadata: metadata,
                                     llmExtraBody: llmExtraBody,
+                                    sipHeaders: sipHeaders,
                                     overrides: overrides,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 

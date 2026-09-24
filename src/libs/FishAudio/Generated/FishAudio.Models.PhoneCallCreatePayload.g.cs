@@ -57,6 +57,13 @@ namespace FishAudio
         public object? LlmExtraBody { get; set; }
 
         /// <summary>
+        /// Custom SIP headers for this call's INVITE, imported SIP numbers only. X- names or User-to-User, printable ASCII values, merged over the number's termination_headers.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sip_headers")]
+        public global::System.Collections.Generic.Dictionary<string, string>? SipHeaders { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -84,6 +91,10 @@ namespace FishAudio
         /// <param name="llmExtraBody">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="sipHeaders">
+        /// Custom SIP headers for this call's INVITE, imported SIP numbers only. X- names or User-to-User, printable ASCII values, merged over the number's termination_headers.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -94,7 +105,8 @@ namespace FishAudio
             object? dynamicVariables,
             global::FishAudio.AgentSessionOverridesPayload? overrides,
             object? metadata,
-            object? llmExtraBody)
+            object? llmExtraBody,
+            global::System.Collections.Generic.Dictionary<string, string>? sipHeaders)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.PhoneNumberId = phoneNumberId ?? throw new global::System.ArgumentNullException(nameof(phoneNumberId));
@@ -103,6 +115,7 @@ namespace FishAudio
             this.Overrides = overrides;
             this.Metadata = metadata;
             this.LlmExtraBody = llmExtraBody;
+            this.SipHeaders = sipHeaders;
         }
 
         /// <summary>

@@ -92,6 +92,12 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sip_call_id")]
+        public string? SipCallId { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timezone")]
         public string? Timezone { get; set; }
 
@@ -162,6 +168,9 @@ namespace FishAudio
         /// <param name="dialedNumber">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="sipCallId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="timezone">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -192,6 +201,7 @@ namespace FishAudio
             global::FishAudio.AgentSessionSummaryAnsweredBy? answeredBy,
             string? callerNumber,
             string? dialedNumber,
+            string? sipCallId,
             string? timezone,
             string? startedAt,
             string? endedAt,
@@ -210,6 +220,7 @@ namespace FishAudio
             this.AnsweredBy = answeredBy;
             this.CallerNumber = callerNumber;
             this.DialedNumber = dialedNumber;
+            this.SipCallId = sipCallId;
             this.Timezone = timezone;
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
             this.StartedAt = startedAt;
