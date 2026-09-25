@@ -12,9 +12,9 @@ namespace FishAudio
         /// under 2000 tokens is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes<br/>
-        /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` opts into richer expressive<br/>
-        /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
-        /// standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
+        /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer<br/>
+        /// expressive delivery (emotion steering, laughter and sounds, pauses); off<br/>
+        /// keeps the standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
         /// up to 50 plain terms (brand names, product terms, personal names), each at<br/>
         /// most 100 characters with no commas or semicolons; `[]` clears it and 20-50<br/>
         /// focused terms work best. `tool_ids` and<br/>
@@ -61,9 +61,9 @@ namespace FishAudio
         /// under 2000 tokens is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes<br/>
-        /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` opts into richer expressive<br/>
-        /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
-        /// standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
+        /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer<br/>
+        /// expressive delivery (emotion steering, laughter and sounds, pauses); off<br/>
+        /// keeps the standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
         /// up to 50 plain terms (brand names, product terms, personal names), each at<br/>
         /// most 100 characters with no commas or semicolons; `[]` clears it and 20-50<br/>
         /// focused terms work best. `tool_ids` and<br/>
@@ -110,9 +110,9 @@ namespace FishAudio
         /// under 2000 tokens is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes<br/>
-        /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` opts into richer expressive<br/>
-        /// delivery (emotion steering, laughter and sounds, pauses); off keeps the<br/>
-        /// standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
+        /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer<br/>
+        /// expressive delivery (emotion steering, laughter and sounds, pauses); off<br/>
+        /// keeps the standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
         /// up to 50 plain terms (brand names, product terms, personal names), each at<br/>
         /// most 100 characters with no commas or semicolons; `[]` clears it and 20-50<br/>
         /// focused terms work best. `tool_ids` and<br/>

@@ -7,7 +7,7 @@ namespace FishAudio
         /// <summary>
         /// List Agent Sessions<br/>
         /// List your team's sessions, newest first. Filter by agent, status, end<br/>
-        /// reason, caller number, or creation time. Paginate with `cursor` (recommended; follow<br/>
+        /// reason, caller number, SIP Call-ID, or creation time. Paginate with `cursor` (recommended; follow<br/>
         /// `next_cursor` while `has_more` is true) or with `page` for offset pagination<br/>
         /// with a `total` count — the two are mutually exclusive.
         /// </summary>
@@ -24,6 +24,9 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="callerNumber">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="sipCallId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="createdAfter">
@@ -53,6 +56,7 @@ namespace FishAudio
             string? endReason = default,
             string? direction = default,
             string? callerNumber = default,
+            string? sipCallId = default,
             string? createdAfter = default,
             string? createdBefore = default,
             string? cursor = default,
@@ -64,7 +68,7 @@ namespace FishAudio
         /// <summary>
         /// List Agent Sessions<br/>
         /// List your team's sessions, newest first. Filter by agent, status, end<br/>
-        /// reason, caller number, or creation time. Paginate with `cursor` (recommended; follow<br/>
+        /// reason, caller number, SIP Call-ID, or creation time. Paginate with `cursor` (recommended; follow<br/>
         /// `next_cursor` while `has_more` is true) or with `page` for offset pagination<br/>
         /// with a `total` count — the two are mutually exclusive.
         /// </summary>
@@ -81,6 +85,9 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="callerNumber">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="sipCallId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="createdAfter">
@@ -110,6 +117,7 @@ namespace FishAudio
             string? endReason = default,
             string? direction = default,
             string? callerNumber = default,
+            string? sipCallId = default,
             string? createdAfter = default,
             string? createdBefore = default,
             string? cursor = default,

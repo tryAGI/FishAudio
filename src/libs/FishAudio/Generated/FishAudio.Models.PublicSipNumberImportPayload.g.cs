@@ -7,8 +7,9 @@ namespace FishAudio
     /// The `sip` variant of POST /v1/agent/phone-numbers: import a number that<br/>
     /// stays at your carrier. Point your trunk's origination at our SIP host,<br/>
     /// give inbound at least one authentication factor (digest and/or source<br/>
-    /// CIDRs), and optionally a termination host + credentials so the number can<br/>
-    /// place calls. Nothing is rented: carrier charges stay on your account, and<br/>
+    /// CIDRs), and optionally a termination host + credentials (plus custom<br/>
+    /// `X-` headers for every outbound INVITE) so the number can place calls.<br/>
+    /// Nothing is rented: carrier charges stay on your account, and<br/>
     /// imported numbers carry no telephony charges at all: no monthly fee, no<br/>
     /// phone surcharge, no transfer fees; you pay agent minutes only.
     /// </summary>
@@ -60,6 +61,12 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("termination_headers")]
+        public global::System.Collections.Generic.Dictionary<string, string>? TerminationHeaders { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phone_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PhoneNumber { get; set; }
@@ -102,6 +109,7 @@ namespace FishAudio
         /// </param>
         /// <param name="terminationAuthUsername"></param>
         /// <param name="terminationAuthPassword"></param>
+        /// <param name="terminationHeaders"></param>
         /// <param name="label"></param>
         /// <param name="agentId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -119,6 +127,7 @@ namespace FishAudio
             global::FishAudio.PublicSipNumberImportPayloadTerminationTransport? terminationTransport,
             string? terminationAuthUsername,
             string? terminationAuthPassword,
+            global::System.Collections.Generic.Dictionary<string, string>? terminationHeaders,
             string? label,
             string? agentId,
             string provider = "sip")
@@ -130,6 +139,7 @@ namespace FishAudio
             this.TerminationTransport = terminationTransport;
             this.TerminationAuthUsername = terminationAuthUsername;
             this.TerminationAuthPassword = terminationAuthPassword;
+            this.TerminationHeaders = terminationHeaders;
             this.PhoneNumber = phoneNumber ?? throw new global::System.ArgumentNullException(nameof(phoneNumber));
             this.Label = label;
             this.AgentId = agentId;

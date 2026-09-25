@@ -29,13 +29,13 @@ internal static partial class AgentSessionsCreateAgentSessionsCommandApiCommand
     private static Option<string?> Timezone { get; } = new(
         name: @"--timezone")
     {
-        Description = @"",
+        Description = @"IANA timezone (like `Asia/Tokyo`) for the agent's sense of local date and time in this session. Overrides the agent's configured timezone, which defaults to UTC. Invalid names are rejected with 422.",
     };
 
     private static Option<string?> ClientTimezone { get; } = new(
         name: @"--client-timezone")
     {
-        Description = @"",
+        Description = @"The end user's device timezone as an IANA name (like `Asia/Tokyo`), used as a fallback hint: it applies only when neither `timezone` nor the agent's configured timezone is set, and invalid values are ignored rather than rejected. The Web SDK fills it automatically from the browser for public agents. When your backend creates the session, forward the value from your client.",
     };
 
     private static Option<bool?> WorldContext { get; } = CliRuntime.CreateNullableBoolOption(
