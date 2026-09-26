@@ -15,11 +15,23 @@ namespace FishAudio
         public int? MaxDurationSeconds { get; set; }
 
         /// <summary>
+        /// Default Value: 550
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_wait_ms")]
+        public int? ResponseWaitMs { get; set; }
+
+        /// <summary>
         /// Default Value: balanced
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eagerness")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentConversationConfigEagernessJsonConverter))]
         public global::FishAudio.AgentConversationConfigEagerness? Eagerness { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_max_wait_ms")]
+        public int? ResponseMaxWaitMs { get; set; }
 
         /// <summary>
         /// Default Value: true
@@ -33,6 +45,18 @@ namespace FishAudio
         [global::System.Text.Json.Serialization.JsonPropertyName("interruption_sensitivity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentConversationConfigInterruptionSensitivityJsonConverter))]
         public global::FishAudio.AgentConversationConfigInterruptionSensitivity? InterruptionSensitivity { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("interruption_ignore_phrases")]
+        public global::System.Collections.Generic.IList<string>? InterruptionIgnorePhrases { get; set; }
+
+        /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("speculative_response")]
+        public bool? SpeculativeResponse { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -88,14 +112,26 @@ namespace FishAudio
         /// <param name="maxDurationSeconds">
         /// Default Value: 1800
         /// </param>
+        /// <param name="responseWaitMs">
+        /// Default Value: 550
+        /// </param>
         /// <param name="eagerness">
         /// Default Value: balanced
+        /// </param>
+        /// <param name="responseMaxWaitMs">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="interruptible">
         /// Default Value: true
         /// </param>
         /// <param name="interruptionSensitivity">
         /// Default Value: balanced
+        /// </param>
+        /// <param name="interruptionIgnorePhrases">
+        /// Default Value: []
+        /// </param>
+        /// <param name="speculativeResponse">
+        /// Default Value: true
         /// </param>
         /// <param name="reengageEnabled">
         /// Default Value: false
@@ -121,9 +157,13 @@ namespace FishAudio
 #endif
         public AgentConversationConfig(
             int? maxDurationSeconds,
+            int? responseWaitMs,
             global::FishAudio.AgentConversationConfigEagerness? eagerness,
+            int? responseMaxWaitMs,
             bool? interruptible,
             global::FishAudio.AgentConversationConfigInterruptionSensitivity? interruptionSensitivity,
+            global::System.Collections.Generic.IList<string>? interruptionIgnorePhrases,
+            bool? speculativeResponse,
             bool? reengageEnabled,
             int? hangupAfterSeconds,
             bool? hangupFarewellEnabled,
@@ -133,9 +173,13 @@ namespace FishAudio
             global::FishAudio.AgentOutboundConfig? outbound)
         {
             this.MaxDurationSeconds = maxDurationSeconds;
+            this.ResponseWaitMs = responseWaitMs;
             this.Eagerness = eagerness;
+            this.ResponseMaxWaitMs = responseMaxWaitMs;
             this.Interruptible = interruptible;
             this.InterruptionSensitivity = interruptionSensitivity;
+            this.InterruptionIgnorePhrases = interruptionIgnorePhrases;
+            this.SpeculativeResponse = speculativeResponse;
             this.ReengageEnabled = reengageEnabled;
             this.HangupAfterSeconds = hangupAfterSeconds;
             this.HangupFarewellEnabled = hangupFarewellEnabled;
