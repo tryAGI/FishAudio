@@ -4,9 +4,11 @@
 namespace FishAudio
 {
     /// <summary>
-    ///
+    /// Read shape of the voice section. The ASR fields that moved to the asr<br/>
+    /// section stay mirrored here, deprecated, so clients written before the split<br/>
+    /// keep reading them.
     /// </summary>
-    public sealed partial class AgentVoiceConfig
+    public sealed partial class AgentVoiceConfigView
     {
         /// <summary>
         /// Default Value: b347db033a6549378b48d00acb0d06cd
@@ -18,20 +20,14 @@ namespace FishAudio
         /// Default Value: en
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speaking_language")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentVoiceConfigSpeakingLanguageJsonConverter))]
-        public global::FishAudio.AgentVoiceConfigSpeakingLanguage? SpeakingLanguage { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentVoiceConfigViewSpeakingLanguageJsonConverter))]
+        public global::FishAudio.AgentVoiceConfigViewSpeakingLanguage? SpeakingLanguage { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expressive")]
         public bool? Expressive { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("keyterms")]
-        public global::System.Collections.Generic.IList<string>? Keyterms { get; set; }
 
         /// <summary>
         /// Default Value: 1
@@ -46,7 +42,7 @@ namespace FishAudio
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AgentVoiceConfig" /> class.
+        /// Initializes a new instance of the <see cref="AgentVoiceConfigView" /> class.
         /// </summary>
         /// <param name="voiceId">
         /// Default Value: b347db033a6549378b48d00acb0d06cd
@@ -57,31 +53,28 @@ namespace FishAudio
         /// <param name="expressive">
         /// Default Value: false
         /// </param>
-        /// <param name="keyterms"></param>
         /// <param name="speed">
         /// Default Value: 1
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public AgentVoiceConfig(
+        public AgentVoiceConfigView(
             string? voiceId,
-            global::FishAudio.AgentVoiceConfigSpeakingLanguage? speakingLanguage,
+            global::FishAudio.AgentVoiceConfigViewSpeakingLanguage? speakingLanguage,
             bool? expressive,
-            global::System.Collections.Generic.IList<string>? keyterms,
             double? speed)
         {
             this.VoiceId = voiceId;
             this.SpeakingLanguage = speakingLanguage;
             this.Expressive = expressive;
-            this.Keyterms = keyterms;
             this.Speed = speed;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AgentVoiceConfig" /> class.
+        /// Initializes a new instance of the <see cref="AgentVoiceConfigView" /> class.
         /// </summary>
-        public AgentVoiceConfig()
+        public AgentVoiceConfigView()
         {
         }
 
