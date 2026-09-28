@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace FishAudio.CLI.Commands;
 
-internal static class PhoneNumbersApiGroupCommand
+internal static partial class PhoneNumbersApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"phone-numbers", @"Phone Numbers endpoint commands.");
@@ -15,6 +17,7 @@ internal static class PhoneNumbersApiGroupCommand
                          command.Subcommands.Add(PhoneNumbersGetAgentAvailablePhoneNumbersCommandApiCommand.Create());
                          command.Subcommands.Add(PhoneNumbersGetAgentPhoneNumbersCommandApiCommand.Create());
                          command.Subcommands.Add(PhoneNumbersGetAgentPhoneNumbersByPhoneNumberIdCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

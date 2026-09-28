@@ -45,6 +45,8 @@ internal static partial class PhoneNumbersCreateAgentPhoneNumbersCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-agent-phone-numbers", @"Purchase or Import Phone Number
@@ -111,6 +113,7 @@ or trunk provisioning refused, and the number stays visible with status
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

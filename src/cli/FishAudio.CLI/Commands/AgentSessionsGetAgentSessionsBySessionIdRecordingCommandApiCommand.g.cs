@@ -33,6 +33,8 @@ internal static partial class AgentSessionsGetAgentSessionsBySessionIdRecordingC
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-agent-sessions-by-session-id-recording", @"Get Agent Session Recording
@@ -68,6 +70,7 @@ per speaker track (agent and user are recorded separately).");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -33,6 +33,8 @@ internal static partial class AgentsGetAgentAgentsByAgentIdCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-agent-agents-by-agent-id", @"Get Agent
@@ -60,6 +62,7 @@ Fetch one agent's profile fields. The draft configuration lives at
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -95,6 +95,8 @@ internal static partial class PhoneCallsCreateAgentPhoneCallsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-agent-phone-calls", @"Create Phone Call
@@ -194,6 +196,7 @@ Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

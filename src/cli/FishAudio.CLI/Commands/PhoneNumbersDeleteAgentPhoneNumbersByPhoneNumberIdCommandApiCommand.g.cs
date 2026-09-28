@@ -13,6 +13,8 @@ internal static partial class PhoneNumbersDeleteAgentPhoneNumbersByPhoneNumberId
         Description = @"",
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-agent-phone-numbers-by-phone-number-id", @"Release Phone Number
@@ -36,6 +38,7 @@ The number disappears from this API immediately.");
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

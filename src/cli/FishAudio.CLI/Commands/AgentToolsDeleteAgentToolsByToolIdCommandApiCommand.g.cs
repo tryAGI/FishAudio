@@ -13,6 +13,8 @@ internal static partial class AgentToolsDeleteAgentToolsByToolIdCommandApiComman
         Description = @"",
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-agent-tools-by-tool-id", @"Delete Tool
@@ -36,6 +38,7 @@ behavior.");
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

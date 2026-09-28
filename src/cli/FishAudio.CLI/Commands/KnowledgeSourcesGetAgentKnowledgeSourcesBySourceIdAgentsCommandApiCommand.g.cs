@@ -33,6 +33,8 @@ internal static partial class KnowledgeSourcesGetAgentKnowledgeSourcesBySourceId
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-agent-knowledge-sources-by-source-id-agents", @"List Agents Using Knowledge Source
@@ -68,6 +70,7 @@ published configuration — the pre-flight check before a delete.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

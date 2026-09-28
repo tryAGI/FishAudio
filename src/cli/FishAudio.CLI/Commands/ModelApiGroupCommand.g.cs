@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace FishAudio.CLI.Commands;
 
-internal static class ModelApiGroupCommand
+internal static partial class ModelApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"model", @"Model endpoint commands.");
@@ -16,6 +18,7 @@ internal static class ModelApiGroupCommand
                          command.Subcommands.Add(ModelEditModelByIdWithMessagePackCommandApiCommand.Create());
                          command.Subcommands.Add(ModelGetModelCommandApiCommand.Create());
                          command.Subcommands.Add(ModelGetModelByIdCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

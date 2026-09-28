@@ -33,6 +33,8 @@ internal static partial class WalletGetWalletByUserIdPackageCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-wallet-by-user-id-package", @"Get User Package");
@@ -58,6 +60,7 @@ internal static partial class WalletGetWalletByUserIdPackageCommandApiCommand
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -50,6 +50,8 @@ internal static partial class OpenAPIV1CreateTtsWithMessagePackCommandApiCommand
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-tts-with-message-pack", @"Text to Speech");
@@ -162,6 +164,7 @@ internal static partial class OpenAPIV1CreateTtsWithMessagePackCommandApiCommand
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

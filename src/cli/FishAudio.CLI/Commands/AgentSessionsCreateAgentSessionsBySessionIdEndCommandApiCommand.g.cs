@@ -13,6 +13,8 @@ internal static partial class AgentSessionsCreateAgentSessionsBySessionIdEndComm
         Description = @"",
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-agent-sessions-by-session-id-end", @"End Agent Session
@@ -34,6 +36,7 @@ session record, transcript, and recording are retained and stay readable.");
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

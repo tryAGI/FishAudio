@@ -51,6 +51,8 @@ internal static partial class PhoneNumbersGetAgentAvailablePhoneNumbersCommandAp
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-agent-available-phone-numbers", @"Search Available Phone Numbers
@@ -96,6 +98,7 @@ number can still be claimed by someone else first.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

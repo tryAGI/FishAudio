@@ -65,6 +65,8 @@ internal static partial class ModelEditModelByIdCommandApiCommand
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"edit-model-by-id", @"Update Model");
@@ -122,6 +124,7 @@ internal static partial class ModelEditModelByIdCommandApiCommand
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

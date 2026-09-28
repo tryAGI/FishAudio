@@ -13,6 +13,8 @@ internal static partial class KnowledgeSourcesDeleteAgentKnowledgeSourcesBySourc
         Description = @"",
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-agent-knowledge-sources-by-source-id", @"Delete Knowledge Source
@@ -37,6 +39,7 @@ detach via the agent config, and republish if needed before deleting.");
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

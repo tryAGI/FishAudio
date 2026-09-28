@@ -109,6 +109,8 @@ internal static partial class AgentsEditAgentAgentsByAgentIdConfigCommandApiComm
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"edit-agent-agents-by-agent-id-config", @"Update Draft Config
@@ -214,6 +216,7 @@ with an explicit null.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }
