@@ -47,8 +47,8 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.AgentSessionMessageItem PickMessage() => IsMessage
-            ? Message!
+        public global::FishAudio.AgentSessionMessageItem PickMessage() => Message is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.AgentSessionToolCallItem PickToolCall() => IsToolCall
-            ? ToolCall!
+        public global::FishAudio.AgentSessionToolCallItem PickToolCall() => ToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.AgentSessionToolResultItem PickToolResult() => IsToolResult
-            ? ToolResult!
+        public global::FishAudio.AgentSessionToolResultItem PickToolResult() => ToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -252,17 +252,17 @@ namespace FishAudio
                 Validate();
             }
 
-            if (IsMessage && message != null)
+            if (Message is { } __value0 && message != null)
             {
-                return message(Message!);
+                return message(__value0);
             }
-            else if (IsToolCall && toolCall != null)
+            else if (ToolCall is { } __value1 && toolCall != null)
             {
-                return toolCall(ToolCall!);
+                return toolCall(__value1);
             }
-            else if (IsToolResult && toolResult != null)
+            else if (ToolResult is { } __value2 && toolResult != null)
             {
-                return toolResult(ToolResult!);
+                return toolResult(__value2);
             }
 
             return default(TResult);
@@ -284,17 +284,17 @@ namespace FishAudio
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsToolCall)
+            else if (ToolCall is { } __value1)
             {
-                toolCall?.Invoke(ToolCall!);
+                toolCall?.Invoke(__value1);
             }
-            else if (IsToolResult)
+            else if (ToolResult is { } __value2)
             {
-                toolResult?.Invoke(ToolResult!);
+                toolResult?.Invoke(__value2);
             }
         }
 
@@ -312,17 +312,17 @@ namespace FishAudio
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsToolCall)
+            else if (ToolCall is { } __value1)
             {
-                toolCall?.Invoke(ToolCall!);
+                toolCall?.Invoke(__value1);
             }
-            else if (IsToolResult)
+            else if (ToolResult is { } __value2)
             {
-                toolResult?.Invoke(ToolResult!);
+                toolResult?.Invoke(__value2);
             }
         }
 

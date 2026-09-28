@@ -234,7 +234,7 @@ namespace FishAudio
                 PrepareEditAgentAgentsByAgentIdConfigRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentId: agentId!,
+                    agentId: agentId,
                     request: request);
 
                 return __httpRequest;
@@ -257,7 +257,7 @@ namespace FishAudio
                                 pathTemplate: "$\"/v1/agent/agents/{agentId}/config\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -291,7 +291,7 @@ namespace FishAudio
                                 pathTemplate: "$\"/v1/agent/agents/{agentId}/config\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace FishAudio
                                 pathTemplate: "$\"/v1/agent/agents/{agentId}/config\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -380,7 +380,7 @@ namespace FishAudio
                                 pathTemplate: "$\"/v1/agent/agents/{agentId}/config\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -402,7 +402,7 @@ namespace FishAudio
                                 pathTemplate: "$\"/v1/agent/agents/{agentId}/config\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
