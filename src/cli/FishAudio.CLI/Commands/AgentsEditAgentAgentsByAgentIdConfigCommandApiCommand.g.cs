@@ -25,6 +25,12 @@ internal static partial class AgentsEditAgentAgentsByAgentIdConfigCommandApiComm
         Description = @"",
     };
 
+    private static Option<global::FishAudio.PublicAgentAsrPatch?> Asr { get; } = new(
+        name: @"--asr")
+    {
+        Description = @"",
+    };
+
     private static Option<global::FishAudio.PublicAgentConversationPatch?> Conversation { get; } = new(
         name: @"--conversation")
     {
@@ -114,10 +120,24 @@ under 2000 tokens is recommended for latency and cost.
 `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes
 (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer
 expressive delivery (emotion steering, laughter and sounds, pauses); off
-keeps the standard delivery. `voice.keyterms` is a speech-recognition vocabulary of
-up to 50 plain terms (brand names, product terms, personal names), each at
-most 100 characters with no commas or semicolons; `[]` clears it and 20-50
-focused terms work best. `tool_ids` and
+keeps the standard delivery. The `asr` section configures speech
+recognition. `asr.model` picks the model: `deepgram:nova-3` (default),
+`elevenlabs:scribe_v2_realtime`, or `elevenlabs:scribe_v2_medical`.
+`asr.multilingual` (default `false`) lets recognition follow callers who
+switch language mid-call, off tells the recognizer to expect
+`voice.speaking_language` (models other than `deepgram:nova-3` may still
+transcribe clear speech in another language). `asr.strict_language`
+(default `false`) enforces `voice.speaking_language` whatever
+`asr.multilingual` says: speech recognized as another language reaches the
+agent as `[unintelligible speech]`. Language is detected per utterance, so
+a short or heavily accented phrase in the speaking language can
+occasionally be detected as another language and replaced too. Only
+enable it when you explicitly need to stop the agent from understanding
+other languages.
+`asr.keyterms` is a recognition
+vocabulary of up to 50 plain terms (brand names, product terms, personal
+names), each at most 100 characters with no commas or semicolons. `[]`
+clears it and 20-50 focused terms work best. `tool_ids` and
 `knowledge_source_ids` replace their attachment lists wholesale and every
 id must resolve, else 422. `llm.custom` points the agent at your own
 OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared
@@ -125,6 +145,7 @@ with an explicit null.");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(Prompt);
                         command.Options.Add(Voice);
+                        command.Options.Add(Asr);
                         command.Options.Add(Conversation);
                         command.Options.Add(Tools);
                         command.Options.Add(Webhooks);
@@ -160,6 +181,7 @@ with an explicit null.");
                         var agentId = parseResult.GetRequiredValue(AgentId);
                         var prompt = CliRuntime.WasSpecified(parseResult, Prompt) ? parseResult.GetValue(Prompt) : (__requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default);
                         var voice = CliRuntime.WasSpecified(parseResult, Voice) ? parseResult.GetValue(Voice) : (__requestBase is { } __VoiceBaseValue ? __VoiceBaseValue.Voice : default);
+                        var asr = CliRuntime.WasSpecified(parseResult, Asr) ? parseResult.GetValue(Asr) : (__requestBase is { } __AsrBaseValue ? __AsrBaseValue.Asr : default);
                         var conversation = CliRuntime.WasSpecified(parseResult, Conversation) ? parseResult.GetValue(Conversation) : (__requestBase is { } __ConversationBaseValue ? __ConversationBaseValue.Conversation : default);
                         var tools = CliRuntime.WasSpecified(parseResult, Tools) ? parseResult.GetValue(Tools) : (__requestBase is { } __ToolsBaseValue ? __ToolsBaseValue.Tools : default);
                         var webhooks = CliRuntime.WasSpecified(parseResult, Webhooks) ? parseResult.GetValue(Webhooks) : (__requestBase is { } __WebhooksBaseValue ? __WebhooksBaseValue.Webhooks : default);
@@ -174,6 +196,7 @@ with an explicit null.");
                                     agentId: agentId,
                                     prompt: prompt,
                                     voice: voice,
+                                    asr: asr,
                                     conversation: conversation,
                                     tools: tools,
                                     webhooks: webhooks,

@@ -14,10 +14,24 @@ namespace FishAudio
         /// `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes<br/>
         /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer<br/>
         /// expressive delivery (emotion steering, laughter and sounds, pauses); off<br/>
-        /// keeps the standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
-        /// up to 50 plain terms (brand names, product terms, personal names), each at<br/>
-        /// most 100 characters with no commas or semicolons; `[]` clears it and 20-50<br/>
-        /// focused terms work best. `tool_ids` and<br/>
+        /// keeps the standard delivery. The `asr` section configures speech<br/>
+        /// recognition. `asr.model` picks the model: `deepgram:nova-3` (default),<br/>
+        /// `elevenlabs:scribe_v2_realtime`, or `elevenlabs:scribe_v2_medical`.<br/>
+        /// `asr.multilingual` (default `false`) lets recognition follow callers who<br/>
+        /// switch language mid-call, off tells the recognizer to expect<br/>
+        /// `voice.speaking_language` (models other than `deepgram:nova-3` may still<br/>
+        /// transcribe clear speech in another language). `asr.strict_language`<br/>
+        /// (default `false`) enforces `voice.speaking_language` whatever<br/>
+        /// `asr.multilingual` says: speech recognized as another language reaches the<br/>
+        /// agent as `[unintelligible speech]`. Language is detected per utterance, so<br/>
+        /// a short or heavily accented phrase in the speaking language can<br/>
+        /// occasionally be detected as another language and replaced too. Only<br/>
+        /// enable it when you explicitly need to stop the agent from understanding<br/>
+        /// other languages.<br/>
+        /// `asr.keyterms` is a recognition<br/>
+        /// vocabulary of up to 50 plain terms (brand names, product terms, personal<br/>
+        /// names), each at most 100 characters with no commas or semicolons. `[]`<br/>
+        /// clears it and 20-50 focused terms work best. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
         /// OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared<br/>
@@ -63,10 +77,24 @@ namespace FishAudio
         /// `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes<br/>
         /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer<br/>
         /// expressive delivery (emotion steering, laughter and sounds, pauses); off<br/>
-        /// keeps the standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
-        /// up to 50 plain terms (brand names, product terms, personal names), each at<br/>
-        /// most 100 characters with no commas or semicolons; `[]` clears it and 20-50<br/>
-        /// focused terms work best. `tool_ids` and<br/>
+        /// keeps the standard delivery. The `asr` section configures speech<br/>
+        /// recognition. `asr.model` picks the model: `deepgram:nova-3` (default),<br/>
+        /// `elevenlabs:scribe_v2_realtime`, or `elevenlabs:scribe_v2_medical`.<br/>
+        /// `asr.multilingual` (default `false`) lets recognition follow callers who<br/>
+        /// switch language mid-call, off tells the recognizer to expect<br/>
+        /// `voice.speaking_language` (models other than `deepgram:nova-3` may still<br/>
+        /// transcribe clear speech in another language). `asr.strict_language`<br/>
+        /// (default `false`) enforces `voice.speaking_language` whatever<br/>
+        /// `asr.multilingual` says: speech recognized as another language reaches the<br/>
+        /// agent as `[unintelligible speech]`. Language is detected per utterance, so<br/>
+        /// a short or heavily accented phrase in the speaking language can<br/>
+        /// occasionally be detected as another language and replaced too. Only<br/>
+        /// enable it when you explicitly need to stop the agent from understanding<br/>
+        /// other languages.<br/>
+        /// `asr.keyterms` is a recognition<br/>
+        /// vocabulary of up to 50 plain terms (brand names, product terms, personal<br/>
+        /// names), each at most 100 characters with no commas or semicolons. `[]`<br/>
+        /// clears it and 20-50 focused terms work best. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
         /// OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared<br/>
@@ -112,10 +140,24 @@ namespace FishAudio
         /// `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes<br/>
         /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer<br/>
         /// expressive delivery (emotion steering, laughter and sounds, pauses); off<br/>
-        /// keeps the standard delivery. `voice.keyterms` is a speech-recognition vocabulary of<br/>
-        /// up to 50 plain terms (brand names, product terms, personal names), each at<br/>
-        /// most 100 characters with no commas or semicolons; `[]` clears it and 20-50<br/>
-        /// focused terms work best. `tool_ids` and<br/>
+        /// keeps the standard delivery. The `asr` section configures speech<br/>
+        /// recognition. `asr.model` picks the model: `deepgram:nova-3` (default),<br/>
+        /// `elevenlabs:scribe_v2_realtime`, or `elevenlabs:scribe_v2_medical`.<br/>
+        /// `asr.multilingual` (default `false`) lets recognition follow callers who<br/>
+        /// switch language mid-call, off tells the recognizer to expect<br/>
+        /// `voice.speaking_language` (models other than `deepgram:nova-3` may still<br/>
+        /// transcribe clear speech in another language). `asr.strict_language`<br/>
+        /// (default `false`) enforces `voice.speaking_language` whatever<br/>
+        /// `asr.multilingual` says: speech recognized as another language reaches the<br/>
+        /// agent as `[unintelligible speech]`. Language is detected per utterance, so<br/>
+        /// a short or heavily accented phrase in the speaking language can<br/>
+        /// occasionally be detected as another language and replaced too. Only<br/>
+        /// enable it when you explicitly need to stop the agent from understanding<br/>
+        /// other languages.<br/>
+        /// `asr.keyterms` is a recognition<br/>
+        /// vocabulary of up to 50 plain terms (brand names, product terms, personal<br/>
+        /// names), each at most 100 characters with no commas or semicolons. `[]`<br/>
+        /// clears it and 20-50 focused terms work best. `tool_ids` and<br/>
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
         /// OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared<br/>
@@ -126,6 +168,9 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="voice">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="asr">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="conversation">
@@ -156,6 +201,7 @@ namespace FishAudio
             string agentId,
             global::FishAudio.PublicAgentPromptPatch? prompt = default,
             global::FishAudio.PublicAgentVoicePatch? voice = default,
+            global::FishAudio.PublicAgentAsrPatch? asr = default,
             global::FishAudio.PublicAgentConversationPatch? conversation = default,
             global::FishAudio.PublicAgentToolsPatch? tools = default,
             global::FishAudio.PublicAgentWebhooksPatch? webhooks = default,

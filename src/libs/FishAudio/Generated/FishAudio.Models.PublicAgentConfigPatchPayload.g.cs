@@ -23,6 +23,12 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("asr")]
+        public global::FishAudio.PublicAgentAsrPatch? Asr { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
         public global::FishAudio.PublicAgentConversationPatch? Conversation { get; set; }
 
@@ -77,6 +83,9 @@ namespace FishAudio
         /// <param name="voice">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="asr">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="conversation">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -104,6 +113,7 @@ namespace FishAudio
         public PublicAgentConfigPatchPayload(
             global::FishAudio.PublicAgentPromptPatch? prompt,
             global::FishAudio.PublicAgentVoicePatch? voice,
+            global::FishAudio.PublicAgentAsrPatch? asr,
             global::FishAudio.PublicAgentConversationPatch? conversation,
             global::FishAudio.PublicAgentToolsPatch? tools,
             global::FishAudio.PublicAgentWebhooksPatch? webhooks,
@@ -114,6 +124,7 @@ namespace FishAudio
         {
             this.Prompt = prompt;
             this.Voice = voice;
+            this.Asr = asr;
             this.Conversation = conversation;
             this.Tools = tools;
             this.Webhooks = webhooks;

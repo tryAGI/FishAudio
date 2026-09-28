@@ -30,11 +30,20 @@ namespace FishAudio
         public required global::FishAudio.AgentPromptConfig Prompt { get; set; }
 
         /// <summary>
-        ///
+        /// Read shape of the voice section. The ASR fields that moved to the asr<br/>
+        /// section stay mirrored here, deprecated, so clients written before the split<br/>
+        /// keep reading them.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::FishAudio.AgentVoiceConfig Voice { get; set; }
+        public required global::FishAudio.AgentVoiceConfigView Voice { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("asr")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::FishAudio.AgentAsrConfig Asr { get; set; }
 
         /// <summary>
         ///
@@ -106,7 +115,12 @@ namespace FishAudio
         /// Content hash of the draft; equal to a version's config_hash when the draft has no unpublished changes.
         /// </param>
         /// <param name="prompt"></param>
-        /// <param name="voice"></param>
+        /// <param name="voice">
+        /// Read shape of the voice section. The ASR fields that moved to the asr<br/>
+        /// section stay mirrored here, deprecated, so clients written before the split<br/>
+        /// keep reading them.
+        /// </param>
+        /// <param name="asr"></param>
         /// <param name="conversation"></param>
         /// <param name="tools"></param>
         /// <param name="webhooks"></param>
@@ -122,7 +136,8 @@ namespace FishAudio
             string agentId,
             string configHash,
             global::FishAudio.AgentPromptConfig prompt,
-            global::FishAudio.AgentVoiceConfig voice,
+            global::FishAudio.AgentVoiceConfigView voice,
+            global::FishAudio.AgentAsrConfig asr,
             global::FishAudio.AgentConversationConfig conversation,
             global::FishAudio.PublicAgentToolsConfig tools,
             global::FishAudio.PublicAgentWebhooksConfig webhooks,
@@ -136,6 +151,7 @@ namespace FishAudio
             this.ConfigHash = configHash ?? throw new global::System.ArgumentNullException(nameof(configHash));
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Voice = voice ?? throw new global::System.ArgumentNullException(nameof(voice));
+            this.Asr = asr ?? throw new global::System.ArgumentNullException(nameof(asr));
             this.Conversation = conversation ?? throw new global::System.ArgumentNullException(nameof(conversation));
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.Webhooks = webhooks ?? throw new global::System.ArgumentNullException(nameof(webhooks));
