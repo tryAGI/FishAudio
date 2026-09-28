@@ -125,6 +125,8 @@ internal static partial class AgentToolsCreateAgentToolsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-agent-tools", @"Create Tool
@@ -214,6 +216,7 @@ authorization_basic) are write-only and read back as `has_secret`.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

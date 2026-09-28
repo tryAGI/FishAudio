@@ -33,6 +33,8 @@ internal static partial class AgentToolsGetAgentToolsByToolIdCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-agent-tools-by-tool-id", @"Get Tool
@@ -60,6 +62,7 @@ returned — each credential header reports `has_secret` instead.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

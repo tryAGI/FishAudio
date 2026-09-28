@@ -61,6 +61,8 @@ internal static partial class PhoneNumbersGetAgentPhoneNumbersCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-agent-phone-numbers", @"List Phone Numbers
@@ -114,6 +116,7 @@ pagination with a `total` count — the two are mutually exclusive.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

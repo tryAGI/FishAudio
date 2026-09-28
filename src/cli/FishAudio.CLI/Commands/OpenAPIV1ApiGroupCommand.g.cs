@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace FishAudio.CLI.Commands;
 
-internal static class OpenAPIV1ApiGroupCommand
+internal static partial class OpenAPIV1ApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"open-api-v1", @"OpenAPI v1 endpoint commands.");
@@ -17,6 +19,7 @@ internal static class OpenAPIV1ApiGroupCommand
                          command.Subcommands.Add(OpenAPIV1CreateTtsWithMessagePackCommandApiCommand.Create());
                          command.Subcommands.Add(OpenAPIV1CreateVoiceDesignCommandApiCommand.Create());
                          command.Subcommands.Add(OpenAPIV1GetTtsLiveWithTimestampCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

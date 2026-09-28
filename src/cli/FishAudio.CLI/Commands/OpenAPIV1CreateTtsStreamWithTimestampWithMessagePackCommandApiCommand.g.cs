@@ -50,6 +50,8 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampWithMessagePa
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-tts-stream-with-timestamp-with-message-pack", @"Text to Speech Stream with Timestamps");
@@ -169,6 +171,7 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampWithMessagePa
                                         cancellationToken: cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

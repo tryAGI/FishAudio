@@ -73,6 +73,8 @@ internal static partial class KnowledgeSourcesEditAgentKnowledgeSourcesBySourceI
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"edit-agent-knowledge-sources-by-source-id", @"Update Knowledge Source
@@ -136,6 +138,7 @@ two-step (sync content, republish) is the nightly content-sync recipe.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

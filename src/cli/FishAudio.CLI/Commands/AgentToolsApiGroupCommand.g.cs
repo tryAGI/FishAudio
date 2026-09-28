@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace FishAudio.CLI.Commands;
 
-internal static class AgentToolsApiGroupCommand
+internal static partial class AgentToolsApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"agent-tools", @"Agent Tools endpoint commands.");
@@ -15,6 +17,7 @@ internal static class AgentToolsApiGroupCommand
                          command.Subcommands.Add(AgentToolsGetAgentToolsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentToolsGetAgentToolsByToolIdCommandApiCommand.Create());
                          command.Subcommands.Add(AgentToolsGetAgentToolsByToolIdAgentsCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -33,6 +33,8 @@ internal static partial class PhoneNumbersGetAgentPhoneNumbersByPhoneNumberIdCom
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-agent-phone-numbers-by-phone-number-id", @"Get Phone Number
@@ -68,6 +70,7 @@ provisioning status.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

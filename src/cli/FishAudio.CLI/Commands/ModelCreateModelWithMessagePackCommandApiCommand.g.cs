@@ -121,6 +121,8 @@ internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-model-with-message-pack", @"Create Model for Users via API");
@@ -202,6 +204,7 @@ internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -13,6 +13,8 @@ internal static partial class OpenAPIV1GetTtsLiveWithTimestampCommandApiCommand
         Description = @"Specify which TTS model to use. Use `s2.1-pro-free` for the free developer tier. `drama-3-preview` is a preview model; its behavior and availability may change. If omitted or set to an unrecognized value, the request falls back to `s2.1-pro`.",
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-tts-live-with-timestamp", @"Text to Speech Live with Timestamps (WebSocket)
@@ -95,6 +97,7 @@ non-decreasing. A frame may be labelled with the previous chunk's
 
                                 await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

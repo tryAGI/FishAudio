@@ -69,6 +69,8 @@ internal static partial class KnowledgeSourcesCreateAgentKnowledgeSourcesCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-agent-knowledge-sources", @"Create Knowledge Source
@@ -127,6 +129,7 @@ defaults to the file name. Attach it to agents via the agent config's
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

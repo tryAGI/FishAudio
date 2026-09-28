@@ -73,6 +73,8 @@ internal static partial class OpenAPIV1CreateAsrCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-asr", @"Speech to Text");
@@ -138,6 +140,7 @@ internal static partial class OpenAPIV1CreateAsrCommandApiCommand
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

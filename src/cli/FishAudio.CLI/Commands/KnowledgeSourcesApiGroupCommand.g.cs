@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace FishAudio.CLI.Commands;
 
-internal static class KnowledgeSourcesApiGroupCommand
+internal static partial class KnowledgeSourcesApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"knowledge-sources", @"Knowledge Sources endpoint commands.");
@@ -15,6 +17,7 @@ internal static class KnowledgeSourcesApiGroupCommand
                          command.Subcommands.Add(KnowledgeSourcesGetAgentKnowledgeSourcesCommandApiCommand.Create());
                          command.Subcommands.Add(KnowledgeSourcesGetAgentKnowledgeSourcesBySourceIdCommandApiCommand.Create());
                          command.Subcommands.Add(KnowledgeSourcesGetAgentKnowledgeSourcesBySourceIdAgentsCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

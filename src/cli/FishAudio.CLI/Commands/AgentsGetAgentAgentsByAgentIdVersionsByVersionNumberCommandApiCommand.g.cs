@@ -39,6 +39,8 @@ internal static partial class AgentsGetAgentAgentsByAgentIdVersionsByVersionNumb
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-agent-agents-by-agent-id-versions-by-version-number", @"Get Agent Version
@@ -70,6 +72,7 @@ redacted the same way as the draft config.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

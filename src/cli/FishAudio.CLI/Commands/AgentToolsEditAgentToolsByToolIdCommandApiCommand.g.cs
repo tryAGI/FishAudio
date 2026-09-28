@@ -125,6 +125,8 @@ internal static partial class AgentToolsEditAgentToolsByToolIdCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"edit-agent-tools-by-tool-id", @"Update Tool
@@ -214,6 +216,7 @@ immediately; published versions stay frozen until re-published.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

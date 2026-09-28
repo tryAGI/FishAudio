@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace FishAudio.CLI.Commands;
 
-internal static class ApiCommand
+internal static partial class ApiCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command("api", "Generated endpoint commands.");
@@ -19,6 +21,7 @@ internal static class ApiCommand
                          command.Subcommands.Add(PhoneCallsApiGroupCommand.Create());
                          command.Subcommands.Add(PhoneNumbersApiGroupCommand.Create());
                          command.Subcommands.Add(WalletApiGroupCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

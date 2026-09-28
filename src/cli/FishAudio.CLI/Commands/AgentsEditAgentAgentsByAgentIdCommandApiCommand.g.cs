@@ -83,6 +83,8 @@ internal static partial class AgentsEditAgentAgentsByAgentIdCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"edit-agent-agents-by-agent-id", @"Update Agent
@@ -150,6 +152,7 @@ use `PATCH /v1/agent/agents/{agent_id}/config`.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

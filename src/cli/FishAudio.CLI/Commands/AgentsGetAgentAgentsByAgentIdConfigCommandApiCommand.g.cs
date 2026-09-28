@@ -33,6 +33,8 @@ internal static partial class AgentsGetAgentAgentsByAgentIdConfigCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-agent-agents-by-agent-id-config", @"Get Draft Config
@@ -62,6 +64,7 @@ write-only and reported as `has_secret`.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }
