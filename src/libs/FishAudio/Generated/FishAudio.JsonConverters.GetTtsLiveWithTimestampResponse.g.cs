@@ -68,19 +68,19 @@ namespace FishAudio.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::FishAudio.TTSLiveWithTimestampAudioEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::FishAudio.TTSLiveWithTimestampAudioEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::FishAudio.TTSLiveWithTimestampAudioEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Audio!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAudio(), typeInfo);
             }
             else if (value.IsFinish)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::FishAudio.TTSLiveFinishEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::FishAudio.TTSLiveFinishEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::FishAudio.TTSLiveFinishEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Finish!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFinish(), typeInfo);
             }
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::FishAudio.TTSLiveErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::FishAudio.TTSLiveErrorEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::FishAudio.TTSLiveErrorEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
             }
         }
     }

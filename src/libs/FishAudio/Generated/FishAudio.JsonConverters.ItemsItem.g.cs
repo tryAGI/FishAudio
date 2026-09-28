@@ -68,19 +68,19 @@ namespace FishAudio.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::FishAudio.AgentSessionMessageItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::FishAudio.AgentSessionMessageItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::FishAudio.AgentSessionMessageItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessage(), typeInfo);
             }
             else if (value.IsToolCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::FishAudio.AgentSessionToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::FishAudio.AgentSessionToolCallItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::FishAudio.AgentSessionToolCallItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolCall(), typeInfo);
             }
             else if (value.IsToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::FishAudio.AgentSessionToolResultItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::FishAudio.AgentSessionToolResultItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::FishAudio.AgentSessionToolResultItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolResult(), typeInfo);
             }
         }
     }

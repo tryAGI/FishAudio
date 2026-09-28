@@ -47,8 +47,8 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.TTSLiveWithTimestampAudioEvent PickAudio() => IsAudio
-            ? Audio!
+        public global::FishAudio.TTSLiveWithTimestampAudioEvent PickAudio() => Audio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Audio' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.TTSLiveFinishEvent PickFinish() => IsFinish
-            ? Finish!
+        public global::FishAudio.TTSLiveFinishEvent PickFinish() => Finish is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Finish' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        public global::FishAudio.TTSLiveErrorEvent PickError() => IsError
-            ? Error!
+        public global::FishAudio.TTSLiveErrorEvent PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace FishAudio
                 Validate();
             }
 
-            if (IsAudio && audio != null)
+            if (Audio is { } __value0 && audio != null)
             {
-                return audio(Audio!);
+                return audio(__value0);
             }
-            else if (IsFinish && finish != null)
+            else if (Finish is { } __value1 && finish != null)
             {
-                return finish(Finish!);
+                return finish(__value1);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value2 && error != null)
             {
-                return error(Error!);
+                return error(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace FishAudio
                 Validate();
             }
 
-            if (IsAudio)
+            if (Audio is { } __value0)
             {
-                audio?.Invoke(Audio!);
+                audio?.Invoke(__value0);
             }
-            else if (IsFinish)
+            else if (Finish is { } __value1)
             {
-                finish?.Invoke(Finish!);
+                finish?.Invoke(__value1);
             }
-            else if (IsError)
+            else if (Error is { } __value2)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace FishAudio
                 Validate();
             }
 
-            if (IsAudio)
+            if (Audio is { } __value0)
             {
-                audio?.Invoke(Audio!);
+                audio?.Invoke(__value0);
             }
-            else if (IsFinish)
+            else if (Finish is { } __value1)
             {
-                finish?.Invoke(Finish!);
+                finish?.Invoke(__value1);
             }
-            else if (IsError)
+            else if (Error is { } __value2)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value2);
             }
         }
 
