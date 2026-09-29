@@ -35,9 +35,9 @@ internal static partial class WalletGetWalletByUserIdPackageCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-wallet-by-user-id-package", @"Get User Package");
+        var command = new Command(commandName ?? @"get-wallet-by-user-id-package", @"Get User Package");
                         command.Arguments.Add(UserId);
 
 

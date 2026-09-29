@@ -41,9 +41,9 @@ internal static partial class AgentsGetAgentAgentsByAgentIdVersionsByVersionNumb
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-agents-by-agent-id-versions-by-version-number", @"Get Agent Version
+        var command = new Command(commandName ?? @"get-agent-agents-by-agent-id-versions-by-version-number", @"Get Agent Version
 One published version with its full frozen configuration snapshot —
 including the current live version. Secrets inside the snapshot are
 redacted the same way as the draft config.");

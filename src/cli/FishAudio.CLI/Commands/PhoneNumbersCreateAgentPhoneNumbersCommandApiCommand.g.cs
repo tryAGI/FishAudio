@@ -47,9 +47,9 @@ internal static partial class PhoneNumbersCreateAgentPhoneNumbersCommandApiComma
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-phone-numbers", @"Purchase or Import Phone Number
+        var command = new Command(commandName ?? @"create-agent-phone-numbers", @"Purchase or Import Phone Number
 `provider` discriminates two variants. `twilio` buys a number from the
 managed inventory: it lands in your default workspace, any `agent_id` you
 bind must live there too, and billing is the monthly price charged in

@@ -52,9 +52,9 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampCommandApiCom
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-tts-stream-with-timestamp", @"Text to Speech Stream with Timestamps");
+        var command = new Command(commandName ?? @"create-tts-stream-with-timestamp", @"Text to Speech Stream with Timestamps");
                         command.Options.Add(Model);
                         command.Options.Add(References);
                         command.Options.Add(ReferenceId);

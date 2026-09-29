@@ -67,9 +67,9 @@ internal static partial class AgentsGetAgentAgentsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-agents", @"List Agents
+        var command = new Command(commandName ?? @"get-agent-agents", @"List Agents
 List your team's agents, newest first. Paginate with `cursor` (follow
 `next_cursor` while `has_more` is true) or with `page` for offset
 pagination with a `total` count — the two are mutually exclusive.");

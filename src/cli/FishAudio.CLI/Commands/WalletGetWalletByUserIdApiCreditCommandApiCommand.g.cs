@@ -45,9 +45,9 @@ internal static partial class WalletGetWalletByUserIdApiCreditCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-wallet-by-user-id-api-credit", @"Get API Credit");
+        var command = new Command(commandName ?? @"get-wallet-by-user-id-api-credit", @"Get API Credit");
                         command.Arguments.Add(UserId);
                         command.Options.Add(CheckFreeCredit);
                         command.Options.Add(TeamId);

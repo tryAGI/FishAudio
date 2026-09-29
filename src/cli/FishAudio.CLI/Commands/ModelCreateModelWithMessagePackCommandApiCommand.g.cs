@@ -123,9 +123,9 @@ internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-model-with-message-pack", @"Create Model for Users via API");
+        var command = new Command(commandName ?? @"create-model-with-message-pack", @"Create Model for Users via API");
                         command.Options.Add(Visibility);
                         command.Options.Add(Type);
                         command.Options.Add(Title);

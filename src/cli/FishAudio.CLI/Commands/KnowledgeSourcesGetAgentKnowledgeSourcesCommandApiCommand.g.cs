@@ -57,9 +57,9 @@ internal static partial class KnowledgeSourcesGetAgentKnowledgeSourcesCommandApi
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-knowledge-sources", @"List Knowledge Sources
+        var command = new Command(commandName ?? @"get-agent-knowledge-sources", @"List Knowledge Sources
 List your team's knowledge sources, newest first. Paginate with `cursor`
 (follow `next_cursor` while `has_more` is true) or with `page` for offset
 pagination with a `total` count — the two are mutually exclusive.");

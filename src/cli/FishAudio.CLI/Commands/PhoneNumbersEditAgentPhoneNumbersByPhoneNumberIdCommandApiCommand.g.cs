@@ -71,9 +71,9 @@ internal static partial class PhoneNumbersEditAgentPhoneNumbersByPhoneNumberIdCo
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"edit-agent-phone-numbers-by-phone-number-id", @"Update Phone Number
+        var command = new Command(commandName ?? @"edit-agent-phone-numbers-by-phone-number-id", @"Update Phone Number
 Change the label and/or repoint the number at another agent — the
 deployment-pipeline move (rebind from the staging agent to the production
 one). Send `agent_id: null` to unbind; unbound numbers ring busy. The

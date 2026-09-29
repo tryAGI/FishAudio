@@ -15,9 +15,9 @@ internal static partial class AgentSessionsCreateAgentSessionsBySessionIdEndComm
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-sessions-by-session-id-end", @"End Agent Session
+        var command = new Command(commandName ?? @"create-agent-sessions-by-session-id-end", @"End Agent Session
 Hang up a live session: the agent disconnects and the call terminates. The
 session record, transcript, and recording are retained and stay readable.");
                         command.Arguments.Add(SessionId);

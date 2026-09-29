@@ -107,9 +107,9 @@ internal static partial class OpenAPIV1CreateVoiceDesignCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-voice-design", @"Voice Design");
+        var command = new Command(commandName ?? @"create-voice-design", @"Voice Design");
                         command.Options.Add(Model);
                         command.Options.Add(Instruction);
                         command.Options.Add(ReferenceText);

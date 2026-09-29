@@ -35,9 +35,9 @@ internal static partial class KnowledgeSourcesGetAgentKnowledgeSourcesBySourceId
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-knowledge-sources-by-source-id", @"Get Knowledge Source
+        var command = new Command(commandName ?? @"get-agent-knowledge-sources-by-source-id", @"Get Knowledge Source
 Fetch one knowledge source including its full text content and current
 revision number.");
                         command.Arguments.Add(SourceId);

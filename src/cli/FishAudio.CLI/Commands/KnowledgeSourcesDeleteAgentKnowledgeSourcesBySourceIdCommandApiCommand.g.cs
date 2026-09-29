@@ -15,9 +15,9 @@ internal static partial class KnowledgeSourcesDeleteAgentKnowledgeSourcesBySourc
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-agent-knowledge-sources-by-source-id", @"Delete Knowledge Source
+        var command = new Command(commandName ?? @"delete-agent-knowledge-sources-by-source-id", @"Delete Knowledge Source
 Delete a knowledge source. Returns 409 while any agent still references it
 — in its draft or in its currently published version (sessions resolve
 sources at call time, so deleting a published reference would change a

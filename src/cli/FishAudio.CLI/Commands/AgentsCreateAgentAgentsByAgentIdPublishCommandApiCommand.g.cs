@@ -63,9 +63,9 @@ internal static partial class AgentsCreateAgentAgentsByAgentIdPublishCommandApiC
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-agents-by-agent-id-publish", @"Publish Agent
+        var command = new Command(commandName ?? @"create-agent-agents-by-agent-id-publish", @"Publish Agent
 Freeze the current draft into an immutable version (version_number
 auto-increments) and make it the live configuration for new sessions. If
 the draft already matches the live version, return that version unchanged.

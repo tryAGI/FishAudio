@@ -35,9 +35,9 @@ internal static partial class PhoneNumbersGetAgentPhoneNumbersByPhoneNumberIdCom
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-phone-numbers-by-phone-number-id", @"Get Phone Number
+        var command = new Command(commandName ?? @"get-agent-phone-numbers-by-phone-number-id", @"Get Phone Number
 Fetch one phone number, including its current agent binding and
 provisioning status.");
                         command.Arguments.Add(PhoneNumberId);

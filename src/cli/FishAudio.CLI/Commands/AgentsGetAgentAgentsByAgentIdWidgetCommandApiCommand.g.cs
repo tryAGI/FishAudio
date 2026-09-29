@@ -41,9 +41,9 @@ internal static partial class AgentsGetAgentAgentsByAgentIdWidgetCommandApiComma
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-agents-by-agent-id-widget", @"Get Widget Config
+        var command = new Command(commandName ?? @"get-agent-agents-by-agent-id-widget", @"Get Widget Config
 Unauthenticated display configuration for the embeddable `&lt;fish-agent&gt;`
 widget. Only agents published as public are reachable, and the request
 `Origin` must match the agent's allowed origins — the same gate as

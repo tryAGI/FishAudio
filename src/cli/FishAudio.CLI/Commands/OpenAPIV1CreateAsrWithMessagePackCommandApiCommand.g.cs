@@ -75,9 +75,9 @@ internal static partial class OpenAPIV1CreateAsrWithMessagePackCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-asr-with-message-pack", @"Speech to Text");
+        var command = new Command(commandName ?? @"create-asr-with-message-pack", @"Speech to Text");
                         command.Options.Add(Model);
                         command.Options.Add(Audio);
                         command.Options.Add(Audioname);

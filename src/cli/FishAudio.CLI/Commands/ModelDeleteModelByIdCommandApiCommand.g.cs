@@ -15,9 +15,9 @@ internal static partial class ModelDeleteModelByIdCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-model-by-id", @"Delete Model");
+        var command = new Command(commandName ?? @"delete-model-by-id", @"Delete Model");
                         command.Arguments.Add(Id);
 
 

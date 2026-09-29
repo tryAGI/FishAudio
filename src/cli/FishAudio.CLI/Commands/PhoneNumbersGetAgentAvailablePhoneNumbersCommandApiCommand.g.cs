@@ -53,9 +53,9 @@ internal static partial class PhoneNumbersGetAgentAvailablePhoneNumbersCommandAp
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-available-phone-numbers", @"Search Available Phone Numbers
+        var command = new Command(commandName ?? @"get-agent-available-phone-numbers", @"Search Available Phone Numbers
 Search the purchasable number inventory. Buy an entry with
 `POST /v1/agent/phone-numbers`; availability is not a reservation, so a listed
 number can still be claimed by someone else first.");

@@ -67,9 +67,9 @@ internal static partial class ModelEditModelByIdWithMessagePackCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"edit-model-by-id-with-message-pack", @"Update Model");
+        var command = new Command(commandName ?? @"edit-model-by-id-with-message-pack", @"Update Model");
                         command.Arguments.Add(Id);
                         command.Options.Add(Title);
                         command.Options.Add(DescriptionOption);

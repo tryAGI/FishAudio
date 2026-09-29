@@ -35,9 +35,9 @@ internal static partial class AgentSessionsGetAgentSessionsBySessionIdCommandApi
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-sessions-by-session-id", @"Get Agent Session
+        var command = new Command(commandName ?? @"get-agent-sessions-by-session-id", @"Get Agent Session
 Fetch one session's full detail: status, timing, and the conversation
 timeline (transcript turns interleaved with tool calls, in order).");
                         command.Arguments.Add(SessionId);

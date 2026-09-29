@@ -63,9 +63,9 @@ internal static partial class AgentToolsGetAgentToolsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-tools", @"List Tools
+        var command = new Command(commandName ?? @"get-agent-tools", @"List Tools
 List your team's tools, newest first. Filter with `agent_id` to see one
 agent's attached tools. Paginate with `cursor` (follow `next_cursor` while
 `has_more` is true) or with `page` for offset pagination with a `total`

@@ -127,9 +127,9 @@ internal static partial class AgentToolsEditAgentToolsByToolIdCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"edit-agent-tools-by-tool-id", @"Update Tool
+        var command = new Command(commandName ?? @"edit-agent-tools-by-tool-id", @"Update Tool
 Patch tool fields; omitted fields keep their value (null is rejected —
 send an empty string to clear a text field). `headers` replaces the header
 list wholesale — include credential values again whenever you send it,
