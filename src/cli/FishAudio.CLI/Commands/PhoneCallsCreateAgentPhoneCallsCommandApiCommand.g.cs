@@ -97,9 +97,9 @@ internal static partial class PhoneCallsCreateAgentPhoneCallsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-phone-calls", @"Create Phone Call
+        var command = new Command(commandName ?? @"create-agent-phone-calls", @"Create Phone Call
 Place an outbound call from one of your phone numbers. Platform numbers
 dial US, Canada or Japan destinations, and a domestic trunk 0 after +81
 (e.g. +81080...) is accepted and normalized to E.164 (+8180...).

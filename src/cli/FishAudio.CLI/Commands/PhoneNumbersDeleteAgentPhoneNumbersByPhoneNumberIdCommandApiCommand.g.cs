@@ -15,9 +15,9 @@ internal static partial class PhoneNumbersDeleteAgentPhoneNumbersByPhoneNumberId
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-agent-phone-numbers-by-phone-number-id", @"Release Phone Number
+        var command = new Command(commandName ?? @"delete-agent-phone-numbers-by-phone-number-id", @"Release Phone Number
 Release a number back to the provider's inventory and stop its daily
 billing. This is irreversible: anyone — including other platforms — can
 buy the number afterwards, so callers who saved it may reach a stranger.

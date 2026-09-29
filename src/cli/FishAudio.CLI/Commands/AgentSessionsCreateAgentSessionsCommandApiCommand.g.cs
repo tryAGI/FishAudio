@@ -113,9 +113,9 @@ internal static partial class AgentSessionsCreateAgentSessionsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-sessions", @"Create Agent Session
+        var command = new Command(commandName ?? @"create-agent-sessions", @"Create Agent Session
 Start a conversation session with an agent and receive a join token for the
 session transport (currently LiveKit WebRTC). Authenticate with an API key to
 start sessions with any agent in your team; without credentials only agents

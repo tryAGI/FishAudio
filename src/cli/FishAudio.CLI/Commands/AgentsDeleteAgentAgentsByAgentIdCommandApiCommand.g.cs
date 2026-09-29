@@ -15,9 +15,9 @@ internal static partial class AgentsDeleteAgentAgentsByAgentIdCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-agent-agents-by-agent-id", @"Delete Agent
+        var command = new Command(commandName ?? @"delete-agent-agents-by-agent-id", @"Delete Agent
 Delete an agent together with its configuration and version history.
 Existing session records are retained.");
                         command.Arguments.Add(AgentId);

@@ -127,9 +127,9 @@ internal static partial class AgentToolsCreateAgentToolsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-tools", @"Create Tool
+        var command = new Command(commandName ?? @"create-agent-tools", @"Create Tool
 Create a workspace tool. `tool_type: webhook` calls your HTTP endpoint
 during conversations; `tool_type: client` is executed by your own frontend
 through the SDK (no URL). Attach it to agents via the agent config's

@@ -63,9 +63,9 @@ internal static partial class PhoneNumbersGetAgentPhoneNumbersCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-phone-numbers", @"List Phone Numbers
+        var command = new Command(commandName ?? @"get-agent-phone-numbers", @"List Phone Numbers
 List your team's phone numbers, newest first. Released numbers are gone
 for good and never appear. Look an id up by E.164 with `phone_number`, or
 filter with `agent_id` to see one agent's numbers. Paginate with `cursor`

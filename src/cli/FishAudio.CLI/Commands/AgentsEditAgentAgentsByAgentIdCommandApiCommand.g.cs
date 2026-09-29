@@ -85,9 +85,9 @@ internal static partial class AgentsEditAgentAgentsByAgentIdCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"edit-agent-agents-by-agent-id", @"Update Agent
+        var command = new Command(commandName ?? @"edit-agent-agents-by-agent-id", @"Update Agent
 Update agent-level fields (name, description, status, public access and
 session-override policy). Omitted fields keep their value. Conversation
 behavior — voice, prompt, recording and the rest — is draft configuration:

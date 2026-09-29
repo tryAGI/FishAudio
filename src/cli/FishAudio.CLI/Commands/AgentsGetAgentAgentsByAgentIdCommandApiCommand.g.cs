@@ -35,9 +35,9 @@ internal static partial class AgentsGetAgentAgentsByAgentIdCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-agents-by-agent-id", @"Get Agent
+        var command = new Command(commandName ?? @"get-agent-agents-by-agent-id", @"Get Agent
 Fetch one agent's profile fields. The draft configuration lives at
 `GET /v1/agent/agents/{agent_id}/config`.");
                         command.Arguments.Add(AgentId);

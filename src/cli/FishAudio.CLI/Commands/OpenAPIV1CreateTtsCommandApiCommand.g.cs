@@ -52,9 +52,9 @@ internal static partial class OpenAPIV1CreateTtsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-tts", @"Text to Speech");
+        var command = new Command(commandName ?? @"create-tts", @"Text to Speech");
                         command.Options.Add(Model);
                         command.Options.Add(References);
                         command.Options.Add(ReferenceId);

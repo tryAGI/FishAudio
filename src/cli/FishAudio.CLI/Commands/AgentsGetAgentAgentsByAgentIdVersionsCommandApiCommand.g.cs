@@ -57,9 +57,9 @@ internal static partial class AgentsGetAgentAgentsByAgentIdVersionsCommandApiCom
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-agents-by-agent-id-versions", @"List Agent Versions
+        var command = new Command(commandName ?? @"get-agent-agents-by-agent-id-versions", @"List Agent Versions
 The publish history, newest first. The highest version_number is what live
 sessions run. Compare a version's config_hash with the draft's to detect
 unpublished changes.");

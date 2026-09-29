@@ -63,9 +63,9 @@ internal static partial class AgentsCreateAgentAgentsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-agents", @"Create Agent
+        var command = new Command(commandName ?? @"create-agent-agents", @"Create Agent
 Create an agent, optionally with its full initial configuration inline —
 one call provisions a ready-to-publish agent. The agent starts as a draft:
 publish it before creating sessions with it.");

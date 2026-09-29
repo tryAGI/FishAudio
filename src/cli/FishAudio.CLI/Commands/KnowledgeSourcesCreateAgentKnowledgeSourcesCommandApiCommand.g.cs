@@ -71,9 +71,9 @@ internal static partial class KnowledgeSourcesCreateAgentKnowledgeSourcesCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-knowledge-sources", @"Create Knowledge Source
+        var command = new Command(commandName ?? @"create-agent-knowledge-sources", @"Create Knowledge Source
 Upload a plain-text or Markdown file (UTF-8, up to 1 MB) as a knowledge
 source. Send `multipart/form-data` with the file in `source`; `name`
 defaults to the file name. Attach it to agents via the agent config's

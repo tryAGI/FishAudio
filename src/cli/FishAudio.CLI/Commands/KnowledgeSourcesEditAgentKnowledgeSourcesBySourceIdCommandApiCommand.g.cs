@@ -75,9 +75,9 @@ internal static partial class KnowledgeSourcesEditAgentKnowledgeSourcesBySourceI
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"edit-agent-knowledge-sources-by-source-id", @"Update Knowledge Source
+        var command = new Command(commandName ?? @"edit-agent-knowledge-sources-by-source-id", @"Update Knowledge Source
 Rename the source and/or replace its content by uploading a new file in
 `source` (multipart). Replacing content increments `revision_number` while
 the id stays stable, and every attached agent's draft picks it up

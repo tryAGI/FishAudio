@@ -35,9 +35,9 @@ internal static partial class ModelGetModelByIdCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-model-by-id", @"Get Model");
+        var command = new Command(commandName ?? @"get-model-by-id", @"Get Model");
                         command.Arguments.Add(Id);
 
 

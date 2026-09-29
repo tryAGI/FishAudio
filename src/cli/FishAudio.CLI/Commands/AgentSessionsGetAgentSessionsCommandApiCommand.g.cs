@@ -99,9 +99,9 @@ internal static partial class AgentSessionsGetAgentSessionsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-sessions", @"List Agent Sessions
+        var command = new Command(commandName ?? @"get-agent-sessions", @"List Agent Sessions
 List your team's sessions, newest first. Filter by agent, status, end
 reason, caller number, SIP Call-ID, or creation time. Paginate with `cursor` (recommended; follow
 `next_cursor` while `has_more` is true) or with `page` for offset pagination

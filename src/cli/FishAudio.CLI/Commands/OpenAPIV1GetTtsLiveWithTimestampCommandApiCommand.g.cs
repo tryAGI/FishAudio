@@ -15,9 +15,9 @@ internal static partial class OpenAPIV1GetTtsLiveWithTimestampCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-tts-live-with-timestamp", @"Text to Speech Live with Timestamps (WebSocket)
+        var command = new Command(commandName ?? @"get-tts-live-with-timestamp", @"Text to Speech Live with Timestamps (WebSocket)
 Streaming text-to-speech over a WebSocket that returns word-level timestamps
 alongside the audio. Connect to `wss://api.fish.audio/v1/tts/live/with-timestamp`;
 this is a WebSocket upgrade, not a plain HTTP request.

@@ -111,9 +111,9 @@ internal static partial class AgentsEditAgentAgentsByAgentIdConfigCommandApiComm
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"edit-agent-agents-by-agent-id-config", @"Update Draft Config
+        var command = new Command(commandName ?? @"edit-agent-agents-by-agent-id-config", @"Update Draft Config
 Patch the draft configuration section by section; omitted sections keep
 their value. Changes only affect live sessions after the next publish.
 `prompt.system_prompt` is limited to 32000 tokens (422 beyond); keeping it

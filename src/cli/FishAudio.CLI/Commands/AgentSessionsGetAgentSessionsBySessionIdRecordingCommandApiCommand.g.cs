@@ -35,9 +35,9 @@ internal static partial class AgentSessionsGetAgentSessionsBySessionIdRecordingC
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-agent-sessions-by-session-id-recording", @"Get Agent Session Recording
+        var command = new Command(commandName ?? @"get-agent-sessions-by-session-id-recording", @"Get Agent Session Recording
 Return time-limited download URLs for the session's audio recording, one
 per speaker track (agent and user are recorded separately).");
                         command.Arguments.Add(SessionId);
