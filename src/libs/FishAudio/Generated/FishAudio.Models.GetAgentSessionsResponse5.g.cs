@@ -126,6 +126,24 @@ namespace FishAudio
         public int? DurationSeconds { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("participant_identity")]
+        public string? ParticipantIdentity { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_participant_identity")]
+        public string? AgentParticipantIdentity { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent_joined_at")]
+        public string? AgentJoinedAt { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -200,6 +218,15 @@ namespace FishAudio
         /// <param name="durationSeconds">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="participantIdentity">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="agentParticipantIdentity">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="agentJoinedAt">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="metadata"></param>
         /// <param name="unattributedLlmUsage"></param>
         /// <param name="items"></param>
@@ -228,6 +255,9 @@ namespace FishAudio
             string? startedAt,
             string? endedAt,
             int? durationSeconds,
+            string? participantIdentity,
+            string? agentParticipantIdentity,
+            string? agentJoinedAt,
             object? metadata,
             global::System.Collections.Generic.IList<global::FishAudio.LLMMessageUsage>? unattributedLlmUsage,
             global::System.Collections.Generic.IList<global::FishAudio.ItemsItem>? items,
@@ -251,6 +281,9 @@ namespace FishAudio
             this.StartedAt = startedAt;
             this.EndedAt = endedAt;
             this.DurationSeconds = durationSeconds;
+            this.ParticipantIdentity = participantIdentity;
+            this.AgentParticipantIdentity = agentParticipantIdentity;
+            this.AgentJoinedAt = agentJoinedAt;
             this.Metadata = metadata;
             this.UnattributedLlmUsage = unattributedLlmUsage;
             this.Items = items;

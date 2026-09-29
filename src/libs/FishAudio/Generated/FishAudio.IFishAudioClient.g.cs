@@ -56,6 +56,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        public AgentTestsClient AgentTests { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public AgentToolsClient AgentTools { get; }
 
         /// <summary>

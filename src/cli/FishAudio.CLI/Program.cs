@@ -12,6 +12,7 @@ rootCommand.Options.Add(CliOptions.Output);
 rootCommand.Options.Add(CliOptions.OutputDirectory);
 rootCommand.Subcommands.Add(AuthCommand.Create());
 rootCommand.Subcommands.Add(AgentSessionsApiGroupCommand.Create());
+rootCommand.Subcommands.Add(AgentTestsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(AgentToolsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(AgentsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(KnowledgeSourcesApiGroupCommand.Create());
