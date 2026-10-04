@@ -33,16 +33,16 @@ namespace FishAudio
         /// Inline voice references for zero-shot cloning. Requires MessagePack (not JSON). For single speaker, provide an array of ReferenceAudio objects. For multiple speakers, provide an array of arrays where each inner array contains references for one speaker. **Multi-speaker is available with the S2 family (`s2-pro`, `s2.1-pro`, `s2.1-pro-free`) and `drama-3-preview`, not `s1`.** The speaker index corresponds to the index in reference_id array. Example for multi-speaker: [[{audio, text}], [{audio, text}, {audio, text}]] for 2 speakers where speaker 1 has 2 reference samples.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("references")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>))]
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>? References { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>>))]
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>>? References { get; set; }
 
         /// <summary>
         /// Voice model ID(s) from Fish Audio library or your custom models. For single-speaker synthesis, provide a string. For multi-speaker synthesis (dialogue), provide an array of model IDs. **Multi-speaker is available with the S2 family (`s2-pro`, `s2.1-pro`, `s2.1-pro-free`) and `drama-3-preview`, not `s1`.** When using multiple speakers, use speaker tags in your text like `&lt;|speaker:0|&gt;` and `&lt;|speaker:1|&gt;` to indicate speaker changes. Example: `&lt;|speaker:0|&gt;Hello!&lt;|speaker:1|&gt;Hi there!&lt;|speaker:0|&gt;How are you?` with `reference_id: ["speaker-a-id", "speaker-b-id"]`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
-        public global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? ReferenceId { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>>? ReferenceId { get; set; }
 
         /// <summary>
         /// Speed and volume adjustments for the output.<br/>
@@ -149,8 +149,8 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pronunciation_dictionary")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>, object>))]
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>, object>? PronunciationDictionary { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>>))]
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>>? PronunciationDictionary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -246,8 +246,8 @@ namespace FishAudio
             string text,
             double? temperature,
             double? topP,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>? references,
-            global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? referenceId,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>>? references,
+            global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>>? referenceId,
             global::FishAudio.ProsodyControl? prosody,
             int? chunkLength,
             bool? normalize,
@@ -262,7 +262,7 @@ namespace FishAudio
             bool? conditionOnPreviousChunks,
             double? earlyStopThreshold,
             global::System.Collections.Generic.IList<string>? features,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>, object>? pronunciationDictionary)
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>>? pronunciationDictionary)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Temperature = temperature;

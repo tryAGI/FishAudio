@@ -329,14 +329,6 @@ namespace FishAudio
                                         content: __contentTexts2,
                                         name: "\"texts\"");
                                 }
-                                else if ((request.Texts).GetValueOrDefault().TryPickValue3(out var __valueTexts3))
-                                {
-
-                                    var __contentTexts3 = new global::System.Net.Http.StringContent((__valueTexts3!).ToString() ?? string.Empty);
-                                    __httpRequestContent.Add(
-                                        content: __contentTexts3,
-                                        name: "\"texts\"");
-                                }
                             }
 
                             if (request.VoiceDesignSignatures != default)
@@ -361,14 +353,6 @@ namespace FishAudio
                                         content: __contentVoiceDesignSignatures2,
                                         name: "\"voice_design_signatures\"");
                                 }
-                                else if ((request.VoiceDesignSignatures).GetValueOrDefault().TryPickValue3(out var __valueVoiceDesignSignatures3))
-                                {
-
-                                    var __contentVoiceDesignSignatures3 = new global::System.Net.Http.StringContent((__valueVoiceDesignSignatures3!).ToString() ?? string.Empty);
-                                    __httpRequestContent.Add(
-                                        content: __contentVoiceDesignSignatures3,
-                                        name: "\"voice_design_signatures\"");
-                                }
                             }
 
                             if (request.Tags != default)
@@ -391,14 +375,6 @@ namespace FishAudio
                                     var __contentTags2 = new global::System.Net.Http.StringContent(__valueTags2 ?? string.Empty);
                                     __httpRequestContent.Add(
                                         content: __contentTags2,
-                                        name: "\"tags\"");
-                                }
-                                else if ((request.Tags).GetValueOrDefault().TryPickValue3(out var __valueTags3))
-                                {
-
-                                    var __contentTags3 = new global::System.Net.Http.StringContent((__valueTags3!).ToString() ?? string.Empty);
-                                    __httpRequestContent.Add(
-                                        content: __contentTags3,
                                         name: "\"tags\"");
                                 }
                             }
@@ -844,9 +820,9 @@ namespace FishAudio
             byte[]? coverImage = default,
             string? coverImagename = default,
             string trainMode = "fast",
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? voiceDesignSignatures = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? texts = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? voiceDesignSignatures = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags = default,
             bool? enhanceAudioQuality = default,
             bool? generateSample = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,

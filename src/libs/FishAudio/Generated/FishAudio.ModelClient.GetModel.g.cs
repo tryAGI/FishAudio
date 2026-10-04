@@ -30,11 +30,11 @@ namespace FishAudio
             ref int? pageSize,
             ref int? pageNumber,
             ref string? title,
-            ref global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tag,
+            ref global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? tag,
             ref bool? self,
             ref string? authorId,
-            ref global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language,
-            ref global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage,
+            ref global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? language,
+            ref global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage,
             ref bool? licensed,
             ref global::FishAudio.GetModelSortBy? sortBy);
         partial void PrepareGetModelRequest(
@@ -43,11 +43,11 @@ namespace FishAudio
             int? pageSize,
             int? pageNumber,
             string? title,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tag,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? tag,
             bool? self,
             string? authorId,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? language,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage,
             bool? licensed,
             global::FishAudio.GetModelSortBy? sortBy);
         partial void ProcessGetModelResponse(
@@ -99,11 +99,11 @@ namespace FishAudio
             int? pageSize = default,
             int? pageNumber = default,
             string? title = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tag = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? tag = default,
             bool? self = default,
             string? authorId = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? language = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage = default,
             bool? licensed = default,
             global::FishAudio.GetModelSortBy? sortBy = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
@@ -166,11 +166,11 @@ namespace FishAudio
             int? pageSize = default,
             int? pageNumber = default,
             string? title = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tag = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? tag = default,
             bool? self = default,
             string? authorId = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? language = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage = default,
             bool? licensed = default,
             global::FishAudio.GetModelSortBy? sortBy = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
@@ -224,19 +224,16 @@ namespace FishAudio
                                 .AddOptionalParameter("tag", tag?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("self", self?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("author_id", authorId)
                                 .AddOptionalParameter("language", language?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("title_language", titleLanguage?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("licensed", licensed?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
