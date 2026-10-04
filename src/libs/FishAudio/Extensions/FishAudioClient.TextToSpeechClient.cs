@@ -158,9 +158,17 @@ public sealed partial class FishAudioClient : ITextToSpeechClient
         TextToSpeechOptions? options,
         ResolvedFishAudioTextToSpeechOptions resolved)
     {
-        if (request.ReferenceId is null && CreateReferenceId(options) is { } referenceId)
+        if (request.ReferenceId is null)
         {
-            request.ReferenceId = referenceId;
+            var (voiceId, referenceIds) = CreateReferenceId(options);
+            if (referenceIds is not null)
+            {
+                request.ReferenceId = new(referenceIds);
+            }
+            else if (voiceId is not null)
+            {
+                request.ReferenceId = new(voiceId);
+            }
         }
 
         request.Format ??= resolved.RequestFormat;
@@ -185,9 +193,17 @@ public sealed partial class FishAudioClient : ITextToSpeechClient
         TextToSpeechOptions? options,
         ResolvedFishAudioTextToSpeechOptions resolved)
     {
-        if (request.ReferenceId is null && CreateReferenceId(options) is { } referenceId)
+        if (request.ReferenceId is null)
         {
-            request.ReferenceId = referenceId;
+            var (voiceId, referenceIds) = CreateReferenceId(options);
+            if (referenceIds is not null)
+            {
+                request.ReferenceId = new(referenceIds);
+            }
+            else if (voiceId is not null)
+            {
+                request.ReferenceId = new(voiceId);
+            }
         }
 
         request.Format ??= resolved.StreamFormat;
@@ -330,19 +346,19 @@ public sealed partial class FishAudioClient : ITextToSpeechClient
         throw new NotSupportedException($"Unsupported Fish Audio TTS audio format '{format}'. Use 'mp3', 'wav', 'pcm', or 'opus'.");
     }
 
-    private static AnyOf<string, IList<string>, object>? CreateReferenceId(TextToSpeechOptions? options)
+    private static (string? VoiceId, IList<string>? ReferenceIds) CreateReferenceId(TextToSpeechOptions? options)
     {
         if (options.GetStringList(FishAudioTextToSpeechPropertyNames.ReferenceIds) is { Count: > 0 } referenceIds)
         {
-            return AnyOf<string, IList<string>, object>.FromValue2(referenceIds.ToArray());
+            return (null, referenceIds.ToArray());
         }
 
         if (options?.VoiceId is { Length: > 0 } voiceId)
         {
-            return AnyOf<string, IList<string>, object>.FromValue1(voiceId);
+            return (voiceId, null);
         }
 
-        return null;
+        return (null, null);
     }
 
     private static ProsodyControl? CreateProsody(ProsodyControl? prosody, TextToSpeechOptions? options)

@@ -152,6 +152,72 @@ public partial class Tests
         updates.Last().Kind.Should().Be(TextToSpeechResponseUpdateKind.SessionClose);
     }
 
+    [TestMethod]
+    [DataRow(false, false)]
+    [DataRow(false, true)]
+    [DataRow(true, false)]
+    [DataRow(true, true)]
+    public async Task TextToSpeechClient_PreservesReferenceIdsAcrossDispatch(bool streaming, bool multiple)
+    {
+        var handler = new StaticResponseHandler(new HttpResponseMessage(HttpStatusCode.OK)
+        {
+            Content = streaming
+                ? new StringContent("data: {\"audio_base64\":\"AQID\",\"content\":\"Hello\",\"chunk_seq\":0,\"chunk_audio_offset_sec\":0}\n\n",
+                    Encoding.UTF8, "text/event-stream")
+                : new ByteArrayContent([1, 2, 3]),
+        });
+        using var client = new FishAudioClient("test-api-key", new HttpClient(handler));
+        ITextToSpeechClient ttsClient = client;
+        var options = new TextToSpeechOptions
+        {
+            VoiceId = "fallback-voice",
+            AudioFormat = "mp3",
+            AdditionalProperties = multiple ? new()
+            {
+                [FishAudioTextToSpeechPropertyNames.ReferenceIds] = new[] { "voice-a", "voice-b" },
+            } : null,
+        };
+
+        if (streaming)
+        {
+            await foreach (var update in ttsClient.GetStreamingAudioAsync("Synthetic text", options))
+            {
+                update.Should().NotBeNull();
+            }
+        }
+        else
+        {
+            await ttsClient.GetAudioAsync("Synthetic text", options);
+        }
+
+        using var json = JsonDocument.Parse(handler.LastRequestBody!);
+        var reference = json.RootElement.GetProperty("reference_id");
+        if (multiple)
+        {
+            reference.EnumerateArray().Select(static value => value.GetString()).Should().Equal("voice-a", "voice-b");
+        }
+        else
+        {
+            reference.GetString().Should().Be("fallback-voice");
+        }
+    }
+
+    [TestMethod]
+    public async Task TextToSpeechTool_MapsScalarReferenceId()
+    {
+        var handler = new StaticResponseHandler(new HttpResponseMessage(HttpStatusCode.OK)
+        {
+            Content = new ByteArrayContent([1, 2, 3]),
+        });
+        using var client = new FishAudioClient("test-api-key", new HttpClient(handler));
+        var tool = client.AsTextToSpeechTool(referenceId: "tool-voice");
+
+        await tool.InvokeAsync(new AIFunctionArguments { ["text"] = "Synthetic tool text" });
+
+        using var json = JsonDocument.Parse(handler.LastRequestBody!);
+        json.RootElement.GetProperty("reference_id").GetString().Should().Be("tool-voice");
+    }
+
     private sealed class StaticResponseHandler(HttpResponseMessage response) : HttpMessageHandler
     {
         public HttpRequestMessage? LastRequest { get; private set; }
