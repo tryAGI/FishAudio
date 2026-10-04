@@ -28,13 +28,9 @@ public static class FishAudioToolExtensions
         return AIFunctionFactory.Create(
             async (string text, CancellationToken cancellationToken) =>
             {
-                AnyOf<string, IList<string>, object>? refId = referenceId is not null
-                    ? new AnyOf<string, IList<string>, object>(referenceId)
-                    : (AnyOf<string, IList<string>, object>?)null;
-
                 await client.OpenAPIV1.CreateTtsAsync(
                     text: text,
-                    referenceId: refId,
+                    referenceId: referenceId is not null ? new(referenceId) : null,
                     model: model,
                     format: TTSRequestFormat.Mp3,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
