@@ -25,7 +25,7 @@ internal static partial class ModelGetModelCommandApiCommand
         Description = @"Title to filter models",
     };
 
-    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>?> Tag { get; } = new(
+    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>?> Tag { get; } = new(
         name: @"--tag")
     {
         Description = @"Tag to filter models",
@@ -41,13 +41,13 @@ internal static partial class ModelGetModelCommandApiCommand
         Description = @"Author ID to filter public models; ignored if self is True",
     };
 
-    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>?> Language { get; } = new(
+    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>?> Language { get; } = new(
         name: @"--language")
     {
         Description = @"Language to filter models",
     };
 
-    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>?> TitleLanguage { get; } = new(
+    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>?> TitleLanguage { get; } = new(
         name: @"--title-language")
     {
         Description = @"Title language to filter models",

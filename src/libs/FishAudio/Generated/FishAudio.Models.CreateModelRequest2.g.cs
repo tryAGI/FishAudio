@@ -71,23 +71,23 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>))]
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Texts { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>))]
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? Texts { get; set; }
 
         /// <summary>
         /// Signatures from /v1/voice-design candidates, one per voice in the same order. When every uploaded voice verifies, the model is stamped source=voice_design; an invalid signature rejects the request.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_design_signatures")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>))]
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? VoiceDesignSignatures { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>))]
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? VoiceDesignSignatures { get; set; }
 
         /// <summary>
         /// Model tags
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>))]
-        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Tags { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>))]
+        public global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? Tags { get; set; }
 
         /// <summary>
         /// Enhance audio quality<br/>
@@ -169,9 +169,9 @@ namespace FishAudio
             string? description,
             byte[]? coverImage,
             string? coverImagename,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? voiceDesignSignatures,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? texts,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? voiceDesignSignatures,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags,
             bool? enhanceAudioQuality,
             bool? generateSample,
             string type = "tts",

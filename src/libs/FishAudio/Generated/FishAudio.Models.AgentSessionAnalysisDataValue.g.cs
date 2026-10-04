@@ -27,8 +27,8 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<bool?, double?, string, object>))]
-        public global::FishAudio.AnyOf<bool?, double?, string, object>? Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AnyOfJsonConverter<bool?, double?, string>))]
+        public global::FishAudio.AnyOf<bool?, double?, string>? Value { get; set; }
 
         /// <summary>
         ///
@@ -57,7 +57,7 @@ namespace FishAudio
         public AgentSessionAnalysisDataValue(
             string name,
             global::FishAudio.AgentSessionAnalysisDataValueType type,
-            global::FishAudio.AnyOf<bool?, double?, string, object>? value,
+            global::FishAudio.AnyOf<bool?, double?, string>? value,
             string? rationale)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

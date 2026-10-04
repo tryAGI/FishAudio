@@ -130,8 +130,8 @@ namespace FishAudio
             global::FishAudio.CreateTtsStreamWithTimestampModel? model = default,
             double? temperature = default,
             double? topP = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>, object>? references = default,
-            global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? referenceId = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>>? references = default,
+            global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>>? referenceId = default,
             global::FishAudio.ProsodyControl? prosody = default,
             int? chunkLength = default,
             bool? normalize = default,
@@ -146,7 +146,7 @@ namespace FishAudio
             bool? conditionOnPreviousChunks = default,
             double? earlyStopThreshold = default,
             global::System.Collections.Generic.IList<string>? features = default,
-            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>, object>? pronunciationDictionary = default,
+            global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryRef>, global::System.Collections.Generic.IList<global::FishAudio.PronunciationDictionaryInline>>? pronunciationDictionary = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

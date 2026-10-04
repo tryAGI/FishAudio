@@ -59,19 +59,19 @@ internal static partial class ModelCreateModelCommandApiCommand
         Required = true,
     };
 
-    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>?> Texts { get; } = new(
+    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>?> Texts { get; } = new(
         name: @"--texts")
     {
         Description = @"Texts corresponding to the voices, if unspecified, ASR will be performed on the voices",
     };
 
-    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>?> VoiceDesignSignatures { get; } = new(
+    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>?> VoiceDesignSignatures { get; } = new(
         name: @"--voice-design-signatures")
     {
         Description = @"Signatures from /v1/voice-design candidates, one per voice in the same order. When every uploaded voice verifies, the model is stamped source=voice_design; an invalid signature rejects the request.",
     };
 
-    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string, object>?> Tags { get; } = new(
+    private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>?> Tags { get; } = new(
         name: @"--tags")
     {
         Description = @"Model tags",
