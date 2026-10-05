@@ -55,7 +55,7 @@ internal static partial class PhoneCallsCreateAgentPhoneCallsCommandApiCommand
     private static Option<global::System.Collections.Generic.Dictionary<string, string>?> SipHeaders { get; } = new(
         name: @"--sip-headers")
     {
-        Description = @"Custom SIP headers for this call's INVITE, imported SIP numbers only. X- names or User-to-User, printable ASCII values, merged over the number's termination_headers.",
+        Description = @"Custom SIP headers for this call's INVITE, imported SIP numbers only. Same rules as the number's termination_headers, and merged over them.",
     };
     private static readonly AgentSessionOverridesPayloadOptionSet OverridesOptions = AgentSessionOverridesPayloadOptionSet.Create(@"overrides");
       private static Option<string?> Input { get; } = new(@"--input")
