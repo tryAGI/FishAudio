@@ -36,6 +36,12 @@ namespace FishAudio
         public double? Speed { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pronunciation_dictionary_ids")]
+        public global::System.Collections.Generic.IList<string>? PronunciationDictionaryIds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -56,6 +62,7 @@ namespace FishAudio
         /// <param name="speed">
         /// Default Value: 1
         /// </param>
+        /// <param name="pronunciationDictionaryIds"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -63,12 +70,14 @@ namespace FishAudio
             string? voiceId,
             global::FishAudio.AgentVoiceConfigViewSpeakingLanguage? speakingLanguage,
             bool? expressive,
-            double? speed)
+            double? speed,
+            global::System.Collections.Generic.IList<string>? pronunciationDictionaryIds)
         {
             this.VoiceId = voiceId;
             this.SpeakingLanguage = speakingLanguage;
             this.Expressive = expressive;
             this.Speed = speed;
+            this.PronunciationDictionaryIds = pronunciationDictionaryIds;
         }
 
         /// <summary>

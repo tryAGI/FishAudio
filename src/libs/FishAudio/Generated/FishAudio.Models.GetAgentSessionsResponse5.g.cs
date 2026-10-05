@@ -150,6 +150,12 @@ namespace FishAudio
         public object? Metadata { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_purged_at")]
+        public string? ContentPurgedAt { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unattributed_llm_usage")]
@@ -228,6 +234,9 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="metadata"></param>
+        /// <param name="contentPurgedAt">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="unattributedLlmUsage"></param>
         /// <param name="items"></param>
         /// <param name="analysis">
@@ -259,6 +268,7 @@ namespace FishAudio
             string? agentParticipantIdentity,
             string? agentJoinedAt,
             object? metadata,
+            string? contentPurgedAt,
             global::System.Collections.Generic.IList<global::FishAudio.LLMMessageUsage>? unattributedLlmUsage,
             global::System.Collections.Generic.IList<global::FishAudio.ItemsItem>? items,
             global::FishAudio.AgentSessionAnalysisResult? analysis)
@@ -285,6 +295,7 @@ namespace FishAudio
             this.AgentParticipantIdentity = agentParticipantIdentity;
             this.AgentJoinedAt = agentJoinedAt;
             this.Metadata = metadata;
+            this.ContentPurgedAt = contentPurgedAt;
             this.UnattributedLlmUsage = unattributedLlmUsage;
             this.Items = items;
             this.Analysis = analysis;

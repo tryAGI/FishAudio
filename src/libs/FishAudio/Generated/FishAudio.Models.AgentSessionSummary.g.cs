@@ -151,6 +151,12 @@ namespace FishAudio
         public object? Metadata { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content_purged_at")]
+        public string? ContentPurgedAt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -211,6 +217,9 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="metadata"></param>
+        /// <param name="contentPurgedAt">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -236,7 +245,8 @@ namespace FishAudio
             string? participantIdentity,
             string? agentParticipantIdentity,
             string? agentJoinedAt,
-            object? metadata)
+            object? metadata,
+            string? contentPurgedAt)
         {
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
@@ -260,6 +270,7 @@ namespace FishAudio
             this.AgentParticipantIdentity = agentParticipantIdentity;
             this.AgentJoinedAt = agentJoinedAt;
             this.Metadata = metadata;
+            this.ContentPurgedAt = contentPurgedAt;
         }
 
         /// <summary>

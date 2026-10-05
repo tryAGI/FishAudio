@@ -119,7 +119,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="sipHeaders">
-        /// Custom SIP headers for this call's INVITE, imported SIP numbers only. X- names or User-to-User, printable ASCII values, merged over the number's termination_headers.<br/>
+        /// Custom SIP headers for this call's INVITE, imported SIP numbers only. Same rules as the number's termination_headers, and merged over them.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

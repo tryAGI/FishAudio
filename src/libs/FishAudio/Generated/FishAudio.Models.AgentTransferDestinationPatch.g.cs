@@ -60,6 +60,18 @@ namespace FishAudio
         public string? WarmBriefingInstructions { get; set; }
 
         /// <summary>
+        /// Default Value: 30
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("warm_ring_timeout_seconds")]
+        public int? WarmRingTimeoutSeconds { get; set; }
+
+        /// <summary>
+        /// Default Value: 60
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("warm_confirm_timeout_seconds")]
+        public int? WarmConfirmTimeoutSeconds { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_failure")]
@@ -92,6 +104,12 @@ namespace FishAudio
         /// Default Value: confirm
         /// </param>
         /// <param name="warmBriefingInstructions"></param>
+        /// <param name="warmRingTimeoutSeconds">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="warmConfirmTimeoutSeconds">
+        /// Default Value: 60
+        /// </param>
         /// <param name="onFailure"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -105,6 +123,8 @@ namespace FishAudio
             global::FishAudio.AgentTransferDestinationPatchMode? mode,
             global::FishAudio.AgentTransferDestinationPatchWarmConnect? warmConnect,
             string? warmBriefingInstructions,
+            int? warmRingTimeoutSeconds,
+            int? warmConfirmTimeoutSeconds,
             global::FishAudio.AgentTransferOnFailurePatch? onFailure)
         {
             this.Type = type;
@@ -115,6 +135,8 @@ namespace FishAudio
             this.Mode = mode;
             this.WarmConnect = warmConnect;
             this.WarmBriefingInstructions = warmBriefingInstructions;
+            this.WarmRingTimeoutSeconds = warmRingTimeoutSeconds;
+            this.WarmConfirmTimeoutSeconds = warmConfirmTimeoutSeconds;
             this.OnFailure = onFailure;
         }
 

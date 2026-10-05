@@ -15,6 +15,18 @@ namespace FishAudio
         public bool? HangUpCall { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hang_up_call_farewell_mode")]
+        public global::FishAudio.PublicSystemToolsPatchHangUpCallFarewellMode? HangUpCallFarewellMode { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hang_up_call_farewell_message")]
+        public string? HangUpCallFarewellMessage { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -26,13 +38,23 @@ namespace FishAudio
         /// <param name="hangUpCall">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="hangUpCallFarewellMode">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="hangUpCallFarewellMessage">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PublicSystemToolsPatch(
-            bool? hangUpCall)
+            bool? hangUpCall,
+            global::FishAudio.PublicSystemToolsPatchHangUpCallFarewellMode? hangUpCallFarewellMode,
+            string? hangUpCallFarewellMessage)
         {
             this.HangUpCall = hangUpCall;
+            this.HangUpCallFarewellMode = hangUpCallFarewellMode;
+            this.HangUpCallFarewellMessage = hangUpCallFarewellMessage;
         }
 
         /// <summary>
