@@ -22,11 +22,11 @@ namespace FishAudio
         public string? AgentId { get; set; }
 
         /// <summary>
-        /// Managed `twilio` numbers only: show the original caller's number on transfers, cold and warm (true), or this number (false). Warm transfers follow it from the next call; cold transfers once `caller_id_sync_status` is `synced`.<br/>
+        /// Managed `twilio` numbers only: the caller ID a transfer target sees, `agent_number` (this number) or `original_caller` (the caller's own number). Applies to cold and warm transfers. It is a number setting, not agent config: no publish is needed and agent rollbacks leave it alone. Warm transfers follow it from the next call, cold transfers once `caller_id_sync_status` is `synced`. The deprecated boolean `cold_transfer_use_original_caller` is still accepted in its place.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("cold_transfer_use_original_caller")]
-        public bool? ColdTransferUseOriginalCaller { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("transfer_caller_id")]
+        public global::FishAudio.PublicPhoneNumberUpdatePayloadTransferCallerId? TransferCallerId { get; set; }
 
         /// <summary>
         /// Re-apply the current caller ID policy after a failed synchronization.<br/>
@@ -51,8 +51,8 @@ namespace FishAudio
         /// Agent that answers this number's inbound calls. Explicit null unbinds; omit the field to keep the current binding.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="coldTransferUseOriginalCaller">
-        /// Managed `twilio` numbers only: show the original caller's number on transfers, cold and warm (true), or this number (false). Warm transfers follow it from the next call; cold transfers once `caller_id_sync_status` is `synced`.<br/>
+        /// <param name="transferCallerId">
+        /// Managed `twilio` numbers only: the caller ID a transfer target sees, `agent_number` (this number) or `original_caller` (the caller's own number). Applies to cold and warm transfers. It is a number setting, not agent config: no publish is needed and agent rollbacks leave it alone. Warm transfers follow it from the next call, cold transfers once `caller_id_sync_status` is `synced`. The deprecated boolean `cold_transfer_use_original_caller` is still accepted in its place.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="retryCallerIdSync">
@@ -65,12 +65,12 @@ namespace FishAudio
         public PublicPhoneNumberUpdatePayload(
             string? label,
             string? agentId,
-            bool? coldTransferUseOriginalCaller,
+            global::FishAudio.PublicPhoneNumberUpdatePayloadTransferCallerId? transferCallerId,
             bool? retryCallerIdSync)
         {
             this.Label = label;
             this.AgentId = agentId;
-            this.ColdTransferUseOriginalCaller = coldTransferUseOriginalCaller;
+            this.TransferCallerId = transferCallerId;
             this.RetryCallerIdSync = retryCallerIdSync;
         }
 
