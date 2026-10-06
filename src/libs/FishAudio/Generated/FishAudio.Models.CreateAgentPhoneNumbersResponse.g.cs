@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace FishAudio
@@ -50,17 +52,26 @@ namespace FishAudio
         public string? AgentId { get; set; }
 
         /// <summary>
-        /// Managed `twilio` numbers: whether a transfer target, cold or warm, sees the original caller's number (true) or this number (false). `null` for imported `sip` numbers, whose carrier owns the setting.<br/>
+        /// Managed `twilio` numbers: the caller ID a transfer target sees, on cold and warm transfers alike. `agent_number` shows this number, `original_caller` shows the caller's own number (a warm transfer falls back to this number when the caller withholds theirs). `null` for imported `sip` numbers, whose carrier decides.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transfer_caller_id")]
+        public global::FishAudio.CreateAgentPhoneNumbersResponseTransferCallerId? TransferCallerId { get; set; }
+
+        /// <summary>
+        /// Deprecated, read `transfer_caller_id`. True when it is `original_caller`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cold_transfer_use_original_caller")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? ColdTransferUseOriginalCaller { get; set; }
 
         /// <summary>
-        /// The cold-transfer policy the carrier has confirmed; `null` while unknown or for imported `sip` numbers. Warm transfers follow `cold_transfer_use_original_caller` directly from the next call.<br/>
+        /// Deprecated, read `caller_id_sync_status`. Whether the carrier has confirmed the original caller policy for cold transfers, `null` while unknown.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cold_transfer_use_original_caller_effective")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? ColdTransferUseOriginalCallerEffective { get; set; }
 
         /// <summary>
@@ -174,12 +185,8 @@ namespace FishAudio
         /// <param name="agentId">
         /// Inbound calls route to this agent; unbound numbers ring busy.
         /// </param>
-        /// <param name="coldTransferUseOriginalCaller">
-        /// Managed `twilio` numbers: whether a transfer target, cold or warm, sees the original caller's number (true) or this number (false). `null` for imported `sip` numbers, whose carrier owns the setting.<br/>
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </param>
-        /// <param name="coldTransferUseOriginalCallerEffective">
-        /// The cold-transfer policy the carrier has confirmed; `null` while unknown or for imported `sip` numbers. Warm transfers follow `cold_transfer_use_original_caller` directly from the next call.<br/>
+        /// <param name="transferCallerId">
+        /// Managed `twilio` numbers: the caller ID a transfer target sees, on cold and warm transfers alike. `agent_number` shows this number, `original_caller` shows the caller's own number (a warm transfer falls back to this number when the caller withholds theirs). `null` for imported `sip` numbers, whose carrier decides.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="callerIdSyncStatus">
@@ -231,8 +238,7 @@ namespace FishAudio
             global::System.DateTime updatedAt,
             string? label,
             string? agentId,
-            bool? coldTransferUseOriginalCaller,
-            bool? coldTransferUseOriginalCallerEffective,
+            global::FishAudio.CreateAgentPhoneNumbersResponseTransferCallerId? transferCallerId,
             global::FishAudio.CreateAgentPhoneNumbersResponseCallerIdSyncStatus? callerIdSyncStatus,
             string? callerIdSyncError,
             string? statusDetail,
@@ -250,8 +256,7 @@ namespace FishAudio
             this.Provider = provider;
             this.Label = label;
             this.AgentId = agentId;
-            this.ColdTransferUseOriginalCaller = coldTransferUseOriginalCaller;
-            this.ColdTransferUseOriginalCallerEffective = coldTransferUseOriginalCallerEffective;
+            this.TransferCallerId = transferCallerId;
             this.CallerIdSyncStatus = callerIdSyncStatus;
             this.CallerIdSyncError = callerIdSyncError;
             this.Status = status;

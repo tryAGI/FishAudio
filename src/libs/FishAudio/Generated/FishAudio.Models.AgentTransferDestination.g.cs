@@ -78,6 +78,19 @@ namespace FishAudio
         public global::FishAudio.AgentTransferOnFailure? OnFailure { get; set; }
 
         /// <summary>
+        /// Default Value: generated
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("announcement_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentTransferDestinationAnnouncementModeJsonConverter))]
+        public global::FishAudio.AgentTransferDestinationAnnouncementMode? AnnouncementMode { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("announcement_message")]
+        public string? AnnouncementMessage { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -111,6 +124,10 @@ namespace FishAudio
         /// Default Value: 60
         /// </param>
         /// <param name="onFailure"></param>
+        /// <param name="announcementMode">
+        /// Default Value: generated
+        /// </param>
+        /// <param name="announcementMessage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -125,7 +142,9 @@ namespace FishAudio
             string? warmBriefingInstructions,
             int? warmRingTimeoutSeconds,
             int? warmConfirmTimeoutSeconds,
-            global::FishAudio.AgentTransferOnFailure? onFailure)
+            global::FishAudio.AgentTransferOnFailure? onFailure,
+            global::FishAudio.AgentTransferDestinationAnnouncementMode? announcementMode,
+            string? announcementMessage)
         {
             this.Type = type;
             this.Label = label;
@@ -138,6 +157,8 @@ namespace FishAudio
             this.WarmRingTimeoutSeconds = warmRingTimeoutSeconds;
             this.WarmConfirmTimeoutSeconds = warmConfirmTimeoutSeconds;
             this.OnFailure = onFailure;
+            this.AnnouncementMode = announcementMode;
+            this.AnnouncementMessage = announcementMessage;
         }
 
         /// <summary>
