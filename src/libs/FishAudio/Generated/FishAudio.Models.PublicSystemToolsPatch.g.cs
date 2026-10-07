@@ -27,6 +27,12 @@ namespace FishAudio
         public string? HangUpCallFarewellMessage { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hang_up_call_refuse_questions")]
+        public bool? HangUpCallRefuseQuestions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -44,17 +50,22 @@ namespace FishAudio
         /// <param name="hangUpCallFarewellMessage">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="hangUpCallRefuseQuestions">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PublicSystemToolsPatch(
             bool? hangUpCall,
             global::FishAudio.PublicSystemToolsPatchHangUpCallFarewellMode? hangUpCallFarewellMode,
-            string? hangUpCallFarewellMessage)
+            string? hangUpCallFarewellMessage,
+            bool? hangUpCallRefuseQuestions)
         {
             this.HangUpCall = hangUpCall;
             this.HangUpCallFarewellMode = hangUpCallFarewellMode;
             this.HangUpCallFarewellMessage = hangUpCallFarewellMessage;
+            this.HangUpCallRefuseQuestions = hangUpCallRefuseQuestions;
         }
 
         /// <summary>

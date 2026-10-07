@@ -28,6 +28,12 @@ namespace FishAudio
         public string? HangUpCallFarewellMessage { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hang_up_call_refuse_questions")]
+        public bool? HangUpCallRefuseQuestions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -43,17 +49,22 @@ namespace FishAudio
         /// Default Value: generated
         /// </param>
         /// <param name="hangUpCallFarewellMessage"></param>
+        /// <param name="hangUpCallRefuseQuestions">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentSystemToolsConfig(
             bool? hangUpCall,
             global::FishAudio.AgentSystemToolsConfigHangUpCallFarewellMode? hangUpCallFarewellMode,
-            string? hangUpCallFarewellMessage)
+            string? hangUpCallFarewellMessage,
+            bool? hangUpCallRefuseQuestions)
         {
             this.HangUpCall = hangUpCall;
             this.HangUpCallFarewellMode = hangUpCallFarewellMode;
             this.HangUpCallFarewellMessage = hangUpCallFarewellMessage;
+            this.HangUpCallRefuseQuestions = hangUpCallRefuseQuestions;
         }
 
         /// <summary>
