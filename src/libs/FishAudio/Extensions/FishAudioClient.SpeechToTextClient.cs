@@ -13,7 +13,7 @@ public sealed partial class FishAudioClient : ISpeechToTextClient
     object? ISpeechToTextClient.GetService(Type serviceType, object? serviceKey) =>
         serviceType is null ? throw new ArgumentNullException(nameof(serviceType)) :
         serviceKey is not null ? null :
-        serviceType == typeof(SpeechToTextClientMetadata) ? (_speechMetadata ??= new("fish-audio", new Uri(DefaultBaseUrl))) :
+        serviceType == typeof(SpeechToTextClientMetadata) ? (_speechMetadata ??= new("fish-audio", new Uri(DefaultBaseUrl), "transcribe-1")) :
         serviceType.IsInstanceOfType(this) ? this :
         null;
 
@@ -24,6 +24,10 @@ public sealed partial class FishAudioClient : ISpeechToTextClient
         CancellationToken cancellationToken)
     {
         _ = audioSpeechStream ?? throw new ArgumentNullException(nameof(audioSpeechStream));
+
+        var model = options?.ModelId is null or "" ? CreateAsrModel.Transcribe1 :
+            CreateAsrModelExtensions.ToEnum(options.ModelId)
+                ?? throw new ArgumentException($"Unknown Fish Audio STT model '{options.ModelId}'. Use 'transcribe-1' or 'transcribe-1-pro'.", nameof(options));
 
         var request = options?.RawRepresentationFactory?.Invoke(this) as CreateAsrRequest
             ?? new CreateAsrRequest
@@ -42,7 +46,7 @@ public sealed partial class FishAudioClient : ISpeechToTextClient
             }
 
             request.Audio = ms.TryGetBuffer(out ArraySegment<byte> buffer)
-                && buffer.Array is not null && buffer.Offset == 0 && buffer.Count == ms.Length
+                && buffer.Array is not null && buffer.Offset == 0 && buffer.Count == ms.Length && buffer.Array.Length == buffer.Count
                     ? buffer.Array
                     : ms.ToArray();
         }
@@ -60,6 +64,7 @@ public sealed partial class FishAudioClient : ISpeechToTextClient
 
         var response = await OpenAPIV1.CreateAsrAsync(
             request: request,
+            model: model,
             cancellationToken: cancellationToken).ConfigureAwait(false);
 
         TimeSpan? startTime = null;
@@ -77,6 +82,8 @@ public sealed partial class FishAudioClient : ISpeechToTextClient
 
         return new SpeechToTextResponse(response.Text)
         {
+            ModelId = model.ToValueString(),
+            ResponseId = response.RequestId,
             RawRepresentation = response,
             StartTime = startTime,
             EndTime = endTime,
