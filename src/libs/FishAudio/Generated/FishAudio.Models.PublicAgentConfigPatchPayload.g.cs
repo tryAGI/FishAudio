@@ -69,6 +69,13 @@ namespace FishAudio
         public global::FishAudio.PublicAgentLLMPatch? Llm { get; set; }
 
         /// <summary>
+        /// Default values for the {{placeholders}} in the configured text, used when the session supplies none (the map replaces as a whole), and on_missing for a placeholder with neither: keep leaves it as written (default), empty renders it as empty text, reject refuses the session.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("variables")]
+        public global::FishAudio.PublicAgentVariablesPatch? Variables { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -107,6 +114,10 @@ namespace FishAudio
         /// <param name="llm">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="variables">
+        /// Default values for the {{placeholders}} in the configured text, used when the session supplies none (the map replaces as a whole), and on_missing for a placeholder with neither: keep leaves it as written (default), empty renders it as empty text, reject refuses the session.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -120,7 +131,8 @@ namespace FishAudio
             global::FishAudio.PublicAgentKnowledgeBasePatch? knowledgeBase,
             global::FishAudio.PublicAgentAnalysisPatch? analysis,
             global::FishAudio.PublicAgentGuardrailsPatch? guardrails,
-            global::FishAudio.PublicAgentLLMPatch? llm)
+            global::FishAudio.PublicAgentLLMPatch? llm,
+            global::FishAudio.PublicAgentVariablesPatch? variables)
         {
             this.Prompt = prompt;
             this.Voice = voice;
@@ -132,6 +144,7 @@ namespace FishAudio
             this.Analysis = analysis;
             this.Guardrails = guardrails;
             this.Llm = llm;
+            this.Variables = variables;
         }
 
         /// <summary>

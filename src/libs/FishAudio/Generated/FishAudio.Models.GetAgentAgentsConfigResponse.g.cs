@@ -95,6 +95,12 @@ namespace FishAudio
         public required global::FishAudio.AgentLLMConfigRedacted Llm { get; set; }
 
         /// <summary>
+        /// Defaults for `{{name}}` placeholders and what a placeholder without a value does.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("variables")]
+        public global::FishAudio.AgentVariablesConfig? Variables { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
@@ -129,6 +135,9 @@ namespace FishAudio
         /// <param name="guardrails"></param>
         /// <param name="llm"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="variables">
+        /// Defaults for `{{name}}` placeholders and what a placeholder without a value does.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -145,7 +154,8 @@ namespace FishAudio
             global::FishAudio.AgentAnalysisConfig analysis,
             global::FishAudio.AgentGuardrailsConfig guardrails,
             global::FishAudio.AgentLLMConfigRedacted llm,
-            global::System.DateTime updatedAt)
+            global::System.DateTime updatedAt,
+            global::FishAudio.AgentVariablesConfig? variables)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.ConfigHash = configHash ?? throw new global::System.ArgumentNullException(nameof(configHash));
@@ -159,6 +169,7 @@ namespace FishAudio
             this.Analysis = analysis ?? throw new global::System.ArgumentNullException(nameof(analysis));
             this.Guardrails = guardrails ?? throw new global::System.ArgumentNullException(nameof(guardrails));
             this.Llm = llm ?? throw new global::System.ArgumentNullException(nameof(llm));
+            this.Variables = variables;
             this.UpdatedAt = updatedAt;
         }
 
