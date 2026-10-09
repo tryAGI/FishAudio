@@ -72,6 +72,12 @@ internal static partial class AgentsEditAgentAgentsByAgentIdConfigCommandApiComm
     {
         Description = @"",
     };
+
+    private static Option<global::FishAudio.PublicAgentVariablesPatch?> Variables { get; } = new(
+        name: @"--variables")
+    {
+        Description = @"Default values for the {{placeholders}} in the configured text, used when the session supplies none (the map replaces as a whole), and on_missing for a placeholder with neither: keep leaves it as written (default), empty renders it as empty text, reject refuses the session.",
+    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -155,6 +161,7 @@ with an explicit null.");
                         command.Options.Add(Analysis);
                         command.Options.Add(Guardrails);
                         command.Options.Add(Llm);
+                        command.Options.Add(Variables);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -191,6 +198,7 @@ with an explicit null.");
                         var analysis = CliRuntime.WasSpecified(parseResult, Analysis) ? parseResult.GetValue(Analysis) : (__requestBase is { } __AnalysisBaseValue ? __AnalysisBaseValue.Analysis : default);
                         var guardrails = CliRuntime.WasSpecified(parseResult, Guardrails) ? parseResult.GetValue(Guardrails) : (__requestBase is { } __GuardrailsBaseValue ? __GuardrailsBaseValue.Guardrails : default);
                         var llm = CliRuntime.WasSpecified(parseResult, Llm) ? parseResult.GetValue(Llm) : (__requestBase is { } __LlmBaseValue ? __LlmBaseValue.Llm : default);
+                        var variables = CliRuntime.WasSpecified(parseResult, Variables) ? parseResult.GetValue(Variables) : (__requestBase is { } __VariablesBaseValue ? __VariablesBaseValue.Variables : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -206,6 +214,7 @@ with an explicit null.");
                                     analysis: analysis,
                                     guardrails: guardrails,
                                     llm: llm,
+                                    variables: variables,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

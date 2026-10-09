@@ -72,6 +72,13 @@ namespace FishAudio
         public int? WarmConfirmTimeoutSeconds { get; set; }
 
         /// <summary>
+        /// Applies to warm transfers whose warm_connect is `confirm` or `briefing`, and is ignored for cold transfers and `direct`. When true, once the destination answers, the agent stays silent until the other side speaks, then classifies the pickup. A person is briefed as usual. Voicemail or an IVR (phone menu) ends the transfer as failed. A hold queue or silence keeps the agent waiting until `warm_confirm_timeout_seconds` ends the attempt as unreachable. A failed transfer follows `on_failure`. Leave it off for destinations whose people are only reachable through a phone menu, because the menu stops the transfer.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("warm_human_detection")]
+        public bool? WarmHumanDetection { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_failure")]
@@ -123,6 +130,10 @@ namespace FishAudio
         /// <param name="warmConfirmTimeoutSeconds">
         /// Default Value: 60
         /// </param>
+        /// <param name="warmHumanDetection">
+        /// Applies to warm transfers whose warm_connect is `confirm` or `briefing`, and is ignored for cold transfers and `direct`. When true, once the destination answers, the agent stays silent until the other side speaks, then classifies the pickup. A person is briefed as usual. Voicemail or an IVR (phone menu) ends the transfer as failed. A hold queue or silence keeps the agent waiting until `warm_confirm_timeout_seconds` ends the attempt as unreachable. A failed transfer follows `on_failure`. Leave it off for destinations whose people are only reachable through a phone menu, because the menu stops the transfer.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="onFailure"></param>
         /// <param name="announcementMode">
         /// Default Value: generated
@@ -142,6 +153,7 @@ namespace FishAudio
             string? warmBriefingInstructions,
             int? warmRingTimeoutSeconds,
             int? warmConfirmTimeoutSeconds,
+            bool? warmHumanDetection,
             global::FishAudio.AgentTransferOnFailurePatch? onFailure,
             global::FishAudio.AgentTransferDestinationPatchAnnouncementMode? announcementMode,
             string? announcementMessage)
@@ -156,6 +168,7 @@ namespace FishAudio
             this.WarmBriefingInstructions = warmBriefingInstructions;
             this.WarmRingTimeoutSeconds = warmRingTimeoutSeconds;
             this.WarmConfirmTimeoutSeconds = warmConfirmTimeoutSeconds;
+            this.WarmHumanDetection = warmHumanDetection;
             this.OnFailure = onFailure;
             this.AnnouncementMode = announcementMode;
             this.AnnouncementMessage = announcementMessage;
