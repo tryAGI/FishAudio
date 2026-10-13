@@ -52,7 +52,7 @@ internal static partial class AgentToolsCreateAgentToolsCommandApiCommand
     private static Option<string?> BodyTemplate { get; } = new(
         name: @"--body-template")
     {
-        Description = @"",
+        Description = @"Request body sent for non-GET calls. `{{argument}}`, `{{system.*}}` and custom session variable placeholders are filled in at call time; a missing value becomes empty. When the body's content type is JSON (the default `application/json`, any `+json` type, or a `Content-Type` header saying so), a placeholder inside a JSON string, such as `{""note"": ""{{note}}""}`, is JSON-escaped, so quotes, backslashes and newlines in the value keep the body valid JSON. A placeholder outside a string, such as `{""count"": {{count}}}`, is inserted as is. Other content types are filled in as is.",
     };
 
     private static Option<global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookHeaderPayload>?> Headers { get; } = new(

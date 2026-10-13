@@ -10,7 +10,7 @@ internal static partial class OpenAPIV1GetTtsLiveWithTimestampCommandApiCommand
     private static Option<global::FishAudio.GetTtsLiveWithTimestampModel?> Model { get; } = new(
         name: @"--model")
     {
-        Description = @"Specify which TTS model to use. Use `s2.1-pro-free` for the free developer tier. `drama-3-preview` is a preview model; its behavior and availability may change. If omitted or set to an unrecognized value, the request falls back to `s2.1-pro`.",
+        Description = @"Specify which TTS model to use. Use `s2.1-pro-free` for the free developer tier. If omitted or set to an unrecognized value, the request falls back to `s2.1-pro`.",
     };
 
     static partial void CustomizeCommand(ref Command command);

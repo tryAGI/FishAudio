@@ -157,6 +157,12 @@ namespace FishAudio
         public string? ContentPurgedAt { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keypad_menu")]
+        public global::FishAudio.AgentSessionKeypadMenu? KeypadMenu { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -220,6 +226,9 @@ namespace FishAudio
         /// <param name="contentPurgedAt">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="keypadMenu">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -246,7 +255,8 @@ namespace FishAudio
             string? agentParticipantIdentity,
             string? agentJoinedAt,
             object? metadata,
-            string? contentPurgedAt)
+            string? contentPurgedAt,
+            global::FishAudio.AgentSessionKeypadMenu? keypadMenu)
         {
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
@@ -271,6 +281,7 @@ namespace FishAudio
             this.AgentJoinedAt = agentJoinedAt;
             this.Metadata = metadata;
             this.ContentPurgedAt = contentPurgedAt;
+            this.KeypadMenu = keypadMenu;
         }
 
         /// <summary>

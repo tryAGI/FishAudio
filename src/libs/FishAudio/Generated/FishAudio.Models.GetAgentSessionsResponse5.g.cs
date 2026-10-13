@@ -156,6 +156,12 @@ namespace FishAudio
         public string? ContentPurgedAt { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keypad_menu")]
+        public global::FishAudio.AgentSessionKeypadMenu? KeypadMenu { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unattributed_llm_usage")]
@@ -237,6 +243,9 @@ namespace FishAudio
         /// <param name="contentPurgedAt">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="keypadMenu">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="unattributedLlmUsage"></param>
         /// <param name="items"></param>
         /// <param name="analysis">
@@ -269,6 +278,7 @@ namespace FishAudio
             string? agentJoinedAt,
             object? metadata,
             string? contentPurgedAt,
+            global::FishAudio.AgentSessionKeypadMenu? keypadMenu,
             global::System.Collections.Generic.IList<global::FishAudio.LLMMessageUsage>? unattributedLlmUsage,
             global::System.Collections.Generic.IList<global::FishAudio.ItemsItem>? items,
             global::FishAudio.AgentSessionAnalysisResult? analysis)
@@ -296,6 +306,7 @@ namespace FishAudio
             this.AgentJoinedAt = agentJoinedAt;
             this.Metadata = metadata;
             this.ContentPurgedAt = contentPurgedAt;
+            this.KeypadMenu = keypadMenu;
             this.UnattributedLlmUsage = unattributedLlmUsage;
             this.Items = items;
             this.Analysis = analysis;

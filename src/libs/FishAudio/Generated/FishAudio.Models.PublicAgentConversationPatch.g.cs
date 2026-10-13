@@ -105,6 +105,18 @@ namespace FishAudio
         public global::FishAudio.AgentOutboundPatch? Outbound { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keypad_menu")]
+        public global::FishAudio.AgentKeypadMenuPatch? KeypadMenu { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keypad_input")]
+        public global::FishAudio.AgentKeypadInputPatch? KeypadInput { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -161,6 +173,12 @@ namespace FishAudio
         /// <param name="outbound">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="keypadMenu">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="keypadInput">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -180,7 +198,9 @@ namespace FishAudio
             string? timezone,
             global::System.Collections.Generic.IList<global::FishAudio.AgentTransferDestinationPatch>? transferDestinations,
             bool? transferRefuseQuestions,
-            global::FishAudio.AgentOutboundPatch? outbound)
+            global::FishAudio.AgentOutboundPatch? outbound,
+            global::FishAudio.AgentKeypadMenuPatch? keypadMenu,
+            global::FishAudio.AgentKeypadInputPatch? keypadInput)
         {
             this.MaxDurationSeconds = maxDurationSeconds;
             this.ResponseWaitMs = responseWaitMs;
@@ -198,6 +218,8 @@ namespace FishAudio
             this.TransferDestinations = transferDestinations;
             this.TransferRefuseQuestions = transferRefuseQuestions;
             this.Outbound = outbound;
+            this.KeypadMenu = keypadMenu;
+            this.KeypadInput = keypadInput;
         }
 
         /// <summary>
