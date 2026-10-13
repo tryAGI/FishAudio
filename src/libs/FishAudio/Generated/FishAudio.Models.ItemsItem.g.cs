@@ -90,6 +90,46 @@ namespace FishAudio
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
 
         /// <summary>
+        /// One transfer attempt. `call_id` matches its `_transfer_call` tool_call<br/>
+        /// item. A warm transfer's consult call (the caller on hold meanwhile) is in<br/>
+        /// `messages`, never in the caller's message items. `merged` and `referred`<br/>
+        /// succeeded, and `outcome` is null while the attempt runs.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::FishAudio.AgentSessionTransferItem? Transfer { get; init; }
+#else
+        public global::FishAudio.AgentSessionTransferItem? Transfer { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Transfer))]
+#endif
+        public bool IsTransfer => Transfer != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickTransfer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::FishAudio.AgentSessionTransferItem? value)
+        {
+            value = Transfer;
+            return IsTransfer;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::FishAudio.AgentSessionTransferItem PickTransfer() => Transfer is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Transfer' but the value was {ToString()}.");
+
+        /// <summary>
         /// Tool outcome (`tool.completed`/`tool.failed` twin). A call that never<br/>
         /// resolved (session died mid-flight) has no result item.
         /// </summary>
@@ -175,6 +215,29 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator ItemsItem(global::FishAudio.AgentSessionTransferItem value) => new ItemsItem((global::FishAudio.AgentSessionTransferItem?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::FishAudio.AgentSessionTransferItem?(ItemsItem @this) => @this.Transfer;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ItemsItem(global::FishAudio.AgentSessionTransferItem? value)
+        {
+            Transfer = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ItemsItem FromTransfer(global::FishAudio.AgentSessionTransferItem? value) => new ItemsItem(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator ItemsItem(global::FishAudio.AgentSessionToolResultItem value) => new ItemsItem((global::FishAudio.AgentSessionToolResultItem?)value);
 
         /// <summary>
@@ -202,6 +265,7 @@ namespace FishAudio
             global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType? type,
             global::FishAudio.AgentSessionMessageItem? message,
             global::FishAudio.AgentSessionToolCallItem? toolCall,
+            global::FishAudio.AgentSessionTransferItem? transfer,
             global::FishAudio.AgentSessionToolResultItem? toolResult
             )
         {
@@ -209,6 +273,7 @@ namespace FishAudio
 
             Message = message;
             ToolCall = toolCall;
+            Transfer = transfer;
             ToolResult = toolResult;
         }
 
@@ -217,6 +282,7 @@ namespace FishAudio
         /// </summary>
         public object? Object =>
             ToolResult as object ??
+            Transfer as object ??
             ToolCall as object ??
             Message as object
             ;
@@ -227,6 +293,7 @@ namespace FishAudio
         public override string? ToString() =>
             Message?.ToString() ??
             ToolCall?.ToString() ??
+            Transfer?.ToString() ??
             ToolResult?.ToString()
             ;
 
@@ -235,7 +302,7 @@ namespace FishAudio
         /// </summary>
         public bool Validate()
         {
-            return IsMessage && !IsToolCall && !IsToolResult || !IsMessage && IsToolCall && !IsToolResult || !IsMessage && !IsToolCall && IsToolResult;
+            return IsMessage && !IsToolCall && !IsTransfer && !IsToolResult || !IsMessage && IsToolCall && !IsTransfer && !IsToolResult || !IsMessage && !IsToolCall && IsTransfer && !IsToolResult || !IsMessage && !IsToolCall && !IsTransfer && IsToolResult;
         }
 
         /// <summary>
@@ -244,6 +311,7 @@ namespace FishAudio
         public TResult? Match<TResult>(
             global::System.Func<global::FishAudio.AgentSessionMessageItem, TResult>? message = null,
             global::System.Func<global::FishAudio.AgentSessionToolCallItem, TResult>? toolCall = null,
+            global::System.Func<global::FishAudio.AgentSessionTransferItem, TResult>? transfer = null,
             global::System.Func<global::FishAudio.AgentSessionToolResultItem, TResult>? toolResult = null,
             bool validate = true)
         {
@@ -260,9 +328,13 @@ namespace FishAudio
             {
                 return toolCall(__value1);
             }
-            else if (ToolResult is { } __value2 && toolResult != null)
+            else if (Transfer is { } __value2 && transfer != null)
             {
-                return toolResult(__value2);
+                return transfer(__value2);
+            }
+            else if (ToolResult is { } __value3 && toolResult != null)
+            {
+                return toolResult(__value3);
             }
 
             return default(TResult);
@@ -276,6 +348,8 @@ namespace FishAudio
 
             global::System.Action<global::FishAudio.AgentSessionToolCallItem>? toolCall = null,
 
+            global::System.Action<global::FishAudio.AgentSessionTransferItem>? transfer = null,
+
             global::System.Action<global::FishAudio.AgentSessionToolResultItem>? toolResult = null,
             bool validate = true)
         {
@@ -292,9 +366,13 @@ namespace FishAudio
             {
                 toolCall?.Invoke(__value1);
             }
-            else if (ToolResult is { } __value2)
+            else if (Transfer is { } __value2)
             {
-                toolResult?.Invoke(__value2);
+                transfer?.Invoke(__value2);
+            }
+            else if (ToolResult is { } __value3)
+            {
+                toolResult?.Invoke(__value3);
             }
         }
 
@@ -304,6 +382,7 @@ namespace FishAudio
         public void Switch(
             global::System.Action<global::FishAudio.AgentSessionMessageItem>? message = null,
             global::System.Action<global::FishAudio.AgentSessionToolCallItem>? toolCall = null,
+            global::System.Action<global::FishAudio.AgentSessionTransferItem>? transfer = null,
             global::System.Action<global::FishAudio.AgentSessionToolResultItem>? toolResult = null,
             bool validate = true)
         {
@@ -320,9 +399,13 @@ namespace FishAudio
             {
                 toolCall?.Invoke(__value1);
             }
-            else if (ToolResult is { } __value2)
+            else if (Transfer is { } __value2)
             {
-                toolResult?.Invoke(__value2);
+                transfer?.Invoke(__value2);
+            }
+            else if (ToolResult is { } __value3)
+            {
+                toolResult?.Invoke(__value3);
             }
         }
 
@@ -337,6 +420,8 @@ namespace FishAudio
                 typeof(global::FishAudio.AgentSessionMessageItem),
                 ToolCall,
                 typeof(global::FishAudio.AgentSessionToolCallItem),
+                Transfer,
+                typeof(global::FishAudio.AgentSessionTransferItem),
                 ToolResult,
                 typeof(global::FishAudio.AgentSessionToolResultItem),
             };
@@ -357,6 +442,7 @@ namespace FishAudio
             return
                 global::System.Collections.Generic.EqualityComparer<global::FishAudio.AgentSessionMessageItem?>.Default.Equals(Message, other.Message) &&
                 global::System.Collections.Generic.EqualityComparer<global::FishAudio.AgentSessionToolCallItem?>.Default.Equals(ToolCall, other.ToolCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::FishAudio.AgentSessionTransferItem?>.Default.Equals(Transfer, other.Transfer) &&
                 global::System.Collections.Generic.EqualityComparer<global::FishAudio.AgentSessionToolResultItem?>.Default.Equals(ToolResult, other.ToolResult)
                 ;
         }

@@ -35,6 +35,13 @@ namespace FishAudio.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::FishAudio.AgentSessionToolCallItem)}");
                 toolCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::FishAudio.AgentSessionTransferItem? transfer = default;
+            if (discriminator?.Type == global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType.Transfer)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::FishAudio.AgentSessionTransferItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::FishAudio.AgentSessionTransferItem> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::FishAudio.AgentSessionTransferItem)}");
+                transfer = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::FishAudio.AgentSessionToolResultItem? toolResult = default;
             if (discriminator?.Type == global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType.ToolResult)
             {
@@ -48,6 +55,8 @@ namespace FishAudio.JsonConverters
                 message,
 
                 toolCall,
+
+                transfer,
 
                 toolResult
                 );
@@ -75,6 +84,12 @@ namespace FishAudio.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::FishAudio.AgentSessionToolCallItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::FishAudio.AgentSessionToolCallItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::FishAudio.AgentSessionToolCallItem).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolCall(), typeInfo);
+            }
+            else if (value.IsTransfer)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::FishAudio.AgentSessionTransferItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::FishAudio.AgentSessionTransferItem?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::FishAudio.AgentSessionTransferItem).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransfer(), typeInfo);
             }
             else if (value.IsToolResult)
             {

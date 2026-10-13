@@ -31,6 +31,12 @@ namespace FishAudio
         public required global::System.Collections.Generic.IList<global::FishAudio.AgentSessionRecordingTrackEntity> Tracks { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transfers")]
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionTransferRecordingEntity>? Transfers { get; set; }
+
+        /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
@@ -60,6 +66,7 @@ namespace FishAudio
         /// <param name="sessionId"></param>
         /// <param name="status"></param>
         /// <param name="tracks"></param>
+        /// <param name="transfers"></param>
         /// <param name="error">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -76,6 +83,7 @@ namespace FishAudio
             string sessionId,
             global::FishAudio.GetAgentSessionsRecordingResponseStatus status,
             global::System.Collections.Generic.IList<global::FishAudio.AgentSessionRecordingTrackEntity> tracks,
+            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionTransferRecordingEntity>? transfers,
             string? error,
             string? errorCode,
             string? errorMessage)
@@ -83,6 +91,7 @@ namespace FishAudio
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.Status = status;
             this.Tracks = tracks ?? throw new global::System.ArgumentNullException(nameof(tracks));
+            this.Transfers = transfers;
             this.Error = error;
             this.ErrorCode = errorCode;
             this.ErrorMessage = errorMessage;

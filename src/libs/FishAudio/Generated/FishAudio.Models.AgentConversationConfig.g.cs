@@ -107,6 +107,26 @@ namespace FishAudio
         public global::FishAudio.AgentOutboundConfig? Outbound { get; set; }
 
         /// <summary>
+        /// Keypad menu for inbound phone calls. Before the agent's first turn it<br/>
+        /// speaks `prompt` in the agent's voice, collects one key press (or, with<br/>
+        /// `accept_speech`, the option's value said aloud) and stores the chosen<br/>
+        /// option's `value` in the dynamic variable named by `variable`. The system<br/>
+        /// prompt, first message, transfer texts, farewell and webhook tools can use<br/>
+        /// `{{variable}}` to act on the choice. Outbound calls, web, API and test<br/>
+        /// sessions skip the menu, and the variable renders from its default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keypad_menu")]
+        public global::FishAudio.AgentKeypadMenu? KeypadMenu { get; set; }
+
+        /// <summary>
+        /// Keypad input for phone calls: digits the caller types during the<br/>
+        /// conversation reach the agent as one user turn, ended by `terminator` or<br/>
+        /// by a pause of `inter_digit_timeout_seconds` (`none`: the pause only).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keypad_input")]
+        public global::FishAudio.AgentKeypadInput? KeypadInput { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -161,6 +181,20 @@ namespace FishAudio
         /// <param name="outbound">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="keypadMenu">
+        /// Keypad menu for inbound phone calls. Before the agent's first turn it<br/>
+        /// speaks `prompt` in the agent's voice, collects one key press (or, with<br/>
+        /// `accept_speech`, the option's value said aloud) and stores the chosen<br/>
+        /// option's `value` in the dynamic variable named by `variable`. The system<br/>
+        /// prompt, first message, transfer texts, farewell and webhook tools can use<br/>
+        /// `{{variable}}` to act on the choice. Outbound calls, web, API and test<br/>
+        /// sessions skip the menu, and the variable renders from its default.
+        /// </param>
+        /// <param name="keypadInput">
+        /// Keypad input for phone calls: digits the caller types during the<br/>
+        /// conversation reach the agent as one user turn, ended by `terminator` or<br/>
+        /// by a pause of `inter_digit_timeout_seconds` (`none`: the pause only).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -180,7 +214,9 @@ namespace FishAudio
             string? timezone,
             global::System.Collections.Generic.IList<global::FishAudio.AgentTransferDestination>? transferDestinations,
             bool? transferRefuseQuestions,
-            global::FishAudio.AgentOutboundConfig? outbound)
+            global::FishAudio.AgentOutboundConfig? outbound,
+            global::FishAudio.AgentKeypadMenu? keypadMenu,
+            global::FishAudio.AgentKeypadInput? keypadInput)
         {
             this.MaxDurationSeconds = maxDurationSeconds;
             this.ResponseWaitMs = responseWaitMs;
@@ -198,6 +234,8 @@ namespace FishAudio
             this.TransferDestinations = transferDestinations;
             this.TransferRefuseQuestions = transferRefuseQuestions;
             this.Outbound = outbound;
+            this.KeypadMenu = keypadMenu;
+            this.KeypadInput = keypadInput;
         }
 
         /// <summary>

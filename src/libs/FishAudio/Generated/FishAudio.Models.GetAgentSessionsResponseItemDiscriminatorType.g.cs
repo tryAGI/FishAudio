@@ -20,6 +20,10 @@ namespace FishAudio
         ///
         /// </summary>
         ToolResult,
+        /// <summary>
+        ///
+        /// </summary>
+        Transfer,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace FishAudio
                 GetAgentSessionsResponseItemDiscriminatorType.Message => "message",
                 GetAgentSessionsResponseItemDiscriminatorType.ToolCall => "tool_call",
                 GetAgentSessionsResponseItemDiscriminatorType.ToolResult => "tool_result",
+                GetAgentSessionsResponseItemDiscriminatorType.Transfer => "transfer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace FishAudio
                 "message" => GetAgentSessionsResponseItemDiscriminatorType.Message,
                 "tool_call" => GetAgentSessionsResponseItemDiscriminatorType.ToolCall,
                 "tool_result" => GetAgentSessionsResponseItemDiscriminatorType.ToolResult,
+                "transfer" => GetAgentSessionsResponseItemDiscriminatorType.Transfer,
                 _ => null,
             };
         }
