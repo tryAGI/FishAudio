@@ -59,11 +59,18 @@ namespace FishAudio
         public int? ChunkLength { get; set; }
 
         /// <summary>
-        /// Normalizes text for English and Chinese, improving stability for numbers.<br/>
+        /// Rewrites numbers, dates, units and symbols as spoken words before synthesis, improving stability. Uses `language` when it is set and otherwise detects the language of each text chunk.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("normalize")]
         public bool? Normalize { get; set; }
+
+        /// <summary>
+        /// BCP-47 language tag of the text, for example `en`, `es-MX` or `zh-CN`. Case-insensitive, and `_` is read as `-`. Used only by text normalization (how numbers, dates, units and symbols are spelled out before synthesis) and by word-timestamp alignment. It is not passed to the speech model and does not change the voice, accent or audio quality; a wrong tag only changes how those tokens are spelled out. Omit it, or send `auto` or an empty string, to detect the language per chunk. A tag without dedicated normalization rules skips normalization instead of failing. Without a region, Spanish follows Spain conventions; send `es-MX` for Mexican readings. When `normalize` is false it only affects word timestamps. For text that mixes languages, leave it unset.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("language")]
+        public string? Language { get; set; }
 
         /// <summary>
         /// Output audio format.<br/>
@@ -188,8 +195,12 @@ namespace FishAudio
         /// Default Value: 300
         /// </param>
         /// <param name="normalize">
-        /// Normalizes text for English and Chinese, improving stability for numbers.<br/>
+        /// Rewrites numbers, dates, units and symbols as spoken words before synthesis, improving stability. Uses `language` when it is set and otherwise detects the language of each text chunk.<br/>
         /// Default Value: true
+        /// </param>
+        /// <param name="language">
+        /// BCP-47 language tag of the text, for example `en`, `es-MX` or `zh-CN`. Case-insensitive, and `_` is read as `-`. Used only by text normalization (how numbers, dates, units and symbols are spelled out before synthesis) and by word-timestamp alignment. It is not passed to the speech model and does not change the voice, accent or audio quality; a wrong tag only changes how those tokens are spelled out. Omit it, or send `auto` or an empty string, to detect the language per chunk. A tag without dedicated normalization rules skips normalization instead of failing. Without a region, Spanish follows Spain conventions; send `es-MX` for Mexican readings. When `normalize` is false it only affects word timestamps. For text that mixes languages, leave it unset.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="format">
         /// Output audio format.<br/>
@@ -251,6 +262,7 @@ namespace FishAudio
             global::FishAudio.ProsodyControl? prosody,
             int? chunkLength,
             bool? normalize,
+            string? language,
             global::FishAudio.TTSStreamWithTimestampRequestFormat? format,
             int? sampleRate,
             int? mp3Bitrate,
@@ -272,6 +284,7 @@ namespace FishAudio
             this.Prosody = prosody;
             this.ChunkLength = chunkLength;
             this.Normalize = normalize;
+            this.Language = language;
             this.Format = format;
             this.SampleRate = sampleRate;
             this.Mp3Bitrate = mp3Bitrate;

@@ -11,6 +11,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        AsrModel,
+        /// <summary>
+        ///
+        /// </summary>
         FirstMessage,
         /// <summary>
         ///
@@ -38,6 +42,7 @@ namespace FishAudio
         {
             return value switch
             {
+                PatchAgentAgentsResponseOverridesAllowedItem.AsrModel => "asr.model",
                 PatchAgentAgentsResponseOverridesAllowedItem.FirstMessage => "first_message",
                 PatchAgentAgentsResponseOverridesAllowedItem.Language => "language",
                 PatchAgentAgentsResponseOverridesAllowedItem.SystemPrompt => "system_prompt",
@@ -52,6 +57,7 @@ namespace FishAudio
         {
             return value switch
             {
+                "asr.model" => PatchAgentAgentsResponseOverridesAllowedItem.AsrModel,
                 "first_message" => PatchAgentAgentsResponseOverridesAllowedItem.FirstMessage,
                 "language" => PatchAgentAgentsResponseOverridesAllowedItem.Language,
                 "system_prompt" => PatchAgentAgentsResponseOverridesAllowedItem.SystemPrompt,

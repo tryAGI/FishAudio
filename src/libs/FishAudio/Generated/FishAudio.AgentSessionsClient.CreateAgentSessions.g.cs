@@ -52,7 +52,11 @@ namespace FishAudio
         /// agent's allowed origins.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
-        /// speaking language.
+        /// speaking language.<br/>
+        /// `overrides.asr.model` picks the speech recognition model for this session,<br/>
+        /// nested like the agent config's `asr` section and with the same values as<br/>
+        /// `asr.model`. It needs an API key. A model in preview is 403 unless your<br/>
+        /// team has access or the agent already uses it.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -96,7 +100,11 @@ namespace FishAudio
         /// agent's allowed origins.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
-        /// speaking language.
+        /// speaking language.<br/>
+        /// `overrides.asr.model` picks the speech recognition model for this session,<br/>
+        /// nested like the agent config's `asr` section and with the same values as<br/>
+        /// `asr.model`. It needs an API key. A model in preview is 403 unless your<br/>
+        /// team has access or the agent already uses it.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -826,7 +834,11 @@ namespace FishAudio
         /// agent's allowed origins.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
-        /// speaking language.
+        /// speaking language.<br/>
+        /// `overrides.asr.model` picks the speech recognition model for this session,<br/>
+        /// nested like the agent config's `asr` section and with the same values as<br/>
+        /// `asr.model`. It needs an API key. A model in preview is 403 unless your<br/>
+        /// team has access or the agent already uses it.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

@@ -35,6 +35,12 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tts_model")]
+        public global::FishAudio.PublicAgentVoicePatchTtsModel? TtsModel { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pronunciation_dictionary_ids")]
         public global::System.Collections.Generic.IList<string>? PronunciationDictionaryIds { get; set; }
 
@@ -59,6 +65,9 @@ namespace FishAudio
         /// <param name="speed">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="ttsModel">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="pronunciationDictionaryIds">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -70,12 +79,14 @@ namespace FishAudio
             global::FishAudio.PublicAgentVoicePatchSpeakingLanguage? speakingLanguage,
             bool? expressive,
             double? speed,
+            global::FishAudio.PublicAgentVoicePatchTtsModel? ttsModel,
             global::System.Collections.Generic.IList<string>? pronunciationDictionaryIds)
         {
             this.VoiceId = voiceId;
             this.SpeakingLanguage = speakingLanguage;
             this.Expressive = expressive;
             this.Speed = speed;
+            this.TtsModel = ttsModel;
             this.PronunciationDictionaryIds = pronunciationDictionaryIds;
         }
 

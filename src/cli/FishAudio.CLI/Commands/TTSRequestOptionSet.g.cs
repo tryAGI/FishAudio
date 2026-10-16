@@ -10,6 +10,7 @@ internal sealed record TTSRequestOptionSet(
                      Option<double?> TopP,
                      Option<int?> ChunkLength,
                      Option<bool?> Normalize,
+                     Option<string?> Language,
                      Option<global::FishAudio.TTSRequestFormat?> Format,
                      Option<int?> SampleRate,
                      Option<int?> Mp3Bitrate,
@@ -45,7 +46,11 @@ internal sealed record TTSRequestOptionSet(
                 {
                     Description = @"Text segment size for processing.",
                 },
-                Normalize: CliRuntime.CreateNullableBoolOption(name: $"--{normalizedPrefix}normalize", description: @"Normalizes text for English and Chinese, improving stability for numbers."),
+                Normalize: CliRuntime.CreateNullableBoolOption(name: $"--{normalizedPrefix}normalize", description: @"Rewrites numbers, dates, units and symbols as spoken words before synthesis, improving stability. Uses `language` when it is set and otherwise detects the language of each text chunk."),
+                Language: new Option<string?>($"--{normalizedPrefix}language")
+                {
+                    Description = @"BCP-47 language tag of the text, for example `en`, `es-MX` or `zh-CN`. Case-insensitive, and `_` is read as `-`. Used only by text normalization (how numbers, dates, units and symbols are spelled out before synthesis) and by word-timestamp alignment. It is not passed to the speech model and does not change the voice, accent or audio quality; a wrong tag only changes how those tokens are spelled out. Omit it, or send `auto` or an empty string, to detect the language per chunk. A tag without dedicated normalization rules skips normalization instead of failing. Without a region, Spanish follows Spain conventions; send `es-MX` for Mexican readings. When `normalize` is false it only affects word timestamps. For text that mixes languages, leave it unset.",
+                },
                 Format: new Option<global::FishAudio.TTSRequestFormat?>($"--{normalizedPrefix}format")
                 {
                     Description = @"Output audio format.",

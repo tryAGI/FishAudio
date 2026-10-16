@@ -63,6 +63,7 @@ internal static partial class OpenAPIV1CreateTtsCommandApiCommand
                         command.Options.Add(TTSRequestOptionSetOptions.TopP);
                         command.Options.Add(TTSRequestOptionSetOptions.ChunkLength);
                         command.Options.Add(TTSRequestOptionSetOptions.Normalize);
+                        command.Options.Add(TTSRequestOptionSetOptions.Language);
                         command.Options.Add(TTSRequestOptionSetOptions.Format);
                         command.Options.Add(TTSRequestOptionSetOptions.SampleRate);
                         command.Options.Add(TTSRequestOptionSetOptions.Mp3Bitrate);
@@ -109,6 +110,7 @@ internal static partial class OpenAPIV1CreateTtsCommandApiCommand
                         var topP = CliRuntime.WasSpecified(parseResult, TTSRequestOptionSetOptions.TopP) ? parseResult.GetValue(TTSRequestOptionSetOptions.TopP) : (__requestBase is { } __TopPBaseValue ? __TopPBaseValue.TopP : default);
                         var chunkLength = CliRuntime.WasSpecified(parseResult, TTSRequestOptionSetOptions.ChunkLength) ? parseResult.GetValue(TTSRequestOptionSetOptions.ChunkLength) : (__requestBase is { } __ChunkLengthBaseValue ? __ChunkLengthBaseValue.ChunkLength : default);
                         var normalize = CliRuntime.WasSpecified(parseResult, TTSRequestOptionSetOptions.Normalize) ? parseResult.GetValue(TTSRequestOptionSetOptions.Normalize) : (__requestBase is { } __NormalizeBaseValue ? __NormalizeBaseValue.Normalize : default);
+                        var language = CliRuntime.WasSpecified(parseResult, TTSRequestOptionSetOptions.Language) ? parseResult.GetValue(TTSRequestOptionSetOptions.Language) : (__requestBase is { } __LanguageBaseValue ? __LanguageBaseValue.Language : default);
                         var format = CliRuntime.WasSpecified(parseResult, TTSRequestOptionSetOptions.Format) ? parseResult.GetValue(TTSRequestOptionSetOptions.Format) : (__requestBase is { } __FormatBaseValue ? __FormatBaseValue.Format : default);
                         var sampleRate = CliRuntime.WasSpecified(parseResult, TTSRequestOptionSetOptions.SampleRate) ? parseResult.GetValue(TTSRequestOptionSetOptions.SampleRate) : (__requestBase is { } __SampleRateBaseValue ? __SampleRateBaseValue.SampleRate : default);
                         var mp3Bitrate = CliRuntime.WasSpecified(parseResult, TTSRequestOptionSetOptions.Mp3Bitrate) ? parseResult.GetValue(TTSRequestOptionSetOptions.Mp3Bitrate) : (__requestBase is { } __Mp3BitrateBaseValue ? __Mp3BitrateBaseValue.Mp3Bitrate : default);
@@ -148,6 +150,7 @@ internal static partial class OpenAPIV1CreateTtsCommandApiCommand
                                     topP: topP,
                                     chunkLength: chunkLength,
                                     normalize: normalize,
+                                    language: language,
                                     format: format,
                                     sampleRate: sampleRate,
                                     mp3Bitrate: mp3Bitrate,

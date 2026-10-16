@@ -36,6 +36,13 @@ namespace FishAudio
         public double? Speed { get; set; }
 
         /// <summary>
+        /// Default Value: s2.1-pro
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tts_model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentVoiceConfigViewTtsModelJsonConverter))]
+        public global::FishAudio.AgentVoiceConfigViewTtsModel? TtsModel { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pronunciation_dictionary_ids")]
@@ -62,6 +69,9 @@ namespace FishAudio
         /// <param name="speed">
         /// Default Value: 1
         /// </param>
+        /// <param name="ttsModel">
+        /// Default Value: s2.1-pro
+        /// </param>
         /// <param name="pronunciationDictionaryIds"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -71,12 +81,14 @@ namespace FishAudio
             global::FishAudio.AgentVoiceConfigViewSpeakingLanguage? speakingLanguage,
             bool? expressive,
             double? speed,
+            global::FishAudio.AgentVoiceConfigViewTtsModel? ttsModel,
             global::System.Collections.Generic.IList<string>? pronunciationDictionaryIds)
         {
             this.VoiceId = voiceId;
             this.SpeakingLanguage = speakingLanguage;
             this.Expressive = expressive;
             this.Speed = speed;
+            this.TtsModel = ttsModel;
             this.PronunciationDictionaryIds = pronunciationDictionaryIds;
         }
 

@@ -63,6 +63,7 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampWithMessagePa
                         command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.TopP);
                         command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.ChunkLength);
                         command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.Normalize);
+                        command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.Language);
                         command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.Format);
                         command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.SampleRate);
                         command.Options.Add(TTSStreamWithTimestampRequestOptionSetOptions.Mp3Bitrate);
@@ -109,6 +110,7 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampWithMessagePa
                         var topP = CliRuntime.WasSpecified(parseResult, TTSStreamWithTimestampRequestOptionSetOptions.TopP) ? parseResult.GetValue(TTSStreamWithTimestampRequestOptionSetOptions.TopP) : (__requestBase is { } __TopPBaseValue ? __TopPBaseValue.TopP : default);
                         var chunkLength = CliRuntime.WasSpecified(parseResult, TTSStreamWithTimestampRequestOptionSetOptions.ChunkLength) ? parseResult.GetValue(TTSStreamWithTimestampRequestOptionSetOptions.ChunkLength) : (__requestBase is { } __ChunkLengthBaseValue ? __ChunkLengthBaseValue.ChunkLength : default);
                         var normalize = CliRuntime.WasSpecified(parseResult, TTSStreamWithTimestampRequestOptionSetOptions.Normalize) ? parseResult.GetValue(TTSStreamWithTimestampRequestOptionSetOptions.Normalize) : (__requestBase is { } __NormalizeBaseValue ? __NormalizeBaseValue.Normalize : default);
+                        var language = CliRuntime.WasSpecified(parseResult, TTSStreamWithTimestampRequestOptionSetOptions.Language) ? parseResult.GetValue(TTSStreamWithTimestampRequestOptionSetOptions.Language) : (__requestBase is { } __LanguageBaseValue ? __LanguageBaseValue.Language : default);
                         var format = CliRuntime.WasSpecified(parseResult, TTSStreamWithTimestampRequestOptionSetOptions.Format) ? parseResult.GetValue(TTSStreamWithTimestampRequestOptionSetOptions.Format) : (__requestBase is { } __FormatBaseValue ? __FormatBaseValue.Format : default);
                         var sampleRate = CliRuntime.WasSpecified(parseResult, TTSStreamWithTimestampRequestOptionSetOptions.SampleRate) ? parseResult.GetValue(TTSStreamWithTimestampRequestOptionSetOptions.SampleRate) : (__requestBase is { } __SampleRateBaseValue ? __SampleRateBaseValue.SampleRate : default);
                         var mp3Bitrate = CliRuntime.WasSpecified(parseResult, TTSStreamWithTimestampRequestOptionSetOptions.Mp3Bitrate) ? parseResult.GetValue(TTSStreamWithTimestampRequestOptionSetOptions.Mp3Bitrate) : (__requestBase is { } __Mp3BitrateBaseValue ? __Mp3BitrateBaseValue.Mp3Bitrate : default);
@@ -148,6 +150,7 @@ internal static partial class OpenAPIV1CreateTtsStreamWithTimestampWithMessagePa
                                     topP: topP,
                                     chunkLength: chunkLength,
                                     normalize: normalize,
+                                    language: language,
                                     format: format,
                                     sampleRate: sampleRate,
                                     mp3Bitrate: mp3Bitrate,
