@@ -28,6 +28,8 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummaryDialStatus), TypeInfoPropertyName = "AgentSessionSummaryDialStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummaryAnsweredBy), TypeInfoPropertyName = "AgentSessionSummaryAnsweredBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.JsonValue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAsrOverridesPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel), TypeInfoPropertyName = "AgentSessionAsrOverridesPayloadModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionCreatePayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionOverridesPayload))]
@@ -54,6 +56,9 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemMode), TypeInfoPropertyName = "AgentSessionTransferItemMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemWarmConnect), TypeInfoPropertyName = "AgentSessionTransferItemWarmConnect2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemOutcome), TypeInfoPropertyName = "AgentSessionTransferItemOutcome2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemDialStatus), TypeInfoPropertyName = "AgentSessionTransferItemDialStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemConsultEndReason), TypeInfoPropertyName = "AgentSessionTransferItemConsultEndReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemTransferredCallEndReason), TypeInfoPropertyName = "AgentSessionTransferItemTransferredCallEndReason2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentSessionTransferMessage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferMessage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferMessageRole), TypeInfoPropertyName = "AgentSessionTransferMessageRole2")]
@@ -121,6 +126,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummaryDirection?), TypeInfoPropertyName = "NullableAgentSessionSummaryDirection2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummaryDialStatus?), TypeInfoPropertyName = "NullableAgentSessionSummaryDialStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionSummaryAnsweredBy?), TypeInfoPropertyName = "NullableAgentSessionSummaryAnsweredBy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel?), TypeInfoPropertyName = "NullableAgentSessionAsrOverridesPayloadModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<string, int?, double?, bool?>?), TypeInfoPropertyName = "NullableAnyOfStringInt32DoubleBoolean2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
@@ -135,6 +141,9 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemMode?), TypeInfoPropertyName = "NullableAgentSessionTransferItemMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemWarmConnect?), TypeInfoPropertyName = "NullableAgentSessionTransferItemWarmConnect2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemOutcome?), TypeInfoPropertyName = "NullableAgentSessionTransferItemOutcome2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemDialStatus?), TypeInfoPropertyName = "NullableAgentSessionTransferItemDialStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemConsultEndReason?), TypeInfoPropertyName = "NullableAgentSessionTransferItemConsultEndReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItemTransferredCallEndReason?), TypeInfoPropertyName = "NullableAgentSessionTransferItemTransferredCallEndReason2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferMessageRole?), TypeInfoPropertyName = "NullableAgentSessionTransferMessageRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.LLMMessageTokenCostCategory?), TypeInfoPropertyName = "NullableLLMMessageTokenCostCategory2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.LLMMessageUsageStatus?), TypeInfoPropertyName = "NullableLLMMessageUsageStatus2")]
@@ -299,6 +308,10 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.AgentSessionSummaryAnsweredBy?)
 
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel?)
+
                     || typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage)
 
                     || typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage?)
@@ -338,6 +351,18 @@ namespace FishAudio
                     || typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemOutcome)
 
                     || typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemOutcome?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemDialStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemDialStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemConsultEndReason)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemConsultEndReason?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemTransferredCallEndReason)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemTransferredCallEndReason?)
 
                     || typeToConvert == typeof(global::FishAudio.AgentSessionTransferMessageRole)
 
@@ -484,6 +509,16 @@ namespace FishAudio
                     return new global::FishAudio.JsonConverters.AgentSessionSummaryAnsweredByNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionAsrOverridesPayloadModelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionAsrOverridesPayloadModelNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage))
                 {
                     return new global::FishAudio.JsonConverters.AgentSessionOverridesPayloadLanguageJsonConverter();
@@ -582,6 +617,36 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemOutcome?))
                 {
                     return new global::FishAudio.JsonConverters.AgentSessionTransferItemOutcomeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemDialStatus))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionTransferItemDialStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemDialStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionTransferItemDialStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemConsultEndReason))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionTransferItemConsultEndReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemConsultEndReason?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionTransferItemConsultEndReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemTransferredCallEndReason))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionTransferItemTransferredCallEndReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionTransferItemTransferredCallEndReason?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionTransferItemTransferredCallEndReasonNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.AgentSessionTransferMessageRole))

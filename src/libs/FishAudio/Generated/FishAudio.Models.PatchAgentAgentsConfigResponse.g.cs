@@ -39,11 +39,12 @@ namespace FishAudio
         public required global::FishAudio.AgentVoiceConfigView Voice { get; set; }
 
         /// <summary>
-        ///
+        /// The asr section as the public API reads it: without the console-only<br/>
+        /// noise cancellation and speaker label switches.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("asr")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::FishAudio.AgentAsrConfig Asr { get; set; }
+        public required global::FishAudio.PublicAgentAsrConfig Asr { get; set; }
 
         /// <summary>
         ///
@@ -126,7 +127,10 @@ namespace FishAudio
         /// section stay mirrored here, deprecated, so clients written before the split<br/>
         /// keep reading them.
         /// </param>
-        /// <param name="asr"></param>
+        /// <param name="asr">
+        /// The asr section as the public API reads it: without the console-only<br/>
+        /// noise cancellation and speaker label switches.
+        /// </param>
         /// <param name="conversation"></param>
         /// <param name="tools"></param>
         /// <param name="webhooks"></param>
@@ -146,7 +150,7 @@ namespace FishAudio
             string configHash,
             global::FishAudio.AgentPromptConfig prompt,
             global::FishAudio.AgentVoiceConfigView voice,
-            global::FishAudio.AgentAsrConfig asr,
+            global::FishAudio.PublicAgentAsrConfig asr,
             global::FishAudio.AgentConversationConfig conversation,
             global::FishAudio.PublicAgentToolsConfig tools,
             global::FishAudio.PublicAgentWebhooksConfig webhooks,

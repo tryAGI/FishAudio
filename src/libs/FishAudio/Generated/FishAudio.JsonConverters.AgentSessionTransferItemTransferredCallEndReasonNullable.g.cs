@@ -3,10 +3,10 @@
 namespace FishAudio.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class AgentAsrConfigModelNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::FishAudio.AgentAsrConfigModel?>
+    public sealed class AgentSessionTransferItemTransferredCallEndReasonNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::FishAudio.AgentSessionTransferItemTransferredCallEndReason?>
     {
         /// <inheritdoc />
-        public override global::FishAudio.AgentAsrConfigModel? Read(
+        public override global::FishAudio.AgentSessionTransferItemTransferredCallEndReason? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace FishAudio.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::FishAudio.AgentAsrConfigModelExtensions.ToEnum(stringValue);
+                        return global::FishAudio.AgentSessionTransferItemTransferredCallEndReasonExtensions.ToEnum(stringValue);
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace FishAudio.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::FishAudio.AgentAsrConfigModel)numValue;
+                    return (global::FishAudio.AgentSessionTransferItemTransferredCallEndReason)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::FishAudio.AgentAsrConfigModel?);
+                    return default(global::FishAudio.AgentSessionTransferItemTransferredCallEndReason?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace FishAudio.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::FishAudio.AgentAsrConfigModel? value,
+            global::FishAudio.AgentSessionTransferItemTransferredCallEndReason? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace FishAudio.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::FishAudio.AgentAsrConfigModelExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::FishAudio.AgentSessionTransferItemTransferredCallEndReasonExtensions.ToValueString(value.Value));
             }
         }
     }

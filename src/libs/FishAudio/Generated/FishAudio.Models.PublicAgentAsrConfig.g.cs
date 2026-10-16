@@ -4,16 +4,17 @@
 namespace FishAudio
 {
     /// <summary>
-    ///
+    /// The asr section as the public API reads it: without the console-only<br/>
+    /// noise cancellation and speaker label switches.
     /// </summary>
-    public sealed partial class AgentAsrConfig
+    public sealed partial class PublicAgentAsrConfig
     {
         /// <summary>
         /// Default Value: deepgram:nova-3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentAsrConfigModelJsonConverter))]
-        public global::FishAudio.AgentAsrConfigModel? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.PublicAgentAsrConfigModelJsonConverter))]
+        public global::FishAudio.PublicAgentAsrConfigModel? Model { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -41,7 +42,7 @@ namespace FishAudio
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AgentAsrConfig" /> class.
+        /// Initializes a new instance of the <see cref="PublicAgentAsrConfig" /> class.
         /// </summary>
         /// <param name="model">
         /// Default Value: deepgram:nova-3
@@ -57,8 +58,8 @@ namespace FishAudio
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public AgentAsrConfig(
-            global::FishAudio.AgentAsrConfigModel? model,
+        public PublicAgentAsrConfig(
+            global::FishAudio.PublicAgentAsrConfigModel? model,
             bool? multilingual,
             bool? strictLanguage,
             global::System.Collections.Generic.IList<string>? keyterms)
@@ -70,9 +71,9 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AgentAsrConfig" /> class.
+        /// Initializes a new instance of the <see cref="PublicAgentAsrConfig" /> class.
         /// </summary>
-        public AgentAsrConfig()
+        public PublicAgentAsrConfig()
         {
         }
 

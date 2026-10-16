@@ -17,6 +17,8 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.JsonValue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAsrOverridesPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel), TypeInfoPropertyName = "AgentSessionAsrOverridesPayloadModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionOverridesPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<string, int?, double?, bool?>), TypeInfoPropertyName = "AnyOfStringInt32DoubleBoolean2")]
@@ -34,6 +36,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse9))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse10))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel?), TypeInfoPropertyName = "NullableAgentSessionAsrOverridesPayloadModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<string, int?, double?, bool?>?), TypeInfoPropertyName = "NullableAnyOfStringInt32DoubleBoolean2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
@@ -143,7 +146,11 @@ namespace FishAudio
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage)
+                    typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage)
 
                     || typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage?);
             }
@@ -152,6 +159,16 @@ namespace FishAudio
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionAsrOverridesPayloadModelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionAsrOverridesPayloadModelNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage))
                 {
                     return new global::FishAudio.JsonConverters.AgentSessionOverridesPayloadLanguageJsonConverter();
