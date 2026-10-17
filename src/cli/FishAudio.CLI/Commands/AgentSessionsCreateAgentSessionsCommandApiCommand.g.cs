@@ -51,7 +51,7 @@ internal static partial class AgentSessionsCreateAgentSessionsCommandApiCommand
     private static Option<string?> EndUserId { get; } = new(
         name: @"--end-user-id")
     {
-        Description = @"",
+        Description = @"Your identifier for the end user, stored verbatim. Returned on session reads and webhooks, and filterable with `GET /v1/agent/sessions?end_user_id=`.",
     };
 
     private static Option<object?> Metadata { get; } = new(

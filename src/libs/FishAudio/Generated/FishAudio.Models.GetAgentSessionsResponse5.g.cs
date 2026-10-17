@@ -36,6 +36,12 @@ namespace FishAudio
         public string? Name { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_user_id")]
+        public string? EndUserId { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -197,6 +203,9 @@ namespace FishAudio
         /// <param name="name">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="endUserId">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="endReason">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -262,6 +271,7 @@ namespace FishAudio
             global::FishAudio.GetAgentSessionsResponseSource source,
             string createdAt,
             string? name,
+            string? endUserId,
             global::FishAudio.GetAgentSessionsResponseEndReason? endReason,
             global::FishAudio.GetAgentSessionsResponseDirection? direction,
             global::FishAudio.GetAgentSessionsResponseDialStatus? dialStatus,
@@ -287,6 +297,7 @@ namespace FishAudio
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
             this.AgentName = agentName ?? throw new global::System.ArgumentNullException(nameof(agentName));
             this.Name = name;
+            this.EndUserId = endUserId;
             this.Status = status;
             this.EndReason = endReason;
             this.Source = source;
