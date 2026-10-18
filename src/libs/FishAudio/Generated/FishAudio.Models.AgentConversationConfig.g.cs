@@ -127,6 +127,13 @@ namespace FishAudio
         public global::FishAudio.AgentKeypadInput? KeypadInput { get; set; }
 
         /// <summary>
+        /// Echo guard. For the first 3 seconds after the agent first starts talking in a call, the caller cannot interrupt it and anything the caller says while the agent is talking is not heard. This stops the agent's own voice, echoing back from a speakerphone or laptop, from cutting it off. Per channel: true on, false off, null uses the default (on for web_voice and phone_inbound, off for phone_outbound).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("echo_guard")]
+        public global::FishAudio.AgentEchoGuard? EchoGuard { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -195,6 +202,10 @@ namespace FishAudio
         /// conversation reach the agent as one user turn, ended by `terminator` or<br/>
         /// by a pause of `inter_digit_timeout_seconds` (`none`: the pause only).
         /// </param>
+        /// <param name="echoGuard">
+        /// Echo guard. For the first 3 seconds after the agent first starts talking in a call, the caller cannot interrupt it and anything the caller says while the agent is talking is not heard. This stops the agent's own voice, echoing back from a speakerphone or laptop, from cutting it off. Per channel: true on, false off, null uses the default (on for web_voice and phone_inbound, off for phone_outbound).<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -216,7 +227,8 @@ namespace FishAudio
             bool? transferRefuseQuestions,
             global::FishAudio.AgentOutboundConfig? outbound,
             global::FishAudio.AgentKeypadMenu? keypadMenu,
-            global::FishAudio.AgentKeypadInput? keypadInput)
+            global::FishAudio.AgentKeypadInput? keypadInput,
+            global::FishAudio.AgentEchoGuard? echoGuard)
         {
             this.MaxDurationSeconds = maxDurationSeconds;
             this.ResponseWaitMs = responseWaitMs;
@@ -236,6 +248,7 @@ namespace FishAudio
             this.Outbound = outbound;
             this.KeypadMenu = keypadMenu;
             this.KeypadInput = keypadInput;
+            this.EchoGuard = echoGuard;
         }
 
         /// <summary>

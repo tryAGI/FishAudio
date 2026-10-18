@@ -117,6 +117,13 @@ namespace FishAudio
         public global::FishAudio.AgentKeypadInputPatch? KeypadInput { get; set; }
 
         /// <summary>
+        /// Echo guard. For the first 3 seconds after the agent first starts talking in a call, the caller cannot interrupt it and anything the caller says while the agent is talking is not heard. This stops the agent's own voice, echoing back from a speakerphone or laptop, from cutting it off. Per channel: true on, false off, null uses the default (on for web_voice and phone_inbound, off for phone_outbound). Channels you send replace the stored value, null on a channel resets it to the default, channels you leave out are kept. null resets every channel.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("echo_guard")]
+        public global::FishAudio.AgentEchoGuardPatch? EchoGuard { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -179,6 +186,10 @@ namespace FishAudio
         /// <param name="keypadInput">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="echoGuard">
+        /// Echo guard. For the first 3 seconds after the agent first starts talking in a call, the caller cannot interrupt it and anything the caller says while the agent is talking is not heard. This stops the agent's own voice, echoing back from a speakerphone or laptop, from cutting it off. Per channel: true on, false off, null uses the default (on for web_voice and phone_inbound, off for phone_outbound). Channels you send replace the stored value, null on a channel resets it to the default, channels you leave out are kept. null resets every channel.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -200,7 +211,8 @@ namespace FishAudio
             bool? transferRefuseQuestions,
             global::FishAudio.AgentOutboundPatch? outbound,
             global::FishAudio.AgentKeypadMenuPatch? keypadMenu,
-            global::FishAudio.AgentKeypadInputPatch? keypadInput)
+            global::FishAudio.AgentKeypadInputPatch? keypadInput,
+            global::FishAudio.AgentEchoGuardPatch? echoGuard)
         {
             this.MaxDurationSeconds = maxDurationSeconds;
             this.ResponseWaitMs = responseWaitMs;
@@ -220,6 +232,7 @@ namespace FishAudio
             this.Outbound = outbound;
             this.KeypadMenu = keypadMenu;
             this.KeypadInput = keypadInput;
+            this.EchoGuard = echoGuard;
         }
 
         /// <summary>

@@ -13,7 +13,12 @@ namespace FishAudio
         /// runs. Runs are queued and finish in the background, simulations take<br/>
         /// minutes. Poll `GET /v1/agent/agents/{agent_id}/test-batches/{batch_id}`<br/>
         /// until `completed` is true, then gate on `pass_rate`, which leaves out<br/>
-        /// `error` runs.
+        /// `error` runs.<br/>
+        /// Each simulation run that ends `passed` or `failed` is billed: a platform<br/>
+        /// fee per agent reply plus the LLM tokens of the agent, the simulated user<br/>
+        /// and the judge. `error` runs are not billed. A batch with a simulation<br/>
+        /// test returns 402 when the account has no trial balance or API credit<br/>
+        /// left, and 403 when the team's agreement does not allow agent usage.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="request"></param>
@@ -42,7 +47,12 @@ namespace FishAudio
         /// runs. Runs are queued and finish in the background, simulations take<br/>
         /// minutes. Poll `GET /v1/agent/agents/{agent_id}/test-batches/{batch_id}`<br/>
         /// until `completed` is true, then gate on `pass_rate`, which leaves out<br/>
-        /// `error` runs.
+        /// `error` runs.<br/>
+        /// Each simulation run that ends `passed` or `failed` is billed: a platform<br/>
+        /// fee per agent reply plus the LLM tokens of the agent, the simulated user<br/>
+        /// and the judge. `error` runs are not billed. A batch with a simulation<br/>
+        /// test returns 402 when the account has no trial balance or API credit<br/>
+        /// left, and 403 when the team's agreement does not allow agent usage.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="request"></param>
@@ -71,7 +81,12 @@ namespace FishAudio
         /// runs. Runs are queued and finish in the background, simulations take<br/>
         /// minutes. Poll `GET /v1/agent/agents/{agent_id}/test-batches/{batch_id}`<br/>
         /// until `completed` is true, then gate on `pass_rate`, which leaves out<br/>
-        /// `error` runs.
+        /// `error` runs.<br/>
+        /// Each simulation run that ends `passed` or `failed` is billed: a platform<br/>
+        /// fee per agent reply plus the LLM tokens of the agent, the simulated user<br/>
+        /// and the judge. `error` runs are not billed. A batch with a simulation<br/>
+        /// test returns 402 when the account has no trial balance or API credit<br/>
+        /// left, and 403 when the team's agreement does not allow agent usage.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="testIds">

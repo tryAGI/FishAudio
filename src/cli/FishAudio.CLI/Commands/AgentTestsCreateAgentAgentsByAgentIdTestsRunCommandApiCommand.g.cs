@@ -73,7 +73,13 @@ every selected test that many times instead. A batch starts at most 1000
 runs. Runs are queued and finish in the background, simulations take
 minutes. Poll `GET /v1/agent/agents/{agent_id}/test-batches/{batch_id}`
 until `completed` is true, then gate on `pass_rate`, which leaves out
-`error` runs.");
+`error` runs.
+
+Each simulation run that ends `passed` or `failed` is billed: a platform
+fee per agent reply plus the LLM tokens of the agent, the simulated user
+and the judge. `error` runs are not billed. A batch with a simulation
+test returns 402 when the account has no trial balance or API credit
+left, and 403 when the team's agreement does not allow agent usage.");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(TestIds);
                         command.Options.Add(RepeatCount);
