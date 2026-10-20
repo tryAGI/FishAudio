@@ -61,6 +61,12 @@ namespace FishAudio
         public global::FishAudio.AgentTestSimulationConfigChannel? Channel { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("world_context")]
+        public bool? WorldContext { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -91,6 +97,9 @@ namespace FishAudio
         /// <param name="channel">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="worldContext">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -102,7 +111,8 @@ namespace FishAudio
             global::FishAudio.AgentTestToolMocks? toolMocks,
             string? simulatedUserModel,
             int? repeatCount,
-            global::FishAudio.AgentTestSimulationConfigChannel? channel)
+            global::FishAudio.AgentTestSimulationConfigChannel? channel,
+            bool? worldContext)
         {
             this.Scenario = scenario ?? throw new global::System.ArgumentNullException(nameof(scenario));
             this.MaxTurns = maxTurns;
@@ -112,6 +122,7 @@ namespace FishAudio
             this.SimulatedUserModel = simulatedUserModel;
             this.RepeatCount = repeatCount;
             this.Channel = channel;
+            this.WorldContext = worldContext;
         }
 
         /// <summary>
