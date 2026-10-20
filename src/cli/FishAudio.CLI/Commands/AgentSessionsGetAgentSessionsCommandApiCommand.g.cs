@@ -49,6 +49,12 @@ internal static partial class AgentSessionsGetAgentSessionsCommandApiCommand
         Description = @"Exact-match end_user_id set at session creation.",
     };
 
+    private static Option<string?> CallSid { get; } = new(
+        name: @"--call-sid")
+    {
+        Description = @"Exact-match carrier call id (Twilio's CallSid on inbound calls through a Twilio number), the call_sid the conversation_init request carries, for finding the session behind that request.",
+    };
+
     private static Option<string?> CreatedAfter { get; } = new(
         name: @"--created-after")
     {
@@ -109,10 +115,10 @@ internal static partial class AgentSessionsGetAgentSessionsCommandApiCommand
     {
         var command = new Command(commandName ?? @"get-agent-sessions", @"List Agent Sessions
 List your team's sessions, newest first. Filter by agent, status, end
-reason, caller number, SIP Call-ID, end user ID, or creation time.
-Paginate with `cursor` (recommended; follow `next_cursor` while `has_more`
-is true) or with `page` for offset pagination with a `total` count. The
-two are mutually exclusive.");
+reason, caller number, SIP Call-ID, end user ID, call_sid, or creation
+time. Paginate with `cursor` (recommended; follow `next_cursor` while
+`has_more` is true) or with `page` for offset pagination with a `total`
+count. The two are mutually exclusive.");
                         command.Options.Add(AgentId);
                         command.Options.Add(Status);
                         command.Options.Add(EndReason);
@@ -120,6 +126,7 @@ two are mutually exclusive.");
                         command.Options.Add(CallerNumber);
                         command.Options.Add(SipCallId);
                         command.Options.Add(EndUserId);
+                        command.Options.Add(CallSid);
                         command.Options.Add(CreatedAfter);
                         command.Options.Add(CreatedBefore);
                         command.Options.Add(Cursor);
@@ -138,6 +145,7 @@ two are mutually exclusive.");
                         var callerNumber = parseResult.GetValue(CallerNumber);
                         var sipCallId = parseResult.GetValue(SipCallId);
                         var endUserId = parseResult.GetValue(EndUserId);
+                        var callSid = parseResult.GetValue(CallSid);
                         var createdAfter = parseResult.GetValue(CreatedAfter);
                         var createdBefore = parseResult.GetValue(CreatedBefore);
                         var cursor = parseResult.GetValue(Cursor);
@@ -155,6 +163,7 @@ two are mutually exclusive.");
                                     callerNumber: callerNumber,
                                     sipCallId: sipCallId,
                                     endUserId: endUserId,
+                                    callSid: callSid,
                                     createdAfter: createdAfter,
                                     createdBefore: createdBefore,
                                     cursor: cursor,

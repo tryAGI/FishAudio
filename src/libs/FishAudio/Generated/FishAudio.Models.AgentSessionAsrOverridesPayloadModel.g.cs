@@ -23,7 +23,7 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        FishAudio_transcribe1ProRealtime,
+        FishAudio_transcribeStream1,
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ namespace FishAudio
                 AgentSessionAsrOverridesPayloadModel.Deepgram_nova3 => "deepgram:nova-3",
                 AgentSessionAsrOverridesPayloadModel.Elevenlabs_scribeV2Medical => "elevenlabs:scribe_v2_medical",
                 AgentSessionAsrOverridesPayloadModel.Elevenlabs_scribeV2Realtime => "elevenlabs:scribe_v2_realtime",
-                AgentSessionAsrOverridesPayloadModel.FishAudio_transcribe1ProRealtime => "fish_audio:transcribe-1-pro-realtime",
+                AgentSessionAsrOverridesPayloadModel.FishAudio_transcribeStream1 => "fish_audio:transcribe-stream-1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,7 +55,7 @@ namespace FishAudio
                 "deepgram:nova-3" => AgentSessionAsrOverridesPayloadModel.Deepgram_nova3,
                 "elevenlabs:scribe_v2_medical" => AgentSessionAsrOverridesPayloadModel.Elevenlabs_scribeV2Medical,
                 "elevenlabs:scribe_v2_realtime" => AgentSessionAsrOverridesPayloadModel.Elevenlabs_scribeV2Realtime,
-                "fish_audio:transcribe-1-pro-realtime" => AgentSessionAsrOverridesPayloadModel.FishAudio_transcribe1ProRealtime,
+                "fish_audio:transcribe-stream-1" => AgentSessionAsrOverridesPayloadModel.FishAudio_transcribeStream1,
                 _ => null,
             };
         }
