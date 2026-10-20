@@ -129,6 +129,7 @@ the agent calls no tool at all. Attach and detach agents with
                         command.Options.Add(SimulationOptions.MaxTurns);
                         command.Options.Add(SimulationOptions.SimulatedUserModel);
                         command.Options.Add(SimulationOptions.RepeatCount);
+                        command.Options.Add(SimulationOptions.WorldContext);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -186,7 +187,8 @@ the agent calls no tool at all. Attach and detach agents with
                         var simulationMaxTurns = CliRuntime.WasSpecified(parseResult, SimulationOptions.MaxTurns) ? parseResult.GetValue(SimulationOptions.MaxTurns) : (__SimulationBase is { } __SimulationmaxTurnsBaseValue ? __SimulationmaxTurnsBaseValue.MaxTurns : default);
                         var simulationSimulatedUserModel = CliRuntime.WasSpecified(parseResult, SimulationOptions.SimulatedUserModel) ? parseResult.GetValue(SimulationOptions.SimulatedUserModel) : (__SimulationBase is { } __SimulationsimulatedUserModelBaseValue ? __SimulationsimulatedUserModelBaseValue.SimulatedUserModel : default);
                         var simulationRepeatCount = CliRuntime.WasSpecified(parseResult, SimulationOptions.RepeatCount) ? parseResult.GetValue(SimulationOptions.RepeatCount) : (__SimulationBase is { } __SimulationrepeatCountBaseValue ? __SimulationrepeatCountBaseValue.RepeatCount : default);
-                        var __SimulationSpecified = CliRuntime.WasSpecified(parseResult, SimulationOptions.Scenario) || CliRuntime.WasSpecified(parseResult, SimulationOptions.MaxTurns) || CliRuntime.WasSpecified(parseResult, SimulationOptions.SimulatedUserModel) || CliRuntime.WasSpecified(parseResult, SimulationOptions.RepeatCount);
+                        var simulationWorldContext = CliRuntime.WasSpecified(parseResult, SimulationOptions.WorldContext) ? parseResult.GetValue(SimulationOptions.WorldContext) : (__SimulationBase is { } __SimulationworldContextBaseValue ? __SimulationworldContextBaseValue.WorldContext : default);
+                        var __SimulationSpecified = CliRuntime.WasSpecified(parseResult, SimulationOptions.Scenario) || CliRuntime.WasSpecified(parseResult, SimulationOptions.MaxTurns) || CliRuntime.WasSpecified(parseResult, SimulationOptions.SimulatedUserModel) || CliRuntime.WasSpecified(parseResult, SimulationOptions.RepeatCount) || CliRuntime.WasSpecified(parseResult, SimulationOptions.WorldContext);
                         var simulation =
                             __SimulationSpecified || __SimulationBase is not null
                                 ? new global::FishAudio.AgentTestSimulationConfig
@@ -195,6 +197,7 @@ the agent calls no tool at all. Attach and detach agents with
                                 MaxTurns = simulationMaxTurns,
                                 SimulatedUserModel = simulationSimulatedUserModel,
                                 RepeatCount = simulationRepeatCount,
+                                WorldContext = simulationWorldContext,
 	                                SuccessConditions = __SimulationBase is not null ? __SimulationBase.SuccessConditions : throw new CliException(@"Simulation.success_conditions is required when using simulation options. Provide it with --request-json or --request-file."),
                                 }
                                 : __SimulationBase;

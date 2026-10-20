@@ -58,6 +58,13 @@ namespace FishAudio
         public required global::System.DateTime FinishedAt { get; set; }
 
         /// <summary>
+        /// UTC day of month used for credit refreshes; clamp to the month's last day. Missing/null falls back to updated_at's UTC day.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("anchor_day")]
+        public int? AnchorDay { get; set; }
+
+        /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stripe_subscription_id")]
@@ -145,6 +152,10 @@ namespace FishAudio
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="finishedAt"></param>
+        /// <param name="anchorDay">
+        /// UTC day of month used for credit refreshes; clamp to the month's last day. Missing/null falls back to updated_at's UTC day.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="stripeSubscriptionId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -192,6 +203,7 @@ namespace FishAudio
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             global::System.DateTime finishedAt,
+            int? anchorDay,
             string? stripeSubscriptionId,
             string? stripePriceId,
             string? billingPeriod,
@@ -212,6 +224,7 @@ namespace FishAudio
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.FinishedAt = finishedAt;
+            this.AnchorDay = anchorDay;
             this.StripeSubscriptionId = stripeSubscriptionId;
             this.StripePriceId = stripePriceId;
             this.BillingPeriod = billingPeriod;
