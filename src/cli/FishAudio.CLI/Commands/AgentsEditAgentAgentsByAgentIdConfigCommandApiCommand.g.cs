@@ -131,9 +131,11 @@ expressive delivery (emotion steering, laughter and sounds, pauses); off
 keeps the standard delivery. The `asr` section configures speech
 recognition. `asr.model` picks the model: `deepgram:nova-3` (default),
 `elevenlabs:scribe_v2_realtime`, `elevenlabs:scribe_v2_medical`, or
-`fish_audio:transcribe-1-pro-realtime` (Fish realtime recognition, which
+`fish_audio:transcribe-stream-1` (Fish realtime recognition, which
 also decides end of turn and whether the caller is interrupting; in
 preview, switching an agent onto it is 403 unless your team has access).
+Its former id `fish_audio:transcribe-1-pro-realtime` is still accepted
+and reads back as the current id.
 `asr.multilingual` (default `false`) lets recognition follow callers who
 switch language mid-call, off tells the recognizer to expect
 `voice.speaking_language` (models other than `deepgram:nova-3` may still
