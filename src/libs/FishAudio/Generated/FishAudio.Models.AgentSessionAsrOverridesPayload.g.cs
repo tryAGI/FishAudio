@@ -9,7 +9,7 @@ namespace FishAudio
     public sealed partial class AgentSessionAsrOverridesPayload
     {
         /// <summary>
-        /// Speech recognition model for this session, same values as the agent's `asr.model`. A model in preview is refused with 403 unless your team has access or the agent already uses it.<br/>
+        /// Speech recognition model for this session, same values as the agent's `asr.model`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -25,7 +25,7 @@ namespace FishAudio
         /// Initializes a new instance of the <see cref="AgentSessionAsrOverridesPayload" /> class.
         /// </summary>
         /// <param name="model">
-        /// Speech recognition model for this session, same values as the agent's `asr.model`. A model in preview is refused with 403 unless your team has access or the agent already uses it.<br/>
+        /// Speech recognition model for this session, same values as the agent's `asr.model`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
 #if NET7_0_OR_GREATER
