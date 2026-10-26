@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Read entity: the stored api_key never leaves the collection.
+    /// Read entity: the stored api_key and headers never leave the collection.
     /// </summary>
     public sealed partial class AgentLLMCustomConfigRedacted
     {
@@ -29,6 +29,12 @@ namespace FishAudio
         public object? ApiKey { get; set; }
 
         /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
+        public object? Headers { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -42,17 +48,22 @@ namespace FishAudio
         /// <param name="apiKey">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="headers">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentLLMCustomConfigRedacted(
             string baseUrl,
             string model,
-            object? apiKey)
+            object? apiKey,
+            object? headers)
         {
             this.BaseUrl = baseUrl ?? throw new global::System.ArgumentNullException(nameof(baseUrl));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.ApiKey = apiKey;
+            this.Headers = headers;
         }
 
         /// <summary>

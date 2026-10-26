@@ -192,6 +192,12 @@ namespace FishAudio
         public global::FishAudio.AgentSessionAnalysisResult? Analysis { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_endpoint_errors")]
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmEndpointError>? LlmEndpointErrors { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -269,6 +275,7 @@ namespace FishAudio
         /// <param name="analysis">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="llmEndpointErrors"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -301,7 +308,8 @@ namespace FishAudio
             global::FishAudio.AgentSessionKeypadMenu? keypadMenu,
             global::System.Collections.Generic.IList<global::FishAudio.LLMMessageUsage>? unattributedLlmUsage,
             global::System.Collections.Generic.IList<global::FishAudio.ItemsItem>? items,
-            global::FishAudio.AgentSessionAnalysisResult? analysis)
+            global::FishAudio.AgentSessionAnalysisResult? analysis,
+            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmEndpointError>? llmEndpointErrors)
         {
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
@@ -332,6 +340,7 @@ namespace FishAudio
             this.UnattributedLlmUsage = unattributedLlmUsage;
             this.Items = items;
             this.Analysis = analysis;
+            this.LlmEndpointErrors = llmEndpointErrors;
         }
 
         /// <summary>
