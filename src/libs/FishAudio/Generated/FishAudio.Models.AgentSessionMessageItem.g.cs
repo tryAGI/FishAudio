@@ -62,6 +62,12 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fallback_reason")]
+        public string? FallbackReason { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("turn_id")]
         public int? TurnId { get; set; }
 
@@ -100,6 +106,9 @@ namespace FishAudio
         /// <param name="inputMedium">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="fallbackReason">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="turnId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -118,6 +127,7 @@ namespace FishAudio
             global::FishAudio.LLMMessageUsage? llmUsage,
             string? type,
             string? inputMedium,
+            string? fallbackReason,
             int? turnId,
             string? createdAt)
         {
@@ -129,6 +139,7 @@ namespace FishAudio
             this.Role = role;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.InputMedium = inputMedium;
+            this.FallbackReason = fallbackReason;
             this.TurnId = turnId;
             this.CreatedAt = createdAt;
         }

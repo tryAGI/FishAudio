@@ -128,8 +128,7 @@ speaking language.
 
 `overrides.asr.model` picks the speech recognition model for this session,
 nested like the agent config's `asr` section and with the same values as
-`asr.model`. It needs an API key. A model in preview is 403 unless your
-team has access or the agent already uses it.");
+`asr.model`. It needs an API key.");
                         command.Options.Add(Origin);
                         command.Options.Add(AgentId);
                         command.Options.Add(NameOption);

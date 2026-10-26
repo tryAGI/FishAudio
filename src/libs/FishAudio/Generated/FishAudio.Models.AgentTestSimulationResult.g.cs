@@ -46,6 +46,12 @@ namespace FishAudio
         public bool? Passed { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_endpoint_errors")]
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmEndpointError>? LlmEndpointErrors { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -62,6 +68,7 @@ namespace FishAudio
         /// <param name="passed">
         /// Default Value: false
         /// </param>
+        /// <param name="llmEndpointErrors"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -71,7 +78,8 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.AgentTestAssertionResult>? assertions,
             global::System.Collections.Generic.IList<global::FishAudio.AgentTestConditionResult>? conditions,
             string? summary,
-            bool? passed)
+            bool? passed,
+            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmEndpointError>? llmEndpointErrors)
         {
             this.Transcript = transcript;
             this.ToolCalls = toolCalls;
@@ -79,6 +87,7 @@ namespace FishAudio
             this.Conditions = conditions;
             this.Summary = summary;
             this.Passed = passed;
+            this.LlmEndpointErrors = llmEndpointErrors;
         }
 
         /// <summary>
