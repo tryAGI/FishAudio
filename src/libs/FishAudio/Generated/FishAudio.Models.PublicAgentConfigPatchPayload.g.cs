@@ -65,6 +65,12 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("context")]
+        public global::FishAudio.PublicAgentContextPatch? Context { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm")]
         public global::FishAudio.PublicAgentLLMPatch? Llm { get; set; }
 
@@ -111,6 +117,9 @@ namespace FishAudio
         /// <param name="guardrails">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="context">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="llm">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -131,6 +140,7 @@ namespace FishAudio
             global::FishAudio.PublicAgentKnowledgeBasePatch? knowledgeBase,
             global::FishAudio.PublicAgentAnalysisPatch? analysis,
             global::FishAudio.PublicAgentGuardrailsPatch? guardrails,
+            global::FishAudio.PublicAgentContextPatch? context,
             global::FishAudio.PublicAgentLLMPatch? llm,
             global::FishAudio.PublicAgentVariablesPatch? variables)
         {
@@ -143,6 +153,7 @@ namespace FishAudio
             this.KnowledgeBase = knowledgeBase;
             this.Analysis = analysis;
             this.Guardrails = guardrails;
+            this.Context = context;
             this.Llm = llm;
             this.Variables = variables;
         }

@@ -61,10 +61,11 @@ namespace FishAudio
         public global::FishAudio.AgentTestSimulationConfigChannel? Channel { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        /// The run's platform context switches, the agent config's `context`<br/>
+        /// section for a test. Off so a date pinned in the prompt holds.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("world_context")]
-        public bool? WorldContext { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("context")]
+        public global::FishAudio.AgentTestSimulationContext? Context { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -97,8 +98,9 @@ namespace FishAudio
         /// <param name="channel">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="worldContext">
-        /// Default Value: false
+        /// <param name="context">
+        /// The run's platform context switches, the agent config's `context`<br/>
+        /// section for a test. Off so a date pinned in the prompt holds.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -112,7 +114,7 @@ namespace FishAudio
             string? simulatedUserModel,
             int? repeatCount,
             global::FishAudio.AgentTestSimulationConfigChannel? channel,
-            bool? worldContext)
+            global::FishAudio.AgentTestSimulationContext? context)
         {
             this.Scenario = scenario ?? throw new global::System.ArgumentNullException(nameof(scenario));
             this.MaxTurns = maxTurns;
@@ -122,7 +124,7 @@ namespace FishAudio
             this.SimulatedUserModel = simulatedUserModel;
             this.RepeatCount = repeatCount;
             this.Channel = channel;
-            this.WorldContext = worldContext;
+            this.Context = context;
         }
 
         /// <summary>

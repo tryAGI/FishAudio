@@ -28,7 +28,19 @@ internal static partial class AgentToolsCreateAgentToolsCommandApiCommand
     private static Option<global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookArgumentPayload>?> ArgumentsOption { get; } = new(
         name: @"--arguments")
     {
-        Description = @"",
+        Description = @"Older shape of `parameters`: each entry becomes a required string parameter. Mutually exclusive with `parameters` in one request. Reads return both, `arguments` being the string parameters of the schema.",
+    };
+
+    private static Option<object?> Parameters { get; } = new(
+        name: @"--parameters")
+    {
+        Description = @"Call parameters as a JSON Schema object (draft 2020-12): `type: object` (filled in when omitted), `properties`, `required`. Standard meaning throughout: `required` means the key must be present, `type: [""string"", ""null""]` allows null, `minLength: 1` makes a string non-empty, `enum` and `pattern` constrain the value, `default` fills a key the model left out. Mutually exclusive with `arguments` in one request. A tool created with `parameters` starts in `parameter_mode: strict`.",
+    };
+
+    private static Option<global::FishAudio.PublicAgentToolCreatePayloadParameterMode?> ParameterMode { get; } = new(
+        name: @"--parameter-mode")
+    {
+        Description = @"Whether the agent runtime checks each call's arguments against `parameters` before running the tool. `legacy` (the default for tools created with `arguments`, and every tool from before this field existed): no check, the model's arguments run as sent. `strict` (the default for tools created with `parameters`): a call that does not satisfy the schema is refused and the model is told to ask the caller for the missing information, and the LLM provider's constrained decoding is turned on where the model supports it (OpenAI models and a custom OpenAI-compatible endpoint receive the tool with `strict: true`, Gemini on the platform's native channel runs validated function calling). Changing `parameters` never changes the mode, and the mode can be changed on its own.",
     };
 
     private static Option<global::FishAudio.PublicAgentToolCreatePayloadMethod?> Method { get; } = new(
@@ -132,13 +144,18 @@ internal static partial class AgentToolsCreateAgentToolsCommandApiCommand
         var command = new Command(commandName ?? @"create-agent-tools", @"Create Tool
 Create a workspace tool. `tool_type: webhook` calls your HTTP endpoint
 during conversations; `tool_type: client` is executed by your own frontend
-through the SDK (no URL). Attach it to agents via the agent config's
-`tools.tool_ids`. Credential headers (authorization_bearer /
-authorization_basic) are write-only and read back as `has_secret`.");
+through the SDK (no URL). Describe the call with `parameters` (a JSON
+Schema object, checked at call time under `parameter_mode: strict`) or
+the older `arguments` list (every argument a required string, unchecked).
+Attach it to agents via the agent config's `tools.tool_ids`. Credential
+headers (authorization_bearer / authorization_basic) are write-only and
+read back as `has_secret`.");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(DescriptionOption);
                         command.Options.Add(ToolType);
                         command.Options.Add(ArgumentsOption);
+                        command.Options.Add(Parameters);
+                        command.Options.Add(ParameterMode);
                         command.Options.Add(Method);
                         command.Options.Add(Url);
                         command.Options.Add(ContentType);
@@ -178,6 +195,8 @@ authorization_basic) are write-only and read back as `has_secret`.");
                         var description = CliRuntime.WasSpecified(parseResult, DescriptionOption) ? parseResult.GetValue(DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
                         var toolType = CliRuntime.WasSpecified(parseResult, ToolType) ? parseResult.GetValue(ToolType) : (__requestBase is { } __ToolTypeBaseValue ? __ToolTypeBaseValue.ToolType : default);
                         var arguments = CliRuntime.WasSpecified(parseResult, ArgumentsOption) ? parseResult.GetValue(ArgumentsOption) : (__requestBase is { } __ArgumentsBaseValue ? __ArgumentsBaseValue.Arguments : default);
+                        var parameters = CliRuntime.WasSpecified(parseResult, Parameters) ? parseResult.GetValue(Parameters) : (__requestBase is { } __ParametersBaseValue ? __ParametersBaseValue.Parameters : default);
+                        var parameterMode = CliRuntime.WasSpecified(parseResult, ParameterMode) ? parseResult.GetValue(ParameterMode) : (__requestBase is { } __ParameterModeBaseValue ? __ParameterModeBaseValue.ParameterMode : default);
                         var method = CliRuntime.WasSpecified(parseResult, Method) ? parseResult.GetValue(Method) : (__requestBase is { } __MethodBaseValue ? __MethodBaseValue.Method : default);
                         var url = CliRuntime.WasSpecified(parseResult, Url) ? parseResult.GetValue(Url) : (__requestBase is { } __UrlBaseValue ? __UrlBaseValue.Url : default);
                         var contentType = CliRuntime.WasSpecified(parseResult, ContentType) ? parseResult.GetValue(ContentType) : (__requestBase is { } __ContentTypeBaseValue ? __ContentTypeBaseValue.ContentType : default);
@@ -196,6 +215,8 @@ authorization_basic) are write-only and read back as `has_secret`.");
                                     description: description,
                                     toolType: toolType,
                                     arguments: arguments,
+                                    parameters: parameters,
+                                    parameterMode: parameterMode,
                                     method: method,
                                     url: url,
                                     contentType: contentType,

@@ -8,8 +8,7 @@ internal sealed record AgentTestSimulationConfigOptionSet(
     Option<string> Scenario,
                      Option<int?> MaxTurns,
                      Option<string?> SimulatedUserModel,
-                     Option<int?> RepeatCount,
-                     Option<bool?> WorldContext)
+                     Option<int?> RepeatCount)
 {
     public static AgentTestSimulationConfigOptionSet Create(string? prefix = null)
     {
@@ -33,8 +32,7 @@ internal sealed record AgentTestSimulationConfigOptionSet(
                 RepeatCount: new Option<int?>($"--{normalizedPrefix}repeat-count")
                 {
                     Description = @"",
-                },
-                WorldContext: CliRuntime.CreateNullableBoolOption(name: $"--{normalizedPrefix}world-context", description: @"")
+                }
         );
     }
 }

@@ -89,6 +89,15 @@ namespace FishAudio
         public required global::FishAudio.AgentGuardrailsConfig Guardrails { get; set; }
 
         /// <summary>
+        /// Facts the platform tells the agent on its own, one switch per fact.<br/>
+        /// The same mechanism as a guardrail with the opposite sign: a guardrail is<br/>
+        /// a prompt addition that constrains, a context switch is one that informs.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("context")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::FishAudio.AgentContextConfig Context { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("llm")]
@@ -137,6 +146,11 @@ namespace FishAudio
         /// <param name="knowledgeBase"></param>
         /// <param name="analysis"></param>
         /// <param name="guardrails"></param>
+        /// <param name="context">
+        /// Facts the platform tells the agent on its own, one switch per fact.<br/>
+        /// The same mechanism as a guardrail with the opposite sign: a guardrail is<br/>
+        /// a prompt addition that constrains, a context switch is one that informs.
+        /// </param>
         /// <param name="llm"></param>
         /// <param name="updatedAt"></param>
         /// <param name="variables">
@@ -157,6 +171,7 @@ namespace FishAudio
             global::FishAudio.PublicAgentKnowledgeBaseConfig knowledgeBase,
             global::FishAudio.AgentAnalysisConfig analysis,
             global::FishAudio.AgentGuardrailsConfig guardrails,
+            global::FishAudio.AgentContextConfig context,
             global::FishAudio.AgentLLMConfigRedacted llm,
             global::System.DateTime updatedAt,
             global::FishAudio.AgentVariablesConfig? variables)
@@ -172,6 +187,7 @@ namespace FishAudio
             this.KnowledgeBase = knowledgeBase ?? throw new global::System.ArgumentNullException(nameof(knowledgeBase));
             this.Analysis = analysis ?? throw new global::System.ArgumentNullException(nameof(analysis));
             this.Guardrails = guardrails ?? throw new global::System.ArgumentNullException(nameof(guardrails));
+            this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
             this.Llm = llm ?? throw new global::System.ArgumentNullException(nameof(llm));
             this.Variables = variables;
             this.UpdatedAt = updatedAt;

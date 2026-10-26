@@ -30,7 +30,7 @@ namespace FishAudio
         public string? ApiKey { get; set; }
 
         /// <summary>
-        /// Extra headers sent on every request to your endpoint, such as `x-vercel-protection-bypass`; write-only, reads return null. Omit to keep the stored headers, `{}` clears them.<br/>
+        /// Extra headers sent on every request to your endpoint, such as `x-vercel-protection-bypass`. Reads return the stored map. Omit to keep the stored headers, `{}` clears them.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
@@ -52,7 +52,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="headers">
-        /// Extra headers sent on every request to your endpoint, such as `x-vercel-protection-bypass`; write-only, reads return null. Omit to keep the stored headers, `{}` clears them.<br/>
+        /// Extra headers sent on every request to your endpoint, such as `x-vercel-protection-bypass`. Reads return the stored map. Omit to keep the stored headers, `{}` clears them.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
 #if NET7_0_OR_GREATER

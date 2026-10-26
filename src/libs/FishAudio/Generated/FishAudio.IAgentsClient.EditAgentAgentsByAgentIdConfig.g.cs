@@ -203,6 +203,9 @@ namespace FishAudio
         /// <param name="guardrails">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="context">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="llm">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -224,6 +227,7 @@ namespace FishAudio
             global::FishAudio.PublicAgentKnowledgeBasePatch? knowledgeBase = default,
             global::FishAudio.PublicAgentAnalysisPatch? analysis = default,
             global::FishAudio.PublicAgentGuardrailsPatch? guardrails = default,
+            global::FishAudio.PublicAgentContextPatch? context = default,
             global::FishAudio.PublicAgentLLMPatch? llm = default,
             global::FishAudio.PublicAgentVariablesPatch? variables = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,

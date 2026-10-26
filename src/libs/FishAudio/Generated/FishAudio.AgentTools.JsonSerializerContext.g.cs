@@ -18,6 +18,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.JsonValue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicDependentAgent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolSummary))]
@@ -30,6 +31,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadToolType), TypeInfoPropertyName = "PublicAgentToolCreatePayloadToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookArgumentPayload>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadParameterMode), TypeInfoPropertyName = "PublicAgentToolCreatePayloadParameterMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadMethod), TypeInfoPropertyName = "PublicAgentToolCreatePayloadMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookHeaderPayload>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadErrorHandling), TypeInfoPropertyName = "PublicAgentToolCreatePayloadErrorHandling2")]
@@ -38,6 +40,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicToolHeader))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicToolHeaderKind), TypeInfoPropertyName = "PublicToolHeaderKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolUpdatePayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolUpdatePayloadParameterMode), TypeInfoPropertyName = "PublicAgentToolUpdatePayloadParameterMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolUpdatePayloadMethod), TypeInfoPropertyName = "PublicAgentToolUpdatePayloadMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling), TypeInfoPropertyName = "PublicAgentToolUpdatePayloadErrorHandling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode), TypeInfoPropertyName = "PublicAgentToolUpdatePayloadExecutionMode2")]
@@ -51,6 +54,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseToolType), TypeInfoPropertyName = "CreateAgentToolsResponseToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseMethod), TypeInfoPropertyName = "CreateAgentToolsResponseMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseParameterMode), TypeInfoPropertyName = "CreateAgentToolsResponseParameterMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.PublicToolHeader>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseErrorHandling), TypeInfoPropertyName = "CreateAgentToolsResponseErrorHandling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseExecutionMode), TypeInfoPropertyName = "CreateAgentToolsResponseExecutionMode2")]
@@ -60,6 +64,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponse6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseToolType), TypeInfoPropertyName = "GetAgentToolsResponseToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseMethod), TypeInfoPropertyName = "GetAgentToolsResponseMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseParameterMode), TypeInfoPropertyName = "GetAgentToolsResponseParameterMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseErrorHandling), TypeInfoPropertyName = "GetAgentToolsResponseErrorHandling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseExecutionMode), TypeInfoPropertyName = "GetAgentToolsResponseExecutionMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponse7))]
@@ -68,6 +73,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseToolType), TypeInfoPropertyName = "PatchAgentToolsResponseToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseMethod), TypeInfoPropertyName = "PatchAgentToolsResponseMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseParameterMode), TypeInfoPropertyName = "PatchAgentToolsResponseParameterMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseErrorHandling), TypeInfoPropertyName = "PatchAgentToolsResponseErrorHandling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseExecutionMode), TypeInfoPropertyName = "PatchAgentToolsResponseExecutionMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponse2))]
@@ -90,23 +96,28 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolSummaryMethod?), TypeInfoPropertyName = "NullablePublicAgentToolSummaryMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentWebhookHeaderPayloadKind?), TypeInfoPropertyName = "NullableAgentWebhookHeaderPayloadKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadToolType?), TypeInfoPropertyName = "NullablePublicAgentToolCreatePayloadToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadParameterMode?), TypeInfoPropertyName = "NullablePublicAgentToolCreatePayloadParameterMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadMethod?), TypeInfoPropertyName = "NullablePublicAgentToolCreatePayloadMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadErrorHandling?), TypeInfoPropertyName = "NullablePublicAgentToolCreatePayloadErrorHandling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadExecutionMode?), TypeInfoPropertyName = "NullablePublicAgentToolCreatePayloadExecutionMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicToolHeaderKind?), TypeInfoPropertyName = "NullablePublicToolHeaderKind2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolUpdatePayloadParameterMode?), TypeInfoPropertyName = "NullablePublicAgentToolUpdatePayloadParameterMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolUpdatePayloadMethod?), TypeInfoPropertyName = "NullablePublicAgentToolUpdatePayloadMethod2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling?), TypeInfoPropertyName = "NullablePublicAgentToolUpdatePayloadErrorHandling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode?), TypeInfoPropertyName = "NullablePublicAgentToolUpdatePayloadExecutionMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseToolType?), TypeInfoPropertyName = "NullableCreateAgentToolsResponseToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseMethod?), TypeInfoPropertyName = "NullableCreateAgentToolsResponseMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseParameterMode?), TypeInfoPropertyName = "NullableCreateAgentToolsResponseParameterMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseErrorHandling?), TypeInfoPropertyName = "NullableCreateAgentToolsResponseErrorHandling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentToolsResponseExecutionMode?), TypeInfoPropertyName = "NullableCreateAgentToolsResponseExecutionMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseToolType?), TypeInfoPropertyName = "NullableGetAgentToolsResponseToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseMethod?), TypeInfoPropertyName = "NullableGetAgentToolsResponseMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseParameterMode?), TypeInfoPropertyName = "NullableGetAgentToolsResponseParameterMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseErrorHandling?), TypeInfoPropertyName = "NullableGetAgentToolsResponseErrorHandling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentToolsResponseExecutionMode?), TypeInfoPropertyName = "NullableGetAgentToolsResponseExecutionMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseToolType?), TypeInfoPropertyName = "NullablePatchAgentToolsResponseToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseMethod?), TypeInfoPropertyName = "NullablePatchAgentToolsResponseMethod2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseParameterMode?), TypeInfoPropertyName = "NullablePatchAgentToolsResponseParameterMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseErrorHandling?), TypeInfoPropertyName = "NullablePatchAgentToolsResponseErrorHandling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentToolsResponseExecutionMode?), TypeInfoPropertyName = "NullablePatchAgentToolsResponseExecutionMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentWebhookArgumentPayload>))]
@@ -236,6 +247,10 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadToolType?)
 
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadParameterMode)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadParameterMode?)
+
                     || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadMethod)
 
                     || typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadMethod?)
@@ -251,6 +266,10 @@ namespace FishAudio
                     || typeToConvert == typeof(global::FishAudio.PublicToolHeaderKind)
 
                     || typeToConvert == typeof(global::FishAudio.PublicToolHeaderKind?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadParameterMode)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadParameterMode?)
 
                     || typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadMethod)
 
@@ -272,6 +291,10 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseMethod?)
 
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseParameterMode)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseParameterMode?)
+
                     || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseErrorHandling)
 
                     || typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseErrorHandling?)
@@ -288,6 +311,10 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseMethod?)
 
+                    || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseParameterMode)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseParameterMode?)
+
                     || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseErrorHandling)
 
                     || typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseErrorHandling?)
@@ -303,6 +330,10 @@ namespace FishAudio
                     || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseMethod)
 
                     || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseMethod?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseParameterMode)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseParameterMode?)
 
                     || typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseErrorHandling)
 
@@ -357,6 +388,16 @@ namespace FishAudio
                     return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadToolTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadParameterMode))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadParameterModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadParameterMode?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadParameterModeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::FishAudio.PublicAgentToolCreatePayloadMethod))
                 {
                     return new global::FishAudio.JsonConverters.PublicAgentToolCreatePayloadMethodJsonConverter();
@@ -395,6 +436,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.PublicToolHeaderKind?))
                 {
                     return new global::FishAudio.JsonConverters.PublicToolHeaderKindNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadParameterMode))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadParameterModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadParameterMode?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentToolUpdatePayloadParameterModeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.PublicAgentToolUpdatePayloadMethod))
@@ -447,6 +498,16 @@ namespace FishAudio
                     return new global::FishAudio.JsonConverters.CreateAgentToolsResponseMethodNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseParameterMode))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentToolsResponseParameterModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseParameterMode?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentToolsResponseParameterModeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::FishAudio.CreateAgentToolsResponseErrorHandling))
                 {
                     return new global::FishAudio.JsonConverters.CreateAgentToolsResponseErrorHandlingJsonConverter();
@@ -487,6 +548,16 @@ namespace FishAudio
                     return new global::FishAudio.JsonConverters.GetAgentToolsResponseMethodNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseParameterMode))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentToolsResponseParameterModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseParameterMode?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentToolsResponseParameterModeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::FishAudio.GetAgentToolsResponseErrorHandling))
                 {
                     return new global::FishAudio.JsonConverters.GetAgentToolsResponseErrorHandlingJsonConverter();
@@ -525,6 +596,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseMethod?))
                 {
                     return new global::FishAudio.JsonConverters.PatchAgentToolsResponseMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseParameterMode))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentToolsResponseParameterModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseParameterMode?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentToolsResponseParameterModeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.PatchAgentToolsResponseErrorHandling))

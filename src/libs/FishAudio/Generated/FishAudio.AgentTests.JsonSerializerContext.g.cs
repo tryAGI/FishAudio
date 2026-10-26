@@ -79,6 +79,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestSuccessCondition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestToolMocks))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestSimulationConfigChannel), TypeInfoPropertyName = "AgentTestSimulationConfigChannel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestSimulationContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::FishAudio.AgentTestParamMatcher>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestToolMock))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestToolMocksStrategy), TypeInfoPropertyName = "AgentTestToolMocksStrategy2")]

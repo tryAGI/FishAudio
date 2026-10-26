@@ -43,6 +43,12 @@ namespace FishAudio
         public int? CallCount { get; set; }
 
         /// <summary>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("unbilled_call_count")]
+        public int? UnbilledCallCount { get; set; }
+
+        /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage_complete")]
@@ -98,6 +104,9 @@ namespace FishAudio
         /// <param name="callCount">
         /// Default Value: 0
         /// </param>
+        /// <param name="unbilledCallCount">
+        /// Default Value: 0
+        /// </param>
         /// <param name="usageComplete">
         /// Default Value: false
         /// </param>
@@ -121,6 +130,7 @@ namespace FishAudio
             string? messageGenerationId,
             int? turnId,
             int? callCount,
+            int? unbilledCallCount,
             bool? usageComplete,
             global::System.Collections.Generic.IList<string>? callIds,
             string? costUsd,
@@ -133,6 +143,7 @@ namespace FishAudio
             this.Status = status;
             this.BillingMode = billingMode;
             this.CallCount = callCount;
+            this.UnbilledCallCount = unbilledCallCount;
             this.UsageComplete = usageComplete;
             this.CallIds = callIds;
             this.CostUsd = costUsd;

@@ -67,6 +67,12 @@ internal static partial class AgentsEditAgentAgentsByAgentIdConfigCommandApiComm
         Description = @"",
     };
 
+    private static Option<global::FishAudio.PublicAgentContextPatch?> Context { get; } = new(
+        name: @"--context")
+    {
+        Description = @"",
+    };
+
     private static Option<global::FishAudio.PublicAgentLLMPatch?> Llm { get; } = new(
         name: @"--llm")
     {
@@ -164,6 +170,7 @@ with an explicit null.");
                         command.Options.Add(KnowledgeBase);
                         command.Options.Add(Analysis);
                         command.Options.Add(Guardrails);
+                        command.Options.Add(Context);
                         command.Options.Add(Llm);
                         command.Options.Add(Variables);
           command.Options.Add(Input);
@@ -201,6 +208,7 @@ with an explicit null.");
                         var knowledgeBase = CliRuntime.WasSpecified(parseResult, KnowledgeBase) ? parseResult.GetValue(KnowledgeBase) : (__requestBase is { } __KnowledgeBaseBaseValue ? __KnowledgeBaseBaseValue.KnowledgeBase : default);
                         var analysis = CliRuntime.WasSpecified(parseResult, Analysis) ? parseResult.GetValue(Analysis) : (__requestBase is { } __AnalysisBaseValue ? __AnalysisBaseValue.Analysis : default);
                         var guardrails = CliRuntime.WasSpecified(parseResult, Guardrails) ? parseResult.GetValue(Guardrails) : (__requestBase is { } __GuardrailsBaseValue ? __GuardrailsBaseValue.Guardrails : default);
+                        var context = CliRuntime.WasSpecified(parseResult, Context) ? parseResult.GetValue(Context) : (__requestBase is { } __ContextBaseValue ? __ContextBaseValue.Context : default);
                         var llm = CliRuntime.WasSpecified(parseResult, Llm) ? parseResult.GetValue(Llm) : (__requestBase is { } __LlmBaseValue ? __LlmBaseValue.Llm : default);
                         var variables = CliRuntime.WasSpecified(parseResult, Variables) ? parseResult.GetValue(Variables) : (__requestBase is { } __VariablesBaseValue ? __VariablesBaseValue.Variables : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
@@ -217,6 +225,7 @@ with an explicit null.");
                                     knowledgeBase: knowledgeBase,
                                     analysis: analysis,
                                     guardrails: guardrails,
+                                    context: context,
                                     llm: llm,
                                     variables: variables,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);

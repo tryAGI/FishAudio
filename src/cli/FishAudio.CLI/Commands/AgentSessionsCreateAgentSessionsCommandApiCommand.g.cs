@@ -38,9 +38,11 @@ internal static partial class AgentSessionsCreateAgentSessionsCommandApiCommand
         Description = @"The end user's device timezone as an IANA name (like `Asia/Tokyo`), used as a fallback hint: it applies only when neither `timezone` nor the agent's configured timezone is set, and invalid values are ignored rather than rejected. The Web SDK fills it automatically from the browser for public agents. When your backend creates the session, forward the value from your client.",
     };
 
-    private static Option<bool?> WorldContext { get; } = CliRuntime.CreateNullableBoolOption(
-        name: @"--world-context",
-        description: @"");
+    private static Option<global::FishAudio.AgentSessionContextPayload?> Context { get; } = new(
+        name: @"--context")
+    {
+        Description = @"Per-session overrides of the agent's context switches (`context.current_time` in the agent config). A switch you leave out follows the agent.",
+    };
 
     private static Option<object?> DynamicVariables { get; } = new(
         name: @"--dynamic-variables")
@@ -134,7 +136,7 @@ nested like the agent config's `asr` section and with the same values as
                         command.Options.Add(NameOption);
                         command.Options.Add(Timezone);
                         command.Options.Add(ClientTimezone);
-                        command.Options.Add(WorldContext);
+                        command.Options.Add(Context);
                         command.Options.Add(DynamicVariables);
                         command.Options.Add(EndUserId);
                         command.Options.Add(Metadata);
@@ -174,7 +176,7 @@ nested like the agent config's `asr` section and with the same values as
                         var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : (__requestBase is { } __NameBaseValue ? __NameBaseValue.Name : default);
                         var timezone = CliRuntime.WasSpecified(parseResult, Timezone) ? parseResult.GetValue(Timezone) : (__requestBase is { } __TimezoneBaseValue ? __TimezoneBaseValue.Timezone : default);
                         var clientTimezone = CliRuntime.WasSpecified(parseResult, ClientTimezone) ? parseResult.GetValue(ClientTimezone) : (__requestBase is { } __ClientTimezoneBaseValue ? __ClientTimezoneBaseValue.ClientTimezone : default);
-                        var worldContext = CliRuntime.WasSpecified(parseResult, WorldContext) ? parseResult.GetValue(WorldContext) : (__requestBase is { } __WorldContextBaseValue ? __WorldContextBaseValue.WorldContext : default);
+                        var context = CliRuntime.WasSpecified(parseResult, Context) ? parseResult.GetValue(Context) : (__requestBase is { } __ContextBaseValue ? __ContextBaseValue.Context : default);
                         var dynamicVariables = CliRuntime.WasSpecified(parseResult, DynamicVariables) ? parseResult.GetValue(DynamicVariables) : (__requestBase is { } __DynamicVariablesBaseValue ? __DynamicVariablesBaseValue.DynamicVariables : default);
                         var endUserId = CliRuntime.WasSpecified(parseResult, EndUserId) ? parseResult.GetValue(EndUserId) : (__requestBase is { } __EndUserIdBaseValue ? __EndUserIdBaseValue.EndUserId : default);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
@@ -207,7 +209,7 @@ nested like the agent config's `asr` section and with the same values as
                                     name: name,
                                     timezone: timezone,
                                     clientTimezone: clientTimezone,
-                                    worldContext: worldContext,
+                                    context: context,
                                     dynamicVariables: dynamicVariables,
                                     endUserId: endUserId,
                                     metadata: metadata,

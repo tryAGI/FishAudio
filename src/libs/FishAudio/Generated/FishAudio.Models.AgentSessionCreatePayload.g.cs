@@ -36,10 +36,11 @@ namespace FishAudio
         public string? ClientTimezone { get; set; }
 
         /// <summary>
-        /// Default Value: true
+        /// Per-session overrides of the agent's context switches (`context.current_time` in the agent config). A switch you leave out follows the agent.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("world_context")]
-        public bool? WorldContext { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("context")]
+        public global::FishAudio.AgentSessionContextPayload? Context { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -105,8 +106,9 @@ namespace FishAudio
         /// The end user's device timezone as an IANA name (like `Asia/Tokyo`), used as a fallback hint: it applies only when neither `timezone` nor the agent's configured timezone is set, and invalid values are ignored rather than rejected. The Web SDK fills it automatically from the browser for public agents. When your backend creates the session, forward the value from your client.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="worldContext">
-        /// Default Value: true
+        /// <param name="context">
+        /// Per-session overrides of the agent's context switches (`context.current_time` in the agent config). A switch you leave out follows the agent.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="overrides">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -138,7 +140,7 @@ namespace FishAudio
             string? name,
             string? timezone,
             string? clientTimezone,
-            bool? worldContext,
+            global::FishAudio.AgentSessionContextPayload? context,
             global::FishAudio.AgentSessionOverridesPayload? overrides,
             object? dynamicVariables,
             string? endUserId,
@@ -151,7 +153,7 @@ namespace FishAudio
             this.Name = name;
             this.Timezone = timezone;
             this.ClientTimezone = clientTimezone;
-            this.WorldContext = worldContext;
+            this.Context = context;
             this.Overrides = overrides;
             this.DynamicVariables = dynamicVariables;
             this.EndUserId = endUserId;
