@@ -4,7 +4,8 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Read entity: the stored api_key and headers never leave the collection.
+    /// Read entity: the stored api_key never leaves the collection. The headers<br/>
+    /// read back as stored, like the non-credential headers of a webhook tool.
     /// </summary>
     public sealed partial class AgentLLMCustomConfigRedacted
     {
@@ -32,7 +33,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
-        public object? Headers { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,7 +59,7 @@ namespace FishAudio
             string baseUrl,
             string model,
             object? apiKey,
-            object? headers)
+            global::System.Collections.Generic.Dictionary<string, string>? headers)
         {
             this.BaseUrl = baseUrl ?? throw new global::System.ArgumentNullException(nameof(baseUrl));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));

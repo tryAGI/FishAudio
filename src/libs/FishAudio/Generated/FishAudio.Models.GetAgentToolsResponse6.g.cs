@@ -80,10 +80,25 @@ namespace FishAudio
         public required global::System.DateTime UpdatedAt { get; set; }
 
         /// <summary>
-        ///
+        /// Older shape of `parameters`: each entry becomes a required string parameter. Mutually exclusive with `parameters` in one request. Reads return both, `arguments` being the string parameters of the schema.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         public global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookArgumentPayload>? Arguments { get; set; }
+
+        /// <summary>
+        /// Call parameters as a JSON Schema object (draft 2020-12): `type: object` (filled in when omitted), `properties`, `required`. Standard meaning throughout: `required` means the key must be present, `type: ["string", "null"]` allows null, `minLength: 1` makes a string non-empty, `enum` and `pattern` constrain the value, `default` fills a key the model left out. Mutually exclusive with `arguments` in one request. A tool created with `parameters` starts in `parameter_mode: strict`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required object Parameters { get; set; }
+
+        /// <summary>
+        /// Whether the agent runtime checks each call's arguments against `parameters` before running the tool. `legacy` (the default for tools created with `arguments`, and every tool from before this field existed): no check, the model's arguments run as sent. `strict` (the default for tools created with `parameters`): a call that does not satisfy the schema is refused and the model is told to ask the caller for the missing information, and the LLM provider's constrained decoding is turned on where the model supports it (OpenAI models and a custom OpenAI-compatible endpoint receive the tool with `strict: true`, Gemini on the platform's native channel runs validated function calling). Changing `parameters` never changes the mode, and the mode can be changed on its own.<br/>
+        /// Default Value: legacy
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("parameter_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.GetAgentToolsResponseParameterModeJsonConverter))]
+        public global::FishAudio.GetAgentToolsResponseParameterMode? ParameterMode { get; set; }
 
         /// <summary>
         ///
@@ -155,6 +170,9 @@ namespace FishAudio
         /// <param name="url"></param>
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
+        /// <param name="parameters">
+        /// Call parameters as a JSON Schema object (draft 2020-12): `type: object` (filled in when omitted), `properties`, `required`. Standard meaning throughout: `required` means the key must be present, `type: ["string", "null"]` allows null, `minLength: 1` makes a string non-empty, `enum` and `pattern` constrain the value, `default` fills a key the model left out. Mutually exclusive with `arguments` in one request. A tool created with `parameters` starts in `parameter_mode: strict`.
+        /// </param>
         /// <param name="contentType"></param>
         /// <param name="timeoutSeconds"></param>
         /// <param name="errorHandling"></param>
@@ -163,7 +181,13 @@ namespace FishAudio
         /// How many agents reference this tool in their draft configuration.<br/>
         /// Default Value: 0
         /// </param>
-        /// <param name="arguments"></param>
+        /// <param name="arguments">
+        /// Older shape of `parameters`: each entry becomes a required string parameter. Mutually exclusive with `parameters` in one request. Reads return both, `arguments` being the string parameters of the schema.
+        /// </param>
+        /// <param name="parameterMode">
+        /// Whether the agent runtime checks each call's arguments against `parameters` before running the tool. `legacy` (the default for tools created with `arguments`, and every tool from before this field existed): no check, the model's arguments run as sent. `strict` (the default for tools created with `parameters`): a call that does not satisfy the schema is refused and the model is told to ask the caller for the missing information, and the LLM provider's constrained decoding is turned on where the model supports it (OpenAI models and a custom OpenAI-compatible endpoint receive the tool with `strict: true`, Gemini on the platform's native channel runs validated function calling). Changing `parameters` never changes the mode, and the mode can be changed on its own.<br/>
+        /// Default Value: legacy
+        /// </param>
         /// <param name="bodyTemplate"></param>
         /// <param name="headers"></param>
         /// <param name="mockResponses"></param>
@@ -185,12 +209,14 @@ namespace FishAudio
             string url,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
+            object parameters,
             string contentType,
             int timeoutSeconds,
             global::FishAudio.GetAgentToolsResponseErrorHandling errorHandling,
             string? description,
             int? usedBy,
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookArgumentPayload>? arguments,
+            global::FishAudio.GetAgentToolsResponseParameterMode? parameterMode,
             string? bodyTemplate,
             global::System.Collections.Generic.IList<global::FishAudio.PublicToolHeader>? headers,
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>? mockResponses,
@@ -208,6 +234,8 @@ namespace FishAudio
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Arguments = arguments;
+            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
+            this.ParameterMode = parameterMode;
             this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
             this.BodyTemplate = bodyTemplate;
             this.Headers = headers;

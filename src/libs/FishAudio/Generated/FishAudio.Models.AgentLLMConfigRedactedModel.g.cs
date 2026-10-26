@@ -39,7 +39,15 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        GoogleGemini36FlashPriority,
+        /// <summary>
+        ///
+        /// </summary>
         GoogleGemini38Flash,
+        /// <summary>
+        ///
+        /// </summary>
+        GoogleGemini38FlashPriority,
         /// <summary>
         ///
         /// </summary>
@@ -93,7 +101,9 @@ namespace FishAudio
                 AgentLLMConfigRedactedModel.GoogleGemini25Flash => "google/gemini-2.5-flash",
                 AgentLLMConfigRedactedModel.GoogleGemini35FlashLite => "google/gemini-3.5-flash-lite",
                 AgentLLMConfigRedactedModel.GoogleGemini36Flash => "google/gemini-3.6-flash",
+                AgentLLMConfigRedactedModel.GoogleGemini36FlashPriority => "google/gemini-3.6-flash-priority",
                 AgentLLMConfigRedactedModel.GoogleGemini38Flash => "google/gemini-3.8-flash",
+                AgentLLMConfigRedactedModel.GoogleGemini38FlashPriority => "google/gemini-3.8-flash-priority",
                 AgentLLMConfigRedactedModel.GoogleGemma426bA4bIt => "google/gemma-4-26b-a4b-it",
                 AgentLLMConfigRedactedModel.OpenaiGpt41 => "openai/gpt-4.1",
                 AgentLLMConfigRedactedModel.OpenaiGpt4o => "openai/gpt-4o",
@@ -119,7 +129,9 @@ namespace FishAudio
                 "google/gemini-2.5-flash" => AgentLLMConfigRedactedModel.GoogleGemini25Flash,
                 "google/gemini-3.5-flash-lite" => AgentLLMConfigRedactedModel.GoogleGemini35FlashLite,
                 "google/gemini-3.6-flash" => AgentLLMConfigRedactedModel.GoogleGemini36Flash,
+                "google/gemini-3.6-flash-priority" => AgentLLMConfigRedactedModel.GoogleGemini36FlashPriority,
                 "google/gemini-3.8-flash" => AgentLLMConfigRedactedModel.GoogleGemini38Flash,
+                "google/gemini-3.8-flash-priority" => AgentLLMConfigRedactedModel.GoogleGemini38FlashPriority,
                 "google/gemma-4-26b-a4b-it" => AgentLLMConfigRedactedModel.GoogleGemma426bA4bIt,
                 "openai/gpt-4.1" => AgentLLMConfigRedactedModel.OpenaiGpt41,
                 "openai/gpt-4o" => AgentLLMConfigRedactedModel.OpenaiGpt4o,

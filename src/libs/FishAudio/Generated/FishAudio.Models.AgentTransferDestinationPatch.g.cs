@@ -79,6 +79,13 @@ namespace FishAudio
         public bool? WarmHumanDetection { get; set; }
 
         /// <summary>
+        /// Compatibility option for warm transfers whose warm_connect is `confirm` or `briefing`, ignored for cold transfers and `direct`. Absent or true (recommended): on the call in which the agent briefs the destination, the agent uses the same turn-taking (response timing: `eagerness`, `response_wait_ms` and `response_max_wait_ms`), interruption (`interruption_sensitivity` and `interruption_ignore_phrases`) and language (`voice.speaking_language`) settings as on the call with the caller. False: that call keeps the older fixed behavior. Destinations that existed before this setting were set to false so their behavior did not change. Either way the destination can always interrupt the agent on that call, whatever `interruptible` is set to. A destination sent without the field keeps the value of the existing destination it replaces (same label, else a renamed one with the same phone number or SIP URI) and is true when it is new. Send true to switch a destination to the agent's settings.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("warm_consult_uses_agent_settings")]
+        public bool? WarmConsultUsesAgentSettings { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_failure")]
@@ -134,6 +141,10 @@ namespace FishAudio
         /// Applies to warm transfers whose warm_connect is `confirm` or `briefing`, and is ignored for cold transfers and `direct`. When true, once the destination answers, the agent stays silent until the other side speaks, then classifies the pickup. A person is briefed as usual. Voicemail or an IVR (phone menu) ends the transfer as failed. A hold queue or silence keeps the agent waiting until `warm_confirm_timeout_seconds` ends the attempt as unreachable. A failed transfer follows `on_failure`. Leave it off for destinations whose people are only reachable through a phone menu, because the menu stops the transfer.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="warmConsultUsesAgentSettings">
+        /// Compatibility option for warm transfers whose warm_connect is `confirm` or `briefing`, ignored for cold transfers and `direct`. Absent or true (recommended): on the call in which the agent briefs the destination, the agent uses the same turn-taking (response timing: `eagerness`, `response_wait_ms` and `response_max_wait_ms`), interruption (`interruption_sensitivity` and `interruption_ignore_phrases`) and language (`voice.speaking_language`) settings as on the call with the caller. False: that call keeps the older fixed behavior. Destinations that existed before this setting were set to false so their behavior did not change. Either way the destination can always interrupt the agent on that call, whatever `interruptible` is set to. A destination sent without the field keeps the value of the existing destination it replaces (same label, else a renamed one with the same phone number or SIP URI) and is true when it is new. Send true to switch a destination to the agent's settings.<br/>
+        /// Default Value: true
+        /// </param>
         /// <param name="onFailure"></param>
         /// <param name="announcementMode">
         /// Default Value: generated
@@ -154,6 +165,7 @@ namespace FishAudio
             int? warmRingTimeoutSeconds,
             int? warmConfirmTimeoutSeconds,
             bool? warmHumanDetection,
+            bool? warmConsultUsesAgentSettings,
             global::FishAudio.AgentTransferOnFailurePatch? onFailure,
             global::FishAudio.AgentTransferDestinationPatchAnnouncementMode? announcementMode,
             string? announcementMessage)
@@ -169,6 +181,7 @@ namespace FishAudio
             this.WarmRingTimeoutSeconds = warmRingTimeoutSeconds;
             this.WarmConfirmTimeoutSeconds = warmConfirmTimeoutSeconds;
             this.WarmHumanDetection = warmHumanDetection;
+            this.WarmConsultUsesAgentSettings = warmConsultUsesAgentSettings;
             this.OnFailure = onFailure;
             this.AnnouncementMode = announcementMode;
             this.AnnouncementMessage = announcementMessage;

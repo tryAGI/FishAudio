@@ -71,10 +71,18 @@ namespace FishAudio
         public int? HangupAfterSeconds { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        /// What the agent says before a silence hangup. `off` (default) hangs up without a word, `generated` says a short goodbye, `fixed` says hangup_farewell_message. A `fixed` mode with an empty message falls back to `generated`. If the caller speaks during the goodbye, the call goes on.<br/>
+        /// Default Value: off
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("hangup_farewell_enabled")]
-        public bool? HangupFarewellEnabled { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("hangup_farewell_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentConversationConfigHangupFarewellModeJsonConverter))]
+        public global::FishAudio.AgentConversationConfigHangupFarewellMode? HangupFarewellMode { get; set; }
+
+        /// <summary>
+        /// The goodbye said verbatim in the `fixed` hangup_farewell_mode, at most 500 characters. `{{variable}}` placeholders are filled in for each session. "" clears it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("hangup_farewell_message")]
+        public string? HangupFarewellMessage { get; set; }
 
         /// <summary>
         /// Default Value: true
@@ -172,8 +180,12 @@ namespace FishAudio
         /// <param name="hangupAfterSeconds">
         /// Default Value: 60
         /// </param>
-        /// <param name="hangupFarewellEnabled">
-        /// Default Value: false
+        /// <param name="hangupFarewellMode">
+        /// What the agent says before a silence hangup. `off` (default) hangs up without a word, `generated` says a short goodbye, `fixed` says hangup_farewell_message. A `fixed` mode with an empty message falls back to `generated`. If the caller speaks during the goodbye, the call goes on.<br/>
+        /// Default Value: off
+        /// </param>
+        /// <param name="hangupFarewellMessage">
+        /// The goodbye said verbatim in the `fixed` hangup_farewell_mode, at most 500 characters. `{{variable}}` placeholders are filled in for each session. "" clears it.
         /// </param>
         /// <param name="recordAudio">
         /// Default Value: true
@@ -220,7 +232,8 @@ namespace FishAudio
             bool? speculativeResponse,
             bool? reengageEnabled,
             int? hangupAfterSeconds,
-            bool? hangupFarewellEnabled,
+            global::FishAudio.AgentConversationConfigHangupFarewellMode? hangupFarewellMode,
+            string? hangupFarewellMessage,
             bool? recordAudio,
             string? timezone,
             global::System.Collections.Generic.IList<global::FishAudio.AgentTransferDestination>? transferDestinations,
@@ -240,7 +253,8 @@ namespace FishAudio
             this.SpeculativeResponse = speculativeResponse;
             this.ReengageEnabled = reengageEnabled;
             this.HangupAfterSeconds = hangupAfterSeconds;
-            this.HangupFarewellEnabled = hangupFarewellEnabled;
+            this.HangupFarewellMode = hangupFarewellMode;
+            this.HangupFarewellMessage = hangupFarewellMessage;
             this.RecordAudio = recordAudio;
             this.Timezone = timezone;
             this.TransferDestinations = transferDestinations;

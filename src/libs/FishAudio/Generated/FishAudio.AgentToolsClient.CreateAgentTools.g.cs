@@ -45,9 +45,12 @@ namespace FishAudio
         /// Create Tool<br/>
         /// Create a workspace tool. `tool_type: webhook` calls your HTTP endpoint<br/>
         /// during conversations; `tool_type: client` is executed by your own frontend<br/>
-        /// through the SDK (no URL). Attach it to agents via the agent config's<br/>
-        /// `tools.tool_ids`. Credential headers (authorization_bearer /<br/>
-        /// authorization_basic) are write-only and read back as `has_secret`.
+        /// through the SDK (no URL). Describe the call with `parameters` (a JSON<br/>
+        /// Schema object, checked at call time under `parameter_mode: strict`) or<br/>
+        /// the older `arguments` list (every argument a required string, unchecked).<br/>
+        /// Attach it to agents via the agent config's `tools.tool_ids`. Credential<br/>
+        /// headers (authorization_bearer / authorization_basic) are write-only and<br/>
+        /// read back as `has_secret`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -91,9 +94,12 @@ namespace FishAudio
         /// Create Tool<br/>
         /// Create a workspace tool. `tool_type: webhook` calls your HTTP endpoint<br/>
         /// during conversations; `tool_type: client` is executed by your own frontend<br/>
-        /// through the SDK (no URL). Attach it to agents via the agent config's<br/>
-        /// `tools.tool_ids`. Credential headers (authorization_bearer /<br/>
-        /// authorization_basic) are write-only and read back as `has_secret`.
+        /// through the SDK (no URL). Describe the call with `parameters` (a JSON<br/>
+        /// Schema object, checked at call time under `parameter_mode: strict`) or<br/>
+        /// the older `arguments` list (every argument a required string, unchecked).<br/>
+        /// Attach it to agents via the agent config's `tools.tool_ids`. Credential<br/>
+        /// headers (authorization_bearer / authorization_basic) are write-only and<br/>
+        /// read back as `has_secret`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -594,16 +600,29 @@ namespace FishAudio
         /// Create Tool<br/>
         /// Create a workspace tool. `tool_type: webhook` calls your HTTP endpoint<br/>
         /// during conversations; `tool_type: client` is executed by your own frontend<br/>
-        /// through the SDK (no URL). Attach it to agents via the agent config's<br/>
-        /// `tools.tool_ids`. Credential headers (authorization_bearer /<br/>
-        /// authorization_basic) are write-only and read back as `has_secret`.
+        /// through the SDK (no URL). Describe the call with `parameters` (a JSON<br/>
+        /// Schema object, checked at call time under `parameter_mode: strict`) or<br/>
+        /// the older `arguments` list (every argument a required string, unchecked).<br/>
+        /// Attach it to agents via the agent config's `tools.tool_ids`. Credential<br/>
+        /// headers (authorization_bearer / authorization_basic) are write-only and<br/>
+        /// read back as `has_secret`.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="toolType">
         /// Default Value: webhook
         /// </param>
-        /// <param name="arguments"></param>
+        /// <param name="arguments">
+        /// Older shape of `parameters`: each entry becomes a required string parameter. Mutually exclusive with `parameters` in one request. Reads return both, `arguments` being the string parameters of the schema.
+        /// </param>
+        /// <param name="parameters">
+        /// Call parameters as a JSON Schema object (draft 2020-12): `type: object` (filled in when omitted), `properties`, `required`. Standard meaning throughout: `required` means the key must be present, `type: ["string", "null"]` allows null, `minLength: 1` makes a string non-empty, `enum` and `pattern` constrain the value, `default` fills a key the model left out. Mutually exclusive with `arguments` in one request. A tool created with `parameters` starts in `parameter_mode: strict`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="parameterMode">
+        /// Whether the agent runtime checks each call's arguments against `parameters` before running the tool. `legacy` (the default for tools created with `arguments`, and every tool from before this field existed): no check, the model's arguments run as sent. `strict` (the default for tools created with `parameters`): a call that does not satisfy the schema is refused and the model is told to ask the caller for the missing information, and the LLM provider's constrained decoding is turned on where the model supports it (OpenAI models and a custom OpenAI-compatible endpoint receive the tool with `strict: true`, Gemini on the platform's native channel runs validated function calling). Changing `parameters` never changes the mode, and the mode can be changed on its own.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="method">
         /// Default Value: POST
         /// </param>
@@ -636,6 +655,8 @@ namespace FishAudio
             string? description = default,
             global::FishAudio.PublicAgentToolCreatePayloadToolType? toolType = default,
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookArgumentPayload>? arguments = default,
+            object? parameters = default,
+            global::FishAudio.PublicAgentToolCreatePayloadParameterMode? parameterMode = default,
             global::FishAudio.PublicAgentToolCreatePayloadMethod? method = default,
             string? url = default,
             string? contentType = default,
@@ -655,6 +676,8 @@ namespace FishAudio
                 Description = description,
                 ToolType = toolType,
                 Arguments = arguments,
+                Parameters = parameters,
+                ParameterMode = parameterMode,
                 Method = method,
                 Url = url,
                 ContentType = contentType,

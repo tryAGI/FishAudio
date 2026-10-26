@@ -64,6 +64,12 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rejected_by")]
+        public string? RejectedBy { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latency_ms")]
         public int? LatencyMs { get; set; }
 
@@ -106,6 +112,9 @@ namespace FishAudio
         /// <param name="error">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="rejectedBy">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="latencyMs">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -127,6 +136,7 @@ namespace FishAudio
             string? output,
             bool? outputTruncated,
             string? error,
+            string? rejectedBy,
             int? latencyMs,
             int? turnId,
             string? createdAt)
@@ -139,6 +149,7 @@ namespace FishAudio
             this.Output = output;
             this.OutputTruncated = outputTruncated;
             this.Error = error;
+            this.RejectedBy = rejectedBy;
             this.LatencyMs = latencyMs;
             this.TurnId = turnId;
             this.CreatedAt = createdAt;

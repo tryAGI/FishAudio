@@ -39,7 +39,15 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        GoogleGemini36FlashPriority,
+        /// <summary>
+        ///
+        /// </summary>
         GoogleGemini38Flash,
+        /// <summary>
+        ///
+        /// </summary>
+        GoogleGemini38FlashPriority,
         /// <summary>
         ///
         /// </summary>
@@ -93,7 +101,9 @@ namespace FishAudio
                 PublicAgentLLMPatchModel.GoogleGemini25Flash => "google/gemini-2.5-flash",
                 PublicAgentLLMPatchModel.GoogleGemini35FlashLite => "google/gemini-3.5-flash-lite",
                 PublicAgentLLMPatchModel.GoogleGemini36Flash => "google/gemini-3.6-flash",
+                PublicAgentLLMPatchModel.GoogleGemini36FlashPriority => "google/gemini-3.6-flash-priority",
                 PublicAgentLLMPatchModel.GoogleGemini38Flash => "google/gemini-3.8-flash",
+                PublicAgentLLMPatchModel.GoogleGemini38FlashPriority => "google/gemini-3.8-flash-priority",
                 PublicAgentLLMPatchModel.GoogleGemma426bA4bIt => "google/gemma-4-26b-a4b-it",
                 PublicAgentLLMPatchModel.OpenaiGpt41 => "openai/gpt-4.1",
                 PublicAgentLLMPatchModel.OpenaiGpt4o => "openai/gpt-4o",
@@ -119,7 +129,9 @@ namespace FishAudio
                 "google/gemini-2.5-flash" => PublicAgentLLMPatchModel.GoogleGemini25Flash,
                 "google/gemini-3.5-flash-lite" => PublicAgentLLMPatchModel.GoogleGemini35FlashLite,
                 "google/gemini-3.6-flash" => PublicAgentLLMPatchModel.GoogleGemini36Flash,
+                "google/gemini-3.6-flash-priority" => PublicAgentLLMPatchModel.GoogleGemini36FlashPriority,
                 "google/gemini-3.8-flash" => PublicAgentLLMPatchModel.GoogleGemini38Flash,
+                "google/gemini-3.8-flash-priority" => PublicAgentLLMPatchModel.GoogleGemini38FlashPriority,
                 "google/gemma-4-26b-a4b-it" => PublicAgentLLMPatchModel.GoogleGemma426bA4bIt,
                 "openai/gpt-4.1" => PublicAgentLLMPatchModel.OpenaiGpt41,
                 "openai/gpt-4o" => PublicAgentLLMPatchModel.OpenaiGpt4o,
