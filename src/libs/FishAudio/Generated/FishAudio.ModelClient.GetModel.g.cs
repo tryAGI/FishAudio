@@ -35,6 +35,7 @@ namespace FishAudio
             ref string? authorId,
             ref global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? language,
             ref global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage,
+            ref global::FishAudio.GetModelVisibility? visibility,
             ref bool? licensed,
             ref global::FishAudio.GetModelSortBy? sortBy);
         partial void PrepareGetModelRequest(
@@ -48,6 +49,7 @@ namespace FishAudio
             string? authorId,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? language,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage,
+            global::FishAudio.GetModelVisibility? visibility,
             bool? licensed,
             global::FishAudio.GetModelSortBy? sortBy);
         partial void ProcessGetModelResponse(
@@ -86,6 +88,9 @@ namespace FishAudio
         /// <param name="titleLanguage">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="visibility">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="licensed">
         /// Default Value: false
         /// </param>
@@ -104,6 +109,7 @@ namespace FishAudio
             string? authorId = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? language = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage = default,
+            global::FishAudio.GetModelVisibility? visibility = default,
             bool? licensed = default,
             global::FishAudio.GetModelSortBy? sortBy = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
@@ -118,6 +124,7 @@ namespace FishAudio
                 authorId: authorId,
                 language: language,
                 titleLanguage: titleLanguage,
+                visibility: visibility,
                 licensed: licensed,
                 sortBy: sortBy,
                 requestOptions: requestOptions,
@@ -153,6 +160,9 @@ namespace FishAudio
         /// <param name="titleLanguage">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="visibility">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="licensed">
         /// Default Value: false
         /// </param>
@@ -171,6 +181,7 @@ namespace FishAudio
             string? authorId = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? language = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage = default,
+            global::FishAudio.GetModelVisibility? visibility = default,
             bool? licensed = default,
             global::FishAudio.GetModelSortBy? sortBy = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
@@ -188,6 +199,7 @@ namespace FishAudio
                 authorId: ref authorId,
                 language: ref language,
                 titleLanguage: ref titleLanguage,
+                visibility: ref visibility,
                 licensed: ref licensed,
                 sortBy: ref sortBy);
 
@@ -235,6 +247,7 @@ namespace FishAudio
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
                 validate: false), delimiter: ",", explode: true)
+                                .AddOptionalParameter("visibility", visibility?.ToValueString())
                                 .AddOptionalParameter("licensed", licensed?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 ;
@@ -286,6 +299,7 @@ namespace FishAudio
                     authorId: authorId,
                     language: language,
                     titleLanguage: titleLanguage,
+                    visibility: visibility,
                     licensed: licensed,
                     sortBy: sortBy);
 

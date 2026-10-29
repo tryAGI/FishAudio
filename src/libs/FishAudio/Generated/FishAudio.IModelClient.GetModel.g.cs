@@ -31,6 +31,9 @@ namespace FishAudio
         /// <param name="titleLanguage">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="visibility">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="licensed">
         /// Default Value: false
         /// </param>
@@ -49,6 +52,7 @@ namespace FishAudio
             string? authorId = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? language = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage = default,
+            global::FishAudio.GetModelVisibility? visibility = default,
             bool? licensed = default,
             global::FishAudio.GetModelSortBy? sortBy = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
@@ -80,6 +84,9 @@ namespace FishAudio
         /// <param name="titleLanguage">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="visibility">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="licensed">
         /// Default Value: false
         /// </param>
@@ -98,6 +105,7 @@ namespace FishAudio
             string? authorId = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? language = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage = default,
+            global::FishAudio.GetModelVisibility? visibility = default,
             bool? licensed = default,
             global::FishAudio.GetModelSortBy? sortBy = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
