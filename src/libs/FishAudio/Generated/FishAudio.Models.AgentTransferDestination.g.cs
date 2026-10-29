@@ -36,6 +36,12 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -123,6 +129,7 @@ namespace FishAudio
         /// <param name="sipUri">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="headers"></param>
         /// <param name="description"></param>
         /// <param name="mode">
         /// Default Value: cold
@@ -158,6 +165,7 @@ namespace FishAudio
             string? label,
             string? phoneNumber,
             string? sipUri,
+            global::System.Collections.Generic.Dictionary<string, string>? headers,
             string? description,
             global::FishAudio.AgentTransferDestinationMode? mode,
             global::FishAudio.AgentTransferDestinationWarmConnect? warmConnect,
@@ -174,6 +182,7 @@ namespace FishAudio
             this.Label = label;
             this.PhoneNumber = phoneNumber;
             this.SipUri = sipUri;
+            this.Headers = headers;
             this.Description = description;
             this.Mode = mode;
             this.WarmConnect = warmConnect;

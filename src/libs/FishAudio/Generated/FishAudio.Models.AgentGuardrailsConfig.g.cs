@@ -21,6 +21,12 @@ namespace FishAudio
         public bool? Manipulation { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pre_tool_speech")]
+        public bool? PreToolSpeech { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,15 +41,20 @@ namespace FishAudio
         /// <param name="manipulation">
         /// Default Value: false
         /// </param>
+        /// <param name="preToolSpeech">
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentGuardrailsConfig(
             bool? focus,
-            bool? manipulation)
+            bool? manipulation,
+            bool? preToolSpeech)
         {
             this.Focus = focus;
             this.Manipulation = manipulation;
+            this.PreToolSpeech = preToolSpeech;
         }
 
         /// <summary>

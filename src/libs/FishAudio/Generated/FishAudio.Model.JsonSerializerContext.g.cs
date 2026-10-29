@@ -55,6 +55,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelRequestVisibility3), TypeInfoPropertyName = "PatchModelRequestVisibility32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelRequest4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelRequestVisibility4), TypeInfoPropertyName = "PatchModelRequestVisibility42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelVisibility), TypeInfoPropertyName = "GetModelVisibility2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelSortBy), TypeInfoPropertyName = "GetModelSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.ModelEntity>))]
@@ -100,6 +101,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelRequestVisibility2?), TypeInfoPropertyName = "NullablePatchModelRequestVisibility22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelRequestVisibility3?), TypeInfoPropertyName = "NullablePatchModelRequestVisibility32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchModelRequestVisibility4?), TypeInfoPropertyName = "NullablePatchModelRequestVisibility42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelVisibility?), TypeInfoPropertyName = "NullableGetModelVisibility2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetModelSortBy?), TypeInfoPropertyName = "NullableGetModelSortBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseType?), TypeInfoPropertyName = "NullableCreateModelResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateModelResponseTrainMode?), TypeInfoPropertyName = "NullableCreateModelResponseTrainMode2")]
@@ -280,6 +282,10 @@ namespace FishAudio
                     || typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility4)
 
                     || typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility4?)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelVisibility)
+
+                    || typeToConvert == typeof(global::FishAudio.GetModelVisibility?)
 
                     || typeToConvert == typeof(global::FishAudio.GetModelSortBy)
 
@@ -476,6 +482,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.PatchModelRequestVisibility4?))
                 {
                     return new global::FishAudio.JsonConverters.PatchModelRequestVisibility4NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelVisibility))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelVisibilityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetModelVisibility?))
+                {
+                    return new global::FishAudio.JsonConverters.GetModelVisibilityNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.GetModelSortBy))
