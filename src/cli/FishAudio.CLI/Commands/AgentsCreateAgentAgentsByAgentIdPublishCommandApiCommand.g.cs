@@ -24,6 +24,18 @@ internal static partial class AgentsCreateAgentAgentsByAgentIdPublishCommandApiC
     {
         Description = @"Optional longer note for audit and rollback context.",
     };
+
+    private static Option<string?> ExpectedConfigHash { get; } = new(
+        name: @"--expected-config-hash")
+    {
+        Description = @"Publish only while the draft has this config_hash. Otherwise 409 with reason `draft_changed` and nothing is written.",
+    };
+
+    private static Option<global::FishAudio.PublicAgentConfigPatchPayload?> Config { get; } = new(
+        name: @"--config")
+    {
+        Description = @"Draft changes to apply before publishing, same shape as Update Draft Config. The write and the publish succeed or fail together.",
+    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -66,14 +78,36 @@ internal static partial class AgentsCreateAgentAgentsByAgentIdPublishCommandApiC
     public static Command Create(string? commandName = null)
     {
         var command = new Command(commandName ?? @"create-agent-agents-by-agent-id-publish", @"Publish Agent
-Freeze the current draft into an immutable version (version_number
-auto-increments) and make it the live configuration for new sessions. If
-the draft already matches the live version, return that version unchanged.
-The body is optional; the title and description label a newly created
-version for audit and rollback.");
+Freeze the current draft into an immutable version and make it the live
+configuration for new sessions. Each new version gets the next
+version_number. If the draft already matches the live version, no version
+is created and the live version comes back with `created: false`.
+
+The response describes what was published:
+- `version_number` and `config_hash` identify the version.
+- `config` is the configuration exactly as published. Check your
+  read-back against it, not against the request you sent.
+- `created` tells whether this call made a new version.
+
+Publishing copies the draft as it is stored. It does not change any field.
+Writes do normalize some values, see Update Draft Config.
+
+The body is optional:
+- `expected_config_hash` publishes only while the draft still has that
+  config_hash. Take it from Get Draft Config or Update Draft Config. On a
+  mismatch the call returns 409 with `reason: ""draft_changed""` and the
+  draft's current `config_hash`. Nothing is written.
+- `config` applies draft changes first, in the same shape as Update Draft
+  Config. The changes and the publish are one atomic step. If either fails,
+  the draft stays as it was.
+- With both, `expected_config_hash` is checked against the draft before
+  `config` is applied.
+- `version_title` and `version_description` label a new version.");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(VersionTitle);
                         command.Options.Add(VersionDescription);
+                        command.Options.Add(ExpectedConfigHash);
+                        command.Options.Add(Config);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -102,6 +136,8 @@ version for audit and rollback.");
                         var agentId = parseResult.GetRequiredValue(AgentId);
                         var versionTitle = CliRuntime.WasSpecified(parseResult, VersionTitle) ? parseResult.GetValue(VersionTitle) : (__requestBase is { } __VersionTitleBaseValue ? __VersionTitleBaseValue.VersionTitle : default);
                         var versionDescription = CliRuntime.WasSpecified(parseResult, VersionDescription) ? parseResult.GetValue(VersionDescription) : (__requestBase is { } __VersionDescriptionBaseValue ? __VersionDescriptionBaseValue.VersionDescription : default);
+                        var expectedConfigHash = CliRuntime.WasSpecified(parseResult, ExpectedConfigHash) ? parseResult.GetValue(ExpectedConfigHash) : (__requestBase is { } __ExpectedConfigHashBaseValue ? __ExpectedConfigHashBaseValue.ExpectedConfigHash : default);
+                        var config = CliRuntime.WasSpecified(parseResult, Config) ? parseResult.GetValue(Config) : (__requestBase is { } __ConfigBaseValue ? __ConfigBaseValue.Config : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -109,6 +145,8 @@ version for audit and rollback.");
                                     agentId: agentId,
                                     versionTitle: versionTitle,
                                     versionDescription: versionDescription,
+                                    expectedConfigHash: expectedConfigHash,
+                                    config: config,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

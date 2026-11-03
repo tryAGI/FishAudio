@@ -22,6 +22,12 @@ namespace FishAudio
         public global::FishAudio.AgentLLMCustomConfigRedacted? Custom { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fallback")]
+        public global::FishAudio.AgentLLMFallbackRedacted? Fallback { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,15 +42,18 @@ namespace FishAudio
         /// <param name="custom">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="fallback"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AgentLLMConfigRedacted(
             global::FishAudio.AgentLLMConfigRedactedModel? model,
-            global::FishAudio.AgentLLMCustomConfigRedacted? custom)
+            global::FishAudio.AgentLLMCustomConfigRedacted? custom,
+            global::FishAudio.AgentLLMFallbackRedacted? fallback)
         {
             this.Model = model;
             this.Custom = custom;
+            this.Fallback = fallback;
         }
 
         /// <summary>

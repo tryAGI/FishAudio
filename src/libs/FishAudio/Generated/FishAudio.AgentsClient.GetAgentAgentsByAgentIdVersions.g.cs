@@ -53,7 +53,10 @@ namespace FishAudio
         /// List Agent Versions<br/>
         /// The publish history, newest first. The highest version_number is what live<br/>
         /// sessions run. Compare a version's config_hash with the draft's to detect<br/>
-        /// unpublished changes.
+        /// unpublished changes. A version published before a change in how the hash<br/>
+        /// is computed keeps the hash it froze with; a publish that finds the draft<br/>
+        /// unchanged realigns the live version's hash instead of creating an<br/>
+        /// identical version. Superseded versions keep their frozen hash.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="cursor">
@@ -96,7 +99,10 @@ namespace FishAudio
         /// List Agent Versions<br/>
         /// The publish history, newest first. The highest version_number is what live<br/>
         /// sessions run. Compare a version's config_hash with the draft's to detect<br/>
-        /// unpublished changes.
+        /// unpublished changes. A version published before a change in how the hash<br/>
+        /// is computed keeps the hash it froze with; a publish that finds the draft<br/>
+        /// unchanged realigns the live version's hash instead of creating an<br/>
+        /// identical version. Superseded versions keep their frozen hash.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="cursor">

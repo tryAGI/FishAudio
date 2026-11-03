@@ -42,6 +42,20 @@ namespace FishAudio
         public required global::System.DateTime PublishedAt { get; set; }
 
         /// <summary>
+        /// The immutable configuration snapshot this version pinned at publish time.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("config")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::FishAudio.PublicAgentConfigEntity Config { get; set; }
+
+        /// <summary>
+        /// Whether this call created a new version. False when the draft already matched the live version, which is returned unchanged.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Created { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -53,6 +67,12 @@ namespace FishAudio
         /// <param name="versionNumber"></param>
         /// <param name="configHash"></param>
         /// <param name="publishedAt"></param>
+        /// <param name="config">
+        /// The immutable configuration snapshot this version pinned at publish time.
+        /// </param>
+        /// <param name="created">
+        /// Whether this call created a new version. False when the draft already matched the live version, which is returned unchanged.
+        /// </param>
         /// <param name="versionTitle">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -66,6 +86,8 @@ namespace FishAudio
             int versionNumber,
             string configHash,
             global::System.DateTime publishedAt,
+            global::FishAudio.PublicAgentConfigEntity config,
+            bool created,
             string? versionTitle,
             string? versionDescription)
         {
@@ -74,6 +96,8 @@ namespace FishAudio
             this.VersionDescription = versionDescription;
             this.ConfigHash = configHash ?? throw new global::System.ArgumentNullException(nameof(configHash));
             this.PublishedAt = publishedAt;
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.Created = created;
         }
 
         /// <summary>

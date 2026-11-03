@@ -130,7 +130,12 @@ speaking language.
 
 `overrides.asr.model` picks the speech recognition model for this session,
 nested like the agent config's `asr` section and with the same values as
-`asr.model`. It needs an API key.");
+`asr.model`. It needs an API key.
+
+`overrides.llm.fallback` replaces the agent's `llm.fallback` for this
+session, with the same shape and rules; each `custom` model needs its
+`api_key`. It needs an API key and `llm.fallback` in the agent's
+`overrides_allowed`.");
                         command.Options.Add(Origin);
                         command.Options.Add(AgentId);
                         command.Options.Add(NameOption);

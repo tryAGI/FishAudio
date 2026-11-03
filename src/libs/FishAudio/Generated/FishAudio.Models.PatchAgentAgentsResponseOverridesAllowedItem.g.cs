@@ -23,6 +23,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        LlmFallback,
+        /// <summary>
+        ///
+        /// </summary>
         SystemPrompt,
         /// <summary>
         ///
@@ -45,6 +49,7 @@ namespace FishAudio
                 PatchAgentAgentsResponseOverridesAllowedItem.AsrModel => "asr.model",
                 PatchAgentAgentsResponseOverridesAllowedItem.FirstMessage => "first_message",
                 PatchAgentAgentsResponseOverridesAllowedItem.Language => "language",
+                PatchAgentAgentsResponseOverridesAllowedItem.LlmFallback => "llm.fallback",
                 PatchAgentAgentsResponseOverridesAllowedItem.SystemPrompt => "system_prompt",
                 PatchAgentAgentsResponseOverridesAllowedItem.VoiceId => "voice_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -60,6 +65,7 @@ namespace FishAudio
                 "asr.model" => PatchAgentAgentsResponseOverridesAllowedItem.AsrModel,
                 "first_message" => PatchAgentAgentsResponseOverridesAllowedItem.FirstMessage,
                 "language" => PatchAgentAgentsResponseOverridesAllowedItem.Language,
+                "llm.fallback" => PatchAgentAgentsResponseOverridesAllowedItem.LlmFallback,
                 "system_prompt" => PatchAgentAgentsResponseOverridesAllowedItem.SystemPrompt,
                 "voice_id" => PatchAgentAgentsResponseOverridesAllowedItem.VoiceId,
                 _ => null,

@@ -62,7 +62,10 @@ internal static partial class AgentsGetAgentAgentsByAgentIdVersionsCommandApiCom
         var command = new Command(commandName ?? @"get-agent-agents-by-agent-id-versions", @"List Agent Versions
 The publish history, newest first. The highest version_number is what live
 sessions run. Compare a version's config_hash with the draft's to detect
-unpublished changes.");
+unpublished changes. A version published before a change in how the hash
+is computed keeps the hash it froze with; a publish that finds the draft
+unchanged realigns the live version's hash instead of creating an
+identical version. Superseded versions keep their frozen hash.");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(Cursor);
                         command.Options.Add(Page);

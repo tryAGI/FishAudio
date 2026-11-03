@@ -3,10 +3,10 @@
 namespace FishAudio.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class AgentVoiceConfigViewTtsModelJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::FishAudio.AgentVoiceConfigViewTtsModel>
+    public sealed class AgentLLMFallbackModelRedactedModelNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::FishAudio.AgentLLMFallbackModelRedactedModel?>
     {
         /// <inheritdoc />
-        public override global::FishAudio.AgentVoiceConfigViewTtsModel Read(
+        public override global::FishAudio.AgentLLMFallbackModelRedactedModel? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace FishAudio.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::FishAudio.AgentVoiceConfigViewTtsModelExtensions.ToEnum(stringValue) ?? default;
+                        return global::FishAudio.AgentLLMFallbackModelRedactedModelExtensions.ToEnum(stringValue);
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace FishAudio.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::FishAudio.AgentVoiceConfigViewTtsModel)numValue;
+                    return (global::FishAudio.AgentLLMFallbackModelRedactedModel)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::FishAudio.AgentVoiceConfigViewTtsModel);
+                    return default(global::FishAudio.AgentLLMFallbackModelRedactedModel?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace FishAudio.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::FishAudio.AgentVoiceConfigViewTtsModel value,
+            global::FishAudio.AgentLLMFallbackModelRedactedModel? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::FishAudio.AgentVoiceConfigViewTtsModelExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::FishAudio.AgentLLMFallbackModelRedactedModelExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

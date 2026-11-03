@@ -198,6 +198,12 @@ namespace FishAudio
         public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmEndpointError>? LlmEndpointErrors { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("llm_fallbacks")]
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmFallback>? LlmFallbacks { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -276,6 +282,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="llmEndpointErrors"></param>
+        /// <param name="llmFallbacks"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -309,7 +316,8 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.LLMMessageUsage>? unattributedLlmUsage,
             global::System.Collections.Generic.IList<global::FishAudio.ItemsItem>? items,
             global::FishAudio.AgentSessionAnalysisResult? analysis,
-            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmEndpointError>? llmEndpointErrors)
+            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmEndpointError>? llmEndpointErrors,
+            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmFallback>? llmFallbacks)
         {
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
@@ -341,6 +349,7 @@ namespace FishAudio
             this.Items = items;
             this.Analysis = analysis;
             this.LlmEndpointErrors = llmEndpointErrors;
+            this.LlmFallbacks = llmFallbacks;
         }
 
         /// <summary>

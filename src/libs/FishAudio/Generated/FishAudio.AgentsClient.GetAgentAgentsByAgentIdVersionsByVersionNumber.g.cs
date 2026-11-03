@@ -47,7 +47,8 @@ namespace FishAudio
         /// Get Agent Version<br/>
         /// One published version with its full frozen configuration snapshot —<br/>
         /// including the current live version. Secrets inside the snapshot are<br/>
-        /// redacted the same way as the draft config.
+        /// redacted the same way as the draft config. The snapshot equals the draft<br/>
+        /// it froze, except `config.updated_at`, which is the publish time.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="versionNumber"></param>
@@ -73,7 +74,8 @@ namespace FishAudio
         /// Get Agent Version<br/>
         /// One published version with its full frozen configuration snapshot —<br/>
         /// including the current live version. Secrets inside the snapshot are<br/>
-        /// redacted the same way as the draft config.
+        /// redacted the same way as the draft config. The snapshot equals the draft<br/>
+        /// it froze, except `config.updated_at`, which is the publish time.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="versionNumber"></param>

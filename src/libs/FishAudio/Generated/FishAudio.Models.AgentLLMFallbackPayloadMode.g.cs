@@ -4,46 +4,52 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Default Value: s2.1-pro
+    ///
     /// </summary>
-    public enum AgentVoiceConfigViewTtsModel
+    public enum AgentLLMFallbackPayloadMode
     {
         /// <summary>
         ///
         /// </summary>
-        Drama3,
+        Manual,
         /// <summary>
         ///
         /// </summary>
-        S21Pro,
+        Off,
+        /// <summary>
+        ///
+        /// </summary>
+        Platform,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class AgentVoiceConfigViewTtsModelExtensions
+    public static class AgentLLMFallbackPayloadModeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this AgentVoiceConfigViewTtsModel value)
+        public static string ToValueString(this AgentLLMFallbackPayloadMode value)
         {
             return value switch
             {
-                AgentVoiceConfigViewTtsModel.Drama3 => "drama-3",
-                AgentVoiceConfigViewTtsModel.S21Pro => "s2.1-pro",
+                AgentLLMFallbackPayloadMode.Manual => "manual",
+                AgentLLMFallbackPayloadMode.Off => "off",
+                AgentLLMFallbackPayloadMode.Platform => "platform",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static AgentVoiceConfigViewTtsModel? ToEnum(string value)
+        public static AgentLLMFallbackPayloadMode? ToEnum(string value)
         {
             return value switch
             {
-                "drama-3" => AgentVoiceConfigViewTtsModel.Drama3,
-                "s2.1-pro" => AgentVoiceConfigViewTtsModel.S21Pro,
+                "manual" => AgentLLMFallbackPayloadMode.Manual,
+                "off" => AgentLLMFallbackPayloadMode.Off,
+                "platform" => AgentLLMFallbackPayloadMode.Platform,
                 _ => null,
             };
         }

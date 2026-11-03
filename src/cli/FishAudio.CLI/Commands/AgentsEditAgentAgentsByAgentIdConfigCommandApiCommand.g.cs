@@ -159,7 +159,43 @@ clears it and 20-50 focused terms work best. `tool_ids` and
 `knowledge_source_ids` replace their attachment lists wholesale and every
 id must resolve, else 422. `llm.custom` points the agent at your own
 OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared
-with an explicit null.");
+with an explicit null. `llm.fallback` sets what the agent tries after its
+model fails: `platform` (default), `manual` (`models` in order, 1 to 3)
+or `off`. In `manual`, each model and `primary` (the agent's own model)
+take optional `ttft_timeout_ms` (500-30000, default 5000 ms, i.e. 5
+seconds, when not set) and `total_timeout_ms` (1000-120000, at least
+`ttft_timeout_ms` when both are set, no limit when not set), and the
+first model can set
+`parallel.kick_in_ms` (300-10000, default 1500) to run alongside the
+agent's own model.
+
+The response is the draft as stored, which can differ from the request:
+- Every field comes back. Omitted fields keep their value or default.
+- `asr.keyterms` and `voice.pronunciation_dictionary_ids` are trimmed
+  and de-duplicated in order. `tool_ids` is de-duplicated in order.
+- A tool that was archived drops out of `tool_ids` at the next tools
+  write.
+- `conversation.interruption_ignore_phrases` collapses inner spaces and
+  drops case-insensitive duplicates.
+- `conversation.timezone`, transfer phone numbers and transfer text
+  fields are trimmed.
+- `conversation.eagerness` and `conversation.response_wait_ms` move
+  together. The wait wins when both are sent, and the tier is derived
+  from it.
+- `conversation.response_max_wait_ms: 0` reads back as `null`
+  (automatic).
+- `knowledge_base.enabled` becomes `true` when you attach sources and
+  omit it.
+- `llm.custom.base_url` drops a trailing `/` and `/chat/completions`.
+  `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`
+  to the platform default.
+- Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.
+- `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`
+  copied from `asr`. They are deprecated.
+- `config_hash` and `updated_at` are set by the server.
+
+Compare against this response, or against `config_hash`, rather than the
+request body. Publishing never rewrites these values.");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(Prompt);
                         command.Options.Add(Voice);
