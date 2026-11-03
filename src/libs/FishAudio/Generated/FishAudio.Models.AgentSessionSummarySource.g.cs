@@ -24,6 +24,10 @@ namespace FishAudio
         ///
         /// </summary>
         Public,
+        /// <summary>
+        ///
+        /// </summary>
+        Whatsapp,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace FishAudio
                 AgentSessionSummarySource.Dashboard => "dashboard",
                 AgentSessionSummarySource.Phone => "phone",
                 AgentSessionSummarySource.Public => "public",
+                AgentSessionSummarySource.Whatsapp => "whatsapp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace FishAudio
                 "dashboard" => AgentSessionSummarySource.Dashboard,
                 "phone" => AgentSessionSummarySource.Phone,
                 "public" => AgentSessionSummarySource.Public,
+                "whatsapp" => AgentSessionSummarySource.Whatsapp,
                 _ => null,
             };
         }

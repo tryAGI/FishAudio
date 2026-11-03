@@ -16,7 +16,11 @@ namespace FishAudio
         /// speaking language.<br/>
         /// `overrides.asr.model` picks the speech recognition model for this session,<br/>
         /// nested like the agent config's `asr` section and with the same values as<br/>
-        /// `asr.model`. It needs an API key.
+        /// `asr.model`. It needs an API key.<br/>
+        /// `overrides.llm.fallback` replaces the agent's `llm.fallback` for this<br/>
+        /// session, with the same shape and rules; each `custom` model needs its<br/>
+        /// `api_key`. It needs an API key and `llm.fallback` in the agent's<br/>
+        /// `overrides_allowed`.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -52,7 +56,11 @@ namespace FishAudio
         /// speaking language.<br/>
         /// `overrides.asr.model` picks the speech recognition model for this session,<br/>
         /// nested like the agent config's `asr` section and with the same values as<br/>
-        /// `asr.model`. It needs an API key.
+        /// `asr.model`. It needs an API key.<br/>
+        /// `overrides.llm.fallback` replaces the agent's `llm.fallback` for this<br/>
+        /// session, with the same shape and rules; each `custom` model needs its<br/>
+        /// `api_key`. It needs an API key and `llm.fallback` in the agent's<br/>
+        /// `overrides_allowed`.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -88,7 +96,11 @@ namespace FishAudio
         /// speaking language.<br/>
         /// `overrides.asr.model` picks the speech recognition model for this session,<br/>
         /// nested like the agent config's `asr` section and with the same values as<br/>
-        /// `asr.model`. It needs an API key.
+        /// `asr.model`. It needs an API key.<br/>
+        /// `overrides.llm.fallback` replaces the agent's `llm.fallback` for this<br/>
+        /// session, with the same shape and rules; each `custom` model needs its<br/>
+        /// `api_key`. It needs an API key and `llm.fallback` in the agent's<br/>
+        /// `overrides_allowed`.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

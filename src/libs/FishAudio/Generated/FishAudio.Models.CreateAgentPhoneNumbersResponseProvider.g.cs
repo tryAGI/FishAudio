@@ -20,6 +20,10 @@ namespace FishAudio
         ///
         /// </summary>
         Twilio,
+        /// <summary>
+        ///
+        /// </summary>
+        Whatsapp,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace FishAudio
                 CreateAgentPhoneNumbersResponseProvider.Livekit => "livekit",
                 CreateAgentPhoneNumbersResponseProvider.Sip => "sip",
                 CreateAgentPhoneNumbersResponseProvider.Twilio => "twilio",
+                CreateAgentPhoneNumbersResponseProvider.Whatsapp => "whatsapp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace FishAudio
                 "livekit" => CreateAgentPhoneNumbersResponseProvider.Livekit,
                 "sip" => CreateAgentPhoneNumbersResponseProvider.Sip,
                 "twilio" => CreateAgentPhoneNumbersResponseProvider.Twilio,
+                "whatsapp" => CreateAgentPhoneNumbersResponseProvider.Whatsapp,
                 _ => null,
             };
         }

@@ -39,7 +39,41 @@ namespace FishAudio
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
         /// OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared<br/>
-        /// with an explicit null.
+        /// with an explicit null. `llm.fallback` sets what the agent tries after its<br/>
+        /// model fails: `platform` (default), `manual` (`models` in order, 1 to 3)<br/>
+        /// or `off`. In `manual`, each model and `primary` (the agent's own model)<br/>
+        /// take optional `ttft_timeout_ms` (500-30000, default 5000 ms, i.e. 5<br/>
+        /// seconds, when not set) and `total_timeout_ms` (1000-120000, at least<br/>
+        /// `ttft_timeout_ms` when both are set, no limit when not set), and the<br/>
+        /// first model can set<br/>
+        /// `parallel.kick_in_ms` (300-10000, default 1500) to run alongside the<br/>
+        /// agent's own model.<br/>
+        /// The response is the draft as stored, which can differ from the request:<br/>
+        /// - Every field comes back. Omitted fields keep their value or default.<br/>
+        /// - `asr.keyterms` and `voice.pronunciation_dictionary_ids` are trimmed<br/>
+        ///   and de-duplicated in order. `tool_ids` is de-duplicated in order.<br/>
+        /// - A tool that was archived drops out of `tool_ids` at the next tools<br/>
+        ///   write.<br/>
+        /// - `conversation.interruption_ignore_phrases` collapses inner spaces and<br/>
+        ///   drops case-insensitive duplicates.<br/>
+        /// - `conversation.timezone`, transfer phone numbers and transfer text<br/>
+        ///   fields are trimmed.<br/>
+        /// - `conversation.eagerness` and `conversation.response_wait_ms` move<br/>
+        ///   together. The wait wins when both are sent, and the tier is derived<br/>
+        ///   from it.<br/>
+        /// - `conversation.response_max_wait_ms: 0` reads back as `null`<br/>
+        ///   (automatic).<br/>
+        /// - `knowledge_base.enabled` becomes `true` when you attach sources and<br/>
+        ///   omit it.<br/>
+        /// - `llm.custom.base_url` drops a trailing `/` and `/chat/completions`.<br/>
+        ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
+        ///   to the platform default.<br/>
+        /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
+        /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
+        ///   copied from `asr`. They are deprecated.<br/>
+        /// - `config_hash` and `updated_at` are set by the server.<br/>
+        /// Compare against this response, or against `config_hash`, rather than the<br/>
+        /// request body. Publishing never rewrites these values.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="request"></param>
@@ -106,7 +140,41 @@ namespace FishAudio
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
         /// OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared<br/>
-        /// with an explicit null.
+        /// with an explicit null. `llm.fallback` sets what the agent tries after its<br/>
+        /// model fails: `platform` (default), `manual` (`models` in order, 1 to 3)<br/>
+        /// or `off`. In `manual`, each model and `primary` (the agent's own model)<br/>
+        /// take optional `ttft_timeout_ms` (500-30000, default 5000 ms, i.e. 5<br/>
+        /// seconds, when not set) and `total_timeout_ms` (1000-120000, at least<br/>
+        /// `ttft_timeout_ms` when both are set, no limit when not set), and the<br/>
+        /// first model can set<br/>
+        /// `parallel.kick_in_ms` (300-10000, default 1500) to run alongside the<br/>
+        /// agent's own model.<br/>
+        /// The response is the draft as stored, which can differ from the request:<br/>
+        /// - Every field comes back. Omitted fields keep their value or default.<br/>
+        /// - `asr.keyterms` and `voice.pronunciation_dictionary_ids` are trimmed<br/>
+        ///   and de-duplicated in order. `tool_ids` is de-duplicated in order.<br/>
+        /// - A tool that was archived drops out of `tool_ids` at the next tools<br/>
+        ///   write.<br/>
+        /// - `conversation.interruption_ignore_phrases` collapses inner spaces and<br/>
+        ///   drops case-insensitive duplicates.<br/>
+        /// - `conversation.timezone`, transfer phone numbers and transfer text<br/>
+        ///   fields are trimmed.<br/>
+        /// - `conversation.eagerness` and `conversation.response_wait_ms` move<br/>
+        ///   together. The wait wins when both are sent, and the tier is derived<br/>
+        ///   from it.<br/>
+        /// - `conversation.response_max_wait_ms: 0` reads back as `null`<br/>
+        ///   (automatic).<br/>
+        /// - `knowledge_base.enabled` becomes `true` when you attach sources and<br/>
+        ///   omit it.<br/>
+        /// - `llm.custom.base_url` drops a trailing `/` and `/chat/completions`.<br/>
+        ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
+        ///   to the platform default.<br/>
+        /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
+        /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
+        ///   copied from `asr`. They are deprecated.<br/>
+        /// - `config_hash` and `updated_at` are set by the server.<br/>
+        /// Compare against this response, or against `config_hash`, rather than the<br/>
+        /// request body. Publishing never rewrites these values.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="request"></param>
@@ -173,7 +241,41 @@ namespace FishAudio
         /// `knowledge_source_ids` replace their attachment lists wholesale and every<br/>
         /// id must resolve, else 422. `llm.custom` points the agent at your own<br/>
         /// OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared<br/>
-        /// with an explicit null.
+        /// with an explicit null. `llm.fallback` sets what the agent tries after its<br/>
+        /// model fails: `platform` (default), `manual` (`models` in order, 1 to 3)<br/>
+        /// or `off`. In `manual`, each model and `primary` (the agent's own model)<br/>
+        /// take optional `ttft_timeout_ms` (500-30000, default 5000 ms, i.e. 5<br/>
+        /// seconds, when not set) and `total_timeout_ms` (1000-120000, at least<br/>
+        /// `ttft_timeout_ms` when both are set, no limit when not set), and the<br/>
+        /// first model can set<br/>
+        /// `parallel.kick_in_ms` (300-10000, default 1500) to run alongside the<br/>
+        /// agent's own model.<br/>
+        /// The response is the draft as stored, which can differ from the request:<br/>
+        /// - Every field comes back. Omitted fields keep their value or default.<br/>
+        /// - `asr.keyterms` and `voice.pronunciation_dictionary_ids` are trimmed<br/>
+        ///   and de-duplicated in order. `tool_ids` is de-duplicated in order.<br/>
+        /// - A tool that was archived drops out of `tool_ids` at the next tools<br/>
+        ///   write.<br/>
+        /// - `conversation.interruption_ignore_phrases` collapses inner spaces and<br/>
+        ///   drops case-insensitive duplicates.<br/>
+        /// - `conversation.timezone`, transfer phone numbers and transfer text<br/>
+        ///   fields are trimmed.<br/>
+        /// - `conversation.eagerness` and `conversation.response_wait_ms` move<br/>
+        ///   together. The wait wins when both are sent, and the tier is derived<br/>
+        ///   from it.<br/>
+        /// - `conversation.response_max_wait_ms: 0` reads back as `null`<br/>
+        ///   (automatic).<br/>
+        /// - `knowledge_base.enabled` becomes `true` when you attach sources and<br/>
+        ///   omit it.<br/>
+        /// - `llm.custom.base_url` drops a trailing `/` and `/chat/completions`.<br/>
+        ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
+        ///   to the platform default.<br/>
+        /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
+        /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
+        ///   copied from `asr`. They are deprecated.<br/>
+        /// - `config_hash` and `updated_at` are set by the server.<br/>
+        /// Compare against this response, or against `config_hash`, rather than the<br/>
+        /// request body. Publishing never rewrites these values.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="prompt">

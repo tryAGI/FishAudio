@@ -46,7 +46,8 @@ internal static partial class AgentsGetAgentAgentsByAgentIdVersionsByVersionNumb
         var command = new Command(commandName ?? @"get-agent-agents-by-agent-id-versions-by-version-number", @"Get Agent Version
 One published version with its full frozen configuration snapshot —
 including the current live version. Secrets inside the snapshot are
-redacted the same way as the draft config.");
+redacted the same way as the draft config. The snapshot equals the draft
+it froze, except `config.updated_at`, which is the publish time.");
                         command.Arguments.Add(AgentId);
                         command.Arguments.Add(VersionNumber);
 

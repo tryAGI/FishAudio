@@ -16,7 +16,7 @@ namespace FishAudio
         public required string AgentId { get; set; }
 
         /// <summary>
-        /// Content hash of the draft; equal to a version's config_hash when the draft has no unpublished changes.
+        /// Opaque content hash of this configuration as stored. On a draft it is the config_hash the next publish gives the version, so it equals the live version's config_hash when nothing is unpublished. Pass it to Publish Agent as expected_config_hash.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config_hash")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -30,13 +30,12 @@ namespace FishAudio
         public required global::FishAudio.AgentPromptConfig Prompt { get; set; }
 
         /// <summary>
-        /// Read shape of the voice section. The ASR fields that moved to the asr<br/>
-        /// section stay mirrored here, deprecated, so clients written before the split<br/>
-        /// keep reading them.
+        /// The voice section as the public API reads it: without the console-only<br/>
+        /// sentence buffering switch.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::FishAudio.AgentVoiceConfigView Voice { get; set; }
+        public required global::FishAudio.PublicAgentVoiceConfig Voice { get; set; }
 
         /// <summary>
         /// The asr section as the public API reads it: without the console-only<br/>
@@ -128,13 +127,12 @@ namespace FishAudio
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="configHash">
-        /// Content hash of the draft; equal to a version's config_hash when the draft has no unpublished changes.
+        /// Opaque content hash of this configuration as stored. On a draft it is the config_hash the next publish gives the version, so it equals the live version's config_hash when nothing is unpublished. Pass it to Publish Agent as expected_config_hash.
         /// </param>
         /// <param name="prompt"></param>
         /// <param name="voice">
-        /// Read shape of the voice section. The ASR fields that moved to the asr<br/>
-        /// section stay mirrored here, deprecated, so clients written before the split<br/>
-        /// keep reading them.
+        /// The voice section as the public API reads it: without the console-only<br/>
+        /// sentence buffering switch.
         /// </param>
         /// <param name="asr">
         /// The asr section as the public API reads it: without the console-only<br/>
@@ -163,7 +161,7 @@ namespace FishAudio
             string agentId,
             string configHash,
             global::FishAudio.AgentPromptConfig prompt,
-            global::FishAudio.AgentVoiceConfigView voice,
+            global::FishAudio.PublicAgentVoiceConfig voice,
             global::FishAudio.PublicAgentAsrConfig asr,
             global::FishAudio.AgentConversationConfig conversation,
             global::FishAudio.PublicAgentToolsConfig tools,

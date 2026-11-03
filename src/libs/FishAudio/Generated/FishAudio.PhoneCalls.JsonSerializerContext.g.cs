@@ -18,12 +18,21 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.JsonValue))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMCustomPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMFallbackModelPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMFallbackModelPayloadModel), TypeInfoPropertyName = "AgentLLMFallbackModelPayloadModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMParallelPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMFallbackPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMFallbackPayloadMode), TypeInfoPropertyName = "AgentLLMFallbackPayloadMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentLLMFallbackModelPayload>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMTimeoutsPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAsrOverridesPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel), TypeInfoPropertyName = "AgentSessionAsrOverridesPayloadModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionOverridesPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<string, int?, double?, bool?>), TypeInfoPropertyName = "AnyOfStringInt32DoubleBoolean2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionLlmOverridesPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage), TypeInfoPropertyName = "AgentSessionOverridesPayloadLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PhoneCallCreatePayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse))]
@@ -37,11 +46,14 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse9))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse10))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMFallbackModelPayloadModel?), TypeInfoPropertyName = "NullableAgentLLMFallbackModelPayloadModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentLLMFallbackPayloadMode?), TypeInfoPropertyName = "NullableAgentLLMFallbackPayloadMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel?), TypeInfoPropertyName = "NullableAgentSessionAsrOverridesPayloadModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<string, int?, double?, bool?>?), TypeInfoPropertyName = "NullableAnyOfStringInt32DoubleBoolean2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage?), TypeInfoPropertyName = "NullableAgentSessionOverridesPayloadLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentLLMFallbackModelPayload>))]
     internal sealed partial class PhoneCallsSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -147,7 +159,15 @@ namespace FishAudio
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel)
+                    typeToConvert == typeof(global::FishAudio.AgentLLMFallbackModelPayloadModel)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentLLMFallbackModelPayloadModel?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentLLMFallbackPayloadMode)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentLLMFallbackPayloadMode?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel)
 
                     || typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel?)
 
@@ -160,6 +180,26 @@ namespace FishAudio
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
+                if (typeToConvert == typeof(global::FishAudio.AgentLLMFallbackModelPayloadModel))
+                {
+                    return new global::FishAudio.JsonConverters.AgentLLMFallbackModelPayloadModelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentLLMFallbackModelPayloadModel?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentLLMFallbackModelPayloadModelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentLLMFallbackPayloadMode))
+                {
+                    return new global::FishAudio.JsonConverters.AgentLLMFallbackPayloadModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentLLMFallbackPayloadMode?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentLLMFallbackPayloadModeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel))
                 {
                     return new global::FishAudio.JsonConverters.AgentSessionAsrOverridesPayloadModelJsonConverter();

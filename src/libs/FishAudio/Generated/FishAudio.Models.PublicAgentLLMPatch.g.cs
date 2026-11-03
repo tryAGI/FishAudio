@@ -22,6 +22,13 @@ namespace FishAudio
         public global::FishAudio.PublicAgentLLMCustomConfig? Custom { get; set; }
 
         /// <summary>
+        /// What the agent tries after its model fails. `platform` (default): the platform's built-in fallback for platform models, none for `custom`. `manual`: `models` in order. `off`: no other model. Replaces the whole fallback; null means `platform`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("fallback")]
+        public global::FishAudio.PublicAgentLLMFallback? Fallback { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +44,21 @@ namespace FishAudio
         /// Your own OpenAI-compatible endpoint; mutually exclusive with `model`, explicit null reverts to the platform model.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="fallback">
+        /// What the agent tries after its model fails. `platform` (default): the platform's built-in fallback for platform models, none for `custom`. `manual`: `models` in order. `off`: no other model. Replaces the whole fallback; null means `platform`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PublicAgentLLMPatch(
             global::FishAudio.PublicAgentLLMPatchModel? model,
-            global::FishAudio.PublicAgentLLMCustomConfig? custom)
+            global::FishAudio.PublicAgentLLMCustomConfig? custom,
+            global::FishAudio.PublicAgentLLMFallback? fallback)
         {
             this.Model = model;
             this.Custom = custom;
+            this.Fallback = fallback;
         }
 
         /// <summary>

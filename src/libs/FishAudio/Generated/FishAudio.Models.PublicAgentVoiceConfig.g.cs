@@ -4,11 +4,10 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Read shape of the voice section. The ASR fields that moved to the asr<br/>
-    /// section stay mirrored here, deprecated, so clients written before the split<br/>
-    /// keep reading them.
+    /// The voice section as the public API reads it: without the console-only<br/>
+    /// sentence buffering switch.
     /// </summary>
-    public sealed partial class AgentVoiceConfigView
+    public sealed partial class PublicAgentVoiceConfig
     {
         /// <summary>
         /// Default Value: b347db033a6549378b48d00acb0d06cd
@@ -20,8 +19,8 @@ namespace FishAudio
         /// Default Value: en
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speaking_language")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentVoiceConfigViewSpeakingLanguageJsonConverter))]
-        public global::FishAudio.AgentVoiceConfigViewSpeakingLanguage? SpeakingLanguage { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.PublicAgentVoiceConfigSpeakingLanguageJsonConverter))]
+        public global::FishAudio.PublicAgentVoiceConfigSpeakingLanguage? SpeakingLanguage { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -39,8 +38,8 @@ namespace FishAudio
         /// Default Value: s2.1-pro
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tts_model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentVoiceConfigViewTtsModelJsonConverter))]
-        public global::FishAudio.AgentVoiceConfigViewTtsModel? TtsModel { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.PublicAgentVoiceConfigTtsModelJsonConverter))]
+        public global::FishAudio.PublicAgentVoiceConfigTtsModel? TtsModel { get; set; }
 
         /// <summary>
         ///
@@ -55,7 +54,7 @@ namespace FishAudio
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AgentVoiceConfigView" /> class.
+        /// Initializes a new instance of the <see cref="PublicAgentVoiceConfig" /> class.
         /// </summary>
         /// <param name="voiceId">
         /// Default Value: b347db033a6549378b48d00acb0d06cd
@@ -76,12 +75,12 @@ namespace FishAudio
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public AgentVoiceConfigView(
+        public PublicAgentVoiceConfig(
             string? voiceId,
-            global::FishAudio.AgentVoiceConfigViewSpeakingLanguage? speakingLanguage,
+            global::FishAudio.PublicAgentVoiceConfigSpeakingLanguage? speakingLanguage,
             bool? expressive,
             double? speed,
-            global::FishAudio.AgentVoiceConfigViewTtsModel? ttsModel,
+            global::FishAudio.PublicAgentVoiceConfigTtsModel? ttsModel,
             global::System.Collections.Generic.IList<string>? pronunciationDictionaryIds)
         {
             this.VoiceId = voiceId;
@@ -93,9 +92,9 @@ namespace FishAudio
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AgentVoiceConfigView" /> class.
+        /// Initializes a new instance of the <see cref="PublicAgentVoiceConfig" /> class.
         /// </summary>
-        public AgentVoiceConfigView()
+        public PublicAgentVoiceConfig()
         {
         }
 

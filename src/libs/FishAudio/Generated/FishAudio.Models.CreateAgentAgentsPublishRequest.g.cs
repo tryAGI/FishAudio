@@ -21,6 +21,18 @@ namespace FishAudio
         public string? VersionDescription { get; set; }
 
         /// <summary>
+        /// Publish only while the draft has this config_hash. Otherwise 409 with reason `draft_changed` and nothing is written.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expected_config_hash")]
+        public string? ExpectedConfigHash { get; set; }
+
+        /// <summary>
+        /// Draft changes to apply before publishing, same shape as Update Draft Config. The write and the publish succeed or fail together.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("config")]
+        public global::FishAudio.PublicAgentConfigPatchPayload? Config { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -35,15 +47,25 @@ namespace FishAudio
         /// <param name="versionDescription">
         /// Optional longer note for audit and rollback context.
         /// </param>
+        /// <param name="expectedConfigHash">
+        /// Publish only while the draft has this config_hash. Otherwise 409 with reason `draft_changed` and nothing is written.
+        /// </param>
+        /// <param name="config">
+        /// Draft changes to apply before publishing, same shape as Update Draft Config. The write and the publish succeed or fail together.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateAgentAgentsPublishRequest(
             string? versionTitle,
-            string? versionDescription)
+            string? versionDescription,
+            string? expectedConfigHash,
+            global::FishAudio.PublicAgentConfigPatchPayload? config)
         {
             this.VersionTitle = versionTitle;
             this.VersionDescription = versionDescription;
+            this.ExpectedConfigHash = expectedConfigHash;
+            this.Config = config;
         }
 
         /// <summary>
