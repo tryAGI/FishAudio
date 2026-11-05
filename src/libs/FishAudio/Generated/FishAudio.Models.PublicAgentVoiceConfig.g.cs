@@ -5,7 +5,7 @@ namespace FishAudio
 {
     /// <summary>
     /// The voice section as the public API reads it: without the console-only<br/>
-    /// sentence buffering switch.
+    /// sentence buffering switch and speech engine preview.
     /// </summary>
     public sealed partial class PublicAgentVoiceConfig
     {

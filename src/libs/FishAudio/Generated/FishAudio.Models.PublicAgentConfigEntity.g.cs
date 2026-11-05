@@ -31,7 +31,7 @@ namespace FishAudio
 
         /// <summary>
         /// The voice section as the public API reads it: without the console-only<br/>
-        /// sentence buffering switch.
+        /// sentence buffering switch and speech engine preview.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -132,7 +132,7 @@ namespace FishAudio
         /// <param name="prompt"></param>
         /// <param name="voice">
         /// The voice section as the public API reads it: without the console-only<br/>
-        /// sentence buffering switch.
+        /// sentence buffering switch and speech engine preview.
         /// </param>
         /// <param name="asr">
         /// The asr section as the public API reads it: without the console-only<br/>

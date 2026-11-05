@@ -26,6 +26,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.PronunciationItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PronunciationItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PronunciationDictionaryRef))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PronunciationItemType), TypeInfoPropertyName = "PronunciationItemType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ProsodyControl))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.ReferenceAudio))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
@@ -84,6 +85,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PronunciationItemType?), TypeInfoPropertyName = "NullablePronunciationItemType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::FishAudio.ReferenceAudio>>>?), TypeInfoPropertyName = "NullableAnyOfIListReferenceAudioIListIListReferenceAudio2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<string, global::System.Collections.Generic.IList<string>>?), TypeInfoPropertyName = "NullableAnyOfStringIListString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSRequestFormat?), TypeInfoPropertyName = "NullableTTSRequestFormat2")]
@@ -220,7 +222,11 @@ namespace FishAudio
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::FishAudio.TTSRequestFormat)
+                    typeToConvert == typeof(global::FishAudio.PronunciationItemType)
+
+                    || typeToConvert == typeof(global::FishAudio.PronunciationItemType?)
+
+                    || typeToConvert == typeof(global::FishAudio.TTSRequestFormat)
 
                     || typeToConvert == typeof(global::FishAudio.TTSRequestFormat?)
 
@@ -265,6 +271,16 @@ namespace FishAudio
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
+                if (typeToConvert == typeof(global::FishAudio.PronunciationItemType))
+                {
+                    return new global::FishAudio.JsonConverters.PronunciationItemTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PronunciationItemType?))
+                {
+                    return new global::FishAudio.JsonConverters.PronunciationItemTypeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::FishAudio.TTSRequestFormat))
                 {
                     return new global::FishAudio.JsonConverters.TTSRequestFormatJsonConverter();
