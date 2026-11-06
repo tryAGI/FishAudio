@@ -155,7 +155,15 @@ other languages.
 `asr.keyterms` is a recognition
 vocabulary of up to 50 plain terms (brand names, product terms, personal
 names), each at most 100 characters with no commas or semicolons. `[]`
-clears it and 20-50 focused terms work best. `tool_ids` and
+clears it and 20-50 focused terms work best.
+`voice.background_sound` sets a looping ambience the worker mixes under
+the agent's voice: `preset` is `off` (default) or one of `office`,
+`call_center`, `restaurant`, `cafe`, `city_street`, `phone_line`, `phone_line_digital`,
+`custom`. `volume` (0-1, default 0.15) is the
+ambience's gain relative to the voice. `custom_asset_id` names a clip
+uploaded through `POST /v1/agent/background-sounds`; required with
+`preset: ""custom""`, refused otherwise (422). Replaces the whole object;
+an explicit null resets it to off. `tool_ids` and
 `knowledge_source_ids` replace their attachment lists wholesale and every
 id must resolve, else 422. `llm.custom` points the agent at your own
 OpenAI-compatible endpoint; mutually exclusive with `llm.model`, cleared

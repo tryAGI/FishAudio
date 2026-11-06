@@ -23,6 +23,13 @@ namespace FishAudio
         public string? Secret { get; set; }
 
         /// <summary>
+        /// Secret rotation. When `secret` replaces the stored secret, the replaced one keeps signing as a second `v1` for this many seconds (at most 7 days), so your endpoint can switch without dropping a delivery. Omit it to switch at once. With the secret kept, 0 ends an open rotation window and any other value is ignored. Takes effect after the next publish.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keep_previous_secret_for_seconds")]
+        public int? KeepPreviousSecretForSeconds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,15 +43,21 @@ namespace FishAudio
         /// Optional HMAC-SHA256 signing secret (X-Fish-Webhook-Signature). Write-only: reads report `has_secret` instead of the value. Omit it (or send null) to keep the secret already stored for the same url; send an empty string to remove it.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="keepPreviousSecretForSeconds">
+        /// Secret rotation. When `secret` replaces the stored secret, the replaced one keeps signing as a second `v1` for this many seconds (at most 7 days), so your endpoint can switch without dropping a delivery. Omit it to switch at once. With the secret kept, 0 ends an open rotation window and any other value is ignored. Takes effect after the next publish.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PublicPostCallWebhookPayload(
             string url,
-            string? secret)
+            string? secret,
+            int? keepPreviousSecretForSeconds)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.Secret = secret;
+            this.KeepPreviousSecretForSeconds = keepPreviousSecretForSeconds;
         }
 
         /// <summary>

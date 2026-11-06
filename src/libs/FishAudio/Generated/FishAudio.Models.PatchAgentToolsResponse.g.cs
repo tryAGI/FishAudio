@@ -154,6 +154,12 @@ namespace FishAudio
         public global::FishAudio.PatchAgentToolsResponseExecutionMode? ExecutionMode { get; set; }
 
         /// <summary>
+        /// Request signing state. Secrets are write-only: rotate returns the new one once.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("signing")]
+        public global::FishAudio.AgentWebhookToolSigningStatus? Signing { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -197,6 +203,9 @@ namespace FishAudio
         /// <param name="executionMode">
         /// Default Value: blocking
         /// </param>
+        /// <param name="signing">
+        /// Request signing state. Secrets are write-only: rotate returns the new one once.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -221,7 +230,8 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.PublicToolHeader>? headers,
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>? mockResponses,
             bool? expectsResponse,
-            global::FishAudio.PatchAgentToolsResponseExecutionMode? executionMode)
+            global::FishAudio.PatchAgentToolsResponseExecutionMode? executionMode,
+            global::FishAudio.AgentWebhookToolSigningStatus? signing)
         {
             this.ToolId = toolId ?? throw new global::System.ArgumentNullException(nameof(toolId));
             this.WorkspaceId = workspaceId ?? throw new global::System.ArgumentNullException(nameof(workspaceId));
@@ -244,6 +254,7 @@ namespace FishAudio
             this.MockResponses = mockResponses;
             this.ExpectsResponse = expectsResponse;
             this.ExecutionMode = executionMode;
+            this.Signing = signing;
         }
 
         /// <summary>

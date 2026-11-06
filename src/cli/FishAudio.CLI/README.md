@@ -12,7 +12,7 @@ dotnet tool install --global FishAudio.CLI --prerelease
 
 ```bash
 fish-audio --help
-fish-audio agent-sessions --help
+fish-audio agent-background-sounds --help
 ```
 
 ## Customization

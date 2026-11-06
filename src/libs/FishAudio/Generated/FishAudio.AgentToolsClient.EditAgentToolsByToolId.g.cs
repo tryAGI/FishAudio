@@ -49,7 +49,11 @@ namespace FishAudio
         /// send an empty string to clear a text field). `headers` replaces the header<br/>
         /// list wholesale — include credential values again whenever you send it,<br/>
         /// since reads never return them. Attached agents' drafts pick up the change<br/>
-        /// immediately; published versions stay frozen until re-published.
+        /// immediately; published versions stay frozen until re-published, except<br/>
+        /// for credential values: a new authorization_bearer / authorization_basic<br/>
+        /// value reaches published versions at their next session, as long as the<br/>
+        /// header keeps its name and kind. Calls already in progress keep the value<br/>
+        /// they started with.
         /// </summary>
         /// <param name="toolId"></param>
         /// <param name="request"></param>
@@ -79,7 +83,11 @@ namespace FishAudio
         /// send an empty string to clear a text field). `headers` replaces the header<br/>
         /// list wholesale — include credential values again whenever you send it,<br/>
         /// since reads never return them. Attached agents' drafts pick up the change<br/>
-        /// immediately; published versions stay frozen until re-published.
+        /// immediately; published versions stay frozen until re-published, except<br/>
+        /// for credential values: a new authorization_bearer / authorization_basic<br/>
+        /// value reaches published versions at their next session, as long as the<br/>
+        /// header keeps its name and kind. Calls already in progress keep the value<br/>
+        /// they started with.
         /// </summary>
         /// <param name="toolId"></param>
         /// <param name="request"></param>
@@ -641,7 +649,11 @@ namespace FishAudio
         /// send an empty string to clear a text field). `headers` replaces the header<br/>
         /// list wholesale — include credential values again whenever you send it,<br/>
         /// since reads never return them. Attached agents' drafts pick up the change<br/>
-        /// immediately; published versions stay frozen until re-published.
+        /// immediately; published versions stay frozen until re-published, except<br/>
+        /// for credential values: a new authorization_bearer / authorization_basic<br/>
+        /// value reaches published versions at their next session, as long as the<br/>
+        /// header keeps its name and kind. Calls already in progress keep the value<br/>
+        /// they started with.
         /// </summary>
         /// <param name="toolId"></param>
         /// <param name="name">
