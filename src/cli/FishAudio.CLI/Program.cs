@@ -11,6 +11,7 @@ rootCommand.Options.Add(CliOptions.Json);
 rootCommand.Options.Add(CliOptions.Output);
 rootCommand.Options.Add(CliOptions.OutputDirectory);
 rootCommand.Subcommands.Add(AuthCommand.Create());
+rootCommand.Subcommands.Add(AgentBackgroundSoundsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(AgentSessionsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(AgentTestsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(AgentToolsApiGroupCommand.Create());
@@ -20,6 +21,7 @@ rootCommand.Subcommands.Add(ModelApiGroupCommand.Create());
 rootCommand.Subcommands.Add(OpenAPIV1ApiGroupCommand.Create());
 rootCommand.Subcommands.Add(PhoneCallsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(PhoneNumbersApiGroupCommand.Create());
+rootCommand.Subcommands.Add(PronunciationDictionariesApiGroupCommand.Create());
 rootCommand.Subcommands.Add(WalletApiGroupCommand.Create());
 
 return await rootCommand.Parse(args).InvokeAsync().ConfigureAwait(false);

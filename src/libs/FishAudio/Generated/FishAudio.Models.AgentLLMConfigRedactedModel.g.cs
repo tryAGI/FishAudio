@@ -35,6 +35,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        GoogleGemini35FlashLitePriority,
+        /// <summary>
+        ///
+        /// </summary>
         GoogleGemini36Flash,
         /// <summary>
         ///
@@ -100,6 +104,7 @@ namespace FishAudio
                 AgentLLMConfigRedactedModel.AnthropicClaudeSonnet46 => "anthropic/claude-sonnet-4.6",
                 AgentLLMConfigRedactedModel.GoogleGemini25Flash => "google/gemini-2.5-flash",
                 AgentLLMConfigRedactedModel.GoogleGemini35FlashLite => "google/gemini-3.5-flash-lite",
+                AgentLLMConfigRedactedModel.GoogleGemini35FlashLitePriority => "google/gemini-3.5-flash-lite-priority",
                 AgentLLMConfigRedactedModel.GoogleGemini36Flash => "google/gemini-3.6-flash",
                 AgentLLMConfigRedactedModel.GoogleGemini36FlashPriority => "google/gemini-3.6-flash-priority",
                 AgentLLMConfigRedactedModel.GoogleGemini38Flash => "google/gemini-3.8-flash",
@@ -128,6 +133,7 @@ namespace FishAudio
                 "anthropic/claude-sonnet-4.6" => AgentLLMConfigRedactedModel.AnthropicClaudeSonnet46,
                 "google/gemini-2.5-flash" => AgentLLMConfigRedactedModel.GoogleGemini25Flash,
                 "google/gemini-3.5-flash-lite" => AgentLLMConfigRedactedModel.GoogleGemini35FlashLite,
+                "google/gemini-3.5-flash-lite-priority" => AgentLLMConfigRedactedModel.GoogleGemini35FlashLitePriority,
                 "google/gemini-3.6-flash" => AgentLLMConfigRedactedModel.GoogleGemini36Flash,
                 "google/gemini-3.6-flash-priority" => AgentLLMConfigRedactedModel.GoogleGemini36FlashPriority,
                 "google/gemini-3.8-flash" => AgentLLMConfigRedactedModel.GoogleGemini38Flash,

@@ -37,6 +37,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadErrorHandling), TypeInfoPropertyName = "PublicAgentToolCreatePayloadErrorHandling2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolCreatePayloadExecutionMode), TypeInfoPropertyName = "PublicAgentToolCreatePayloadExecutionMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentWebhookToolSigningStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicToolHeader))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicToolHeaderKind), TypeInfoPropertyName = "PublicToolHeaderKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentToolUpdatePayload))]

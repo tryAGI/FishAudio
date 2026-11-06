@@ -146,7 +146,11 @@ Patch tool fields; omitted fields keep their value (null is rejected —
 send an empty string to clear a text field). `headers` replaces the header
 list wholesale — include credential values again whenever you send it,
 since reads never return them. Attached agents' drafts pick up the change
-immediately; published versions stay frozen until re-published.");
+immediately; published versions stay frozen until re-published, except
+for credential values: a new authorization_bearer / authorization_basic
+value reaches published versions at their next session, as long as the
+header keeps its name and kind. Calls already in progress keep the value
+they started with.");
                         command.Arguments.Add(ToolId);
                         command.Options.Add(NameOption);
                         command.Options.Add(DescriptionOption);

@@ -23,6 +23,13 @@ namespace FishAudio
         public bool? HasSecret { get; set; }
 
         /// <summary>
+        /// Set while a rotated-out secret still signs as a second `v1`; absent otherwise.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("previous_secret_expires_at")]
+        public global::System.DateTime? PreviousSecretExpiresAt { get; set; }
+
+        /// <summary>
         /// Default Value: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeout_seconds")]
@@ -42,6 +49,10 @@ namespace FishAudio
         /// Whether a signing secret is configured; the value itself is never returned.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="previousSecretExpiresAt">
+        /// Set while a rotated-out secret still signs as a second `v1`; absent otherwise.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="timeoutSeconds">
         /// Default Value: 5
         /// </param>
@@ -51,10 +62,12 @@ namespace FishAudio
         public PublicConversationInitWebhook(
             string url,
             bool? hasSecret,
+            global::System.DateTime? previousSecretExpiresAt,
             double? timeoutSeconds)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.HasSecret = hasSecret;
+            this.PreviousSecretExpiresAt = previousSecretExpiresAt;
             this.TimeoutSeconds = timeoutSeconds;
         }
 

@@ -51,6 +51,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        public AgentBackgroundSoundsClient AgentBackgroundSounds { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public AgentSessionsClient AgentSessions { get; }
 
         /// <summary>
@@ -92,6 +97,11 @@ namespace FishAudio
         ///
         /// </summary>
         public PhoneNumbersClient PhoneNumbers { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public PronunciationDictionariesClient PronunciationDictionaries { get; }
 
         /// <summary>
         ///

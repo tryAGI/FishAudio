@@ -35,6 +35,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        GoogleGemini35FlashLitePriority,
+        /// <summary>
+        ///
+        /// </summary>
         GoogleGemini36Flash,
         /// <summary>
         ///
@@ -100,6 +104,7 @@ namespace FishAudio
                 PublicAgentLLMPatchModel.AnthropicClaudeSonnet46 => "anthropic/claude-sonnet-4.6",
                 PublicAgentLLMPatchModel.GoogleGemini25Flash => "google/gemini-2.5-flash",
                 PublicAgentLLMPatchModel.GoogleGemini35FlashLite => "google/gemini-3.5-flash-lite",
+                PublicAgentLLMPatchModel.GoogleGemini35FlashLitePriority => "google/gemini-3.5-flash-lite-priority",
                 PublicAgentLLMPatchModel.GoogleGemini36Flash => "google/gemini-3.6-flash",
                 PublicAgentLLMPatchModel.GoogleGemini36FlashPriority => "google/gemini-3.6-flash-priority",
                 PublicAgentLLMPatchModel.GoogleGemini38Flash => "google/gemini-3.8-flash",
@@ -128,6 +133,7 @@ namespace FishAudio
                 "anthropic/claude-sonnet-4.6" => PublicAgentLLMPatchModel.AnthropicClaudeSonnet46,
                 "google/gemini-2.5-flash" => PublicAgentLLMPatchModel.GoogleGemini25Flash,
                 "google/gemini-3.5-flash-lite" => PublicAgentLLMPatchModel.GoogleGemini35FlashLite,
+                "google/gemini-3.5-flash-lite-priority" => PublicAgentLLMPatchModel.GoogleGemini35FlashLitePriority,
                 "google/gemini-3.6-flash" => PublicAgentLLMPatchModel.GoogleGemini36Flash,
                 "google/gemini-3.6-flash-priority" => PublicAgentLLMPatchModel.GoogleGemini36FlashPriority,
                 "google/gemini-3.8-flash" => PublicAgentLLMPatchModel.GoogleGemini38Flash,

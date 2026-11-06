@@ -12,6 +12,7 @@ internal static partial class ApiCommand
     {
         var command = new Command("api", "Generated endpoint commands.");
 
+                         command.Subcommands.Add(AgentBackgroundSoundsApiGroupCommand.Create());
                          command.Subcommands.Add(AgentSessionsApiGroupCommand.Create());
                          command.Subcommands.Add(AgentTestsApiGroupCommand.Create());
                          command.Subcommands.Add(AgentToolsApiGroupCommand.Create());
@@ -21,6 +22,7 @@ internal static partial class ApiCommand
                          command.Subcommands.Add(OpenAPIV1ApiGroupCommand.Create());
                          command.Subcommands.Add(PhoneCallsApiGroupCommand.Create());
                          command.Subcommands.Add(PhoneNumbersApiGroupCommand.Create());
+                         command.Subcommands.Add(PronunciationDictionariesApiGroupCommand.Create());
                          command.Subcommands.Add(WalletApiGroupCommand.Create());
         CustomizeCommand(ref command);
         return command;
