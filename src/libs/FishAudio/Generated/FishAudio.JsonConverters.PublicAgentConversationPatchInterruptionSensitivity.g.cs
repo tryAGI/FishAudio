@@ -18,7 +18,7 @@ namespace FishAudio.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::FishAudio.PublicAgentConversationPatchInterruptionSensitivityExtensions.ToEnum(stringValue) ?? default;
+                        return global::FishAudio.PublicAgentConversationPatchInterruptionSensitivityExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::FishAudio.PublicAgentConversationPatchInterruptionSensitivity.");
                     }
 
                     break;

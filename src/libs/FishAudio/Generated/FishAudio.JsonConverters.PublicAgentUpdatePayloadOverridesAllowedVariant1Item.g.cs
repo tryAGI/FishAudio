@@ -18,7 +18,7 @@ namespace FishAudio.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1ItemExtensions.ToEnum(stringValue) ?? default;
+                        return global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1ItemExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item.");
                     }
 
                     break;

@@ -18,7 +18,7 @@ namespace FishAudio.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::FishAudio.GetModelVisibilityExtensions.ToEnum(stringValue) ?? default;
+                        return global::FishAudio.GetModelVisibilityExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::FishAudio.GetModelVisibility.");
                     }
 
                     break;
