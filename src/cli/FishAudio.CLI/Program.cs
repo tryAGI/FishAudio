@@ -23,5 +23,6 @@ rootCommand.Subcommands.Add(PhoneCallsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(PhoneNumbersApiGroupCommand.Create());
 rootCommand.Subcommands.Add(PronunciationDictionariesApiGroupCommand.Create());
 rootCommand.Subcommands.Add(WalletApiGroupCommand.Create());
+rootCommand.Subcommands.Add(CliCompletion.CreateCommand(rootCommand, @"fish-audio"));
 
 return await rootCommand.Parse(args).InvokeAsync().ConfigureAwait(false);
