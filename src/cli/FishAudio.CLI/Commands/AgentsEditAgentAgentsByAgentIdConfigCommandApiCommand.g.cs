@@ -198,6 +198,11 @@ The response is the draft as stored, which can differ from the request:
   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`
   to the platform default.
 - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.
+- `voice.live3_voice` becomes `null` when you set `voice.voice_id`
+  without it: on `live3` the agent then speaks the voice you picked.
+  Switching `voice.engine` to `live3` sets an empty `voice.live3_voice`
+  to `Clara` only while `voice.voice_id` is still the default voice
+  and the patch sets neither.
 - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`
   copied from `asr`. They are deprecated.
 - `config_hash` and `updated_at` are set by the server.

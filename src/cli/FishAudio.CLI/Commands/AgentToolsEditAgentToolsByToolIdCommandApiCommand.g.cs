@@ -100,6 +100,7 @@ internal static partial class AgentToolsEditAgentToolsByToolIdCommandApiCommand
     {
         Description = @"",
     };
+    private static readonly AgentToolPreToolSpeechOptionSet PreToolSpeechOptions = AgentToolPreToolSpeechOptionSet.Create(@"pre-tool-speech");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -166,7 +167,8 @@ they started with.");
                         command.Options.Add(ErrorHandling);
                         command.Options.Add(MockResponses);
                         command.Options.Add(ExpectsResponse);
-                        command.Options.Add(ExecutionMode);
+                        command.Options.Add(ExecutionMode);                        command.Options.Add(PreToolSpeechOptions.Mode);
+                        command.Options.Add(PreToolSpeechOptions.Message);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -208,6 +210,19 @@ they started with.");
                         var mockResponses = CliRuntime.WasSpecified(parseResult, MockResponses) ? parseResult.GetValue(MockResponses) : (__requestBase is { } __MockResponsesBaseValue ? __MockResponsesBaseValue.MockResponses : default);
                         var expectsResponse = CliRuntime.WasSpecified(parseResult, ExpectsResponse) ? parseResult.GetValue(ExpectsResponse) : (__requestBase is { } __ExpectsResponseBaseValue ? __ExpectsResponseBaseValue.ExpectsResponse : default);
                         var executionMode = CliRuntime.WasSpecified(parseResult, ExecutionMode) ? parseResult.GetValue(ExecutionMode) : (__requestBase is { } __ExecutionModeBaseValue ? __ExecutionModeBaseValue.ExecutionMode : default);
+
+                        var __PreToolSpeechBase = __requestBase is { } __PreToolSpeechBaseValue ? __PreToolSpeechBaseValue.PreToolSpeech : default;                        var preToolSpeechMode = parseResult.GetValue(PreToolSpeechOptions.Mode);
+                        var preToolSpeechMessage = CliRuntime.WasSpecified(parseResult, PreToolSpeechOptions.Message) ? parseResult.GetValue(PreToolSpeechOptions.Message) : (__PreToolSpeechBase is { } __PreToolSpeechmessageBaseValue ? __PreToolSpeechmessageBaseValue.Message : default);
+                        var __PreToolSpeechSpecified = CliRuntime.WasSpecified(parseResult, PreToolSpeechOptions.Mode) || CliRuntime.WasSpecified(parseResult, PreToolSpeechOptions.Message);
+                        var preToolSpeech =
+                            __PreToolSpeechSpecified || __PreToolSpeechBase is not null
+                                ? new global::FishAudio.AgentToolPreToolSpeech
+                                {
+	                                Mode = preToolSpeechMode!,
+                                Message = preToolSpeechMessage,
+
+                                }
+                                : __PreToolSpeechBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -228,6 +243,7 @@ they started with.");
                                     mockResponses: mockResponses,
                                     expectsResponse: expectsResponse,
                                     executionMode: executionMode,
+                                    preToolSpeech: preToolSpeech,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

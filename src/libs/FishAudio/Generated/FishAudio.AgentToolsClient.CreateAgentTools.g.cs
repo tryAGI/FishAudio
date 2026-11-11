@@ -49,7 +49,9 @@ namespace FishAudio
         /// Schema object, checked at call time under `parameter_mode: strict`) or<br/>
         /// the older `arguments` list (every argument a required string, unchecked).<br/>
         /// Attach it to agents via the agent config's `tools.tool_ids`. Credential<br/>
-        /// headers (authorization_bearer / authorization_basic) are write-only and<br/>
+        /// headers (authorization_bearer / authorization_basic, and custom headers<br/>
+        /// whose name looks like a credential, such as `X-Api-Key` or<br/>
+        /// `X-Webhook-Token`) are write-only and<br/>
         /// read back as `has_secret`.
         /// </summary>
         /// <param name="request"></param>
@@ -98,7 +100,9 @@ namespace FishAudio
         /// Schema object, checked at call time under `parameter_mode: strict`) or<br/>
         /// the older `arguments` list (every argument a required string, unchecked).<br/>
         /// Attach it to agents via the agent config's `tools.tool_ids`. Credential<br/>
-        /// headers (authorization_bearer / authorization_basic) are write-only and<br/>
+        /// headers (authorization_bearer / authorization_basic, and custom headers<br/>
+        /// whose name looks like a credential, such as `X-Api-Key` or<br/>
+        /// `X-Webhook-Token`) are write-only and<br/>
         /// read back as `has_secret`.
         /// </summary>
         /// <param name="request"></param>
@@ -604,7 +608,9 @@ namespace FishAudio
         /// Schema object, checked at call time under `parameter_mode: strict`) or<br/>
         /// the older `arguments` list (every argument a required string, unchecked).<br/>
         /// Attach it to agents via the agent config's `tools.tool_ids`. Credential<br/>
-        /// headers (authorization_bearer / authorization_basic) are write-only and<br/>
+        /// headers (authorization_bearer / authorization_basic, and custom headers<br/>
+        /// whose name looks like a credential, such as `X-Api-Key` or<br/>
+        /// `X-Webhook-Token`) are write-only and<br/>
         /// read back as `has_secret`.
         /// </summary>
         /// <param name="name"></param>
@@ -647,6 +653,10 @@ namespace FishAudio
         /// <param name="executionMode">
         /// Default Value: blocking
         /// </param>
+        /// <param name="preToolSpeech">
+        /// What the caller hears as this tool starts, when the agent's own reply has not said anything yet. `auto` (the default for a new tool): the platform decides for each call whether a line is worth saying, and the model writes the line when one is said. `static`: the agent says `message` as written (required, one language). `off`: nothing (what a tool created before this field reads as). Applies to blocking webhook tools and to client tools with `expects_response: true`. It is stored but not used for other tools.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -667,6 +677,7 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>? mockResponses = default,
             bool? expectsResponse = default,
             global::FishAudio.PublicAgentToolCreatePayloadExecutionMode? executionMode = default,
+            global::FishAudio.AgentToolPreToolSpeech? preToolSpeech = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -688,6 +699,7 @@ namespace FishAudio
                 MockResponses = mockResponses,
                 ExpectsResponse = expectsResponse,
                 ExecutionMode = executionMode,
+                PreToolSpeech = preToolSpeech,
             };
 
             return await CreateAgentToolsAsync(

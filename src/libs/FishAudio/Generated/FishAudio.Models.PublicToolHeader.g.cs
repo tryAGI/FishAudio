@@ -24,14 +24,14 @@ namespace FishAudio
         public required global::FishAudio.PublicToolHeaderKind Kind { get; set; }
 
         /// <summary>
-        /// Header value; null for credential kinds (authorization_bearer / authorization_basic), which are write-only.<br/>
+        /// Header value; null for write-only headers: the credential kinds (authorization_bearer / authorization_basic) and custom headers whose name looks like a credential (containing auth, token, secret, password, cookie, signature, credential, bearer, jwt, api-key or a standalone key).<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         public string? Value { get; set; }
 
         /// <summary>
-        /// Whether a credential value is stored; the value itself is never returned.<br/>
+        /// Whether a write-only header has a stored value; the value itself is never returned.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_secret")]
@@ -49,11 +49,11 @@ namespace FishAudio
         /// <param name="name"></param>
         /// <param name="kind"></param>
         /// <param name="value">
-        /// Header value; null for credential kinds (authorization_bearer / authorization_basic), which are write-only.<br/>
+        /// Header value; null for write-only headers: the credential kinds (authorization_bearer / authorization_basic) and custom headers whose name looks like a credential (containing auth, token, secret, password, cookie, signature, credential, bearer, jwt, api-key or a standalone key).<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="hasSecret">
-        /// Whether a credential value is stored; the value itself is never returned.<br/>
+        /// Whether a write-only header has a stored value; the value itself is never returned.<br/>
         /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER

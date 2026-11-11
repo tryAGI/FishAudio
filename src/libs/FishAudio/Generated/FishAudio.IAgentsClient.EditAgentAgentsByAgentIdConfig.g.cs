@@ -77,6 +77,11 @@ namespace FishAudio
         ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
         ///   to the platform default.<br/>
         /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
+        /// - `voice.live3_voice` becomes `null` when you set `voice.voice_id`<br/>
+        ///   without it: on `live3` the agent then speaks the voice you picked.<br/>
+        ///   Switching `voice.engine` to `live3` sets an empty `voice.live3_voice`<br/>
+        ///   to `Clara` only while `voice.voice_id` is still the default voice<br/>
+        ///   and the patch sets neither.<br/>
         /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
         ///   copied from `asr`. They are deprecated.<br/>
         /// - `config_hash` and `updated_at` are set by the server.<br/>
@@ -186,6 +191,11 @@ namespace FishAudio
         ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
         ///   to the platform default.<br/>
         /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
+        /// - `voice.live3_voice` becomes `null` when you set `voice.voice_id`<br/>
+        ///   without it: on `live3` the agent then speaks the voice you picked.<br/>
+        ///   Switching `voice.engine` to `live3` sets an empty `voice.live3_voice`<br/>
+        ///   to `Clara` only while `voice.voice_id` is still the default voice<br/>
+        ///   and the patch sets neither.<br/>
         /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
         ///   copied from `asr`. They are deprecated.<br/>
         /// - `config_hash` and `updated_at` are set by the server.<br/>
@@ -295,6 +305,11 @@ namespace FishAudio
         ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
         ///   to the platform default.<br/>
         /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
+        /// - `voice.live3_voice` becomes `null` when you set `voice.voice_id`<br/>
+        ///   without it: on `live3` the agent then speaks the voice you picked.<br/>
+        ///   Switching `voice.engine` to `live3` sets an empty `voice.live3_voice`<br/>
+        ///   to `Clara` only while `voice.voice_id` is still the default voice<br/>
+        ///   and the patch sets neither.<br/>
         /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
         ///   copied from `asr`. They are deprecated.<br/>
         /// - `config_hash` and `updated_at` are set by the server.<br/>
