@@ -22,6 +22,7 @@ namespace FishAudio
         public string? Label { get; set; }
 
         /// <summary>
+        /// Destination in E.164, for type `phone`. Calls through a number bought on the platform can only be transferred to the supported countries. A number in another country is dialed by your own carrier, so it needs an imported SIP number: any imported number for a cold transfer, one with termination configured for a warm transfer. Without such a number in the team the write is rejected. On a call through any other number the destination is left out, and the agent cannot transfer to it.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phone_number")]
@@ -64,6 +65,12 @@ namespace FishAudio
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("warm_briefing_instructions")]
         public string? WarmBriefingInstructions { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("warm_briefing_speed")]
+        public double? WarmBriefingSpeed { get; set; }
 
         /// <summary>
         /// Default Value: 30
@@ -124,6 +131,7 @@ namespace FishAudio
         /// </param>
         /// <param name="label"></param>
         /// <param name="phoneNumber">
+        /// Destination in E.164, for type `phone`. Calls through a number bought on the platform can only be transferred to the supported countries. A number in another country is dialed by your own carrier, so it needs an imported SIP number: any imported number for a cold transfer, one with termination configured for a warm transfer. Without such a number in the team the write is rejected. On a call through any other number the destination is left out, and the agent cannot transfer to it.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="sipUri">
@@ -138,6 +146,9 @@ namespace FishAudio
         /// Default Value: confirm
         /// </param>
         /// <param name="warmBriefingInstructions"></param>
+        /// <param name="warmBriefingSpeed">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="warmRingTimeoutSeconds">
         /// Default Value: 30
         /// </param>
@@ -170,6 +181,7 @@ namespace FishAudio
             global::FishAudio.AgentTransferDestinationPatchMode? mode,
             global::FishAudio.AgentTransferDestinationPatchWarmConnect? warmConnect,
             string? warmBriefingInstructions,
+            double? warmBriefingSpeed,
             int? warmRingTimeoutSeconds,
             int? warmConfirmTimeoutSeconds,
             bool? warmHumanDetection,
@@ -187,6 +199,7 @@ namespace FishAudio
             this.Mode = mode;
             this.WarmConnect = warmConnect;
             this.WarmBriefingInstructions = warmBriefingInstructions;
+            this.WarmBriefingSpeed = warmBriefingSpeed;
             this.WarmRingTimeoutSeconds = warmRingTimeoutSeconds;
             this.WarmConfirmTimeoutSeconds = warmConfirmTimeoutSeconds;
             this.WarmHumanDetection = warmHumanDetection;

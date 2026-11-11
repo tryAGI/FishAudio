@@ -154,6 +154,12 @@ namespace FishAudio
         public global::FishAudio.PatchAgentToolsResponseExecutionMode? ExecutionMode { get; set; }
 
         /// <summary>
+        /// What the caller hears as this tool starts, when the agent's own reply has not said anything yet. `auto` (the default for a new tool): the platform decides for each call whether a line is worth saying, and the model writes the line when one is said. `static`: the agent says `message` as written (required, one language). `off`: nothing (what a tool created before this field reads as). Applies to blocking webhook tools and to client tools with `expects_response: true`. It is stored but not used for other tools.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pre_tool_speech")]
+        public global::FishAudio.AgentToolPreToolSpeech? PreToolSpeech { get; set; }
+
+        /// <summary>
         /// Request signing state. Secrets are write-only: rotate returns the new one once.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("signing")]
@@ -203,6 +209,9 @@ namespace FishAudio
         /// <param name="executionMode">
         /// Default Value: blocking
         /// </param>
+        /// <param name="preToolSpeech">
+        /// What the caller hears as this tool starts, when the agent's own reply has not said anything yet. `auto` (the default for a new tool): the platform decides for each call whether a line is worth saying, and the model writes the line when one is said. `static`: the agent says `message` as written (required, one language). `off`: nothing (what a tool created before this field reads as). Applies to blocking webhook tools and to client tools with `expects_response: true`. It is stored but not used for other tools.
+        /// </param>
         /// <param name="signing">
         /// Request signing state. Secrets are write-only: rotate returns the new one once.
         /// </param>
@@ -231,6 +240,7 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>? mockResponses,
             bool? expectsResponse,
             global::FishAudio.PatchAgentToolsResponseExecutionMode? executionMode,
+            global::FishAudio.AgentToolPreToolSpeech? preToolSpeech,
             global::FishAudio.AgentWebhookToolSigningStatus? signing)
         {
             this.ToolId = toolId ?? throw new global::System.ArgumentNullException(nameof(toolId));
@@ -254,6 +264,7 @@ namespace FishAudio
             this.MockResponses = mockResponses;
             this.ExpectsResponse = expectsResponse;
             this.ExecutionMode = executionMode;
+            this.PreToolSpeech = preToolSpeech;
             this.Signing = signing;
         }
 

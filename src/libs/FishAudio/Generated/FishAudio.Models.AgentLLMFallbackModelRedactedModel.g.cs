@@ -84,6 +84,14 @@ namespace FishAudio
         ///
         /// </summary>
         OpenaiGpt61Sol,
+        /// <summary>
+        ///
+        /// </summary>
+        OpenaiGpt61Terra,
+        /// <summary>
+        ///
+        /// </summary>
+        ZAiGlm53Flash,
     }
 
     /// <summary>
@@ -117,6 +125,8 @@ namespace FishAudio
                 AgentLLMFallbackModelRedactedModel.OpenaiGpt6Astra => "openai/gpt-6-astra",
                 AgentLLMFallbackModelRedactedModel.OpenaiGpt6Luna => "openai/gpt-6-luna",
                 AgentLLMFallbackModelRedactedModel.OpenaiGpt61Sol => "openai/gpt-6.1-sol",
+                AgentLLMFallbackModelRedactedModel.OpenaiGpt61Terra => "openai/gpt-6.1-terra",
+                AgentLLMFallbackModelRedactedModel.ZAiGlm53Flash => "z-ai/glm-5.3-flash",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -146,6 +156,8 @@ namespace FishAudio
                 "openai/gpt-6-astra" => AgentLLMFallbackModelRedactedModel.OpenaiGpt6Astra,
                 "openai/gpt-6-luna" => AgentLLMFallbackModelRedactedModel.OpenaiGpt6Luna,
                 "openai/gpt-6.1-sol" => AgentLLMFallbackModelRedactedModel.OpenaiGpt61Sol,
+                "openai/gpt-6.1-terra" => AgentLLMFallbackModelRedactedModel.OpenaiGpt61Terra,
+                "z-ai/glm-5.3-flash" => AgentLLMFallbackModelRedactedModel.ZAiGlm53Flash,
                 _ => null,
             };
         }

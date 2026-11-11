@@ -103,6 +103,13 @@ namespace FishAudio
         public global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode? ExecutionMode { get; set; }
 
         /// <summary>
+        /// What the caller hears as this tool starts, when the agent's own reply has not said anything yet. `auto` (the default for a new tool): the platform decides for each call whether a line is worth saying, and the model writes the line when one is said. `static`: the agent says `message` as written (required, one language). `off`: nothing (what a tool created before this field reads as). Applies to blocking webhook tools and to client tools with `expects_response: true`. It is stored but not used for other tools.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pre_tool_speech")]
+        public global::FishAudio.AgentToolPreToolSpeech? PreToolSpeech { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -160,6 +167,10 @@ namespace FishAudio
         /// <param name="executionMode">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="preToolSpeech">
+        /// What the caller hears as this tool starts, when the agent's own reply has not said anything yet. `auto` (the default for a new tool): the platform decides for each call whether a line is worth saying, and the model writes the line when one is said. `static`: the agent says `message` as written (required, one language). `off`: nothing (what a tool created before this field reads as). Applies to blocking webhook tools and to client tools with `expects_response: true`. It is stored but not used for other tools.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -178,7 +189,8 @@ namespace FishAudio
             global::FishAudio.PublicAgentToolUpdatePayloadErrorHandling? errorHandling,
             global::System.Collections.Generic.IList<global::FishAudio.AgentWebhookMockResponsePayload>? mockResponses,
             bool? expectsResponse,
-            global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode? executionMode)
+            global::FishAudio.PublicAgentToolUpdatePayloadExecutionMode? executionMode,
+            global::FishAudio.AgentToolPreToolSpeech? preToolSpeech)
         {
             this.Name = name;
             this.Description = description;
@@ -195,6 +207,7 @@ namespace FishAudio
             this.MockResponses = mockResponses;
             this.ExpectsResponse = expectsResponse;
             this.ExecutionMode = executionMode;
+            this.PreToolSpeech = preToolSpeech;
         }
 
         /// <summary>

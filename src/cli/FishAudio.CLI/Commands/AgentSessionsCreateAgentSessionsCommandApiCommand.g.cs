@@ -135,7 +135,12 @@ nested like the agent config's `asr` section and with the same values as
 `overrides.llm.fallback` replaces the agent's `llm.fallback` for this
 session, with the same shape and rules; each `custom` model needs its
 `api_key`. It needs an API key and `llm.fallback` in the agent's
-`overrides_allowed`.");
+`overrides_allowed`.
+
+When every concurrent line of your plan is in use the answer is 429 with
+`code: concurrency_limit_exceeded`, a `retry_after` in seconds and a
+`Retry-After` header. Add lines or enable burst on the Agent plan to
+raise the limit.");
                         command.Options.Add(Origin);
                         command.Options.Add(AgentId);
                         command.Options.Add(NameOption);

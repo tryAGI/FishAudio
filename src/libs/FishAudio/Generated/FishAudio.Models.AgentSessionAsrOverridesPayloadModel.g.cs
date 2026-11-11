@@ -24,6 +24,10 @@ namespace FishAudio
         ///
         /// </summary>
         FishAudio_transcribeStream1,
+        /// <summary>
+        ///
+        /// </summary>
+        FishAudio_transcribeStream1Dev,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace FishAudio
                 AgentSessionAsrOverridesPayloadModel.Elevenlabs_scribeV2Medical => "elevenlabs:scribe_v2_medical",
                 AgentSessionAsrOverridesPayloadModel.Elevenlabs_scribeV2Realtime => "elevenlabs:scribe_v2_realtime",
                 AgentSessionAsrOverridesPayloadModel.FishAudio_transcribeStream1 => "fish_audio:transcribe-stream-1",
+                AgentSessionAsrOverridesPayloadModel.FishAudio_transcribeStream1Dev => "fish_audio:transcribe-stream-1-dev",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace FishAudio
                 "elevenlabs:scribe_v2_medical" => AgentSessionAsrOverridesPayloadModel.Elevenlabs_scribeV2Medical,
                 "elevenlabs:scribe_v2_realtime" => AgentSessionAsrOverridesPayloadModel.Elevenlabs_scribeV2Realtime,
                 "fish_audio:transcribe-stream-1" => AgentSessionAsrOverridesPayloadModel.FishAudio_transcribeStream1,
+                "fish_audio:transcribe-stream-1-dev" => AgentSessionAsrOverridesPayloadModel.FishAudio_transcribeStream1Dev,
                 _ => null,
             };
         }
