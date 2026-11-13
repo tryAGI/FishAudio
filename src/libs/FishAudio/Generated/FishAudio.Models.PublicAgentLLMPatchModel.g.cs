@@ -15,6 +15,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        AnthropicClaudeFable52,
+        /// <summary>
+        ///
+        /// </summary>
         AnthropicClaudeHaiku45,
         /// <summary>
         ///
@@ -75,7 +79,15 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        OpenaiGpt56LunaFast,
+        /// <summary>
+        ///
+        /// </summary>
         OpenaiGpt6Astra,
+        /// <summary>
+        ///
+        /// </summary>
+        OpenaiGpt6AstraFast,
         /// <summary>
         ///
         /// </summary>
@@ -83,11 +95,23 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        OpenaiGpt6LunaFast,
+        /// <summary>
+        ///
+        /// </summary>
         OpenaiGpt61Sol,
         /// <summary>
         ///
         /// </summary>
+        OpenaiGpt61SolFast,
+        /// <summary>
+        ///
+        /// </summary>
         OpenaiGpt61Terra,
+        /// <summary>
+        ///
+        /// </summary>
+        OpenaiGpt61TerraFast,
         /// <summary>
         ///
         /// </summary>
@@ -107,6 +131,7 @@ namespace FishAudio
             return value switch
             {
                 PublicAgentLLMPatchModel.AnthropicClaudeFable51 => "anthropic/claude-fable-5.1",
+                PublicAgentLLMPatchModel.AnthropicClaudeFable52 => "anthropic/claude-fable-5.2",
                 PublicAgentLLMPatchModel.AnthropicClaudeHaiku45 => "anthropic/claude-haiku-4.5",
                 PublicAgentLLMPatchModel.AnthropicClaudeOpus55 => "anthropic/claude-opus-5.5",
                 PublicAgentLLMPatchModel.AnthropicClaudeSonnet46 => "anthropic/claude-sonnet-4.6",
@@ -122,10 +147,15 @@ namespace FishAudio
                 PublicAgentLLMPatchModel.OpenaiGpt4o => "openai/gpt-4o",
                 PublicAgentLLMPatchModel.OpenaiGpt5 => "openai/gpt-5",
                 PublicAgentLLMPatchModel.OpenaiGpt56Luna => "openai/gpt-5.6-luna",
+                PublicAgentLLMPatchModel.OpenaiGpt56LunaFast => "openai/gpt-5.6-luna-fast",
                 PublicAgentLLMPatchModel.OpenaiGpt6Astra => "openai/gpt-6-astra",
+                PublicAgentLLMPatchModel.OpenaiGpt6AstraFast => "openai/gpt-6-astra-fast",
                 PublicAgentLLMPatchModel.OpenaiGpt6Luna => "openai/gpt-6-luna",
+                PublicAgentLLMPatchModel.OpenaiGpt6LunaFast => "openai/gpt-6-luna-fast",
                 PublicAgentLLMPatchModel.OpenaiGpt61Sol => "openai/gpt-6.1-sol",
+                PublicAgentLLMPatchModel.OpenaiGpt61SolFast => "openai/gpt-6.1-sol-fast",
                 PublicAgentLLMPatchModel.OpenaiGpt61Terra => "openai/gpt-6.1-terra",
+                PublicAgentLLMPatchModel.OpenaiGpt61TerraFast => "openai/gpt-6.1-terra-fast",
                 PublicAgentLLMPatchModel.ZAiGlm53Flash => "z-ai/glm-5.3-flash",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -138,6 +168,7 @@ namespace FishAudio
             return value switch
             {
                 "anthropic/claude-fable-5.1" => PublicAgentLLMPatchModel.AnthropicClaudeFable51,
+                "anthropic/claude-fable-5.2" => PublicAgentLLMPatchModel.AnthropicClaudeFable52,
                 "anthropic/claude-haiku-4.5" => PublicAgentLLMPatchModel.AnthropicClaudeHaiku45,
                 "anthropic/claude-opus-5.5" => PublicAgentLLMPatchModel.AnthropicClaudeOpus55,
                 "anthropic/claude-sonnet-4.6" => PublicAgentLLMPatchModel.AnthropicClaudeSonnet46,
@@ -153,10 +184,15 @@ namespace FishAudio
                 "openai/gpt-4o" => PublicAgentLLMPatchModel.OpenaiGpt4o,
                 "openai/gpt-5" => PublicAgentLLMPatchModel.OpenaiGpt5,
                 "openai/gpt-5.6-luna" => PublicAgentLLMPatchModel.OpenaiGpt56Luna,
+                "openai/gpt-5.6-luna-fast" => PublicAgentLLMPatchModel.OpenaiGpt56LunaFast,
                 "openai/gpt-6-astra" => PublicAgentLLMPatchModel.OpenaiGpt6Astra,
+                "openai/gpt-6-astra-fast" => PublicAgentLLMPatchModel.OpenaiGpt6AstraFast,
                 "openai/gpt-6-luna" => PublicAgentLLMPatchModel.OpenaiGpt6Luna,
+                "openai/gpt-6-luna-fast" => PublicAgentLLMPatchModel.OpenaiGpt6LunaFast,
                 "openai/gpt-6.1-sol" => PublicAgentLLMPatchModel.OpenaiGpt61Sol,
+                "openai/gpt-6.1-sol-fast" => PublicAgentLLMPatchModel.OpenaiGpt61SolFast,
                 "openai/gpt-6.1-terra" => PublicAgentLLMPatchModel.OpenaiGpt61Terra,
+                "openai/gpt-6.1-terra-fast" => PublicAgentLLMPatchModel.OpenaiGpt61TerraFast,
                 "z-ai/glm-5.3-flash" => PublicAgentLLMPatchModel.ZAiGlm53Flash,
                 _ => null,
             };

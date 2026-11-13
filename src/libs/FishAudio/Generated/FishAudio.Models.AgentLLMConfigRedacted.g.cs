@@ -9,7 +9,7 @@ namespace FishAudio
     public sealed partial class AgentLLMConfigRedacted
     {
         /// <summary>
-        /// Default Value: google/gemini-3.6-flash
+        /// Default Value: openai/gpt-6.1-terra-fast
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.AgentLLMConfigRedactedModelJsonConverter))]
@@ -37,7 +37,7 @@ namespace FishAudio
         /// Initializes a new instance of the <see cref="AgentLLMConfigRedacted" /> class.
         /// </summary>
         /// <param name="model">
-        /// Default Value: google/gemini-3.6-flash
+        /// Default Value: openai/gpt-6.1-terra-fast
         /// </param>
         /// <param name="custom">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

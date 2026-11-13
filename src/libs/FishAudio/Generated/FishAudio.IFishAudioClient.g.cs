@@ -86,6 +86,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        public OpenAPIClient OpenAPI { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public OpenAPIV1Client OpenAPIV1 { get; }
 
         /// <summary>

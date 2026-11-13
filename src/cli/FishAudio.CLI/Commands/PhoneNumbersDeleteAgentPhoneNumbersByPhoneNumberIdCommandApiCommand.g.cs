@@ -21,7 +21,8 @@ internal static partial class PhoneNumbersDeleteAgentPhoneNumbersByPhoneNumberId
 Release a number back to the provider's inventory and stop its daily
 billing. This is irreversible: anyone — including other platforms — can
 buy the number afterwards, so callers who saved it may reach a stranger.
-The number disappears from this API immediately.");
+The number disappears from this API immediately. 409 while a SIP config
+update of an imported number is still running, retry shortly.");
                         command.Arguments.Add(PhoneNumberId);
 
 

@@ -19,6 +19,7 @@ internal static partial class ApiCommand
                          command.Subcommands.Add(AgentsApiGroupCommand.Create());
                          command.Subcommands.Add(KnowledgeSourcesApiGroupCommand.Create());
                          command.Subcommands.Add(ModelApiGroupCommand.Create());
+                         command.Subcommands.Add(OpenAPIApiGroupCommand.Create());
                          command.Subcommands.Add(OpenAPIV1ApiGroupCommand.Create());
                          command.Subcommands.Add(PhoneCallsApiGroupCommand.Create());
                          command.Subcommands.Add(PhoneNumbersApiGroupCommand.Create());
