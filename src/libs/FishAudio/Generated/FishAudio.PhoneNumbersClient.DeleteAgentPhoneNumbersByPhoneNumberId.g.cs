@@ -41,7 +41,8 @@ namespace FishAudio
         /// Release a number back to the provider's inventory and stop its daily<br/>
         /// billing. This is irreversible: anyone — including other platforms — can<br/>
         /// buy the number afterwards, so callers who saved it may reach a stranger.<br/>
-        /// The number disappears from this API immediately.
+        /// The number disappears from this API immediately. 409 while a SIP config<br/>
+        /// update of an imported number is still running, retry shortly.
         /// </summary>
         /// <param name="phoneNumberId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -63,7 +64,8 @@ namespace FishAudio
         /// Release a number back to the provider's inventory and stop its daily<br/>
         /// billing. This is irreversible: anyone — including other platforms — can<br/>
         /// buy the number afterwards, so callers who saved it may reach a stranger.<br/>
-        /// The number disappears from this API immediately.
+        /// The number disappears from this API immediately. 409 while a SIP config<br/>
+        /// update of an imported number is still running, retry shortly.
         /// </summary>
         /// <param name="phoneNumberId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -399,24 +401,61 @@ namespace FishAudio
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // Request conflict
+                            if ((int)__response.StatusCode == 409)
+                            {
+                                string? __content_409 = null;
+                                global::System.Exception? __exception_409 = null;
+                                global::FishAudio.DeleteAgentPhoneNumbersResponse3? __value_409 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_409 = global::FishAudio.DeleteAgentPhoneNumbersResponse3.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_409 = global::FishAudio.DeleteAgentPhoneNumbersResponse3.FromJson(__content_409, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_409 = __ex;
+                                }
+
+
+                                throw global::FishAudio.ApiException<global::FishAudio.DeleteAgentPhoneNumbersResponse3>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_409,
+                                    responseBody: __content_409,
+                                    responseObject: __value_409,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // The server cannot process the request due to a high load
                             if ((int)__response.StatusCode == 503)
                             {
                                 string? __content_503 = null;
                                 global::System.Exception? __exception_503 = null;
-                                global::FishAudio.DeleteAgentPhoneNumbersResponse3? __value_503 = null;
+                                global::FishAudio.DeleteAgentPhoneNumbersResponse4? __value_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::FishAudio.DeleteAgentPhoneNumbersResponse3.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::FishAudio.DeleteAgentPhoneNumbersResponse4.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::FishAudio.DeleteAgentPhoneNumbersResponse3.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::FishAudio.DeleteAgentPhoneNumbersResponse4.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -425,7 +464,7 @@ namespace FishAudio
                                 }
 
 
-                                throw global::FishAudio.ApiException<global::FishAudio.DeleteAgentPhoneNumbersResponse3>.Create(
+                                throw global::FishAudio.ApiException<global::FishAudio.DeleteAgentPhoneNumbersResponse4>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,

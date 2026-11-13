@@ -18,6 +18,7 @@ rootCommand.Subcommands.Add(AgentToolsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(AgentsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(KnowledgeSourcesApiGroupCommand.Create());
 rootCommand.Subcommands.Add(ModelApiGroupCommand.Create());
+rootCommand.Subcommands.Add(OpenAPIApiGroupCommand.Create());
 rootCommand.Subcommands.Add(OpenAPIV1ApiGroupCommand.Create());
 rootCommand.Subcommands.Add(PhoneCallsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(PhoneNumbersApiGroupCommand.Create());

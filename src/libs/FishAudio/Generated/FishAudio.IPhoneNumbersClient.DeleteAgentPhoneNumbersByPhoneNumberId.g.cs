@@ -9,7 +9,8 @@ namespace FishAudio
         /// Release a number back to the provider's inventory and stop its daily<br/>
         /// billing. This is irreversible: anyone — including other platforms — can<br/>
         /// buy the number afterwards, so callers who saved it may reach a stranger.<br/>
-        /// The number disappears from this API immediately.
+        /// The number disappears from this API immediately. 409 while a SIP config<br/>
+        /// update of an imported number is still running, retry shortly.
         /// </summary>
         /// <param name="phoneNumberId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -24,7 +25,8 @@ namespace FishAudio
         /// Release a number back to the provider's inventory and stop its daily<br/>
         /// billing. This is irreversible: anyone — including other platforms — can<br/>
         /// buy the number afterwards, so callers who saved it may reach a stranger.<br/>
-        /// The number disappears from this API immediately.
+        /// The number disappears from this API immediately. 409 while a SIP config<br/>
+        /// update of an imported number is still running, retry shortly.
         /// </summary>
         /// <param name="phoneNumberId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

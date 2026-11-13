@@ -92,6 +92,12 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller_id_withheld")]
+        public bool? CallerIdWithheld { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dialed_number")]
         public string? DialedNumber { get; set; }
 
@@ -210,6 +216,9 @@ namespace FishAudio
         /// <param name="callerNumber">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="callerIdWithheld">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="dialedNumber">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -264,6 +273,7 @@ namespace FishAudio
             global::FishAudio.AgentSessionSummaryDialStatus? dialStatus,
             global::FishAudio.AgentSessionSummaryAnsweredBy? answeredBy,
             string? callerNumber,
+            bool? callerIdWithheld,
             string? dialedNumber,
             string? sipCallId,
             string? callSid,
@@ -290,6 +300,7 @@ namespace FishAudio
             this.DialStatus = dialStatus;
             this.AnsweredBy = answeredBy;
             this.CallerNumber = callerNumber;
+            this.CallerIdWithheld = callerIdWithheld;
             this.DialedNumber = dialedNumber;
             this.SipCallId = sipCallId;
             this.CallSid = callSid;

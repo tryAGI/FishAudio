@@ -15,6 +15,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        AnthropicClaudeFable52,
+        /// <summary>
+        ///
+        /// </summary>
         AnthropicClaudeHaiku45,
         /// <summary>
         ///
@@ -75,7 +79,15 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        OpenaiGpt56LunaFast,
+        /// <summary>
+        ///
+        /// </summary>
         OpenaiGpt6Astra,
+        /// <summary>
+        ///
+        /// </summary>
+        OpenaiGpt6AstraFast,
         /// <summary>
         ///
         /// </summary>
@@ -83,11 +95,23 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        OpenaiGpt6LunaFast,
+        /// <summary>
+        ///
+        /// </summary>
         OpenaiGpt61Sol,
         /// <summary>
         ///
         /// </summary>
+        OpenaiGpt61SolFast,
+        /// <summary>
+        ///
+        /// </summary>
         OpenaiGpt61Terra,
+        /// <summary>
+        ///
+        /// </summary>
+        OpenaiGpt61TerraFast,
         /// <summary>
         ///
         /// </summary>
@@ -107,6 +131,7 @@ namespace FishAudio
             return value switch
             {
                 AgentLLMFallbackModelPayloadModel.AnthropicClaudeFable51 => "anthropic/claude-fable-5.1",
+                AgentLLMFallbackModelPayloadModel.AnthropicClaudeFable52 => "anthropic/claude-fable-5.2",
                 AgentLLMFallbackModelPayloadModel.AnthropicClaudeHaiku45 => "anthropic/claude-haiku-4.5",
                 AgentLLMFallbackModelPayloadModel.AnthropicClaudeOpus55 => "anthropic/claude-opus-5.5",
                 AgentLLMFallbackModelPayloadModel.AnthropicClaudeSonnet46 => "anthropic/claude-sonnet-4.6",
@@ -122,10 +147,15 @@ namespace FishAudio
                 AgentLLMFallbackModelPayloadModel.OpenaiGpt4o => "openai/gpt-4o",
                 AgentLLMFallbackModelPayloadModel.OpenaiGpt5 => "openai/gpt-5",
                 AgentLLMFallbackModelPayloadModel.OpenaiGpt56Luna => "openai/gpt-5.6-luna",
+                AgentLLMFallbackModelPayloadModel.OpenaiGpt56LunaFast => "openai/gpt-5.6-luna-fast",
                 AgentLLMFallbackModelPayloadModel.OpenaiGpt6Astra => "openai/gpt-6-astra",
+                AgentLLMFallbackModelPayloadModel.OpenaiGpt6AstraFast => "openai/gpt-6-astra-fast",
                 AgentLLMFallbackModelPayloadModel.OpenaiGpt6Luna => "openai/gpt-6-luna",
+                AgentLLMFallbackModelPayloadModel.OpenaiGpt6LunaFast => "openai/gpt-6-luna-fast",
                 AgentLLMFallbackModelPayloadModel.OpenaiGpt61Sol => "openai/gpt-6.1-sol",
+                AgentLLMFallbackModelPayloadModel.OpenaiGpt61SolFast => "openai/gpt-6.1-sol-fast",
                 AgentLLMFallbackModelPayloadModel.OpenaiGpt61Terra => "openai/gpt-6.1-terra",
+                AgentLLMFallbackModelPayloadModel.OpenaiGpt61TerraFast => "openai/gpt-6.1-terra-fast",
                 AgentLLMFallbackModelPayloadModel.ZAiGlm53Flash => "z-ai/glm-5.3-flash",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -138,6 +168,7 @@ namespace FishAudio
             return value switch
             {
                 "anthropic/claude-fable-5.1" => AgentLLMFallbackModelPayloadModel.AnthropicClaudeFable51,
+                "anthropic/claude-fable-5.2" => AgentLLMFallbackModelPayloadModel.AnthropicClaudeFable52,
                 "anthropic/claude-haiku-4.5" => AgentLLMFallbackModelPayloadModel.AnthropicClaudeHaiku45,
                 "anthropic/claude-opus-5.5" => AgentLLMFallbackModelPayloadModel.AnthropicClaudeOpus55,
                 "anthropic/claude-sonnet-4.6" => AgentLLMFallbackModelPayloadModel.AnthropicClaudeSonnet46,
@@ -153,10 +184,15 @@ namespace FishAudio
                 "openai/gpt-4o" => AgentLLMFallbackModelPayloadModel.OpenaiGpt4o,
                 "openai/gpt-5" => AgentLLMFallbackModelPayloadModel.OpenaiGpt5,
                 "openai/gpt-5.6-luna" => AgentLLMFallbackModelPayloadModel.OpenaiGpt56Luna,
+                "openai/gpt-5.6-luna-fast" => AgentLLMFallbackModelPayloadModel.OpenaiGpt56LunaFast,
                 "openai/gpt-6-astra" => AgentLLMFallbackModelPayloadModel.OpenaiGpt6Astra,
+                "openai/gpt-6-astra-fast" => AgentLLMFallbackModelPayloadModel.OpenaiGpt6AstraFast,
                 "openai/gpt-6-luna" => AgentLLMFallbackModelPayloadModel.OpenaiGpt6Luna,
+                "openai/gpt-6-luna-fast" => AgentLLMFallbackModelPayloadModel.OpenaiGpt6LunaFast,
                 "openai/gpt-6.1-sol" => AgentLLMFallbackModelPayloadModel.OpenaiGpt61Sol,
+                "openai/gpt-6.1-sol-fast" => AgentLLMFallbackModelPayloadModel.OpenaiGpt61SolFast,
                 "openai/gpt-6.1-terra" => AgentLLMFallbackModelPayloadModel.OpenaiGpt61Terra,
+                "openai/gpt-6.1-terra-fast" => AgentLLMFallbackModelPayloadModel.OpenaiGpt61TerraFast,
                 "z-ai/glm-5.3-flash" => AgentLLMFallbackModelPayloadModel.ZAiGlm53Flash,
                 _ => null,
             };
