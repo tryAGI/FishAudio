@@ -68,6 +68,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.LLMMessageUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionMessageItemRole), TypeInfoPropertyName = "AgentSessionMessageItemRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionToolCallItem))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionToolErrorDetail))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionToolResultItem))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionToolResultItemStatus), TypeInfoPropertyName = "AgentSessionToolResultItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionTransferItem))]
