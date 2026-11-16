@@ -64,6 +64,12 @@ namespace FishAudio
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error_detail")]
+        public global::FishAudio.AgentSessionToolErrorDetail? ErrorDetail { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rejected_by")]
         public string? RejectedBy { get; set; }
 
@@ -112,6 +118,9 @@ namespace FishAudio
         /// <param name="error">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="errorDetail">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="rejectedBy">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -136,6 +145,7 @@ namespace FishAudio
             string? output,
             bool? outputTruncated,
             string? error,
+            global::FishAudio.AgentSessionToolErrorDetail? errorDetail,
             string? rejectedBy,
             int? latencyMs,
             int? turnId,
@@ -149,6 +159,7 @@ namespace FishAudio
             this.Output = output;
             this.OutputTruncated = outputTruncated;
             this.Error = error;
+            this.ErrorDetail = errorDetail;
             this.RejectedBy = rejectedBy;
             this.LatencyMs = latencyMs;
             this.TurnId = turnId;
