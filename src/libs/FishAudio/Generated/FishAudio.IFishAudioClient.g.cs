@@ -56,6 +56,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        public AgentLlmModelsClient AgentLlmModels { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public AgentSessionsClient AgentSessions { get; }
 
         /// <summary>
@@ -72,6 +77,11 @@ namespace FishAudio
         ///
         /// </summary>
         public AgentsClient Agents { get; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public KnowledgeFoldersClient KnowledgeFolders { get; }
 
         /// <summary>
         ///

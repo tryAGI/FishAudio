@@ -48,8 +48,12 @@ namespace FishAudio
         /// Start a conversation session with an agent and receive a join token for the<br/>
         /// session transport (currently LiveKit WebRTC). Authenticate with an API key to<br/>
         /// start sessions with any agent in your team; without credentials only agents<br/>
-        /// published as public are reachable, and the request `Origin` must match the<br/>
-        /// agent's allowed origins.<br/>
+        /// published as public are reachable, and when the agent restricts origins the<br/>
+        /// request `Origin` must match its allowed origins.<br/>
+        /// This call only issues the join token. The conversation starts when a client<br/>
+        /// (the web SDK or the widget) joins with it, so create a session when a user<br/>
+        /// starts a call, one per call. A session that no client joins before<br/>
+        /// `expires_at` ends as `failed`.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
         /// speaking language.<br/>
@@ -60,10 +64,10 @@ namespace FishAudio
         /// session, with the same shape and rules; each `custom` model needs its<br/>
         /// `api_key`. It needs an API key and `llm.fallback` in the agent's<br/>
         /// `overrides_allowed`.<br/>
-        /// When every concurrent line of your plan is in use the answer is 429 with<br/>
+        /// When every concurrent line of your team is in use the answer is 429 with<br/>
         /// `code: concurrency_limit_exceeded`, a `retry_after` in seconds and a<br/>
-        /// `Retry-After` header. Add lines or enable burst on the Agent plan to<br/>
-        /// raise the limit.
+        /// `Retry-After` header. The limit of a pay as you go team grows with its<br/>
+        /// total top-ups, and burst admits sessions above it.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -103,8 +107,12 @@ namespace FishAudio
         /// Start a conversation session with an agent and receive a join token for the<br/>
         /// session transport (currently LiveKit WebRTC). Authenticate with an API key to<br/>
         /// start sessions with any agent in your team; without credentials only agents<br/>
-        /// published as public are reachable, and the request `Origin` must match the<br/>
-        /// agent's allowed origins.<br/>
+        /// published as public are reachable, and when the agent restricts origins the<br/>
+        /// request `Origin` must match its allowed origins.<br/>
+        /// This call only issues the join token. The conversation starts when a client<br/>
+        /// (the web SDK or the widget) joins with it, so create a session when a user<br/>
+        /// starts a call, one per call. A session that no client joins before<br/>
+        /// `expires_at` ends as `failed`.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
         /// speaking language.<br/>
@@ -115,10 +123,10 @@ namespace FishAudio
         /// session, with the same shape and rules; each `custom` model needs its<br/>
         /// `api_key`. It needs an API key and `llm.fallback` in the agent's<br/>
         /// `overrides_allowed`.<br/>
-        /// When every concurrent line of your plan is in use the answer is 429 with<br/>
+        /// When every concurrent line of your team is in use the answer is 429 with<br/>
         /// `code: concurrency_limit_exceeded`, a `retry_after` in seconds and a<br/>
-        /// `Retry-After` header. Add lines or enable burst on the Agent plan to<br/>
-        /// raise the limit.
+        /// `Retry-After` header. The limit of a pay as you go team grows with its<br/>
+        /// total top-ups, and burst admits sessions above it.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -421,13 +429,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::FishAudio.CreateAgentSessionsResponse2.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse2.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::FishAudio.CreateAgentSessionsResponse2.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse2.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -438,7 +446,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentSessionsResponse2>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_400 is { Length: > 0 } ? __content_400 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
@@ -458,13 +466,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::FishAudio.CreateAgentSessionsResponse3.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse3.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::FishAudio.CreateAgentSessionsResponse3.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse3.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -475,7 +483,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentSessionsResponse3>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_401 is { Length: > 0 } ? __content_401 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
@@ -495,13 +503,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_402 = global::FishAudio.CreateAgentSessionsResponse4.FromJson(__content_402, JsonSerializerContext);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse4.FromJson(__content_402, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_402 = global::FishAudio.CreateAgentSessionsResponse4.FromJson(__content_402, JsonSerializerContext);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse4.FromJson(__content_402, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -512,7 +520,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentSessionsResponse4>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_402 is { Length: > 0 } ? __content_402 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,
                                     responseBody: __content_402,
                                     responseObject: __value_402,
@@ -532,13 +540,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::FishAudio.CreateAgentSessionsResponse5.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse5.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::FishAudio.CreateAgentSessionsResponse5.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse5.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -549,7 +557,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentSessionsResponse5>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_403 is { Length: > 0 } ? __content_403 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
@@ -569,13 +577,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::FishAudio.CreateAgentSessionsResponse6.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse6.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::FishAudio.CreateAgentSessionsResponse6.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse6.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -586,7 +594,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentSessionsResponse6>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_404 is { Length: > 0 } ? __content_404 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
@@ -606,13 +614,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::FishAudio.CreateAgentSessionsResponse7.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = __content_409 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse7.FromJson(__content_409, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_409 = global::FishAudio.CreateAgentSessionsResponse7.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = __content_409 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse7.FromJson(__content_409, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -623,7 +631,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentSessionsResponse7>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_409 is { Length: > 0 } ? __content_409 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
                                     responseBody: __content_409,
                                     responseObject: __value_409,
@@ -643,13 +651,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::FishAudio.CreateAgentSessionsResponse8.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse8.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::FishAudio.CreateAgentSessionsResponse8.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse8.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -660,7 +668,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentSessionsResponse8>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_429 is { Length: > 0 } ? __content_429 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
                                     responseBody: __content_429,
                                     responseObject: __value_429,
@@ -680,13 +688,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_502 = global::FishAudio.CreateAgentSessionsResponse9.FromJson(__content_502, JsonSerializerContext);
+                                        __value_502 = __content_502 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse9.FromJson(__content_502, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_502 = global::FishAudio.CreateAgentSessionsResponse9.FromJson(__content_502, JsonSerializerContext);
+                                        __value_502 = __content_502 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse9.FromJson(__content_502, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -697,7 +705,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentSessionsResponse9>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_502 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_502 is { Length: > 0 } ? __content_502 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_502,
                                     responseBody: __content_502,
                                     responseObject: __value_502,
@@ -717,13 +725,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::FishAudio.CreateAgentSessionsResponse10.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse10.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::FishAudio.CreateAgentSessionsResponse10.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentSessionsResponse10.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -734,7 +742,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentSessionsResponse10>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_503 is { Length: > 0 } ? __content_503 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
                                     responseBody: __content_503,
                                     responseObject: __value_503,
@@ -777,7 +785,7 @@ namespace FishAudio
                                 {
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -822,7 +830,7 @@ namespace FishAudio
 
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -844,8 +852,12 @@ namespace FishAudio
         /// Start a conversation session with an agent and receive a join token for the<br/>
         /// session transport (currently LiveKit WebRTC). Authenticate with an API key to<br/>
         /// start sessions with any agent in your team; without credentials only agents<br/>
-        /// published as public are reachable, and the request `Origin` must match the<br/>
-        /// agent's allowed origins.<br/>
+        /// published as public are reachable, and when the agent restricts origins the<br/>
+        /// request `Origin` must match its allowed origins.<br/>
+        /// This call only issues the join token. The conversation starts when a client<br/>
+        /// (the web SDK or the widget) joins with it, so create a session when a user<br/>
+        /// starts a call, one per call. A session that no client joins before<br/>
+        /// `expires_at` ends as `failed`.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
         /// speaking language.<br/>
@@ -856,10 +868,10 @@ namespace FishAudio
         /// session, with the same shape and rules; each `custom` model needs its<br/>
         /// `api_key`. It needs an API key and `llm.fallback` in the agent's<br/>
         /// `overrides_allowed`.<br/>
-        /// When every concurrent line of your plan is in use the answer is 429 with<br/>
+        /// When every concurrent line of your team is in use the answer is 429 with<br/>
         /// `code: concurrency_limit_exceeded`, a `retry_after` in seconds and a<br/>
-        /// `Retry-After` header. Add lines or enable burst on the Agent plan to<br/>
-        /// raise the limit.
+        /// `Retry-After` header. The limit of a pay as you go team grows with its<br/>
+        /// total top-ups, and burst admits sessions above it.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

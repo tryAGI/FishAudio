@@ -13,31 +13,13 @@ internal static partial class ModelEditModelByIdWithMessagePackCommandApiCommand
         Description = @"",
     };
 
-    private static Option<string?> Title { get; } = new(
-        name: @"--title")
-    {
-        Description = @"",
-    };
-
-    private static Option<string?> DescriptionOption { get; } = new(
-        name: @"--description")
-    {
-        Description = @"",
-    };
-
     private static Option<byte[]?> CoverImage { get; } = new(
         name: @"--cover-image")
     {
         Description = @"",
     };
 
-    private static Option<string?> CoverImagename { get; } = new(
-        name: @"--cover-imagename")
-    {
-        Description = @"",
-    };
-
-    private static Option<global::FishAudio.PatchModelRequestVisibility4?> Visibility { get; } = new(
+    private static Option<global::FishAudio.PatchModelRequestVisibility?> Visibility { get; } = new(
         name: @"--visibility")
     {
         Description = @"",
@@ -48,6 +30,7 @@ internal static partial class ModelEditModelByIdWithMessagePackCommandApiCommand
     {
         Description = @"",
     };
+    private static readonly PatchModelRequestOptionSet PatchModelRequestOptionSetOptions = PatchModelRequestOptionSet.Create();
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -71,12 +54,11 @@ internal static partial class ModelEditModelByIdWithMessagePackCommandApiCommand
     {
         var command = new Command(commandName ?? @"edit-model-by-id-with-message-pack", @"Update Model");
                         command.Arguments.Add(Id);
-                        command.Options.Add(Title);
-                        command.Options.Add(DescriptionOption);
                         command.Options.Add(CoverImage);
-                        command.Options.Add(CoverImagename);
                         command.Options.Add(Visibility);
-                        command.Options.Add(Tags);
+                        command.Options.Add(Tags);                        command.Options.Add(PatchModelRequestOptionSetOptions.Title);
+                        command.Options.Add(PatchModelRequestOptionSetOptions.DescriptionOption);
+                        command.Options.Add(PatchModelRequestOptionSetOptions.CoverImagename);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -95,7 +77,7 @@ internal static partial class ModelEditModelByIdWithMessagePackCommandApiCommand
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::FishAudio.PatchModelRequest4>(
+                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::FishAudio.PatchModelRequest>(
                             parseResult,
                             Input,
                             RequestJson,
@@ -103,23 +85,22 @@ internal static partial class ModelEditModelByIdWithMessagePackCommandApiCommand
                             global::FishAudio.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var id = parseResult.GetRequiredValue(Id);
-                        var title = CliRuntime.WasSpecified(parseResult, Title) ? parseResult.GetValue(Title) : (__requestBase is { } __TitleBaseValue ? __TitleBaseValue.Title : default);
-                        var description = CliRuntime.WasSpecified(parseResult, DescriptionOption) ? parseResult.GetValue(DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
                         var coverImage = CliRuntime.WasSpecified(parseResult, CoverImage) ? parseResult.GetValue(CoverImage) : (__requestBase is { } __CoverImageBaseValue ? __CoverImageBaseValue.CoverImage : default);
-                        var coverImagename = CliRuntime.WasSpecified(parseResult, CoverImagename) ? parseResult.GetValue(CoverImagename) : (__requestBase is { } __CoverImagenameBaseValue ? __CoverImagenameBaseValue.CoverImagename : default);
                         var visibility = CliRuntime.WasSpecified(parseResult, Visibility) ? parseResult.GetValue(Visibility) : (__requestBase is { } __VisibilityBaseValue ? __VisibilityBaseValue.Visibility : default);
-                        var tags = CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : (__requestBase is { } __TagsBaseValue ? __TagsBaseValue.Tags : default);
+                        var tags = CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : (__requestBase is { } __TagsBaseValue ? __TagsBaseValue.Tags : default);                        var title = CliRuntime.WasSpecified(parseResult, PatchModelRequestOptionSetOptions.Title) ? parseResult.GetValue(PatchModelRequestOptionSetOptions.Title) : (__requestBase is { } __TitleBaseValue ? __TitleBaseValue.Title : default);
+                        var description = CliRuntime.WasSpecified(parseResult, PatchModelRequestOptionSetOptions.DescriptionOption) ? parseResult.GetValue(PatchModelRequestOptionSetOptions.DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
+                        var coverImagename = CliRuntime.WasSpecified(parseResult, PatchModelRequestOptionSetOptions.CoverImagename) ? parseResult.GetValue(PatchModelRequestOptionSetOptions.CoverImagename) : (__requestBase is { } __CoverImagenameBaseValue ? __CoverImagenameBaseValue.CoverImagename : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 await client.Model.EditModelByIdWithMessagePackAsync(
                                     id: id,
-                                    title: title,
-                                    description: description,
                                     coverImage: coverImage,
-                                    coverImagename: coverImagename,
                                     visibility: visibility,
                                     tags: tags,
+                                    title: title,
+                                    description: description,
+                                    coverImagename: coverImagename,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);

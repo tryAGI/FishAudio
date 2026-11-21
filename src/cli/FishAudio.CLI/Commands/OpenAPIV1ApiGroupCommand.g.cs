@@ -13,6 +13,8 @@ internal static partial class OpenAPIV1ApiGroupCommand
         var command = new Command(@"open-api-v1", @"OpenAPI v1 endpoint commands.");
                          command.Subcommands.Add(OpenAPIV1CreateAsrCommandApiCommand.Create());
                          command.Subcommands.Add(OpenAPIV1CreateAsrWithMessagePackCommandApiCommand.Create());
+                         command.Subcommands.Add(OpenAPIV1CreateAudioInfillCommandApiCommand.Create());
+                         command.Subcommands.Add(OpenAPIV1CreateAudioInfillWithMessagePackCommandApiCommand.Create());
                          command.Subcommands.Add(OpenAPIV1CreateTtsCommandApiCommand.Create());
                          command.Subcommands.Add(OpenAPIV1CreateTtsStreamWithTimestampCommandApiCommand.Create());
                          command.Subcommands.Add(OpenAPIV1CreateTtsStreamWithTimestampWithMessagePackCommandApiCommand.Create());

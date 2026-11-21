@@ -20,7 +20,6 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateKeyRevokeResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateKeyRevokeResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     internal sealed partial class OpenAPISourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext

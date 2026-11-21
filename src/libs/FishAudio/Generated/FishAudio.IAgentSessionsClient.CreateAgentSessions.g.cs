@@ -9,8 +9,12 @@ namespace FishAudio
         /// Start a conversation session with an agent and receive a join token for the<br/>
         /// session transport (currently LiveKit WebRTC). Authenticate with an API key to<br/>
         /// start sessions with any agent in your team; without credentials only agents<br/>
-        /// published as public are reachable, and the request `Origin` must match the<br/>
-        /// agent's allowed origins.<br/>
+        /// published as public are reachable, and when the agent restricts origins the<br/>
+        /// request `Origin` must match its allowed origins.<br/>
+        /// This call only issues the join token. The conversation starts when a client<br/>
+        /// (the web SDK or the widget) joins with it, so create a session when a user<br/>
+        /// starts a call, one per call. A session that no client joins before<br/>
+        /// `expires_at` ends as `failed`.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
         /// speaking language.<br/>
@@ -21,10 +25,10 @@ namespace FishAudio
         /// session, with the same shape and rules; each `custom` model needs its<br/>
         /// `api_key`. It needs an API key and `llm.fallback` in the agent's<br/>
         /// `overrides_allowed`.<br/>
-        /// When every concurrent line of your plan is in use the answer is 429 with<br/>
+        /// When every concurrent line of your team is in use the answer is 429 with<br/>
         /// `code: concurrency_limit_exceeded`, a `retry_after` in seconds and a<br/>
-        /// `Retry-After` header. Add lines or enable burst on the Agent plan to<br/>
-        /// raise the limit.
+        /// `Retry-After` header. The limit of a pay as you go team grows with its<br/>
+        /// total top-ups, and burst admits sessions above it.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -53,8 +57,12 @@ namespace FishAudio
         /// Start a conversation session with an agent and receive a join token for the<br/>
         /// session transport (currently LiveKit WebRTC). Authenticate with an API key to<br/>
         /// start sessions with any agent in your team; without credentials only agents<br/>
-        /// published as public are reachable, and the request `Origin` must match the<br/>
-        /// agent's allowed origins.<br/>
+        /// published as public are reachable, and when the agent restricts origins the<br/>
+        /// request `Origin` must match its allowed origins.<br/>
+        /// This call only issues the join token. The conversation starts when a client<br/>
+        /// (the web SDK or the widget) joins with it, so create a session when a user<br/>
+        /// starts a call, one per call. A session that no client joins before<br/>
+        /// `expires_at` ends as `failed`.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
         /// speaking language.<br/>
@@ -65,10 +73,10 @@ namespace FishAudio
         /// session, with the same shape and rules; each `custom` model needs its<br/>
         /// `api_key`. It needs an API key and `llm.fallback` in the agent's<br/>
         /// `overrides_allowed`.<br/>
-        /// When every concurrent line of your plan is in use the answer is 429 with<br/>
+        /// When every concurrent line of your team is in use the answer is 429 with<br/>
         /// `code: concurrency_limit_exceeded`, a `retry_after` in seconds and a<br/>
-        /// `Retry-After` header. Add lines or enable burst on the Agent plan to<br/>
-        /// raise the limit.
+        /// `Retry-After` header. The limit of a pay as you go team grows with its<br/>
+        /// total top-ups, and burst admits sessions above it.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -97,8 +105,12 @@ namespace FishAudio
         /// Start a conversation session with an agent and receive a join token for the<br/>
         /// session transport (currently LiveKit WebRTC). Authenticate with an API key to<br/>
         /// start sessions with any agent in your team; without credentials only agents<br/>
-        /// published as public are reachable, and the request `Origin` must match the<br/>
-        /// agent's allowed origins.<br/>
+        /// published as public are reachable, and when the agent restricts origins the<br/>
+        /// request `Origin` must match its allowed origins.<br/>
+        /// This call only issues the join token. The conversation starts when a client<br/>
+        /// (the web SDK or the widget) joins with it, so create a session when a user<br/>
+        /// starts a call, one per call. A session that no client joins before<br/>
+        /// `expires_at` ends as `failed`.<br/>
         /// `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,<br/>
         /// `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured<br/>
         /// speaking language.<br/>
@@ -109,10 +121,10 @@ namespace FishAudio
         /// session, with the same shape and rules; each `custom` model needs its<br/>
         /// `api_key`. It needs an API key and `llm.fallback` in the agent's<br/>
         /// `overrides_allowed`.<br/>
-        /// When every concurrent line of your plan is in use the answer is 429 with<br/>
+        /// When every concurrent line of your team is in use the answer is 429 with<br/>
         /// `code: concurrency_limit_exceeded`, a `retry_after` in seconds and a<br/>
-        /// `Retry-After` header. Add lines or enable burst on the Agent plan to<br/>
-        /// raise the limit.
+        /// `Retry-After` header. The limit of a pay as you go team grows with its<br/>
+        /// total top-ups, and burst admits sessions above it.
         /// </summary>
         /// <param name="origin">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

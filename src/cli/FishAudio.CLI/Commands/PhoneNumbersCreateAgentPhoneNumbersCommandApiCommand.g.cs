@@ -61,7 +61,9 @@ and/or source CIDRs) and optionally a termination host so the number can
 place calls; nothing is rented and there is no monthly fee. Either way,
 409 means the number is already on the platform; 502 means the provider
 or trunk provisioning refused, and the number stays visible with status
-`error` and is safe to release.");
+`error` and is safe to release. 403 with
+`reason: phone_number_limit_reached` means your team already holds as
+many numbers as it may. An account that has never added credit holds one.");
 
           command.Options.Add(Input);
           command.Options.Add(RequestJson);

@@ -118,6 +118,20 @@ namespace FishAudio
         public string? AnnouncementMessage { get; set; }
 
         /// <summary>
+        /// SIP destinations in `warm` mode only: the digest username the destination's SIP server asks for. The agent places the call to a warm destination itself and answers the server's 401 or 407 challenge with this username and the stored password. A response that carries it means a password is stored. A `cold` destination sent with it is rejected: a cold transfer hands the call to the caller's carrier, which dials the destination and never has the credentials. Send null or an empty string to remove the credentials. A destination sent without the field keeps the credentials of the existing destination it replaces (same label, else a renamed one with the same SIP URI) while it stays a warm SIP destination on the same host and port, and loses them otherwise.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("auth_username")]
+        public string? AuthUsername { get; set; }
+
+        /// <summary>
+        /// Write-only digest password that goes with `auth_username`. It is stored encrypted and no response ever returns it. Omit it, or send an empty string, to keep the password already stored for a destination with the same SIP host and port and the same `auth_username`. It is required when the destination is new or its host, port or username changed. Sending the password that is already stored changes nothing. A new password takes effect on calls once the agent is published.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("auth_password")]
+        public string? AuthPassword { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -168,6 +182,14 @@ namespace FishAudio
         /// Default Value: generated
         /// </param>
         /// <param name="announcementMessage"></param>
+        /// <param name="authUsername">
+        /// SIP destinations in `warm` mode only: the digest username the destination's SIP server asks for. The agent places the call to a warm destination itself and answers the server's 401 or 407 challenge with this username and the stored password. A response that carries it means a password is stored. A `cold` destination sent with it is rejected: a cold transfer hands the call to the caller's carrier, which dials the destination and never has the credentials. Send null or an empty string to remove the credentials. A destination sent without the field keeps the credentials of the existing destination it replaces (same label, else a renamed one with the same SIP URI) while it stays a warm SIP destination on the same host and port, and loses them otherwise.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="authPassword">
+        /// Write-only digest password that goes with `auth_username`. It is stored encrypted and no response ever returns it. Omit it, or send an empty string, to keep the password already stored for a destination with the same SIP host and port and the same `auth_username`. It is required when the destination is new or its host, port or username changed. Sending the password that is already stored changes nothing. A new password takes effect on calls once the agent is published.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -188,7 +210,9 @@ namespace FishAudio
             bool? warmConsultUsesAgentSettings,
             global::FishAudio.AgentTransferOnFailurePatch? onFailure,
             global::FishAudio.AgentTransferDestinationPatchAnnouncementMode? announcementMode,
-            string? announcementMessage)
+            string? announcementMessage,
+            string? authUsername,
+            string? authPassword)
         {
             this.Type = type;
             this.Label = label;
@@ -207,6 +231,8 @@ namespace FishAudio
             this.OnFailure = onFailure;
             this.AnnouncementMode = announcementMode;
             this.AnnouncementMessage = announcementMessage;
+            this.AuthUsername = authUsername;
+            this.AuthPassword = authPassword;
         }
 
         /// <summary>

@@ -334,13 +334,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::FishAudio.DeleteAgentBackgroundSoundsResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.DeleteAgentBackgroundSoundsResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::FishAudio.DeleteAgentBackgroundSoundsResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.DeleteAgentBackgroundSoundsResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -351,7 +351,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.DeleteAgentBackgroundSoundsResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_401 is { Length: > 0 } ? __content_401 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
@@ -365,19 +365,19 @@ namespace FishAudio
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::FishAudio.DeleteAgentBackgroundSoundsResponse2? __value_404 = null;
+                                global::FishAudio.DeleteAgentBackgroundSoundsResponse? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::FishAudio.DeleteAgentBackgroundSoundsResponse2.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::FishAudio.DeleteAgentBackgroundSoundsResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::FishAudio.DeleteAgentBackgroundSoundsResponse2.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::FishAudio.DeleteAgentBackgroundSoundsResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -386,9 +386,9 @@ namespace FishAudio
                                 }
 
 
-                                throw global::FishAudio.ApiException<global::FishAudio.DeleteAgentBackgroundSoundsResponse2>.Create(
+                                throw global::FishAudio.ApiException<global::FishAudio.DeleteAgentBackgroundSoundsResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_404 is { Length: > 0 } ? __content_404 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
@@ -402,19 +402,19 @@ namespace FishAudio
                             {
                                 string? __content_503 = null;
                                 global::System.Exception? __exception_503 = null;
-                                global::FishAudio.DeleteAgentBackgroundSoundsResponse3? __value_503 = null;
+                                global::FishAudio.DeleteAgentBackgroundSoundsResponse? __value_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::FishAudio.DeleteAgentBackgroundSoundsResponse3.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.DeleteAgentBackgroundSoundsResponse.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::FishAudio.DeleteAgentBackgroundSoundsResponse3.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.DeleteAgentBackgroundSoundsResponse.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -423,9 +423,9 @@ namespace FishAudio
                                 }
 
 
-                                throw global::FishAudio.ApiException<global::FishAudio.DeleteAgentBackgroundSoundsResponse3>.Create(
+                                throw global::FishAudio.ApiException<global::FishAudio.DeleteAgentBackgroundSoundsResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_503 is { Length: > 0 } ? __content_503 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
                                     responseBody: __content_503,
                                     responseObject: __value_503,
@@ -461,7 +461,7 @@ namespace FishAudio
                                 {
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -497,7 +497,7 @@ namespace FishAudio
 
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(

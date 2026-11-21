@@ -4,8 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// Never carries storage_key: that is an internal R2 key, not something a<br/>
-    /// client should see or be able to request directly.
+    ///
     /// </summary>
     public sealed partial class CreateAgentBackgroundSoundsResponse
     {

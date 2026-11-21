@@ -7,9 +7,9 @@ namespace FishAudio
         /// <summary>
         /// Get Widget Config<br/>
         /// Unauthenticated display configuration for the embeddable `&lt;fish-agent&gt;`<br/>
-        /// widget. Only agents published as public are reachable, and the request<br/>
-        /// `Origin` must match the agent's allowed origins — the same gate as<br/>
-        /// anonymous session creation. Attributes set on the embed tag override<br/>
+        /// widget. Only agents published as public are reachable. When the agent<br/>
+        /// restricts origins, the request `Origin` must match its allowed origins,<br/>
+        /// the same gate as anonymous session creation. Attributes set on the embed tag override<br/>
         /// every field returned here.
         /// </summary>
         /// <param name="agentId"></param>
@@ -27,9 +27,9 @@ namespace FishAudio
         /// <summary>
         /// Get Widget Config<br/>
         /// Unauthenticated display configuration for the embeddable `&lt;fish-agent&gt;`<br/>
-        /// widget. Only agents published as public are reachable, and the request<br/>
-        /// `Origin` must match the agent's allowed origins — the same gate as<br/>
-        /// anonymous session creation. Attributes set on the embed tag override<br/>
+        /// widget. Only agents published as public are reachable. When the agent<br/>
+        /// restricts origins, the request `Origin` must match its allowed origins,<br/>
+        /// the same gate as anonymous session creation. Attributes set on the embed tag override<br/>
         /// every field returned here.
         /// </summary>
         /// <param name="agentId"></param>

@@ -15,7 +15,7 @@ namespace FishAudio
         public int? AgentReplies { get; set; }
 
         /// <summary>
-        /// What the run was charged in USD. `0` on a finished run that is not charged: runs that end in `error` and tests other than simulations. Null until the run's charge is settled.<br/>
+        /// What the run was charged in USD. `0` on a finished run that is not charged. Null until the run's charge is settled.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_usd")]
@@ -47,7 +47,7 @@ namespace FishAudio
         /// Default Value: 0
         /// </param>
         /// <param name="costUsd">
-        /// What the run was charged in USD. `0` on a finished run that is not charged: runs that end in `error` and tests other than simulations. Null until the run's charge is settled.<br/>
+        /// What the run was charged in USD. `0` on a finished run that is not charged. Null until the run's charge is settled.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="platformFee">

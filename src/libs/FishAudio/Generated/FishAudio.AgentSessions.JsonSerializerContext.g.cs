@@ -57,6 +57,10 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAnalysisResultStatus), TypeInfoPropertyName = "AgentSessionAnalysisResultStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentSessionAnalysisDataValue>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentSessionAnalysisCriterionResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionEngineFallback))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionEngineRef))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionEngineFallbackReason), TypeInfoPropertyName = "AgentSessionEngineFallbackReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionEngineRefEngine), TypeInfoPropertyName = "AgentSessionEngineRefEngine2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionLlmCustomRef))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionLlmEndpointError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionLlmEndpointErrorType), TypeInfoPropertyName = "AgentSessionLlmEndpointErrorType2")]
@@ -122,6 +126,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsResponseItemDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsResponseItemDiscriminatorType), TypeInfoPropertyName = "GetAgentSessionsResponseItemDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmFallback>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentSessionEngineFallback>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsResponse6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsResponse7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsResponse8))]
@@ -135,9 +140,6 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsRecordingResponse5))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentSessionsRecordingResponse6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentSessionsEndResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentSessionsEndResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentSessionsEndResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentSessionsEndResponse4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionKeypadMenuOutcome?), TypeInfoPropertyName = "NullableAgentSessionKeypadMenuOutcome2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionKeypadMenuInput?), TypeInfoPropertyName = "NullableAgentSessionKeypadMenuInput2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
@@ -159,6 +161,8 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAnalysisDataValueType?), TypeInfoPropertyName = "NullableAgentSessionAnalysisDataValueType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<bool?, double?, string>?), TypeInfoPropertyName = "NullableAnyOfBooleanDoubleString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAnalysisResultStatus?), TypeInfoPropertyName = "NullableAgentSessionAnalysisResultStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionEngineFallbackReason?), TypeInfoPropertyName = "NullableAgentSessionEngineFallbackReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionEngineRefEngine?), TypeInfoPropertyName = "NullableAgentSessionEngineRefEngine2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionLlmEndpointErrorType?), TypeInfoPropertyName = "NullableAgentSessionLlmEndpointErrorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionLlmEndpointErrorReason?), TypeInfoPropertyName = "NullableAgentSessionLlmEndpointErrorReason2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionLlmFallbackReason?), TypeInfoPropertyName = "NullableAgentSessionLlmFallbackReason2")]
@@ -199,6 +203,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.LLMMessageUsage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.ItemsItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentSessionLlmFallback>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentSessionEngineFallback>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentSessionTransferRecordingEntity>))]
     internal sealed partial class AgentSessionsSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
@@ -365,6 +370,14 @@ namespace FishAudio
                     || typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisResultStatus)
 
                     || typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisResultStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionEngineFallbackReason)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionEngineFallbackReason?)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionEngineRefEngine)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionEngineRefEngine?)
 
                     || typeToConvert == typeof(global::FishAudio.AgentSessionLlmEndpointErrorType)
 
@@ -627,6 +640,26 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.AgentSessionAnalysisResultStatus?))
                 {
                     return new global::FishAudio.JsonConverters.AgentSessionAnalysisResultStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionEngineFallbackReason))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionEngineFallbackReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionEngineFallbackReason?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionEngineFallbackReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionEngineRefEngine))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionEngineRefEngineJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionEngineRefEngine?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionEngineRefEngineNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.AgentSessionLlmEndpointErrorType))

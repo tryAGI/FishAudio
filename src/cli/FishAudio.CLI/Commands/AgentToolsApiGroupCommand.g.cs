@@ -12,7 +12,10 @@ internal static partial class AgentToolsApiGroupCommand
     {
         var command = new Command(@"agent-tools", @"Agent Tools endpoint commands.");
                          command.Subcommands.Add(AgentToolsCreateAgentToolsCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentToolsCreateAgentToolsByToolIdSigningSecretRotateCommandApiCommand.Create());
                          command.Subcommands.Add(AgentToolsDeleteAgentToolsByToolIdCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentToolsDeleteAgentToolsByToolIdSigningSecretCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentToolsDeleteAgentToolsByToolIdSigningSecretPreviousCommandApiCommand.Create());
                          command.Subcommands.Add(AgentToolsEditAgentToolsByToolIdCommandApiCommand.Create());
                          command.Subcommands.Add(AgentToolsGetAgentToolsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentToolsGetAgentToolsByToolIdCommandApiCommand.Create());

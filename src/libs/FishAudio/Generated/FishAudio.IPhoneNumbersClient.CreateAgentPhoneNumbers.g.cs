@@ -17,7 +17,9 @@ namespace FishAudio
         /// place calls; nothing is rented and there is no monthly fee. Either way,<br/>
         /// 409 means the number is already on the platform; 502 means the provider<br/>
         /// or trunk provisioning refused, and the number stays visible with status<br/>
-        /// `error` and is safe to release.
+        /// `error` and is safe to release. 403 with<br/>
+        /// `reason: phone_number_limit_reached` means your team already holds as<br/>
+        /// many numbers as it may. An account that has never added credit holds one.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -41,7 +43,9 @@ namespace FishAudio
         /// place calls; nothing is rented and there is no monthly fee. Either way,<br/>
         /// 409 means the number is already on the platform; 502 means the provider<br/>
         /// or trunk provisioning refused, and the number stays visible with status<br/>
-        /// `error` and is safe to release.
+        /// `error` and is safe to release. 403 with<br/>
+        /// `reason: phone_number_limit_reached` means your team already holds as<br/>
+        /// many numbers as it may. An account that has never added credit holds one.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -65,7 +69,9 @@ namespace FishAudio
         /// place calls; nothing is rented and there is no monthly fee. Either way,<br/>
         /// 409 means the number is already on the platform; 502 means the provider<br/>
         /// or trunk provisioning refused, and the number stays visible with status<br/>
-        /// `error` and is safe to release.
+        /// `error` and is safe to release. 403 with<br/>
+        /// `reason: phone_number_limit_reached` means your team already holds as<br/>
+        /// many numbers as it may. An account that has never added credit holds one.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

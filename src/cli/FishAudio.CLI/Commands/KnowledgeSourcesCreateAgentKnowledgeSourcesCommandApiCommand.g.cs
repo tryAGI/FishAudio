@@ -32,6 +32,12 @@ internal static partial class KnowledgeSourcesCreateAgentKnowledgeSourcesCommand
     {
         Description = @"",
     };
+
+    private static Option<string?> FolderId { get; } = new(
+        name: @"--folder-id")
+    {
+        Description = @"Put the source in this knowledge folder, which must be in the workspace the source is created in (your default workspace). Omit it, or send `root` (or an empty value), to create it outside any folder. 404 if the folder does not exist there.",
+    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -76,12 +82,15 @@ internal static partial class KnowledgeSourcesCreateAgentKnowledgeSourcesCommand
         var command = new Command(commandName ?? @"create-agent-knowledge-sources", @"Create Knowledge Source
 Upload a plain-text or Markdown file (UTF-8, up to 1 MB) as a knowledge
 source. Send `multipart/form-data` with the file in `source`; `name`
-defaults to the file name. Attach it to agents via the agent config's
+defaults to the file name. Send `folder_id` to put it in a knowledge
+folder (otherwise it is created outside any folder; `folder_id=root` says
+so explicitly). Attach it to agents via the agent config's
 `knowledge_base.knowledge_source_ids`.");
                         command.Options.Add(Source);
                         command.Options.Add(Sourcename);
                         command.Options.Add(NameOption);
                         command.Options.Add(DescriptionOption);
+                        command.Options.Add(FolderId);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -111,6 +120,7 @@ defaults to the file name. Attach it to agents via the agent config's
                         var sourcename = parseResult.GetRequiredValue(Sourcename);
                         var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : (__requestBase is { } __NameBaseValue ? __NameBaseValue.Name : default);
                         var description = CliRuntime.WasSpecified(parseResult, DescriptionOption) ? parseResult.GetValue(DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
+                        var folderId = CliRuntime.WasSpecified(parseResult, FolderId) ? parseResult.GetValue(FolderId) : (__requestBase is { } __FolderIdBaseValue ? __FolderIdBaseValue.FolderId : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -119,6 +129,7 @@ defaults to the file name. Attach it to agents via the agent config's
                                     sourcename: sourcename,
                                     name: name,
                                     description: description,
+                                    folderId: folderId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

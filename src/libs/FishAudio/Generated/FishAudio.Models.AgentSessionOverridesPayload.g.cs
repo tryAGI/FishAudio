@@ -30,6 +30,7 @@ namespace FishAudio
         public string? SystemPrompt { get; set; }
 
         /// <summary>
+        /// The voice this session speaks instead of the agent's: a Voice Library voice or one of your clones by id, or one of the live3 speech model's own voices by its lowercase name (clara, nora, ...). A name on a session that runs on Fish TTS speaks the Voice Library counterpart of that voice.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_id")]
@@ -73,6 +74,7 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="voiceId">
+        /// The voice this session speaks instead of the agent's: a Voice Library voice or one of your clones by id, or one of the live3 speech model's own voices by its lowercase name (clara, nora, ...). A name on a session that runs on Fish TTS speaks the Voice Library counterpart of that voice.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="language">

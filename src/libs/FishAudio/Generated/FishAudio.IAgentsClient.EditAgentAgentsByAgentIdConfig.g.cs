@@ -71,17 +71,26 @@ namespace FishAudio
         ///   from it.<br/>
         /// - `conversation.response_max_wait_ms: 0` reads back as `null`<br/>
         ///   (automatic).<br/>
+        /// - `conversation.backchannel` keeps the fields you omit.<br/>
+        ///   `strength: null` goes back to the speech engine's own setting.<br/>
+        /// - `conversation.reengage` keeps the fields you omit, and<br/>
+        ///   `conversation.reengage.schedule` reads back as<br/>
+        ///   `conversation.reengage.steps`.<br/>
+        /// - `conversation` also returns `reengage_enabled`, copied from<br/>
+        ///   `reengage.enabled`. It is deprecated.<br/>
         /// - `knowledge_base.enabled` becomes `true` when you attach sources and<br/>
         ///   omit it.<br/>
         /// - `llm.custom.base_url` drops a trailing `/` and `/chat/completions`.<br/>
         ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
         ///   to the platform default.<br/>
         /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
-        /// - `voice.live3_voice` becomes `null` when you set `voice.voice_id`<br/>
-        ///   without it: on `live3` the agent then speaks the voice you picked.<br/>
-        ///   Switching `voice.engine` to `live3` sets an empty `voice.live3_voice`<br/>
-        ///   to `Clara` only while `voice.voice_id` is still the default voice<br/>
-        ///   and the patch sets neither.<br/>
+        /// - `voice.voice_id` reads back as the name while the agent speaks one of<br/>
+        ///   the `live3` voices. Switching `voice.engine` to `fish_tts` returns it<br/>
+        ///   to the agent's Voice Library voice, and switching back to `live3`<br/>
+        ///   restores the name. A new agent, and one still on the default voice<br/>
+        ///   when it switches to `live3`, starts on `clara`.<br/>
+        /// - `voice.live3_voice` is deprecated and mirrors that name capitalized<br/>
+        ///   (`Clara`), `null` when `voice.voice_id` is a Voice Library voice.<br/>
         /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
         ///   copied from `asr`. They are deprecated.<br/>
         /// - `config_hash` and `updated_at` are set by the server.<br/>
@@ -185,17 +194,26 @@ namespace FishAudio
         ///   from it.<br/>
         /// - `conversation.response_max_wait_ms: 0` reads back as `null`<br/>
         ///   (automatic).<br/>
+        /// - `conversation.backchannel` keeps the fields you omit.<br/>
+        ///   `strength: null` goes back to the speech engine's own setting.<br/>
+        /// - `conversation.reengage` keeps the fields you omit, and<br/>
+        ///   `conversation.reengage.schedule` reads back as<br/>
+        ///   `conversation.reengage.steps`.<br/>
+        /// - `conversation` also returns `reengage_enabled`, copied from<br/>
+        ///   `reengage.enabled`. It is deprecated.<br/>
         /// - `knowledge_base.enabled` becomes `true` when you attach sources and<br/>
         ///   omit it.<br/>
         /// - `llm.custom.base_url` drops a trailing `/` and `/chat/completions`.<br/>
         ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
         ///   to the platform default.<br/>
         /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
-        /// - `voice.live3_voice` becomes `null` when you set `voice.voice_id`<br/>
-        ///   without it: on `live3` the agent then speaks the voice you picked.<br/>
-        ///   Switching `voice.engine` to `live3` sets an empty `voice.live3_voice`<br/>
-        ///   to `Clara` only while `voice.voice_id` is still the default voice<br/>
-        ///   and the patch sets neither.<br/>
+        /// - `voice.voice_id` reads back as the name while the agent speaks one of<br/>
+        ///   the `live3` voices. Switching `voice.engine` to `fish_tts` returns it<br/>
+        ///   to the agent's Voice Library voice, and switching back to `live3`<br/>
+        ///   restores the name. A new agent, and one still on the default voice<br/>
+        ///   when it switches to `live3`, starts on `clara`.<br/>
+        /// - `voice.live3_voice` is deprecated and mirrors that name capitalized<br/>
+        ///   (`Clara`), `null` when `voice.voice_id` is a Voice Library voice.<br/>
         /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
         ///   copied from `asr`. They are deprecated.<br/>
         /// - `config_hash` and `updated_at` are set by the server.<br/>
@@ -299,17 +317,26 @@ namespace FishAudio
         ///   from it.<br/>
         /// - `conversation.response_max_wait_ms: 0` reads back as `null`<br/>
         ///   (automatic).<br/>
+        /// - `conversation.backchannel` keeps the fields you omit.<br/>
+        ///   `strength: null` goes back to the speech engine's own setting.<br/>
+        /// - `conversation.reengage` keeps the fields you omit, and<br/>
+        ///   `conversation.reengage.schedule` reads back as<br/>
+        ///   `conversation.reengage.steps`.<br/>
+        /// - `conversation` also returns `reengage_enabled`, copied from<br/>
+        ///   `reengage.enabled`. It is deprecated.<br/>
         /// - `knowledge_base.enabled` becomes `true` when you attach sources and<br/>
         ///   omit it.<br/>
         /// - `llm.custom.base_url` drops a trailing `/` and `/chat/completions`.<br/>
         ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
         ///   to the platform default.<br/>
         /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
-        /// - `voice.live3_voice` becomes `null` when you set `voice.voice_id`<br/>
-        ///   without it: on `live3` the agent then speaks the voice you picked.<br/>
-        ///   Switching `voice.engine` to `live3` sets an empty `voice.live3_voice`<br/>
-        ///   to `Clara` only while `voice.voice_id` is still the default voice<br/>
-        ///   and the patch sets neither.<br/>
+        /// - `voice.voice_id` reads back as the name while the agent speaks one of<br/>
+        ///   the `live3` voices. Switching `voice.engine` to `fish_tts` returns it<br/>
+        ///   to the agent's Voice Library voice, and switching back to `live3`<br/>
+        ///   restores the name. A new agent, and one still on the default voice<br/>
+        ///   when it switches to `live3`, starts on `clara`.<br/>
+        /// - `voice.live3_voice` is deprecated and mirrors that name capitalized<br/>
+        ///   (`Clara`), `null` when `voice.voice_id` is a Voice Library voice.<br/>
         /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
         ///   copied from `asr`. They are deprecated.<br/>
         /// - `config_hash` and `updated_at` are set by the server.<br/>
