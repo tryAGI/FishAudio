@@ -8,9 +8,15 @@ namespace FishAudio
         /// List Knowledge Sources<br/>
         /// List your team's knowledge sources, newest first. Paginate with `cursor`<br/>
         /// (follow `next_cursor` while `has_more` is true) or with `page` for offset<br/>
-        /// pagination with a `total` count — the two are mutually exclusive.
+        /// pagination with a `total` count — the two are mutually exclusive. Filter<br/>
+        /// by folder with `folder_id=&lt;id&gt;`; with `folder_id=root` or no `folder_id`<br/>
+        /// you get every source, and the ones outside any folder have a null<br/>
+        /// `folder_id`.
         /// </summary>
         /// <param name="search">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="folderId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="cursor">
@@ -30,6 +36,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::FishAudio.GetAgentKnowledgeSourcesResponse> GetAgentKnowledgeSourcesAsync(
             string? search = default,
+            string? folderId = default,
             string? cursor = default,
             int? page = default,
             bool? includeTotal = default,
@@ -40,9 +47,15 @@ namespace FishAudio
         /// List Knowledge Sources<br/>
         /// List your team's knowledge sources, newest first. Paginate with `cursor`<br/>
         /// (follow `next_cursor` while `has_more` is true) or with `page` for offset<br/>
-        /// pagination with a `total` count — the two are mutually exclusive.
+        /// pagination with a `total` count — the two are mutually exclusive. Filter<br/>
+        /// by folder with `folder_id=&lt;id&gt;`; with `folder_id=root` or no `folder_id`<br/>
+        /// you get every source, and the ones outside any folder have a null<br/>
+        /// `folder_id`.
         /// </summary>
         /// <param name="search">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="folderId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="cursor">
@@ -62,6 +75,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetAgentKnowledgeSourcesResponse>> GetAgentKnowledgeSourcesAsResponseAsync(
             string? search = default,
+            string? folderId = default,
             string? cursor = default,
             int? page = default,
             bool? includeTotal = default,

@@ -10,10 +10,11 @@ namespace FishAudio
     public sealed partial class PublicAgentVoiceConfig
     {
         /// <summary>
-        /// Default Value: 9a9cf47702da476aa4629e2506d4a857
+        /// The agent's voice: a Voice Library voice or one of your clones by id, or with engine live3 one of the speech model's own voices by its lowercase name (clara, nora, owen, marco, milo, jonah, harper, patricia, and for the DT situation maddie, ethan, tyler, brianna). A name is rejected while the engine is fish_tts. When a session of an agent on one of the names runs on Fish TTS (another language, or the speech model unavailable), it speaks a Voice Library counterpart of that voice.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_id")]
-        public string? VoiceId { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string VoiceId { get; set; }
 
         /// <summary>
         /// Default Value: en
@@ -42,7 +43,7 @@ namespace FishAudio
         public global::FishAudio.PublicAgentVoiceConfigTtsModel? TtsModel { get; set; }
 
         /// <summary>
-        /// Speech engine. live3 (the default for new agents) puts the Fish full-duplex speech model on the call: it listens while it speaks and takes turns on its own. English only: sessions in another language run on fish_tts. fish_tts speaks the model's text through Fish TTS in the agent's voice, and is what agents from before the engine existed run. asr.model reads fish_audio:transcribe-stream-1 while the engine is live3, and switching to live3 turns asr.multilingual on unless the same patch sets it. An agent still on the default voice_id also starts voice.live3_voice on Clara at the switch, when none is stored and the same patch sets neither. An agent with a voice of its own keeps speaking it.<br/>
+        /// Speech engine. live3 (the default for new agents) puts the Fish full-duplex speech model on the call: it listens while it speaks and takes turns on its own. English only: sessions in another language run on fish_tts. fish_tts speaks the model's text through Fish TTS in the agent's voice, and is what agents from before the engine existed run. asr.model reads fish_audio:transcribe-stream-1 while the engine is live3, and switching to live3 turns asr.multilingual on unless the same patch sets it. An agent still on the default voice also starts on the speech model's voice Clara at the switch, unless it had one of the speech model's voices before or the same patch picks a voice. An agent with a voice of its own keeps speaking it.<br/>
         /// Default Value: fish_tts
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engine")]
@@ -55,13 +56,6 @@ namespace FishAudio
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("live3_prompt")]
         public string? Live3Prompt { get; set; }
-
-        /// <summary>
-        /// live3 only. One of the speech model's own voices by name (Clara, Nora, Owen, Marco, Milo, Jonah, Harper, Patricia, and for the DT situation Maddie, Ethan, Tyler, Brianna). New agents start on Clara. Empty: the agent's voice_id when the engine can use it, else Clara. Setting voice_id clears it unless the same patch sets it too. Ignored on fish_tts, which speaks voice_id.<br/>
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("live3_voice")]
-        public string? Live3Voice { get; set; }
 
         /// <summary>
         /// How the agent's voice sounds on web calls (the console test call, the widget, the SDK). none (default): the clean voice. phone: a handset line, the 300 to 3400 Hz band with the codec's grain. intercom: a small overdriven speaker, as at a drive-thru order post or a door intercom. Phone and WhatsApp calls already sound like a line and ignore it.<br/>
@@ -93,7 +87,7 @@ namespace FishAudio
         /// Initializes a new instance of the <see cref="PublicAgentVoiceConfig" /> class.
         /// </summary>
         /// <param name="voiceId">
-        /// Default Value: 9a9cf47702da476aa4629e2506d4a857
+        /// The agent's voice: a Voice Library voice or one of your clones by id, or with engine live3 one of the speech model's own voices by its lowercase name (clara, nora, owen, marco, milo, jonah, harper, patricia, and for the DT situation maddie, ethan, tyler, brianna). A name is rejected while the engine is fish_tts. When a session of an agent on one of the names runs on Fish TTS (another language, or the speech model unavailable), it speaks a Voice Library counterpart of that voice.
         /// </param>
         /// <param name="speakingLanguage">
         /// Default Value: en
@@ -108,15 +102,11 @@ namespace FishAudio
         /// Default Value: s2.1-pro
         /// </param>
         /// <param name="engine">
-        /// Speech engine. live3 (the default for new agents) puts the Fish full-duplex speech model on the call: it listens while it speaks and takes turns on its own. English only: sessions in another language run on fish_tts. fish_tts speaks the model's text through Fish TTS in the agent's voice, and is what agents from before the engine existed run. asr.model reads fish_audio:transcribe-stream-1 while the engine is live3, and switching to live3 turns asr.multilingual on unless the same patch sets it. An agent still on the default voice_id also starts voice.live3_voice on Clara at the switch, when none is stored and the same patch sets neither. An agent with a voice of its own keeps speaking it.<br/>
+        /// Speech engine. live3 (the default for new agents) puts the Fish full-duplex speech model on the call: it listens while it speaks and takes turns on its own. English only: sessions in another language run on fish_tts. fish_tts speaks the model's text through Fish TTS in the agent's voice, and is what agents from before the engine existed run. asr.model reads fish_audio:transcribe-stream-1 while the engine is live3, and switching to live3 turns asr.multilingual on unless the same patch sets it. An agent still on the default voice also starts on the speech model's voice Clara at the switch, unless it had one of the speech model's voices before or the same patch picks a voice. An agent with a voice of its own keeps speaking it.<br/>
         /// Default Value: fish_tts
         /// </param>
         /// <param name="live3Prompt">
         /// live3 only. The situation the speech model speaks in: P2 (phone support), DT (drive-thru) or AIR (airline). Empty: the default. Ignored on fish_tts.<br/>
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </param>
-        /// <param name="live3Voice">
-        /// live3 only. One of the speech model's own voices by name (Clara, Nora, Owen, Marco, Milo, Jonah, Harper, Patricia, and for the DT situation Maddie, Ethan, Tyler, Brianna). New agents start on Clara. Empty: the agent's voice_id when the engine can use it, else Clara. Setting voice_id clears it unless the same patch sets it too. Ignored on fish_tts, which speaks voice_id.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="effect">
@@ -131,26 +121,24 @@ namespace FishAudio
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PublicAgentVoiceConfig(
-            string? voiceId,
+            string voiceId,
             global::FishAudio.PublicAgentVoiceConfigSpeakingLanguage? speakingLanguage,
             bool? expressive,
             double? speed,
             global::FishAudio.PublicAgentVoiceConfigTtsModel? ttsModel,
             global::FishAudio.PublicAgentVoiceConfigEngine? engine,
             string? live3Prompt,
-            string? live3Voice,
             global::FishAudio.PublicAgentVoiceConfigEffect? effect,
             global::System.Collections.Generic.IList<string>? pronunciationDictionaryIds,
             global::FishAudio.AgentBackgroundSoundConfig? backgroundSound)
         {
-            this.VoiceId = voiceId;
+            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
             this.SpeakingLanguage = speakingLanguage;
             this.Expressive = expressive;
             this.Speed = speed;
             this.TtsModel = ttsModel;
             this.Engine = engine;
             this.Live3Prompt = live3Prompt;
-            this.Live3Voice = live3Voice;
             this.Effect = effect;
             this.PronunciationDictionaryIds = pronunciationDictionaryIds;
             this.BackgroundSound = backgroundSound;

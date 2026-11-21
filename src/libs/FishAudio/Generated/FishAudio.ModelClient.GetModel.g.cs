@@ -100,7 +100,7 @@ namespace FishAudio
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::FishAudio.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::FishAudio.GetModelResponse> GetModelAsync(
+        public async global::System.Threading.Tasks.Task<global::FishAudio.GetModelResponse4> GetModelAsync(
             int? pageSize = default,
             int? pageNumber = default,
             string? title = default,
@@ -172,7 +172,7 @@ namespace FishAudio
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::FishAudio.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetModelResponse>> GetModelAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetModelResponse4>> GetModelAsResponseAsync(
             int? pageSize = default,
             int? pageNumber = default,
             string? title = default,
@@ -502,9 +502,9 @@ namespace FishAudio
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::FishAudio.GetModelResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::FishAudio.GetModelResponse4.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetModelResponse>(
+                                    return new global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetModelResponse4>(
                                         statusCode: __response.StatusCode,
                                         headers: global::FishAudio.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -514,7 +514,7 @@ namespace FishAudio
                                 {
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -534,9 +534,9 @@ namespace FishAudio
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::FishAudio.GetModelResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::FishAudio.GetModelResponse4.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetModelResponse>(
+                                    return new global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetModelResponse4>(
                                         statusCode: __response.StatusCode,
                                         headers: global::FishAudio.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -559,7 +559,7 @@ namespace FishAudio
 
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(

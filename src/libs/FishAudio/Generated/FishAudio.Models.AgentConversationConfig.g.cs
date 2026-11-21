@@ -53,16 +53,22 @@ namespace FishAudio
         public global::System.Collections.Generic.IList<string>? InterruptionIgnorePhrases { get; set; }
 
         /// <summary>
+        /// The agent's backchannels: a short "mm-hmm" or "okay" when the caller pauses. Applies to speech engines that backchannel, which is live3 today, and is ignored on the others.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("backchannel")]
+        public global::FishAudio.AgentBackchannelConfig? Backchannel { get; set; }
+
+        /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speculative_response")]
         public bool? SpeculativeResponse { get; set; }
 
         /// <summary>
-        /// Default Value: false
+        /// Silence follow-ups: whether the agent speaks up while the caller stays silent, when, what it says, and what happens after the last follow-up.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("reengage_enabled")]
-        public bool? ReengageEnabled { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("reengage")]
+        public global::FishAudio.AgentReengageConfig? Reengage { get; set; }
 
         /// <summary>
         /// Default Value: 60
@@ -142,6 +148,13 @@ namespace FishAudio
         public global::FishAudio.AgentEchoGuard? EchoGuard { get; set; }
 
         /// <summary>
+        /// Turn detector: how the agent decides the caller has finished speaking, so it can answer. Applies to agents whose `voice.engine` is `fish_tts`. It has no effect when `asr.model` is `fish_audio:transcribe-stream-1`, which detects the end of the turn itself.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("turn_detector")]
+        public global::FishAudio.AgentTurnDetector? TurnDetector { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -171,11 +184,14 @@ namespace FishAudio
         /// <param name="interruptionIgnorePhrases">
         /// Default Value: []
         /// </param>
+        /// <param name="backchannel">
+        /// The agent's backchannels: a short "mm-hmm" or "okay" when the caller pauses. Applies to speech engines that backchannel, which is live3 today, and is ignored on the others.
+        /// </param>
         /// <param name="speculativeResponse">
         /// Default Value: true
         /// </param>
-        /// <param name="reengageEnabled">
-        /// Default Value: false
+        /// <param name="reengage">
+        /// Silence follow-ups: whether the agent speaks up while the caller stays silent, when, what it says, and what happens after the last follow-up.
         /// </param>
         /// <param name="hangupAfterSeconds">
         /// Default Value: 60
@@ -218,6 +234,10 @@ namespace FishAudio
         /// Echo guard. For the first 3 seconds after the agent first starts talking in a call, the caller cannot interrupt it and anything the caller says while the agent is talking is not heard. This stops the agent's own voice, echoing back from a speakerphone or laptop, from cutting it off. Per channel: true on, false off, null uses the default (on for web_voice and phone_inbound, off for phone_outbound). A new agent is created with phone_outbound set to true, so it starts with every channel on.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="turnDetector">
+        /// Turn detector: how the agent decides the caller has finished speaking, so it can answer. Applies to agents whose `voice.engine` is `fish_tts`. It has no effect when `asr.model` is `fish_audio:transcribe-stream-1`, which detects the end of the turn itself.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -229,8 +249,9 @@ namespace FishAudio
             bool? interruptible,
             global::FishAudio.AgentConversationConfigInterruptionSensitivity? interruptionSensitivity,
             global::System.Collections.Generic.IList<string>? interruptionIgnorePhrases,
+            global::FishAudio.AgentBackchannelConfig? backchannel,
             bool? speculativeResponse,
-            bool? reengageEnabled,
+            global::FishAudio.AgentReengageConfig? reengage,
             int? hangupAfterSeconds,
             global::FishAudio.AgentConversationConfigHangupFarewellMode? hangupFarewellMode,
             string? hangupFarewellMessage,
@@ -241,7 +262,8 @@ namespace FishAudio
             global::FishAudio.AgentOutboundConfig? outbound,
             global::FishAudio.AgentKeypadMenu? keypadMenu,
             global::FishAudio.AgentKeypadInput? keypadInput,
-            global::FishAudio.AgentEchoGuard? echoGuard)
+            global::FishAudio.AgentEchoGuard? echoGuard,
+            global::FishAudio.AgentTurnDetector? turnDetector)
         {
             this.MaxDurationSeconds = maxDurationSeconds;
             this.ResponseWaitMs = responseWaitMs;
@@ -250,8 +272,9 @@ namespace FishAudio
             this.Interruptible = interruptible;
             this.InterruptionSensitivity = interruptionSensitivity;
             this.InterruptionIgnorePhrases = interruptionIgnorePhrases;
+            this.Backchannel = backchannel;
             this.SpeculativeResponse = speculativeResponse;
-            this.ReengageEnabled = reengageEnabled;
+            this.Reengage = reengage;
             this.HangupAfterSeconds = hangupAfterSeconds;
             this.HangupFarewellMode = hangupFarewellMode;
             this.HangupFarewellMessage = hangupFarewellMessage;
@@ -263,6 +286,7 @@ namespace FishAudio
             this.KeypadMenu = keypadMenu;
             this.KeypadInput = keypadInput;
             this.EchoGuard = echoGuard;
+            this.TurnDetector = turnDetector;
         }
 
         /// <summary>

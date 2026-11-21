@@ -33,6 +33,13 @@ namespace FishAudio
         public string? Description { get; set; }
 
         /// <summary>
+        /// Move the source into this knowledge folder, which must be in the source's own workspace. `root` (or an empty value) takes it out of its folder; omit to leave it where it is. Moving never creates a new revision. 404 if the folder does not exist there.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("folder_id")]
+        public string? FolderId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -53,6 +60,10 @@ namespace FishAudio
         /// <param name="description">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="folderId">
+        /// Move the source into this knowledge folder, which must be in the source's own workspace. `root` (or an empty value) takes it out of its folder; omit to leave it where it is. Moving never creates a new revision. 404 if the folder does not exist there.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -60,12 +71,14 @@ namespace FishAudio
             byte[]? source,
             string? sourcename,
             string? name,
-            string? description)
+            string? description,
+            string? folderId)
         {
             this.Source = source;
             this.Sourcename = sourcename;
             this.Name = name;
             this.Description = description;
+            this.FolderId = folderId;
         }
 
         /// <summary>

@@ -33,13 +33,17 @@ internal static partial class AgentsEditAgentAgentsByAgentIdCommandApiCommand
 
     private static Option<bool?> PublicEnabled { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--public-enabled",
-        description: @"Allow keyless session creation from the browser SDK, gated by allowed_origins.");
+        description: @"Allow keyless session creation from the browser SDK. Any origin can start a session unless restrict_origins is true.");
 
     private static Option<global::System.Collections.Generic.IList<string>?> AllowedOrigins { get; } = new(
         name: @"--allowed-origins")
     {
-        Description = @"",
+        Description = @"Origins that may start public sessions while restrict_origins is true. Setting this without restrict_origins on an agent that never chose it turns the restriction on.",
     };
+
+    private static Option<bool?> RestrictOrigins { get; } = CliRuntime.CreateNullableBoolOption(
+        name: @"--restrict-origins",
+        description: @"Limit public access to allowed_origins. With an empty list, every public request is rejected.");
 
     private static Option<global::System.Collections.Generic.IList<global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item>?> OverridesAllowed { get; } = new(
         name: @"--overrides-allowed")
@@ -98,6 +102,7 @@ use `PATCH /v1/agent/agents/{agent_id}/config`.");
                         command.Options.Add(Status);
                         command.Options.Add(PublicEnabled);
                         command.Options.Add(AllowedOrigins);
+                        command.Options.Add(RestrictOrigins);
                         command.Options.Add(OverridesAllowed);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
@@ -130,6 +135,7 @@ use `PATCH /v1/agent/agents/{agent_id}/config`.");
                         var status = CliRuntime.WasSpecified(parseResult, Status) ? parseResult.GetValue(Status) : (__requestBase is { } __StatusBaseValue ? __StatusBaseValue.Status : default);
                         var publicEnabled = CliRuntime.WasSpecified(parseResult, PublicEnabled) ? parseResult.GetValue(PublicEnabled) : (__requestBase is { } __PublicEnabledBaseValue ? __PublicEnabledBaseValue.PublicEnabled : default);
                         var allowedOrigins = CliRuntime.WasSpecified(parseResult, AllowedOrigins) ? parseResult.GetValue(AllowedOrigins) : (__requestBase is { } __AllowedOriginsBaseValue ? __AllowedOriginsBaseValue.AllowedOrigins : default);
+                        var restrictOrigins = CliRuntime.WasSpecified(parseResult, RestrictOrigins) ? parseResult.GetValue(RestrictOrigins) : (__requestBase is { } __RestrictOriginsBaseValue ? __RestrictOriginsBaseValue.RestrictOrigins : default);
                         var overridesAllowed = CliRuntime.WasSpecified(parseResult, OverridesAllowed) ? parseResult.GetValue(OverridesAllowed) : (__requestBase is { } __OverridesAllowedBaseValue ? __OverridesAllowedBaseValue.OverridesAllowed : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
@@ -141,6 +147,7 @@ use `PATCH /v1/agent/agents/{agent_id}/config`.");
                                     status: status,
                                     publicEnabled: publicEnabled,
                                     allowedOrigins: allowedOrigins,
+                                    restrictOrigins: restrictOrigins,
                                     overridesAllowed: overridesAllowed,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 

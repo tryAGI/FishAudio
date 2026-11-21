@@ -121,8 +121,13 @@ internal static partial class AgentSessionsCreateAgentSessionsCommandApiCommand
 Start a conversation session with an agent and receive a join token for the
 session transport (currently LiveKit WebRTC). Authenticate with an API key to
 start sessions with any agent in your team; without credentials only agents
-published as public are reachable, and the request `Origin` must match the
-agent's allowed origins.
+published as public are reachable, and when the agent restricts origins the
+request `Origin` must match its allowed origins.
+
+This call only issues the join token. The conversation starts when a client
+(the web SDK or the widget) joins with it, so create a session when a user
+starts a call, one per call. A session that no client joins before
+`expires_at` ends as `failed`.
 
 `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,
 `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured
@@ -137,10 +142,10 @@ session, with the same shape and rules; each `custom` model needs its
 `api_key`. It needs an API key and `llm.fallback` in the agent's
 `overrides_allowed`.
 
-When every concurrent line of your plan is in use the answer is 429 with
+When every concurrent line of your team is in use the answer is 429 with
 `code: concurrency_limit_exceeded`, a `retry_after` in seconds and a
-`Retry-After` header. Add lines or enable burst on the Agent plan to
-raise the limit.");
+`Retry-After` header. The limit of a pay as you go team grows with its
+total top-ups, and burst admits sessions above it.");
                         command.Options.Add(Origin);
                         command.Options.Add(AgentId);
                         command.Options.Add(NameOption);

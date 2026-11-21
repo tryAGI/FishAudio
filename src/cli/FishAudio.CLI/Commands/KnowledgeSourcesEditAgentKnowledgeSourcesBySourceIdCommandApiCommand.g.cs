@@ -36,6 +36,12 @@ internal static partial class KnowledgeSourcesEditAgentKnowledgeSourcesBySourceI
     {
         Description = @"",
     };
+
+    private static Option<string?> FolderId { get; } = new(
+        name: @"--folder-id")
+    {
+        Description = @"Move the source into this knowledge folder, which must be in the source's own workspace. `root` (or an empty value) takes it out of its folder; omit to leave it where it is. Moving never creates a new revision. 404 if the folder does not exist there.",
+    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -83,12 +89,16 @@ Rename the source and/or replace its content by uploading a new file in
 the id stays stable, and every attached agent's draft picks it up
 immediately; published versions pin the revision they were published with,
 so republish each affected agent to put the new content live — that
-two-step (sync content, republish) is the nightly content-sync recipe.");
+two-step (sync content, republish) is the nightly content-sync recipe.
+Send `folder_id` to move the source into a knowledge folder, or
+`folder_id=root` to take it out of its folder; a move alone does not create
+a revision.");
                         command.Arguments.Add(SourceId);
                         command.Options.Add(Source);
                         command.Options.Add(Sourcename);
                         command.Options.Add(NameOption);
                         command.Options.Add(DescriptionOption);
+                        command.Options.Add(FolderId);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -119,6 +129,7 @@ two-step (sync content, republish) is the nightly content-sync recipe.");
                         var sourcename = CliRuntime.WasSpecified(parseResult, Sourcename) ? parseResult.GetValue(Sourcename) : (__requestBase is { } __SourcenameBaseValue ? __SourcenameBaseValue.Sourcename : default);
                         var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : (__requestBase is { } __NameBaseValue ? __NameBaseValue.Name : default);
                         var description = CliRuntime.WasSpecified(parseResult, DescriptionOption) ? parseResult.GetValue(DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
+                        var folderId = CliRuntime.WasSpecified(parseResult, FolderId) ? parseResult.GetValue(FolderId) : (__requestBase is { } __FolderIdBaseValue ? __FolderIdBaseValue.FolderId : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -128,6 +139,7 @@ two-step (sync content, republish) is the nightly content-sync recipe.");
                                     sourcename: sourcename,
                                     name: name,
                                     description: description,
+                                    folderId: folderId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

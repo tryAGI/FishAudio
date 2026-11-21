@@ -28,6 +28,10 @@ namespace FishAudio
         ///
         /// </summary>
         S21ProFree,
+        /// <summary>
+        ///
+        /// </summary>
+        S3Pro,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace FishAudio
                 GetTtsLiveWithTimestampModel.S2Pro => "s2-pro",
                 GetTtsLiveWithTimestampModel.S21Pro => "s2.1-pro",
                 GetTtsLiveWithTimestampModel.S21ProFree => "s2.1-pro-free",
+                GetTtsLiveWithTimestampModel.S3Pro => "s3-pro",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace FishAudio
                 "s2-pro" => GetTtsLiveWithTimestampModel.S2Pro,
                 "s2.1-pro" => GetTtsLiveWithTimestampModel.S21Pro,
                 "s2.1-pro-free" => GetTtsLiveWithTimestampModel.S21ProFree,
+                "s3-pro" => GetTtsLiveWithTimestampModel.S3Pro,
                 _ => null,
             };
         }

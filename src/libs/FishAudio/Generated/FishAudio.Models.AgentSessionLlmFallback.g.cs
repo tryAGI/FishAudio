@@ -14,6 +14,9 @@ namespace FishAudio
     /// - empty: the model's response stream broke off with no output and no end<br/>
     ///   signal (a provider failure). A reply the model finished with nothing in<br/>
     ///   it is the agent staying silent, not a fallback.<br/>
+    /// - refused: the model's provider finished the reply as a refusal with no<br/>
+    ///   output (a content filter or a policy block), and the next model was<br/>
+    ///   asked instead.<br/>
     /// - kick_in: running in parallel, the first fallback's reply was used<br/>
     ///   because the agent's own model had no first token within `kick_in_ms`.
     /// </summary>

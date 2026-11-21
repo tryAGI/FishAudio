@@ -7,49 +7,10 @@ namespace FishAudio.CLI.Commands;
 
 internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
 {
-    private static Option<global::FishAudio.CreateModelRequestVisibility4?> Visibility { get; } = new(
-        name: @"--visibility")
-    {
-        Description = @"Model visibility. Public requests are downgraded to private; use the web publish flow to publish publicly. Unlist allows anyone with the link to access, while private is visible only to the creator.",
-    };
-
-    private static Option<string> Type { get; } = new(
-        name: @"--type")
-    {
-        Description = @"Model type, tts is for text to speech",
-        DefaultValueFactory = _ => "tts",
-    };
-
-    private static Option<string> Title { get; } = new(
-        name: @"--title")
-    {
-        Description = @"Model title or name",
-        Required = true,
-    };
-
-    private static Option<string?> DescriptionOption { get; } = new(
-        name: @"--description")
-    {
-        Description = @"Model description",
-    };
-
     private static Option<byte[]?> CoverImage { get; } = new(
         name: @"--cover-image")
     {
         Description = @"Model cover image, this is required if the model is public",
-    };
-
-    private static Option<string?> CoverImagename { get; } = new(
-        name: @"--cover-imagename")
-    {
-        Description = @"Model cover image, this is required if the model is public",
-    };
-
-    private static Option<string> TrainMode { get; } = new(
-        name: @"--train-mode")
-    {
-        Description = @"Model train mode, for TTS model, fast means model instantly available after creation",
-        DefaultValueFactory = _ => "fast",
     };
 
     private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<byte[]>, byte[]>> Voices { get; } = new(
@@ -76,14 +37,7 @@ internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
     {
         Description = @"Model tags",
     };
-
-    private static Option<bool?> EnhanceAudioQuality { get; } = CliRuntime.CreateNullableBoolOption(
-        name: @"--enhance-audio-quality",
-        description: @"Enhance audio quality");
-
-    private static Option<bool?> GenerateSample { get; } = CliRuntime.CreateNullableBoolOption(
-        name: @"--generate-sample",
-        description: @"Generate default text");
+    private static readonly CreateModelRequestOptionSet CreateModelRequestOptionSetOptions = CreateModelRequestOptionSet.Create();
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -126,19 +80,18 @@ internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
     public static Command Create(string? commandName = null)
     {
         var command = new Command(commandName ?? @"create-model-with-message-pack", @"Create Model for Users via API");
-                        command.Options.Add(Visibility);
-                        command.Options.Add(Type);
-                        command.Options.Add(Title);
-                        command.Options.Add(DescriptionOption);
                         command.Options.Add(CoverImage);
-                        command.Options.Add(CoverImagename);
-                        command.Options.Add(TrainMode);
                         command.Options.Add(Voices);
                         command.Options.Add(Texts);
                         command.Options.Add(VoiceDesignSignatures);
-                        command.Options.Add(Tags);
-                        command.Options.Add(EnhanceAudioQuality);
-                        command.Options.Add(GenerateSample);
+                        command.Options.Add(Tags);                        command.Options.Add(CreateModelRequestOptionSetOptions.Visibility);
+                        command.Options.Add(CreateModelRequestOptionSetOptions.Type);
+                        command.Options.Add(CreateModelRequestOptionSetOptions.Title);
+                        command.Options.Add(CreateModelRequestOptionSetOptions.DescriptionOption);
+                        command.Options.Add(CreateModelRequestOptionSetOptions.CoverImagename);
+                        command.Options.Add(CreateModelRequestOptionSetOptions.TrainMode);
+                        command.Options.Add(CreateModelRequestOptionSetOptions.EnhanceAudioQuality);
+                        command.Options.Add(CreateModelRequestOptionSetOptions.GenerateSample);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -157,41 +110,40 @@ internal static partial class ModelCreateModelWithMessagePackCommandApiCommand
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::FishAudio.CreateModelRequest4>(
+                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::FishAudio.CreateModelRequest>(
                             parseResult,
                             Input,
                             RequestJson,
                             RequestFile,
                             global::FishAudio.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var visibility = CliRuntime.WasSpecified(parseResult, Visibility) ? parseResult.GetValue(Visibility) : (__requestBase is { } __VisibilityBaseValue ? __VisibilityBaseValue.Visibility : default);
-                        var type = parseResult.GetRequiredValue(Type);
-                        var title = parseResult.GetRequiredValue(Title);
-                        var description = CliRuntime.WasSpecified(parseResult, DescriptionOption) ? parseResult.GetValue(DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
                         var coverImage = CliRuntime.WasSpecified(parseResult, CoverImage) ? parseResult.GetValue(CoverImage) : (__requestBase is { } __CoverImageBaseValue ? __CoverImageBaseValue.CoverImage : default);
-                        var coverImagename = CliRuntime.WasSpecified(parseResult, CoverImagename) ? parseResult.GetValue(CoverImagename) : (__requestBase is { } __CoverImagenameBaseValue ? __CoverImagenameBaseValue.CoverImagename : default);
-                        var trainMode = parseResult.GetRequiredValue(TrainMode);
                         var voices = parseResult.GetRequiredValue(Voices);
                         var texts = CliRuntime.WasSpecified(parseResult, Texts) ? parseResult.GetValue(Texts) : (__requestBase is { } __TextsBaseValue ? __TextsBaseValue.Texts : default);
                         var voiceDesignSignatures = CliRuntime.WasSpecified(parseResult, VoiceDesignSignatures) ? parseResult.GetValue(VoiceDesignSignatures) : (__requestBase is { } __VoiceDesignSignaturesBaseValue ? __VoiceDesignSignaturesBaseValue.VoiceDesignSignatures : default);
-                        var tags = CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : (__requestBase is { } __TagsBaseValue ? __TagsBaseValue.Tags : default);
-                        var enhanceAudioQuality = CliRuntime.WasSpecified(parseResult, EnhanceAudioQuality) ? parseResult.GetValue(EnhanceAudioQuality) : (__requestBase is { } __EnhanceAudioQualityBaseValue ? __EnhanceAudioQualityBaseValue.EnhanceAudioQuality : default);
-                        var generateSample = CliRuntime.WasSpecified(parseResult, GenerateSample) ? parseResult.GetValue(GenerateSample) : (__requestBase is { } __GenerateSampleBaseValue ? __GenerateSampleBaseValue.GenerateSample : default);
+                        var tags = CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : (__requestBase is { } __TagsBaseValue ? __TagsBaseValue.Tags : default);                        var visibility = CliRuntime.WasSpecified(parseResult, CreateModelRequestOptionSetOptions.Visibility) ? parseResult.GetValue(CreateModelRequestOptionSetOptions.Visibility) : (__requestBase is { } __VisibilityBaseValue ? __VisibilityBaseValue.Visibility : default);
+                        var type = parseResult.GetRequiredValue(CreateModelRequestOptionSetOptions.Type);
+                        var title = parseResult.GetRequiredValue(CreateModelRequestOptionSetOptions.Title);
+                        var description = CliRuntime.WasSpecified(parseResult, CreateModelRequestOptionSetOptions.DescriptionOption) ? parseResult.GetValue(CreateModelRequestOptionSetOptions.DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
+                        var coverImagename = CliRuntime.WasSpecified(parseResult, CreateModelRequestOptionSetOptions.CoverImagename) ? parseResult.GetValue(CreateModelRequestOptionSetOptions.CoverImagename) : (__requestBase is { } __CoverImagenameBaseValue ? __CoverImagenameBaseValue.CoverImagename : default);
+                        var trainMode = parseResult.GetRequiredValue(CreateModelRequestOptionSetOptions.TrainMode);
+                        var enhanceAudioQuality = CliRuntime.WasSpecified(parseResult, CreateModelRequestOptionSetOptions.EnhanceAudioQuality) ? parseResult.GetValue(CreateModelRequestOptionSetOptions.EnhanceAudioQuality) : (__requestBase is { } __EnhanceAudioQualityBaseValue ? __EnhanceAudioQualityBaseValue.EnhanceAudioQuality : default);
+                        var generateSample = CliRuntime.WasSpecified(parseResult, CreateModelRequestOptionSetOptions.GenerateSample) ? parseResult.GetValue(CreateModelRequestOptionSetOptions.GenerateSample) : (__requestBase is { } __GenerateSampleBaseValue ? __GenerateSampleBaseValue.GenerateSample : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = await client.Model.CreateModelWithMessagePackAsync(
-                                    visibility: visibility,
-                                    type: type,
-                                    title: title,
-                                    description: description,
                                     coverImage: coverImage,
-                                    coverImagename: coverImagename,
-                                    trainMode: trainMode,
                                     voices: voices,
                                     texts: texts,
                                     voiceDesignSignatures: voiceDesignSignatures,
                                     tags: tags,
+                                    visibility: visibility,
+                                    type: type,
+                                    title: title,
+                                    description: description,
+                                    coverImagename: coverImagename,
+                                    trainMode: trainMode,
                                     enhanceAudioQuality: enhanceAudioQuality,
                                     generateSample: generateSample,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);

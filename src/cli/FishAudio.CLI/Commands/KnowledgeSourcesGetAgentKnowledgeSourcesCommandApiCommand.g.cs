@@ -13,6 +13,12 @@ internal static partial class KnowledgeSourcesGetAgentKnowledgeSourcesCommandApi
         Description = @"Case-insensitive match on name and file name.",
     };
 
+    private static Option<string?> FolderId { get; } = new(
+        name: @"--folder-id")
+    {
+        Description = @"Only sources in this knowledge folder. Omit it, or pass `root` (an empty value counts as omitted), to list every source across all workspaces, in a folder or not; sources outside any folder have a null `folder_id`. An unknown or deleted folder id gives an empty list. Combines with `search`.",
+    };
+
     private static Option<string?> Cursor { get; } = new(
         name: @"--cursor")
     {
@@ -62,8 +68,12 @@ internal static partial class KnowledgeSourcesGetAgentKnowledgeSourcesCommandApi
         var command = new Command(commandName ?? @"get-agent-knowledge-sources", @"List Knowledge Sources
 List your team's knowledge sources, newest first. Paginate with `cursor`
 (follow `next_cursor` while `has_more` is true) or with `page` for offset
-pagination with a `total` count — the two are mutually exclusive.");
+pagination with a `total` count — the two are mutually exclusive. Filter
+by folder with `folder_id=&lt;id&gt;`; with `folder_id=root` or no `folder_id`
+you get every source, and the ones outside any folder have a null
+`folder_id`.");
                         command.Options.Add(Search);
+                        command.Options.Add(FolderId);
                         command.Options.Add(Cursor);
                         command.Options.Add(Page);
                         command.Options.Add(IncludeTotal);
@@ -74,6 +84,7 @@ pagination with a `total` count — the two are mutually exclusive.");
             await CliRuntime.RunAsync(async () =>
             {
                         var search = parseResult.GetValue(Search);
+                        var folderId = parseResult.GetValue(FolderId);
                         var cursor = parseResult.GetValue(Cursor);
                         var page = parseResult.GetValue(Page);
                         var includeTotal = parseResult.GetValue(IncludeTotal);
@@ -83,6 +94,7 @@ pagination with a `total` count — the two are mutually exclusive.");
 
                                 var response = await client.KnowledgeSources.GetAgentKnowledgeSourcesAsync(
                                     search: search,
+                                    folderId: folderId,
                                     cursor: cursor,
                                     page: page,
                                     includeTotal: includeTotal,

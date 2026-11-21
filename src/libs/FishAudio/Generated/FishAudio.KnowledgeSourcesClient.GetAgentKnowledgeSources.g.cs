@@ -28,6 +28,7 @@ namespace FishAudio
         partial void PrepareGetAgentKnowledgeSourcesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? search,
+            ref string? folderId,
             ref string? cursor,
             int? page,
             ref bool? includeTotal,
@@ -36,6 +37,7 @@ namespace FishAudio
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? search,
+            string? folderId,
             string? cursor,
             int? page,
             bool? includeTotal,
@@ -53,9 +55,15 @@ namespace FishAudio
         /// List Knowledge Sources<br/>
         /// List your team's knowledge sources, newest first. Paginate with `cursor`<br/>
         /// (follow `next_cursor` while `has_more` is true) or with `page` for offset<br/>
-        /// pagination with a `total` count — the two are mutually exclusive.
+        /// pagination with a `total` count — the two are mutually exclusive. Filter<br/>
+        /// by folder with `folder_id=&lt;id&gt;`; with `folder_id=root` or no `folder_id`<br/>
+        /// you get every source, and the ones outside any folder have a null<br/>
+        /// `folder_id`.
         /// </summary>
         /// <param name="search">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="folderId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="cursor">
@@ -75,6 +83,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::FishAudio.GetAgentKnowledgeSourcesResponse> GetAgentKnowledgeSourcesAsync(
             string? search = default,
+            string? folderId = default,
             string? cursor = default,
             int? page = default,
             bool? includeTotal = default,
@@ -84,6 +93,7 @@ namespace FishAudio
         {
             var __response = await GetAgentKnowledgeSourcesAsResponseAsync(
                 search: search,
+                folderId: folderId,
                 cursor: cursor,
                 page: page,
                 includeTotal: includeTotal,
@@ -98,9 +108,15 @@ namespace FishAudio
         /// List Knowledge Sources<br/>
         /// List your team's knowledge sources, newest first. Paginate with `cursor`<br/>
         /// (follow `next_cursor` while `has_more` is true) or with `page` for offset<br/>
-        /// pagination with a `total` count — the two are mutually exclusive.
+        /// pagination with a `total` count — the two are mutually exclusive. Filter<br/>
+        /// by folder with `folder_id=&lt;id&gt;`; with `folder_id=root` or no `folder_id`<br/>
+        /// you get every source, and the ones outside any folder have a null<br/>
+        /// `folder_id`.
         /// </summary>
         /// <param name="search">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="folderId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="cursor">
@@ -120,6 +136,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetAgentKnowledgeSourcesResponse>> GetAgentKnowledgeSourcesAsResponseAsync(
             string? search = default,
+            string? folderId = default,
             string? cursor = default,
             int? page = default,
             bool? includeTotal = default,
@@ -132,6 +149,7 @@ namespace FishAudio
             PrepareGetAgentKnowledgeSourcesArguments(
                 httpClient: HttpClient,
                 search: ref search,
+                folderId: ref folderId,
                 cursor: ref cursor,
                 page: page,
                 includeTotal: ref includeTotal,
@@ -165,6 +183,7 @@ namespace FishAudio
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("search", search)
+                                .AddOptionalParameter("folder_id", folderId)
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("page", page?.ToString())
                                 .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant())
@@ -211,6 +230,7 @@ namespace FishAudio
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     search: search,
+                    folderId: folderId,
                     cursor: cursor,
                     page: page,
                     includeTotal: includeTotal,
@@ -404,13 +424,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::FishAudio.GetAgentKnowledgeSourcesResponse2.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::FishAudio.GetAgentKnowledgeSourcesResponse2.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::FishAudio.GetAgentKnowledgeSourcesResponse2.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::FishAudio.GetAgentKnowledgeSourcesResponse2.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -421,7 +441,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.GetAgentKnowledgeSourcesResponse2>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_400 is { Length: > 0 } ? __content_400 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
@@ -441,13 +461,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::FishAudio.GetAgentKnowledgeSourcesResponse3.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.GetAgentKnowledgeSourcesResponse3.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::FishAudio.GetAgentKnowledgeSourcesResponse3.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.GetAgentKnowledgeSourcesResponse3.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -458,7 +478,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.GetAgentKnowledgeSourcesResponse3>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_401 is { Length: > 0 } ? __content_401 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
@@ -478,13 +498,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::FishAudio.GetAgentKnowledgeSourcesResponse4.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.GetAgentKnowledgeSourcesResponse4.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::FishAudio.GetAgentKnowledgeSourcesResponse4.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.GetAgentKnowledgeSourcesResponse4.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -495,7 +515,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.GetAgentKnowledgeSourcesResponse4>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_503 is { Length: > 0 } ? __content_503 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
                                     responseBody: __content_503,
                                     responseObject: __value_503,
@@ -538,7 +558,7 @@ namespace FishAudio
                                 {
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -583,7 +603,7 @@ namespace FishAudio
 
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(

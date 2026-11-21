@@ -30,7 +30,7 @@ internal sealed record AgentSessionOverridesPayloadOptionSet(
                 },
                 VoiceId: new Option<string?>($"--{normalizedPrefix}voice-id")
                 {
-                    Description = @"",
+                    Description = @"The voice this session speaks instead of the agent's: a Voice Library voice or one of your clones by id, or one of the live3 speech model's own voices by its lowercase name (clara, nora, ...). A name on a session that runs on Fish TTS speaks the Voice Library counterpart of that voice.",
                 }
         );
     }

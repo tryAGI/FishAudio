@@ -58,10 +58,15 @@ namespace FishAudio
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="publicEnabled">
-        /// Allow keyless session creation from the browser SDK, gated by allowed_origins.<br/>
+        /// Allow keyless session creation from the browser SDK. Any origin can start a session unless restrict_origins is true.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="allowedOrigins">
+        /// Origins that may start public sessions while restrict_origins is true. Setting this without restrict_origins on an agent that never chose it turns the restriction on.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="restrictOrigins">
+        /// Limit public access to allowed_origins. With an empty list, every public request is rejected.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="overridesAllowed">
@@ -78,6 +83,7 @@ namespace FishAudio
             global::FishAudio.PublicAgentUpdatePayloadStatus? status = default,
             bool? publicEnabled = default,
             global::System.Collections.Generic.IList<string>? allowedOrigins = default,
+            bool? restrictOrigins = default,
             global::System.Collections.Generic.IList<global::FishAudio.PublicAgentUpdatePayloadOverridesAllowedVariant1Item>? overridesAllowed = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

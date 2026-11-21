@@ -15,7 +15,7 @@ namespace FishAudio
         global::System.Threading.Tasks.Task EditModelByIdAsync(
             string id,
 
-            global::FishAudio.PatchModelRequest3 request,
+            global::FishAudio.PatchModelRequest request,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -29,7 +29,7 @@ namespace FishAudio
         global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse> EditModelByIdAsResponseAsync(
             string id,
 
-            global::FishAudio.PatchModelRequest3 request,
+            global::FishAudio.PatchModelRequest request,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -61,7 +61,7 @@ namespace FishAudio
             string? description = default,
             byte[]? coverImage = default,
             string? coverImagename = default,
-            global::FishAudio.PatchModelRequestVisibility3? visibility = default,
+            global::FishAudio.PatchModelRequestVisibility? visibility = default,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

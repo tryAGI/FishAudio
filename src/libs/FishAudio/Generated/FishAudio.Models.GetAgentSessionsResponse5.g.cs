@@ -210,6 +210,12 @@ namespace FishAudio
         public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmFallback>? LlmFallbacks { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_fallbacks")]
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionEngineFallback>? EngineFallbacks { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -292,6 +298,7 @@ namespace FishAudio
         /// </param>
         /// <param name="llmEndpointErrors"></param>
         /// <param name="llmFallbacks"></param>
+        /// <param name="engineFallbacks"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -327,7 +334,8 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.ItemsItem>? items,
             global::FishAudio.AgentSessionAnalysisResult? analysis,
             global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmEndpointError>? llmEndpointErrors,
-            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmFallback>? llmFallbacks)
+            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmFallback>? llmFallbacks,
+            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionEngineFallback>? engineFallbacks)
         {
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
@@ -361,6 +369,7 @@ namespace FishAudio
             this.Analysis = analysis;
             this.LlmEndpointErrors = llmEndpointErrors;
             this.LlmFallbacks = llmFallbacks;
+            this.EngineFallbacks = engineFallbacks;
         }
 
         /// <summary>

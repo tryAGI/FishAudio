@@ -30,6 +30,8 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicSipNumberImportPayloadTerminationTransport), TypeInfoPropertyName = "PublicSipNumberImportPayloadTerminationTransport2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicPhoneNumberUpdatePayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicPhoneNumberUpdatePayloadTransferCallerId), TypeInfoPropertyName = "PublicPhoneNumberUpdatePayloadTransferCallerId2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicSipNumberConfigPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicSipNumberConfigPayloadTerminationTransport), TypeInfoPropertyName = "PublicSipNumberConfigPayloadTerminationTransport2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<global::FishAudio.PublicPhoneNumberPurchasePayload, global::FishAudio.PublicSipNumberImportPayload>), TypeInfoPropertyName = "AnyOfPublicPhoneNumberPurchasePayloadPublicSipNumberImportPayload2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType), TypeInfoPropertyName = "GetAgentAvailablePhoneNumbersNumberType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAvailablePhoneNumbersResponse))]
@@ -76,9 +78,17 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentPhoneNumbersResponse5))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentPhoneNumbersResponse6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentPhoneNumbersResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentPhoneNumbersResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentPhoneNumbersResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentPhoneNumbersResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseProvider), TypeInfoPropertyName = "PutAgentPhoneNumbersSipConfigResponseProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseTransferCallerId), TypeInfoPropertyName = "PutAgentPhoneNumbersSipConfigResponseTransferCallerId2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseCallerIdSyncStatus), TypeInfoPropertyName = "PutAgentPhoneNumbersSipConfigResponseCallerIdSyncStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseStatus), TypeInfoPropertyName = "PutAgentPhoneNumbersSipConfigResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponse5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponse6))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponse7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
@@ -88,6 +98,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicPhoneNumberEntityStatus?), TypeInfoPropertyName = "NullablePublicPhoneNumberEntityStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicSipNumberImportPayloadTerminationTransport?), TypeInfoPropertyName = "NullablePublicSipNumberImportPayloadTerminationTransport2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicPhoneNumberUpdatePayloadTransferCallerId?), TypeInfoPropertyName = "NullablePublicPhoneNumberUpdatePayloadTransferCallerId2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicSipNumberConfigPayloadTerminationTransport?), TypeInfoPropertyName = "NullablePublicSipNumberConfigPayloadTerminationTransport2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<global::FishAudio.PublicPhoneNumberPurchasePayload, global::FishAudio.PublicSipNumberImportPayload>?), TypeInfoPropertyName = "NullableAnyOfPublicPhoneNumberPurchasePayloadPublicSipNumberImportPayload2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType?), TypeInfoPropertyName = "NullableGetAgentAvailablePhoneNumbersNumberType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneNumbersResponseProvider?), TypeInfoPropertyName = "NullableCreateAgentPhoneNumbersResponseProvider2")]
@@ -102,6 +113,10 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentPhoneNumbersResponseTransferCallerId?), TypeInfoPropertyName = "NullablePatchAgentPhoneNumbersResponseTransferCallerId2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentPhoneNumbersResponseCallerIdSyncStatus?), TypeInfoPropertyName = "NullablePatchAgentPhoneNumbersResponseCallerIdSyncStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus?), TypeInfoPropertyName = "NullablePatchAgentPhoneNumbersResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseProvider?), TypeInfoPropertyName = "NullablePutAgentPhoneNumbersSipConfigResponseProvider2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseTransferCallerId?), TypeInfoPropertyName = "NullablePutAgentPhoneNumbersSipConfigResponseTransferCallerId2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseCallerIdSyncStatus?), TypeInfoPropertyName = "NullablePutAgentPhoneNumbersSipConfigResponseCallerIdSyncStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseStatus?), TypeInfoPropertyName = "NullablePutAgentPhoneNumbersSipConfigResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.PublicPhoneNumberEntity>))]
     internal sealed partial class PhoneNumbersSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
@@ -234,6 +249,10 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.PublicPhoneNumberUpdatePayloadTransferCallerId?)
 
+                    || typeToConvert == typeof(global::FishAudio.PublicSipNumberConfigPayloadTerminationTransport)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicSipNumberConfigPayloadTerminationTransport?)
+
                     || typeToConvert == typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType)
 
                     || typeToConvert == typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType?)
@@ -284,7 +303,23 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus)
 
-                    || typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus?);
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseProvider)
+
+                    || typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseProvider?)
+
+                    || typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseTransferCallerId)
+
+                    || typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseTransferCallerId?)
+
+                    || typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseCallerIdSyncStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseCallerIdSyncStatus?)
+
+                    || typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseStatus)
+
+                    || typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseStatus?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -349,6 +384,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.PublicPhoneNumberUpdatePayloadTransferCallerId?))
                 {
                     return new global::FishAudio.JsonConverters.PublicPhoneNumberUpdatePayloadTransferCallerIdNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicSipNumberConfigPayloadTerminationTransport))
+                {
+                    return new global::FishAudio.JsonConverters.PublicSipNumberConfigPayloadTerminationTransportJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicSipNumberConfigPayloadTerminationTransport?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicSipNumberConfigPayloadTerminationTransportNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.GetAgentAvailablePhoneNumbersNumberType))
@@ -479,6 +524,46 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.PatchAgentPhoneNumbersResponseStatus?))
                 {
                     return new global::FishAudio.JsonConverters.PatchAgentPhoneNumbersResponseStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseProvider))
+                {
+                    return new global::FishAudio.JsonConverters.PutAgentPhoneNumbersSipConfigResponseProviderJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseProvider?))
+                {
+                    return new global::FishAudio.JsonConverters.PutAgentPhoneNumbersSipConfigResponseProviderNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseTransferCallerId))
+                {
+                    return new global::FishAudio.JsonConverters.PutAgentPhoneNumbersSipConfigResponseTransferCallerIdJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseTransferCallerId?))
+                {
+                    return new global::FishAudio.JsonConverters.PutAgentPhoneNumbersSipConfigResponseTransferCallerIdNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseCallerIdSyncStatus))
+                {
+                    return new global::FishAudio.JsonConverters.PutAgentPhoneNumbersSipConfigResponseCallerIdSyncStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseCallerIdSyncStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.PutAgentPhoneNumbersSipConfigResponseCallerIdSyncStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseStatus))
+                {
+                    return new global::FishAudio.JsonConverters.PutAgentPhoneNumbersSipConfigResponseStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PutAgentPhoneNumbersSipConfigResponseStatus?))
+                {
+                    return new global::FishAudio.JsonConverters.PutAgentPhoneNumbersSipConfigResponseStatusNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }
