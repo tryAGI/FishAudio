@@ -15,9 +15,14 @@ namespace FishAudio
         /// origination at our SIP host, provide inbound authentication (digest<br/>
         /// and/or source CIDRs) and optionally a termination host so the number can<br/>
         /// place calls; nothing is rented and there is no monthly fee. Either way,<br/>
-        /// 409 means the number is already on the platform; 502 means the provider<br/>
-        /// or trunk provisioning refused, and the number stays visible with status<br/>
-        /// `error` and is safe to release.
+        /// 409 means the number is already on the platform, and 502 means the<br/>
+        /// provider or trunk provisioning refused. Nothing is charged and no number<br/>
+        /// is added, so pick another number or correct the trunk settings and try<br/>
+        /// again. If the provider did not answer, the number can stay in `error`<br/>
+        /// with `status_reason` `provisioning_failed`, and releasing it cleans up.<br/>
+        /// 403 with<br/>
+        /// `reason: phone_number_limit_reached` means your team already holds as<br/>
+        /// many numbers as it may. An account that has never added credit holds one.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -39,9 +44,14 @@ namespace FishAudio
         /// origination at our SIP host, provide inbound authentication (digest<br/>
         /// and/or source CIDRs) and optionally a termination host so the number can<br/>
         /// place calls; nothing is rented and there is no monthly fee. Either way,<br/>
-        /// 409 means the number is already on the platform; 502 means the provider<br/>
-        /// or trunk provisioning refused, and the number stays visible with status<br/>
-        /// `error` and is safe to release.
+        /// 409 means the number is already on the platform, and 502 means the<br/>
+        /// provider or trunk provisioning refused. Nothing is charged and no number<br/>
+        /// is added, so pick another number or correct the trunk settings and try<br/>
+        /// again. If the provider did not answer, the number can stay in `error`<br/>
+        /// with `status_reason` `provisioning_failed`, and releasing it cleans up.<br/>
+        /// 403 with<br/>
+        /// `reason: phone_number_limit_reached` means your team already holds as<br/>
+        /// many numbers as it may. An account that has never added credit holds one.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -63,9 +73,14 @@ namespace FishAudio
         /// origination at our SIP host, provide inbound authentication (digest<br/>
         /// and/or source CIDRs) and optionally a termination host so the number can<br/>
         /// place calls; nothing is rented and there is no monthly fee. Either way,<br/>
-        /// 409 means the number is already on the platform; 502 means the provider<br/>
-        /// or trunk provisioning refused, and the number stays visible with status<br/>
-        /// `error` and is safe to release.
+        /// 409 means the number is already on the platform, and 502 means the<br/>
+        /// provider or trunk provisioning refused. Nothing is charged and no number<br/>
+        /// is added, so pick another number or correct the trunk settings and try<br/>
+        /// again. If the provider did not answer, the number can stay in `error`<br/>
+        /// with `status_reason` `provisioning_failed`, and releasing it cleans up.<br/>
+        /// 403 with<br/>
+        /// `reason: phone_number_limit_reached` means your team already holds as<br/>
+        /// many numbers as it may. An account that has never added credit holds one.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

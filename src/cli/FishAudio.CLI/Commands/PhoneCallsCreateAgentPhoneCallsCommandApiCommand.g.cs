@@ -121,6 +121,8 @@ Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,
                         command.Options.Add(LlmExtraBody);
                         command.Options.Add(SipHeaders);                        command.Options.Add(OverridesOptions.FirstMessage);
                         command.Options.Add(OverridesOptions.FirstMessagePrompt);
+                        command.Options.Add(OverridesOptions.FirstMessageMaxWaitMs);
+                        command.Options.Add(OverridesOptions.FirstMessageInterruptible);
                         command.Options.Add(OverridesOptions.SystemPrompt);
                         command.Options.Add(OverridesOptions.VoiceId);
           command.Options.Add(Input);
@@ -159,15 +161,19 @@ Errors carry a machine-readable `reason` (e.g. `destination_not_allowed`,
 
                         var __OverridesBase = __requestBase is { } __OverridesBaseValue ? __OverridesBaseValue.Overrides : default;                        var overridesFirstMessage = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessage) ? parseResult.GetValue(OverridesOptions.FirstMessage) : (__OverridesBase is { } __OverridesfirstMessageBaseValue ? __OverridesfirstMessageBaseValue.FirstMessage : default);
                         var overridesFirstMessagePrompt = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessagePrompt) ? parseResult.GetValue(OverridesOptions.FirstMessagePrompt) : (__OverridesBase is { } __OverridesfirstMessagePromptBaseValue ? __OverridesfirstMessagePromptBaseValue.FirstMessagePrompt : default);
+                        var overridesFirstMessageMaxWaitMs = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessageMaxWaitMs) ? parseResult.GetValue(OverridesOptions.FirstMessageMaxWaitMs) : (__OverridesBase is { } __OverridesfirstMessageMaxWaitMsBaseValue ? __OverridesfirstMessageMaxWaitMsBaseValue.FirstMessageMaxWaitMs : default);
+                        var overridesFirstMessageInterruptible = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessageInterruptible) ? parseResult.GetValue(OverridesOptions.FirstMessageInterruptible) : (__OverridesBase is { } __OverridesfirstMessageInterruptibleBaseValue ? __OverridesfirstMessageInterruptibleBaseValue.FirstMessageInterruptible : default);
                         var overridesSystemPrompt = CliRuntime.WasSpecified(parseResult, OverridesOptions.SystemPrompt) ? parseResult.GetValue(OverridesOptions.SystemPrompt) : (__OverridesBase is { } __OverridessystemPromptBaseValue ? __OverridessystemPromptBaseValue.SystemPrompt : default);
                         var overridesVoiceId = CliRuntime.WasSpecified(parseResult, OverridesOptions.VoiceId) ? parseResult.GetValue(OverridesOptions.VoiceId) : (__OverridesBase is { } __OverridesvoiceIdBaseValue ? __OverridesvoiceIdBaseValue.VoiceId : default);
-                        var __OverridesSpecified = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessage) || CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessagePrompt) || CliRuntime.WasSpecified(parseResult, OverridesOptions.SystemPrompt) || CliRuntime.WasSpecified(parseResult, OverridesOptions.VoiceId);
+                        var __OverridesSpecified = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessage) || CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessagePrompt) || CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessageMaxWaitMs) || CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessageInterruptible) || CliRuntime.WasSpecified(parseResult, OverridesOptions.SystemPrompt) || CliRuntime.WasSpecified(parseResult, OverridesOptions.VoiceId);
                         var overrides =
                             __OverridesSpecified || __OverridesBase is not null
                                 ? new global::FishAudio.AgentSessionOverridesPayload
                                 {
 	                                FirstMessage = overridesFirstMessage,
                                 FirstMessagePrompt = overridesFirstMessagePrompt,
+                                FirstMessageMaxWaitMs = overridesFirstMessageMaxWaitMs,
+                                FirstMessageInterruptible = overridesFirstMessageInterruptible,
                                 SystemPrompt = overridesSystemPrompt,
                                 VoiceId = overridesVoiceId,
 

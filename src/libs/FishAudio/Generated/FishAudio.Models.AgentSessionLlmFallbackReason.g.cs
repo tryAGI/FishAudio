@@ -23,6 +23,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        Refused,
+        /// <summary>
+        ///
+        /// </summary>
         Timeout,
         /// <summary>
         ///
@@ -49,6 +53,7 @@ namespace FishAudio
                 AgentSessionLlmFallbackReason.Empty => "empty",
                 AgentSessionLlmFallbackReason.Error => "error",
                 AgentSessionLlmFallbackReason.KickIn => "kick_in",
+                AgentSessionLlmFallbackReason.Refused => "refused",
                 AgentSessionLlmFallbackReason.Timeout => "timeout",
                 AgentSessionLlmFallbackReason.TotalTimeout => "total_timeout",
                 AgentSessionLlmFallbackReason.TtftTimeout => "ttft_timeout",
@@ -65,6 +70,7 @@ namespace FishAudio
                 "empty" => AgentSessionLlmFallbackReason.Empty,
                 "error" => AgentSessionLlmFallbackReason.Error,
                 "kick_in" => AgentSessionLlmFallbackReason.KickIn,
+                "refused" => AgentSessionLlmFallbackReason.Refused,
                 "timeout" => AgentSessionLlmFallbackReason.Timeout,
                 "total_timeout" => AgentSessionLlmFallbackReason.TotalTimeout,
                 "ttft_timeout" => AgentSessionLlmFallbackReason.TtftTimeout,

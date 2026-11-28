@@ -31,6 +31,8 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestAssertionResultToolType), TypeInfoPropertyName = "AgentTestAssertionResultToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestConditionResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestConditionResultResult), TypeInfoPropertyName = "AgentTestConditionResultResult2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestJudge))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestJudgeReasoningLevel), TypeInfoPropertyName = "AgentTestJudgeReasoningLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestMockGap))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestMockGapToolType), TypeInfoPropertyName = "AgentTestMockGapToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestMockGapSource), TypeInfoPropertyName = "AgentTestMockGapSource2")]
@@ -58,6 +60,8 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.PublicAgentTestRunLLMCharge>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestTool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestToolType), TypeInfoPropertyName = "PublicAgentTestToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.PublicAgentTestToolChannel>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestToolChannel), TypeInfoPropertyName = "PublicAgentTestToolChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestBatchSummary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestBatchSummaryStatus), TypeInfoPropertyName = "PublicAgentTestBatchSummaryStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestBatchSummaryTriggerSource), TypeInfoPropertyName = "PublicAgentTestBatchSummaryTriggerSource2")]
@@ -91,25 +95,22 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestCreatePayloadTestType), TypeInfoPropertyName = "PublicAgentTestCreatePayloadTestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentTestMessagePayload>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.AgentTestToolParameter>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestCreatePayloadChannel), TypeInfoPropertyName = "PublicAgentTestCreatePayloadChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestMessage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestMessageRole), TypeInfoPropertyName = "PublicAgentTestMessageRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestUpdatePayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestUpdatePayloadTestType), TypeInfoPropertyName = "PublicAgentTestUpdatePayloadTestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestUpdatePayloadChannel), TypeInfoPropertyName = "PublicAgentTestUpdatePayloadChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestRunSummary))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestRunSummaryTestType), TypeInfoPropertyName = "PublicAgentTestRunSummaryTestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestRunSummaryStatus), TypeInfoPropertyName = "PublicAgentTestRunSummaryStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestSettingsPatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentAgentsTestsRunRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestsTestType), TypeInfoPropertyName = "GetAgentTestsTestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestRunsStatus), TypeInfoPropertyName = "GetAgentTestRunsStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestRunsTestType), TypeInfoPropertyName = "GetAgentTestRunsTestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentAgentsTestsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentAgentsTestsResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentAgentsTestsResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PutAgentAgentsTestsResponse4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentAgentsTestsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentAgentsTestsResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentAgentsTestsResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentAgentsTestsResponse4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentAgentsTestsRunResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentAgentsTestsRunResponseStatus), TypeInfoPropertyName = "CreateAgentAgentsTestsRunResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.PublicAgentTestRun>))]
@@ -145,24 +146,25 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentTestsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentTestsResponseTestType), TypeInfoPropertyName = "CreateAgentTestsResponseTestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.PublicAgentTestMessage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentTestsResponseChannel), TypeInfoPropertyName = "CreateAgentTestsResponseChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentTestsResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentTestsResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentTestsResponse4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentTestsResponse5))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestsResponse6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestsResponseTestType), TypeInfoPropertyName = "GetAgentTestsResponseTestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestsResponseChannel), TypeInfoPropertyName = "GetAgentTestsResponseChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestsResponse7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestsResponse8))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestsResponse9))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestsResponseTestType), TypeInfoPropertyName = "PatchAgentTestsResponseTestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestsResponseChannel), TypeInfoPropertyName = "PatchAgentTestsResponseChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestsResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestsResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestsResponse4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestsResponse5))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentTestsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentTestsResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.DeleteAgentTestsResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestRunsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::FishAudio.PublicAgentTestRunSummary>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestRunsResponse2))]
@@ -177,6 +179,17 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestRunsResponse7))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestRunsResponse8))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestRunsResponse9))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestSettingsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestSettingsResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestSettingsResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestSettingsResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestSettingsResponse5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestSettingsResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestSettingsResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestSettingsResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestSettingsResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestSettingsResponse5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestSettingsResponse6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
@@ -187,6 +200,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestAssertionResultKind?), TypeInfoPropertyName = "NullableAgentTestAssertionResultKind2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestAssertionResultToolType?), TypeInfoPropertyName = "NullableAgentTestAssertionResultToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestConditionResultResult?), TypeInfoPropertyName = "NullableAgentTestConditionResultResult2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestJudgeReasoningLevel?), TypeInfoPropertyName = "NullableAgentTestJudgeReasoningLevel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestMockGapToolType?), TypeInfoPropertyName = "NullableAgentTestMockGapToolType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestMockGapSource?), TypeInfoPropertyName = "NullableAgentTestMockGapSource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestToolCallRecordMockSource?), TypeInfoPropertyName = "NullableAgentTestToolCallRecordMockSource2")]
@@ -197,6 +211,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestRunEndedBy?), TypeInfoPropertyName = "NullablePublicAgentTestRunEndedBy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestRunLLMChargeParticipant?), TypeInfoPropertyName = "NullablePublicAgentTestRunLLMChargeParticipant2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestToolType?), TypeInfoPropertyName = "NullablePublicAgentTestToolType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestToolChannel?), TypeInfoPropertyName = "NullablePublicAgentTestToolChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestBatchSummaryStatus?), TypeInfoPropertyName = "NullablePublicAgentTestBatchSummaryStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestBatchSummaryTriggerSource?), TypeInfoPropertyName = "NullablePublicAgentTestBatchSummaryTriggerSource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestSummaryTestType?), TypeInfoPropertyName = "NullablePublicAgentTestSummaryTestType2")]
@@ -209,8 +224,10 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestToolMocksFallback?), TypeInfoPropertyName = "NullableAgentTestToolMocksFallback2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentTestToolParameterType?), TypeInfoPropertyName = "NullableAgentTestToolParameterType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestCreatePayloadTestType?), TypeInfoPropertyName = "NullablePublicAgentTestCreatePayloadTestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestCreatePayloadChannel?), TypeInfoPropertyName = "NullablePublicAgentTestCreatePayloadChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestMessageRole?), TypeInfoPropertyName = "NullablePublicAgentTestMessageRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestUpdatePayloadTestType?), TypeInfoPropertyName = "NullablePublicAgentTestUpdatePayloadTestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestUpdatePayloadChannel?), TypeInfoPropertyName = "NullablePublicAgentTestUpdatePayloadChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestRunSummaryTestType?), TypeInfoPropertyName = "NullablePublicAgentTestRunSummaryTestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PublicAgentTestRunSummaryStatus?), TypeInfoPropertyName = "NullablePublicAgentTestRunSummaryStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestsTestType?), TypeInfoPropertyName = "NullableGetAgentTestsTestType2")]
@@ -219,8 +236,11 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentAgentsTestsRunResponseStatus?), TypeInfoPropertyName = "NullableCreateAgentAgentsTestsRunResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentAgentsTestBatchesResponseStatus?), TypeInfoPropertyName = "NullableGetAgentAgentsTestBatchesResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentTestsResponseTestType?), TypeInfoPropertyName = "NullableCreateAgentTestsResponseTestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentTestsResponseChannel?), TypeInfoPropertyName = "NullableCreateAgentTestsResponseChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestsResponseTestType?), TypeInfoPropertyName = "NullableGetAgentTestsResponseTestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestsResponseChannel?), TypeInfoPropertyName = "NullableGetAgentTestsResponseChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestsResponseTestType?), TypeInfoPropertyName = "NullablePatchAgentTestsResponseTestType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PatchAgentTestsResponseChannel?), TypeInfoPropertyName = "NullablePatchAgentTestsResponseChannel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestRunsResponseTestType?), TypeInfoPropertyName = "NullableGetAgentTestRunsResponseTestType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestRunsResponseStatus?), TypeInfoPropertyName = "NullableGetAgentTestRunsResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.GetAgentTestRunsResponseChannel?), TypeInfoPropertyName = "NullableGetAgentTestRunsResponseChannel2")]
@@ -233,6 +253,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentSessionLlmEndpointError>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentTestMockGap>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.PublicAgentTestRunLLMCharge>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.PublicAgentTestToolChannel>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentTestToolCallAssertion>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentTestReferencedTool>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentTestSuccessCondition>))]
@@ -370,6 +391,10 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.AgentTestConditionResultResult?)
 
+                    || typeToConvert == typeof(global::FishAudio.AgentTestJudgeReasoningLevel)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentTestJudgeReasoningLevel?)
+
                     || typeToConvert == typeof(global::FishAudio.AgentTestMockGapToolType)
 
                     || typeToConvert == typeof(global::FishAudio.AgentTestMockGapToolType?)
@@ -409,6 +434,10 @@ namespace FishAudio
                     || typeToConvert == typeof(global::FishAudio.PublicAgentTestToolType)
 
                     || typeToConvert == typeof(global::FishAudio.PublicAgentTestToolType?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentTestToolChannel)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentTestToolChannel?)
 
                     || typeToConvert == typeof(global::FishAudio.PublicAgentTestBatchSummaryStatus)
 
@@ -458,6 +487,10 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.PublicAgentTestCreatePayloadTestType?)
 
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentTestCreatePayloadChannel)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentTestCreatePayloadChannel?)
+
                     || typeToConvert == typeof(global::FishAudio.PublicAgentTestMessageRole)
 
                     || typeToConvert == typeof(global::FishAudio.PublicAgentTestMessageRole?)
@@ -465,6 +498,10 @@ namespace FishAudio
                     || typeToConvert == typeof(global::FishAudio.PublicAgentTestUpdatePayloadTestType)
 
                     || typeToConvert == typeof(global::FishAudio.PublicAgentTestUpdatePayloadTestType?)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentTestUpdatePayloadChannel)
+
+                    || typeToConvert == typeof(global::FishAudio.PublicAgentTestUpdatePayloadChannel?)
 
                     || typeToConvert == typeof(global::FishAudio.PublicAgentTestRunSummaryTestType)
 
@@ -498,13 +535,25 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.CreateAgentTestsResponseTestType?)
 
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentTestsResponseChannel)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAgentTestsResponseChannel?)
+
                     || typeToConvert == typeof(global::FishAudio.GetAgentTestsResponseTestType)
 
                     || typeToConvert == typeof(global::FishAudio.GetAgentTestsResponseTestType?)
 
+                    || typeToConvert == typeof(global::FishAudio.GetAgentTestsResponseChannel)
+
+                    || typeToConvert == typeof(global::FishAudio.GetAgentTestsResponseChannel?)
+
                     || typeToConvert == typeof(global::FishAudio.PatchAgentTestsResponseTestType)
 
                     || typeToConvert == typeof(global::FishAudio.PatchAgentTestsResponseTestType?)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentTestsResponseChannel)
+
+                    || typeToConvert == typeof(global::FishAudio.PatchAgentTestsResponseChannel?)
 
                     || typeToConvert == typeof(global::FishAudio.GetAgentTestRunsResponseTestType)
 
@@ -575,6 +624,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.AgentTestConditionResultResult?))
                 {
                     return new global::FishAudio.JsonConverters.AgentTestConditionResultResultNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentTestJudgeReasoningLevel))
+                {
+                    return new global::FishAudio.JsonConverters.AgentTestJudgeReasoningLevelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentTestJudgeReasoningLevel?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentTestJudgeReasoningLevelNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.AgentTestMockGapToolType))
@@ -675,6 +734,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.PublicAgentTestToolType?))
                 {
                     return new global::FishAudio.JsonConverters.PublicAgentTestToolTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentTestToolChannel))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentTestToolChannelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentTestToolChannel?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentTestToolChannelNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.PublicAgentTestBatchSummaryStatus))
@@ -797,6 +866,16 @@ namespace FishAudio
                     return new global::FishAudio.JsonConverters.PublicAgentTestCreatePayloadTestTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentTestCreatePayloadChannel))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentTestCreatePayloadChannelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentTestCreatePayloadChannel?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentTestCreatePayloadChannelNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::FishAudio.PublicAgentTestMessageRole))
                 {
                     return new global::FishAudio.JsonConverters.PublicAgentTestMessageRoleJsonConverter();
@@ -815,6 +894,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.PublicAgentTestUpdatePayloadTestType?))
                 {
                     return new global::FishAudio.JsonConverters.PublicAgentTestUpdatePayloadTestTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentTestUpdatePayloadChannel))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentTestUpdatePayloadChannelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PublicAgentTestUpdatePayloadChannel?))
+                {
+                    return new global::FishAudio.JsonConverters.PublicAgentTestUpdatePayloadChannelNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.PublicAgentTestRunSummaryTestType))
@@ -897,6 +986,16 @@ namespace FishAudio
                     return new global::FishAudio.JsonConverters.CreateAgentTestsResponseTestTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentTestsResponseChannel))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentTestsResponseChannelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAgentTestsResponseChannel?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAgentTestsResponseChannelNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::FishAudio.GetAgentTestsResponseTestType))
                 {
                     return new global::FishAudio.JsonConverters.GetAgentTestsResponseTestTypeJsonConverter();
@@ -907,6 +1006,16 @@ namespace FishAudio
                     return new global::FishAudio.JsonConverters.GetAgentTestsResponseTestTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::FishAudio.GetAgentTestsResponseChannel))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentTestsResponseChannelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.GetAgentTestsResponseChannel?))
+                {
+                    return new global::FishAudio.JsonConverters.GetAgentTestsResponseChannelNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::FishAudio.PatchAgentTestsResponseTestType))
                 {
                     return new global::FishAudio.JsonConverters.PatchAgentTestsResponseTestTypeJsonConverter();
@@ -915,6 +1024,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.PatchAgentTestsResponseTestType?))
                 {
                     return new global::FishAudio.JsonConverters.PatchAgentTestsResponseTestTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentTestsResponseChannel))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentTestsResponseChannelJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.PatchAgentTestsResponseChannel?))
+                {
+                    return new global::FishAudio.JsonConverters.PatchAgentTestsResponseChannelNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.GetAgentTestRunsResponseTestType))

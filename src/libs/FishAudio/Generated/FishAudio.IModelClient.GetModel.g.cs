@@ -43,7 +43,7 @@ namespace FishAudio
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::FishAudio.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::FishAudio.GetModelResponse> GetModelAsync(
+        global::System.Threading.Tasks.Task<global::FishAudio.GetModelResponse4> GetModelAsync(
             int? pageSize = default,
             int? pageNumber = default,
             string? title = default,
@@ -96,7 +96,7 @@ namespace FishAudio
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::FishAudio.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetModelResponse>> GetModelAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetModelResponse4>> GetModelAsResponseAsync(
             int? pageSize = default,
             int? pageNumber = default,
             string? title = default,

@@ -59,9 +59,14 @@ imports a number you already own at your carrier: point your trunk's
 origination at our SIP host, provide inbound authentication (digest
 and/or source CIDRs) and optionally a termination host so the number can
 place calls; nothing is rented and there is no monthly fee. Either way,
-409 means the number is already on the platform; 502 means the provider
-or trunk provisioning refused, and the number stays visible with status
-`error` and is safe to release.");
+409 means the number is already on the platform, and 502 means the
+provider or trunk provisioning refused. Nothing is charged and no number
+is added, so pick another number or correct the trunk settings and try
+again. If the provider did not answer, the number can stay in `error`
+with `status_reason` `provisioning_failed`, and releasing it cleans up.
+403 with
+`reason: phone_number_limit_reached` means your team already holds as
+many numbers as it may. An account that has never added credit holds one.");
 
           command.Options.Add(Input);
           command.Options.Add(RequestJson);

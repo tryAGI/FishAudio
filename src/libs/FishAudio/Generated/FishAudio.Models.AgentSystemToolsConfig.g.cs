@@ -34,6 +34,12 @@ namespace FishAudio
         public bool? HangUpCallRefuseQuestions { get; set; }
 
         /// <summary>
+        /// Beta. Key presses on outbound phone calls, for calls that reach an automated phone menu before a person.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("press_keys")]
+        public global::FishAudio.AgentPressKeysConfig? PressKeys { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -52,6 +58,9 @@ namespace FishAudio
         /// <param name="hangUpCallRefuseQuestions">
         /// Default Value: false
         /// </param>
+        /// <param name="pressKeys">
+        /// Beta. Key presses on outbound phone calls, for calls that reach an automated phone menu before a person.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -59,12 +68,14 @@ namespace FishAudio
             bool? hangUpCall,
             global::FishAudio.AgentSystemToolsConfigHangUpCallFarewellMode? hangUpCallFarewellMode,
             string? hangUpCallFarewellMessage,
-            bool? hangUpCallRefuseQuestions)
+            bool? hangUpCallRefuseQuestions,
+            global::FishAudio.AgentPressKeysConfig? pressKeys)
         {
             this.HangUpCall = hangUpCall;
             this.HangUpCallFarewellMode = hangUpCallFarewellMode;
             this.HangUpCallFarewellMessage = hangUpCallFarewellMessage;
             this.HangUpCallRefuseQuestions = hangUpCallRefuseQuestions;
+            this.PressKeys = pressKeys;
         }
 
         /// <summary>

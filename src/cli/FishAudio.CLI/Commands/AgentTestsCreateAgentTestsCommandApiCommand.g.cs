@@ -53,6 +53,12 @@ internal static partial class AgentTestsCreateAgentTestsCommandApiCommand
         name: @"--verify-absence",
         description: @"");
 
+    private static Option<global::FishAudio.PublicAgentTestCreatePayloadChannel?> Channel { get; } = new(
+        name: @"--channel")
+    {
+        Description = @"The channel a `next_reply` or `tool` test plays, `web_voice` when left out. The agent speaks and has the tools as on that channel: client tools on `web_voice` only, `_transfer_call` on the two phone channels, `_press_keys` and `_skip_turn` on `phone_outbound`. A `tool` test cannot reference a tool its channel lacks. A `simulation` test has its own in `simulation.channel`.",
+    };
+
     private static Option<object?> DynamicVariables { get; } = new(
         name: @"--dynamic-variables")
     {
@@ -67,6 +73,8 @@ internal static partial class AgentTestsCreateAgentTestsCommandApiCommand
     private static readonly AgentTestReferencedToolOptionSet ReferencedToolOptions = AgentTestReferencedToolOptionSet.Create(@"referenced-tool");
 
     private static readonly AgentTestSimulationConfigOptionSet SimulationOptions = AgentTestSimulationConfigOptionSet.Create(@"simulation");
+
+    private static readonly AgentTestJudgeOptionSet JudgeOptions = AgentTestJudgeOptionSet.Create(@"judge");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -113,12 +121,13 @@ Create a test: `next_reply` judges the agent's next reply against an
 expectation, `tool` checks the tool the agent calls next, and `simulation`
 lets a simulated user hold a whole conversation that is scored against
 success conditions. Pass `agent_ids` to attach the test right away.
+`channel` sets the channel a `next_reply` or `tool` test plays.
 
 The body of `GET /v1/agent/tests/{test_id}` posts back as is, so tests can
 be exported and imported. Tool references use your workspace's tool ids
 (list them with `GET /v1/agent/agents/{agent_id}/test-tools`), so an export
 imports cleanly within the same team and needs its tool ids remapped
-elsewhere.");
+elsewhere. System tools go by their tool name, the same in every team.");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(TestType);
                         command.Options.Add(Conversation);
@@ -127,6 +136,7 @@ elsewhere.");
                         command.Options.Add(FailureExamples);
                         command.Options.Add(ToolParameters);
                         command.Options.Add(VerifyAbsence);
+                        command.Options.Add(Channel);
                         command.Options.Add(DynamicVariables);
                         command.Options.Add(AgentIds);                        command.Options.Add(ReferencedToolOptions.Id);
                         command.Options.Add(ReferencedToolOptions.NameOption);
@@ -134,7 +144,7 @@ elsewhere.");
                         command.Options.Add(ReferencedToolOptions.DescriptionOption);                        command.Options.Add(SimulationOptions.Scenario);
                         command.Options.Add(SimulationOptions.MaxTurns);
                         command.Options.Add(SimulationOptions.SimulatedUserModel);
-                        command.Options.Add(SimulationOptions.RepeatCount);
+                        command.Options.Add(SimulationOptions.RepeatCount);                        command.Options.Add(JudgeOptions.Model);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -168,6 +178,7 @@ elsewhere.");
                         var failureExamples = CliRuntime.WasSpecified(parseResult, FailureExamples) ? parseResult.GetValue(FailureExamples) : (__requestBase is { } __FailureExamplesBaseValue ? __FailureExamplesBaseValue.FailureExamples : default);
                         var toolParameters = CliRuntime.WasSpecified(parseResult, ToolParameters) ? parseResult.GetValue(ToolParameters) : (__requestBase is { } __ToolParametersBaseValue ? __ToolParametersBaseValue.ToolParameters : default);
                         var verifyAbsence = CliRuntime.WasSpecified(parseResult, VerifyAbsence) ? parseResult.GetValue(VerifyAbsence) : (__requestBase is { } __VerifyAbsenceBaseValue ? __VerifyAbsenceBaseValue.VerifyAbsence : default);
+                        var channel = CliRuntime.WasSpecified(parseResult, Channel) ? parseResult.GetValue(Channel) : (__requestBase is { } __ChannelBaseValue ? __ChannelBaseValue.Channel : default);
                         var dynamicVariables = CliRuntime.WasSpecified(parseResult, DynamicVariables) ? parseResult.GetValue(DynamicVariables) : (__requestBase is { } __DynamicVariablesBaseValue ? __DynamicVariablesBaseValue.DynamicVariables : default);
                         var agentIds = CliRuntime.WasSpecified(parseResult, AgentIds) ? parseResult.GetValue(AgentIds) : (__requestBase is { } __AgentIdsBaseValue ? __AgentIdsBaseValue.AgentIds : default);
 
@@ -204,6 +215,17 @@ elsewhere.");
 	                                SuccessConditions = __SimulationBase is not null ? __SimulationBase.SuccessConditions : throw new CliException(@"Simulation.success_conditions is required when using simulation options. Provide it with --request-json or --request-file."),
                                 }
                                 : __SimulationBase;
+
+                        var __JudgeBase = __requestBase is { } __JudgeBaseValue ? __JudgeBaseValue.Judge : default;                        var judgeModel = parseResult.GetValue(JudgeOptions.Model);
+                        var __JudgeSpecified = CliRuntime.WasSpecified(parseResult, JudgeOptions.Model);
+                        var judge =
+                            __JudgeSpecified || __JudgeBase is not null
+                                ? new global::FishAudio.AgentTestJudge
+                                {
+	                                Model = judgeModel!,
+
+                                }
+                                : __JudgeBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -216,10 +238,12 @@ elsewhere.");
                                     failureExamples: failureExamples,
                                     toolParameters: toolParameters,
                                     verifyAbsence: verifyAbsence,
+                                    channel: channel,
                                     dynamicVariables: dynamicVariables,
                                     agentIds: agentIds,
                                     referencedTool: referencedTool,
                                     simulation: simulation,
+                                    judge: judge,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

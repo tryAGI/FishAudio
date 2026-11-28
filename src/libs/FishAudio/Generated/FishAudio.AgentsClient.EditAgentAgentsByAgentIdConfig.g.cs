@@ -47,15 +47,15 @@ namespace FishAudio
         /// Update Draft Config<br/>
         /// Patch the draft configuration section by section; omitted sections keep<br/>
         /// their value. Changes only affect live sessions after the next publish.<br/>
-        /// `prompt.system_prompt` is limited to 32000 tokens (422 beyond); keeping it<br/>
-        /// under 2000 tokens is recommended for latency and cost.<br/>
+        /// `prompt.system_prompt` is limited to 64000 tokens, 32000 when `llm.model`<br/>
+        /// is `google/gemma-4-26b-a4b-it` (422 beyond); keeping it under 2000 tokens<br/>
+        /// is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes<br/>
         /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer<br/>
         /// expressive delivery (emotion steering, laughter and sounds, pauses); off<br/>
         /// keeps the standard delivery. The `asr` section configures speech<br/>
-        /// recognition. `asr.model` picks the model: `deepgram:nova-3` (default),<br/>
-        /// `elevenlabs:scribe_v2_realtime`, `elevenlabs:scribe_v2_medical`, or<br/>
+        /// recognition. `asr.model` picks the model: `deepgram:nova-3` (default) or<br/>
         /// `fish_audio:transcribe-stream-1` (Fish realtime recognition, which<br/>
         /// also decides end of turn and whether the caller is interrupting).<br/>
         /// Its former id `fish_audio:transcribe-1-pro-realtime` is still accepted<br/>
@@ -110,17 +110,26 @@ namespace FishAudio
         ///   from it.<br/>
         /// - `conversation.response_max_wait_ms: 0` reads back as `null`<br/>
         ///   (automatic).<br/>
+        /// - `conversation.backchannel` keeps the fields you omit.<br/>
+        ///   `strength: null` goes back to the speech engine's own setting.<br/>
+        /// - `conversation.reengage` keeps the fields you omit, and<br/>
+        ///   `conversation.reengage.schedule` reads back as<br/>
+        ///   `conversation.reengage.steps`.<br/>
+        /// - `conversation` also returns `reengage_enabled`, copied from<br/>
+        ///   `reengage.enabled`. It is deprecated.<br/>
         /// - `knowledge_base.enabled` becomes `true` when you attach sources and<br/>
         ///   omit it.<br/>
         /// - `llm.custom.base_url` drops a trailing `/` and `/chat/completions`.<br/>
         ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
         ///   to the platform default.<br/>
         /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
-        /// - `voice.live3_voice` becomes `null` when you set `voice.voice_id`<br/>
-        ///   without it: on `live3` the agent then speaks the voice you picked.<br/>
-        ///   Switching `voice.engine` to `live3` sets an empty `voice.live3_voice`<br/>
-        ///   to `Clara` only while `voice.voice_id` is still the default voice<br/>
-        ///   and the patch sets neither.<br/>
+        /// - `voice.voice_id` reads back as the name while the agent speaks one of<br/>
+        ///   the `live3` voices. Switching `voice.engine` to `fish_tts` returns it<br/>
+        ///   to the agent's Voice Library voice, and switching back to `live3`<br/>
+        ///   restores the name. A new agent, and one still on the default voice<br/>
+        ///   when it switches to `live3`, starts on `clara`.<br/>
+        /// - `voice.live3_voice` is deprecated and mirrors that name capitalized<br/>
+        ///   (`Clara`), `null` when `voice.voice_id` is a Voice Library voice.<br/>
         /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
         ///   copied from `asr`. They are deprecated.<br/>
         /// - `config_hash` and `updated_at` are set by the server.<br/>
@@ -172,15 +181,15 @@ namespace FishAudio
         /// Update Draft Config<br/>
         /// Patch the draft configuration section by section; omitted sections keep<br/>
         /// their value. Changes only affect live sessions after the next publish.<br/>
-        /// `prompt.system_prompt` is limited to 32000 tokens (422 beyond); keeping it<br/>
-        /// under 2000 tokens is recommended for latency and cost.<br/>
+        /// `prompt.system_prompt` is limited to 64000 tokens, 32000 when `llm.model`<br/>
+        /// is `google/gemma-4-26b-a4b-it` (422 beyond); keeping it under 2000 tokens<br/>
+        /// is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes<br/>
         /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer<br/>
         /// expressive delivery (emotion steering, laughter and sounds, pauses); off<br/>
         /// keeps the standard delivery. The `asr` section configures speech<br/>
-        /// recognition. `asr.model` picks the model: `deepgram:nova-3` (default),<br/>
-        /// `elevenlabs:scribe_v2_realtime`, `elevenlabs:scribe_v2_medical`, or<br/>
+        /// recognition. `asr.model` picks the model: `deepgram:nova-3` (default) or<br/>
         /// `fish_audio:transcribe-stream-1` (Fish realtime recognition, which<br/>
         /// also decides end of turn and whether the caller is interrupting).<br/>
         /// Its former id `fish_audio:transcribe-1-pro-realtime` is still accepted<br/>
@@ -235,17 +244,26 @@ namespace FishAudio
         ///   from it.<br/>
         /// - `conversation.response_max_wait_ms: 0` reads back as `null`<br/>
         ///   (automatic).<br/>
+        /// - `conversation.backchannel` keeps the fields you omit.<br/>
+        ///   `strength: null` goes back to the speech engine's own setting.<br/>
+        /// - `conversation.reengage` keeps the fields you omit, and<br/>
+        ///   `conversation.reengage.schedule` reads back as<br/>
+        ///   `conversation.reengage.steps`.<br/>
+        /// - `conversation` also returns `reengage_enabled`, copied from<br/>
+        ///   `reengage.enabled`. It is deprecated.<br/>
         /// - `knowledge_base.enabled` becomes `true` when you attach sources and<br/>
         ///   omit it.<br/>
         /// - `llm.custom.base_url` drops a trailing `/` and `/chat/completions`.<br/>
         ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
         ///   to the platform default.<br/>
         /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
-        /// - `voice.live3_voice` becomes `null` when you set `voice.voice_id`<br/>
-        ///   without it: on `live3` the agent then speaks the voice you picked.<br/>
-        ///   Switching `voice.engine` to `live3` sets an empty `voice.live3_voice`<br/>
-        ///   to `Clara` only while `voice.voice_id` is still the default voice<br/>
-        ///   and the patch sets neither.<br/>
+        /// - `voice.voice_id` reads back as the name while the agent speaks one of<br/>
+        ///   the `live3` voices. Switching `voice.engine` to `fish_tts` returns it<br/>
+        ///   to the agent's Voice Library voice, and switching back to `live3`<br/>
+        ///   restores the name. A new agent, and one still on the default voice<br/>
+        ///   when it switches to `live3`, starts on `clara`.<br/>
+        /// - `voice.live3_voice` is deprecated and mirrors that name capitalized<br/>
+        ///   (`Clara`), `null` when `voice.voice_id` is a Voice Library voice.<br/>
         /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
         ///   copied from `asr`. They are deprecated.<br/>
         /// - `config_hash` and `updated_at` are set by the server.<br/>
@@ -555,13 +573,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::FishAudio.PatchAgentAgentsConfigResponse2.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse2.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::FishAudio.PatchAgentAgentsConfigResponse2.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse2.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -572,7 +590,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.PatchAgentAgentsConfigResponse2>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_401 is { Length: > 0 } ? __content_401 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
@@ -592,13 +610,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::FishAudio.PatchAgentAgentsConfigResponse3.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse3.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::FishAudio.PatchAgentAgentsConfigResponse3.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse3.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -609,7 +627,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.PatchAgentAgentsConfigResponse3>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_403 is { Length: > 0 } ? __content_403 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
@@ -629,13 +647,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::FishAudio.PatchAgentAgentsConfigResponse4.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse4.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::FishAudio.PatchAgentAgentsConfigResponse4.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse4.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -646,7 +664,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.PatchAgentAgentsConfigResponse4>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_404 is { Length: > 0 } ? __content_404 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
@@ -666,13 +684,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::FishAudio.PatchAgentAgentsConfigResponse5.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = __content_409 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse5.FromJson(__content_409, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_409 = global::FishAudio.PatchAgentAgentsConfigResponse5.FromJson(__content_409, JsonSerializerContext);
+                                        __value_409 = __content_409 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse5.FromJson(__content_409, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -683,7 +701,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.PatchAgentAgentsConfigResponse5>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_409 is { Length: > 0 } ? __content_409 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,
                                     responseBody: __content_409,
                                     responseObject: __value_409,
@@ -703,13 +721,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::FishAudio.PatchAgentAgentsConfigResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse6.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::FishAudio.PatchAgentAgentsConfigResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse6.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -720,7 +738,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.PatchAgentAgentsConfigResponse6>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_422 is { Length: > 0 } ? __content_422 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
                                     responseBody: __content_422,
                                     responseObject: __value_422,
@@ -740,13 +758,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::FishAudio.PatchAgentAgentsConfigResponse7.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse7.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::FishAudio.PatchAgentAgentsConfigResponse7.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.PatchAgentAgentsConfigResponse7.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -757,7 +775,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.PatchAgentAgentsConfigResponse7>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_503 is { Length: > 0 } ? __content_503 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
                                     responseBody: __content_503,
                                     responseObject: __value_503,
@@ -800,7 +818,7 @@ namespace FishAudio
                                 {
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -845,7 +863,7 @@ namespace FishAudio
 
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -866,15 +884,15 @@ namespace FishAudio
         /// Update Draft Config<br/>
         /// Patch the draft configuration section by section; omitted sections keep<br/>
         /// their value. Changes only affect live sessions after the next publish.<br/>
-        /// `prompt.system_prompt` is limited to 32000 tokens (422 beyond); keeping it<br/>
-        /// under 2000 tokens is recommended for latency and cost.<br/>
+        /// `prompt.system_prompt` is limited to 64000 tokens, 32000 when `llm.model`<br/>
+        /// is `google/gemma-4-26b-a4b-it` (422 beyond); keeping it under 2000 tokens<br/>
+        /// is recommended for latency and cost.<br/>
         /// `voice.voice_id` accepts any public voice model id.<br/>
         /// `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes<br/>
         /// (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer<br/>
         /// expressive delivery (emotion steering, laughter and sounds, pauses); off<br/>
         /// keeps the standard delivery. The `asr` section configures speech<br/>
-        /// recognition. `asr.model` picks the model: `deepgram:nova-3` (default),<br/>
-        /// `elevenlabs:scribe_v2_realtime`, `elevenlabs:scribe_v2_medical`, or<br/>
+        /// recognition. `asr.model` picks the model: `deepgram:nova-3` (default) or<br/>
         /// `fish_audio:transcribe-stream-1` (Fish realtime recognition, which<br/>
         /// also decides end of turn and whether the caller is interrupting).<br/>
         /// Its former id `fish_audio:transcribe-1-pro-realtime` is still accepted<br/>
@@ -929,17 +947,26 @@ namespace FishAudio
         ///   from it.<br/>
         /// - `conversation.response_max_wait_ms: 0` reads back as `null`<br/>
         ///   (automatic).<br/>
+        /// - `conversation.backchannel` keeps the fields you omit.<br/>
+        ///   `strength: null` goes back to the speech engine's own setting.<br/>
+        /// - `conversation.reengage` keeps the fields you omit, and<br/>
+        ///   `conversation.reengage.schedule` reads back as<br/>
+        ///   `conversation.reengage.steps`.<br/>
+        /// - `conversation` also returns `reengage_enabled`, copied from<br/>
+        ///   `reengage.enabled`. It is deprecated.<br/>
         /// - `knowledge_base.enabled` becomes `true` when you attach sources and<br/>
         ///   omit it.<br/>
         /// - `llm.custom.base_url` drops a trailing `/` and `/chat/completions`.<br/>
         ///   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`<br/>
         ///   to the platform default.<br/>
         /// - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.<br/>
-        /// - `voice.live3_voice` becomes `null` when you set `voice.voice_id`<br/>
-        ///   without it: on `live3` the agent then speaks the voice you picked.<br/>
-        ///   Switching `voice.engine` to `live3` sets an empty `voice.live3_voice`<br/>
-        ///   to `Clara` only while `voice.voice_id` is still the default voice<br/>
-        ///   and the patch sets neither.<br/>
+        /// - `voice.voice_id` reads back as the name while the agent speaks one of<br/>
+        ///   the `live3` voices. Switching `voice.engine` to `fish_tts` returns it<br/>
+        ///   to the agent's Voice Library voice, and switching back to `live3`<br/>
+        ///   restores the name. A new agent, and one still on the default voice<br/>
+        ///   when it switches to `live3`, starts on `clara`.<br/>
+        /// - `voice.live3_voice` is deprecated and mirrors that name capitalized<br/>
+        ///   (`Clara`), `null` when `voice.voice_id` is a Voice Library voice.<br/>
         /// - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`<br/>
         ///   copied from `asr`. They are deprecated.<br/>
         /// - `config_hash` and `updated_at` are set by the server.<br/>

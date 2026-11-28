@@ -22,7 +22,7 @@ internal static partial class ModelGetModelCommandApiCommand
     private static Option<string?> Title { get; } = new(
         name: @"--title")
     {
-        Description = @"Title to filter models",
+        Description = @"Search term. Matches the voice title, description and tags; with self, the title only.",
     };
 
     private static Option<global::FishAudio.AnyOf<global::System.Collections.Generic.IList<string>, string>?> Tag { get; } = new(
@@ -69,7 +69,7 @@ internal static partial class ModelGetModelCommandApiCommand
         Description = @"",
     };
 
-                    private static string FormatResponse(ParseResult parseResult, global::FishAudio.GetModelResponse value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    private static string FormatResponse(ParseResult parseResult, global::FishAudio.GetModelResponse4 value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
                     {
                         string? text = null;
                         CustomizeResponseText(parseResult, value, ref text);
@@ -85,7 +85,7 @@ internal static partial class ModelGetModelCommandApiCommand
                         return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
                     }
 
-                    static partial void CustomizeResponseText(ParseResult parseResult, global::FishAudio.GetModelResponse value, ref string? text);
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::FishAudio.GetModelResponse4 value, ref string? text);
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 

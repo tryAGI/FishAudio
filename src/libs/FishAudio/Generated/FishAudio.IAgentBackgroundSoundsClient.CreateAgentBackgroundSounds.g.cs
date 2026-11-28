@@ -7,8 +7,7 @@ namespace FishAudio
         /// <summary>
         /// Create Background Sound<br/>
         /// Upload an mp3/wav/ogg/m4a clip, up to 10 MB and 300 seconds. Send<br/>
-        /// `multipart/form-data` with the file in `file`. The server loudness-<br/>
-        /// normalizes and transcodes it to Ogg/Opus; the returned id is what<br/>
+        /// `multipart/form-data` with the file in `file`. The returned id is what<br/>
         /// `voice.background_sound.custom_asset_id` names.
         /// </summary>
         /// <param name="request"></param>
@@ -23,8 +22,7 @@ namespace FishAudio
         /// <summary>
         /// Create Background Sound<br/>
         /// Upload an mp3/wav/ogg/m4a clip, up to 10 MB and 300 seconds. Send<br/>
-        /// `multipart/form-data` with the file in `file`. The server loudness-<br/>
-        /// normalizes and transcodes it to Ogg/Opus; the returned id is what<br/>
+        /// `multipart/form-data` with the file in `file`. The returned id is what<br/>
         /// `voice.background_sound.custom_asset_id` names.
         /// </summary>
         /// <param name="request"></param>
@@ -39,8 +37,7 @@ namespace FishAudio
         /// <summary>
         /// Create Background Sound<br/>
         /// Upload an mp3/wav/ogg/m4a clip, up to 10 MB and 300 seconds. Send<br/>
-        /// `multipart/form-data` with the file in `file`. The server loudness-<br/>
-        /// normalizes and transcodes it to Ogg/Opus; the returned id is what<br/>
+        /// `multipart/form-data` with the file in `file`. The returned id is what<br/>
         /// `voice.background_sound.custom_asset_id` names.
         /// </summary>
         /// <param name="file"></param>
@@ -57,8 +54,7 @@ namespace FishAudio
         /// <summary>
         /// Create Background Sound<br/>
         /// Upload an mp3/wav/ogg/m4a clip, up to 10 MB and 300 seconds. Send<br/>
-        /// `multipart/form-data` with the file in `file`. The server loudness-<br/>
-        /// normalizes and transcodes it to Ogg/Opus; the returned id is what<br/>
+        /// `multipart/form-data` with the file in `file`. The returned id is what<br/>
         /// `voice.background_sound.custom_asset_id` names.
         /// </summary>
         /// <param name="file">
@@ -76,8 +72,7 @@ namespace FishAudio
         /// <summary>
         /// Create Background Sound<br/>
         /// Upload an mp3/wav/ogg/m4a clip, up to 10 MB and 300 seconds. Send<br/>
-        /// `multipart/form-data` with the file in `file`. The server loudness-<br/>
-        /// normalizes and transcodes it to Ogg/Opus; the returned id is what<br/>
+        /// `multipart/form-data` with the file in `file`. The returned id is what<br/>
         /// `voice.background_sound.custom_asset_id` names.
         /// </summary>
         /// <param name="file">

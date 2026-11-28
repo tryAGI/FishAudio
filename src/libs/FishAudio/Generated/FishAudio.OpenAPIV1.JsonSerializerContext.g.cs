@@ -53,7 +53,8 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.VoiceDesignRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.VoiceDesignCandidate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrRequest2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAudioInfillRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAudioInfillRequestFormat), TypeInfoPropertyName = "CreateAudioInfillRequestFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrModel), TypeInfoPropertyName = "CreateAsrModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsModel), TypeInfoPropertyName = "CreateTtsModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampModel), TypeInfoPropertyName = "CreateTtsStreamWithTimestampModel2")]
@@ -63,9 +64,8 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAudioInfillResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampResponse3))]
@@ -94,6 +94,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSStreamWithTimestampRequestFormat?), TypeInfoPropertyName = "NullableTTSStreamWithTimestampRequestFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSStreamWithTimestampRequestLatency?), TypeInfoPropertyName = "NullableTTSStreamWithTimestampRequestLatency2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.TTSLiveFinishEventReason?), TypeInfoPropertyName = "NullableTTSLiveFinishEventReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAudioInfillRequestFormat?), TypeInfoPropertyName = "NullableCreateAudioInfillRequestFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAsrModel?), TypeInfoPropertyName = "NullableCreateAsrModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsModel?), TypeInfoPropertyName = "NullableCreateTtsModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateTtsStreamWithTimestampModel?), TypeInfoPropertyName = "NullableCreateTtsStreamWithTimestampModel2")]
@@ -246,6 +247,10 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.TTSLiveFinishEventReason?)
 
+                    || typeToConvert == typeof(global::FishAudio.CreateAudioInfillRequestFormat)
+
+                    || typeToConvert == typeof(global::FishAudio.CreateAudioInfillRequestFormat?)
+
                     || typeToConvert == typeof(global::FishAudio.CreateAsrModel)
 
                     || typeToConvert == typeof(global::FishAudio.CreateAsrModel?)
@@ -329,6 +334,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.TTSLiveFinishEventReason?))
                 {
                     return new global::FishAudio.JsonConverters.TTSLiveFinishEventReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAudioInfillRequestFormat))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAudioInfillRequestFormatJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.CreateAudioInfillRequestFormat?))
+                {
+                    return new global::FishAudio.JsonConverters.CreateAudioInfillRequestFormatNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.CreateAsrModel))

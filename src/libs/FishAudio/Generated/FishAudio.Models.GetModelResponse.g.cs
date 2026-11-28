@@ -9,48 +9,219 @@ namespace FishAudio
     public sealed partial class GetModelResponse
     {
         /// <summary>
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_offset")]
-        public int? MaxOffset { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("accessible_upper_bound")]
-        public int? AccessibleUpperBound { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.GetModelResponseTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::FishAudio.GetModelResponseType Type { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("title")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Title { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cover_image")]
+        public string? CoverImage { get; set; }
+
+        /// <summary>
+        /// Default Value: full
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("train_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.GetModelResponseTrainModeJsonConverter))]
+        public global::FishAudio.GetModelResponseTrainMode? TrainMode { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("state")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.GetModelResponseStateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::FishAudio.GetModelResponseState State { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<string> Tags { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("samples")]
+        public global::System.Collections.Generic.IList<global::FishAudio.SampleEntity>? Samples { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTime CreatedAt { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTime UpdatedAt { get; set; }
+
+        /// <summary>
+        /// Default Value: []
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("languages")]
+        public global::System.Collections.Generic.IList<string>? Languages { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::FishAudio.JsonConverters.GetModelResponseVisibilityJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::FishAudio.GetModelResponseVisibility Visibility { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("window_limited")]
-        public bool? WindowLimited { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("lock_visibility")]
+        public bool? LockVisibility { get; set; }
 
         /// <summary>
-        /// Default Value: true
+        /// Default Value: false
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("total_is_exact")]
-        public bool? TotalIsExact { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("total")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Total { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("items")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::FishAudio.ModelEntity> Items { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("dmca_taken_down")]
+        public bool? DmcaTakenDown { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        public bool? HasMore { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("takedown_category")]
+        public global::FishAudio.GetModelResponseTakedownCategory? TakedownCategory { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("default_text")]
+        public string? DefaultText { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        public string? Source { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("licensed")]
+        public bool? Licensed { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pvc_release_state")]
+        public global::FishAudio.GetModelResponsePvcReleaseState? PvcReleaseState { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pvc_notice_period_months")]
+        public int? PvcNoticePeriodMonths { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pvc_released_at")]
+        public global::System.DateTime? PvcReleasedAt { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pvc_retire_requested_at")]
+        public global::System.DateTime? PvcRetireRequestedAt { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pvc_retire_effective_at")]
+        public global::System.DateTime? PvcRetireEffectiveAt { get; set; }
+
+        /// <summary>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
+        public global::FishAudio.ModelQualityEntity? Quality { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("like_count")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int LikeCount { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mark_count")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int MarkCount { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shared_count")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SharedCount { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("task_count")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int TaskCount { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("unliked")]
+        public bool? Unliked { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("liked")]
+        public bool? Liked { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("marked")]
+        public bool? Marked { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("author")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::FishAudio.AuthorEntity Author { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,42 +232,144 @@ namespace FishAudio
         /// <summary>
         /// Initializes a new instance of the <see cref="GetModelResponse" /> class.
         /// </summary>
-        /// <param name="total"></param>
-        /// <param name="items"></param>
-        /// <param name="maxOffset">
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// <param name="id"></param>
+        /// <param name="type"></param>
+        /// <param name="title"></param>
+        /// <param name="state"></param>
+        /// <param name="tags"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="visibility"></param>
+        /// <param name="likeCount"></param>
+        /// <param name="markCount"></param>
+        /// <param name="sharedCount"></param>
+        /// <param name="taskCount"></param>
+        /// <param name="author"></param>
+        /// <param name="description"></param>
+        /// <param name="coverImage"></param>
+        /// <param name="trainMode">
+        /// Default Value: full
         /// </param>
-        /// <param name="accessibleUpperBound">
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// <param name="samples">
+        /// Default Value: []
         /// </param>
-        /// <param name="windowLimited">
+        /// <param name="languages">
+        /// Default Value: []
+        /// </param>
+        /// <param name="lockVisibility">
         /// Default Value: false
         /// </param>
-        /// <param name="totalIsExact">
-        /// Default Value: true
+        /// <param name="dmcaTakenDown">
+        /// Default Value: false
         /// </param>
-        /// <param name="hasMore">
+        /// <param name="takedownCategory">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="defaultText"></param>
+        /// <param name="source">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="licensed">
+        /// Default Value: false
+        /// </param>
+        /// <param name="pvcReleaseState">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="pvcNoticePeriodMonths">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="pvcReleasedAt">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="pvcRetireRequestedAt">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="pvcRetireEffectiveAt">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="quality">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="unliked">
+        /// Default Value: false
+        /// </param>
+        /// <param name="liked">
+        /// Default Value: false
+        /// </param>
+        /// <param name="marked">
+        /// Default Value: false
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetModelResponse(
-            int total,
-            global::System.Collections.Generic.IList<global::FishAudio.ModelEntity> items,
-            int? maxOffset,
-            int? accessibleUpperBound,
-            bool? windowLimited,
-            bool? totalIsExact,
-            bool? hasMore)
+            string id,
+            global::FishAudio.GetModelResponseType type,
+            string title,
+            global::FishAudio.GetModelResponseState state,
+            global::System.Collections.Generic.IList<string> tags,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::FishAudio.GetModelResponseVisibility visibility,
+            int likeCount,
+            int markCount,
+            int sharedCount,
+            int taskCount,
+            global::FishAudio.AuthorEntity author,
+            string? description,
+            string? coverImage,
+            global::FishAudio.GetModelResponseTrainMode? trainMode,
+            global::System.Collections.Generic.IList<global::FishAudio.SampleEntity>? samples,
+            global::System.Collections.Generic.IList<string>? languages,
+            bool? lockVisibility,
+            bool? dmcaTakenDown,
+            global::FishAudio.GetModelResponseTakedownCategory? takedownCategory,
+            string? defaultText,
+            string? source,
+            bool? licensed,
+            global::FishAudio.GetModelResponsePvcReleaseState? pvcReleaseState,
+            int? pvcNoticePeriodMonths,
+            global::System.DateTime? pvcReleasedAt,
+            global::System.DateTime? pvcRetireRequestedAt,
+            global::System.DateTime? pvcRetireEffectiveAt,
+            global::FishAudio.ModelQualityEntity? quality,
+            bool? unliked,
+            bool? liked,
+            bool? marked)
         {
-            this.MaxOffset = maxOffset;
-            this.AccessibleUpperBound = accessibleUpperBound;
-            this.WindowLimited = windowLimited;
-            this.TotalIsExact = totalIsExact;
-            this.Total = total;
-            this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
-            this.HasMore = hasMore;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Description = description;
+            this.CoverImage = coverImage;
+            this.TrainMode = trainMode;
+            this.State = state;
+            this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
+            this.Samples = samples;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Languages = languages;
+            this.Visibility = visibility;
+            this.LockVisibility = lockVisibility;
+            this.DmcaTakenDown = dmcaTakenDown;
+            this.TakedownCategory = takedownCategory;
+            this.DefaultText = defaultText;
+            this.Source = source;
+            this.Licensed = licensed;
+            this.PvcReleaseState = pvcReleaseState;
+            this.PvcNoticePeriodMonths = pvcNoticePeriodMonths;
+            this.PvcReleasedAt = pvcReleasedAt;
+            this.PvcRetireRequestedAt = pvcRetireRequestedAt;
+            this.PvcRetireEffectiveAt = pvcRetireEffectiveAt;
+            this.Quality = quality;
+            this.LikeCount = likeCount;
+            this.MarkCount = markCount;
+            this.SharedCount = sharedCount;
+            this.TaskCount = taskCount;
+            this.Unliked = unliked;
+            this.Liked = liked;
+            this.Marked = marked;
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
         }
 
         /// <summary>

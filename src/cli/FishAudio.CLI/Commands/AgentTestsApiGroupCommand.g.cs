@@ -15,12 +15,14 @@ internal static partial class AgentTestsApiGroupCommand
                          command.Subcommands.Add(AgentTestsCreateAgentTestsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentTestsDeleteAgentAgentsByAgentIdTestsByTestIdCommandApiCommand.Create());
                          command.Subcommands.Add(AgentTestsDeleteAgentTestsByTestIdCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentTestsEditAgentTestSettingsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentTestsEditAgentTestsByTestIdCommandApiCommand.Create());
                          command.Subcommands.Add(AgentTestsGetAgentAgentsByAgentIdTestBatchesCommandApiCommand.Create());
                          command.Subcommands.Add(AgentTestsGetAgentAgentsByAgentIdTestBatchesByBatchIdCommandApiCommand.Create());
                          command.Subcommands.Add(AgentTestsGetAgentAgentsByAgentIdTestToolsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentTestsGetAgentTestRunsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentTestsGetAgentTestRunsByRunIdCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentTestsGetAgentTestSettingsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentTestsGetAgentTestsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentTestsGetAgentTestsByTestIdCommandApiCommand.Create());
                          command.Subcommands.Add(AgentTestsPutAgentAgentsByAgentIdTestsByTestIdCommandApiCommand.Create());

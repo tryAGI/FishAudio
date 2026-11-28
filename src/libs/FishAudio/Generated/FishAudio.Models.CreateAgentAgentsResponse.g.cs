@@ -64,6 +64,13 @@ namespace FishAudio
         public global::System.Collections.Generic.IList<string>? AllowedOrigins { get; set; }
 
         /// <summary>
+        /// Whether public access is limited to `allowed_origins`. When false, any origin can start a public session.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("restrict_origins")]
+        public bool? RestrictOrigins { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("overrides_allowed")]
@@ -106,6 +113,10 @@ namespace FishAudio
         /// Default Value: false
         /// </param>
         /// <param name="allowedOrigins"></param>
+        /// <param name="restrictOrigins">
+        /// Whether public access is limited to `allowed_origins`. When false, any origin can start a public session.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="overridesAllowed"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -121,6 +132,7 @@ namespace FishAudio
             string? description,
             bool? publicEnabled,
             global::System.Collections.Generic.IList<string>? allowedOrigins,
+            bool? restrictOrigins,
             global::System.Collections.Generic.IList<global::FishAudio.CreateAgentAgentsResponseOverridesAllowedItem>? overridesAllowed)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
@@ -131,6 +143,7 @@ namespace FishAudio
             this.PublicationState = publicationState;
             this.PublicEnabled = publicEnabled;
             this.AllowedOrigins = allowedOrigins;
+            this.RestrictOrigins = restrictOrigins;
             this.OverridesAllowed = overridesAllowed;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;

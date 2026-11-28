@@ -41,7 +41,8 @@ internal static partial class AgentTestsGetAgentAgentsByAgentIdTestToolsCommandA
 The tools a test can reference for this agent, exactly what a
 conversation on its draft offers. Use these ids in a test's tool mocks,
 assertions and `referenced_tool`, including integration tools such as
-`google_calendar:create_event`.");
+`google_calendar:create_event` and the system tools the agent has turned
+on, such as `_end_call`. A system tool can be checked but never mocked.");
                         command.Arguments.Add(AgentId);
 
 

@@ -27,11 +27,11 @@ namespace FishAudio
             };
         partial void PrepareCreateModelArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::FishAudio.CreateModelRequest3 request);
+            global::FishAudio.CreateModelRequest request);
         partial void PrepareCreateModelRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::FishAudio.CreateModelRequest3 request);
+            global::FishAudio.CreateModelRequest request);
         partial void ProcessCreateModelResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,7 +50,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::FishAudio.CreateModelResponse> CreateModelAsync(
 
-            global::FishAudio.CreateModelRequest3 request,
+            global::FishAudio.CreateModelRequest request,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -72,7 +72,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.CreateModelResponse>> CreateModelAsResponseAsync(
 
-            global::FishAudio.CreateModelRequest3 request,
+            global::FishAudio.CreateModelRequest request,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -599,13 +599,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::FishAudio.CreateModelResponse2.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.CreateModelResponse2.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::FishAudio.CreateModelResponse2.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.CreateModelResponse2.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -616,7 +616,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateModelResponse2>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_401 is { Length: > 0 } ? __content_401 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
@@ -636,13 +636,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::FishAudio.CreateModelResponse3.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.CreateModelResponse3.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::FishAudio.CreateModelResponse3.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.CreateModelResponse3.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -653,7 +653,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateModelResponse3>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_503 is { Length: > 0 } ? __content_503 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
                                     responseBody: __content_503,
                                     responseObject: __value_503,
@@ -696,7 +696,7 @@ namespace FishAudio
                                 {
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -741,7 +741,7 @@ namespace FishAudio
 
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -814,7 +814,7 @@ namespace FishAudio
         public async global::System.Threading.Tasks.Task<global::FishAudio.CreateModelResponse> CreateModelAsync(
             string title,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<byte[]>, byte[]> voices,
-            global::FishAudio.CreateModelRequestVisibility3? visibility = default,
+            global::FishAudio.CreateModelRequestVisibility? visibility = default,
             string type = "tts",
             string? description = default,
             byte[]? coverImage = default,
@@ -828,7 +828,7 @@ namespace FishAudio
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::FishAudio.CreateModelRequest3
+            var __request = new global::FishAudio.CreateModelRequest
             {
                 Visibility = visibility,
                 Type = type,

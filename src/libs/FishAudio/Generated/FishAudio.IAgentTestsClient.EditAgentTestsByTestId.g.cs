@@ -78,7 +78,15 @@ namespace FishAudio
         /// <param name="simulation">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="channel">
+        /// The channel a `next_reply` or `tool` test plays. `null` puts it back on `web_voice`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="dynamicVariables">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="judge">
+        /// The judge of a `next_reply` or `simulation` test. Null follows the workspace's Tests settings (`GET /v1/agent/test-settings`). A `tool` test has no judge, it is null there. Left out, the test keeps its judge.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -96,7 +104,9 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.AgentTestToolParameter>? toolParameters = default,
             bool? verifyAbsence = default,
             global::FishAudio.AgentTestSimulationConfig? simulation = default,
+            global::FishAudio.PublicAgentTestUpdatePayloadChannel? channel = default,
             object? dynamicVariables = default,
+            global::FishAudio.AgentTestJudge? judge = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

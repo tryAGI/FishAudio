@@ -4,7 +4,7 @@
 namespace FishAudio
 {
     /// <summary>
-    /// The agent must have called this library tool, optionally with matching<br/>
+    /// The agent must have called this tool, optionally with matching<br/>
     /// arguments, between min_calls and max_calls times (calls that match).
     /// </summary>
     public sealed partial class AgentTestToolCallAssertion
@@ -13,7 +13,8 @@ namespace FishAudio
         /// Tool the runner should (or should not) observe on the next turn. A<br/>
         /// webhook or client tool is referenced by its library id, an integration<br/>
         /// tool by "&lt;provider_key&gt;:&lt;tool_name&gt;" (for example<br/>
-        /// "google_calendar:create_event").
+        /// "google_calendar:create_event"), a system tool by its tool name (for<br/>
+        /// example "_end_call"). `name` may be left out for a system tool.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -50,7 +51,8 @@ namespace FishAudio
         /// Tool the runner should (or should not) observe on the next turn. A<br/>
         /// webhook or client tool is referenced by its library id, an integration<br/>
         /// tool by "&lt;provider_key&gt;:&lt;tool_name&gt;" (for example<br/>
-        /// "google_calendar:create_event").
+        /// "google_calendar:create_event"), a system tool by its tool name (for<br/>
+        /// example "_end_call"). `name` may be left out for a system tool.
         /// </param>
         /// <param name="params"></param>
         /// <param name="minCalls">

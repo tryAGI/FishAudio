@@ -5,7 +5,7 @@ namespace FishAudio
 {
     /// <summary>
     /// Latency-quality trade-off. normal: best quality, balanced: reduced latency, low: lowest latency.<br/>
-    /// Default Value: normal
+    /// Default Value: balanced
     /// </summary>
     public enum TTSStreamWithTimestampRequestLatency
     {
