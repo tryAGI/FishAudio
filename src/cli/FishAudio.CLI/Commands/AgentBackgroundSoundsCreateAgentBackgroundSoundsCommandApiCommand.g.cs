@@ -47,8 +47,7 @@ internal static partial class AgentBackgroundSoundsCreateAgentBackgroundSoundsCo
     {
         var command = new Command(commandName ?? @"create-agent-background-sounds", @"Create Background Sound
 Upload an mp3/wav/ogg/m4a clip, up to 10 MB and 300 seconds. Send
-`multipart/form-data` with the file in `file`. The server loudness-
-normalizes and transcodes it to Ogg/Opus; the returned id is what
+`multipart/form-data` with the file in `file`. The returned id is what
 `voice.background_sound.custom_asset_id` names.");
                         command.Options.Add(File);
                         command.Options.Add(Filename);

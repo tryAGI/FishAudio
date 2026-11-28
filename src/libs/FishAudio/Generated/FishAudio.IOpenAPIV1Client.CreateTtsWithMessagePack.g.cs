@@ -152,7 +152,7 @@ namespace FishAudio
         /// </param>
         /// <param name="latency">
         /// Latency-quality trade-off. normal: best quality, balanced: reduced latency, low: lowest latency.<br/>
-        /// Default Value: normal
+        /// Default Value: balanced
         /// </param>
         /// <param name="maxNewTokens">
         /// Maximum audio tokens to generate per text chunk.<br/>

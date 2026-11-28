@@ -14,10 +14,12 @@ namespace FishAudio
         /// minutes. Poll `GET /v1/agent/agents/{agent_id}/test-batches/{batch_id}`<br/>
         /// until `completed` is true, then gate on `pass_rate`, which leaves out<br/>
         /// `error` runs.<br/>
-        /// Each simulation run that ends `passed` or `failed` is billed: a platform<br/>
-        /// fee per agent reply plus the LLM tokens of the agent, the simulated user<br/>
-        /// and the judge. `error` runs are not billed. A batch with a simulation<br/>
-        /// test returns 402 when the account has no trial balance or API credit<br/>
+        /// Each run that ends `passed` or `failed` is billed a platform fee per<br/>
+        /// agent reply plus the LLM tokens it used. A `next_reply` or `tool` run is<br/>
+        /// one reply, with the tokens of the agent and, on `next_reply`, of the<br/>
+        /// judge. A simulation run bills every agent reply, with the tokens of the<br/>
+        /// agent, the simulated user and the judge. `error` runs are not billed. A<br/>
+        /// batch returns 402 when the account has no trial balance or API credit<br/>
         /// left, and 403 when the team's agreement does not allow agent usage.
         /// </summary>
         /// <param name="agentId"></param>
@@ -48,10 +50,12 @@ namespace FishAudio
         /// minutes. Poll `GET /v1/agent/agents/{agent_id}/test-batches/{batch_id}`<br/>
         /// until `completed` is true, then gate on `pass_rate`, which leaves out<br/>
         /// `error` runs.<br/>
-        /// Each simulation run that ends `passed` or `failed` is billed: a platform<br/>
-        /// fee per agent reply plus the LLM tokens of the agent, the simulated user<br/>
-        /// and the judge. `error` runs are not billed. A batch with a simulation<br/>
-        /// test returns 402 when the account has no trial balance or API credit<br/>
+        /// Each run that ends `passed` or `failed` is billed a platform fee per<br/>
+        /// agent reply plus the LLM tokens it used. A `next_reply` or `tool` run is<br/>
+        /// one reply, with the tokens of the agent and, on `next_reply`, of the<br/>
+        /// judge. A simulation run bills every agent reply, with the tokens of the<br/>
+        /// agent, the simulated user and the judge. `error` runs are not billed. A<br/>
+        /// batch returns 402 when the account has no trial balance or API credit<br/>
         /// left, and 403 when the team's agreement does not allow agent usage.
         /// </summary>
         /// <param name="agentId"></param>
@@ -82,10 +86,12 @@ namespace FishAudio
         /// minutes. Poll `GET /v1/agent/agents/{agent_id}/test-batches/{batch_id}`<br/>
         /// until `completed` is true, then gate on `pass_rate`, which leaves out<br/>
         /// `error` runs.<br/>
-        /// Each simulation run that ends `passed` or `failed` is billed: a platform<br/>
-        /// fee per agent reply plus the LLM tokens of the agent, the simulated user<br/>
-        /// and the judge. `error` runs are not billed. A batch with a simulation<br/>
-        /// test returns 402 when the account has no trial balance or API credit<br/>
+        /// Each run that ends `passed` or `failed` is billed a platform fee per<br/>
+        /// agent reply plus the LLM tokens it used. A `next_reply` or `tool` run is<br/>
+        /// one reply, with the tokens of the agent and, on `next_reply`, of the<br/>
+        /// judge. A simulation run bills every agent reply, with the tokens of the<br/>
+        /// agent, the simulated user and the judge. `error` runs are not billed. A<br/>
+        /// batch returns 402 when the account has no trial balance or API credit<br/>
         /// left, and 403 when the team's agreement does not allow agent usage.
         /// </summary>
         /// <param name="agentId"></param>

@@ -45,9 +45,9 @@ internal static partial class AgentsGetAgentAgentsByAgentIdWidgetCommandApiComma
     {
         var command = new Command(commandName ?? @"get-agent-agents-by-agent-id-widget", @"Get Widget Config
 Unauthenticated display configuration for the embeddable `&lt;fish-agent&gt;`
-widget. Only agents published as public are reachable, and the request
-`Origin` must match the agent's allowed origins — the same gate as
-anonymous session creation. Attributes set on the embed tag override
+widget. Only agents published as public are reachable. When the agent
+restricts origins, the request `Origin` must match its allowed origins,
+the same gate as anonymous session creation. Attributes set on the embed tag override
 every field returned here.");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(Origin);

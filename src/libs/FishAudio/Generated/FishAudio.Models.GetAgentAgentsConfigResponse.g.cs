@@ -23,11 +23,14 @@ namespace FishAudio
         public required string ConfigHash { get; set; }
 
         /// <summary>
-        ///
+        /// The prompt section as a read returns it: the opener's interruption choice<br/>
+        /// is always `true` or `false`. Nothing is stored for it (a stored `null` and<br/>
+        /// a row from before the field both read `true`), so a write and the config<br/>
+        /// hash are untouched.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::FishAudio.AgentPromptConfig Prompt { get; set; }
+        public required global::FishAudio.AgentPromptConfigView Prompt { get; set; }
 
         /// <summary>
         /// The voice section as the public API reads it: without the console-only<br/>
@@ -129,7 +132,12 @@ namespace FishAudio
         /// <param name="configHash">
         /// Opaque content hash of this configuration as stored. On a draft it is the config_hash the next publish gives the version, so it equals the live version's config_hash when nothing is unpublished. Pass it to Publish Agent as expected_config_hash.
         /// </param>
-        /// <param name="prompt"></param>
+        /// <param name="prompt">
+        /// The prompt section as a read returns it: the opener's interruption choice<br/>
+        /// is always `true` or `false`. Nothing is stored for it (a stored `null` and<br/>
+        /// a row from before the field both read `true`), so a write and the config<br/>
+        /// hash are untouched.
+        /// </param>
         /// <param name="voice">
         /// The voice section as the public API reads it: without the console-only<br/>
         /// sentence buffering switch, live-3 playout and live-3 self-ASR model.
@@ -160,7 +168,7 @@ namespace FishAudio
         public GetAgentAgentsConfigResponse(
             string agentId,
             string configHash,
-            global::FishAudio.AgentPromptConfig prompt,
+            global::FishAudio.AgentPromptConfigView prompt,
             global::FishAudio.PublicAgentVoiceConfig voice,
             global::FishAudio.PublicAgentAsrConfig asr,
             global::FishAudio.AgentConversationConfig conversation,

@@ -78,6 +78,20 @@ namespace FishAudio
         public global::FishAudio.AgentSessionSummaryDialStatus? DialStatus { get; set; }
 
         /// <summary>
+        /// busy, no_answer and failed: the final SIP response code the carrier or your SIP trunk gave to the outbound dial. Null on an answered call and when it gave none.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dial_sip_status")]
+        public int? DialSipStatus { get; set; }
+
+        /// <summary>
+        /// The reason text the carrier or your SIP trunk sent with dial_sip_status, verbatim, for example `Busy here`. Null when it sent none.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dial_sip_reason")]
+        public string? DialSipReason { get; set; }
+
+        /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("answered_by")]
@@ -210,6 +224,14 @@ namespace FishAudio
         /// <param name="dialStatus">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="dialSipStatus">
+        /// busy, no_answer and failed: the final SIP response code the carrier or your SIP trunk gave to the outbound dial. Null on an answered call and when it gave none.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="dialSipReason">
+        /// The reason text the carrier or your SIP trunk sent with dial_sip_status, verbatim, for example `Busy here`. Null when it sent none.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="answeredBy">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -271,6 +293,8 @@ namespace FishAudio
             global::FishAudio.AgentSessionSummaryEndReason? endReason,
             global::FishAudio.AgentSessionSummaryDirection? direction,
             global::FishAudio.AgentSessionSummaryDialStatus? dialStatus,
+            int? dialSipStatus,
+            string? dialSipReason,
             global::FishAudio.AgentSessionSummaryAnsweredBy? answeredBy,
             string? callerNumber,
             bool? callerIdWithheld,
@@ -298,6 +322,8 @@ namespace FishAudio
             this.Source = source;
             this.Direction = direction;
             this.DialStatus = dialStatus;
+            this.DialSipStatus = dialSipStatus;
+            this.DialSipReason = dialSipReason;
             this.AnsweredBy = answeredBy;
             this.CallerNumber = callerNumber;
             this.CallerIdWithheld = callerIdWithheld;

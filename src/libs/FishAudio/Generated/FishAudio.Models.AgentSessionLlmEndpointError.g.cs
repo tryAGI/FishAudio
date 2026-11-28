@@ -5,7 +5,8 @@ namespace FishAudio
 {
     /// <summary>
     /// One failed reply from the customer's own LLM endpoint, after the<br/>
-    /// platform's single retry within the request.<br/>
+    /// platform's single retry within the request, or one reply the model's<br/>
+    /// provider refused (a platform model's included).<br/>
     /// - http_error: the endpoint answered with a non-2xx status.<br/>
     /// - timeout: no response within the request timeout.<br/>
     /// - connection_error: the request got no answer. `reason` is dns_failed,<br/>
@@ -14,7 +15,9 @@ namespace FishAudio
     /// - invalid_response: a 2xx response that was not a usable reply. `reason`<br/>
     ///   is not_event_stream (a streamed request answered with something else),<br/>
     ///   stream_incomplete (the stream ended without a finish_reason, usage or<br/>
-    ///   output), empty_reply (no text and no tool call) or unknown.
+    ///   output), empty_reply (no text and no tool call), refused (the model's<br/>
+    ///   provider finished the reply as a refusal, a content filter or a policy<br/>
+    ///   block: `response_body` is what it said) or unknown.
     /// </summary>
     public sealed partial class AgentSessionLlmEndpointError
     {

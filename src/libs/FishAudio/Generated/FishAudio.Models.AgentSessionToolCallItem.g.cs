@@ -43,6 +43,13 @@ namespace FishAudio
         public required string Input { get; set; }
 
         /// <summary>
+        /// Set when the agent made this tool call on a warm transfer's consult call, the call to the transfer destination while the caller is on hold. It is the `call_id` of that transfer item. Null for a tool call made in the conversation with the caller.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("transfer_id")]
+        public string? TransferId { get; set; }
+
+        /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("turn_id")]
@@ -72,6 +79,10 @@ namespace FishAudio
         /// <param name="toolSource">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="transferId">
+        /// Set when the agent made this tool call on a warm transfer's consult call, the call to the transfer destination while the caller is on hold. It is the `call_id` of that transfer item. Null for a tool call made in the conversation with the caller.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="turnId">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -87,6 +98,7 @@ namespace FishAudio
             string input,
             string? type,
             string? toolSource,
+            string? transferId,
             int? turnId,
             string? createdAt)
         {
@@ -95,6 +107,7 @@ namespace FishAudio
             this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));
             this.ToolSource = toolSource;
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
+            this.TransferId = transferId;
             this.TurnId = turnId;
             this.CreatedAt = createdAt;
         }

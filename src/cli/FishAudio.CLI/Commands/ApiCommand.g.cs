@@ -13,10 +13,12 @@ internal static partial class ApiCommand
         var command = new Command("api", "Generated endpoint commands.");
 
                          command.Subcommands.Add(AgentBackgroundSoundsApiGroupCommand.Create());
+                         command.Subcommands.Add(AgentLLMModelsApiGroupCommand.Create());
                          command.Subcommands.Add(AgentSessionsApiGroupCommand.Create());
                          command.Subcommands.Add(AgentTestsApiGroupCommand.Create());
                          command.Subcommands.Add(AgentToolsApiGroupCommand.Create());
                          command.Subcommands.Add(AgentsApiGroupCommand.Create());
+                         command.Subcommands.Add(KnowledgeFoldersApiGroupCommand.Create());
                          command.Subcommands.Add(KnowledgeSourcesApiGroupCommand.Create());
                          command.Subcommands.Add(ModelApiGroupCommand.Create());
                          command.Subcommands.Add(OpenAPIApiGroupCommand.Create());

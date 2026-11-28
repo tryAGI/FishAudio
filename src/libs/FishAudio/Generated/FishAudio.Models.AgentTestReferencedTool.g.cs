@@ -7,7 +7,8 @@ namespace FishAudio
     /// Tool the runner should (or should not) observe on the next turn. A<br/>
     /// webhook or client tool is referenced by its library id, an integration<br/>
     /// tool by "&lt;provider_key&gt;:&lt;tool_name&gt;" (for example<br/>
-    /// "google_calendar:create_event").
+    /// "google_calendar:create_event"), a system tool by its tool name (for<br/>
+    /// example "_end_call"). `name` may be left out for a system tool.
     /// </summary>
     public sealed partial class AgentTestReferencedTool
     {

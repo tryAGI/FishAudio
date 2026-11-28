@@ -47,11 +47,12 @@ namespace FishAudio
         /// expectation, `tool` checks the tool the agent calls next, and `simulation`<br/>
         /// lets a simulated user hold a whole conversation that is scored against<br/>
         /// success conditions. Pass `agent_ids` to attach the test right away.<br/>
+        /// `channel` sets the channel a `next_reply` or `tool` test plays.<br/>
         /// The body of `GET /v1/agent/tests/{test_id}` posts back as is, so tests can<br/>
         /// be exported and imported. Tool references use your workspace's tool ids<br/>
         /// (list them with `GET /v1/agent/agents/{agent_id}/test-tools`), so an export<br/>
         /// imports cleanly within the same team and needs its tool ids remapped<br/>
-        /// elsewhere.
+        /// elsewhere. System tools go by their tool name, the same in every team.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -105,11 +106,12 @@ namespace FishAudio
         /// expectation, `tool` checks the tool the agent calls next, and `simulation`<br/>
         /// lets a simulated user hold a whole conversation that is scored against<br/>
         /// success conditions. Pass `agent_ids` to attach the test right away.<br/>
+        /// `channel` sets the channel a `next_reply` or `tool` test plays.<br/>
         /// The body of `GET /v1/agent/tests/{test_id}` posts back as is, so tests can<br/>
         /// be exported and imported. Tool references use your workspace's tool ids<br/>
         /// (list them with `GET /v1/agent/agents/{agent_id}/test-tools`), so an export<br/>
         /// imports cleanly within the same team and needs its tool ids remapped<br/>
-        /// elsewhere.
+        /// elsewhere. System tools go by their tool name, the same in every team.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -418,13 +420,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::FishAudio.CreateAgentTestsResponse2.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentTestsResponse2.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::FishAudio.CreateAgentTestsResponse2.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentTestsResponse2.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -435,7 +437,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentTestsResponse2>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_400 is { Length: > 0 } ? __content_400 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
@@ -455,13 +457,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::FishAudio.CreateAgentTestsResponse3.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentTestsResponse3.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::FishAudio.CreateAgentTestsResponse3.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentTestsResponse3.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -472,7 +474,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentTestsResponse3>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_401 is { Length: > 0 } ? __content_401 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
@@ -492,13 +494,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::FishAudio.CreateAgentTestsResponse4.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentTestsResponse4.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::FishAudio.CreateAgentTestsResponse4.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentTestsResponse4.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -509,7 +511,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentTestsResponse4>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_422 is { Length: > 0 } ? __content_422 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
                                     responseBody: __content_422,
                                     responseObject: __value_422,
@@ -529,13 +531,13 @@ namespace FishAudio
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::FishAudio.CreateAgentTestsResponse5.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentTestsResponse5.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::FishAudio.CreateAgentTestsResponse5.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::FishAudio.CreateAgentTestsResponse5.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -546,7 +548,7 @@ namespace FishAudio
 
                                 throw global::FishAudio.ApiException<global::FishAudio.CreateAgentTestsResponse5>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_503 is { Length: > 0 } ? __content_503 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
                                     responseBody: __content_503,
                                     responseObject: __value_503,
@@ -589,7 +591,7 @@ namespace FishAudio
                                 {
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -634,7 +636,7 @@ namespace FishAudio
 
                                     throw global::FishAudio.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -657,11 +659,12 @@ namespace FishAudio
         /// expectation, `tool` checks the tool the agent calls next, and `simulation`<br/>
         /// lets a simulated user hold a whole conversation that is scored against<br/>
         /// success conditions. Pass `agent_ids` to attach the test right away.<br/>
+        /// `channel` sets the channel a `next_reply` or `tool` test plays.<br/>
         /// The body of `GET /v1/agent/tests/{test_id}` posts back as is, so tests can<br/>
         /// be exported and imported. Tool references use your workspace's tool ids<br/>
         /// (list them with `GET /v1/agent/agents/{agent_id}/test-tools`), so an export<br/>
         /// imports cleanly within the same team and needs its tool ids remapped<br/>
-        /// elsewhere.
+        /// elsewhere. System tools go by their tool name, the same in every team.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="testType">
@@ -681,7 +684,15 @@ namespace FishAudio
         /// <param name="simulation">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="channel">
+        /// The channel a `next_reply` or `tool` test plays, `web_voice` when left out. The agent speaks and has the tools as on that channel: client tools on `web_voice` only, `_transfer_call` on the two phone channels, `_press_keys` and `_skip_turn` on `phone_outbound`. A `tool` test cannot reference a tool its channel lacks. A `simulation` test has its own in `simulation.channel`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="dynamicVariables"></param>
+        /// <param name="judge">
+        /// The judge of a `next_reply` or `simulation` test. Null follows the workspace's Tests settings (`GET /v1/agent/test-settings`). A `tool` test has no judge, it is null there.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="agentIds">
         /// Agents to attach the test to. They must all be in one workspace, and the test is created there. Without agents the test goes into the API key owner's default workspace.
         /// </param>
@@ -699,7 +710,9 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.AgentTestToolParameter>? toolParameters = default,
             bool? verifyAbsence = default,
             global::FishAudio.AgentTestSimulationConfig? simulation = default,
+            global::FishAudio.PublicAgentTestCreatePayloadChannel? channel = default,
             object? dynamicVariables = default,
+            global::FishAudio.AgentTestJudge? judge = default,
             global::System.Collections.Generic.IList<string>? agentIds = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -716,7 +729,9 @@ namespace FishAudio
                 ToolParameters = toolParameters,
                 VerifyAbsence = verifyAbsence,
                 Simulation = simulation,
+                Channel = channel,
                 DynamicVariables = dynamicVariables,
+                Judge = judge,
                 AgentIds = agentIds,
             };
 

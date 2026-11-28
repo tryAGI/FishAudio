@@ -75,10 +75,12 @@ minutes. Poll `GET /v1/agent/agents/{agent_id}/test-batches/{batch_id}`
 until `completed` is true, then gate on `pass_rate`, which leaves out
 `error` runs.
 
-Each simulation run that ends `passed` or `failed` is billed: a platform
-fee per agent reply plus the LLM tokens of the agent, the simulated user
-and the judge. `error` runs are not billed. A batch with a simulation
-test returns 402 when the account has no trial balance or API credit
+Each run that ends `passed` or `failed` is billed a platform fee per
+agent reply plus the LLM tokens it used. A `next_reply` or `tool` run is
+one reply, with the tokens of the agent and, on `next_reply`, of the
+judge. A simulation run bills every agent reply, with the tokens of the
+agent, the simulated user and the judge. `error` runs are not billed. A
+batch returns 402 when the account has no trial balance or API credit
 left, and 403 when the team's agreement does not allow agent usage.");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(TestIds);

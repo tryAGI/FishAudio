@@ -92,6 +92,12 @@ namespace FishAudio
         public bool? WarmHumanDetection { get; set; }
 
         /// <summary>
+        /// Beta. Key presses on the call in which the agent reaches this destination, for a number that an automated phone menu answers before a person does. Applies to warm transfers whose warm_connect is `confirm` or `briefing`, and is ignored for cold transfers and `direct`. It has no effect while warm_human_detection is true, because that setting ends the transfer when a phone menu answers. The time spent in the menu counts toward `warm_confirm_timeout_seconds`, so such a destination usually needs a longer one. Absent means off. The list of destinations is replaced as a whole, so a destination sent without the field has it off.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("warm_press_keys")]
+        public global::FishAudio.AgentTransferPressKeysPatch? WarmPressKeys { get; set; }
+
+        /// <summary>
         /// Compatibility option for warm transfers whose warm_connect is `confirm` or `briefing`, ignored for cold transfers and `direct`. Absent or true (recommended): on the call in which the agent briefs the destination, the agent uses the same turn-taking (response timing: `eagerness`, `response_wait_ms` and `response_max_wait_ms`), interruption (`interruption_sensitivity` and `interruption_ignore_phrases`) and language (`voice.speaking_language`) settings as on the call with the caller. False: that call keeps the older fixed behavior. Destinations that existed before this setting were set to false so their behavior did not change. Either way the destination can always interrupt the agent on that call, whatever `interruptible` is set to. A destination sent without the field keeps the value of the existing destination it replaces (same label, else a renamed one with the same phone number or SIP URI) and is true when it is new. Send true to switch a destination to the agent's settings.<br/>
         /// Default Value: true
         /// </summary>
@@ -116,6 +122,20 @@ namespace FishAudio
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("announcement_message")]
         public string? AnnouncementMessage { get; set; }
+
+        /// <summary>
+        /// SIP destinations in `warm` mode only: the digest username the destination's SIP server asks for. The agent places the call to a warm destination itself and answers the server's 401 or 407 challenge with this username and the stored password. A response that carries it means a password is stored. A `cold` destination sent with it is rejected: a cold transfer hands the call to the caller's carrier, which dials the destination and never has the credentials. Send null or an empty string to remove the credentials. A destination sent without the field keeps the credentials of the existing destination it replaces (same label, else a renamed one with the same SIP URI) while it stays a warm SIP destination on the same host and port, and loses them otherwise.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("auth_username")]
+        public string? AuthUsername { get; set; }
+
+        /// <summary>
+        /// Write-only digest password that goes with `auth_username`. It is stored encrypted and no response ever returns it. Omit it, or send an empty string, to keep the password already stored for a destination with the same SIP host and port and the same `auth_username`. It is required when the destination is new or its host, port or username changed. Sending the password that is already stored changes nothing. A new password takes effect on calls once the agent is published.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("auth_password")]
+        public string? AuthPassword { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -159,6 +179,9 @@ namespace FishAudio
         /// Applies to warm transfers whose warm_connect is `confirm` or `briefing`, and is ignored for cold transfers and `direct`. When true, once the destination answers, the agent stays silent until the other side speaks, then classifies the pickup. A person is briefed as usual. Voicemail or an IVR (phone menu) ends the transfer as failed. A hold queue or silence keeps the agent waiting until `warm_confirm_timeout_seconds` ends the attempt as unreachable. A failed transfer follows `on_failure`. Leave it off for destinations whose people are only reachable through a phone menu, because the menu stops the transfer.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="warmPressKeys">
+        /// Beta. Key presses on the call in which the agent reaches this destination, for a number that an automated phone menu answers before a person does. Applies to warm transfers whose warm_connect is `confirm` or `briefing`, and is ignored for cold transfers and `direct`. It has no effect while warm_human_detection is true, because that setting ends the transfer when a phone menu answers. The time spent in the menu counts toward `warm_confirm_timeout_seconds`, so such a destination usually needs a longer one. Absent means off. The list of destinations is replaced as a whole, so a destination sent without the field has it off.
+        /// </param>
         /// <param name="warmConsultUsesAgentSettings">
         /// Compatibility option for warm transfers whose warm_connect is `confirm` or `briefing`, ignored for cold transfers and `direct`. Absent or true (recommended): on the call in which the agent briefs the destination, the agent uses the same turn-taking (response timing: `eagerness`, `response_wait_ms` and `response_max_wait_ms`), interruption (`interruption_sensitivity` and `interruption_ignore_phrases`) and language (`voice.speaking_language`) settings as on the call with the caller. False: that call keeps the older fixed behavior. Destinations that existed before this setting were set to false so their behavior did not change. Either way the destination can always interrupt the agent on that call, whatever `interruptible` is set to. A destination sent without the field keeps the value of the existing destination it replaces (same label, else a renamed one with the same phone number or SIP URI) and is true when it is new. Send true to switch a destination to the agent's settings.<br/>
         /// Default Value: true
@@ -168,6 +191,14 @@ namespace FishAudio
         /// Default Value: generated
         /// </param>
         /// <param name="announcementMessage"></param>
+        /// <param name="authUsername">
+        /// SIP destinations in `warm` mode only: the digest username the destination's SIP server asks for. The agent places the call to a warm destination itself and answers the server's 401 or 407 challenge with this username and the stored password. A response that carries it means a password is stored. A `cold` destination sent with it is rejected: a cold transfer hands the call to the caller's carrier, which dials the destination and never has the credentials. Send null or an empty string to remove the credentials. A destination sent without the field keeps the credentials of the existing destination it replaces (same label, else a renamed one with the same SIP URI) while it stays a warm SIP destination on the same host and port, and loses them otherwise.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="authPassword">
+        /// Write-only digest password that goes with `auth_username`. It is stored encrypted and no response ever returns it. Omit it, or send an empty string, to keep the password already stored for a destination with the same SIP host and port and the same `auth_username`. It is required when the destination is new or its host, port or username changed. Sending the password that is already stored changes nothing. A new password takes effect on calls once the agent is published.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -185,10 +216,13 @@ namespace FishAudio
             int? warmRingTimeoutSeconds,
             int? warmConfirmTimeoutSeconds,
             bool? warmHumanDetection,
+            global::FishAudio.AgentTransferPressKeysPatch? warmPressKeys,
             bool? warmConsultUsesAgentSettings,
             global::FishAudio.AgentTransferOnFailurePatch? onFailure,
             global::FishAudio.AgentTransferDestinationPatchAnnouncementMode? announcementMode,
-            string? announcementMessage)
+            string? announcementMessage,
+            string? authUsername,
+            string? authPassword)
         {
             this.Type = type;
             this.Label = label;
@@ -203,10 +237,13 @@ namespace FishAudio
             this.WarmRingTimeoutSeconds = warmRingTimeoutSeconds;
             this.WarmConfirmTimeoutSeconds = warmConfirmTimeoutSeconds;
             this.WarmHumanDetection = warmHumanDetection;
+            this.WarmPressKeys = warmPressKeys;
             this.WarmConsultUsesAgentSettings = warmConsultUsesAgentSettings;
             this.OnFailure = onFailure;
             this.AnnouncementMode = announcementMode;
             this.AnnouncementMessage = announcementMessage;
+            this.AuthUsername = authUsername;
+            this.AuthPassword = authPassword;
         }
 
         /// <summary>

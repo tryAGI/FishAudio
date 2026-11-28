@@ -9,7 +9,8 @@ namespace FishAudio
         /// The tools a test can reference for this agent, exactly what a<br/>
         /// conversation on its draft offers. Use these ids in a test's tool mocks,<br/>
         /// assertions and `referenced_tool`, including integration tools such as<br/>
-        /// `google_calendar:create_event`.
+        /// `google_calendar:create_event` and the system tools the agent has turned<br/>
+        /// on, such as `_end_call`. A system tool can be checked but never mocked.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -24,7 +25,8 @@ namespace FishAudio
         /// The tools a test can reference for this agent, exactly what a<br/>
         /// conversation on its draft offers. Use these ids in a test's tool mocks,<br/>
         /// assertions and `referenced_tool`, including integration tools such as<br/>
-        /// `google_calendar:create_event`.
+        /// `google_calendar:create_event` and the system tools the agent has turned<br/>
+        /// on, such as `_end_call`. A system tool can be checked but never mocked.
         /// </summary>
         /// <param name="agentId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

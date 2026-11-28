@@ -16,7 +16,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::FishAudio.CreateAsrResponse> CreateAsrWithMessagePackAsync(
 
-            global::FishAudio.CreateAsrRequest2 request,
+            global::FishAudio.CreateAsrRequest request,
             global::FishAudio.CreateAsrModel? model = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -32,7 +32,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.CreateAsrResponse>> CreateAsrWithMessagePackAsResponseAsync(
 
-            global::FishAudio.CreateAsrRequest2 request,
+            global::FishAudio.CreateAsrRequest request,
             global::FishAudio.CreateAsrModel? model = default,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -121,8 +121,13 @@ internal static partial class AgentSessionsCreateAgentSessionsCommandApiCommand
 Start a conversation session with an agent and receive a join token for the
 session transport (currently LiveKit WebRTC). Authenticate with an API key to
 start sessions with any agent in your team; without credentials only agents
-published as public are reachable, and the request `Origin` must match the
-agent's allowed origins.
+published as public are reachable, and when the agent restricts origins the
+request `Origin` must match its allowed origins.
+
+This call only issues the join token. The conversation starts when a client
+(the web SDK or the widget) joins with it, so create a session when a user
+starts a call, one per call. A session that no client joins before
+`expires_at` ends as `failed`.
 
 `language` (and `overrides.language`) accepts `en`, `ja`, `zh`, `ko`, `es`,
 `fr`, `de`, `pt`, `it`, `nl`; anything else is 422. Omit it to use the agent's configured
@@ -137,10 +142,10 @@ session, with the same shape and rules; each `custom` model needs its
 `api_key`. It needs an API key and `llm.fallback` in the agent's
 `overrides_allowed`.
 
-When every concurrent line of your plan is in use the answer is 429 with
+When every concurrent line of your team is in use the answer is 429 with
 `code: concurrency_limit_exceeded`, a `retry_after` in seconds and a
-`Retry-After` header. Add lines or enable burst on the Agent plan to
-raise the limit.");
+`Retry-After` header. The limit of a pay as you go team grows with its
+total top-ups, and burst admits sessions above it.");
                         command.Options.Add(Origin);
                         command.Options.Add(AgentId);
                         command.Options.Add(NameOption);
@@ -154,6 +159,8 @@ raise the limit.");
                         command.Options.Add(ToolEvents);
                         command.Options.Add(RecordAudio);                        command.Options.Add(OverridesOptions.FirstMessage);
                         command.Options.Add(OverridesOptions.FirstMessagePrompt);
+                        command.Options.Add(OverridesOptions.FirstMessageMaxWaitMs);
+                        command.Options.Add(OverridesOptions.FirstMessageInterruptible);
                         command.Options.Add(OverridesOptions.SystemPrompt);
                         command.Options.Add(OverridesOptions.VoiceId);
           command.Options.Add(Input);
@@ -196,15 +203,19 @@ raise the limit.");
 
                         var __OverridesBase = __requestBase is { } __OverridesBaseValue ? __OverridesBaseValue.Overrides : default;                        var overridesFirstMessage = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessage) ? parseResult.GetValue(OverridesOptions.FirstMessage) : (__OverridesBase is { } __OverridesfirstMessageBaseValue ? __OverridesfirstMessageBaseValue.FirstMessage : default);
                         var overridesFirstMessagePrompt = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessagePrompt) ? parseResult.GetValue(OverridesOptions.FirstMessagePrompt) : (__OverridesBase is { } __OverridesfirstMessagePromptBaseValue ? __OverridesfirstMessagePromptBaseValue.FirstMessagePrompt : default);
+                        var overridesFirstMessageMaxWaitMs = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessageMaxWaitMs) ? parseResult.GetValue(OverridesOptions.FirstMessageMaxWaitMs) : (__OverridesBase is { } __OverridesfirstMessageMaxWaitMsBaseValue ? __OverridesfirstMessageMaxWaitMsBaseValue.FirstMessageMaxWaitMs : default);
+                        var overridesFirstMessageInterruptible = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessageInterruptible) ? parseResult.GetValue(OverridesOptions.FirstMessageInterruptible) : (__OverridesBase is { } __OverridesfirstMessageInterruptibleBaseValue ? __OverridesfirstMessageInterruptibleBaseValue.FirstMessageInterruptible : default);
                         var overridesSystemPrompt = CliRuntime.WasSpecified(parseResult, OverridesOptions.SystemPrompt) ? parseResult.GetValue(OverridesOptions.SystemPrompt) : (__OverridesBase is { } __OverridessystemPromptBaseValue ? __OverridessystemPromptBaseValue.SystemPrompt : default);
                         var overridesVoiceId = CliRuntime.WasSpecified(parseResult, OverridesOptions.VoiceId) ? parseResult.GetValue(OverridesOptions.VoiceId) : (__OverridesBase is { } __OverridesvoiceIdBaseValue ? __OverridesvoiceIdBaseValue.VoiceId : default);
-                        var __OverridesSpecified = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessage) || CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessagePrompt) || CliRuntime.WasSpecified(parseResult, OverridesOptions.SystemPrompt) || CliRuntime.WasSpecified(parseResult, OverridesOptions.VoiceId);
+                        var __OverridesSpecified = CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessage) || CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessagePrompt) || CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessageMaxWaitMs) || CliRuntime.WasSpecified(parseResult, OverridesOptions.FirstMessageInterruptible) || CliRuntime.WasSpecified(parseResult, OverridesOptions.SystemPrompt) || CliRuntime.WasSpecified(parseResult, OverridesOptions.VoiceId);
                         var overrides =
                             __OverridesSpecified || __OverridesBase is not null
                                 ? new global::FishAudio.AgentSessionOverridesPayload
                                 {
 	                                FirstMessage = overridesFirstMessage,
                                 FirstMessagePrompt = overridesFirstMessagePrompt,
+                                FirstMessageMaxWaitMs = overridesFirstMessageMaxWaitMs,
+                                FirstMessageInterruptible = overridesFirstMessageInterruptible,
                                 SystemPrompt = overridesSystemPrompt,
                                 VoiceId = overridesVoiceId,
 

@@ -106,10 +106,24 @@ namespace FishAudio
         public global::FishAudio.AgentTestSimulationConfig? Simulation { get; set; }
 
         /// <summary>
+        /// The channel a Single Turn or Tool test plays. null is web_voice. A Simulation test has its own in simulation.channel.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("channel")]
+        public global::FishAudio.GetAgentTestsResponseChannel? Channel { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dynamic_variables")]
         public object? DynamicVariables { get; set; }
+
+        /// <summary>
+        /// The judge of a `next_reply` or `simulation` test. Null follows the workspace's Tests settings (`GET /v1/agent/test-settings`). A `tool` test has no judge, it is null there.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("judge")]
+        public global::FishAudio.AgentTestJudge? Judge { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -143,7 +157,15 @@ namespace FishAudio
         /// <param name="simulation">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="channel">
+        /// The channel a Single Turn or Tool test plays. null is web_voice. A Simulation test has its own in simulation.channel.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="dynamicVariables"></param>
+        /// <param name="judge">
+        /// The judge of a `next_reply` or `simulation` test. Null follows the workspace's Tests settings (`GET /v1/agent/test-settings`). A `tool` test has no judge, it is null there.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -163,7 +185,9 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.AgentTestToolParameter>? toolParameters,
             bool? verifyAbsence,
             global::FishAudio.AgentTestSimulationConfig? simulation,
-            object? dynamicVariables)
+            global::FishAudio.GetAgentTestsResponseChannel? channel,
+            object? dynamicVariables,
+            global::FishAudio.AgentTestJudge? judge)
         {
             this.TestId = testId ?? throw new global::System.ArgumentNullException(nameof(testId));
             this.WorkspaceId = workspaceId ?? throw new global::System.ArgumentNullException(nameof(workspaceId));
@@ -180,7 +204,9 @@ namespace FishAudio
             this.ToolParameters = toolParameters;
             this.VerifyAbsence = verifyAbsence;
             this.Simulation = simulation;
+            this.Channel = channel;
             this.DynamicVariables = dynamicVariables;
+            this.Judge = judge;
         }
 
         /// <summary>

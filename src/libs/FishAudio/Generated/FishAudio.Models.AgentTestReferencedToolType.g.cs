@@ -19,6 +19,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        System,
+        /// <summary>
+        ///
+        /// </summary>
         Webhook,
     }
 
@@ -36,6 +40,7 @@ namespace FishAudio
             {
                 AgentTestReferencedToolType.Client => "client",
                 AgentTestReferencedToolType.Integration => "integration",
+                AgentTestReferencedToolType.System => "system",
                 AgentTestReferencedToolType.Webhook => "webhook",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace FishAudio
             {
                 "client" => AgentTestReferencedToolType.Client,
                 "integration" => AgentTestReferencedToolType.Integration,
+                "system" => AgentTestReferencedToolType.System,
                 "webhook" => AgentTestReferencedToolType.Webhook,
                 _ => null,
             };

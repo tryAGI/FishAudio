@@ -128,15 +128,15 @@ internal static partial class AgentsEditAgentAgentsByAgentIdConfigCommandApiComm
         var command = new Command(commandName ?? @"edit-agent-agents-by-agent-id-config", @"Update Draft Config
 Patch the draft configuration section by section; omitted sections keep
 their value. Changes only affect live sessions after the next publish.
-`prompt.system_prompt` is limited to 32000 tokens (422 beyond); keeping it
-under 2000 tokens is recommended for latency and cost.
+`prompt.system_prompt` is limited to 64000 tokens, 32000 when `llm.model`
+is `google/gemma-4-26b-a4b-it` (422 beyond); keeping it under 2000 tokens
+is recommended for latency and cost.
 `voice.voice_id` accepts any public voice model id.
 `voice.speaking_language` accepts any of the 52 supported ISO 639-1 codes
 (the same set the console offers, see the Voice &amp; language docs); anything else is 422. `voice.expressive` (default `true`) enables richer
 expressive delivery (emotion steering, laughter and sounds, pauses); off
 keeps the standard delivery. The `asr` section configures speech
-recognition. `asr.model` picks the model: `deepgram:nova-3` (default),
-`elevenlabs:scribe_v2_realtime`, `elevenlabs:scribe_v2_medical`, or
+recognition. `asr.model` picks the model: `deepgram:nova-3` (default) or
 `fish_audio:transcribe-stream-1` (Fish realtime recognition, which
 also decides end of turn and whether the caller is interrupting).
 Its former id `fish_audio:transcribe-1-pro-realtime` is still accepted
@@ -192,17 +192,26 @@ The response is the draft as stored, which can differ from the request:
   from it.
 - `conversation.response_max_wait_ms: 0` reads back as `null`
   (automatic).
+- `conversation.backchannel` keeps the fields you omit.
+  `strength: null` goes back to the speech engine's own setting.
+- `conversation.reengage` keeps the fields you omit, and
+  `conversation.reengage.schedule` reads back as
+  `conversation.reengage.steps`.
+- `conversation` also returns `reengage_enabled`, copied from
+  `reengage.enabled`. It is deprecated.
 - `knowledge_base.enabled` becomes `true` when you attach sources and
   omit it.
 - `llm.custom.base_url` drops a trailing `/` and `/chat/completions`.
   `llm.custom.model` is trimmed. Setting `llm.custom` resets `llm.model`
   to the platform default.
 - Secrets read back as `has_secret`, and `llm.custom.api_key` as `null`.
-- `voice.live3_voice` becomes `null` when you set `voice.voice_id`
-  without it: on `live3` the agent then speaks the voice you picked.
-  Switching `voice.engine` to `live3` sets an empty `voice.live3_voice`
-  to `Clara` only while `voice.voice_id` is still the default voice
-  and the patch sets neither.
+- `voice.voice_id` reads back as the name while the agent speaks one of
+  the `live3` voices. Switching `voice.engine` to `fish_tts` returns it
+  to the agent's Voice Library voice, and switching back to `live3`
+  restores the name. A new agent, and one still on the default voice
+  when it switches to `live3`, starts on `clara`.
+- `voice.live3_voice` is deprecated and mirrors that name capitalized
+  (`Clara`), `null` when `voice.voice_id` is a Voice Library voice.
 - `voice` also returns `keyterms`, `multilingual_asr` and `asr_model`
   copied from `asr`. They are deprecated.
 - `config_hash` and `updated_at` are set by the server.

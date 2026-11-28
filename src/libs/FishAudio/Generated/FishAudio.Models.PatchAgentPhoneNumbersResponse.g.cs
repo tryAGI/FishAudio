@@ -97,6 +97,13 @@ namespace FishAudio
         public required global::FishAudio.PatchAgentPhoneNumbersResponseStatus Status { get; set; }
 
         /// <summary>
+        /// Why the number is in `error`, `null` in every other status. `out_of_credit` means the API credit balance could not pay the number's daily fee, so the number is suspended and refuses calls. Top up API credit and it resumes by itself. A number left unpaid for 30 days is released. `provisioning_failed` means buying or importing the number did not finish and it cannot take calls. Release it, then buy or import the number again. More values may be added, so treat an unknown one as a generic error.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status_reason")]
+        public global::FishAudio.PatchAgentPhoneNumbersResponseStatusReason? StatusReason { get; set; }
+
+        /// <summary>
         /// What failed when status is `error`; empty otherwise.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status_detail")]
@@ -196,6 +203,10 @@ namespace FishAudio
         /// <param name="callerIdSyncError">
         /// Why the last synchronization failed; empty otherwise.
         /// </param>
+        /// <param name="statusReason">
+        /// Why the number is in `error`, `null` in every other status. `out_of_credit` means the API credit balance could not pay the number's daily fee, so the number is suspended and refuses calls. Top up API credit and it resumes by itself. A number left unpaid for 30 days is released. `provisioning_failed` means buying or importing the number did not finish and it cannot take calls. Release it, then buy or import the number again. More values may be added, so treat an unknown one as a generic error.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="statusDetail">
         /// What failed when status is `error`; empty otherwise.
         /// </param>
@@ -241,6 +252,7 @@ namespace FishAudio
             global::FishAudio.PatchAgentPhoneNumbersResponseTransferCallerId? transferCallerId,
             global::FishAudio.PatchAgentPhoneNumbersResponseCallerIdSyncStatus? callerIdSyncStatus,
             string? callerIdSyncError,
+            global::FishAudio.PatchAgentPhoneNumbersResponseStatusReason? statusReason,
             string? statusDetail,
             bool? supportsOutbound,
             string? terminationUri,
@@ -260,6 +272,7 @@ namespace FishAudio
             this.CallerIdSyncStatus = callerIdSyncStatus;
             this.CallerIdSyncError = callerIdSyncError;
             this.Status = status;
+            this.StatusReason = statusReason;
             this.StatusDetail = statusDetail;
             this.SupportsOutbound = supportsOutbound;
             this.TerminationUri = terminationUri;

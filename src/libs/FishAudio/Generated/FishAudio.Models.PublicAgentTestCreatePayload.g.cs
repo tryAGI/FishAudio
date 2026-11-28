@@ -71,10 +71,24 @@ namespace FishAudio
         public global::FishAudio.AgentTestSimulationConfig? Simulation { get; set; }
 
         /// <summary>
+        /// The channel a `next_reply` or `tool` test plays, `web_voice` when left out. The agent speaks and has the tools as on that channel: client tools on `web_voice` only, `_transfer_call` on the two phone channels, `_press_keys` and `_skip_turn` on `phone_outbound`. A `tool` test cannot reference a tool its channel lacks. A `simulation` test has its own in `simulation.channel`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("channel")]
+        public global::FishAudio.PublicAgentTestCreatePayloadChannel? Channel { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dynamic_variables")]
         public object? DynamicVariables { get; set; }
+
+        /// <summary>
+        /// The judge of a `next_reply` or `simulation` test. Null follows the workspace's Tests settings (`GET /v1/agent/test-settings`). A `tool` test has no judge, it is null there.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("judge")]
+        public global::FishAudio.AgentTestJudge? Judge { get; set; }
 
         /// <summary>
         /// Agents to attach the test to. They must all be in one workspace, and the test is created there. Without agents the test goes into the API key owner's default workspace.
@@ -109,7 +123,15 @@ namespace FishAudio
         /// <param name="simulation">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="channel">
+        /// The channel a `next_reply` or `tool` test plays, `web_voice` when left out. The agent speaks and has the tools as on that channel: client tools on `web_voice` only, `_transfer_call` on the two phone channels, `_press_keys` and `_skip_turn` on `phone_outbound`. A `tool` test cannot reference a tool its channel lacks. A `simulation` test has its own in `simulation.channel`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="dynamicVariables"></param>
+        /// <param name="judge">
+        /// The judge of a `next_reply` or `simulation` test. Null follows the workspace's Tests settings (`GET /v1/agent/test-settings`). A `tool` test has no judge, it is null there.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="agentIds">
         /// Agents to attach the test to. They must all be in one workspace, and the test is created there. Without agents the test goes into the API key owner's default workspace.
         /// </param>
@@ -127,7 +149,9 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.AgentTestToolParameter>? toolParameters,
             bool? verifyAbsence,
             global::FishAudio.AgentTestSimulationConfig? simulation,
+            global::FishAudio.PublicAgentTestCreatePayloadChannel? channel,
             object? dynamicVariables,
+            global::FishAudio.AgentTestJudge? judge,
             global::System.Collections.Generic.IList<string>? agentIds)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -140,7 +164,9 @@ namespace FishAudio
             this.ToolParameters = toolParameters;
             this.VerifyAbsence = verifyAbsence;
             this.Simulation = simulation;
+            this.Channel = channel;
             this.DynamicVariables = dynamicVariables;
+            this.Judge = judge;
             this.AgentIds = agentIds;
         }
 

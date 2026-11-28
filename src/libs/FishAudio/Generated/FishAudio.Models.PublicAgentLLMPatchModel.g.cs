@@ -31,6 +31,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        AnthropicClaudeSonnet55,
+        /// <summary>
+        ///
+        /// </summary>
         GoogleGemini25Flash,
         /// <summary>
         ///
@@ -59,6 +63,22 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        GoogleGemini4Hydrogen,
+        /// <summary>
+        ///
+        /// </summary>
+        GoogleGemini4HydrogenPriority,
+        /// <summary>
+        ///
+        /// </summary>
+        GoogleGemini4Neon,
+        /// <summary>
+        ///
+        /// </summary>
+        GoogleGemini4NeonPriority,
+        /// <summary>
+        ///
+        /// </summary>
         GoogleGemma426bA4bIt,
         /// <summary>
         ///
@@ -67,7 +87,15 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        OpenaiGpt41Fast,
+        /// <summary>
+        ///
+        /// </summary>
         OpenaiGpt4o,
+        /// <summary>
+        ///
+        /// </summary>
+        OpenaiGpt4oFast,
         /// <summary>
         ///
         /// </summary>
@@ -115,7 +143,11 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
-        ZAiGlm53Flash,
+        OpenaiGpt62Sol,
+        /// <summary>
+        ///
+        /// </summary>
+        OpenaiGpt62SolFast,
     }
 
     /// <summary>
@@ -135,6 +167,7 @@ namespace FishAudio
                 PublicAgentLLMPatchModel.AnthropicClaudeHaiku45 => "anthropic/claude-haiku-4.5",
                 PublicAgentLLMPatchModel.AnthropicClaudeOpus55 => "anthropic/claude-opus-5.5",
                 PublicAgentLLMPatchModel.AnthropicClaudeSonnet46 => "anthropic/claude-sonnet-4.6",
+                PublicAgentLLMPatchModel.AnthropicClaudeSonnet55 => "anthropic/claude-sonnet-5.5",
                 PublicAgentLLMPatchModel.GoogleGemini25Flash => "google/gemini-2.5-flash",
                 PublicAgentLLMPatchModel.GoogleGemini35FlashLite => "google/gemini-3.5-flash-lite",
                 PublicAgentLLMPatchModel.GoogleGemini35FlashLitePriority => "google/gemini-3.5-flash-lite-priority",
@@ -142,9 +175,15 @@ namespace FishAudio
                 PublicAgentLLMPatchModel.GoogleGemini36FlashPriority => "google/gemini-3.6-flash-priority",
                 PublicAgentLLMPatchModel.GoogleGemini38Flash => "google/gemini-3.8-flash",
                 PublicAgentLLMPatchModel.GoogleGemini38FlashPriority => "google/gemini-3.8-flash-priority",
+                PublicAgentLLMPatchModel.GoogleGemini4Hydrogen => "google/gemini-4-hydrogen",
+                PublicAgentLLMPatchModel.GoogleGemini4HydrogenPriority => "google/gemini-4-hydrogen-priority",
+                PublicAgentLLMPatchModel.GoogleGemini4Neon => "google/gemini-4-neon",
+                PublicAgentLLMPatchModel.GoogleGemini4NeonPriority => "google/gemini-4-neon-priority",
                 PublicAgentLLMPatchModel.GoogleGemma426bA4bIt => "google/gemma-4-26b-a4b-it",
                 PublicAgentLLMPatchModel.OpenaiGpt41 => "openai/gpt-4.1",
+                PublicAgentLLMPatchModel.OpenaiGpt41Fast => "openai/gpt-4.1-fast",
                 PublicAgentLLMPatchModel.OpenaiGpt4o => "openai/gpt-4o",
+                PublicAgentLLMPatchModel.OpenaiGpt4oFast => "openai/gpt-4o-fast",
                 PublicAgentLLMPatchModel.OpenaiGpt5 => "openai/gpt-5",
                 PublicAgentLLMPatchModel.OpenaiGpt56Luna => "openai/gpt-5.6-luna",
                 PublicAgentLLMPatchModel.OpenaiGpt56LunaFast => "openai/gpt-5.6-luna-fast",
@@ -156,7 +195,8 @@ namespace FishAudio
                 PublicAgentLLMPatchModel.OpenaiGpt61SolFast => "openai/gpt-6.1-sol-fast",
                 PublicAgentLLMPatchModel.OpenaiGpt61Terra => "openai/gpt-6.1-terra",
                 PublicAgentLLMPatchModel.OpenaiGpt61TerraFast => "openai/gpt-6.1-terra-fast",
-                PublicAgentLLMPatchModel.ZAiGlm53Flash => "z-ai/glm-5.3-flash",
+                PublicAgentLLMPatchModel.OpenaiGpt62Sol => "openai/gpt-6.2-sol",
+                PublicAgentLLMPatchModel.OpenaiGpt62SolFast => "openai/gpt-6.2-sol-fast",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -172,6 +212,7 @@ namespace FishAudio
                 "anthropic/claude-haiku-4.5" => PublicAgentLLMPatchModel.AnthropicClaudeHaiku45,
                 "anthropic/claude-opus-5.5" => PublicAgentLLMPatchModel.AnthropicClaudeOpus55,
                 "anthropic/claude-sonnet-4.6" => PublicAgentLLMPatchModel.AnthropicClaudeSonnet46,
+                "anthropic/claude-sonnet-5.5" => PublicAgentLLMPatchModel.AnthropicClaudeSonnet55,
                 "google/gemini-2.5-flash" => PublicAgentLLMPatchModel.GoogleGemini25Flash,
                 "google/gemini-3.5-flash-lite" => PublicAgentLLMPatchModel.GoogleGemini35FlashLite,
                 "google/gemini-3.5-flash-lite-priority" => PublicAgentLLMPatchModel.GoogleGemini35FlashLitePriority,
@@ -179,9 +220,15 @@ namespace FishAudio
                 "google/gemini-3.6-flash-priority" => PublicAgentLLMPatchModel.GoogleGemini36FlashPriority,
                 "google/gemini-3.8-flash" => PublicAgentLLMPatchModel.GoogleGemini38Flash,
                 "google/gemini-3.8-flash-priority" => PublicAgentLLMPatchModel.GoogleGemini38FlashPriority,
+                "google/gemini-4-hydrogen" => PublicAgentLLMPatchModel.GoogleGemini4Hydrogen,
+                "google/gemini-4-hydrogen-priority" => PublicAgentLLMPatchModel.GoogleGemini4HydrogenPriority,
+                "google/gemini-4-neon" => PublicAgentLLMPatchModel.GoogleGemini4Neon,
+                "google/gemini-4-neon-priority" => PublicAgentLLMPatchModel.GoogleGemini4NeonPriority,
                 "google/gemma-4-26b-a4b-it" => PublicAgentLLMPatchModel.GoogleGemma426bA4bIt,
                 "openai/gpt-4.1" => PublicAgentLLMPatchModel.OpenaiGpt41,
+                "openai/gpt-4.1-fast" => PublicAgentLLMPatchModel.OpenaiGpt41Fast,
                 "openai/gpt-4o" => PublicAgentLLMPatchModel.OpenaiGpt4o,
+                "openai/gpt-4o-fast" => PublicAgentLLMPatchModel.OpenaiGpt4oFast,
                 "openai/gpt-5" => PublicAgentLLMPatchModel.OpenaiGpt5,
                 "openai/gpt-5.6-luna" => PublicAgentLLMPatchModel.OpenaiGpt56Luna,
                 "openai/gpt-5.6-luna-fast" => PublicAgentLLMPatchModel.OpenaiGpt56LunaFast,
@@ -193,7 +240,8 @@ namespace FishAudio
                 "openai/gpt-6.1-sol-fast" => PublicAgentLLMPatchModel.OpenaiGpt61SolFast,
                 "openai/gpt-6.1-terra" => PublicAgentLLMPatchModel.OpenaiGpt61Terra,
                 "openai/gpt-6.1-terra-fast" => PublicAgentLLMPatchModel.OpenaiGpt61TerraFast,
-                "z-ai/glm-5.3-flash" => PublicAgentLLMPatchModel.ZAiGlm53Flash,
+                "openai/gpt-6.2-sol" => PublicAgentLLMPatchModel.OpenaiGpt62Sol,
+                "openai/gpt-6.2-sol-fast" => PublicAgentLLMPatchModel.OpenaiGpt62SolFast,
                 _ => null,
             };
         }

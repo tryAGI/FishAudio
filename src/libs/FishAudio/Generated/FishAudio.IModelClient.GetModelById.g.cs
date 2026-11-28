@@ -11,7 +11,7 @@ namespace FishAudio
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::FishAudio.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::FishAudio.GetModelResponse2> GetModelByIdAsync(
+        global::System.Threading.Tasks.Task<global::FishAudio.GetModelResponse> GetModelByIdAsync(
             string id,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -22,7 +22,7 @@ namespace FishAudio
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::FishAudio.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetModelResponse2>> GetModelByIdAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.GetModelResponse>> GetModelByIdAsResponseAsync(
             string id,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

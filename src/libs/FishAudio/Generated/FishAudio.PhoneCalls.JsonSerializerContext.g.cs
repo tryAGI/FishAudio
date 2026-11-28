@@ -33,6 +33,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<string, int?, double?, bool?>), TypeInfoPropertyName = "AnyOfStringInt32DoubleBoolean2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionLlmOverridesPayload))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionOverridesPayloadFirstMessageStart), TypeInfoPropertyName = "AgentSessionOverridesPayloadFirstMessageStart2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage), TypeInfoPropertyName = "AgentSessionOverridesPayloadLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.PhoneCallCreatePayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.CreateAgentPhoneCallsResponse))]
@@ -52,6 +53,7 @@ namespace FishAudio
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel?), TypeInfoPropertyName = "NullableAgentSessionAsrOverridesPayloadModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AnyOf<string, int?, double?, bool?>?), TypeInfoPropertyName = "NullableAnyOfStringInt32DoubleBoolean2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionOverridesPayloadFirstMessageStart?), TypeInfoPropertyName = "NullableAgentSessionOverridesPayloadFirstMessageStart2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage?), TypeInfoPropertyName = "NullableAgentSessionOverridesPayloadLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::FishAudio.AgentLLMFallbackModelPayload>))]
     internal sealed partial class PhoneCallsSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
@@ -171,6 +173,10 @@ namespace FishAudio
 
                     || typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel?)
 
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadFirstMessageStart)
+
+                    || typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadFirstMessageStart?)
+
                     || typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage)
 
                     || typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage?);
@@ -208,6 +214,16 @@ namespace FishAudio
                 if (typeToConvert == typeof(global::FishAudio.AgentSessionAsrOverridesPayloadModel?))
                 {
                     return new global::FishAudio.JsonConverters.AgentSessionAsrOverridesPayloadModelNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadFirstMessageStart))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionOverridesPayloadFirstMessageStartJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadFirstMessageStart?))
+                {
+                    return new global::FishAudio.JsonConverters.AgentSessionOverridesPayloadFirstMessageStartNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::FishAudio.AgentSessionOverridesPayloadLanguage))

@@ -13,7 +13,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::FishAudio.CreateModelResponse> CreateModelAsync(
 
-            global::FishAudio.CreateModelRequest3 request,
+            global::FishAudio.CreateModelRequest request,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -25,7 +25,7 @@ namespace FishAudio
         /// <exception cref="global::FishAudio.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::FishAudio.AutoSDKHttpResponse<global::FishAudio.CreateModelResponse>> CreateModelAsResponseAsync(
 
-            global::FishAudio.CreateModelRequest3 request,
+            global::FishAudio.CreateModelRequest request,
             global::FishAudio.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -84,7 +84,7 @@ namespace FishAudio
         global::System.Threading.Tasks.Task<global::FishAudio.CreateModelResponse> CreateModelAsync(
             string title,
             global::FishAudio.AnyOf<global::System.Collections.Generic.IList<byte[]>, byte[]> voices,
-            global::FishAudio.CreateModelRequestVisibility3? visibility = default,
+            global::FishAudio.CreateModelRequestVisibility? visibility = default,
             string type = "tts",
             string? description = default,
             byte[]? coverImage = default,

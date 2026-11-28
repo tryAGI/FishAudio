@@ -19,6 +19,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        Immediate,
+        /// <summary>
+        ///
+        /// </summary>
         Low,
     }
 
@@ -36,6 +40,7 @@ namespace FishAudio
             {
                 PublicAgentConversationPatchInterruptionSensitivity.Balanced => "balanced",
                 PublicAgentConversationPatchInterruptionSensitivity.High => "high",
+                PublicAgentConversationPatchInterruptionSensitivity.Immediate => "immediate",
                 PublicAgentConversationPatchInterruptionSensitivity.Low => "low",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace FishAudio
             {
                 "balanced" => PublicAgentConversationPatchInterruptionSensitivity.Balanced,
                 "high" => PublicAgentConversationPatchInterruptionSensitivity.High,
+                "immediate" => PublicAgentConversationPatchInterruptionSensitivity.Immediate,
                 "low" => PublicAgentConversationPatchInterruptionSensitivity.Low,
                 _ => null,
             };

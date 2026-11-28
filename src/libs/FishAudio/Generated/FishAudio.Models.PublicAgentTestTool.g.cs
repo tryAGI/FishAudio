@@ -9,7 +9,7 @@ namespace FishAudio
     public sealed partial class PublicAgentTestTool
     {
         /// <summary>
-        /// The id to reference in tests. Webhook and client tools use their tool id, integration tools use &lt;provider_key&gt;:&lt;tool_name&gt;.
+        /// The id to reference in tests. Webhook and client tools use their tool id, integration tools use &lt;provider_key&gt;:&lt;tool_name&gt;, system tools use their tool name, such as _end_call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -51,7 +51,7 @@ namespace FishAudio
         public bool? Writes { get; set; }
 
         /// <summary>
-        /// The tool answers from its own mock when a simulation mocks every tool and the test has no entry for it.<br/>
+        /// The tool answers from its own mock when a simulation mocks every tool and the test has no entry for it. Always true for a system tool, which never takes a mock.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_own_mock")]
@@ -72,6 +72,12 @@ namespace FishAudio
         public bool? AvailableOnPhone { get; set; }
 
         /// <summary>
+        /// The channels the agent has the tool on. Client tools are on web_voice only, _transfer_call on the two phone channels, _press_keys and _skip_turn on phone_outbound.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("channels")]
+        public global::System.Collections.Generic.IList<global::FishAudio.PublicAgentTestToolChannel>? Channels { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -81,7 +87,7 @@ namespace FishAudio
         /// Initializes a new instance of the <see cref="PublicAgentTestTool" /> class.
         /// </summary>
         /// <param name="id">
-        /// The id to reference in tests. Webhook and client tools use their tool id, integration tools use &lt;provider_key&gt;:&lt;tool_name&gt;.
+        /// The id to reference in tests. Webhook and client tools use their tool id, integration tools use &lt;provider_key&gt;:&lt;tool_name&gt;, system tools use their tool name, such as _end_call.
         /// </param>
         /// <param name="name"></param>
         /// <param name="type"></param>
@@ -95,7 +101,7 @@ namespace FishAudio
         /// Default Value: false
         /// </param>
         /// <param name="hasOwnMock">
-        /// The tool answers from its own mock when a simulation mocks every tool and the test has no entry for it.<br/>
+        /// The tool answers from its own mock when a simulation mocks every tool and the test has no entry for it. Always true for a system tool, which never takes a mock.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="expectsResponse">
@@ -105,6 +111,9 @@ namespace FishAudio
         /// <param name="availableOnPhone">
         /// False for client tools, which need a client and never run on phone calls.<br/>
         /// Default Value: true
+        /// </param>
+        /// <param name="channels">
+        /// The channels the agent has the tool on. Client tools are on web_voice only, _transfer_call on the two phone channels, _press_keys and _skip_turn on phone_outbound.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -118,7 +127,8 @@ namespace FishAudio
             bool? writes,
             bool? hasOwnMock,
             bool? expectsResponse,
-            bool? availableOnPhone)
+            bool? availableOnPhone,
+            global::System.Collections.Generic.IList<global::FishAudio.PublicAgentTestToolChannel>? channels)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -129,6 +139,7 @@ namespace FishAudio
             this.HasOwnMock = hasOwnMock;
             this.ExpectsResponse = expectsResponse;
             this.AvailableOnPhone = availableOnPhone;
+            this.Channels = channels;
         }
 
         /// <summary>

@@ -77,6 +77,20 @@ namespace FishAudio
         public global::FishAudio.GetAgentSessionsResponseDialStatus? DialStatus { get; set; }
 
         /// <summary>
+        /// busy, no_answer and failed: the final SIP response code the carrier or your SIP trunk gave to the outbound dial. Null on an answered call and when it gave none.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dial_sip_status")]
+        public int? DialSipStatus { get; set; }
+
+        /// <summary>
+        /// The reason text the carrier or your SIP trunk sent with dial_sip_status, verbatim, for example `Busy here`. Null when it sent none.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dial_sip_reason")]
+        public string? DialSipReason { get; set; }
+
+        /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("answered_by")]
@@ -210,6 +224,12 @@ namespace FishAudio
         public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmFallback>? LlmFallbacks { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("engine_fallbacks")]
+        public global::System.Collections.Generic.IList<global::FishAudio.AgentSessionEngineFallback>? EngineFallbacks { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -237,6 +257,14 @@ namespace FishAudio
         /// Default Value: inbound
         /// </param>
         /// <param name="dialStatus">
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="dialSipStatus">
+        /// busy, no_answer and failed: the final SIP response code the carrier or your SIP trunk gave to the outbound dial. Null on an answered call and when it gave none.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="dialSipReason">
+        /// The reason text the carrier or your SIP trunk sent with dial_sip_status, verbatim, for example `Busy here`. Null when it sent none.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="answeredBy">
@@ -292,6 +320,7 @@ namespace FishAudio
         /// </param>
         /// <param name="llmEndpointErrors"></param>
         /// <param name="llmFallbacks"></param>
+        /// <param name="engineFallbacks"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -307,6 +336,8 @@ namespace FishAudio
             global::FishAudio.GetAgentSessionsResponseEndReason? endReason,
             global::FishAudio.GetAgentSessionsResponseDirection? direction,
             global::FishAudio.GetAgentSessionsResponseDialStatus? dialStatus,
+            int? dialSipStatus,
+            string? dialSipReason,
             global::FishAudio.GetAgentSessionsResponseAnsweredBy? answeredBy,
             string? callerNumber,
             bool? callerIdWithheld,
@@ -327,7 +358,8 @@ namespace FishAudio
             global::System.Collections.Generic.IList<global::FishAudio.ItemsItem>? items,
             global::FishAudio.AgentSessionAnalysisResult? analysis,
             global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmEndpointError>? llmEndpointErrors,
-            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmFallback>? llmFallbacks)
+            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionLlmFallback>? llmFallbacks,
+            global::System.Collections.Generic.IList<global::FishAudio.AgentSessionEngineFallback>? engineFallbacks)
         {
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
@@ -339,6 +371,8 @@ namespace FishAudio
             this.Source = source;
             this.Direction = direction;
             this.DialStatus = dialStatus;
+            this.DialSipStatus = dialSipStatus;
+            this.DialSipReason = dialSipReason;
             this.AnsweredBy = answeredBy;
             this.CallerNumber = callerNumber;
             this.CallerIdWithheld = callerIdWithheld;
@@ -361,6 +395,7 @@ namespace FishAudio
             this.Analysis = analysis;
             this.LlmEndpointErrors = llmEndpointErrors;
             this.LlmFallbacks = llmFallbacks;
+            this.EngineFallbacks = engineFallbacks;
         }
 
         /// <summary>

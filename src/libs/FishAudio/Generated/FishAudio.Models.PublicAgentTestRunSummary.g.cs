@@ -72,6 +72,13 @@ namespace FishAudio
         public string? Error { get; set; }
 
         /// <summary>
+        /// The model that judged the run and the reasoning level it judged at. Null on a `tool` test, which has no judge, on a run that ended before its judge was asked, and on `next_reply` runs from before the field existed. Simulation runs from before the judge could be chosen have a null level.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("judge")]
+        public global::FishAudio.AgentTestJudge? Judge { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
@@ -123,6 +130,10 @@ namespace FishAudio
         /// Default Value: false
         /// </param>
         /// <param name="error"></param>
+        /// <param name="judge">
+        /// The model that judged the run and the reasoning level it judged at. Null on a `tool` test, which has no judge, on a run that ended before its judge was asked, and on `next_reply` runs from before the field existed. Simulation runs from before the judge could be chosen have a null level.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="usage"></param>
         /// <param name="startedAt">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -144,6 +155,7 @@ namespace FishAudio
             int? repeatIndex,
             bool? needsReview,
             string? error,
+            global::FishAudio.AgentTestJudge? judge,
             global::FishAudio.PublicAgentTestRunUsage? usage,
             global::System.DateTime? startedAt,
             global::System.DateTime? finishedAt)
@@ -157,6 +169,7 @@ namespace FishAudio
             this.Status = status;
             this.NeedsReview = needsReview;
             this.Error = error;
+            this.Judge = judge;
             this.Usage = usage;
             this.CreatedAt = createdAt;
             this.StartedAt = startedAt;

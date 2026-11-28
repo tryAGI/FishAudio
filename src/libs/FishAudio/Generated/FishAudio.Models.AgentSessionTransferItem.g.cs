@@ -74,6 +74,13 @@ namespace FishAudio
         public int? SipStatus { get; set; }
 
         /// <summary>
+        /// dial_failed and refer_failed: the reason text the carrier or SIP server sent with sip_status, verbatim, for example `Proxy Authentication Required`. Null when it sent none.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sip_reason")]
+        public string? SipReason { get; set; }
+
+        /// <summary>
         /// dial_failed and refer_failed: why the transfer target could not be reached, classified from sip_status the same way as an outbound call's dial_status.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
@@ -184,6 +191,10 @@ namespace FishAudio
         /// dial_failed and refer_failed: the final SIP response code the carrier gave. Null when it gave none.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="sipReason">
+        /// dial_failed and refer_failed: the reason text the carrier or SIP server sent with sip_status, verbatim, for example `Proxy Authentication Required`. Null when it sent none.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="dialStatus">
         /// dial_failed and refer_failed: why the transfer target could not be reached, classified from sip_status the same way as an outbound call's dial_status.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -240,6 +251,7 @@ namespace FishAudio
             global::FishAudio.AgentSessionTransferItemWarmConnect? warmConnect,
             global::FishAudio.AgentSessionTransferItemOutcome? outcome,
             int? sipStatus,
+            string? sipReason,
             global::FishAudio.AgentSessionTransferItemDialStatus? dialStatus,
             string? declineReason,
             global::FishAudio.AgentSessionTransferItemConsultEndReason? consultEndReason,
@@ -263,6 +275,7 @@ namespace FishAudio
             this.WarmConnect = warmConnect;
             this.Outcome = outcome;
             this.SipStatus = sipStatus;
+            this.SipReason = sipReason;
             this.DialStatus = dialStatus;
             this.DeclineReason = declineReason;
             this.ConsultEndReason = consultEndReason;

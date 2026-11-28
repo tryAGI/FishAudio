@@ -36,6 +36,13 @@ namespace FishAudio
         public string? Description { get; set; }
 
         /// <summary>
+        /// The knowledge folder this source is in; null at the root. Folders are managed with `/v1/agent/knowledge-folders`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("folder_id")]
+        public string? FolderId { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_name")]
@@ -98,6 +105,10 @@ namespace FishAudio
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="description"></param>
+        /// <param name="folderId">
+        /// The knowledge folder this source is in; null at the root. Folders are managed with `/v1/agent/knowledge-folders`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,12 +122,14 @@ namespace FishAudio
             int revisionNumber,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
-            string? description)
+            string? description,
+            string? folderId)
         {
             this.KnowledgeSourceId = knowledgeSourceId ?? throw new global::System.ArgumentNullException(nameof(knowledgeSourceId));
             this.WorkspaceId = workspaceId ?? throw new global::System.ArgumentNullException(nameof(workspaceId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
+            this.FolderId = folderId;
             this.FileName = fileName ?? throw new global::System.ArgumentNullException(nameof(fileName));
             this.SizeBytes = sizeBytes;
             this.ChunkCount = chunkCount;

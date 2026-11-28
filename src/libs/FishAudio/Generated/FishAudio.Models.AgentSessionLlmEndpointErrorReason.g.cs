@@ -35,6 +35,10 @@ namespace FishAudio
         /// <summary>
         ///
         /// </summary>
+        Refused,
+        /// <summary>
+        ///
+        /// </summary>
         StreamIncomplete,
         /// <summary>
         ///
@@ -64,6 +68,7 @@ namespace FishAudio
                 AgentSessionLlmEndpointErrorReason.DnsFailed => "dns_failed",
                 AgentSessionLlmEndpointErrorReason.EmptyReply => "empty_reply",
                 AgentSessionLlmEndpointErrorReason.NotEventStream => "not_event_stream",
+                AgentSessionLlmEndpointErrorReason.Refused => "refused",
                 AgentSessionLlmEndpointErrorReason.StreamIncomplete => "stream_incomplete",
                 AgentSessionLlmEndpointErrorReason.TlsFailed => "tls_failed",
                 AgentSessionLlmEndpointErrorReason.Unknown => "unknown",
@@ -83,6 +88,7 @@ namespace FishAudio
                 "dns_failed" => AgentSessionLlmEndpointErrorReason.DnsFailed,
                 "empty_reply" => AgentSessionLlmEndpointErrorReason.EmptyReply,
                 "not_event_stream" => AgentSessionLlmEndpointErrorReason.NotEventStream,
+                "refused" => AgentSessionLlmEndpointErrorReason.Refused,
                 "stream_incomplete" => AgentSessionLlmEndpointErrorReason.StreamIncomplete,
                 "tls_failed" => AgentSessionLlmEndpointErrorReason.TlsFailed,
                 "unknown" => AgentSessionLlmEndpointErrorReason.Unknown,

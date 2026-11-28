@@ -16,6 +16,10 @@ namespace FishAudio
         ///
         /// </summary>
         Transcribe1Pro,
+        /// <summary>
+        ///
+        /// </summary>
+        Transcribe2Pro,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace FishAudio
             {
                 CreateAsrModel.Transcribe1 => "transcribe-1",
                 CreateAsrModel.Transcribe1Pro => "transcribe-1-pro",
+                CreateAsrModel.Transcribe2Pro => "transcribe-2-pro",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace FishAudio
             {
                 "transcribe-1" => CreateAsrModel.Transcribe1,
                 "transcribe-1-pro" => CreateAsrModel.Transcribe1Pro,
+                "transcribe-2-pro" => CreateAsrModel.Transcribe2Pro,
                 _ => null,
             };
         }

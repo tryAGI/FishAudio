@@ -4,7 +4,8 @@
 namespace FishAudio
 {
     /// <summary>
-    /// A canned result for one library tool, optionally gated on the call arguments.
+    /// A canned result for one library or integration tool, optionally gated<br/>
+    /// on the call arguments. A system tool takes no mock.
     /// </summary>
     public sealed partial class AgentTestToolMock
     {
@@ -12,7 +13,8 @@ namespace FishAudio
         /// Tool the runner should (or should not) observe on the next turn. A<br/>
         /// webhook or client tool is referenced by its library id, an integration<br/>
         /// tool by "&lt;provider_key&gt;:&lt;tool_name&gt;" (for example<br/>
-        /// "google_calendar:create_event").
+        /// "google_calendar:create_event"), a system tool by its tool name (for<br/>
+        /// example "_end_call"). `name` may be left out for a system tool.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -55,7 +57,8 @@ namespace FishAudio
         /// Tool the runner should (or should not) observe on the next turn. A<br/>
         /// webhook or client tool is referenced by its library id, an integration<br/>
         /// tool by "&lt;provider_key&gt;:&lt;tool_name&gt;" (for example<br/>
-        /// "google_calendar:create_event").
+        /// "google_calendar:create_event"), a system tool by its tool name (for<br/>
+        /// example "_end_call"). `name` may be left out for a system tool.
         /// </param>
         /// <param name="result">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

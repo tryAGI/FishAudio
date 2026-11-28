@@ -19,23 +19,7 @@ internal static partial class OpenAPIV1CreateAsrWithMessagePackCommandApiCommand
         Description = @"Audio file to be converted to text",
         Required = true,
     };
-
-    private static Option<string> Audioname { get; } = new(
-        name: @"--audioname")
-    {
-        Description = @"Audio file to be converted to text",
-        Required = true,
-    };
-
-    private static Option<string?> Language { get; } = new(
-        name: @"--language")
-    {
-        Description = @"Optional hint. The language is auto-detected regardless; the detected language is returned as `language_code`.",
-    };
-
-    private static Option<bool?> IgnoreTimestamps { get; } = CliRuntime.CreateNullableBoolOption(
-        name: @"--ignore-timestamps",
-        description: @"Whether to return precise timestamps in the text, this will increase the latency in audio shorter than 30 seconds");
+    private static readonly CreateAsrRequestOptionSet CreateAsrRequestOptionSetOptions = CreateAsrRequestOptionSet.Create();
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -79,10 +63,9 @@ internal static partial class OpenAPIV1CreateAsrWithMessagePackCommandApiCommand
     {
         var command = new Command(commandName ?? @"create-asr-with-message-pack", @"Speech to Text");
                         command.Options.Add(Model);
-                        command.Options.Add(Audio);
-                        command.Options.Add(Audioname);
-                        command.Options.Add(Language);
-                        command.Options.Add(IgnoreTimestamps);
+                        command.Options.Add(Audio);                        command.Options.Add(CreateAsrRequestOptionSetOptions.Audioname);
+                        command.Options.Add(CreateAsrRequestOptionSetOptions.Language);
+                        command.Options.Add(CreateAsrRequestOptionSetOptions.IgnoreTimestamps);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -101,7 +84,7 @@ internal static partial class OpenAPIV1CreateAsrWithMessagePackCommandApiCommand
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::FishAudio.CreateAsrRequest2>(
+                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::FishAudio.CreateAsrRequest>(
                             parseResult,
                             Input,
                             RequestJson,
@@ -109,10 +92,9 @@ internal static partial class OpenAPIV1CreateAsrWithMessagePackCommandApiCommand
                             global::FishAudio.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var model = parseResult.GetValue(Model);
-                        var audio = parseResult.GetRequiredValue(Audio);
-                        var audioname = parseResult.GetRequiredValue(Audioname);
-                        var language = CliRuntime.WasSpecified(parseResult, Language) ? parseResult.GetValue(Language) : (__requestBase is { } __LanguageBaseValue ? __LanguageBaseValue.Language : default);
-                        var ignoreTimestamps = CliRuntime.WasSpecified(parseResult, IgnoreTimestamps) ? parseResult.GetValue(IgnoreTimestamps) : (__requestBase is { } __IgnoreTimestampsBaseValue ? __IgnoreTimestampsBaseValue.IgnoreTimestamps : default);
+                        var audio = parseResult.GetRequiredValue(Audio);                        var audioname = parseResult.GetRequiredValue(CreateAsrRequestOptionSetOptions.Audioname);
+                        var language = CliRuntime.WasSpecified(parseResult, CreateAsrRequestOptionSetOptions.Language) ? parseResult.GetValue(CreateAsrRequestOptionSetOptions.Language) : (__requestBase is { } __LanguageBaseValue ? __LanguageBaseValue.Language : default);
+                        var ignoreTimestamps = CliRuntime.WasSpecified(parseResult, CreateAsrRequestOptionSetOptions.IgnoreTimestamps) ? parseResult.GetValue(CreateAsrRequestOptionSetOptions.IgnoreTimestamps) : (__requestBase is { } __IgnoreTimestampsBaseValue ? __IgnoreTimestampsBaseValue.IgnoreTimestamps : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

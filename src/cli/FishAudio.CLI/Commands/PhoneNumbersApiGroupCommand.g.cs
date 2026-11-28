@@ -17,6 +17,7 @@ internal static partial class PhoneNumbersApiGroupCommand
                          command.Subcommands.Add(PhoneNumbersGetAgentAvailablePhoneNumbersCommandApiCommand.Create());
                          command.Subcommands.Add(PhoneNumbersGetAgentPhoneNumbersCommandApiCommand.Create());
                          command.Subcommands.Add(PhoneNumbersGetAgentPhoneNumbersByPhoneNumberIdCommandApiCommand.Create());
+                         command.Subcommands.Add(PhoneNumbersPutAgentPhoneNumbersByPhoneNumberIdSipConfigCommandApiCommand.Create());
         CustomizeCommand(ref command);
         return command;
     }
